@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:57:14.891Z",
+  "uppdaterad": "2026-10-23T21:57:30.763Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,14 +76,14 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792632872,
+    "tid": 1792792648831,
     "niva": {},
     "utr": {},
     "run": {
       "plats": "slottet",
       "kapitel": 1,
       "djup": 2,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Ni hör mynt som klirrar.",
@@ -97,7 +97,22 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "skatt",
+        "klar": false,
+        "loot": [
+          {
+            "k": "guld",
+            "n": "24 guldmynt",
+            "v": 24
+          },
+          {
+            "k": "xp",
+            "n": "En gammal karta full med ledtrådar",
+            "v": 30
+          }
+        ]
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -118,6 +133,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 2 · Skatt",
+          "k": "sep"
+        },
+        {
+          "t": "Ni hittar en skattkista!",
+          "k": "heal"
         }
       ],
       "party": [
