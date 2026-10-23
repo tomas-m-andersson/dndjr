@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T20:48:14.098Z",
+  "uppdaterad": "2026-10-23T20:48:17.338Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -59,13 +59,13 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "kistan",
+        "scen": "draken",
         "flaggor": [
           "fackla"
         ],
         "klar": false
       }
     },
-    "tid": 1792788492179
+    "tid": 1792788495449
   }
 }
