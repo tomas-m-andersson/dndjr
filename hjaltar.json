@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:56:21.681Z",
+  "uppdaterad": "2026-10-23T21:56:38.329Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -52,10 +52,10 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 8,
-      "svante": 6,
+      "ville": 12,
+      "svante": 7,
       "sally": 8,
-      "tomas": 7,
+      "tomas": 11,
       "linda": 7
     },
     "kapitel": {
@@ -76,10 +76,61 @@
         "slut": "slut"
       }
     },
-    "tid": 1792791155161,
+    "tid": 1792792596409,
     "niva": {},
     "utr": {},
-    "run": null,
+    "run": {
+      "plats": "slottet",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Ni känner värme mot ansiktet.",
+          "typ": "lager",
+          "kand": false
+        },
+        {
+          "ledtrad": "Någonstans porlar vatten.",
+          "typ": "altare",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Spökslottet Korpholm",
+          "k": "sep"
+        },
+        {
+          "t": "Ville, Svante, Tomas och Sally knuffar upp den knarrande porten och kliver in i slottet.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 55,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1792792596407,
+      "nastaKand": false
+    },
     "historik": []
   }
 }
