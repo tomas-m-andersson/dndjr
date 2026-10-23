@@ -1,6 +1,18 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tärningsriket</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ett svenskt rollspelsäventyr för hela familjen.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#142029">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tärningsriket">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Nunito:wght@500;700;800&display=swap">
 <style>
@@ -12,8 +24,11 @@
   --display:"Pixelify Sans", "Courier New", monospace;
   --body:"Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme:dark;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
 html,body{background:var(--bg);color:var(--fg)}
 body{font-family:var(--body);font-size:16px;line-height:1.5;margin:0;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 110px;
@@ -34,6 +49,31 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero svg{width:72px;height:72px;flex:none}
 .hero h1{font-size:clamp(2rem,8vw,3rem);color:var(--gold);line-height:1}
 .hero p{margin:6px 0 0;color:var(--muted);max-width:46ch}
+.hero .titles{min-width:0;flex:1}
+.hero h1{overflow-wrap:anywhere}
+@media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
+.gear{flex:none;align-self:flex-start;width:48px;height:48px;border-radius:8px;border:2px solid var(--line);background:var(--bg2);display:grid;place-items:center;padding:0}
+.gear svg{width:26px;height:26px}
+.sync{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:.82rem;color:var(--muted)}
+.sync i{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.sync.ok i{background:var(--moss)} .sync.bad i{background:var(--red)} .sync.bad{color:#f3a99f}
+
+/* Inställningar */
+.setgroup{display:flex;flex-direction:column;gap:12px;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:14px}
+.setgroup h3{font-size:1.2rem;color:var(--gold)}
+.setgroup p{margin:0;font-size:.92rem;color:var(--muted)}
+.setgroup .field input{font-size:1rem;padding:10px}
+.inrow{display:flex;gap:8px}
+.inrow input{flex:1;min-width:0}
+.inrow button{flex:none;border:2px solid var(--line);background:var(--panel);border-radius:6px;padding:0 12px;font-weight:800}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:800}
+.check input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--gold);flex:none}
+.status{font-size:.9rem;padding:8px 10px;border-radius:6px;background:var(--panel)}
+.status.ok{border-left:4px solid var(--moss)} .status.bad{border-left:4px solid var(--red)}
+.warn{background:#3a2f14;border:2px solid var(--gold-dk);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:10px;font-size:.92rem}
+.warn strong{color:var(--gold)}
+ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction:column;gap:4px}
 .section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .section-head h2{font-size:1.4rem}
 .section-head span{color:var(--muted);font-size:.9rem}
@@ -131,7 +171,8 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 @media (max-width:420px){.preview{grid-template-columns:84px 1fr}.sheet-top{grid-template-columns:96px minmax(0,1fr)}.stat{grid-template-columns:minmax(0,1fr) auto 46px}.die{width:24px;height:24px;font-size:.85rem}}
 @media (prefers-reduced-motion:reduce){.die.spin{animation:none}.btn{transition:none}}
 </style>
-
+</head>
+<body>
 <div class="wrap" id="app"></div>
 <div class="party" id="party"></div>
 <div id="modal"></div>
@@ -180,6 +221,89 @@ function load(k,def){try{const v=JSON.parse(localStorage.getItem(k));return v??d
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 let egna=load(KEY,[]), party=load(PKEY,["ville","svante","sally"]);
 const alla=()=>[...BASE,...egna];
+let view="home";
+function persist(){save(KEY,egna);save(PKEY,party);scheduleSync()}
+
+/* ===== GitHub-sparning (hjaltar.json i repot) ===== */
+const GKEY="tarningsriket-github";
+let gh=Object.assign({repo:"tomas-m-andersson/dndjr",branch:"main",path:"hjaltar.json",token:"",auto:false},load(GKEY,{}));
+let ghSha=null, syncTimer=null, deleted=new Set();
+let sync={txt:"Sparas bara på den här enheten",cls:""};
+const validHero=h=>h&&typeof h.id==="string"&&h.namn&&FOLK[h.folk]&&KLASS[h.klass]&&h.s&&STATS.every(st=>typeof h.s[st.k]==="number");
+const nu=()=>new Date().toLocaleTimeString("sv-SE",{hour:"2-digit",minute:"2-digit"});
+function setSync(txt,cls=""){sync={txt,cls};const s=document.getElementById("sync");if(s){s.className="sync "+cls;s.lastChild.textContent=txt}}
+const ghBase=()=>"https://api.github.com/repos/"+gh.repo.trim();
+const ghFileUrl=()=>ghBase()+"/contents/"+gh.path.trim().split("/").map(encodeURIComponent).join("/");
+function ghHeaders(){const h={"Accept":"application/vnd.github+json"};if(gh.token)h.Authorization="Bearer "+gh.token.trim();return h}
+function ghErr(st){return({401:"GitHub godkänner inte token. Kontrollera att hela token är inklistrad och att den inte har gått ut.",
+ 403:"Token får inte göra det här. Den behöver behörigheten Contents: Read and write för repot.",
+ 404:"Hittar inte repot. Kontrollera stavningen (ägare/repo) och att token har tillgång till det.",
+ 409:"Filen ändrades samtidigt från en annan enhet. Försök igen.",422:"GitHub tog inte emot filen. Försök igen."})[st]||("GitHub svarade med fel "+st+".")}
+const b64e=s=>{const b=new TextEncoder().encode(s);let r="";for(let i=0;i<b.length;i+=0x8000)r+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(r)};
+const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,"")),c=>c.charCodeAt(0)));
+async function ghGet(){
+ const r=await fetch(ghFileUrl()+"?ref="+encodeURIComponent(gh.branch.trim()),{headers:ghHeaders(),cache:"no-store"});
+ if(r.status===404)return null;
+ if(!r.ok)throw new Error(ghErr(r.status));
+ const j=await r.json();return{sha:j.sha,data:JSON.parse(b64d(j.content))};
+}
+function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party}}
+// Id:n som fanns i GitHub-filen senast vi synkade. Används för att skilja "ny här" från "borttagen på annan enhet".
+const SKEY="tarningsriket-synkade";
+let synkade=new Set(load(SKEY,[]));
+function markSynced(){synkade=new Set(egna.map(h=>h.id));save(SKEY,[...synkade])}
+function applyData(d,replace){
+ if(Array.isArray(d.egna)){
+  const remote=d.egna.filter(validHero),ids=new Set(remote.map(h=>h.id));
+  const bara_har=replace?[]:egna.filter(h=>!ids.has(h.id)&&!synkade.has(h.id));
+  egna=[...remote,...bara_har];
+  synkade=ids;save(SKEY,[...ids]);
+  if(bara_har.length)setTimeout(scheduleSync,0);
+ }
+ if(Array.isArray(d.sallskap))party=d.sallskap.filter(id=>typeof id==="string").slice(0,4);
+ save(KEY,egna);save(PKEY,party);
+}
+async function ghPut(){
+ if(!gh.token.trim())throw new Error("Lägg in en GitHub-token i inställningarna först.");
+ const cur=await ghGet();
+ // Om filen ändrats från en annan enhet sedan vi läste den: behåll de hjältar som bara finns där.
+ if(cur&&ghSha&&cur.sha!==ghSha&&Array.isArray(cur.data.egna)){
+  const mine=new Set(egna.map(h=>h.id));
+  cur.data.egna.forEach(h=>{if(validHero(h)&&!mine.has(h.id)&&!deleted.has(h.id))egna.push(h)});
+  save(KEY,egna);
+ }
+ const body={message:"Tärningsriket: uppdatera hjältar",content:b64e(JSON.stringify(dataObj(),null,2)+"\n"),branch:gh.branch.trim()};
+ if(cur)body.sha=cur.sha;
+ const r=await fetch(ghFileUrl(),{method:"PUT",headers:{...ghHeaders(),"Content-Type":"application/json"},body:JSON.stringify(body)});
+ if(!r.ok)throw new Error(ghErr(r.status));
+ ghSha=(await r.json()).content.sha;markSynced();
+}
+async function ghLoad(replace){
+ if(!gh.repo.trim())return false;
+ setSync("Hämtar från GitHub…");
+ try{const r=await ghGet();
+  if(!r){setSync("Ingen sparfil i GitHub än. Den skapas när du sparar första gången.");return false}
+  ghSha=r.sha;applyData(r.data,replace);
+  if(sync.txt==="Hämtar från GitHub…")setSync("Hämtat från GitHub "+nu(),"ok");
+  if(view==="home")home();return true;
+ }catch(e){setSync("Kunde inte hämta från GitHub. "+e.message,"bad");return false}
+}
+async function syncNow(){
+ setSync("Sparar i GitHub…");
+ try{await ghPut();setSync("Sparat i GitHub "+nu(),"ok");if(view==="home")home()}
+ catch(e){setSync("Kunde inte spara. "+e.message,"bad")}
+}
+function scheduleSync(){
+ if(!(gh.auto&&gh.token.trim())){setSync(gh.token.trim()?"Ändrat på den här enheten. Inte sparat i GitHub än.":"Sparas bara på den här enheten");return}
+ clearTimeout(syncTimer);setSync("Sparar snart…");syncTimer=setTimeout(syncNow,1500);
+}
+
+/* ===== App-installation ===== */
+let installEvt=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvt=e});
+window.addEventListener("appinstalled",()=>{installEvt=null;flash("Tärningsriket är installerat!")});
+const isStandalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+if("serviceWorker" in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 const byId=id=>alla().find(h=>h.id===id);
 
 /* ===== Pixelporträtt ===== */
@@ -253,14 +377,17 @@ function d20svg(){const s=el("div");s.innerHTML=`<svg viewBox="0 0 100 100" aria
 
 /* ===== Startsidan ===== */
 function home(){
- app.replaceChildren();
- app.append(el("header",{class:"hero"},d20svg(),el("div",{},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen. Välj vilka hjältar som ska med, eller skapa en egen."))));
+ view="home"; app.replaceChildren();
+ const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
+ gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
+ app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen. Välj vilka hjältar som ska med, eller skapa en egen."),
+  el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
  app.append(el("div",{class:"section-head"},el("h2",{},"Hjältarna"),el("span",{},"Tryck på en hjälte för att se hjältebladet")));
  const grid=el("div",{class:"grid"});
  alla().forEach(h=>grid.append(card(h)));
  grid.append(el("button",{class:"card newcard",onclick:()=>creator()},el("b",{},"+"),"Skapa egen hjälte"));
  app.append(grid);
- if(!egna.length)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Skapar du en på mobilen syns den bara där."));
+ if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
  renderParty(); window.scrollTo(0,0);
 }
 function card(h){
@@ -276,7 +403,7 @@ function card(h){
 function togglePartyMember(id){
  if(party.includes(id))party=party.filter(x=>x!==id);
  else{if(party.length>=4){flash("Max fyra hjältar i sällskapet. Ta bort någon först.");return}party=[...party,id]}
- save(PKEY,party);home();
+ persist();home();
 }
 function renderParty(){
  const box=document.getElementById("party");
@@ -296,7 +423,7 @@ function sheet(h){
  const bars=el("div",{class:"bars"},STATS.map(st=>el("div",{class:"bar"},el("span",{},st.n),el("em",{},s[st.k]+" ("+fmt(mod(s[st.k]))+")"),el("div",{class:"track"},el("i",{style:"width:"+Math.min(100,s[st.k]/20*100)+"%"})))));
  const foot=el("div",{class:"nav"});
  if(!h.grund){const del=el("button",{class:"btn ghost danger",onclick:()=>{foot.replaceChildren(el("div",{class:"confirm"},el("span",{},"Ta bort "+h.namn+" för alltid?"),
-   el("button",{class:"btn",onclick:()=>{egna=egna.filter(x=>x.id!==h.id);party=party.filter(x=>x!==h.id);save(KEY,egna);save(PKEY,party);close();home()}},"Ja, ta bort"),
+   el("button",{class:"btn",onclick:()=>{deleted.add(h.id);egna=egna.filter(x=>x.id!==h.id);party=party.filter(x=>x!==h.id);persist();close();home()}},"Ja, ta bort"),
    el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");foot.append(del)}else foot.append(el("span"));
  foot.append(el("button",{class:"btn",onclick:close},"Stäng"));
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Hjälteblad för "+h.namn},
@@ -319,7 +446,7 @@ let draft, step;
 const STEPS=["Folk","Klass","Utseende","Tärningar","Klar"];
 function creator(){
  draft={id:"egen-"+Date.now(),namn:"",folk:null,klass:null,hud:0,har:0,stil:"kort",klader:0,rolls:null,omslag:3,om:""};
- step=0; document.getElementById("party").hidden=true; renderCreator();
+ step=0; view="creator"; document.getElementById("party").hidden=true; renderCreator();
 }
 function rolled(){const s={};STATS.forEach(st=>{s[st.k]=(draft.rolls?draft.rolls[st.k].tot:10)+((FOLK[draft.folk]||{bonus:{}}).bonus[st.k]||0)});return s}
 function draftHero(){return{...draft,folk:draft.folk||"manniska",klass:draft.klass||"riddare",s:rolled()}}
@@ -399,10 +526,89 @@ function stepDone(){
  app.append(el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
   el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,s:rolled(),om:draft.om.trim()};
-   egna=[...egna,hero];save(KEY,egna);if(party.length<4){party=[...party,hero.id];save(PKEY,party)}home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
+   egna=[...egna,hero];if(party.length<4){party=[...party,hero.id]}persist();home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
+}
+
+/* ===== Inställningar ===== */
+function warnBox(title,text,yesTxt,onYes,onNo){
+ const w=el("div",{class:"warn",role:"alert"},el("strong",{},title),el("span",{},text),
+  el("div",{class:"btnrow"},el("button",{class:"btn",onclick:onYes},yesTxt),el("button",{class:"btn ghost",onclick:onNo},"Avbryt")));
+ return w;
+}
+function settings(){
+ const m=document.getElementById("modal"),close=()=>{m.replaceChildren();if(view==="home")home()};
+ const tok=el("input",{id:"gh-token",type:"password",autocomplete:"off",spellcheck:"false",placeholder:"github_pat_…",value:gh.token});
+ const repo=el("input",{id:"gh-repo",type:"text",autocomplete:"off",spellcheck:"false",value:gh.repo});
+ const branch=el("input",{id:"gh-branch",type:"text",autocomplete:"off",spellcheck:"false",value:gh.branch});
+ const path=el("input",{id:"gh-path",type:"text",autocomplete:"off",spellcheck:"false",value:gh.path});
+ const auto=el("input",{id:"gh-auto",type:"checkbox"});auto.checked=gh.auto;
+ const status=el("div",{class:"status",hidden:true,role:"status"});
+ const slot=el("div");
+ const show=(txt,ok)=>{status.hidden=false;status.className="status "+(ok===true?"ok":ok===false?"bad":"");status.textContent=txt};
+ const readFields=()=>{gh.token=tok.value.trim();gh.repo=repo.value.trim().replace(/^https?:\/\/github\.com\//,"").replace(/\/$/,"");gh.branch=branch.value.trim()||"main";gh.path=path.value.trim()||"hjaltar.json";repo.value=gh.repo};
+ const storeFields=()=>{readFields();save(GKEY,gh)};
+ const eye=el("button",{type:"button",onclick:()=>{tok.type=tok.type==="password"?"text":"password";eye.textContent=tok.type==="password"?"Visa":"Dölj"}},"Visa");
+
+ auto.addEventListener("change",()=>{
+  if(!auto.checked){gh.auto=false;save(GKEY,gh);show("Automatisk sparning är avstängd.",null);return}
+  auto.checked=false;
+  slot.replaceChildren(warnBox("Varning: filen i GitHub skrivs över",
+   "När automatisk sparning är på skrivs "+(path.value||"hjaltar.json")+" i repot över varje gång någon skapar, tar bort eller väljer hjältar på den här enheten. Har en annan enhet hjältar som inte hämtats hit kan de skrivas över. Är du säker på att du vill slå på det?",
+   "Ja, slå på",()=>{storeFields();gh.auto=true;auto.checked=true;save(GKEY,gh);slot.replaceChildren();show("Automatisk sparning är på.",true)},
+   ()=>slot.replaceChildren()));
+ });
+
+ const btnSave=el("button",{class:"btn ghost",onclick:()=>{storeFields();show("Inställningarna är sparade på den här enheten.",true)}},"Spara inställningar");
+ const btnTest=el("button",{class:"btn ghost",onclick:async()=>{storeFields();show("Testar…");
+  try{const r=await fetch(ghBase(),{headers:ghHeaders(),cache:"no-store"});
+   if(!r.ok)throw new Error(ghErr(r.status));const j=await r.json();
+   if(!gh.token)show("Repot hittades. Utan token går det bara att hämta, inte spara.",null);
+   else if(j.permissions&&j.permissions.push)show("Allt fungerar. Token får spara i "+j.full_name+".",true);
+   else show("Token kan läsa repot men inte spara. Ge den behörigheten Contents: Read and write.",false);
+  }catch(e){show(e.message||"Kunde inte nå GitHub. Kontrollera internetanslutningen.",false)}}},"Testa anslutningen");
+ const btnLoad=el("button",{class:"btn ghost",onclick:()=>{storeFields();
+  slot.replaceChildren(warnBox("Varning: hjältarna här byts ut",
+   "Egna hjältar och sällskapet på den här enheten ersätts med det som finns i "+gh.path+" i GitHub. Hjältar som bara finns här försvinner. Vill du fortsätta?",
+   "Ja, hämta",async()=>{slot.replaceChildren();show("Hämtar…");const ok=await ghLoad(true);show(ok?"Hämtat från GitHub.":sync.txt,ok?true:(sync.cls==="bad"?false:null))},
+   ()=>slot.replaceChildren()))}},"Hämta från GitHub");
+ const btnPush=el("button",{class:"btn",onclick:()=>{storeFields();
+  if(!gh.token){show("Lägg in en token först.",false);return}
+  slot.replaceChildren(warnBox("Varning: filen i GitHub skrivs över",
+   gh.path+" i repot "+gh.repo+" ersätts med hjältarna på den här enheten ("+egna.length+" egna hjältar). Hjältar som bara finns i GitHub behålls bara om filen har ändrats sedan den hämtades hit. Är du säker?",
+   "Ja, spara till GitHub",async()=>{slot.replaceChildren();show("Sparar…");await syncNow();show(sync.txt,sync.cls==="ok"?true:false)},
+   ()=>slot.replaceChildren()))}},"Spara till GitHub nu");
+ const btnForget=el("button",{class:"btn ghost danger",onclick:()=>{
+  slot.replaceChildren(warnBox("Glömma token?","Token tas bort från den här enheten. Hjältarna finns kvar. Du kan klistra in token igen när du vill.",
+   "Ja, glöm token",()=>{gh.token="";gh.auto=false;tok.value="";auto.checked=false;save(GKEY,gh);slot.replaceChildren();setSync("Sparas bara på den här enheten");show("Token är borttagen.",null)},
+   ()=>slot.replaceChildren()))}},"Glöm token");
+
+ let installPart;
+ if(isStandalone())installPart=el("p",{},"Tärningsriket körs redan som app på den här enheten.");
+ else if(installEvt)installPart=el("button",{class:"btn",onclick:async()=>{installEvt.prompt();const r=await installEvt.userChoice;installEvt=null;if(r.outcome==="accepted")close()}},"Installera Tärningsriket");
+ else installPart=el("ol",{class:"howto"},
+  el("li",{},"iPhone/iPad (Safari): tryck på Dela-knappen (fyrkant med pil uppåt) längst ner, välj Lägg till på hemskärmen och tryck Lägg till."),
+  el("li",{},"Android (Chrome): tryck på ⋮ uppe till höger och välj Installera app eller Lägg till på startskärmen."),
+  el("li",{},"Dator (Chrome/Edge): klicka på installera-ikonen längst till höger i adressfältet."));
+
+ const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Inställningar"},
+  el("div",{class:"section-head"},el("h2",{},"Inställningar"),el("button",{class:"btn ghost",onclick:close},"Stäng")),
+  el("section",{class:"setgroup"},el("h3",{},"Installera som app"),installPart),
+  el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
+   el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
+   el("div",{class:"field"},el("label",{for:"gh-token"},"GitHub-token"),el("div",{class:"inrow"},tok,eye)),
+   el("div",{class:"field"},el("label",{for:"gh-repo"},"Repo (ägare/namn)"),repo),
+   el("div",{class:"inrow"},el("div",{class:"field",style:"flex:1;min-width:0"},el("label",{for:"gh-branch"},"Gren"),branch),el("div",{class:"field",style:"flex:2;min-width:0"},el("label",{for:"gh-path"},"Filnamn"),path)),
+   el("label",{class:"check",for:"gh-auto"},auto,el("span",{},"Spara automatiskt till GitHub när något ändras")),
+   el("div",{class:"btnrow"},btnSave,btnTest),
+   slot,status,
+   el("div",{class:"btnrow"},btnPush,btnLoad),
+   el("div",{class:"btnrow"},btnForget)));
+ const ov=el("div",{class:"overlay",onclick:e=>{if(e.target===ov)close()}},sh);
+ m.replaceChildren(ov);
 }
 
 home();
+ghLoad();
 </script>
-
-</body></html>
+</body>
+</html>
