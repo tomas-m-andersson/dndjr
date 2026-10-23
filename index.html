@@ -212,7 +212,7 @@ const BASE=[
  {id:"svante",namn:"Svante",folk:"manniska",klass:"trollkarl",hud:1,har:1,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
  {id:"tomas",namn:"Tomas",folk:"dvarg",klass:"helare",hud:1,har:2,stil:"kal",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
  {id:"linda",namn:"Linda",folk:"alv",klass:"bagskytt",hud:0,har:3,stil:"lang",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
- {id:"sally",namn:"Sally",folk:"katt",klass:"smygare",hud:0,har:8,stil:"kort",klader:5,s:{sty:8,smi:17,tal:11,klo:12,vis:15,cha:14},om:"Katt. Smyger, nosar och hittar alltid hem."}];
+ {id:"sally",namn:"Sally",folk:"katt",klass:"smygare",hud:0,har:8,stil:"kort",flackar:true,klader:5,s:{sty:8,smi:17,tal:11,klo:12,vis:15,cha:14},om:"Katt. Smyger, nosar och hittar alltid hem."}];
 BASE.forEach(h=>h.grund=true);
 
 /* ===== Lagring (bara i den här webbläsaren) ===== */
@@ -326,7 +326,13 @@ function drawHero(cv,h){
  const ox=2,oy=4,cat=h.folk==="katt";
  if(cat){
   const fur=hair,map={F:fur,E:"#7fdc6a",N:"#e98aa8",P:"#e98aa8",W:shade(fur,.7),T:fur};
+  if(h.flackar)map.W="#fbf7ee";
   CAT.forEach((r,y)=>[...r].forEach((ch,x)=>p(ox+x,oy+y,map[ch])));
+  if(h.flackar){ // vita och ljusbruna fläckar
+   const vit="#fbf7ee",brun="#c99a68",c=(pts,col)=>pts.forEach(([x,y])=>p(ox+x,oy+y,col));
+   c([[4,4],[5,4],[2,6],[3,6],[6,6],[7,6],[1,13],[2,13],[7,13],[8,13]],vit);
+   c([[1,2],[1,3],[1,4],[2,4],[6,8],[7,8],[6,9],[7,9],[8,9],[11,8],[11,9],[10,10],[10,11]],brun);
+  }
   // halsduk i klädfärg
   [2,3,4,5,6,7].forEach(x=>p(ox+x,oy+7,out)); p(ox+6,oy+8,out);
  }else{
@@ -445,7 +451,7 @@ function sheet(h){
 let draft, step;
 const STEPS=["Folk","Klass","Utseende","Tärningar","Klar"];
 function creator(){
- draft={id:"egen-"+Date.now(),namn:"",folk:null,klass:null,hud:0,har:0,stil:"kort",klader:0,rolls:null,omslag:3,om:""};
+ draft={id:"egen-"+Date.now(),namn:"",folk:null,klass:null,hud:0,har:0,stil:"kort",klader:0,flackar:false,rolls:null,omslag:3,om:""};
  step=0; view="creator"; document.getElementById("party").hidden=true; renderCreator();
 }
 function rolled(){const s={};STATS.forEach(st=>{s[st.k]=(draft.rolls?draft.rolls[st.k].tot:10)+((FOLK[draft.folk]||{bonus:{}}).bonus[st.k]||0)});return s}
@@ -487,6 +493,7 @@ function stepLook(){
  app.append(el("div",{class:"field"},el("label",{for:"namn"},"Namn"),inp));
  if(!cat)app.append(swatchRow("Hudfärg",SKIN,"hud"));
  app.append(swatchRow(cat?"Pälsfärg":"Hårfärg",HAIR,"har"));
+ if(cat)app.append(el("div",{class:"field"},el("label",{},"Teckning"),el("div",{class:"pills"},[[false,"Enfärgad"],[true,"Vita och ljusbruna fläckar"]].map(([v,n])=>el("button",{class:"pill"+(!!draft.flackar===v?" sel":""),onclick:()=>{draft.flackar=v;renderCreator()}},n)))));
  if(!cat)app.append(el("div",{class:"field"},el("label",{},"Frisyr"),el("div",{class:"pills"},Object.entries(STYLES).map(([k,n])=>el("button",{class:"pill"+(draft.stil===k?" sel":""),onclick:()=>{draft.stil=k;renderCreator()}},n)))));
  app.append(swatchRow(cat?"Halsduk":"Kläder",OUTFIT,"klader"));
  app.append(el("div",{class:"nav"},
@@ -525,7 +532,7 @@ function stepDone(){
  app.append(el("div",{class:"field"},el("label",{for:"om"},"En mening om hjälten (valfritt)"),om));
  app.append(el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
-  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,s:rolled(),om:draft.om.trim()};
+  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
    egna=[...egna,hero];if(party.length<4){party=[...party,hero.id]}persist();home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
 }
 
