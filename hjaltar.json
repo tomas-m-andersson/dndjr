@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:30:39.188Z",
+  "uppdaterad": "2026-10-23T21:30:45.640Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -54,15 +54,15 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 12,
-      "svante": 7,
+      "ville": 8,
+      "svante": 3,
       "sally": 8,
-      "tomas": 11,
-      "linda": 11
+      "tomas": 7,
+      "linda": 7
     },
     "kapitel": {
       "k1": {
-        "scen": "gruva_inne",
+        "scen": "salen_fore",
         "flaggor": [
           "sett_torget",
           "sett_bo",
@@ -76,6 +76,6 @@
         "v": 2
       }
     },
-    "tid": 1792791037249
+    "tid": 1792791045427
   }
 }
