@@ -10,6 +10,9 @@
    - figur:   vem som står i bilden (greta, bo, troll, vatte, krak,
               drake, drake_bur, skuggan …). Kan vara en lista.
    - text:    det som läses upp. Tom rad (\n\n) = nytt stycke.
+              Kan också vara en lista med stycken. Ett stycke som
+              { om: "flagga", text } visas bara om flaggan finns, och
+              { inteOm: "flagga", text } bara om den saknas.
    - val:     knappar. Ett val har "till", "utfall" eller "prov".
        krav:  { guld, sak, flagga, inteFlagga, klass, folk }
               klass/folk: valet syns bara om någon i sällskapet är det,
@@ -59,7 +62,17 @@ window.AVENTYR = [
 
       byn: {
         bild: "by", figur: "greta",
-        text: "Byn är tyst. På torget står den tomma lyktstolpen och vid brunnen ligger vakten Bo i snön med en pil i axeln. Bortom husen börjar Svartskogen.\n\nVad gör ni?",
+        text: [
+          "Byn är tyst. Snön knarrar under era fötter.",
+          { inteOm: "sett_torget", text: "På torget står den tomma lyktstolpen med krossat glas runt foten." },
+          { inteOm: "sett_bo", text: "Vid brunnen ligger vakten Bo i snön med en pil i axeln." },
+          { om: "bo_omlagd", text: "Bo sitter lutad mot brunnen med axeln omlindad. Greta har lagt en filt över honom, och han nickar åt er att skynda er." },
+          { om: "bo_svimmad", text: "Greta sitter på knä bredvid Bo, som fortfarande inte har vaknat. Hon viftar åt er att gå. – Jag tar hand om honom. Gå nu!" },
+          { inteOm: ["sett_torget", "sett_bo"], text: "Bortom husen börjar Svartskogen.\n\nVad gör ni?" },
+          { om: "sett_torget", inteOm: "sett_bo", text: "Bortom husen börjar Svartskogen.\n\nVad gör ni nu?" },
+          { om: "sett_bo", inteOm: "sett_torget", text: "Bortom husen börjar Svartskogen.\n\nVad gör ni nu?" },
+          { om: ["sett_torget", "sett_bo"], text: "Det finns inget mer ni kan göra här. Bortom husen väntar Svartskogen, och natten går fort." }
+        ],
         val: [
           { text: "Undersök torget", engang: "sett_torget", till: "torget" },
           { text: "Hjälp vakten Bo", engang: "sett_bo", till: "bo" },
@@ -87,15 +100,15 @@ window.AVENTYR = [
         val: [
           { text: "{namn} tar hand om såret", krav: { klass: "helare" }, utfall: {
               text: "{namn} drar försiktigt ut pilen, lägger om såret och säger några lugnande ord. Bo andas ut.\n\n– Tack, säger han. Lyssna nu. Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken. Men de jobbar åt någon. Jag såg den. Något svart som rörde sig som rök, utan ansikte.\n\nHan tar fram en läderpåse med guldmynt och en liten flaska och ger dem till er. – Ta det här. Ni kommer att behöva det.",
-              flagga: ["vet_lager", "vet_skuggan"], guld: 10, sak: "Läkedryck", till: "byn" } },
+              flagga: ["vet_lager", "vet_skuggan", "bo_omlagd"], guld: 10, sak: "Läkedryck", till: "byn" } },
           { text: "Försök stoppa blödningen", prov: {
               egenskap: "vis", svarighet: 12, fraga: "Vem tar hand om Bo?",
               lyckas: {
                 text: "{namn} trycker hårt mot såret och binder om det med en bit av sin mantel. Bo slutar skaka.\n\n– Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken, säger han. Men de jobbar åt någon. Något svart, som rörde sig som rök …\n\nHan räcker fram en läderpåse med guldmynt. – Ta den. Köp er förbi trollet vid bäcken om ni måste.",
-                flagga: ["vet_lager", "vet_skuggan"], guld: 10, till: "byn" },
+                flagga: ["vet_lager", "vet_skuggan", "bo_omlagd"], guld: 10, till: "byn" },
               misslyckas: {
                 text: "{namn} gör sitt bästa, men Bo har förlorat för mycket blod. Han hinner bara viska ”gruvan …” innan han svimmar. Greta skyndar fram och tar hand om honom.",
-                flagga: "vet_lager", till: "byn" }
+                flagga: ["vet_lager", "bo_svimmad"], till: "byn" }
             } }
         ]
       },

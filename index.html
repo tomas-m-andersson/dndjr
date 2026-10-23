@@ -909,6 +909,13 @@ function valSynligt(v,K){
  if(v.engang&&K.flaggor.includes(v.engang))return false;
  return true;
 }
+// En scens text kan vara en lista med stycken där vissa bara visas om en flagga finns (om) eller saknas (inteOm).
+function scenText(sc,K){
+ if(!Array.isArray(sc.text))return sc.text;
+ const har=f=>K.flaggor.includes(f);
+ return sc.text.filter(p=>typeof p==="string"||((!p.om||[].concat(p.om).every(har))&&(!p.inteOm||![].concat(p.inteOm).some(har))))
+  .map(p=>typeof p==="string"?p:p.text).join("\n\n");
+}
 function visaScen(){
  tyst();strid=null;view="scen";document.getElementById("party").hidden=true;
  const K=kap();if(!K){adventures();return}
@@ -916,7 +923,7 @@ function visaScen(){
  if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
  app.replaceChildren();
  app.append(scenHuvud(),tvBox(sc.bild,{figur:sc.figur}),partyStrip());
- const story=storyEl(sc.text);app.append(story);
+ const txt=scenText(sc,K),story=storyEl(txt);app.append(story);
  const akt=el("div",{class:"actions"});
  if(sc.slut){
   if(!K.klar){K.klar=true;K.slut=K.scen;sparaSpel()}
@@ -942,10 +949,10 @@ function visaScen(){
   akt.append(b);
  });
  app.append(akt);
- const tb=talaKnapp(sc.text);if(tb)story.prepend(el("div",{class:"readrow"},tb));
+ const tb=talaKnapp(txt);if(tb)story.prepend(el("div",{class:"readrow"},tb));
  app.append(packning(visaScen));
  window.scrollTo(0,0);
- if(alt.upplas)tala(sc.text);
+ if(alt.upplas)tala(txt);
 }
 function helaParty(hur){partyHeroes().forEach(h=>{const m=maxLiv(h);
  setLiv(h,hur==="allt"?m:hur==="halva"?Math.max(liv(h),liv(h)+Math.ceil(m/2)):liv(h)+hur)})}
