@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:57:57.932Z",
+  "uppdaterad": "2026-10-23T21:58:04.218Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792675990,
+    "tid": 1792792682216,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -100,7 +100,7 @@
       "plats": "slottet",
       "kapitel": 1,
       "djup": 3,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Någon viskar.",
@@ -109,7 +109,10 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "handlare",
+        "klar": false
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -150,6 +153,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 3 · Handlare",
+          "k": "sep"
+        },
+        {
+          "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
+          "k": "heal"
         }
       ],
       "party": [
