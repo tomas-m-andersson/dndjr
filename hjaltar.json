@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:58:35.266Z",
+  "uppdaterad": "2026-10-23T21:58:46.359Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792713293,
+    "tid": 1792792724375,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -99,20 +99,22 @@
     "run": {
       "plats": "slottet",
       "kapitel": 1,
-      "djup": 3,
-      "fas": "rum",
+      "djup": 4,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Någon viskar.",
-          "typ": "handlare",
+          "ledtrad": "Ni känner värme mot ansiktet.",
+          "typ": "lager",
+          "kand": false
+        },
+        {
+          "ledtrad": "Något snarkar, djupt och långsamt.",
+          "typ": "sovare",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "handlare",
-        "klar": false
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -165,6 +167,10 @@
         {
           "t": "Ni köper en stor läkedryck för 60 guld.",
           "k": "heal"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
