@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:57:44.547Z",
+  "uppdaterad": "2026-10-23T21:57:57.932Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792662592,
+    "tid": 1792792675990,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -99,37 +99,17 @@
     "run": {
       "plats": "slottet",
       "kapitel": 1,
-      "djup": 2,
-      "fas": "rum",
+      "djup": 3,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Ni hör mynt som klirrar.",
-          "typ": "skatt",
-          "kand": false
-        },
-        {
-          "ledtrad": "Små fotspår leder ditåt.",
-          "typ": "skatt",
+          "ledtrad": "Någon viskar.",
+          "typ": "handlare",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "skatt",
-        "klar": true,
-        "loot": [
-          {
-            "k": "guld",
-            "n": "24 guldmynt",
-            "v": 24
-          },
-          {
-            "k": "xp",
-            "n": "En gammal karta full med ledtrådar",
-            "v": 30
-          }
-        ]
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -166,6 +146,10 @@
         {
           "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 30 XP.",
           "k": "magic"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
