@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:26:32.070Z",
+  "uppdaterad": "2026-10-23T21:26:34.410Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -55,26 +55,17 @@
       "ville": 12,
       "svante": 7,
       "sally": 8,
-      "tomas": 11
+      "tomas": 11,
+      "linda": 11
     },
     "kapitel": {
       "k1": {
-        "scen": "slut_glod",
-        "flaggor": [
-          "sett_bo",
-          "vet_lager",
-          "vet_skuggan",
-          "sett_torget",
-          "vet_drake",
-          "glod_fri",
-          "krak_borta",
-          "glod_eld"
-        ],
-        "klar": true,
-        "v": 2,
-        "slut": "slut_glod"
+        "scen": "start",
+        "flaggor": [],
+        "klar": false,
+        "v": 2
       }
     },
-    "tid": 1792790637188
+    "tid": 1792790792468
   }
 }
