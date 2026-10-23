@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:14:04.186Z",
+  "uppdaterad": "2026-10-23T21:14:16.439Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -46,7 +46,7 @@
     }
   },
   "aventyr": {
-    "guld": 25,
+    "guld": 30,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -71,6 +71,6 @@
         "v": 2
       }
     },
-    "tid": 1792790042222
+    "tid": 1792790054559
   }
 }
