@@ -1,11 +1,30 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T19:37:15.529Z",
+  "uppdaterad": "2026-10-23T19:53:09.122Z",
   "egna": [],
   "sallskap": [
     "ville",
     "svante",
     "sally"
-  ]
+  ],
+  "grundandringar": {
+    "tomas": {
+      "folk": "dvarg",
+      "klass": "helare",
+      "hud": 1,
+      "har": 2,
+      "stil": "kal",
+      "klader": 0,
+      "flackar": false,
+      "s": {
+        "sty": 14,
+        "smi": 10,
+        "tal": 16,
+        "klo": 11,
+        "vis": 15,
+        "cha": 12
+      }
+    }
+  }
 }
