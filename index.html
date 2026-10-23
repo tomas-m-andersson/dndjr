@@ -217,8 +217,9 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .d20.nat20{filter:drop-shadow(0 0 12px #f2c14e)}
 .d20.nat1{filter:grayscale(.7)}
 .rollres{display:flex;flex-direction:column;gap:6px;align-items:center}
-.sum{font-family:var(--display);font-size:1.3rem;font-variant-numeric:tabular-nums}
-.verdict{font-family:var(--display);font-size:1.6rem}
+.sum{font-family:var(--body);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.sum small{display:block;font-size:.95rem;font-weight:700;color:var(--muted)}
+.verdict{font-family:var(--body);font-weight:800;font-size:1.7rem}
 .verdict.ok{color:var(--moss)} .verdict.bad{color:var(--red)}
 .gains{display:flex;flex-wrap:wrap;gap:8px}
 .gains span{background:#2a3a2a;border:2px solid var(--moss);border-radius:20px;padding:4px 12px;font-weight:800;font-size:.9rem}
@@ -933,7 +934,7 @@ function provUI(pr,bild,figur){
   const res=el("div",{class:"rollres",role:"status"});
   const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{
    const tot=r+bonus,ok=r===20||(r!==1&&tot>=dc);
-   res.replaceChildren(el("div",{class:"sum"},r+" "+(bonus>=0?"+ ":"− ")+Math.abs(bonus)+" = "+tot),
+   res.replaceChildren(el("div",{class:"sum"},r+" "+(bonus>=0?"+ ":"− ")+Math.abs(bonus)+" = "+tot,el("small",{},"Behöver minst "+dc)),
     el("div",{class:"verdict "+(ok?"ok":"bad")},r===20?"NAT 20! Perfekt!":r===1?"En etta … oj då!":ok?"Det lyckades!":"Det gick inte …"));
    btn.replaceWith(el("button",{class:"btn big",onclick:()=>visaUtfall(ok?pr.lyckas:pr.misslyckas,h.namn,bild,figur)},"Se vad som händer"));
   })}},"Slå!");
@@ -1013,7 +1014,7 @@ function anfall(h,f,{formaga}){
    f.liv=Math.max(0,f.liv-skada);
    txt=(r===20?"KRITISK TRÄFF! ":"Träff! ")+h.namn+" träffar "+f.namn+" med "+VAPEN_ORD[h.klass]+" och gör "+skada+" i skada."+(extra?" (Smygattacken gav "+extra+" extra.)":"")+(f.liv<=0?" "+fly(f):"");
   }else txt=r===1?"Hoppsan! "+h.namn+" snubblar och missar helt.":h.namn+" missar. "+f.namn+" hoppar undan i sista stund!";
-  res.replaceChildren(el("div",{class:"sum"},r+" + "+atk+(pb?" + "+pb+" pepp":"")+" = "+tot+" (behöver "+f.rustning+")"),el("div",{class:"verdict "+(trf?"ok":"bad")},trf?"Träff!":"Miss!"),el("p",{},txt));
+  res.replaceChildren(el("div",{class:"sum"},r+" + "+atk+(pb?" + "+pb+" pepp":"")+" = "+tot,el("small",{},"Behöver minst "+f.rustning)),el("div",{class:"verdict "+(trf?"ok":"bad")},trf?"Träff!":"Miss!"),el("p",{},txt));
   btn.replaceWith(el("button",{class:"btn big",onclick:nastaTur},"Fortsätt"));
  },formaga==="bagskytt"?2:1)}},"Slå!");
  app.append(el("div",{class:"rollpanel"},el("p",{},"Slå minst "+f.rustning+" för att träffa. "+h.namn+" får "+fmt(atk)+(pepp?" och +1d6 pepp":"")+(formaga==="bagskytt"?". Två tärningar, den bästa räknas.":"."),),dice,res,btn));
@@ -1030,7 +1031,7 @@ function fiendeTur(f){
  rullaD20(dice,([r])=>{const tot=r+f.anfall,trf=r===20||(r!==1&&tot>=ac);let txt;
   if(trf){const dm=slaa(f.skada,r===20);setLiv(h,liv(h)-dm.tot);txt=f.namn+" träffar "+h.namn+" och gör "+dm.tot+" i skada."+(liv(h)<=0?" "+h.namn+" blir yr och svimmar!":"")}
   else txt=h.namn+" duckar. "+f.namn+" missar!";
-  res.replaceChildren(el("div",{class:"sum"},r+" + "+f.anfall+" = "+tot+" (behöver "+ac+")"),el("div",{class:"verdict "+(trf?"bad":"ok")},trf?"Aj, träff!":"Miss!"),el("p",{},txt));
+  res.replaceChildren(el("div",{class:"sum"},r+" + "+f.anfall+" = "+tot,el("small",{},"Behöver minst "+ac)),el("div",{class:"verdict "+(trf?"bad":"ok")},trf?"Aj, träff!":"Miss!"),el("p",{},txt));
   sparaSpel();btn.hidden=false;
  });
 }
