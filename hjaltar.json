@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:58:59.020Z",
+  "uppdaterad": "2026-10-23T21:59:03.787Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792737120,
+    "tid": 1792792741808,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -99,25 +99,17 @@
     "run": {
       "plats": "slottet",
       "kapitel": 1,
-      "djup": 4,
-      "fas": "rum",
+      "djup": 5,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Ni känner värme mot ansiktet.",
-          "typ": "lager",
-          "kand": false
-        },
-        {
-          "ledtrad": "Något snarkar, djupt och långsamt.",
-          "typ": "sovare",
+          "ledtrad": "Något glimmar i mörkret.",
+          "typ": "falla",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "lager",
-        "klar": false
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -182,6 +174,10 @@
         {
           "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
           "k": "heal"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
