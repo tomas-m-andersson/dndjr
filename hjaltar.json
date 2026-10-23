@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:59:09.424Z",
+  "uppdaterad": "2026-10-23T21:59:16.875Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792747483,
+    "tid": 1792792754965,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -111,7 +111,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "falla",
-        "klar": false,
+        "klar": true,
         "falla": 1
       },
       "logg": [
@@ -190,6 +190,10 @@
         {
           "t": "Små hål i väggen. Klick!",
           "k": "bad"
+        },
+        {
+          "t": "Svante duckar för giftpilarna!",
+          "k": "hit"
         }
       ],
       "party": [
