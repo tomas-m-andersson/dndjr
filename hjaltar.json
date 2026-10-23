@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:23:52.867Z",
+  "uppdaterad": "2026-10-23T21:23:59.035Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -46,7 +46,7 @@
     }
   },
   "aventyr": {
-    "guld": 35,
+    "guld": 55,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -59,7 +59,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "efter",
+        "scen": "slut_glod",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -70,10 +70,11 @@
           "krak_borta",
           "glod_eld"
         ],
-        "klar": false,
-        "v": 2
+        "klar": true,
+        "v": 2,
+        "slut": "slut_glod"
       }
     },
-    "tid": 1792790631003
+    "tid": 1792790637188
   }
 }
