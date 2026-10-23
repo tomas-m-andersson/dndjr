@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T22:00:07.564Z",
+  "uppdaterad": "2026-10-23T22:00:28.313Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -52,7 +52,7 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 8,
+      "ville": 12,
       "svante": 7,
       "sally": 8,
       "tomas": 11,
@@ -76,23 +76,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792805659,
+    "tid": 1792792826386,
     "niva": {
       "ville": {
         "lvl": 1,
-        "xp": 30
+        "xp": 98
       },
       "svante": {
         "lvl": 1,
-        "xp": 30
+        "xp": 98
       },
       "tomas": {
         "lvl": 1,
-        "xp": 30
+        "xp": 98
       },
       "sally": {
         "lvl": 1,
-        "xp": 30
+        "xp": 98
       }
     },
     "utr": {},
@@ -100,7 +100,7 @@
       "plats": "slottet",
       "kapitel": 1,
       "djup": 6,
-      "fas": "strid",
+      "fas": "vann",
       "dorrar": null,
       "lyssnat": false,
       "rum": {
@@ -207,6 +207,34 @@
         {
           "t": "Ur mörkret reser sig slottsherren: Skelett, Skelett, Skelett!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 38 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "Ville hämtar andan och lägger om såren. +4 liv.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar 68 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 30 XP.",
+          "k": "magic"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Slottsherren är besegrad!",
+          "k": "crit"
         }
       ],
       "party": [
@@ -215,7 +243,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 19,
+      "guld": 87,
       "saker": [
         "Läkedryck",
         "Läkedryck",
@@ -225,11 +253,13 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
+        "Stor läkedryck",
+        "Stor läkedryck",
         "Stor läkedryck"
       ],
       "bless": {},
       "curse": {},
-      "ara": 0,
+      "ara": 150,
       "start": 1792792596407,
       "nastaKand": false
     },
