@@ -211,7 +211,13 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .rollpanel p{margin:0}
 .rollpanel .event{font-size:1.1rem}
 .hint{color:var(--sky);font-size:.92rem;margin:0}
-.dicebox{display:flex;gap:12px;justify-content:center}
+.dicebox{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.dicebox.many .d20{width:72px;height:72px}
+.grows{display:flex;flex-direction:column;gap:4px;width:100%;max-width:320px}
+.grow{display:grid;grid-template-columns:minmax(0,1fr) auto 24px;gap:8px;align-items:center;padding:4px 10px;border-radius:6px;background:var(--panel);font-variant-numeric:tabular-nums}
+.grow b{text-align:left;font-weight:800}
+.grow.ok i{color:var(--moss);font-style:normal;font-weight:800}
+.grow.bad i{color:var(--red);font-style:normal;font-weight:800}
 .d20{width:110px;height:110px}
 .d20.spinning{transform:rotate(25deg) scale(.92)}
 .d20.nat20{filter:drop-shadow(0 0 12px #f2c14e)}
@@ -735,6 +741,11 @@ const TVW=96,TVH=54;
 const SPR={
  vatte:{rows:["..G...G..",".GGGGGGG.","GGYGGGYGG",".GGGGGGG.","..GGRGG..","...GGG...","..BBBBB..",".GBBBBBG.","G.BBBBB.G","..BBBBB..","..B...B..",".GG...GG."],pal:{G:"#6fae4a",Y:"#ffe14d",R:"#3b2a1a",B:"#7a5230"}},
  troll:{rows:["....TTTT....","...TTTTTT...","..TTYTTYTT..","..TTTNNTTT..","..TTWTTWTT..","...TTTTTT...",".TTTTTTTTTT.","TTTBBBBBBTTT","TT.BBBBBB.TT","TT.BBBBBB.TT","T..BBBBBB..T","...BBBBBB...","...TT..TT...","...TT..TT...","..TTT..TTT.."],pal:{T:"#7f9a6a",Y:"#1b1b22",N:"#9fb07a",W:"#f3eedf",B:"#5a4632"}},
+ varg:{rows:[".G............","GGG...........","GYGG..........","GGGGGGGGGGG...",".DGGGGGGGGGG..","..GGGGGGGGGGGG","..GG.G...GG..G","..GG.G...GG...","..G..G...G.G.."],pal:{G:"#8a8f99",Y:"#ffe14d",D:"#2a2a2a"}},
+ krak:{rows:[".H.......H.",".HH.....HH.","..HHHHHHH..",".GGGGGGGGG.","GGYGGGGGYGG",".GGGGGGGGG.","..GGRRRGG..","...GGGGG...","XAABBBBBB..","XA.BBBBBBG.",".A.BBMBBB..",".A.BBBBBB..","...BB..BB..","..GG...GG.."],pal:{H:"#9aa3ad",G:"#5f9a3e",Y:"#ff5a3d",R:"#2a1a10",B:"#4a3423",M:"#c9a227",A:"#7a5230",X:"#dfe6ec"}},
+ spindel:{rows:["L..L....L..L",".L.L....L.L.","..LBBBBBBL..",".LBBRBBRBBL.","L.LBBBBBBL.L","..L.BBBB.L..",".L........L."],pal:{L:"#8a7aa3",B:"#4a3d5c",R:"#ff3d3d"}},
+ skuggling:{rows:["...SS...","..SSSS..",".SSSSSS.",".SWSSWS.",".SSSSSS.","SSSSSSSS",".SSSSSS.",".S.SS.S.","S..S..S.","...S...."],pal:{S:"#3a2752",W:"#c9f0ff"}},
+ skuggan:{rows:[".....SSSSSS.....","...SSSSSSSSSS...","..SSSSSSSSSSSS..","..SSWWSSSSWWSS..","..SSSSSSSSSSSS..","...SSSMMMMSSS...","....SSSSSSSS....","..SSSSSSSSSSSS..",".SSSSSSSSSSSSSS.","SS.SSSSSSSSSS.SS","S..SSSSSSSSSS..S","C..SSSSSSSSSS..C","...SSSSSSSSSS...","...SSSSSSSSSS...","..SSSSSSSSSSSS..","..SS.SS..SS.SS..",".SS..S....S..SS.",".S...S....S...S."],pal:{S:"#2b1d3d",W:"#c9f0ff",M:"#9a5fdf",C:"#c9c2d6"}},
  drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
 };
 function sprite(g,key,x,y,flip,alpha){const s=SPR[key];if(!s)return;g.globalAlpha=alpha??1;const w=s.rows[0].length;
@@ -789,20 +800,42 @@ function scenePaint(g,bild){
    if(bild==="grotta_inne"){glow(30,30,22,"#ff9a3d");R(60,38,14,8,"#6b4423");R(60,38,14,2,"#8a5a2b");R(66,41,2,2,"#c9c2d6")}
    else{glow(66,32,26,"#ffd96a");for(let i=0;i<10;i++)R(54+Math.floor(rnd()*20),46+Math.floor(rnd()*4),2,1,"#f2c14e");lantern(48,38,true)}
    break}
+  case"lager":{
+   sky("#0a121c","#16263a");stars(14);
+   for(let i=0;i<9;i++)pine(Math.floor(rnd()*TVW),38,12+Math.floor(rnd()*12),"#173023");
+   ground(40,"#3a3426","#4a4230");
+   [[6,40,14],[26,40,12]].forEach(([x,y,w])=>{for(let i=0;i<w/2;i++)R(x+i,y-i,w-2*i,1,i%3?"#6b4a2a":"#5a3a22")});
+   R(46,46,6,2,"#5a3a22");R(47,43,4,3,"#ff8a2b");R(48,41,2,2,"#ffd96a");glow(49,44,14,"#ff9a3d");break}
+  case"gruva":{
+   sky("#0a121c","#16263a",0,30);stars(12);
+   R(0,8,TVW,36,"#4f4a44");for(let i=0;i<26;i++)R(Math.floor(rnd()*TVW),8+Math.floor(rnd()*32),3,2,"#433f3a");
+   R(44,22,24,22,"#07090c");R(42,20,28,3,"#6b4423");R(42,20,3,24,"#6b4423");R(67,20,3,24,"#6b4423");
+   ground(44,"#3a3a36","#4a4a44");R(50,44,1,10,"#7d8790");R(61,44,1,10,"#7d8790");for(let y=45;y<54;y+=3)R(48,y,16,1,"#5a3a22");break}
+  case"gruva_inne":{
+   R(0,0,TVW,TVH,"#121317");for(let x=4;x<TVW;x+=26){R(x,6,3,40,"#4a3423");R(x-2,6,30,3,"#4a3423")}
+   ground(44,"#26251f","#302e27");R(0,47,TVW,1,"#7d8790");R(0,51,TVW,1,"#7d8790");for(let x=2;x<TVW;x+=5)R(x,46,2,7,"#3a2a1a");
+   glow(30,26,16,"#ff9a3d");lantern(28,20,true);break}
+  case"sal":{
+   R(0,0,TVW,TVH,"#0e0b14");for(let i=0;i<18;i++){const x=Math.floor(rnd()*TVW),h=3+Math.floor(rnd()*10);for(let j=0;j<h;j++)R(x,j,Math.max(1,3-Math.floor(j/3)),1,"#231c2e")}
+   glow(70,30,30,"#7a3fbf");ground(44,"#1d1824","#26202f");
+   R(44,36,8,8,"#4a4458");R(43,35,10,1,"#5a5468");lantern(46,29,true);break}
   default:R(0,0,TVW,TVH,"#142029");
  }
 }
 const HERO_SPRITE={};
 function heroSprite(h){const c=document.createElement("canvas");drawHero(c,h,{transparent:true});return c}
 const GRETA={folk:"manniska",klass:"ingen",hud:0,har:4,stil:"lang",klader:1};
+const BO={folk:"manniska",klass:"riddare",hud:2,har:2,stil:"kort",klader:6};
 function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true}={}){
  cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
  if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),1+i*13,TVH-18);g.globalAlpha=1});
  const right=[];
  if(fiender)fiender.forEach(f=>{if(!f.ute)right.push({k:f.bild,a:1})});
- else if(figur)right.push({k:figur,a:1});
+ else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
  let x=TVW-2;
  right.forEach(f=>{if(f.k==="greta"){x-=16;g.drawImage(heroSprite(GRETA),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+1,TVH-10,1,10);return}
+  if(f.k==="bo"){x-=16;g.drawImage(heroSprite(BO),x,TVH-18);return}
+  if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+2,TVH-15,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
   const {w,h}=sprSize(f.k);x-=w+2;sprite(g,f.k,x,TVH-h-1,f.k==="drake",f.a)});
 }
 
@@ -815,7 +848,8 @@ function adventures(){
  app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn).join(", ")+".")));
  const list=el("div",{class:"chapters"});
  ADV().forEach((k,i)=>{
-  const st=spel.kapitel[k.id],num="Kapitel "+(i+1);
+  let st=spel.kapitel[k.id];const num="Kapitel "+(i+1);
+  if(st&&(st.v||1)!==(k.version||1))st=null; // kapitlet har skrivits om sedan sist
   if(k.kommer){list.append(el("div",{class:"chapter locked"},el("small",{},num),el("h3",{},k.titel),el("p",{},k.kort)));return}
   const status=!st?"Inte påbörjat":st.klar?"Klart ✓":"Pågår";
   const btns=el("div",{class:"btnrow"});
@@ -830,7 +864,7 @@ function adventures(){
 function startKapitel(id){
  kapId=id;const k=kapDef();
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
- spel.kapitel[id]={scen:k.start,flaggor:[],klar:false};
+ spel.kapitel[id]={scen:k.start,flaggor:[],klar:false,v:k.version||1};
  sparaSpel();visaScen();
 }
 
@@ -864,6 +898,17 @@ function scenHuvud(){
  const k=kapDef();
  return el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:()=>{tyst();adventures()}},"← Äventyr"),el("span",{class:"purse"},k.titel));
 }
+// Vilken hjälte i sällskapet uppfyller ett krav på klass eller folk (vaken)?
+function kravHjalte(krav){if(!krav||!(krav.klass||krav.folk))return null;
+ return vaken().find(h=>(!krav.klass||h.klass===krav.klass)&&(!krav.folk||h.folk===krav.folk))||null}
+// Är valet synligt? Krav på flagga, klass, folk och "en gång" döljer valet helt.
+function valSynligt(v,K){
+ if(v.krav&&v.krav.flagga&&!K.flaggor.includes(v.krav.flagga))return false;
+ if(v.krav&&v.krav.inteFlagga&&K.flaggor.includes(v.krav.inteFlagga))return false;
+ if(v.krav&&(v.krav.klass||v.krav.folk)&&!kravHjalte(v.krav))return false;
+ if(v.engang&&K.flaggor.includes(v.engang))return false;
+ return true;
+}
 function visaScen(){
  tyst();strid=null;view="scen";document.getElementById("party").hidden=true;
  const K=kap();if(!K){adventures();return}
@@ -875,20 +920,25 @@ function visaScen(){
  const akt=el("div",{class:"actions"});
  if(sc.slut){
   if(!K.klar){K.klar=true;K.slut=K.scen;sparaSpel()}
-  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},"Bra jobbat, hjältar.")),
+  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),
    el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
  }else if(sc.strid){
   akt.append(el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
  }else if(sc.prov){
-  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,sc.figur)},"Slå tärningen"));
+  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,sc.figur)},sc.prov.grupp?"Alla slår tärning":"Slå tärningen"));
  }else(sc.val||[]).forEach(v=>{
-  if(v.krav&&v.krav.flagga&&!K.flaggor.includes(v.krav.flagga))return; // dolt val
+  if(!valSynligt(v,K))return;
+  const vem=kravHjalte(v.krav),namn=vem?vem.namn:"";
   const saknar=v.krav&&v.krav.guld&&spel.guld<v.krav.guld;
-  const b=el("button",{class:"choicebtn",disabled:saknar,onclick:()=>{
-   if(v.prov)provUI(v.prov,sc.bild,sc.figur);
-   else if(v.utfall)visaUtfall(v.utfall,null,sc.bild,sc.figur);
-   else gaTill(v.till)}},el("span",{},v.text),
-   v.prov?el("small",{},"Slå för "+STATNAMN[v.prov.egenskap]):saknar?el("small",{},"Ni har bara "+spel.guld+" guld"):null);
+  const saknarSak=v.krav&&v.krav.sak&&!spel.saker.includes(v.krav.sak);
+  const b=el("button",{class:"choicebtn"+(vem?" special":""),disabled:saknar||saknarSak,onclick:()=>{
+   if(v.engang){K.flaggor.push(v.engang);sparaSpel()}
+   if(v.prov)provUI(v.prov,sc.bild,sc.figur,vem);
+   else if(v.utfall)visaUtfall(v.utfall,namn,sc.bild,sc.figur);
+   else gaTill(v.till)}},el("span",{},v.text.replace(/\{namn\}/g,namn)),
+   v.prov?el("small",{},(v.prov.grupp?"Alla slår för ":vem?namn+" slår för ":"Slå för ")+STATNAMN[v.prov.egenskap]):
+   saknar?el("small",{},"Ni har bara "+spel.guld+" guld"):saknarSak?el("small",{},"Ni har ingen "+v.krav.sak.toLowerCase()):
+   v.info?el("small",{},v.info):null);
   akt.append(b);
  });
  app.append(akt);
@@ -897,24 +947,29 @@ function visaScen(){
  window.scrollTo(0,0);
  if(alt.upplas)tala(sc.text);
 }
+function helaParty(hur){partyHeroes().forEach(h=>{const m=maxLiv(h);
+ setLiv(h,hur==="allt"?m:hur==="halva"?Math.max(liv(h),liv(h)+Math.ceil(m/2)):liv(h)+hur)})}
 function gaTill(id){
  const K=kap();K.scen=id;const sc=scenDef(id);
- if(sc&&sc.hela)partyHeroes().forEach(h=>setLiv(h,sc.hela==="allt"?maxLiv(h):liv(h)+sc.hela));
+ if(sc&&sc.hela)helaParty(sc.hela);
  sparaSpel();visaScen();
 }
-// Använder ett utfall: guld, saker, skada, helning, flaggor. Returnerar korta rader att visa.
-function anvandUtfall(u){
+// Använder ett utfall. Returnerar korta rader att visa.
+function anvandUtfall(u,vem){
  const K=kap(),rader=[];
- if(u.guld){spel.guld=Math.max(0,spel.guld+u.guld);rader.push((u.guld>0?"+":"")+u.guld+" guld")}
- if(u.sak){spel.saker.push(u.sak);rader.push("Ni hittar: "+u.sak)}
- if(u.skada){vaken().forEach(h=>setLiv(h,Math.max(1,liv(h)-u.skada)));rader.push("Alla tappar "+u.skada+" liv")}
- if(u.hela){partyHeroes().forEach(h=>setLiv(h,u.hela==="allt"?maxLiv(h):liv(h)+u.hela));rader.push("Alla får tillbaka liv")}
- if(u.flagga&&!K.flaggor.includes(u.flagga))K.flaggor.push(u.flagga);
+ if(u.guld){const g=u.guld==="halva"?-Math.floor(spel.guld/2):u.guld;spel.guld=Math.max(0,spel.guld+g);if(g)rader.push((g>0?"+":"")+g+" guld")}
+ if(u.sak){[].concat(u.sak).forEach(x=>{spel.saker.push(x);rader.push("Ni hittar: "+x)})}
+ if(u.tappa){if(u.tappa==="alla"){if(spel.saker.length)rader.push("Ni förlorar all packning");spel.saker=[]}
+  else{const i=spel.saker.indexOf(u.tappa);if(i>=0){spel.saker.splice(i,1);rader.push("Ni förlorar: "+u.tappa)}}}
+ if(u.skada){const n=typeof u.skada==="string"?slaa(u.skada).tot:u.skada;vaken().forEach(h=>setLiv(h,Math.max(1,liv(h)-n)));rader.push("Alla tappar "+n+" liv")}
+ if(u.traffad&&vem){const n=slaa(u.traffad).tot;setLiv(vem,Math.max(1,liv(vem)-n));rader.push(vem.namn+" tappar "+n+" liv")}
+ if(u.hela){helaParty(u.hela);rader.push(u.hela==="allt"?"Alla får fullt liv":"Alla får tillbaka liv")}
+ [].concat(u.flagga||[]).forEach(f=>{if(!K.flaggor.includes(f))K.flaggor.push(f)});
  sparaSpel();return rader;
 }
-function visaUtfall(u,namn,bild,figur,extra){
- tyst();const rader=anvandUtfall(u),txt=(u.text||"").replace(/\{namn\}/g,namn||"Ni");
- app.replaceChildren(scenHuvud(),tvBox(bild,{figur}),partyStrip());
+function visaUtfall(u,namn,bild,figur,extra,vem){
+ tyst();const rader=anvandUtfall(u,vem),txt=(u.text||"").replace(/\{namn\}/g,namn||"Ni");
+ app.replaceChildren(scenHuvud(),tvBox(bild,{figur:u.figur!==undefined?u.figur:figur}),partyStrip());
  if(extra)app.append(extra);
  const story=storyEl(txt);app.append(story);
  if(rader.length)app.append(el("div",{class:"gains"},rader.map(r=>el("span",{},r))));
@@ -924,19 +979,19 @@ function visaUtfall(u,namn,bild,figur,extra){
 }
 
 /* --- prov: slå d20 + bonus mot svårighet --- */
-function provUI(pr,bild,figur){
- const K=kap(),latt=pr.lattare&&K.flaggor.includes(pr.lattare.flagga),dc=latt?pr.lattare.svarighet:pr.svarighet;
- const lista=vaken();
- valjHjalte(pr.fraga||"Vem försöker?",lista,h=>{
-  const bonus=mod(h.s[pr.egenskap]);
+function provDC(pr){const K=kap(),latt=pr.lattare&&K.flaggor.includes(pr.lattare.flagga);return{dc:latt?pr.lattare.svarighet:pr.svarighet,latt}}
+function provUI(pr,bild,figur,fast){
+ if(pr.grupp)return gruppProv(pr,bild,figur);
+ const go=h=>{
+  const {dc,latt}=provDC(pr),bonus=mod(h.s[pr.egenskap]);
   app.replaceChildren(scenHuvud(),tvBox(bild,{figur}),partyStrip());
-  const dice=el("div",{class:"dicebox"},...[]);dice.innerHTML=dieSvg("?");
+  const dice=el("div",{class:"dicebox"});dice.innerHTML=dieSvg("?");
   const res=el("div",{class:"rollres",role:"status"});
   const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{
    const tot=r+bonus,ok=r===20||(r!==1&&tot>=dc);
    res.replaceChildren(el("div",{class:"sum"},r+" "+(bonus>=0?"+ ":"− ")+Math.abs(bonus)+" = "+tot,el("small",{},"Behöver minst "+dc)),
-    el("div",{class:"verdict "+(ok?"ok":"bad")},r===20?"NAT 20! Perfekt!":r===1?"En etta … oj då!":ok?"Det lyckades!":"Det gick inte …"));
-   btn.replaceWith(el("button",{class:"btn big",onclick:()=>visaUtfall(ok?pr.lyckas:pr.misslyckas,h.namn,bild,figur)},"Se vad som händer"));
+    el("div",{class:"verdict "+(ok?"ok":"bad")},r===20?"NAT 20! Perfekt!":r===1?"En etta … det gick riktigt illa.":ok?"Det lyckades!":"Det gick inte."));
+   btn.replaceWith(el("button",{class:"btn big",onclick:()=>visaUtfall(ok?pr.lyckas:pr.misslyckas,h.namn,bild,figur,null,h)},"Se vad som händer"));
   })}},"Slå!");
   app.append(el("div",{class:"rollpanel"},
    el("h2",{},h.namn+" slår för "+STATNAMN[pr.egenskap]),
@@ -944,7 +999,29 @@ function provUI(pr,bild,figur){
    latt?el("p",{class:"hint"},pr.lattare.varfor):null,
    dice,res,btn));
   window.scrollTo(0,0);
- },null,h=>({av:false,txt:STATNAMN[pr.egenskap]+" "+fmt(mod(h.s[pr.egenskap]))+" · "+liv(h)+" liv"}));
+ };
+ if(fast)return go(fast);
+ valjHjalte(pr.fraga||"Vem försöker?",vaken(),go,null,h=>({av:false,txt:STATNAMN[pr.egenskap]+" "+fmt(mod(h.s[pr.egenskap]))+" · "+liv(h)+" liv"}));
+}
+// Gruppslag: alla som är vakna slår. Minst hälften måste lyckas.
+function gruppProv(pr,bild,figur){
+ const {dc,latt}=provDC(pr),alla=vaken(),behov=Math.ceil(alla.length/2);
+ app.replaceChildren(scenHuvud(),tvBox(bild,{figur}),partyStrip());
+ const dice=el("div",{class:"dicebox many"});dice.innerHTML=alla.map(()=>dieSvg("?")).join("");
+ const res=el("div",{class:"rollres",role:"status"});
+ const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,rs=>{
+  let ok=0;const rows=alla.map((h,i)=>{const r=rs[i],b=mod(h.s[pr.egenskap]),t=r+b,lyck=r===20||(r!==1&&t>=dc);if(lyck)ok++;
+   return el("div",{class:"grow "+(lyck?"ok":"bad")},el("b",{},h.namn),el("span",{},r+" "+(b>=0?"+ ":"− ")+Math.abs(b)+" = "+t),el("i",{},lyck?"✓":"✗"))});
+  const klar=ok>=behov;
+  res.replaceChildren(el("div",{class:"grows"},rows),el("div",{class:"sum"},ok+" av "+alla.length+" lyckades",el("small",{},"Minst "+behov+" behövde lyckas")),
+   el("div",{class:"verdict "+(klar?"ok":"bad")},klar?"Det lyckades!":"Det gick inte."));
+  btn.replaceWith(el("button",{class:"btn big",onclick:()=>visaUtfall(klar?pr.lyckas:pr.misslyckas,null,bild,figur)},"Se vad som händer"));
+ },alla.length)}},"Slå för alla!");
+ app.append(el("div",{class:"rollpanel"},
+  el("h2",{},"Alla slår för "+STATNAMN[pr.egenskap]),
+  el("p",{},(pr.fraga?pr.fraga+" ":"")+"Varje hjälte måste slå minst "+dc+". Minst "+behov+" av "+alla.length+" måste lyckas."),
+  latt?el("p",{class:"hint"},pr.lattare.varfor):null,dice,res,btn));
+ window.scrollTo(0,0);
 }
 
 /* --- strid --- */
@@ -959,9 +1036,13 @@ const VAPEN_ORD={riddare:"svärdet",trollkarl:"staven",bagskytt:"en pil",smygare
 function startStrid(def,bild){
  tyst();
  const fiender=def.fiender.map((k,i)=>{const f=FIE()[k];const namn=def.fiender.filter(x=>x===k).length>1?f.namn+" "+(def.fiender.slice(0,i+1).filter(x=>x===k).length):f.namn;
-  return{...f,namn,max:f.liv,liv:f.liv,ute:false}});
- strid={def,bild,fiender,anvant:{},pepp:{},runda:1,ko:[],logg:[]};
- nyRunda();nastaTur();
+  return{...f,typ:k,namn,max:f.liv,liv:f.liv,ute:false}});
+ const K=kap(),noter=[];
+ (def.justera||[]).forEach(j=>{if(!K.flaggor.includes(j.flagga))return;fiender.forEach(f=>{if(!j.typ||f.typ===j.typ){if(j.liv){f.liv=Math.max(1,f.liv+j.liv);}if(j.rustning)f.rustning+=j.rustning}});if(j.text)noter.push(j.text)});
+ strid={def,bild,fiender,anvant:{},pepp:{},runda:1,ko:[],logg:[],noter};
+ nyRunda();
+ if(noter.length){stridVy("Striden börjar");app.append(el("div",{class:"rollpanel"},...noter.map(t=>el("p",{class:"event"},t)),el("button",{class:"btn big",onclick:nastaTur},"Fortsätt")));return}
+ nastaTur();
 }
 function nyRunda(){strid.ko=[...vaken().map(h=>({h:h.id})),...strid.fiender.map((f,i)=>({f:i}))]}
 const levande=()=>strid.fiender.filter(f=>!f.ute);
