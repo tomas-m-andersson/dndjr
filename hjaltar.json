@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:59:03.787Z",
+  "uppdaterad": "2026-10-23T21:59:09.424Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792741808,
+    "tid": 1792792747483,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -100,7 +100,7 @@
       "plats": "slottet",
       "kapitel": 1,
       "djup": 5,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Något glimmar i mörkret.",
@@ -109,7 +109,11 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "falla",
+        "klar": false,
+        "falla": 1
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -178,6 +182,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 5 · Fälla",
+          "k": "sep"
+        },
+        {
+          "t": "Små hål i väggen. Klick!",
+          "k": "bad"
         }
       ],
       "party": [
