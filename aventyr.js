@@ -86,12 +86,12 @@ window.AVENTYR = [
         text: "Vakten Bo ligger mot brunnen och biter ihop. Pilen sitter djupt i axeln.\n\n– Vättar, väser han. Ett helt gäng. Och deras hövding, Krak, ett stort monster med yxa. Men det var inte vättarna jag var rädd för …",
         val: [
           { text: "{namn} tar hand om såret", krav: { klass: "helare" }, utfall: {
-              text: "{namn} drar försiktigt ut pilen, lägger om såret och säger några lugnande ord. Bo andas ut.\n\n– Tack, säger han. Lyssna nu. Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken. Men de jobbar åt någon. Jag såg den. Något svart som rörde sig som rök, utan ansikte.\n\nHan trycker sin pung och en liten flaska i era händer. – Ta det här. Ni kommer att behöva det.",
+              text: "{namn} drar försiktigt ut pilen, lägger om såret och säger några lugnande ord. Bo andas ut.\n\n– Tack, säger han. Lyssna nu. Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken. Men de jobbar åt någon. Jag såg den. Något svart som rörde sig som rök, utan ansikte.\n\nHan tar fram en läderpåse med guldmynt och en liten flaska och ger dem till er. – Ta det här. Ni kommer att behöva det.",
               flagga: ["vet_lager", "vet_skuggan"], guld: 10, sak: "Läkedryck", till: "byn" } },
           { text: "Försök stoppa blödningen", prov: {
               egenskap: "vis", svarighet: 12, fraga: "Vem tar hand om Bo?",
               lyckas: {
-                text: "{namn} trycker hårt mot såret och binder om det med en bit av sin mantel. Bo slutar skaka.\n\n– Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken, säger han. Men de jobbar åt någon. Något svart, som rörde sig som rök …\n\nHan räcker fram sin pung. – Ta den. Köp er förbi trollet vid bäcken om ni måste.",
+                text: "{namn} trycker hårt mot såret och binder om det med en bit av sin mantel. Bo slutar skaka.\n\n– Vättarna har ett läger vid Gamla gruvan, på andra sidan bäcken, säger han. Men de jobbar åt någon. Något svart, som rörde sig som rök …\n\nHan räcker fram en läderpåse med guldmynt. – Ta den. Köp er förbi trollet vid bäcken om ni måste.",
                 flagga: ["vet_lager", "vet_skuggan"], guld: 10, till: "byn" },
               misslyckas: {
                 text: "{namn} gör sitt bästa, men Bo har förlorat för mycket blod. Han hinner bara viska ”gruvan …” innan han svimmar. Greta skyndar fram och tar hand om honom.",
@@ -126,7 +126,7 @@ window.AVENTYR = [
         text: "Två stora gråvargar kliver fram ur mörkret. De är magra och hungriga, och de har bestämt sig för att ni är middag.",
         strid: {
           fiender: ["varg", "varg"],
-          vinst: { text: "Vargarna ger upp och försvinner in bland träden. En bit bort hittar ni en tappad vättepung med några mynt. Spåren leder vidare mot bäcken.", guld: 5, till: "vadet" },
+          vinst: { text: "Vargarna ger upp och försvinner in bland träden. En bit bort hittar ni en liten påse som en vätte har tappat, med några mynt i. Spåren leder vidare mot bäcken.", guld: 5, till: "vadet" },
           forlust: "vargar_forlust"
         }
       },
@@ -418,13 +418,13 @@ window.AVENTYR = [
 
       slut_glod: {
         bild: "hem", figur: ["greta", "drake"],
-        text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå. Bo står där med armen i band och nickar mot er.\n\nGreta tar emot er en efter en. Hon ger er en pung med guld som hela byn har samlat ihop.\n\nOch Glöd? Han lägger sig på Gretas tak, där lyktans sken når honom. – Jag stannar ett tag, säger han. Ifall skuggorna kommer tillbaka.\n\nFör någonstans djupt under berget finns det fler.",
+        text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå. Bo står där med armen i band och nickar mot er.\n\nGreta tar emot er en efter en. Hon ger er en påse med guldmynt som hela byn har samlat ihop.\n\nOch Glöd? Han lägger sig på Gretas tak, där lyktans sken når honom. – Jag stannar ett tag, säger han. Ifall skuggorna kommer tillbaka.\n\nFör någonstans djupt under berget finns det fler.",
         slut: true, slutrad: "Lyktan lyser igen, och ni har fått en drake som vän."
       },
 
       slut: {
         bild: "hem", figur: "greta",
-        text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå.\n\nGreta tar emot er och ger er en pung med guld som hela byn har samlat ihop.\n\nMen när ni går hem tänker ni på den lilla draken i buren vid gruvan. Vättarna kommer tillbaka. Och någonstans djupt under berget finns det fler skuggor.",
+        text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå.\n\nGreta tar emot er och ger er en påse med guldmynt som hela byn har samlat ihop.\n\nMen när ni går hem tänker ni på den lilla draken i buren vid gruvan. Vättarna kommer tillbaka. Och någonstans djupt under berget finns det fler skuggor.",
         slut: true, slutrad: "Lyktan lyser igen. Men inte alla blev räddade."
       }
     }
