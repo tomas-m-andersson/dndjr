@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T22:00:28.313Z",
+  "uppdaterad": "2026-10-23T22:00:36.236Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792826386,
+    "tid": 1792792834168,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -96,173 +96,22 @@
       }
     },
     "utr": {},
-    "run": {
-      "plats": "slottet",
-      "kapitel": 1,
-      "djup": 6,
-      "fas": "vann",
-      "dorrar": null,
-      "lyssnat": false,
-      "rum": {
-        "typ": "boss",
-        "klar": false,
-        "fiender": [
-          "skelett",
-          "skelett",
-          "skelett"
+    "run": null,
+    "historik": [
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 1)",
+          "Svante (nivå 1)",
+          "Tomas (nivå 1)",
+          "Sally (nivå 1)"
         ],
-        "stridOpt": {
-          "boss": true
-        }
-      },
-      "logg": [
-        {
-          "t": "Kapitel 1 · Spökslottet Korpholm",
-          "k": "sep"
-        },
-        {
-          "t": "Ville, Svante, Tomas och Sally knuffar upp den knarrande porten och kliver in i slottet.",
-          "k": ""
-        },
-        {
-          "t": "Rum 1 · Lägerplats",
-          "k": "sep"
-        },
-        {
-          "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni går vidare.",
-          "k": "sep"
-        },
-        {
-          "t": "Rum 2 · Skatt",
-          "k": "sep"
-        },
-        {
-          "t": "Ni hittar en skattkista!",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar 24 guldmynt.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 30 XP.",
-          "k": "magic"
-        },
-        {
-          "t": "Ni går vidare.",
-          "k": "sep"
-        },
-        {
-          "t": "Rum 3 · Handlare",
-          "k": "sep"
-        },
-        {
-          "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
-          "k": "heal"
-        },
-        {
-          "t": "Ni köper en stor läkedryck för 60 guld.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni går vidare.",
-          "k": "sep"
-        },
-        {
-          "t": "Rum 4 · Lägerplats",
-          "k": "sep"
-        },
-        {
-          "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni går vidare.",
-          "k": "sep"
-        },
-        {
-          "t": "Rum 5 · Fälla",
-          "k": "sep"
-        },
-        {
-          "t": "Små hål i väggen. Klick!",
-          "k": "bad"
-        },
-        {
-          "t": "Svante duckar för giftpilarna!",
-          "k": "hit"
-        },
-        {
-          "t": "Gången slutar vid en stor port.",
-          "k": "sep"
-        },
-        {
-          "t": "Bossen · Bossen",
-          "k": "sep"
-        },
-        {
-          "t": "Ur mörkret reser sig slottsherren: Skelett, Skelett, Skelett!",
-          "k": "bad"
-        },
-        {
-          "t": "Seger! Alla får 38 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Ville hämtar andan och lägger om såren. +4 liv.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar 68 guldmynt.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en stor läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 30 XP.",
-          "k": "magic"
-        },
-        {
-          "t": "Ni hittar en stor läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Slottsherren är besegrad!",
-          "k": "crit"
-        }
-      ],
-      "party": [
-        "ville",
-        "svante",
-        "tomas",
-        "sally"
-      ],
-      "guld": 87,
-      "saker": [
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Stor läkedryck",
-        "Stor läkedryck",
-        "Stor läkedryck"
-      ],
-      "bless": {},
-      "curse": {},
-      "ara": 150,
-      "start": 1792792596407,
-      "nastaKand": false
-    },
-    "historik": []
+        "ara": 150,
+        "datum": "2026-10-23"
+      }
+    ]
   }
 }
