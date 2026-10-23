@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:30:49.019Z",
+  "uppdaterad": "2026-10-23T21:30:57.740Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -70,12 +70,13 @@
           "vet_skuggan",
           "bo_omlagd",
           "krak_borta",
-          "vilat"
+          "vilat",
+          "ljusbon"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792791047079
+    "tid": 1792791055752
   }
 }
