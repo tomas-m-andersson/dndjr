@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:59:26.752Z",
+  "uppdaterad": "2026-10-23T21:59:30.898Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792764798,
+    "tid": 1792792768952,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -100,10 +100,21 @@
       "plats": "slottet",
       "kapitel": 1,
       "djup": 6,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": null,
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "boss",
+        "klar": false,
+        "fiender": [
+          "skelett",
+          "skelett",
+          "skelett"
+        ],
+        "stridOpt": {
+          "boss": true
+        }
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -188,6 +199,14 @@
         {
           "t": "Gången slutar vid en stor port.",
           "k": "sep"
+        },
+        {
+          "t": "Bossen · Bossen",
+          "k": "sep"
+        },
+        {
+          "t": "Ur mörkret reser sig slottsherren: Skelett, Skelett, Skelett!",
+          "k": "bad"
         }
       ],
       "party": [
