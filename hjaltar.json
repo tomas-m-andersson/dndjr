@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:57:30.763Z",
+  "uppdaterad": "2026-10-23T21:57:44.547Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,8 +76,25 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792648831,
-    "niva": {},
+    "tid": 1792792662592,
+    "niva": {
+      "ville": {
+        "lvl": 1,
+        "xp": 30
+      },
+      "svante": {
+        "lvl": 1,
+        "xp": 30
+      },
+      "tomas": {
+        "lvl": 1,
+        "xp": 30
+      },
+      "sally": {
+        "lvl": 1,
+        "xp": 30
+      }
+    },
     "utr": {},
     "run": {
       "plats": "slottet",
@@ -99,7 +116,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "skatt",
-        "klar": false,
+        "klar": true,
         "loot": [
           {
             "k": "guld",
@@ -141,6 +158,14 @@
         {
           "t": "Ni hittar en skattkista!",
           "k": "heal"
+        },
+        {
+          "t": "Ni hittar 24 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 30 XP.",
+          "k": "magic"
         }
       ],
       "party": [
@@ -149,7 +174,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 55,
+      "guld": 79,
       "saker": [
         "Läkedryck",
         "Läkedryck",
