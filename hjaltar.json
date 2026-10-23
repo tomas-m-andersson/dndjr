@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:21:19.529Z",
+  "uppdaterad": "2026-10-23T21:21:30.163Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -59,7 +59,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "fallan",
+        "scen": "spindelboet",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -73,6 +73,6 @@
         "v": 2
       }
     },
-    "tid": 1792790477667
+    "tid": 1792790488276
   }
 }
