@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:30:35.666Z",
+  "uppdaterad": "2026-10-23T21:30:39.188Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -54,11 +54,11 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 9,
-      "svante": 4,
+      "ville": 12,
+      "svante": 7,
       "sally": 8,
-      "tomas": 8,
-      "linda": 8
+      "tomas": 11,
+      "linda": 11
     },
     "kapitel": {
       "k1": {
@@ -69,12 +69,13 @@
           "vet_lager",
           "vet_skuggan",
           "bo_omlagd",
-          "krak_borta"
+          "krak_borta",
+          "vilat"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792791033777
+    "tid": 1792791037249
   }
 }
