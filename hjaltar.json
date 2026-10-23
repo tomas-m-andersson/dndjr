@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T20:43:58.801Z",
+  "uppdaterad": "2026-10-23T20:44:07.476Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -56,11 +56,11 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "torget",
+        "scen": "skogen",
         "flaggor": [],
         "klar": false
       }
     },
-    "tid": 1792788236899
+    "tid": 1792788245590
   }
 }
