@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:56:38.329Z",
+  "uppdaterad": "2026-10-23T21:57:01.936Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,14 +76,14 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792596409,
+    "tid": 1792792619844,
     "niva": {},
     "utr": {},
     "run": {
       "plats": "slottet",
       "kapitel": 1,
       "djup": 1,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Ni känner värme mot ansiktet.",
@@ -97,7 +97,10 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "lager",
+        "klar": false
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -106,6 +109,14 @@
         {
           "t": "Ville, Svante, Tomas och Sally knuffar upp den knarrande porten och kliver in i slottet.",
           "k": ""
+        },
+        {
+          "t": "Rum 1 · Lägerplats",
+          "k": "sep"
+        },
+        {
+          "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
+          "k": "heal"
         }
       ],
       "party": [
