@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:13:12.736Z",
+  "uppdaterad": "2026-10-23T21:13:20.890Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -60,7 +60,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "skogen",
+        "scen": "vargstrid",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -71,6 +71,6 @@
         "v": 2
       }
     },
-    "tid": 1792789990869
+    "tid": 1792789999015
   }
 }
