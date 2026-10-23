@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:26:34.410Z",
+  "uppdaterad": "2026-10-23T21:26:39.767Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -60,12 +60,12 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "start",
+        "scen": "byn",
         "flaggor": [],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792790792468
+    "tid": 1792790797837
   }
 }
