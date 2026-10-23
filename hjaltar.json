@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:31:01.649Z",
+  "uppdaterad": "2026-10-23T21:31:36.279Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -77,6 +77,6 @@
         "v": 2
       }
     },
-    "tid": 1792791059640
+    "tid": 1792791094303
   }
 }
