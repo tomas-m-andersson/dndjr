@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:22:16.973Z",
+  "uppdaterad": "2026-10-23T21:22:53.526Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -67,12 +67,13 @@
           "sett_torget",
           "vet_drake",
           "glod_fri",
-          "krak_borta"
+          "krak_borta",
+          "glod_eld"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792790535089
+    "tid": 1792790571613
   }
 }
