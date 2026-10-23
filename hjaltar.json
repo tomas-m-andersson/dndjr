@@ -1,13 +1,13 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T20:30:43.434Z",
+  "uppdaterad": "2026-10-23T20:42:44.980Z",
   "egna": [],
   "sallskap": [
     "ville",
     "svante",
     "sally",
-    "linda"
+    "tomas"
   ],
   "grundandringar": {
     "tomas": {
@@ -44,5 +44,12 @@
         "cha": 14
       }
     }
+  },
+  "aventyr": {
+    "guld": 0,
+    "saker": [],
+    "liv": {},
+    "kapitel": {},
+    "tid": 0
   }
 }
