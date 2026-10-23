@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:30:45.640Z",
+  "uppdaterad": "2026-10-23T21:30:47.296Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -62,7 +62,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "salen_fore",
+        "scen": "salen",
         "flaggor": [
           "sett_torget",
           "sett_bo",
@@ -76,6 +76,6 @@
         "v": 2
       }
     },
-    "tid": 1792791045427
+    "tid": 1792791047079
   }
 }
