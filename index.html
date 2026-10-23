@@ -172,6 +172,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .btn.small{font-size:.9rem;padding:8px 12px;box-shadow:0 3px 0 #0c151c}
 .btn.big{font-size:1.25rem;padding:14px 22px;width:100%}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.topbar .btn{white-space:nowrap;flex:none}
 .purse{font-family:var(--display);color:var(--gold);font-size:.95rem;text-align:right;min-width:0}
 .chapters{display:flex;flex-direction:column;gap:12px}
 .chapter{background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px}
@@ -240,6 +241,33 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .turn{font-size:1.5rem;color:var(--gold)}
 .turn:empty{display:none}
 @media (prefers-reduced-motion:reduce){.hp i{transition:none}}
+/* Grottkrypning */
+.runsec{display:flex;flex-direction:column;gap:12px}
+.places{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.place{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:8px}
+.place b{font-family:var(--display);font-size:1.05rem;line-height:1.15}
+.place small{color:var(--muted);font-size:.82rem;line-height:1.35}
+.place:active{transform:translateY(2px)}
+.chron{background:#0e171e;border:2px solid var(--line);border-radius:8px;padding:10px 12px;max-height:13.5em;overflow-y:auto;display:flex;flex-direction:column;gap:6px;font-size:.95rem;line-height:1.45}
+.chron p{margin:0}
+.chron .c-sep{font-family:var(--display);color:var(--gold);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;border-top:1px dashed var(--line);padding-top:6px}
+.chron .c-sep:first-child{border-top:0;padding-top:0}
+.chron .c-hit,.chron .c-heal{color:var(--moss)}
+.chron .c-bad{color:#f3a99f}
+.chron .c-magic{color:#c9b5f0}
+.chron .c-crit{color:var(--gold);font-weight:800}
+.lead{margin:0;font-size:1.05rem;color:var(--fg)}
+.xp{display:flex;flex-direction:column;gap:3px;font-size:.8rem;color:var(--muted);margin-top:4px}
+.xpbar{height:6px;background:#0c151c;border-radius:3px;overflow:hidden;max-width:220px}
+.xpbar i{display:block;height:100%;background:var(--gold)}
+.theend.bad{background:#3a1f1c;border-color:var(--red)}
+.theend.bad strong{color:var(--red)}
+.hist{display:flex;flex-direction:column;gap:8px}
+.histrow{display:flex;flex-direction:column;gap:2px;background:var(--bg2);border:2px solid var(--line);border-left-width:6px;border-radius:8px;padding:8px 12px}
+.histrow.ok{border-left-color:var(--moss)} .histrow.bad{border-left-color:var(--red)}
+.histrow b{font-family:var(--display)}
+.histrow span{font-size:.88rem}
+.histrow small{color:var(--muted);font-size:.8rem}
 @media (max-width:420px){.preview{grid-template-columns:84px 1fr}.sheet-top{grid-template-columns:96px minmax(0,1fr)}.stat{grid-template-columns:minmax(0,1fr) auto 46px}.die{width:24px;height:24px;font-size:.85rem}}
 @media (prefers-reduced-motion:reduce){.die.spin{animation:none}.btn{transition:none}}
 </style>
@@ -306,10 +334,13 @@ let view="home";
 // Äventyrets framsteg: guld, packning, liv och hur långt man kommit i varje kapitel.
 const SPKEY="tarningsriket-aventyr";
 function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
- liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0}}
+ liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0,
+ niva:o.niva&&typeof o.niva==="object"?o.niva:{},utr:o.utr&&typeof o.utr==="object"?o.utr:{},
+ run:o.run&&typeof o.run==="object"&&Array.isArray(o.run.party)?o.run:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[]}}
+let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
 const OKEY="tarningsriket-alternativ";
-let alt=Object.assign({upplas:false},load(OKEY,{}));
+let alt=Object.assign({upplas:false,svar:"normal"},load(OKEY,{}));
 function persist(){save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);scheduleSync()}
 
 /* ===== GitHub-sparning (hjaltar.json i repot) ===== */
@@ -471,7 +502,10 @@ function portrait(h){const c=document.createElement("canvas");c.className="px";d
 /* ===== Beräkningar ===== */
 function finalStats(h){return h.s} // sparade hjältar har redan folkbonus i h.s
 function vitals(h){const K=KLASS[h.klass],s=finalStats(h);
- return{hp:Math.max(1,K.hd+mod(s.tal)),ac:K.ac(h),atk:mod(s[K.main])+2}}
+ const N=(typeof spel!=="undefined"&&spel.niva[h.id])||{lvl:1},U=(typeof spel!=="undefined"&&spel.utr[h.id])||{},lvl=N.lvl||1;
+ const per=Math.max(1,Math.floor(K.hd/2)+1+mod(s.tal)),prof=2+Math.floor((lvl-1)/4);
+ const R=lage==="run"&&spel.run?spel.run:null,bless=R&&R.bless&&R.bless[h.id]?1:0,curse=R&&R.curse&&R.curse[h.id]?1:0;
+ return{hp:Math.max(1,K.hd+mod(s.tal))+(lvl-1)*per,ac:K.ac(h)+(U.acb||0)-curse,atk:mod(s[K.main])+prof+(U.wb||0)+bless,wb:U.wb||0,lvl}}
 
 /* ===== Hjälpare ===== */
 const app=document.getElementById("app");
@@ -481,7 +515,7 @@ function d20svg(){const s=el("div");s.innerHTML=`<svg viewBox="0 0 100 100" aria
 
 /* ===== Startsidan ===== */
 function home(){
- view="home"; app.replaceChildren();
+ view="home"; lage=null; app.replaceChildren();
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
  app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen. Välj vilka hjältar som ska med, eller skapa en egen."),
@@ -499,7 +533,7 @@ function card(h){
  return el("div",{class:"card"+(on?" on":"")},
   el("div",{class:"tv"},portrait(h)),
   h.grund?null:el("span",{class:"tag"},"Egen"),
-  el("div",{},el("div",{class:"name"},h.namn),el("div",{class:"meta"},F.n+" · "+K.n)),
+  el("div",{},el("div",{class:"name"},h.namn),el("div",{class:"meta"},F.n+" · "+K.n+" · Nivå "+vitals(h).lvl)),
   el("div",{class:"row"},
    el("button",{onclick:()=>sheet(h),"aria-label":"Visa hjältebladet för "+h.namn},"Blad"),
    el("button",{class:"take","aria-pressed":on?"true":"false",onclick:()=>togglePartyMember(h.id)},on?"Med ✓":"Ta med")));
@@ -532,7 +566,7 @@ function sheet(h){
    el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");left.append(del)}foot.append(left);
  foot.append(el("button",{class:"btn",onclick:close},"Stäng"));
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Hjälteblad för "+h.namn},
-  el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+" · "+K.n+" · Nivå 1"),h.om?el("p",{},h.om):null)),
+  el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+" · "+K.n+" · Nivå "+v.lvl),xpRad(h),h.om?el("p",{},h.om):null)),
   el("div",{class:"vitals"},
    el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
    el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
@@ -692,7 +726,8 @@ function renderEdit(){
 const ADV=()=>window.AVENTYR||[], FIE=()=>window.FIENDER||{};
 const SAKER={"Läkedryck":{info:"Ger tillbaka 2d4+2 liv."}};
 let kapId=null, strid=null, rullar=false;
-const partyHeroes=()=>party.map(byId).filter(Boolean);
+const partyHeroes=()=>(lage==="run"&&spel.run?spel.run.party:party).map(byId).filter(Boolean);
+const pack=()=>lage==="run"&&spel.run?spel.run:spel;
 const maxLiv=h=>vitals(h).hp;
 const liv=h=>{const m=maxLiv(h),v=spel.liv[h.id];return typeof v==="number"?Math.max(0,Math.min(m,v)):m};
 const setLiv=(h,v)=>{spel.liv[h.id]=Math.max(0,Math.min(maxLiv(h),v))};
@@ -728,6 +763,12 @@ function tala(txt){if(!kanTala)return;speechSynthesis.cancel();
 function tyst(){if(kanTala)speechSynthesis.cancel()}
 function talaKnapp(txt){if(!kanTala)return null;
  return el("button",{class:"btn ghost small",onclick:()=>{if(speechSynthesis.speaking){tyst()}else tala(txt)}},"Läs upp")}
+function svarGroup(){
+ const box=el("section",{class:"setgroup"},el("h3",{},"Svårighetsgrad"),el("p",{},"Gäller grottkrypningen. Ändringen märks i nästa rum."));
+ const rad=el("div",{class:"pills"}),info=el("p",{});
+ const rita=()=>{rad.replaceChildren(...Object.entries(SVAR).map(([k,v])=>el("button",{class:"pill"+((alt.svar||"normal")===k?" sel":""),"aria-pressed":(alt.svar||"normal")===k?"true":"false",onclick:()=>{alt.svar=k;save(OKEY,alt);rita()}},v.namn)));info.textContent=SV().besk};
+ rita();box.append(rad,info);return box;
+}
 function upplasGroup(){
  const cb=el("input",{id:"opt-upplas",type:"checkbox"});cb.checked=alt.upplas;
  cb.addEventListener("change",()=>{alt.upplas=cb.checked;save(OKEY,alt);if(cb.checked)tala("Nu läser jag upp äventyret.");else tyst()});
@@ -746,11 +787,25 @@ const SPR={
  spindel:{rows:["L..L....L..L",".L.L....L.L.","..LBBBBBBL..",".LBBRBBRBBL.","L.LBBBBBBL.L","..L.BBBB.L..",".L........L."],pal:{L:"#8a7aa3",B:"#4a3d5c",R:"#ff3d3d"}},
  skuggling:{rows:["...SS...","..SSSS..",".SSSSSS.",".SWSSWS.",".SSSSSS.","SSSSSSSS",".SSSSSS.",".S.SS.S.","S..S..S.","...S...."],pal:{S:"#3a2752",W:"#c9f0ff"}},
  skuggan:{rows:[".....SSSSSS.....","...SSSSSSSSSS...","..SSSSSSSSSSSS..","..SSWWSSSSWWSS..","..SSSSSSSSSSSS..","...SSSMMMMSSS...","....SSSSSSSS....","..SSSSSSSSSSSS..",".SSSSSSSSSSSSSS.","SS.SSSSSSSSSS.SS","S..SSSSSSSSSS..S","C..SSSSSSSSSS..C","...SSSSSSSSSS...","...SSSSSSSSSS...","..SSSSSSSSSSSS..","..SS.SS..SS.SS..",".SS..S....S..SS.",".S...S....S...S."],pal:{S:"#2b1d3d",W:"#c9f0ff",M:"#9a5fdf",C:"#c9c2d6"}},
+ fladdermus:{rows:["F.........F","FF..BBB..FF","FFFBBBBBFFF",".FFBYBYBFF.","...BBBBB...","....B.B...."],pal:{"F":"#5a4a4a","B":"#7a6a6a","Y":"#ff4d4d"}},
+ ratta:{rows:["..RR........",".RRRRRRRR...","RYRRRRRRRR..",".RRRRRRRRRTT","..R..R..R..T"],pal:{"R":"#8a7a6a","Y":"#ff4d4d","T":"#d8a0a0"}},
+ skelett:{rows:["...WWW...","..WWWWW..","..WKWKW..","..WWWWW..","...W.W...","....W....",".WWWWWWW.","W..WWW..W","...WWW...","....W....","...W.W...","...W.W...","..W...W..",".WW...WW."],pal:{"W":"#e8e3d8","K":"#1b1b22"}},
+ slem:{rows:[".SSSSSSSSSS.","SSSSSSSSSSSS","SSHSSSSSSSSS","SSSSSKSSSSSS","SSSSSSSSSBSS","SSSSSSSSSSSS","SSBSSSSSSSSS","SSSSSSSSSSSS","SSSSSSSSSSSS",".SSSSSSSSSS."],pal:{"S":"#6fcf7a","H":"#e8fff0","K":"#e8e3d8","B":"#c9c2b0"}},
+ eldimp:{rows:[".H.....H.",".HH...HH.","..RRRRR..",".RYRRRYR.",".RRRRRRR.","..RKKKR..","...RRR..T",".RRRRRRRT","R.RRRRR.T","..RR.RR..","..R...R.."],pal:{"R":"#d8452f","H":"#2a1a10","Y":"#ffe14d","K":"#5a1a10","T":"#ff8a2b"}},
+ spokriddare:{rows:["....HHHH....","...HHHHHH...","...HYHHYH...","...HHHHHH...","....HHHH....","..AAAAAAAA..",".AAAAAAAAAAS","AAAAAAAAAAAS","AA.AAAAAA.AS","AA.AAAAAA.AS","...AAAAAA..S","...AAAAAA..S","...AA..AA...","...AA..AA...","...AA..AA...","..AAA..AAA.."],pal:{"H":"#7a8a9a","Y":"#7fe0ff","A":"#5a6a7a","S":"#c9e8ff"}},
+ kista:{rows:["..KKKKKKKK..",".KMMMMMMMMK.","KMMMMMMMMMMK","KKKKKGGKKKKK","KMMMMGGMMMMK","KMMMMMMMMMMK","KKKKKKKKKKKK"],pal:{"K":"#3a2a1a","M":"#8a5a2b","G":"#f2c14e"}},
+ kista_oppen:{rows:["KMMMMMMMMMMK",".K........K.","..GGYGGYGG..","KKGGGGGGGGKK","KMMMMMMMMMMK","KMMMMMMMMMMK","KKKKKKKKKKKK"],pal:{"K":"#3a2a1a","M":"#8a5a2b","G":"#f2c14e","Y":"#fff3b0"}},
+ lagereld:{rows:["....Y.....","...YOY....","..YOROY...","..ORRRO...","...ORO....","B.BBBBBB.B",".BBBBBBBB."],pal:{"Y":"#ffd96a","O":"#ff9a3d","R":"#e0603a","B":"#6b4423"}},
+ brunn:{rows:["W..........W","W.RRRRRRRR.W","WRRRRRRRRRRW","W..........W","SSSSSSSSSSSS","SBBBBBBBBBBS","SSSSSSSSSSSS","SSSSSSSSSSSS"],pal:{"W":"#6b4423","R":"#7a3b2e","S":"#7d8790","B":"#1f4a6e"}},
+ altare:{rows:["....CC....","....CC....","..CCCCCC..","....CC....","GGGGGGGGGG",".SSSSSSSS.",".SSSSSSSS.",".SSSSSSSS.","SSSSSSSSSS"],pal:{"C":"#f2c14e","G":"#c9c2d6","S":"#6b6478"}},
+ lavahund:{alias:"varg",pal:{G:"#3a1a14",Y:"#ffd23d",D:"#ff6a2b"}},
+ eldklo:{alias:"drake",skala:2,pal:{R:"#c0392b",Y:"#ffe14d",W:"#ff8a3d",B:"#f2c14e"}},
  drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
 };
-function sprite(g,key,x,y,flip,alpha){const s=SPR[key];if(!s)return;g.globalAlpha=alpha??1;const w=s.rows[0].length;
- s.rows.forEach((r,j)=>[...r].forEach((ch,i)=>{const c=s.pal[ch];if(c){g.fillStyle=c;g.fillRect(x+(flip?w-1-i:i),y+j,1,1)}}));g.globalAlpha=1}
-const sprSize=k=>SPR[k]?{w:SPR[k].rows[0].length,h:SPR[k].rows.length}:{w:12,h:16};
+function sprDef(key){const s=SPR[key];if(!s)return null;if(s.alias){const b=SPR[s.alias];return{rows:b.rows,pal:{...b.pal,...s.pal},skala:s.skala||1}}return{...s,skala:s.skala||1}}
+function sprite(g,key,x,y,flip,alpha){const s=sprDef(key);if(!s)return;g.globalAlpha=alpha??1;const w=s.rows[0].length,k=s.skala;
+ s.rows.forEach((r,j)=>[...r].forEach((ch,i)=>{const c=s.pal[ch];if(c){g.fillStyle=c;g.fillRect(x+(flip?w-1-i:i)*k,y+j*k,k,k)}}));g.globalAlpha=1}
+const sprSize=k=>{const s=sprDef(k);return s?{w:s.rows[0].length*s.skala,h:s.rows.length*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
 function scenePaint(g,bild){
  const R=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)},rnd=seedRnd(bild.length*97+7);
@@ -794,10 +849,11 @@ function scenePaint(g,bild){
    for(let y=0;y<26;y++){const w=Math.floor(Math.sqrt(1-((y-26)/26)**2)*16);R(56-w,18+y,w*2,1,"#07090c")}
    glow(56,40,6,"#ffd96a");ground(44,"#3a3a36","#4a4a44");
    for(let i=0;i<3;i++){R(20+i*4,40,1,4,"#6b4423");R(20+i*4,39,1,1,"#ff8a2b")}break}
-  case"grotta_inne":case"lya":{
+  case"grotta_inne":case"lya":case"grottgang":{
    R(0,0,TVW,TVH,"#15161b");for(let i=0;i<16;i++){const x=Math.floor(rnd()*TVW),h=3+Math.floor(rnd()*8);for(let j=0;j<h;j++)R(x,j,Math.max(1,3-Math.floor(j/3)),1,"#2b2d35")}
    ground(42,"#2b2a28","#36342f");
    if(bild==="grotta_inne"){glow(30,30,22,"#ff9a3d");R(60,38,14,8,"#6b4423");R(60,38,14,2,"#8a5a2b");R(66,41,2,2,"#c9c2d6")}
+   else if(bild==="grottgang"){glow(26,30,22,"#ff9a3d");R(25,26,1,6,"#6b4423");R(24,24,3,2,"#ff9a3d");for(let i=0;i<6;i++)R(Math.floor(rnd()*TVW),42+Math.floor(rnd()*3),2,2,"#6b6458")}
    else{glow(66,32,26,"#ffd96a");for(let i=0;i<10;i++)R(54+Math.floor(rnd()*20),46+Math.floor(rnd()*4),2,1,"#f2c14e");lantern(48,38,true)}
    break}
   case"lager":{
@@ -819,6 +875,17 @@ function scenePaint(g,bild){
    R(0,0,TVW,TVH,"#0e0b14");for(let i=0;i<18;i++){const x=Math.floor(rnd()*TVW),h=3+Math.floor(rnd()*10);for(let j=0;j<h;j++)R(x,j,Math.max(1,3-Math.floor(j/3)),1,"#231c2e")}
    glow(70,30,30,"#7a3fbf");ground(44,"#1d1824","#26202f");
    R(44,36,8,8,"#4a4458");R(43,35,10,1,"#5a5468");lantern(46,29,true);break}
+  case"slott":{
+   R(0,0,TVW,TVH,"#1c2230");for(let y=0;y<42;y+=4)for(let x=(y/4)%2?0:4;x<TVW;x+=8)R(x,y,7,3,"#262e3e");
+   [[14,8],[44,8],[74,8]].forEach(([x,y])=>{R(x,y,8,14,"#0d1220");R(x+3,y,2,14,"#262e3e");R(x,y+6,8,1,"#262e3e");glow(x+4,y+7,8,"#9ab8e8")});
+   [[6,10],[34,10],[64,10]].forEach(([x,y])=>{R(x,y,5,12,"#7a2b2e");R(x+1,y+12,1,2,"#7a2b2e");R(x+3,y+12,1,2,"#7a2b2e");R(x+2,y+4,1,3,"#f2c14e")});
+   ground(42,"#2b2a33","#35343f");for(let x=0;x<TVW;x+=8)R(x,42,1,12,"#22212a");
+   [[30,24],[60,24]].forEach(([x,y])=>{R(x,y,1,4,"#6b4423");R(x-1,y-2,3,2,"#ff9a3d");glow(x,y-1,9,"#ff9a3d")});break}
+  case"vulkan":{
+   sky("#2a0d0a","#5a1a10",0,36);for(let i=0;i<20;i++)R(Math.floor(rnd()*TVW),Math.floor(rnd()*30),1,1,"#ff8a3d88");
+   for(let i=0;i<6;i++){const x=Math.floor(rnd()*TVW),h=10+Math.floor(rnd()*16);for(let j=0;j<h;j++)R(x-Math.floor(j/2),36-h+j,j+1,1,"#1a0f0d")}
+   ground(40,"#1f1412","#2b1d1a");R(0,46,TVW,4,"#ff6a2b");R(0,47,TVW,2,"#ffd23d");glow(48,48,40,"#ff6a2b");
+   for(let i=0;i<10;i++)R(Math.floor(rnd()*TVW),46,3,1,"#c0392b");break}
   default:R(0,0,TVW,TVH,"#142029");
  }
 }
@@ -826,7 +893,9 @@ const HERO_SPRITE={};
 function heroSprite(h){const c=document.createElement("canvas");drawHero(c,h,{transparent:true});return c}
 const GRETA={folk:"manniska",klass:"ingen",hud:0,har:4,stil:"lang",klader:1};
 const BO={folk:"manniska",klass:"riddare",hud:2,har:2,stil:"kort",klader:6};
-function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true}={}){
+const HANDLARE={folk:"halvling",klass:"ingen",hud:1,har:4,stil:"kort",klader:4,flackar:false};
+const RESENAR={folk:"alv",klass:"bagskytt",hud:0,har:1,stil:"lang",klader:2};
+function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false}={}){
  cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
  if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),1+i*13,TVH-18);g.globalAlpha=1});
  const right=[];
@@ -835,17 +904,22 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true}={}){
  let x=TVW-2;
  right.forEach(f=>{if(f.k==="greta"){x-=16;g.drawImage(heroSprite(GRETA),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+1,TVH-10,1,10);return}
   if(f.k==="bo"){x-=16;g.drawImage(heroSprite(BO),x,TVH-18);return}
+  if(f.k==="handlare"){x-=16;g.drawImage(heroSprite(HANDLARE),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+10,TVH-14,5,7);g.fillStyle="#6b4423";g.fillRect(x+10,TVH-14,5,1);return}
+  if(f.k==="resenar"){x-=18;g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+2,TVH-15,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
-  const {w,h}=sprSize(f.k);x-=w+2;sprite(g,f.k,x,TVH-h-1,f.k==="drake",f.a)});
+  const {w,h}=sprSize(f.k);x-=w+2;sprite(g,f.k,x,TVH-h-1,f.k==="drake"||f.k==="eldklo",f.a);
+  if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy,3,1);g.fillRect(x+dx+2,TVH-h+dy,1,1);g.fillRect(x+dx,TVH-h+1+dy,3,1)});g.globalAlpha=1}});
 }
 
 /* --- kapitelvalet --- */
 function adventures(){
- tyst();view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
+ tyst();lage=null;view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
  const ph=partyHeroes();
  if(!ph.length){home();flash("Välj minst en hjälte först.");return}
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:home},"← Hjältarna"),el("span",{class:"purse"},spel.guld+" guld")));
- app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn).join(", ")+".")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+".")));
+ app.append(runKort());
+ app.append(el("div",{class:"section-head"},el("h2",{},"Berättelser"),el("span",{},"Skrivna äventyr med val")));
  const list=el("div",{class:"chapters"});
  ADV().forEach((k,i)=>{
   let st=spel.kapitel[k.id];const num="Kapitel "+(i+1);
@@ -859,6 +933,7 @@ function adventures(){
   list.append(el("div",{class:"chapter"+(st&&st.klar?" done":"")},el("small",{},num+" · "+status),el("h3",{},k.titel),el("p",{},k.kort),btns));
  });
  app.append(list);
+ const kr=kronikaLista();if(kr)app.append(kr);
  app.append(packning(adventures));
 }
 function startKapitel(id){
@@ -869,14 +944,25 @@ function startKapitel(id){
 }
 
 /* --- packning och läkedrycker --- */
+const DRYCKER={"Läkedryck":"2d4+2","Stor läkedryck":"4d4+4"};
+const harDryck=()=>pack().saker.some(x=>DRYCKER[x]);
 function packning(efter){
- const n=spel.saker.filter(x=>x==="Läkedryck").length;
- const box=el("div",{class:"pack"},el("strong",{},"Packning"),el("span",{},spel.guld+" guld"+(spel.saker.length?" · "+summeraSaker():"")));
- if(n&&!strid)box.append(el("button",{class:"btn ghost small",onclick:()=>valjHjalte("Vem dricker läkedrycken?",partyHeroes(),h=>{dryck(h);efter()},efter)},"Använd läkedryck"));
+ const P=pack();
+ const box=el("div",{class:"pack"},el("strong",{},"Packning"),el("span",{},P.guld+" guld"+(P.saker.length?" · "+summeraSaker():"")));
+ if(harDryck()&&!strid)box.append(el("button",{class:"btn ghost small",onclick:()=>valjDryck(()=>valjHjalte("Vem dricker?",partyHeroes(),h=>{dryck(h,valdDryck);efter()},efter),efter)},"Använd läkedryck"));
  return box;
 }
-function summeraSaker(){const c={};spel.saker.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).map(([k,v])=>v>1?k+" ×"+v:k).join(", ")}
-function dryck(h){const i=spel.saker.indexOf("Läkedryck");if(i<0)return 0;spel.saker.splice(i,1);const r=slaa("2d4+2");setLiv(h,liv(h)+r.tot);sparaSpel();flash(h.namn+" dricker och får "+r.tot+" liv tillbaka.");return r.tot}
+let valdDryck="Läkedryck";
+// Finns båda sorterna får man välja vilken.
+function valjDryck(klar,avbryt){const P=pack(),sorter=Object.keys(DRYCKER).filter(k=>P.saker.includes(k));
+ if(sorter.length<2){valdDryck=sorter[0];return klar()}
+ const m=document.getElementById("modal"),close=()=>m.replaceChildren();
+ m.replaceChildren(el("div",{class:"overlay"},el("div",{class:"sheet",role:"dialog","aria-modal":"true"},el("h2",{},"Vilken dryck?"),
+  el("div",{class:"pickers"},sorter.map(k=>el("button",{class:"picker",onclick:()=>{close();valdDryck=k;klar()}},el("div",{},el("b",{},k),el("span",{},"Ger "+DRYCKER[k]+" liv"))))),
+  el("button",{class:"btn ghost",onclick:()=>{close();if(avbryt)avbryt()}},"Avbryt"))));
+}
+function summeraSaker(){const c={};pack().saker.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).map(([k,v])=>v>1?k+" ×"+v:k).join(", ")}
+function dryck(h,typ="Läkedryck"){const P=pack(),i=P.saker.indexOf(typ);if(i<0)return 0;P.saker.splice(i,1);const r=slaa(DRYCKER[typ]);setLiv(h,liv(h)+r.tot);sparaSpel();flash(h.namn+" dricker och får "+r.tot+" liv tillbaka.");return r.tot}
 function valjHjalte(fraga,lista,klar,avbryt,info){
  const m=document.getElementById("modal"),close=()=>m.replaceChildren();
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":fraga},el("h2",{},fraga),
@@ -917,7 +1003,7 @@ function scenText(sc,K){
   .map(p=>typeof p==="string"?p:p.text).join("\n\n");
 }
 function visaScen(){
- tyst();strid=null;view="scen";document.getElementById("party").hidden=true;
+ tyst();strid=null;lage=null;view="scen";document.getElementById("party").hidden=true;
  const K=kap();if(!K){adventures();return}
  const sc=scenDef(K.scen);if(!sc){K.scen=kapDef().start;return visaScen()}
  if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
@@ -1042,16 +1128,17 @@ const FORMAGA={
 const VAPEN_ORD={riddare:"svärdet",trollkarl:"staven",bagskytt:"en pil",smygare:"dolken",helare:"klubban",bard:"värjan"};
 function startStrid(def,bild){
  tyst();
- const fiender=def.fiender.map((k,i)=>{const f=FIE()[k];const namn=def.fiender.filter(x=>x===k).length>1?f.namn+" "+(def.fiender.slice(0,i+1).filter(x=>x===k).length):f.namn;
+ const fiender=def.fiender.map((k,i)=>{if(typeof k==="object")return k;const f=FIE()[k];const namn=def.fiender.filter(x=>x===k).length>1?f.namn+" "+(def.fiender.slice(0,i+1).filter(x=>x===k).length):f.namn;
   return{...f,typ:k,namn,max:f.liv,liv:f.liv,ute:false}});
- const K=kap(),noter=[];
+ const K=def.run?{flaggor:[]}:kap(),noter=def.noter||[];
  (def.justera||[]).forEach(j=>{if(!K.flaggor.includes(j.flagga))return;fiender.forEach(f=>{if(!j.typ||f.typ===j.typ){if(j.liv){f.liv=Math.max(1,f.liv+j.liv);}if(j.rustning)f.rustning+=j.rustning}});if(j.text)noter.push(j.text)});
  strid={def,bild,fiender,anvant:{},pepp:{},runda:1,ko:[],logg:[],noter};
  nyRunda();
  if(noter.length){stridVy("Striden börjar");app.append(el("div",{class:"rollpanel"},...noter.map(t=>el("p",{class:"event"},t)),el("button",{class:"btn big",onclick:nastaTur},"Fortsätt")));return}
  nastaTur();
 }
-function nyRunda(){strid.ko=[...vaken().map(h=>({h:h.id})),...strid.fiender.map((f,i)=>({f:i}))]}
+function nyRunda(){const H=vaken().map(h=>({h:h.id})),F=strid.fiender.map((f,i)=>({f:i}));
+ strid.ko=strid.runda===1&&strid.def.fiendeForst?[...F,...H]:[...H,...F]}
 const levande=()=>strid.fiender.filter(f=>!f.ute);
 function nastaTur(){
  if(!levande().length)return stridVinst();
@@ -1063,7 +1150,7 @@ function nastaTur(){
 }
 function stridVy(rubrik){
  app.replaceChildren(
-  el("div",{class:"topbar"},el("span",{class:"purse"},"Strid · runda "+strid.runda),el("span",{})),
+  el("div",{class:"topbar"},el("span",{class:"purse"},(strid.def.boss?"Bossen · ":"Strid · ")+"runda "+strid.runda),el("span",{})),
   tvBox(strid.bild,{fiender:strid.fiender}),
   el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")},el("b",{},f.namn),
    el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},f.ute?"Borta":"Rustning "+f.rustning)))),
@@ -1084,7 +1171,8 @@ function hjalteTur(h){
     visaHandelse(h.namn+" lägger handen på "+(v.id===h.id?"sig själv":v.namn)+" och säger läkande ord. "+v.namn+" får "+tot+" liv tillbaka!",null)},()=>{strid.anvant[h.id]=false;hjalteTur(h)});
   else{vaken().forEach(v=>{if(v.id!==h.id)strid.pepp[v.id]=true});visaHandelse(h.namn+" sjunger en peppsång så att alla får ny kraft! Alla andra får +1d6 på sitt nästa anfall.",null)}
  }},el("span",{},"Förmåga: "+F.namn),el("small",{},F.info)));
- if(spel.saker.includes("Läkedryck"))akt.append(el("button",{class:"choicebtn",onclick:()=>valjHjalte("Vem får läkedrycken?",partyHeroes(),v=>{const n=dryck(v);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en läkedryck. +"+n+" liv!",null)},()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger 2d4+2 liv")));
+ if(harDryck())akt.append(el("button",{class:"choicebtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!",null)},()=>hjalteTur(h)),()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
+ if(strid.def.run&&!strid.def.boss)akt.append(el("button",{class:"choicebtn",onclick:()=>runFly(h)},el("span",{},"Fly!"),el("small",{},gen(h.namn)+" smidighet mot fiendernas fart")));
  app.append(akt);
 }
 function anfall(h,f,{formaga}){
@@ -1098,7 +1186,7 @@ function anfall(h,f,{formaga}){
  const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,rs=>{
   const r=Math.max(...rs),pb=pepp?d(6):0,tot=r+atk+pb,trf=r===20||(r!==1&&tot>=f.rustning);
   let txt;
-  if(trf){const dm=slaa(K.skada,r===20),extra=formaga==="smygare"?d(6):0,skada=Math.max(1,dm.tot+mod(h.s[K.main])+extra);
+  if(trf){const dm=slaa(K.skada,r===20),extra=formaga==="smygare"?d(6):0,skada=Math.max(1,dm.tot+mod(h.s[K.main])+extra+vitals(h).wb);
    f.liv=Math.max(0,f.liv-skada);
    txt=(r===20?"KRITISK TRÄFF! ":"Träff! ")+h.namn+" träffar "+f.namn+" med "+VAPEN_ORD[h.klass]+" och gör "+skada+" i skada."+(extra?" (Smygattacken gav "+extra+" extra.)":"")+(f.liv<=0?" "+fly(f):"");
   }else txt=r===1?"Hoppsan! "+h.namn+" snubblar och missar helt.":h.namn+" missar. "+f.namn+" hoppar undan i sista stund!";
@@ -1111,6 +1199,7 @@ const gen=n=>/[sxz]$/i.test(n)?n:n+"s"; // svensk genitiv: Tomas tur, Villes tur
 function fly(f){f.ute=true;return f.namn+" "+f.flyr}
 function visaHandelse(txt){stridVy("");app.append(el("div",{class:"rollpanel"},el("p",{class:"event"},txt),el("button",{class:"btn big",onclick:nastaTur},"Fortsätt")))}
 function fiendeTur(f){
+ if(strid.def.sover&&strid.runda===1)return visaHandelse(f.namn+" sover fortfarande och märker ingenting!");
  const mal=vaken();const h=mal[Math.floor(Math.random()*mal.length)],ac=vitals(h).ac;
  stridVy("Nu anfaller "+f.namn+"!");
  const dice=el("div",{class:"dicebox"});const res=el("div",{class:"rollres",role:"status"});
@@ -1124,11 +1213,422 @@ function fiendeTur(f){
  });
 }
 function stridVinst(){
+ if(strid.def.run)return runVinst();
  partyHeroes().forEach(h=>{if(liv(h)<=0)setLiv(h,1)});
  const def=strid.def,bild=strid.bild;strid=null;sparaSpel();
  visaUtfall(def.vinst,null,bild,null,el("div",{class:"theend"},el("strong",{},"Ni vann striden!"),el("span",{},"Den som svimmade vaknar med 1 liv.")));
 }
-function stridForlust(){const til=strid.def.forlust;strid=null;gaTill(til)}
+function stridForlust(){if(strid.def.run)return runForlust();const til=strid.def.forlust;strid=null;gaTill(til)}
+
+/* =====================================================================
+   GROTTKRYPNING – som i Nat20: välj plats, välj dörr, klara rummen,
+   besegra bossen. Allt slumpas fram varje gång.
+   ===================================================================== */
+const DJUP=6; // rum per kapitel, det sista är bossen
+const XPT=[0,0,200,600,1500,3200,6000,10000,15000,22000,30000]; // XP som krävs för nivå 1–10 (samma som Nat20)
+// Svårighetsgrad, som i Nat20
+const SVAR={latt:{namn:"Lätt",hp:.7,atk:-2,dc:-2,falla:.5,dryck:3,hela:1.5,besk:"Svagare monster, lättare prov och fler läkedrycker. Bra för nya spelare."},
+ normal:{namn:"Normal",hp:1,atk:0,dc:0,falla:1,dryck:2,hela:1,besk:"Det vanliga äventyret."},
+ svar:{namn:"Svår",hp:1.15,atk:1,dc:2,falla:1.25,dryck:1,hela:.75,besk:"Tuffare monster som slår hårdare, svårare prov och färre drycker."}};
+const SV=()=>SVAR[alt.svar]||SVAR.normal;
+const nivaInfo=id=>spel.niva[id]||{lvl:1,xp:0};
+function xpRad(h){const N=nivaInfo(h.id);if(N.lvl>=10)return el("p",{class:"xp"},"Högsta nivån!");
+ const fr=XPT[N.lvl],till=XPT[N.lvl+1];
+ return el("div",{class:"xp"},el("span",{},N.xp+" / "+till+" XP till nivå "+(N.lvl+1)),el("div",{class:"xpbar"},el("i",{style:"width:"+Math.min(100,(N.xp-fr)/(till-fr)*100)+"%"})))}
+const partyNiva=()=>{const H=partyHeroes();return Math.max(1,Math.round(H.reduce((a,h)=>a+vitals(h).lvl,0)/Math.max(1,H.length)))};
+function gainXp(h,n){
+ const N={...nivaInfo(h.id)};N.xp+=n;spel.niva[h.id]=N;
+ while(N.lvl<10&&N.xp>=XPT[N.lvl+1]){const fore=maxLiv(h);N.lvl++;spel.niva[h.id]={...N};const ny=maxLiv(h);
+  setLiv(h,liv(h)>0?liv(h)+(ny-fore):0);
+  rlog("★ Nivå upp! "+h.namn+" är nu nivå "+N.lvl+": +"+(ny-fore)+" liv"+(N.lvl===5||N.lvl===9?" och bättre träffsäkerhet":"")+".","crit")}
+}
+
+/* --- platser --- */
+const PLATSER={
+ slottet:{namn:"Spökslottet Korpholm",bild:"slott",besk:"Kalla salar, rasslande kedjor och något som sitter på tronen.",in:"knuffar upp den knarrande porten och kliver in i slottet",djupare:"en vindlande trappa som leder ner i fängelsehålorna",boss:"Slottsherren",
+  delning:["Korridoren delar sig. Någonstans knarrar en dörr.","Porträtt stirrar på er från väggarna där gången delar sig.","Kall luft strömmar ut ur mer än en dörröppning."]},
+ grottorna:{namn:"Grottorna under Kråkberget",bild:"grottgang",besk:"Droppande gångar fulla av saker som biter.",in:"tänder facklorna och kryper in i grottan",djupare:"en spricka som leder djupare in i berget",boss:"Grottans härskare",
+  delning:["Tunneln delar sig. Vatten droppar någonstans i mörkret.","Facklans sken når mer än en öppning i berget.","Ben knastrar under fötterna där gångarna möts."]},
+ skogen:{namn:"Mörkskogen",bild:"skog",besk:"Månsken, dimma och ögon mellan träden.",in:"lämnar vägen och kliver in i den mörka skogen",djupare:"en igenvuxen stig som leder djupare in i skogen",boss:"Skogens mörker",
+  delning:["Stigen delar sig mellan de gamla träden. Något prasslar.","Stigarna slingrar bort i dimman. Ingen av dem ser vänlig ut.","En uggla hoar. Stigarna framför er försvinner i mörkret."]},
+ vulkanen:{namn:"Drakvulkanen",bild:"vulkan",besk:"Lava, svavel och det farligaste av allt. Bäst för hjältar på högre nivå.",in:"tar ett djupt andetag och kliver in genom den heta porten",djupare:"en bro av kedjor över lavan som leder djupare ner",boss:"Vulkanens väktare",
+  delning:["Marken spricker upp i flera brinnande stigar.","Röken driver över vägskälet. Alla vägar luktar svavel.","Kedjor skramlar längre fram. Vägen delar sig i hettan."]}};
+const DELNING=["Vägen delar sig. Varje väg döljer något olika.","Ni stannar där vägen delar sig. Vilken känns rätt?","Ledtrådarna säger lite, men inte allt.","Ni kan lyssna först. Men gör det tyst."];
+
+/* --- monster: xp avgör hur farliga de är --- */
+const MONSTER={
+ fladdermus:{namn:"Jättefladdermus",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","slottet","skogen"],flyr:"fladdrar iväg ut i mörkret."},
+ ratta:{namn:"Jätteråtta",liv:7,rustning:12,anfall:4,skada:"1d4+2",xp:25,platser:["grottorna","slottet"],flyr:"piper och försvinner ner i ett hål."},
+ vatte:{namn:"Vätte",liv:7,rustning:13,anfall:4,skada:"1d6+2",xp:50,platser:["skogen","grottorna"],flyr:"faller ihop och blir liggande."},
+ skelett:{namn:"Skelett",liv:13,rustning:13,anfall:4,skada:"1d6+2",xp:50,platser:["slottet","grottorna"],flyr:"rasar ihop till en hög med ben."},
+ varg:{namn:"Varg",liv:11,rustning:13,anfall:4,skada:"2d4+1",xp:50,platser:["skogen"],flyr:"gnyr till och försvinner bland träden."},
+ skuggling:{namn:"Skuggling",liv:10,rustning:12,anfall:4,skada:"1d6+2",xp:100,platser:["slottet","vulkanen"],flyr:"löses upp som rök."},
+ spindel:{namn:"Jättespindel",liv:20,rustning:14,anfall:5,skada:"1d8+3",xp:200,platser:["grottorna","skogen"],flyr:"kryper ihop och slutar röra sig."},
+ slem:{namn:"Slemkub",liv:30,rustning:8,anfall:4,skada:"3d6",xp:200,platser:["grottorna"],flyr:"rinner ut över golvet och blir en pöl."},
+ eldimp:{namn:"Eldimp",liv:12,rustning:13,anfall:5,skada:"1d6+3",xp:100,platser:["vulkanen"],flyr:"fräser och slocknar som en tändsticka."},
+ lavahund:{namn:"Lavahund",liv:30,rustning:15,anfall:5,skada:"1d8+3",xp:450,platser:["vulkanen"],flyr:"ylar och sjunker ner i lavan."},
+ krak:{namn:"Vättehövding",liv:24,rustning:15,anfall:5,skada:"1d8+2",xp:200,platser:["skogen","grottorna"],flyr:"vrålar av ilska och flyr."},
+ troll:{namn:"Bergstroll",liv:45,rustning:12,anfall:6,skada:"2d6+3",xp:450,platser:["skogen","grottorna"],flyr:"faller omkull med ett brak som får marken att skaka."},
+ spokriddare:{namn:"Spökriddare",liv:40,rustning:16,anfall:6,skada:"1d10+3",xp:700,platser:["slottet"],flyr:"faller sönder i en hög med rostig rustning."},
+ skuggan:{namn:"Skuggan",liv:50,rustning:13,anfall:6,skada:"2d6+2",xp:1100,platser:["slottet","vulkanen"],flyr:"skriker och löses upp i tusen svarta trådar."},
+ eldklo:{namn:"Eldklo, den unga draken",liv:75,rustning:17,anfall:7,skada:"2d8+4",xp:1800,platser:["vulkanen"],flyr:"vrålar, slår med vingarna och flyger ut genom vulkanens topp."}};
+const BOSSAR={slottet:["spokriddare","skuggan","skelett"],grottorna:["troll","slem","krak","spindel"],skogen:["troll","krak","spindel","varg"],vulkanen:["eldklo","skuggan","lavahund"]};
+// XP-budget per hjälte och nivå: lätt, medel, svår, mycket svår (som i D&D)
+const XPB={1:[25,50,75,100],2:[50,100,150,200],3:[75,150,225,400],4:[125,250,375,500],5:[250,500,750,1100],6:[300,600,900,1400],7:[350,750,1100,1700],8:[450,900,1400,2100],9:[550,1100,1600,2400],10:[600,1200,1900,2800]};
+const GRUPP=k=>k<=1?1:k===2?1.5:2;
+const valj=a=>a[Math.floor(Math.random()*a.length)];
+function wpick(o){const tot=Object.values(o).reduce((a,b)=>a+b,0);let r=Math.random()*tot;for(const[k,v]of Object.entries(o)){r-=v;if(r<0)return k}return Object.keys(o)[0]}
+function mote(boss,typ){
+ const R=spel.run,H=partyHeroes(),n=H.length,r=Math.random();
+ const dk=alt.svar||"normal",dp=R.djup,r2=Math.random();
+ let tier=boss?(dk==="latt"?1:dk==="svar"?3:2):dk==="latt"?(dp>=5&&r2<.3?1:0):dk==="svar"?(dp>=5&&r2<.4?2:1):(dp<=2||r2<.25?0:1);
+ const budget=([.85,1,1.2][Math.min(3,n)-1]||1)*H.reduce((a,h)=>a+XPB[Math.min(10,vitals(h).lvl)][tier],0);
+ let k=boss?Math.min(3,n):n===1?(r<.75?1:2):n===2?(r<.35?1:r<.85?2:3):(r<.25?1:r<.6?2:3);
+ const share=budget/GRUPP(k),bas=typ?[typ]:Object.keys(MONSTER).filter(m=>MONSTER[m].platser.includes(R.plats));
+ const plock=(max,fav)=>{let pool=bas.filter(m=>MONSTER[m].xp<=max&&MONSTER[m].xp>=max*.4);
+  if(fav){const f=pool.filter(m=>fav.includes(m));if(f.length)pool=f}
+  if(!pool.length)pool=bas.filter(m=>MONSTER[m].xp<=max);
+  if(!pool.length){const lo=Math.min(...bas.map(m=>MONSTER[m].xp));pool=bas.filter(m=>MONSTER[m].xp===lo)}
+  return valj(pool)};
+ if(boss){const main=plock(k>1?share*.65:share,BOSSAR[R.plats]);const ut=[main];const rest=(share-MONSTER[main].xp)/Math.max(1,k-1);
+  for(let i=1;i<k;i++)ut.push(plock(Math.max(25,rest)));return ut}
+ const main=plock(share/k);const ut=[main];const samma=Math.random()<.6;
+ for(let i=1;i<k;i++)ut.push(samma?main:plock(share/k));return ut;
+}
+const monNamn=keys=>keys.map(k=>MONSTER[k].namn).join(", ");
+
+/* --- dörrar och ledtrådar --- */
+const LEDTRADAR=[
+ {h:"Ni hör skrapande ljud och tunga steg.",o:{strid:5,sovare:3,resenar:2}},
+ {h:"Något glimmar i mörkret.",o:{skatt:3,vaktad:3,falla:2,kista:2}},
+ {h:"Det luktar rök och stekt kött.",o:{lager:4,handlare:2,strid:2,vaktad:2}},
+ {h:"Det är alldeles för tyst.",o:{falla:3,altare:2,sovare:3,skatt:2}},
+ {h:"Någonstans porlar vatten.",o:{brunn:4,strid:3,altare:3}},
+ {h:"Någon viskar.",o:{resenar:3,handlare:3,strid:4}},
+ {h:"Ett svagt ljus fladdrar längre fram.",o:{lager:3,altare:2,handlare:2,falla:3}},
+ {h:"Något snarkar, djupt och långsamt.",o:{sovare:6,strid:2,lager:2}},
+ {h:"Ni hör mynt som klirrar.",o:{handlare:4,skatt:3,vaktad:3}},
+ {h:"En mjuk sång hörs på avstånd.",o:{altare:3,resenar:3,handlare:2,falla:2}},
+ {h:"Det finns färskt blod på marken.",o:{strid:5,vaktad:3,resenar:2}},
+ {h:"Någon har ristat en varning här.",o:{falla:5,vaktad:3,strid:2}},
+ {h:"Det luktar sött, som blommor.",o:{brunn:3,altare:3,falla:2,skatt:2}},
+ {h:"Små fotspår leder ditåt.",o:{handlare:3,skatt:3,falla:2,strid:2}},
+ {h:"Ett lågt morrande. Sedan tystnad.",o:{strid:5,sovare:3,vaktad:2}},
+ {h:"Ni känner värme mot ansiktet.",o:{lager:4,altare:2,falla:2,strid:2}}];
+const RUMNAMN={strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Skadad äventyrare",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
+function gorDorrar(){
+ const R=spel.run;if(R.djup>=DJUP)return null;
+ const r=Math.random(),n=r<.22?1:r<.75?2:3,ut=[],anv=new Set();
+ while(ut.length<n){const L=valj(LEDTRADAR);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:wpick(L.o),kand:!!R.nastaKand})}
+ R.nastaKand=false;if(ut.some(d=>d.kand))R.lyssnat=true;
+ return ut;
+}
+
+/* --- fällor --- */
+const FALLOR=[
+ {egen:"smi",alla:false,varn:"Golvet ger vika under fötterna!",ok:"hoppar undan i sista stund",traff:"faller ner i en spjutgrop"},
+ {egen:"smi",alla:false,varn:"Små hål i väggen. Klick!",ok:"duckar för giftpilarna",traff:"träffas av giftiga pilar"},
+ {egen:"smi",alla:true,varn:"Taket mullrar. Stenar faller!",ok:"hoppar åt sidan",traff:"träffas av fallande sten"},
+ {egen:"smi",alla:true,varn:"En platta klickar. Flammor sprutar ur golvet!",ok:"kastar sig undan lågorna",traff:"bränns av lågorna"},
+ {egen:"tal",alla:true,varn:"Grön rök väller fram ur väggarna!",ok:"håller andan",traff:"hostar och mår illa av gasen"},
+ {egen:"smi",alla:false,varn:"Något susar ner från taket!",ok:"duckar för den svängande yxan",traff:"träffas av en svängande yxa"},
+ {egen:"vis",alla:false,varn:"En rune på golvet börjar glöda!",ok:"känner magin och kliver runt runan",traff:"får en magisk stöt från runan"}];
+
+/* --- skatter --- */
+function rollLoot(rik){
+ const l=partyNiva(),n=partyHeroes().length,R=spel.run,ut=[];
+ const g=Math.round((slaa("2d10").tot*l+R.kapitel*5+(rik?10*l:0))*n/2);ut.push({k:"guld",n:g+" guldmynt",v:g});
+ for(let i=0;i<(rik?2:1);i++){const r=Math.random();
+  if(r<.42)ut.push({k:"sak",n:"Läkedryck"});
+  else if(r<.57)ut.push({k:"sak",n:"Stor läkedryck"});
+  else if(r<.72&&lagst("wb").wb<3)ut.push({k:"wb",n:"Magiskt vapen",info:"+1 på träff och skada"});
+  else if(r<.84&&lagst("acb").acb<2)ut.push({k:"acb",n:"Skyddsring",info:"+1 rustning"});
+  else ut.push({k:"xp",n:"En gammal karta full med ledtrådar",v:30*l})}
+ return ut;
+}
+const utr=id=>spel.utr[id]||{wb:0,acb:0};
+function lagst(k){const H=partyHeroes();return H.map(h=>({h,...utr(h.id)})).sort((a,b)=>a[k]-b[k])[0]||{wb:9,acb:9}}
+function taLoot(lista,till){
+ const R=spel.run;
+ lista.forEach(it=>{
+  if(it.k==="guld"){R.guld+=it.v;rlog("Ni hittar "+it.n+".","heal")}
+  else if(it.k==="sak"){R.saker.push(it.n);rlog("Ni hittar en "+it.n.toLowerCase()+".","heal")}
+  else if(it.k==="xp"){partyHeroes().forEach(h=>gainXp(h,it.v));rlog("Ni hittar "+it.n.toLowerCase()+". Alla får "+it.v+" XP.","magic")}
+  else{const h=till||lagst(it.k).h;if(!h)return;const U={...utr(h.id)};U[it.k]=(U[it.k]||0)+1;spel.utr[h.id]=U;
+   rlog(it.k==="wb"?h.namn+" får ett magiskt vapen: +"+U.wb+" på träff och skada.":h.namn+" får en skyddsring: +"+U.acb+" rustning.","magic")}
+ });
+}
+
+/* --- krönikan --- */
+function rlog(t,k=""){const R=spel.run;if(!R)return;R.logg.push({t,k});if(R.logg.length>40)R.logg=R.logg.slice(-40)}
+function kronika(n=7){const L=spel.run.logg.slice(-n);
+ const box=el("div",{class:"chron",role:"log","aria-live":"polite"},L.map(e=>el("p",{class:"c-"+(e.k||"note")},e.t)));
+ setTimeout(()=>{box.scrollTop=box.scrollHeight},0);return box}
+
+/* --- starta, fortsätta, avsluta --- */
+function startRun(plats){
+ const ph=party.map(byId).filter(Boolean);if(!ph.length){home();flash("Välj minst en hjälte först.");return}
+ const P=PLATSER[plats];
+ spel.run={plats,kapitel:1,djup:1,fas:"dorrar",dorrar:null,lyssnat:false,rum:null,logg:[],party:ph.map(h=>h.id),
+  guld:ph.reduce(a=>a+d(10)+5,0),saker:Array(SV().dryck*ph.length).fill("Läkedryck"),bless:{},curse:{},ara:0,start:Date.now(),nastaKand:false};
+ lage="run";
+ partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
+ rlog("Kapitel 1 · "+P.namn,"sep");
+ rlog(partyHeroes().map(h=>h.namn).join(", ").replace(/, ([^,]*)$/," och $1")+" "+P.in+".");
+ spel.run.dorrar=gorDorrar();sparaSpel();visaRun();
+}
+function avslutaRun(utfall){
+ const R=spel.run;
+ spel.historik.unshift({plats:R.plats,kapitel:R.kapitel,djup:R.djup,utfall,hjaltar:partyHeroes().map(h=>h.namn+" (nivå "+vitals(h).lvl+")"),ara:R.ara,datum:new Date().toISOString().slice(0,10)});
+ spel.historik=spel.historik.slice(0,20);
+}
+function runHuvud(){const R=spel.run,P=PLATSER[R.plats];
+ return el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:()=>{lage=null;adventures()}},"← Äventyr"),
+  el("span",{class:"purse"},P.namn.split(" ")[0]+" · kap "+R.kapitel+" · "+(R.djup>=DJUP?"bossen":"rum "+R.djup+"/"+DJUP)))}
+function runTV(o={}){const R=spel.run;return tvBox(PLATSER[R.plats].bild,o)}
+function visaRun(){
+ tyst();strid=null;lage="run";view="run";document.getElementById("party").hidden=true;
+ const R=spel.run;if(!R){adventures();return}
+ const rum=R.rum,t=rum&&rum.typ;
+ const prop=R.fas==="rum"&&!rum.klar?({skatt:"kista_oppen",kista:"kista",lager:"lagereld",brunn:"brunn",altare:"altare",handlare:"handlare",resenar:"resenar"})[t]:null;
+ const fig=R.fas==="rum"&&t==="sovare"&&!rum.klar?rum.fiender.map(k=>k):prop?[prop]:null;
+ app.replaceChildren(runHuvud(),runTV({figur:fig,sover:t==="sovare"}),partyStrip(),kronika());
+ const akt=el("div",{class:"actions"});app.append(akt);
+ const knapp=(txt,sub,fn,o={})=>akt.append(el("button",{class:"choicebtn"+(o.special?" special":""),disabled:!!o.av,onclick:fn},el("span",{},txt),sub?el("small",{},sub):null));
+ if(R.fas==="fallen"){
+  akt.append(el("div",{class:"theend bad"},el("strong",{},"Sällskapet har fallit"),el("span",{},"Hjältarna behåller sina nivåer och kan ge sig av igen.")),
+   el("button",{class:"btn",onclick:()=>{spel.run=null;sparaSpel();lage=null;adventures()}},"Tillbaka"));
+ }else if(R.fas==="vann"){
+  akt.append(el("div",{class:"theend"},el("strong",{},"Bossen är besegrad!"),el("span",{},"Ni kan gå hem som hjältar, eller vila och gå djupare. Där blir det farligare.")));
+  knapp("Gå djupare: kapitel "+(R.kapitel+1),"Alla vilar och får fullt liv. Ni hittar "+PLATSER[R.plats].djupare+".",nastaKapitel,{special:true});
+  knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel.")});
+ }else if(R.fas==="strid"){
+  knapp("Fortsätt striden",monNamn(rum.fiender),()=>runStrid(rum.fiender,rum.stridOpt||{}));
+ }else if(R.fas==="dorrar"){
+  const P=PLATSER[R.plats];
+  if(!R.dorrar){akt.append(el("p",{class:"hint"},"Längst in väntar "+P.boss.toLowerCase()+". Det finns ingen väg runt."));
+   knapp("Möt bossen","Det sista rummet i kapitlet",()=>gaIn("boss"),{special:true});}
+  else{
+   akt.append(el("p",{class:"lead"},R.dorrar.length===1?"Det finns bara en väg framåt.":valj([...DELNING,...P.delning])));
+   R.dorrar.forEach((d,i)=>knapp((R.dorrar.length>1?["Vänster","Mitten","Höger"][R.dorrar.length===2?i*2:i]+": ":"")+d.ledtrad,d.kand?"Ni vet: "+RUMNAMN[d.typ]:null,()=>gaIn(i)));
+   if(!R.lyssnat)knapp("Lyssna vid dörrarna","Någon slår för Visdom. Men oväsen kan väcka något.",lyssna,{special:true});
+  }
+ }else if(R.fas==="rum")rumKnappar(rum,knapp,akt);
+ app.append(packning(visaRun));
+ window.scrollTo(0,0);
+}
+function nastaRum(){
+ const R=spel.run;R.djup++;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.dorrar=gorDorrar();
+ rlog(R.djup>=DJUP?"Gången slutar vid en stor port.":"Ni går vidare.","sep");sparaSpel();visaRun();
+}
+function nastaKapitel(){
+ const R=spel.run;R.kapitel++;R.djup=1;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.bless={};R.curse={};
+ partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
+ rlog("Kapitel "+R.kapitel+" · Djupare ner","sep");rlog("Alla har vilat och känner sig starka igen. Ni hittar "+PLATSER[R.plats].djupare+".");
+ R.dorrar=gorDorrar();sparaSpel();visaRun();
+}
+
+/* --- gå in i ett rum --- */
+function gaIn(i){
+ const R=spel.run,typ=i==="boss"?"boss":R.dorrar[i].typ;
+ R.rum={typ,klar:false};R.fas="rum";
+ rlog((typ==="boss"?"Bossen · ":"Rum "+R.djup+" · ")+RUMNAMN[typ],"sep");
+ if(typ==="boss"){const f=mote(true);rlog("Ur mörkret reser sig "+PLATSER[R.plats].boss.toLowerCase()+": "+monNamn(f)+"!","bad");return runStrid(f,{boss:true})}
+ if(typ==="strid"){const f=mote(false);rlog("Ni möter "+monNamn(f)+"!","bad");return runStrid(f,{})}
+ if(typ==="vaktad"){const f=mote(false);R.rum.sedanSkatt=true;rlog("Bakom en hög med ben står en kista. Men något vaktar den: "+monNamn(f)+".","bad");return runStrid(f,{})}
+ if(typ==="skatt"){R.rum.loot=rollLoot(false);rlog("Ni hittar en skattkista!","heal")}
+ if(typ==="falla"){R.rum.falla=FALLOR.indexOf(valj(FALLOR));sparaSpel();return korFalla()}
+ if(typ==="sovare"){R.rum.fiender=mote(false);rlog("Något stort sover i gången: "+monNamn(R.rum.fiender)+".","note")}
+ if(typ==="kista")rlog("En järnbeslagen kista med ett tungt lås.");
+ if(typ==="altare")rlog("Ett gammalt altare till en bortglömd gud.","magic");
+ if(typ==="resenar")rlog("En skadad äventyrare sitter lutad mot väggen.");
+ if(typ==="lager")rlog("En övergiven lägerplats. Glöden i elden är fortfarande varm.","heal");
+ if(typ==="brunn")rlog("En gammal brunn. Vattnet är mörkt och stilla.");
+ if(typ==="handlare")rlog("En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?","heal");
+ sparaSpel();visaRun();
+}
+function rumKnappar(rum,knapp,akt){
+ const R=spel.run,lvl=partyNiva(),vidare=()=>knapp("Gå vidare",null,nastaRum,{special:true});
+ if(rum.klar)return vidare();
+ const t=rum.typ;
+ if(t==="skatt"){akt.append(el("div",{class:"gains"},rum.loot.map(it=>el("span",{},it.n+(it.info?" ("+it.info+")":"")))));
+  knapp("Ta skatten",null,()=>{taLoot(rum.loot);rum.klar=true;sparaSpel();visaRun()})}
+ else if(t==="sovare"){
+  knapp("Smyg förbi","En hjälte leder er. Slå Smidighet, minst 11.",()=>runProv({egen:"smi",dc:11,fraga:"Vem leder er förbi?"},(ok,h)=>{
+   if(ok){rlog(h.namn+" leder er förbi utan ett ljud. Alla får "+15*lvl+" XP.","hit");partyHeroes().forEach(x=>gainXp(x,15*lvl));rum.klar=true;sparaSpel();visaRun()}
+   else{rlog("En sten skramlar under "+gen(h.namn)+" fot. Monstret vaknar!","bad");runStrid(rum.fiender,{fiendeForst:true})}}));
+  knapp("Överfall dem medan de sover","Ni får anfalla först, en hel runda.",()=>{rlog("Ni smyger fram och anfaller!","note");runStrid(rum.fiender,{sover:true})});
+ }
+ else if(t==="kista"){
+  knapp("Dyrka upp låset","Smidighet, minst 13. Misslyckas ni sticker en giftnål, men kistan öppnas.",()=>runProv({egen:"smi",dc:13,fraga:"Vem dyrkar?"},(ok,h)=>{
+   if(ok)rlog("Klick! "+h.namn+" dyrkar upp låset.","hit");
+   else{const n=Math.max(1,slaa(lvl+"d6").tot);setLiv(h,Math.max(1,liv(h)-n));rlog("En giftnål sticker "+h.namn+": "+n+" i skada. Men locket glider upp.","bad")}
+   rum.typ="skatt";rum.loot=rollLoot(true);sparaSpel();visaRun()}));
+  knapp("Bryt upp den","Styrka, minst 13. Går det inte kan man försöka igen.",()=>runProv({egen:"sty",dc:13,fraga:"Vem är starkast?"},(ok,h)=>{
+   if(ok){rlog(h.namn+" bänder upp locket!","hit");rum.typ="skatt";rum.loot=rollLoot(true)}
+   else{const n=d(4);setLiv(h,Math.max(1,liv(h)-n));rlog("Låset håller. "+h.namn+" skrapar knogarna: "+n+" i skada.","bad")}
+   sparaSpel();visaRun()}));
+  vidare();
+ }
+ else if(t==="altare"){
+  const kost=15*lvl*partyHeroes().length;
+  knapp("Be till guden","Visdom, minst 12. Gudarna kan bli arga.",()=>runProv({egen:"vis",dc:12,fraga:"Vem ber?"},(ok,h)=>{
+   if(ok){partyHeroes().forEach(x=>R.bless[x.id]=1);rlog(h.namn+" ber och ett varmt ljus fyller rummet. Alla får +1 på anfall tills nästa vila.","magic")}
+   else{const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));R.curse[h.id]=1;rlog("Guden blir arg! "+h.namn+" tar "+n+" i skada och får −1 rustning tills nästa vila.","bad")}
+   rum.klar=true;sparaSpel();visaRun()}));
+  knapp("Offra "+kost+" guld","Säker välsignelse: +1 på anfall för alla tills nästa vila.",()=>{R.guld-=kost;partyHeroes().forEach(x=>R.bless[x.id]=1);rlog("Ni lägger guldet på altaret. Det försvinner i ett sken. Alla känner sig välsignade.","magic");rum.klar=true;sparaSpel();visaRun()},{av:R.guld<kost});
+  vidare();
+ }
+ else if(t==="resenar"){
+  knapp("Prata med henne","Charm, minst 12. Hon kanske vet vad som väntar.",()=>runProv({egen:"cha",dc:12,fraga:"Vem pratar?"},(ok,h)=>{
+   if(ok){R.nastaKand=true;rlog(h.namn+" pratar lugnt med henne. Hon viskar vad som väntar vid nästa vägskäl.","hit")}
+   else rlog("Hon litar inte på "+h.namn+" och vänder bort huvudet.","note");
+   rum.klar=true;sparaSpel();visaRun()}));
+  knapp("Ge henne en läkedryck","Hon berättar allt hon vet. Alla får XP.",()=>{const i=R.saker.indexOf("Läkedryck");R.saker.splice(i,1);R.nastaKand=true;
+   rlog("Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett. Alla får "+30*lvl+" XP.","heal");partyHeroes().forEach(x=>gainXp(x,30*lvl));rum.klar=true;sparaSpel();visaRun()},{av:!R.saker.includes("Läkedryck")});
+  vidare();
+ }
+ else if(t==="lager"){
+  knapp("Kort vila","Alla får tillbaka en fjärdedel av sitt liv.",()=>{partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/4));rlog(h.namn+" vilar med ett öga öppet. +"+(liv(h)-f)+" liv.","heal")});R.curse={};rum.klar=true;sparaSpel();visaRun()});
+  knapp("Lång vila","Halva livet tillbaka och förmågor laddas. Men röken kan locka hit något.",()=>{
+   partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/2));rlog(h.namn+" sover vid elden. +"+(liv(h)-f)+" liv.","heal")});R.curse={};R.bless={};rum.klar=true;
+   if(Math.random()<.35){const f=mote(false);rlog("Men röken lockade dit något! Ni vaknar med ett ryck: "+monNamn(f)+"!","bad");return runStrid(f,{fiendeForst:true})}
+   sparaSpel();visaRun()});
+  vidare();
+ }
+ else if(t==="brunn"){
+  knapp("Drick ur brunnen","En hjälte dricker. Det kan gå bra, eller riktigt illa.",()=>valjHjalte("Vem dricker?",vaken(),h=>{const r=Math.random();
+   if(r<.45){const f=liv(h);setLiv(h,f+slaa("2d8").tot+lvl);rlog(h.namn+" dricker. Vattnet är friskt och klart. +"+(liv(h)-f)+" liv.","heal")}
+   else if(r<.7){rlog(h.namn+" dricker ur en visdomskälla! Bilder av gamla strider flimrar förbi. +"+40*lvl+" XP.","magic");gainXp(h,40*lvl)}
+   else if(r<.85){const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));rlog("Bittert! Vattnet var förgiftat. "+h.namn+" tar "+n+" i skada.","bad")}
+   else{rum.klar=true;const f=mote(false);rlog("Vattnet börjar bubbla. Något reser sig ur brunnen: "+monNamn(f)+"!","bad");return runStrid(f,{fiendeForst:true})}
+   rum.klar=true;sparaSpel();visaRun()},null));
+  vidare();
+ }
+ else if(t==="handlare"){
+  [["Läkedryck",25],["Stor läkedryck",60]].forEach(([n,p])=>knapp("Köp "+n.toLowerCase()+" · "+p+" guld","Ger "+DRYCKER[n]+" liv",()=>{R.guld-=p;R.saker.push(n);rlog("Ni köper en "+n.toLowerCase()+" för "+p+" guld.","heal");sparaSpel();visaRun()},{av:R.guld<p}));
+  const vapen=partyHeroes().filter(h=>utr(h.id).wb<3),ring=partyHeroes().filter(h=>utr(h.id).acb<2);
+  const pris=(h,k)=>k==="wb"?120*(utr(h.id).wb+1):150*(utr(h.id).acb+1);
+  if(vapen.length)knapp("Slipa ett vapen","+1 på träff och skada. Från 120 guld.",()=>valjHjalte("Vems vapen?",vapen,h=>{const p=pris(h,"wb");if(R.guld<p){flash("Ni har inte råd. Det kostar "+p+" guld.");return visaRun()}R.guld-=p;taLoot([{k:"wb"}],h);sparaSpel();visaRun()},visaRun,h=>({av:R.guld<pris(h,"wb"),txt:pris(h,"wb")+" guld · nu +"+utr(h.id).wb})));
+  if(ring.length)knapp("Köp en skyddsring","+1 rustning. Från 150 guld.",()=>valjHjalte("Vem får ringen?",ring,h=>{const p=pris(h,"acb");if(R.guld<p){flash("Ni har inte råd.");return visaRun()}R.guld-=p;taLoot([{k:"acb"}],h);sparaSpel();visaRun()},visaRun,h=>({av:R.guld<pris(h,"acb"),txt:pris(h,"acb")+" guld · nu +"+utr(h.id).acb})));
+  vidare();
+ }
+ else vidare();
+}
+
+/* --- lyssna vid dörrarna --- */
+function lyssna(){
+ const R=spel.run;
+ runProv({egen:"vis",dc:12,fraga:"Vem lyssnar vid dörrarna?"},(ok,h)=>{
+  R.lyssnat=true;
+  if(ok){R.dorrar.forEach(x=>x.kand=true);rlog(h.namn+" trycker örat mot stenen och lyssnar. Nu vet ni vad som väntar.","hit");sparaSpel();return visaRun()}
+  if(Math.random()<.4){R.rum={typ:"strid",klar:false};R.fas="rum";const f=mote(false);rlog(h.namn+" lyssnar, men något hör er först! "+monNamn(f)+" rusar fram ur skuggorna!","bad");return runStrid(f,{fiendeForst:true})}
+  rlog(h.namn+" lyssnar, men hör bara sitt eget hjärta.","note");sparaSpel();visaRun();
+ });
+}
+
+/* --- fällor: en eller alla måste klara sig --- */
+function korFalla(){
+ const R=spel.run,F=FALLOR[R.rum.falla],lista=F.alla?vaken():[valj(vaken())],lvl=partyNiva();
+ rlog(F.varn,"bad");
+ const steg=i=>{
+  if(i>=lista.length){R.rum.klar=true;sparaSpel();return visaRun()}
+  const h=lista[i];
+  runProv({egen:F.egen,dc:12,fast:h,titel:F.varn},(ok)=>{
+   if(ok)rlog(h.namn+" "+F.ok+"!","hit");
+   else{const n=Math.max(1,Math.round(slaa(Math.max(1,Math.ceil((lvl+R.kapitel-1)/(F.alla?2:1)))+"d6").tot*SV().falla));setLiv(h,liv(h)-n);
+    rlog(h.namn+" "+F.traff+": "+n+" i skada."+(liv(h)<=0?" "+h.namn+" svimmar!":""),"bad")}
+   if(!vaken().length)return runForlust();
+   steg(i+1)})};
+ steg(0);
+}
+
+/* --- ett tärningsslag i grottkrypningen --- */
+function runProv(o,klar){
+ o={...o,dc:Math.max(5,o.dc+SV().dc)};
+ const go=h=>{
+  const b=mod(h.s[o.egen]);
+  app.replaceChildren(runHuvud(),runTV(),partyStrip());
+  const dice=el("div",{class:"dicebox"});dice.innerHTML=dieSvg("?");const res=el("div",{class:"rollres",role:"status"});
+  const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{
+   const tot=r+b,ok=r===20||(r!==1&&tot>=o.dc);
+   res.replaceChildren(el("div",{class:"sum"},r+" "+(b>=0?"+ ":"− ")+Math.abs(b)+" = "+tot,el("small",{},"Behöver minst "+o.dc)),
+    el("div",{class:"verdict "+(ok?"ok":"bad")},r===20?"NAT 20!":r===1?"En etta!":ok?"Det lyckades!":"Det gick inte."));
+   btn.replaceWith(el("button",{class:"btn big",onclick:()=>klar(ok,h,r,tot)},"Fortsätt"));
+  })}},"Slå!");
+  app.append(el("div",{class:"rollpanel"},o.titel?el("p",{class:"event"},o.titel):null,el("h2",{},h.namn+" slår för "+STATNAMN[o.egen]),
+   el("p",{},"Slå minst "+o.dc+". "+h.namn+" får "+fmt(b)+"."),dice,res,btn));
+  window.scrollTo(0,0);
+ };
+ if(o.fast)return go(o.fast);
+ valjHjalte(o.fraga||"Vem försöker?",vaken(),go,visaRun,h=>({av:false,txt:STATNAMN[o.egen]+" "+fmt(mod(h.s[o.egen]))+" · "+liv(h)+" liv"}));
+}
+
+/* --- strider --- */
+function runStrid(keys,opt){
+ const R=spel.run;R.fas="strid";R.rum.fiender=keys;R.rum.stridOpt=opt;sparaSpel();
+ const ant={};keys.forEach(k=>ant[k]=(ant[k]||0)+1);const nr={};
+ const fiender=keys.map(k=>{const M=MONSTER[k],skala=SV().hp*(1+(R.kapitel-1)*.1);nr[k]=(nr[k]||0)+1;
+  const liv=Math.max(1,Math.round(M.liv*skala));
+  return{...M,typ:k,bild:k,namn:M.namn+(ant[k]>1?" "+nr[k]:""),liv,max:liv,anfall:M.anfall+SV().atk,ute:false}});
+ startStrid({fiender,run:true,boss:!!opt.boss,fiendeForst:!!opt.fiendeForst,sover:!!opt.sover,
+  noter:opt.fiendeForst?["Bakhåll! Fienderna anfaller först."]:opt.sover?["Ni smyger fram. Fienderna sover den första rundan."]:[]},PLATSER[R.plats].bild);
+}
+function runVinst(){
+ const R=spel.run,fi=strid.fiender,xp=fi.reduce((a,f)=>a+Math.max(10,MONSTER[f.typ].xp),0),H=partyHeroes(),del=Math.ceil(xp/H.length);
+ strid=null;R.ara+=xp;
+ rlog("Seger! Alla får "+del+" XP.","crit");
+ H.forEach(h=>{if(liv(h)<=0){setLiv(h,1);rlog(h.namn+" vaknar med 1 liv.","heal")}
+  else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(h.namn+" hämtar andan och lägger om såren. +"+(liv(h)-f)+" liv.","heal")}});
+ H.forEach(h=>gainXp(h,del));
+ const boss=R.rum.typ==="boss";
+ if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(PLATSER[R.plats].boss+" är besegrad!","crit")}
+ else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog("Kistan som de vaktade står öppen.","heal")}
+ else{R.fas="rum";R.rum.klar=true}
+ sparaSpel();visaRun();
+}
+function runForlust(){
+ const R=spel.run;strid=null;R.fas="fallen";
+ rlog(partyHeroes().length>1?"Sällskapet har fallit.":"Hjälten har fallit.","sep");
+ avslutaRun("fallen");sparaSpel();visaRun();
+}
+function runFly(h){
+ const R=spel.run,b=mod(h.s.smi),dc=10+Math.max(...levande().map(f=>Math.floor(f.anfall/2)));
+ stridVy(h.namn+" försöker fly!");
+ const dice=el("div",{class:"dicebox"});dice.innerHTML=dieSvg("?");const res=el("div",{class:"rollres",role:"status"});
+ const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{const tot=r+b,ok=r!==1&&tot>=dc;
+  res.replaceChildren(el("div",{class:"sum"},r+" "+(b>=0?"+ ":"− ")+Math.abs(b)+" = "+tot,el("small",{},"Behöver minst "+dc)),el("div",{class:"verdict "+(ok?"ok":"bad")},ok?"Ni kommer undan!":"Vägen är blockerad!"));
+  btn.replaceWith(el("button",{class:"btn big",onclick:()=>{
+   if(ok){strid=null;partyHeroes().forEach(x=>{if(liv(x)<=0)setLiv(x,1)});rlog("Sällskapet springer för livet och kommer undan!","hit");R.fas="rum";R.rum.klar=true;sparaSpel();visaRun()}
+   else{rlog(h.namn+" försöker fly, men vägen är blockerad.","bad");nastaTur()}}},"Fortsätt"))})}},"Slå!");
+ app.append(el("div",{class:"rollpanel"},el("p",{},"Slå minst "+dc+" för Smidighet. "+h.namn+" får "+fmt(b)+"."),dice,res,btn));
+}
+
+/* --- valet av äventyr --- */
+function runKort(){
+ const R=spel.run,box=el("section",{class:"runsec"});
+ box.append(el("div",{class:"section-head"},el("h2",{},"Grottkrypning"),el("span",{},"Ny karta varje gång")));
+ if(R){const P=PLATSER[R.plats];
+  const btns=el("div",{class:"btnrow"},el("button",{class:"btn",onclick:visaRun},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
+   btns.replaceChildren(warnBox("Ge upp äventyret?","Äventyret avslutas och skrivs in i krönikan. Hjältarna behåller sina nivåer.","Ja, ge upp",()=>{lage="run";avslutaRun("gav upp");spel.run=null;lage=null;sparaSpel();adventures()},adventures))}},"Ge upp"));
+  box.append(el("div",{class:"chapter"},el("small",{},"Pågår · kapitel "+R.kapitel+" · "+(R.fas==="fallen"?"fallna":R.djup>=DJUP?"vid bossen":"rum "+R.djup+" av "+DJUP)),el("h3",{},P.namn),
+   el("p",{},R.party.map(byId).filter(Boolean).map(h=>h.namn).join(", ")),btns));
+  return box}
+ const grid=el("div",{class:"places"});
+ Object.entries(PLATSER).forEach(([k,P])=>{const c=document.createElement("canvas");c.className="px";
+  lage=null;drawTV(c,P.bild,{visaParty:false});
+  grid.append(el("button",{class:"place",onclick:()=>startRun(k)},el("div",{class:"tvbig"},c),el("b",{},P.namn),el("small",{},P.besk)))});
+ box.append(grid);
+ return box;
+}
+function kronikaLista(){
+ if(!spel.historik.length)return null;
+ return el("section",{class:"runsec"},el("div",{class:"section-head"},el("h2",{},"Krönikan"),el("span",{},"De senaste äventyren")),
+  el("div",{class:"hist"},spel.historik.slice(0,6).map(x=>el("div",{class:"histrow "+(x.utfall==="hem"?"ok":"bad")},
+   el("b",{},PLATSER[x.plats]?PLATSER[x.plats].namn:x.plats),
+   el("span",{},(x.utfall==="hem"?"Kom hem som hjältar":x.utfall==="fallen"?"Föll":"Gav upp")+" i kapitel "+x.kapitel+" · "+x.ara+" ära · "+x.datum),
+   el("small",{},x.hjaltar.join(", "))))));
+}
 
 /* ===== Inställningar ===== */
 function warnBox(title,text,yesTxt,onYes,onNo){
@@ -1194,6 +1694,7 @@ function settings(){
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Inställningar"},
   el("div",{class:"section-head"},el("h2",{},"Inställningar"),el("button",{class:"btn ghost",onclick:close},"Stäng")),
   el("section",{class:"setgroup"},el("h3",{},"Installera som app"),installPart),
+  svarGroup(),
   upplasGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
    el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
