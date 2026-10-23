@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:58:04.218Z",
+  "uppdaterad": "2026-10-23T21:58:35.266Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792682216,
+    "tid": 1792792713293,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -161,6 +161,10 @@
         {
           "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
           "k": "heal"
+        },
+        {
+          "t": "Ni köper en stor läkedryck för 60 guld.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -169,7 +173,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 79,
+      "guld": 19,
       "saker": [
         "Läkedryck",
         "Läkedryck",
@@ -178,7 +182,8 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck"
+        "Läkedryck",
+        "Stor läkedryck"
       ],
       "bless": {},
       "curse": {},
