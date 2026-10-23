@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:30:23.864Z",
+  "uppdaterad": "2026-10-23T21:30:35.666Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -46,7 +46,7 @@
     }
   },
   "aventyr": {
-    "guld": 73,
+    "guld": 83,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -62,18 +62,19 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "krakstrid2",
+        "scen": "gruva_inne",
         "flaggor": [
           "sett_torget",
           "sett_bo",
           "vet_lager",
           "vet_skuggan",
-          "bo_omlagd"
+          "bo_omlagd",
+          "krak_borta"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792791021931
+    "tid": 1792791033777
   }
 }
