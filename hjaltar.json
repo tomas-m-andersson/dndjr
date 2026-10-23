@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:59:16.875Z",
+  "uppdaterad": "2026-10-23T21:59:26.752Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -76,7 +76,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1792792754965,
+    "tid": 1792792764798,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -99,21 +99,11 @@
     "run": {
       "plats": "slottet",
       "kapitel": 1,
-      "djup": 5,
-      "fas": "rum",
-      "dorrar": [
-        {
-          "ledtrad": "Något glimmar i mörkret.",
-          "typ": "falla",
-          "kand": false
-        }
-      ],
+      "djup": 6,
+      "fas": "dorrar",
+      "dorrar": null,
       "lyssnat": false,
-      "rum": {
-        "typ": "falla",
-        "klar": true,
-        "falla": 1
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -194,6 +184,10 @@
         {
           "t": "Svante duckar för giftpilarna!",
           "k": "hit"
+        },
+        {
+          "t": "Gången slutar vid en stor port.",
+          "k": "sep"
         }
       ],
       "party": [
