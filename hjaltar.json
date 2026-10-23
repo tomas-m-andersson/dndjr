@@ -1,13 +1,13 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:23:59.035Z",
+  "uppdaterad": "2026-10-23T21:26:30.230Z",
   "egna": [],
   "sallskap": [
     "ville",
     "svante",
-    "sally",
-    "tomas"
+    "tomas",
+    "linda"
   ],
   "grundandringar": {
     "tomas": {
