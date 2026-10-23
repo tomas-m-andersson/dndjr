@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:26:53.926Z",
+  "uppdaterad": "2026-10-23T21:26:55.946Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -46,8 +46,9 @@
     }
   },
   "aventyr": {
-    "guld": 55,
+    "guld": 65,
     "saker": [
+      "Läkedryck",
       "Läkedryck",
       "Läkedryck"
     ],
@@ -60,15 +61,18 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "bo",
+        "scen": "byn",
         "flaggor": [
           "sett_torget",
-          "sett_bo"
+          "sett_bo",
+          "vet_lager",
+          "vet_skuggan",
+          "bo_omlagd"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1792790812048
+    "tid": 1792790815878
   }
 }
