@@ -220,9 +220,17 @@ const KEY="tarningsriket-hjaltar", PKEY="tarningsriket-sallskap";
 function load(k,def){try{const v=JSON.parse(localStorage.getItem(k));return v??def}catch(e){return def}}
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 let egna=load(KEY,[]), party=load(PKEY,["ville","svante","sally"]);
-const alla=()=>[...BASE,...egna];
+// Ändringar av folk, klass och utseende på grundfigurerna (namnen ändras aldrig).
+const AKEY="tarningsriket-grundandringar", DKEY="tarningsriket-andringar-osparade";
+const EDITABLE=["folk","klass","hud","har","stil","klader","flackar","s"];
+let andringar=load(AKEY,{}), andrDirty=load(DKEY,false);
+function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
+ if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
+ if(o.s&&!STATS.every(st=>typeof o.s[st.k]==="number"))delete o.s;return o}
+const withAndring=b=>andringar[b.id]?{...b,...andringar[b.id],namn:b.namn,id:b.id,grund:true}:b;
+const alla=()=>[...BASE.map(withAndring),...egna];
 let view="home";
-function persist(){save(KEY,egna);save(PKEY,party);scheduleSync()}
+function persist(){save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);scheduleSync()}
 
 /* ===== GitHub-sparning (hjaltar.json i repot) ===== */
 const GKEY="tarningsriket-github";
@@ -247,7 +255,7 @@ async function ghGet(){
  if(!r.ok)throw new Error(ghErr(r.status));
  const j=await r.json();return{sha:j.sha,data:JSON.parse(b64d(j.content))};
 }
-function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party}}
+function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party,grundandringar:andringar}}
 // Id:n som fanns i GitHub-filen senast vi synkade. Används för att skilja "ny här" från "borttagen på annan enhet".
 const SKEY="tarningsriket-synkade";
 let synkade=new Set(load(SKEY,[]));
@@ -261,7 +269,10 @@ function applyData(d,replace){
   if(bara_har.length)setTimeout(scheduleSync,0);
  }
  if(Array.isArray(d.sallskap))party=d.sallskap.filter(id=>typeof id==="string").slice(0,4);
- save(KEY,egna);save(PKEY,party);
+ // Grundfigurernas ändringar: osparade ändringar på den här enheten vinner, annars gäller GitHub.
+ if(replace||!andrDirty){andringar={};const g=d.grundandringar||{};BASE.forEach(b=>{const a=cleanAndring(g[b.id]);if(a)andringar[b.id]=a});andrDirty=false}
+ else setTimeout(scheduleSync,0);
+ save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);
 }
 async function ghPut(){
  if(!gh.token.trim())throw new Error("Lägg in en GitHub-token i inställningarna först.");
@@ -276,7 +287,7 @@ async function ghPut(){
  if(cur)body.sha=cur.sha;
  const r=await fetch(ghFileUrl(),{method:"PUT",headers:{...ghHeaders(),"Content-Type":"application/json"},body:JSON.stringify(body)});
  if(!r.ok)throw new Error(ghErr(r.status));
- ghSha=(await r.json()).content.sha;markSynced();
+ ghSha=(await r.json()).content.sha;markSynced();andrDirty=false;save(DKEY,false);
 }
 async function ghLoad(replace){
  if(!gh.repo.trim())return false;
@@ -429,10 +440,11 @@ function sheet(h){
  const m=document.getElementById("modal"),F=FOLK[h.folk],K=KLASS[h.klass],v=vitals(h),s=finalStats(h);
  const close=()=>m.replaceChildren();
  const bars=el("div",{class:"bars"},STATS.map(st=>el("div",{class:"bar"},el("span",{},st.n),el("em",{},s[st.k]+" ("+fmt(mod(s[st.k]))+")"),el("div",{class:"track"},el("i",{style:"width:"+Math.min(100,s[st.k]/20*100)+"%"})))));
- const foot=el("div",{class:"nav"});
+ const foot=el("div",{class:"nav"}),left=el("div",{class:"btnrow"});
+ left.append(el("button",{class:"btn ghost",onclick:()=>{close();editHero(h)}},"Ändra"));
  if(!h.grund){const del=el("button",{class:"btn ghost danger",onclick:()=>{foot.replaceChildren(el("div",{class:"confirm"},el("span",{},"Ta bort "+h.namn+" för alltid?"),
    el("button",{class:"btn",onclick:()=>{deleted.add(h.id);egna=egna.filter(x=>x.id!==h.id);party=party.filter(x=>x!==h.id);persist();close();home()}},"Ja, ta bort"),
-   el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");foot.append(del)}else foot.append(el("span"));
+   el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");left.append(del)}foot.append(left);
  foot.append(el("button",{class:"btn",onclick:close},"Stäng"));
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Hjälteblad för "+h.namn},
   el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+" · "+K.n+" · Nivå 1"),h.om?el("p",{},h.om):null)),
@@ -484,8 +496,18 @@ function stepKlass(){
   el("strong",{},c.n),el("div",{class:"bonus"},"Viktigast: "+STATS.find(s=>s.k===c.main).n),el("span",{},c.t),el("span",{},"Förmåga: "+c.fa)))));
  nav(!!draft.klass);
 }
+const rerender=()=>view==="edit"?renderEdit():renderCreator();
 function swatchRow(label,arr,key){
- return el("div",{class:"field"},el("label",{},label),el("div",{class:"swatches"},arr.map((c,i)=>el("button",{class:"sw"+(draft[key]===i?" sel":""),style:"background:"+c,"aria-label":label+" "+(i+1),"aria-pressed":draft[key]===i?"true":"false",onclick:()=>{draft[key]=i;renderCreator()}}))));
+ return el("div",{class:"field"},el("label",{},label),el("div",{class:"swatches"},arr.map((c,i)=>el("button",{class:"sw"+(draft[key]===i?" sel":""),style:"background:"+c,"aria-label":label+" "+(i+1),"aria-pressed":draft[key]===i?"true":"false",onclick:()=>{draft[key]=i;rerender()}}))));
+}
+function lookFields(){
+ const cat=draft.folk==="katt",out=[];
+ if(!cat)out.push(swatchRow("Hudfärg",SKIN,"hud"));
+ out.push(swatchRow(cat?"Pälsfärg":"Hårfärg",HAIR,"har"));
+ if(cat)out.push(el("div",{class:"field"},el("label",{},"Teckning"),el("div",{class:"pills"},[[false,"Enfärgad"],[true,"Tigrerad med vita och ljusbruna fläckar"]].map(([v,n])=>el("button",{class:"pill"+(!!draft.flackar===v?" sel":""),onclick:()=>{draft.flackar=v;rerender()}},n)))));
+ if(!cat)out.push(el("div",{class:"field"},el("label",{},"Frisyr"),el("div",{class:"pills"},Object.entries(STYLES).map(([k,n])=>el("button",{class:"pill"+(draft.stil===k?" sel":""),onclick:()=>{draft.stil=k;rerender()}},n)))));
+ if(!(cat&&draft.flackar))out.push(swatchRow(cat?"Halsduk":"Kläder",OUTFIT,"klader"));
+ return out;
 }
 function stepLook(){
  const cat=draft.folk==="katt";
@@ -493,11 +515,7 @@ function stepLook(){
  const inp=el("input",{id:"namn",type:"text",maxlength:"16",placeholder:cat?"T.ex. Morris":"T.ex. Astrid Ekesköld",value:draft.namn,autocomplete:"off"});
  inp.addEventListener("input",()=>{draft.namn=inp.value;app.querySelector(".preview h3").textContent=draft.namn||"Ny hjälte";app.querySelector("#next").disabled=!draft.namn.trim()});
  app.append(el("div",{class:"field"},el("label",{for:"namn"},"Namn"),inp));
- if(!cat)app.append(swatchRow("Hudfärg",SKIN,"hud"));
- app.append(swatchRow(cat?"Pälsfärg":"Hårfärg",HAIR,"har"));
- if(cat)app.append(el("div",{class:"field"},el("label",{},"Teckning"),el("div",{class:"pills"},[[false,"Enfärgad"],[true,"Tigrerad med vita och ljusbruna fläckar"]].map(([v,n])=>el("button",{class:"pill"+(!!draft.flackar===v?" sel":""),onclick:()=>{draft.flackar=v;renderCreator()}},n)))));
- if(!cat)app.append(el("div",{class:"field"},el("label",{},"Frisyr"),el("div",{class:"pills"},Object.entries(STYLES).map(([k,n])=>el("button",{class:"pill"+(draft.stil===k?" sel":""),onclick:()=>{draft.stil=k;renderCreator()}},n)))));
- app.append(swatchRow(cat?"Halsduk":"Kläder",OUTFIT,"klader"));
+ app.append(...lookFields());
  app.append(el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
   el("button",{class:"btn",id:"next",disabled:!draft.namn.trim(),onclick:()=>{step++;renderCreator()}},"Nästa")));
@@ -536,6 +554,51 @@ function stepDone(){
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
   el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
    egna=[...egna,hero];if(party.length<4){party=[...party,hero.id]}persist();home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
+}
+
+/* ===== Ändra en hjälte ===== */
+function editHero(h){
+ draft={...h,s0:{...h.s},f0:h.folk,flackar:!!h.flackar,om:h.om||""};
+ view="edit"; document.getElementById("party").hidden=true; renderEdit(); window.scrollTo(0,0);
+}
+// Byter man folk flyttas folkbonusen: gamla bonusen dras av, nya läggs till.
+function editStats(){const s={},ob=FOLK[draft.f0].bonus,nb=FOLK[draft.folk].bonus;
+ STATS.forEach(st=>{s[st.k]=draft.s0[st.k]-(ob[st.k]||0)+(nb[st.k]||0)});return s}
+const editPreview=()=>({...draft,s:editStats()});
+function renderEdit(){
+ app.replaceChildren();
+ const h=editPreview(),v=vitals(h),F=FOLK[h.folk],K=KLASS[h.klass];
+ app.append(el("div",{class:"preview"},el("div",{class:"tv"},portrait(h)),
+  el("div",{},el("h3",{},draft.namn||"Namnlös"),el("p",{},F.n+" · "+K.n),el("p",{},"Liv "+v.hp+" · Rustning "+v.ac+" · Anfall "+fmt(v.atk)))));
+ app.append(el("div",{class:"stephead"},el("small",{},draft.grund?"Grundfigur":"Egen hjälte"),el("h2",{},"Ändra "+(draft.grund?draft.namn:"hjälten")),
+  el("p",{},draft.grund?"Välj nytt folk, ny klass eller nytt utseende. Namnet går inte att ändra.":"Ändra namn, folk, klass eller utseende. Tärningsslagen behålls.")));
+ if(!draft.grund){
+  const inp=el("input",{id:"edit-namn",type:"text",maxlength:"16",value:draft.namn,autocomplete:"off"});
+  inp.addEventListener("input",()=>{draft.namn=inp.value;app.querySelector(".preview h3").textContent=draft.namn||"Namnlös";app.querySelector("#edit-save").disabled=!draft.namn.trim()});
+  app.append(el("div",{class:"field"},el("label",{for:"edit-namn"},"Namn"),inp));
+ }
+ const pillRow=(obj,key)=>el("div",{class:"pills"},Object.entries(obj).map(([k,o])=>el("button",{class:"pill"+(draft[key]===k?" sel":""),"aria-pressed":draft[key]===k?"true":"false",
+  onclick:()=>{if(key==="folk"&&k==="katt"&&draft.folk!=="katt"&&draft.har<6)draft.har=7;draft[key]=k;renderEdit()}},o.n)));
+ app.append(el("div",{class:"field"},el("label",{},"Folk"),pillRow(FOLK,"folk"),el("p",{class:"note"},el("b",{},F.b+". "),F.t)));
+ app.append(el("div",{class:"field"},el("label",{},"Klass"),pillRow(KLASS,"klass"),el("p",{class:"note"},el("b",{},K.fa+": "),K.ft)));
+ app.append(...lookFields());
+ const slot=el("div");
+ app.append(slot);
+ const back=()=>{const id=draft.id;home();const hh=byId(id);if(hh)sheet(hh)};
+ const row=el("div",{class:"nav"},
+  el("button",{class:"btn ghost",onclick:back},"Avbryt"),
+  el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
+   const upd={folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
+   if(draft.grund){andringar[draft.id]=upd;andrDirty=true}
+   else egna=egna.map(x=>x.id===draft.id?{...x,...upd,namn:draft.namn.trim()}:x);
+   persist();back();flash("Ändringarna är sparade.");
+  }},"Spara ändringar"));
+ app.append(row);
+ if(draft.grund&&andringar[draft.id])app.append(el("button",{class:"btn ghost",style:"align-self:flex-start",onclick:()=>{
+  slot.replaceChildren(warnBox("Återställa "+draft.namn+"?","Folk, klass, utseende och egenskaper går tillbaka till hur "+draft.namn+" var från början.","Ja, återställ",
+   ()=>{delete andringar[draft.id];andrDirty=true;persist();back();flash(draft.namn+" är återställd.")},()=>slot.replaceChildren()));
+  slot.scrollIntoView({behavior:"smooth",block:"center"});
+ }},"Återställ "+draft.namn+" till original"));
 }
 
 /* ===== Inställningar ===== */
