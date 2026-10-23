@@ -1,8 +1,8 @@
 // Tärningsriket – service worker.
 // Egna filer: nätet först (så uppdateringar syns direkt), cachen som reserv när man är offline.
 // GitHub-API:t (hjältarnas sparfil) cachas aldrig.
-const CACHE = "tarningsriket-v1";
-const SHELL = ["./", "./index.html", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = "tarningsriket-v2";
+const SHELL = ["./", "./index.html", "./aventyr.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

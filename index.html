@@ -168,6 +168,71 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .ability p{margin:2px 0 0;font-size:.92rem}
 .danger{color:var(--red)}
 .confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:#3a1f1c;border-radius:8px;padding:10px}
+/* Äventyret */
+.btn.small{font-size:.9rem;padding:8px 12px;box-shadow:0 3px 0 #0c151c}
+.btn.big{font-size:1.25rem;padding:14px 22px;width:100%}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.purse{font-family:var(--display);color:var(--gold);font-size:.95rem;text-align:right;min-width:0}
+.chapters{display:flex;flex-direction:column;gap:12px}
+.chapter{background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.chapter small{font-family:var(--display);color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-size:.8rem}
+.chapter h3{font-size:1.4rem}
+.chapter p{margin:0;color:var(--muted)}
+.chapter.done{border-color:var(--moss)}
+.chapter.locked{opacity:.55;border-style:dashed}
+.tvbig{border:3px solid #0c151c;border-radius:6px;overflow:hidden;box-shadow:0 0 0 2px var(--line)}
+.tv.mini{width:40px;flex:none;border-radius:3px;overflow:hidden;border:2px solid #0c151c}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
+.chip.out{opacity:.5}
+.chipinfo{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.chipinfo b{font-family:var(--display);font-size:1rem;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chipinfo span{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.hp{height:7px;background:#0c151c;border-radius:4px;overflow:hidden}
+.hp i{display:block;height:100%;background:var(--red);transition:width .3s}
+.story{display:flex;flex-direction:column;gap:12px;font-size:1.12rem;line-height:1.65;max-width:62ch}
+.story p{margin:0}
+.readrow{display:flex;justify-content:flex-end}
+.actions{display:flex;flex-direction:column;gap:10px}
+.choicebtn{text-align:left;background:var(--panel);border:2px solid var(--line);border-left:6px solid var(--gold);border-radius:8px;padding:14px 16px;font-weight:800;font-size:1.05rem;display:flex;flex-direction:column;gap:2px}
+.choicebtn small{font-weight:700;color:var(--muted);font-size:.85rem}
+.choicebtn.special{border-left-color:var(--sky)}
+.choicebtn:disabled{opacity:.45;cursor:not-allowed}
+.choicebtn:active:not(:disabled){transform:translateY(2px)}
+.pack{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:.9rem;color:var(--muted);border-top:2px dashed var(--line);padding-top:12px}
+.pack strong{font-family:var(--display);color:var(--fg)}
+.pickers{display:flex;flex-direction:column;gap:8px}
+.picker{display:flex;gap:12px;align-items:center;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:8px 10px}
+.picker .tv.mini{width:48px}
+.picker b{display:block;font-family:var(--display);font-size:1.15rem}
+.picker span{font-size:.88rem;color:var(--muted)}
+.rollpanel{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:16px}
+.rollpanel h2{font-size:1.3rem}
+.rollpanel p{margin:0}
+.rollpanel .event{font-size:1.1rem}
+.hint{color:var(--sky);font-size:.92rem;margin:0}
+.dicebox{display:flex;gap:12px;justify-content:center}
+.d20{width:110px;height:110px}
+.d20.spinning{transform:rotate(25deg) scale(.92)}
+.d20.nat20{filter:drop-shadow(0 0 12px #f2c14e)}
+.d20.nat1{filter:grayscale(.7)}
+.rollres{display:flex;flex-direction:column;gap:6px;align-items:center}
+.sum{font-family:var(--display);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.verdict{font-family:var(--display);font-size:1.6rem}
+.verdict.ok{color:var(--moss)} .verdict.bad{color:var(--red)}
+.gains{display:flex;flex-wrap:wrap;gap:8px}
+.gains span{background:#2a3a2a;border:2px solid var(--moss);border-radius:20px;padding:4px 12px;font-weight:800;font-size:.9rem}
+.theend{display:flex;flex-direction:column;gap:2px;background:#2a3a2a;border:2px solid var(--moss);border-radius:8px;padding:12px 14px}
+.theend strong{font-family:var(--display);font-size:1.3rem;color:var(--moss)}
+.foes{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.foe{background:#3a1f1c;border:2px solid #6a3a33;border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:4px}
+.foe b{font-family:var(--display)}
+.foe span{font-size:.75rem;color:var(--muted)}
+.foe.out{opacity:.4}
+.foehp i{background:var(--gold)}
+.turn{font-size:1.5rem;color:var(--gold)}
+.turn:empty{display:none}
+@media (prefers-reduced-motion:reduce){.hp i{transition:none}}
 @media (max-width:420px){.preview{grid-template-columns:84px 1fr}.sheet-top{grid-template-columns:96px minmax(0,1fr)}.stat{grid-template-columns:minmax(0,1fr) auto 46px}.die{width:24px;height:24px;font-size:.85rem}}
 @media (prefers-reduced-motion:reduce){.die.spin{animation:none}.btn{transition:none}}
 </style>
@@ -177,6 +242,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 <div class="party" id="party"></div>
 <div id="modal"></div>
 
+<script src="aventyr.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -230,6 +296,13 @@ function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITA
 const withAndring=b=>andringar[b.id]?{...b,...andringar[b.id],namn:b.namn,id:b.id,grund:true}:b;
 const alla=()=>[...BASE.map(withAndring),...egna];
 let view="home";
+// Äventyrets framsteg: guld, packning, liv och hur långt man kommit i varje kapitel.
+const SPKEY="tarningsriket-aventyr";
+function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
+ liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0}}
+let spel=normSpel(load(SPKEY,null));
+const OKEY="tarningsriket-alternativ";
+let alt=Object.assign({upplas:false},load(OKEY,{}));
 function persist(){save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);scheduleSync()}
 
 /* ===== GitHub-sparning (hjaltar.json i repot) ===== */
@@ -255,7 +328,7 @@ async function ghGet(){
  if(!r.ok)throw new Error(ghErr(r.status));
  const j=await r.json();return{sha:j.sha,data:JSON.parse(b64d(j.content))};
 }
-function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party,grundandringar:andringar}}
+function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party,grundandringar:andringar,aventyr:spel}}
 // Id:n som fanns i GitHub-filen senast vi synkade. Används för att skilja "ny här" från "borttagen på annan enhet".
 const SKEY="tarningsriket-synkade";
 let synkade=new Set(load(SKEY,[]));
@@ -272,6 +345,9 @@ function applyData(d,replace){
  // Grundfigurernas ändringar: osparade ändringar på den här enheten vinner, annars gäller GitHub.
  if(replace||!andrDirty){andringar={};const g=d.grundandringar||{};BASE.forEach(b=>{const a=cleanAndring(g[b.id]);if(a)andringar[b.id]=a});andrDirty=false}
  else setTimeout(scheduleSync,0);
+ // Äventyrets framsteg: det som sparades senast vinner.
+ if(d.aventyr&&typeof d.aventyr==="object"&&(d.aventyr.tid||0)>(spel.tid||0)){spel=normSpel(d.aventyr);save(SPKEY,spel)}
+ else if((spel.tid||0)>((d.aventyr&&d.aventyr.tid)||0))setTimeout(scheduleSync,0);
  save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);
 }
 async function ghPut(){
@@ -326,12 +402,14 @@ const CAT=[
 "..FFFFFFF..T",".FFFFFFFFF.T",".FFWWWWFFFT.",".FFWWWWFFFT.",".FFFFFFFFF..",".FF.FF.FF..."];
 function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;
  const c=x=>Math.max(0,Math.min(255,Math.round(f<0?x*(1+f):x+(255-x)*f)));return"#"+[c(r),c(g),c(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
-function drawHero(cv,h){
+function drawHero(cv,h,opt={}){
  const W=16,H=18;cv.width=W;cv.height=H;const g=cv.getContext("2d");
- const K=KLASS[h.klass]; g.fillStyle=shade(K.col,-.55);g.fillRect(0,0,W,H);
- g.fillStyle=shade(K.col,-.4);g.fillRect(0,14,W,4); // golv
- // stjärnor
- g.fillStyle="#ffffff55";[[1,2],[13,1],[15,6],[0,9]].forEach(([x,y])=>g.fillRect(x,y,1,1));
+ const K=KLASS[h.klass]||{col:"#445566"};
+ if(!opt.transparent){
+  g.fillStyle=shade(K.col,-.55);g.fillRect(0,0,W,H);
+  g.fillStyle=shade(K.col,-.4);g.fillRect(0,14,W,4); // golv
+  g.fillStyle="#ffffff55";[[1,2],[13,1],[15,6],[0,9]].forEach(([x,y])=>g.fillRect(x,y,1,1)); // stjärnor
+ }
  const p=(x,y,c)=>{if(c){g.fillStyle=c;g.fillRect(x,y,1,1)}};
  const skin=SKIN[h.hud],hair=HAIR[h.har],out=OUTFIT[h.klader];
  const ox=2,oy=4,cat=h.folk==="katt";
@@ -429,7 +507,7 @@ function renderParty(){
  const names=party.map(byId).filter(Boolean).map(h=>h.namn);
  box.replaceChildren(el("div",{class:"in"},
   el("div",{class:"who"},el("b",{},"Sällskapet ("+names.length+"/4)"),names.length?names.join(", "):"Ingen vald ännu"),
-  el("button",{class:"btn",disabled:!names.length,onclick:()=>flash("Äventyret bygger vi i nästa steg. Sällskapet är sparat!")},"Ge er av!")));
+  el("button",{class:"btn",disabled:!names.length,onclick:adventures},"Ge er av!")));
  box.hidden=false;
 }
 let flashT;function flash(msg){let f=document.getElementById("flash");if(!f){f=el("div",{id:"flash",class:"note",style:"position:fixed;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom,0px));z-index:30;max-width:90vw;box-shadow:0 6px 20px #0008"});document.body.append(f)}
@@ -601,6 +679,368 @@ function renderEdit(){
  }},"Återställ "+draft.namn+" till original"));
 }
 
+/* =====================================================================
+   ÄVENTYRET – motorn. Innehållet (scener, val, fiender) finns i aventyr.js
+   ===================================================================== */
+const ADV=()=>window.AVENTYR||[], FIE=()=>window.FIENDER||{};
+const SAKER={"Läkedryck":{info:"Ger tillbaka 2d4+2 liv."}};
+let kapId=null, strid=null, rullar=false;
+const partyHeroes=()=>party.map(byId).filter(Boolean);
+const maxLiv=h=>vitals(h).hp;
+const liv=h=>{const m=maxLiv(h),v=spel.liv[h.id];return typeof v==="number"?Math.max(0,Math.min(m,v)):m};
+const setLiv=(h,v)=>{spel.liv[h.id]=Math.max(0,Math.min(maxLiv(h),v))};
+const vaken=()=>partyHeroes().filter(h=>liv(h)>0);
+function sparaSpel(){spel.tid=Date.now();save(SPKEY,spel);scheduleSync()}
+const kap=()=>spel.kapitel[kapId];
+const kapDef=()=>ADV().find(k=>k.id===kapId);
+const scenDef=id=>kapDef().scener[id];
+const STATNAMN=Object.fromEntries(STATS.map(s=>[s.k,s.n]));
+
+/* --- tärningar --- */
+const d=n=>1+Math.floor(Math.random()*n);
+function slaa(expr,dubbel){ // "1d6+2" → {tot,txt}
+ const m=/^(\d+)d(\d+)([+-]\d+)?$/.exec(expr.replace(/\s/g,""));if(!m)return{tot:0,txt:expr};
+ const n=(+m[1])*(dubbel?2:1),sid=+m[2],plus=+(m[3]||0),r=[];for(let i=0;i<n;i++)r.push(d(sid));
+ const tot=Math.max(1,r.reduce((a,b)=>a+b,0)+plus);return{tot,txt:r.join("+")+(plus?(plus>0?"+":"")+plus:"")};
+}
+function dieSvg(n,cls=""){return '<svg class="d20 '+cls+'" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="#f2c14e" stroke="#2a1d05" stroke-width="4"/><polygon points="50,22 76,66 24,66" fill="#f7d77f" stroke="#2a1d05" stroke-width="3"/><text x="50" y="57" text-anchor="middle" font-family="Pixelify Sans,monospace" font-weight="700" font-size="22" fill="#2a1d05">'+n+'</text></svg>'}
+// Visar en rullande d20 och anropar klar(värde) när den stannat.
+function rullaD20(box,klar,antal=1){
+ if(rullar)return;rullar=true;
+ const slut=Array.from({length:antal},()=>d(20)),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ let t=0;const tick=()=>{box.innerHTML=slut.map(()=>dieSvg(d(20),"spinning")).join("");t++;
+  if(t<(reduce?1:12))setTimeout(tick,60);else{box.innerHTML=slut.map(v=>dieSvg(v,v===20?"nat20":v===1?"nat1":"")).join("");rullar=false;klar(slut)}};
+ tick();
+}
+
+/* --- uppläsning --- */
+const kanTala="speechSynthesis" in window;
+function tala(txt){if(!kanTala)return;speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(txt.replace(/[–—]/g,",").replace(/\n+/g," "));u.lang="sv-SE";u.rate=.95;
+ const v=speechSynthesis.getVoices().find(v=>/^sv/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u)}
+function tyst(){if(kanTala)speechSynthesis.cancel()}
+function talaKnapp(txt){if(!kanTala)return null;
+ return el("button",{class:"btn ghost small",onclick:()=>{if(speechSynthesis.speaking){tyst()}else tala(txt)}},"Läs upp")}
+function upplasGroup(){
+ const cb=el("input",{id:"opt-upplas",type:"checkbox"});cb.checked=alt.upplas;
+ cb.addEventListener("change",()=>{alt.upplas=cb.checked;save(OKEY,alt);if(cb.checked)tala("Nu läser jag upp äventyret.");else tyst()});
+ return el("section",{class:"setgroup"},el("h3",{},"Uppläsning"),
+  el("p",{},kanTala?"Appen kan läsa upp berättelsen med svensk röst. Annars läser en vuxen högt. Knappen Läs upp finns alltid i varje scen.":"Den här webbläsaren kan tyvärr inte läsa upp text."),
+  kanTala?el("label",{class:"check",for:"opt-upplas"},cb,el("span",{},"Läs upp varje scen automatiskt")):null);
+}
+
+/* --- TV:n: pixelbilder för scenerna --- */
+const TVW=96,TVH=54;
+const SPR={
+ vatte:{rows:["..G...G..",".GGGGGGG.","GGYGGGYGG",".GGGGGGG.","..GGRGG..","...GGG...","..BBBBB..",".GBBBBBG.","G.BBBBB.G","..BBBBB..","..B...B..",".GG...GG."],pal:{G:"#6fae4a",Y:"#ffe14d",R:"#3b2a1a",B:"#7a5230"}},
+ troll:{rows:["....TTTT....","...TTTTTT...","..TTYTTYTT..","..TTTNNTTT..","..TTWTTWTT..","...TTTTTT...",".TTTTTTTTTT.","TTTBBBBBBTTT","TT.BBBBBB.TT","TT.BBBBBB.TT","T..BBBBBB..T","...BBBBBB...","...TT..TT...","...TT..TT...","..TTT..TTT.."],pal:{T:"#7f9a6a",Y:"#1b1b22",N:"#9fb07a",W:"#f3eedf",B:"#5a4632"}},
+ drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
+};
+function sprite(g,key,x,y,flip,alpha){const s=SPR[key];if(!s)return;g.globalAlpha=alpha??1;const w=s.rows[0].length;
+ s.rows.forEach((r,j)=>[...r].forEach((ch,i)=>{const c=s.pal[ch];if(c){g.fillStyle=c;g.fillRect(x+(flip?w-1-i:i),y+j,1,1)}}));g.globalAlpha=1}
+const sprSize=k=>SPR[k]?{w:SPR[k].rows[0].length,h:SPR[k].rows.length}:{w:12,h:16};
+function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function scenePaint(g,bild){
+ const R=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)},rnd=seedRnd(bild.length*97+7);
+ const sky=(a,b,top=0,bot=40)=>{const n=8;for(let i=0;i<n;i++){const t=i/(n-1),mix=(c1,c2)=>{const p=h=>parseInt(h.slice(1),16),A=p(c1),B=p(c2),ch=sh=>Math.round(((A>>sh)&255)*(1-t)+((B>>sh)&255)*t);return"rgb("+ch(16)+","+ch(8)+","+ch(0)+")"};
+   R(0,top+Math.floor(i*(bot-top)/n),TVW,Math.ceil((bot-top)/n)+1,mix(a,b))}};
+ const stars=n=>{for(let i=0;i<n;i++)R(Math.floor(rnd()*TVW),Math.floor(rnd()*26),1,1,rnd()>.7?"#ffffffcc":"#ffffff66")};
+ const moon=(x,y)=>{R(x+1,y,3,5,"#f3eedf");R(x,y+1,5,3,"#f3eedf");R(x+2,y+1,1,1,"#d8d2bf")};
+ const glow=(cx,cy,r,col)=>{for(let y=-r;y<=r;y++)for(let x=-r;x<=r;x++){const dd=Math.sqrt(x*x+y*y);if(dd<=r){g.globalAlpha=.08*(1-dd/r)*4;R(cx+x,cy+y,1,1,col)}}g.globalAlpha=1};
+ const house=(x,y,w,h,wall,roof,lit)=>{R(x,y,w,h,wall);for(let i=0;i<Math.ceil(w/2)+1;i++)R(x-1+i,y-i,w+2-2*i,1,roof);
+   R(x+2,y+3,3,3,lit?"#ffd96a":"#2a3540");R(x+w-5,y+3,3,3,lit?"#ffd96a":"#2a3540");R(x+Math.floor(w/2)-1,y+h-5,3,5,"#4a3423")};
+ const pine=(x,base,h,c)=>{for(let i=0;i<h;i++){const w=Math.max(1,Math.floor(i*0.7));R(x-Math.floor(w/2),base-h+i,w+1,1,c)}R(x,base,1,2,"#3a2c22")};
+ const lantern=(x,y,lit)=>{R(x,y,4,1,"#2a2a2a");R(x,y+1,1,4,"#2a2a2a");R(x+3,y+1,1,4,"#2a2a2a");R(x,y+5,4,1,"#2a2a2a");if(lit){R(x+1,y+1,2,4,"#ffd96a");glow(x+2,y+3,9,"#ffd96a")}};
+ const ground=(y,c1,c2)=>{R(0,y,TVW,TVH-y,c1);for(let i=0;i<40;i++)R(Math.floor(rnd()*TVW),y+1+Math.floor(rnd()*(TVH-y-1)),2,1,c2)};
+ switch(bild){
+  case"by":case"torg":case"hem":{
+   const hem=bild==="hem";sky(hem?"#1b2347":"#0d1424",hem?"#5a3f6b":"#1f2e4a");stars(30);moon(80,4);
+   house(4,26,18,16,"#6b5a48","#7a3b2e",true);house(28,28,14,14,"#5f6b7a","#3f4f63",hem);house(74,27,16,15,"#6b5a48","#4f3a2a",hem);
+   ground(42,bild==="torg"?"#5d5a55":"#2c4a2c",bild==="torg"?"#6e6a64":"#3b5e37");
+   if(bild==="torg")for(let i=0;i<14;i++)R(4+i*7,44+(i%2)*4,4,2,"#4d4a46");
+   R(54,22,1,20,"#2a2a2a");lantern(53,18,hem);
+   if(bild==="torg"){R(52,41,1,1,"#cfe8ff");R(57,42,1,1,"#cfe8ff");R(55,44,2,1,"#ff6a3d");glow(55,44,3,"#ff6a3d")}
+   if(hem){[[10,20],[34,23],[80,21]].forEach(([x,y])=>lantern(x,y,true));for(let i=0;i<TVW;i+=4)R(i,14+Math.round(Math.sin(i/9)*2),2,2,["#e35d4f","#f2c14e","#6fb6e8","#7cc47f"][(i/4)%4])}
+   break}
+  case"skog":case"snar":case"glanta":{
+   sky("#0a121c","#16263a");stars(18);moon(10,5);
+   for(let i=0;i<14;i++)pine(Math.floor(rnd()*TVW),40,14+Math.floor(rnd()*14),i%2?"#1d3a2a":"#173023");
+   ground(40,"#24402a","#2f5233");
+   if(bild==="skog"){R(40,40,14,14,"#5a4a36");R(30,46,12,4,"#5a4a36");R(54,46,14,4,"#5a4a36")}
+   if(bild==="snar")for(let i=0;i<22;i++){const x=Math.floor(rnd()*TVW),y=30+Math.floor(rnd()*14);R(x,y,7,5,"#3a2f45");R(x+2,y-1,3,1,"#3a2f45");R(x+1,y+1,1,1,"#e35d4f");R(x+5,y+2,1,1,"#e35d4f");R(x+6,y,1,1,"#c9c2d6")}
+   if(bild==="glanta"){R(30,42,40,10,"#3a5e3a");R(60,46,6,2,"#5a3a22");R(61,43,4,3,"#ff8a2b");R(62,41,2,2,"#ffd96a");glow(63,44,12,"#ff9a3d")}
+   break}
+  case"bro":{
+   sky("#0a121c","#16263a");stars(20);moon(84,5);
+   for(let i=0;i<8;i++)pine(Math.floor(rnd()*TVW),36,12+Math.floor(rnd()*10),"#173023");
+   R(0,36,TVW,6,"#24402a");R(0,42,TVW,12,"#1f4a6e");for(let i=0;i<16;i++)R(Math.floor(rnd()*TVW),43+Math.floor(rnd()*10),4,1,"#6fb6e8");
+   R(28,38,50,3,"#7a5230");for(let x=28;x<78;x+=5)R(x,38,1,3,"#5a3a22");R(28,33,1,5,"#5a3a22");R(77,33,1,5,"#5a3a22");R(28,33,50,1,"#5a3a22");
+   R(32,41,2,8,"#5a3a22");R(72,41,2,8,"#5a3a22");break}
+  case"grotta":{
+   sky("#0a121c","#16263a",0,30);stars(16);
+   R(0,10,TVW,34,"#4a4f58");for(let i=0;i<30;i++)R(Math.floor(rnd()*TVW),10+Math.floor(rnd()*30),3,2,"#3d424a");
+   for(let y=0;y<26;y++){const w=Math.floor(Math.sqrt(1-((y-26)/26)**2)*16);R(56-w,18+y,w*2,1,"#07090c")}
+   glow(56,40,6,"#ffd96a");ground(44,"#3a3a36","#4a4a44");
+   for(let i=0;i<3;i++){R(20+i*4,40,1,4,"#6b4423");R(20+i*4,39,1,1,"#ff8a2b")}break}
+  case"grotta_inne":case"lya":{
+   R(0,0,TVW,TVH,"#15161b");for(let i=0;i<16;i++){const x=Math.floor(rnd()*TVW),h=3+Math.floor(rnd()*8);for(let j=0;j<h;j++)R(x,j,Math.max(1,3-Math.floor(j/3)),1,"#2b2d35")}
+   ground(42,"#2b2a28","#36342f");
+   if(bild==="grotta_inne"){glow(30,30,22,"#ff9a3d");R(60,38,14,8,"#6b4423");R(60,38,14,2,"#8a5a2b");R(66,41,2,2,"#c9c2d6")}
+   else{glow(66,32,26,"#ffd96a");for(let i=0;i<10;i++)R(54+Math.floor(rnd()*20),46+Math.floor(rnd()*4),2,1,"#f2c14e");lantern(48,38,true)}
+   break}
+  default:R(0,0,TVW,TVH,"#142029");
+ }
+}
+const HERO_SPRITE={};
+function heroSprite(h){const c=document.createElement("canvas");drawHero(c,h,{transparent:true});return c}
+const GRETA={folk:"manniska",klass:"ingen",hud:0,har:4,stil:"lang",klader:1};
+function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true}={}){
+ cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
+ if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),1+i*13,TVH-18);g.globalAlpha=1});
+ const right=[];
+ if(fiender)fiender.forEach(f=>{if(!f.ute)right.push({k:f.bild,a:1})});
+ else if(figur)right.push({k:figur,a:1});
+ let x=TVW-2;
+ right.forEach(f=>{if(f.k==="greta"){x-=16;g.drawImage(heroSprite(GRETA),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+1,TVH-10,1,10);return}
+  const {w,h}=sprSize(f.k);x-=w+2;sprite(g,f.k,x,TVH-h-1,f.k==="drake",f.a)});
+}
+
+/* --- kapitelvalet --- */
+function adventures(){
+ tyst();view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
+ const ph=partyHeroes();
+ if(!ph.length){home();flash("Välj minst en hjälte först.");return}
+ app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:home},"← Hjältarna"),el("span",{class:"purse"},spel.guld+" guld")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn).join(", ")+".")));
+ const list=el("div",{class:"chapters"});
+ ADV().forEach((k,i)=>{
+  const st=spel.kapitel[k.id],num="Kapitel "+(i+1);
+  if(k.kommer){list.append(el("div",{class:"chapter locked"},el("small",{},num),el("h3",{},k.titel),el("p",{},k.kort)));return}
+  const status=!st?"Inte påbörjat":st.klar?"Klart ✓":"Pågår";
+  const btns=el("div",{class:"btnrow"});
+  if(st&&!st.klar){btns.append(el("button",{class:"btn",onclick:()=>{kapId=k.id;visaScen()}},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
+   btns.replaceChildren(warnBox("Börja om "+k.titel+"?","Ni börjar från början av kapitlet och alla får fullt liv. Guld och saker ni redan hittat får ni behålla.","Ja, börja om",()=>startKapitel(k.id),()=>adventures()))}},"Börja om"))}
+  else btns.append(el("button",{class:"btn",onclick:()=>startKapitel(k.id)},st&&st.klar?"Spela igen":"Börja"));
+  list.append(el("div",{class:"chapter"+(st&&st.klar?" done":"")},el("small",{},num+" · "+status),el("h3",{},k.titel),el("p",{},k.kort),btns));
+ });
+ app.append(list);
+ app.append(packning(adventures));
+}
+function startKapitel(id){
+ kapId=id;const k=kapDef();
+ partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
+ spel.kapitel[id]={scen:k.start,flaggor:[],klar:false};
+ sparaSpel();visaScen();
+}
+
+/* --- packning och läkedrycker --- */
+function packning(efter){
+ const n=spel.saker.filter(x=>x==="Läkedryck").length;
+ const box=el("div",{class:"pack"},el("strong",{},"Packning"),el("span",{},spel.guld+" guld"+(spel.saker.length?" · "+summeraSaker():"")));
+ if(n&&!strid)box.append(el("button",{class:"btn ghost small",onclick:()=>valjHjalte("Vem dricker läkedrycken?",partyHeroes(),h=>{dryck(h);efter()},efter)},"Använd läkedryck"));
+ return box;
+}
+function summeraSaker(){const c={};spel.saker.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).map(([k,v])=>v>1?k+" ×"+v:k).join(", ")}
+function dryck(h){const i=spel.saker.indexOf("Läkedryck");if(i<0)return 0;spel.saker.splice(i,1);const r=slaa("2d4+2");setLiv(h,liv(h)+r.tot);sparaSpel();flash(h.namn+" dricker och får "+r.tot+" liv tillbaka.");return r.tot}
+function valjHjalte(fraga,lista,klar,avbryt,info){
+ const m=document.getElementById("modal"),close=()=>m.replaceChildren();
+ const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":fraga},el("h2",{},fraga),
+  el("div",{class:"pickers"},lista.map(h=>el("button",{class:"picker",disabled:info&&info(h).av,onclick:()=>{close();klar(h)}},
+   el("div",{class:"tv mini"},portrait(h)),el("div",{},el("b",{},h.namn),el("span",{},info?info(h).txt:("Liv "+liv(h)+" av "+maxLiv(h))))))),
+  el("button",{class:"btn ghost",onclick:()=>{close();if(avbryt)avbryt()}},"Avbryt"));
+ m.replaceChildren(el("div",{class:"overlay",onclick:e=>{if(e.target===e.currentTarget){close();if(avbryt)avbryt()}}},sh));
+}
+
+/* --- scenen --- */
+function partyStrip(){
+ return el("div",{class:"strip"},partyHeroes().map(h=>{const l=liv(h),m=maxLiv(h);
+  return el("div",{class:"chip"+(l>0?"":" out")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
+   el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),el("span",{},l>0?l+"/"+m+" liv":"Svimmad")))}));
+}
+function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
+function storyEl(txt){return el("div",{class:"story"},txt.split(/\n\n+/).map(p=>el("p",{},p)))}
+function scenHuvud(){
+ const k=kapDef();
+ return el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:()=>{tyst();adventures()}},"← Äventyr"),el("span",{class:"purse"},k.titel));
+}
+function visaScen(){
+ tyst();strid=null;view="scen";document.getElementById("party").hidden=true;
+ const K=kap();if(!K){adventures();return}
+ const sc=scenDef(K.scen);if(!sc){K.scen=kapDef().start;return visaScen()}
+ if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
+ app.replaceChildren();
+ app.append(scenHuvud(),tvBox(sc.bild,{figur:sc.figur}),partyStrip());
+ const story=storyEl(sc.text);app.append(story);
+ const akt=el("div",{class:"actions"});
+ if(sc.slut){
+  if(!K.klar){K.klar=true;K.slut=K.scen;sparaSpel()}
+  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},"Bra jobbat, hjältar.")),
+   el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
+ }else if(sc.strid){
+  akt.append(el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
+ }else if(sc.prov){
+  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,sc.figur)},"Slå tärningen"));
+ }else(sc.val||[]).forEach(v=>{
+  if(v.krav&&v.krav.flagga&&!K.flaggor.includes(v.krav.flagga))return; // dolt val
+  const saknar=v.krav&&v.krav.guld&&spel.guld<v.krav.guld;
+  const b=el("button",{class:"choicebtn",disabled:saknar,onclick:()=>{
+   if(v.prov)provUI(v.prov,sc.bild,sc.figur);
+   else if(v.utfall)visaUtfall(v.utfall,null,sc.bild,sc.figur);
+   else gaTill(v.till)}},el("span",{},v.text),
+   v.prov?el("small",{},"Slå för "+STATNAMN[v.prov.egenskap]):saknar?el("small",{},"Ni har bara "+spel.guld+" guld"):null);
+  akt.append(b);
+ });
+ app.append(akt);
+ const tb=talaKnapp(sc.text);if(tb)story.prepend(el("div",{class:"readrow"},tb));
+ app.append(packning(visaScen));
+ window.scrollTo(0,0);
+ if(alt.upplas)tala(sc.text);
+}
+function gaTill(id){
+ const K=kap();K.scen=id;const sc=scenDef(id);
+ if(sc&&sc.hela)partyHeroes().forEach(h=>setLiv(h,sc.hela==="allt"?maxLiv(h):liv(h)+sc.hela));
+ sparaSpel();visaScen();
+}
+// Använder ett utfall: guld, saker, skada, helning, flaggor. Returnerar korta rader att visa.
+function anvandUtfall(u){
+ const K=kap(),rader=[];
+ if(u.guld){spel.guld=Math.max(0,spel.guld+u.guld);rader.push((u.guld>0?"+":"")+u.guld+" guld")}
+ if(u.sak){spel.saker.push(u.sak);rader.push("Ni hittar: "+u.sak)}
+ if(u.skada){vaken().forEach(h=>setLiv(h,Math.max(1,liv(h)-u.skada)));rader.push("Alla tappar "+u.skada+" liv")}
+ if(u.hela){partyHeroes().forEach(h=>setLiv(h,u.hela==="allt"?maxLiv(h):liv(h)+u.hela));rader.push("Alla får tillbaka liv")}
+ if(u.flagga&&!K.flaggor.includes(u.flagga))K.flaggor.push(u.flagga);
+ sparaSpel();return rader;
+}
+function visaUtfall(u,namn,bild,figur,extra){
+ tyst();const rader=anvandUtfall(u),txt=(u.text||"").replace(/\{namn\}/g,namn||"Ni");
+ app.replaceChildren(scenHuvud(),tvBox(bild,{figur}),partyStrip());
+ if(extra)app.append(extra);
+ const story=storyEl(txt);app.append(story);
+ if(rader.length)app.append(el("div",{class:"gains"},rader.map(r=>el("span",{},r))));
+ app.append(el("div",{class:"actions"},el("button",{class:"btn big",onclick:()=>gaTill(u.till)},"Fortsätt")));
+ const tb=talaKnapp(txt);if(tb)story.prepend(el("div",{class:"readrow"},tb));
+ window.scrollTo(0,0);if(alt.upplas)tala(txt);
+}
+
+/* --- prov: slå d20 + bonus mot svårighet --- */
+function provUI(pr,bild,figur){
+ const K=kap(),latt=pr.lattare&&K.flaggor.includes(pr.lattare.flagga),dc=latt?pr.lattare.svarighet:pr.svarighet;
+ const lista=vaken();
+ valjHjalte(pr.fraga||"Vem försöker?",lista,h=>{
+  const bonus=mod(h.s[pr.egenskap]);
+  app.replaceChildren(scenHuvud(),tvBox(bild,{figur}),partyStrip());
+  const dice=el("div",{class:"dicebox"},...[]);dice.innerHTML=dieSvg("?");
+  const res=el("div",{class:"rollres",role:"status"});
+  const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{
+   const tot=r+bonus,ok=r===20||(r!==1&&tot>=dc);
+   res.replaceChildren(el("div",{class:"sum"},r+" "+(bonus>=0?"+ ":"− ")+Math.abs(bonus)+" = "+tot),
+    el("div",{class:"verdict "+(ok?"ok":"bad")},r===20?"NAT 20! Perfekt!":r===1?"En etta … oj då!":ok?"Det lyckades!":"Det gick inte …"));
+   btn.replaceWith(el("button",{class:"btn big",onclick:()=>visaUtfall(ok?pr.lyckas:pr.misslyckas,h.namn,bild,figur)},"Se vad som händer"));
+  })}},"Slå!");
+  app.append(el("div",{class:"rollpanel"},
+   el("h2",{},h.namn+" slår för "+STATNAMN[pr.egenskap]),
+   el("p",{},"Slå minst "+dc+". "+h.namn+" får "+fmt(bonus)+" för "+STATNAMN[pr.egenskap].toLowerCase()+"."),
+   latt?el("p",{class:"hint"},pr.lattare.varfor):null,
+   dice,res,btn));
+  window.scrollTo(0,0);
+ },null,h=>({av:false,txt:STATNAMN[pr.egenskap]+" "+fmt(mod(h.s[pr.egenskap]))+" · "+liv(h)+" liv"}));
+}
+
+/* --- strid --- */
+const FORMAGA={
+ riddare:{namn:"Andra andningen",info:"Hela dig själv 1d10+1",mal:"sig"},
+ trollkarl:{namn:"Magisk pil",info:"Tre pilar som alltid träffar",mal:"fiende"},
+ bagskytt:{namn:"Sikta noga",info:"Slå två tärningar, ta den bästa",mal:"fiende"},
+ smygare:{namn:"Smygattack",info:"Anfall med 1d6 extra skada",mal:"fiende"},
+ helare:{namn:"Läkande ord",info:"Hela en vän, även en som svimmat",mal:"van"},
+ bard:{namn:"Peppsång",info:"Alla vänner får +1d6 på nästa anfall",mal:"ingen"}};
+const VAPEN_ORD={riddare:"svärdet",trollkarl:"staven",bagskytt:"en pil",smygare:"dolken",helare:"klubban",bard:"värjan"};
+function startStrid(def,bild){
+ tyst();
+ const fiender=def.fiender.map((k,i)=>{const f=FIE()[k];const namn=def.fiender.filter(x=>x===k).length>1?f.namn+" "+(def.fiender.slice(0,i+1).filter(x=>x===k).length):f.namn;
+  return{...f,namn,max:f.liv,liv:f.liv,ute:false}});
+ strid={def,bild,fiender,anvant:{},pepp:{},runda:1,ko:[],logg:[]};
+ nyRunda();nastaTur();
+}
+function nyRunda(){strid.ko=[...vaken().map(h=>({h:h.id})),...strid.fiender.map((f,i)=>({f:i}))]}
+const levande=()=>strid.fiender.filter(f=>!f.ute);
+function nastaTur(){
+ if(!levande().length)return stridVinst();
+ if(!vaken().length)return stridForlust();
+ let t=strid.ko.shift();
+ while(t&&((t.h&&(!byId(t.h)||liv(byId(t.h))<=0))||(t.f!==undefined&&strid.fiender[t.f].ute)))t=strid.ko.shift();
+ if(!t){strid.runda++;nyRunda();return nastaTur()}
+ if(t.h)hjalteTur(byId(t.h));else fiendeTur(strid.fiender[t.f]);
+}
+function stridVy(rubrik){
+ app.replaceChildren(
+  el("div",{class:"topbar"},el("span",{class:"purse"},"Strid · runda "+strid.runda),el("span",{})),
+  tvBox(strid.bild,{fiender:strid.fiender}),
+  el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")},el("b",{},f.namn),
+   el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},f.ute?"Borta":"Rustning "+f.rustning)))),
+  partyStrip(),el("h2",{class:"turn"},rubrik));
+ window.scrollTo(0,0);
+}
+function hjalteTur(h){
+ const K=KLASS[h.klass],F=FORMAGA[h.klass],akt=el("div",{class:"actions"});
+ stridVy(gen(h.namn)+" tur!");
+ const malFiende=fn=>{const L=levande();if(L.length===1)return fn(L[0]);
+  akt.replaceChildren(el("p",{class:"hint"},"Vem anfaller "+h.namn+"?"),...L.map(f=>el("button",{class:"choicebtn",onclick:()=>fn(f)},el("span",{},f.namn),el("small",{},f.liv+" liv kvar"))))};
+ akt.append(el("button",{class:"choicebtn",onclick:()=>malFiende(f=>anfall(h,f,{}))},el("span",{},"Anfall med "+VAPEN_ORD[h.klass]),el("small",{},K.vapen+" · "+K.skada+" skada")));
+ if(F&&!strid.anvant[h.id])akt.append(el("button",{class:"choicebtn special",onclick:()=>{
+  strid.anvant[h.id]=true;
+  if(F.mal==="fiende")malFiende(f=>anfall(h,f,{formaga:h.klass}));
+  else if(F.mal==="sig"){const r=slaa("1d10+1");setLiv(h,liv(h)+r.tot);visaHandelse(h.namn+" tar ett djupt andetag och får "+r.tot+" liv tillbaka.",null)}
+  else if(F.mal==="van")valjHjalte("Vem ska "+h.namn+" hela?",partyHeroes(),v=>{const r=slaa("1d4"),tot=Math.max(1,r.tot+mod(h.s.vis));setLiv(v,liv(v)+tot);
+    visaHandelse(h.namn+" lägger handen på "+(v.id===h.id?"sig själv":v.namn)+" och säger läkande ord. "+v.namn+" får "+tot+" liv tillbaka!",null)},()=>{strid.anvant[h.id]=false;hjalteTur(h)});
+  else{vaken().forEach(v=>{if(v.id!==h.id)strid.pepp[v.id]=true});visaHandelse(h.namn+" sjunger en peppsång så att alla får ny kraft! Alla andra får +1d6 på sitt nästa anfall.",null)}
+ }},el("span",{},"Förmåga: "+F.namn),el("small",{},F.info)));
+ if(spel.saker.includes("Läkedryck"))akt.append(el("button",{class:"choicebtn",onclick:()=>valjHjalte("Vem får läkedrycken?",partyHeroes(),v=>{const n=dryck(v);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en läkedryck. +"+n+" liv!",null)},()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger 2d4+2 liv")));
+ app.append(akt);
+}
+function anfall(h,f,{formaga}){
+ const K=KLASS[h.klass],atk=vitals(h).atk;
+ if(formaga==="trollkarl"){let tot=0;for(let i=0;i<3;i++)tot+=slaa("1d4+1").tot;f.liv=Math.max(0,f.liv-tot);
+  return visaHandelse("Tre glödande pilar susar ut ur "+gen(h.namn)+" stav och träffar "+f.namn+"! "+tot+" i skada."+(f.liv<=0?" "+fly(f):""),null)}
+ stridVy(h.namn+" anfaller "+f.namn);
+ const pepp=strid.pepp[h.id];delete strid.pepp[h.id];
+ const dice=el("div",{class:"dicebox"});dice.innerHTML=dieSvg("?")+(formaga==="bagskytt"?dieSvg("?"):"");
+ const res=el("div",{class:"rollres",role:"status"});
+ const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,rs=>{
+  const r=Math.max(...rs),pb=pepp?d(6):0,tot=r+atk+pb,trf=r===20||(r!==1&&tot>=f.rustning);
+  let txt;
+  if(trf){const dm=slaa(K.skada,r===20),extra=formaga==="smygare"?d(6):0,skada=Math.max(1,dm.tot+mod(h.s[K.main])+extra);
+   f.liv=Math.max(0,f.liv-skada);
+   txt=(r===20?"KRITISK TRÄFF! ":"Träff! ")+h.namn+" träffar "+f.namn+" med "+VAPEN_ORD[h.klass]+" och gör "+skada+" i skada."+(extra?" (Smygattacken gav "+extra+" extra.)":"")+(f.liv<=0?" "+fly(f):"");
+  }else txt=r===1?"Hoppsan! "+h.namn+" snubblar och missar helt.":h.namn+" missar. "+f.namn+" hoppar undan i sista stund!";
+  res.replaceChildren(el("div",{class:"sum"},r+" + "+atk+(pb?" + "+pb+" pepp":"")+" = "+tot+" (behöver "+f.rustning+")"),el("div",{class:"verdict "+(trf?"ok":"bad")},trf?"Träff!":"Miss!"),el("p",{},txt));
+  btn.replaceWith(el("button",{class:"btn big",onclick:nastaTur},"Fortsätt"));
+ },formaga==="bagskytt"?2:1)}},"Slå!");
+ app.append(el("div",{class:"rollpanel"},el("p",{},"Slå minst "+f.rustning+" för att träffa. "+h.namn+" får "+fmt(atk)+(pepp?" och +1d6 pepp":"")+(formaga==="bagskytt"?". Två tärningar, den bästa räknas.":"."),),dice,res,btn));
+}
+const gen=n=>/[sxz]$/i.test(n)?n:n+"s"; // svensk genitiv: Tomas tur, Villes tur
+function fly(f){f.ute=true;return f.namn+" "+f.flyr}
+function visaHandelse(txt){stridVy("");app.append(el("div",{class:"rollpanel"},el("p",{class:"event"},txt),el("button",{class:"btn big",onclick:nastaTur},"Fortsätt")))}
+function fiendeTur(f){
+ const mal=vaken();const h=mal[Math.floor(Math.random()*mal.length)],ac=vitals(h).ac;
+ stridVy("Nu anfaller "+f.namn+"!");
+ const dice=el("div",{class:"dicebox"});const res=el("div",{class:"rollres",role:"status"});
+ const btn=el("button",{class:"btn big",onclick:nastaTur},"Fortsätt");btn.hidden=true;
+ app.append(el("div",{class:"rollpanel"},el("p",{},f.namn+" anfaller "+h.namn+"!"),dice,res,btn));
+ rullaD20(dice,([r])=>{const tot=r+f.anfall,trf=r===20||(r!==1&&tot>=ac);let txt;
+  if(trf){const dm=slaa(f.skada,r===20);setLiv(h,liv(h)-dm.tot);txt=f.namn+" träffar "+h.namn+" och gör "+dm.tot+" i skada."+(liv(h)<=0?" "+h.namn+" blir yr och svimmar!":"")}
+  else txt=h.namn+" duckar. "+f.namn+" missar!";
+  res.replaceChildren(el("div",{class:"sum"},r+" + "+f.anfall+" = "+tot+" (behöver "+ac+")"),el("div",{class:"verdict "+(trf?"bad":"ok")},trf?"Aj, träff!":"Miss!"),el("p",{},txt));
+  sparaSpel();btn.hidden=false;
+ });
+}
+function stridVinst(){
+ partyHeroes().forEach(h=>{if(liv(h)<=0)setLiv(h,1)});
+ const def=strid.def,bild=strid.bild;strid=null;sparaSpel();
+ visaUtfall(def.vinst,null,bild,null,el("div",{class:"theend"},el("strong",{},"Ni vann striden!"),el("span",{},"Den som svimmade vaknar med 1 liv.")));
+}
+function stridForlust(){const til=strid.def.forlust;strid=null;gaTill(til)}
+
 /* ===== Inställningar ===== */
 function warnBox(title,text,yesTxt,onYes,onNo){
  const w=el("div",{class:"warn",role:"alert"},el("strong",{},title),el("span",{},text),
@@ -665,6 +1105,7 @@ function settings(){
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Inställningar"},
   el("div",{class:"section-head"},el("h2",{},"Inställningar"),el("button",{class:"btn ghost",onclick:close},"Stäng")),
   el("section",{class:"setgroup"},el("h3",{},"Installera som app"),installPart),
+  upplasGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
    el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
    el("div",{class:"field"},el("label",{for:"gh-token"},"GitHub-token"),el("div",{class:"inrow"},tok,eye)),
