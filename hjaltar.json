@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:27:51.672Z",
+  "uppdaterad": "2026-10-23T21:28:03.156Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -53,11 +53,11 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 12,
-      "svante": 7,
+      "ville": 9,
+      "svante": 4,
       "sally": 8,
-      "tomas": 11,
-      "linda": 11
+      "tomas": 8,
+      "linda": 8
     },
     "kapitel": {
       "k1": {
@@ -73,6 +73,6 @@
         "v": 2
       }
     },
-    "tid": 1792790869794
+    "tid": 1792790881121
   }
 }
