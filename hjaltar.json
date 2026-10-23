@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T20:42:44.980Z",
+  "uppdaterad": "2026-10-23T20:42:50.571Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -48,8 +48,19 @@
   "aventyr": {
     "guld": 0,
     "saker": [],
-    "liv": {},
-    "kapitel": {},
-    "tid": 0
+    "liv": {
+      "ville": 12,
+      "svante": 7,
+      "sally": 8,
+      "tomas": 11
+    },
+    "kapitel": {
+      "k1": {
+        "scen": "start",
+        "flaggor": [],
+        "klar": false
+      }
+    },
+    "tid": 1792788168707
   }
 }
