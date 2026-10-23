@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:32:32.511Z",
+  "uppdaterad": "2026-10-23T21:32:37.148Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -46,7 +46,7 @@
     }
   },
   "aventyr": {
-    "guld": 83,
+    "guld": 103,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -60,7 +60,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "skuggstrid",
+        "scen": "slut",
         "flaggor": [
           "sett_torget",
           "sett_bo",
@@ -71,10 +71,11 @@
           "vilat",
           "ljusbon"
         ],
-        "klar": false,
-        "v": 2
+        "klar": true,
+        "v": 2,
+        "slut": "slut"
       }
     },
-    "tid": 1792791150599
+    "tid": 1792791155161
   }
 }
