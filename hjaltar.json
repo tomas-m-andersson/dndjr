@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T20:45:27.467Z",
+  "uppdaterad": "2026-10-23T20:45:45.665Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -56,11 +56,11 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "glantan",
+        "scen": "vattestrid",
         "flaggor": [],
         "klar": false
       }
     },
-    "tid": 1792788325586
+    "tid": 1792788343796
   }
 }
