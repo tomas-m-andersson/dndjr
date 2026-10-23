@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-23T21:29:51.790Z",
+  "uppdaterad": "2026-10-23T21:29:54.541Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -62,7 +62,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "gruvan",
+        "scen": "krakstrid2",
         "flaggor": [
           "sett_torget",
           "sett_bo",
@@ -74,6 +74,6 @@
         "v": 2
       }
     },
-    "tid": 1792790989819
+    "tid": 1792790992526
   }
 }
