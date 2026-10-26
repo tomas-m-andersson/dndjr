@@ -189,8 +189,8 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .chipinfo{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
 .chipinfo b{font-family:var(--display);font-size:1rem;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chipinfo span{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.hp{height:7px;background:#0c151c;border-radius:4px;overflow:hidden}
-.hp i{display:block;height:100%;background:var(--red);transition:width .3s}
+.hp:not(.vital){height:7px;background:#0c151c;border-radius:4px;overflow:hidden}
+.hp:not(.vital) i{display:block;height:100%;background:var(--red);transition:width .3s}
 .story{display:flex;flex-direction:column;gap:12px;font-size:1.12rem;line-height:1.65;max-width:62ch}
 .story p{margin:0}
 .readrow{display:flex;justify-content:flex-end}
@@ -431,71 +431,124 @@ const isStandalone=()=>matchMedia("(display-mode: standalone)").matches||navigat
 if("serviceWorker" in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 const byId=id=>alla().find(h=>h.id===id);
 
-/* ===== Pixelporträtt ===== */
-const HUMAN=[
-"............","............","...SSSSSS...","..SSSSSSSS..","..SSESSESS..","..SSSSSSSS..","...SSMMSS...","....SSSS....",
-"..OOOOOOOO..",".OOOOOOOOOO.",".SOODDDDOOS.",".SOOOOOOOOS.","..LLL..LLL..","..LL....LL.."];
-const CAT=[
-"............","............",".F......F...",".FP....PF...",".FFFFFFFF...",".FEFFFFEF...",".FFFNNFFF...","..FFFFFF....",
-"..FFFFFFF..T",".FFFFFFFFF.T",".FFWWWWFFFT.",".FFWWWWFFFT.",".FFFFFFFFF..",".FF.FF.FF..."];
+/* ===== Pixelporträtt =====
+   Hjältarna ritas som rutnät med bokstäver (se FARG nedan). Sedan läggs
+   kontur och skuggning på automatiskt, i samma stil som Nat20. */
 function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;
  const c=x=>Math.max(0,Math.min(255,Math.round(f<0?x*(1+f):x+(255-x)*f)));return"#"+[c(r),c(g),c(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+const KONTUR="#15111a";
+// Människokroppen, 14 bred och 24 hög. Rad 0–1 är plats för hattar. Ansiktet tittar åt höger.
+const KROPP=[
+"..............","..............",
+"....KKKK......","...KSSSSK.....","...KSSSSSK....","...KSSSESSK...","...KsSSSSK....","....KsSSK.....","....KssK......",
+".KOOOOOOOOK...","KOOKOOOOKOOK..","KOOKOOOOKOOK..","KOOKOOOOKOOK..","KooKLLLLKooK..","KSSKOOOOKSSK..",
+".KKKPPpPKKK...","...KPPpPK.....","...KPPpPK.....","...KPPpPK.....","...KPPpPK.....","...KPPpPK.....",
+"...KBBBBK.....","...KBBKBBK....","...KKK.KKK...."];
+// Katten sitter och tittar åt höger.
+const KATT=[
+"..............","..............","..............","..............","..............","..............","..............","..............",
+"........K..K..",".......KFKKFK.",".......KFFFFFK","......KFFEFFEK","......KFFFFNFK",".......KFWWWK.","......KFFFWK..",
+"....KKFFFFWK..","...KFFFFFFWK..","..KFFFFFFFFK..","..KFFFFFFFFK..","..KFFFFFFKFK..","KK.KFFFFFKFK..","KFKKFFFFFKWWK.",
+".KFFFFFFFFKKK.","..KKKKKKKK...."];
+function gridFrom(rows){return rows.map(r=>[...r])}
+function satt(G,pts,ch){pts.forEach(([x,y])=>{if(G[y]&&x>=0&&x<G[y].length)G[y][x]=ch})}
+function fyll(G,x0,y0,x1,y1,ch,bara){for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){if(!G[y]||x<0||x>=G[y].length)continue;if(bara&&!bara.includes(G[y][x]))continue;G[y][x]=ch}}
+function heroGrid(h){
+ if(h.folk==="katt")return kattGrid(h);
+ const G=gridFrom(KROPP),k=h.klass,folk=h.folk;
+ // hår
+ const st=h.stil||"kort";
+ if(st!=="kal"){satt(G,[[4,1],[5,1],[6,1],[7,1],[3,2],[8,2]],"K");fyll(G,4,2,7,3,"H");satt(G,[[4,4],[4,5]],"H");satt(G,[[8,3]],"h")}
+ if(st==="lang"){fyll(G,3,4,3,9,"H");fyll(G,2,3,2,9,"K");satt(G,[[3,10]],"h")}
+ if(st==="tofs"){satt(G,[[2,3],[1,4],[1,5],[2,4],[1,6]],"H");satt(G,[[1,3],[0,4],[0,5],[0,6],[1,7]],"K")}
+ if(folk==="alv"){satt(G,[[2,3],[3,4]],"S");satt(G,[[1,2],[2,2]],"K")}
+ if(folk==="dvarg"){satt(G,[[5,6],[6,6],[7,6],[8,6],[5,7],[6,7],[7,7],[5,8],[6,8],[5,9],[6,9],[5,10],[6,10]],"H");satt(G,[[6,10],[7,8]],"h");satt(G,[[6,5]],"s")}
+ // utrustning per klass
+ if(k==="riddare"){
+  satt(G,[[4,1],[5,1],[6,1],[7,1]],"M");fyll(G,3,2,8,2,"M");satt(G,[[4,3],[4,4],[4,5],[4,6],[3,3],[3,4],[3,5]],"M");satt(G,[[8,3],[3,6]],"m");
+  satt(G,[[5,0],[6,0],[4,0],[3,1]],"R");
+  fyll(G,4,9,7,12,"M",["O"]);fyll(G,5,10,6,14,"O");fyll(G,1,10,2,12,"M",["O","o"]);fyll(G,9,10,10,12,"m",["O","o"]);
+  fyll(G,0,10,2,15,"O");satt(G,[[0,10],[0,15]],"m");satt(G,[[1,12]],"G");fyll(G,0,11,0,14,"M");
+  fyll(G,11,3,11,12,"W");satt(G,[[11,2]],"w");fyll(G,10,13,12,13,"G");satt(G,[[11,14]],"L");satt(G,[[11,15]],"G");
+  fyll(G,4,16,7,20,"m",["P"]);
+ }else if(k==="trollkarl"){
+  fyll(G,2,3,9,3,"D");satt(G,[[4,2],[5,2],[6,2],[7,2],[5,1],[6,1],[6,0],[7,0]],"O");satt(G,[[8,2],[7,1]],"o");satt(G,[[5,2]],"G");
+  fyll(G,3,15,8,21,"O");fyll(G,3,16,3,21,"K");fyll(G,8,16,8,21,"K");satt(G,[[2,21],[9,21]],"K");fyll(G,4,21,7,21,"o");satt(G,[[6,16],[6,17],[6,18],[6,19],[6,20]],"o");
+  satt(G,[[4,13],[5,13],[6,13],[7,13]],"G");
+  fyll(G,12,2,12,23,"Z");satt(G,[[12,0],[11,1],[13,1],[12,1]],"X");satt(G,[[12,1]],"x");satt(G,[[11,14]],"S");
+ }else if(k==="bagskytt"||k==="smygare"){
+  const dark=k==="smygare";
+  satt(G,[[4,1],[5,1],[6,1],[7,1]],"O");fyll(G,3,2,8,2,"O");satt(G,[[3,3],[3,4],[3,5],[3,6],[4,3],[4,7],[4,6]],"O");satt(G,[[8,2],[3,7]],"o");
+  satt(G,[[2,3],[2,4],[2,5],[2,6],[2,7],[3,8]],"K");satt(G,[[3,1],[8,1],[9,2]],"K");
+  fyll(G,4,9,7,12,"L",["O"]);fyll(G,1,10,2,12,"O",["O","o"]);fyll(G,9,10,10,12,"o",["O","o"]);satt(G,[[2,9],[3,9],[8,9],[9,9]],"O");
+  if(dark){fyll(G,5,7,8,7,"D",["S","s"]);satt(G,[[6,6],[7,6],[8,6]],"D");fyll(G,4,16,7,20,"D",["P","p"]);satt(G,[[11,11],[11,12]],"W");satt(G,[[11,13]],"w");satt(G,[[11,14]],"L");satt(G,[[10,14]],"S")}
+  else{satt(G,[[11,6],[12,7],[12,8],[13,9],[13,10],[13,11],[12,12],[12,13],[11,14]],"Z");fyll(G,11,7,11,13,"W");
+   satt(G,[[1,7],[2,7],[1,8],[2,8]],"l");satt(G,[[1,6],[2,6]],"W")}
+ }else if(k==="helare"){
+  satt(G,[[4,1],[5,1],[6,1],[7,1]],"M");fyll(G,3,2,8,2,"M");satt(G,[[3,3],[3,4],[3,5],[4,3]],"M");satt(G,[[3,6]],"m");
+  fyll(G,4,9,7,14,"W");satt(G,[[5,10],[5,11],[5,12],[4,11],[6,11]],"G");fyll(G,7,9,7,14,"w");
+  fyll(G,1,10,2,12,"M",["O","o"]);fyll(G,9,10,10,12,"m",["O","o"]);
+  satt(G,[[11,9],[12,9],[11,10],[12,10]],"M");satt(G,[[12,10]],"m");fyll(G,11,11,11,15,"Z");
+  fyll(G,0,10,2,15,"O");fyll(G,0,11,0,14,"G");satt(G,[[1,12]],"W");
+ }else if(k==="bard"){
+  fyll(G,2,2,9,2,"o");satt(G,[[4,1],[5,1],[6,1],[7,1],[5,0],[6,0]],"O");satt(G,[[7,0],[8,0],[8,-1]],"R");satt(G,[[9,0]],"R");
+  satt(G,[[5,10],[5,12]],"G");satt(G,[[6,9],[6,10],[6,11],[6,12]],"o");
+  fyll(G,8,12,11,15,"Z");satt(G,[[9,13]],"K");satt(G,[[10,14]],"z");satt(G,[[11,11],[12,10],[13,9]],"z");satt(G,[[13,8]],"G");
+ }else if(k==="ingen"){
+  if(h.folk!=="halvling")fyll(G,3,15,8,20,"O",["P","p","K"]),fyll(G,3,15,3,20,"K"),fyll(G,8,15,8,20,"K");
+ }
+ // kortare folk: ta bort rader i kroppen
+ const bort=folk==="dvarg"?[16,17,11]:folk==="halvling"?[16,17,18,11,8]:[];
+ bort.sort((a,b)=>b-a).forEach(r=>G.splice(r,1));
+ while(G.length<24)G.unshift([..."..............".split("")]);
+ if(folk==="halvling"){const n=G.length;for(let y=n-3;y<n-1;y++)G[y]=G[y].map(c=>c==="B"?"S":c)}
+ return G;
+}
+function kattGrid(h){
+ const G=gridFrom(KATT);
+ if(h.flackar){
+  satt(G,[[9,10],[10,10],[5,16],[6,16],[4,18],[5,18],[6,18],[5,20],[6,20],[8,12],[2,22],[4,22]],"T");satt(G,[[7,17],[8,17],[8,18],[3,19],[7,22],[8,22],[12,12]],"C");satt(G,[[9,16],[9,17]],"W");
+ }
+ satt(G,[[7,14],[8,14],[9,14],[7,15],[8,15]],"O");satt(G,[[9,15]],"o");
+ return G;
+}
+function farger(h){
+ const skin=SKIN[h.hud]||SKIN[0],hair=HAIR[h.har]||HAIR[0],out=OUTFIT[h.klader]||OUTFIT[0];
+ const cat=h.folk==="katt",fur=hair;
+ return{K:KONTUR,S:skin,s:shade(skin,-.22),E:cat?"#9fd36a":"#1c1418",H:hair,h:shade(hair,-.3),O:out,o:shade(out,-.3),D:shade(out,-.55),
+  P:"#4a3f38",p:"#3a302a",B:"#3a2a20",L:"#6b4a2e",l:"#4e3420",M:"#9aa4ae",m:"#6c7680",G:"#d4a63a",W:"#e6e1d6",w:"#b8b2a6",
+  Z:"#7a5432",z:"#5a3c22",R:"#a83a32",X:"#9fe8ff",x:"#e8fbff",
+  F:fur,T:shade(fur,-.45),C:"#c9935a",N:"#c97a8a"};
+}
+// Lägger på kontur runt allt och skuggning: ljus uppifrån vänster.
+function rendera(G,pal,{kontur=true,skugga=true}={}){
+ const h=G.length,w=G[0].length,P=1,cv=document.createElement("canvas");cv.width=w+2*P;cv.height=h+2*P;
+ const g=cv.getContext("2d");
+ const col=(x,y)=>{if(y<0||y>=h||x<0||x>=w)return null;const c=G[y][x];return c==="."||!pal[c]?null:c};
+ for(let y=0;y<h;y++)for(let x=0;x<w;x++){const c=col(x,y);if(!c)continue;let f=pal[c]||c;
+  if(skugga&&c!=="K"&&c!=="E"&&f.startsWith("#")&&f.length===7){const kant=(a,b)=>{const n=col(a,b);return!n||n==="K"};
+   if(kant(x+1,y)||kant(x,y+1))f=shade(f,-.2);else if(kant(x-1,y)||kant(x,y-1))f=shade(f,.12)}
+  g.fillStyle=f;g.fillRect(x+P,y+P,1,1)}
+ if(kontur){g.fillStyle=KONTUR;for(let y=-1;y<=h;y++)for(let x=-1;x<=w;x++){if(col(x,y))continue;
+  if([[1,0],[-1,0],[0,1],[0,-1]].some(([dx,dy])=>{const n=col(x+dx,y+dy);return n&&n!=="K"}))g.fillRect(x+P,y+P,1,1)}}
+ return cv;
+}
+const HJCACHE=new Map();
+function heroCanvas(h){
+ const key=JSON.stringify([h.folk,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
+ if(!HJCACHE.has(key))HJCACHE.set(key,rendera(heroGrid(h),farger(h)));
+ return HJCACHE.get(key);
+}
+// Porträtt (med bakgrund) eller bara figuren (transparent, för TV:n)
 function drawHero(cv,h,opt={}){
- const W=16,H=18;cv.width=W;cv.height=H;const g=cv.getContext("2d");
- const K=KLASS[h.klass]||{col:"#445566"};
- if(!opt.transparent){
-  g.fillStyle=shade(K.col,-.55);g.fillRect(0,0,W,H);
-  g.fillStyle=shade(K.col,-.4);g.fillRect(0,14,W,4); // golv
-  g.fillStyle="#ffffff55";[[1,2],[13,1],[15,6],[0,9]].forEach(([x,y])=>g.fillRect(x,y,1,1)); // stjärnor
- }
- const p=(x,y,c)=>{if(c){g.fillStyle=c;g.fillRect(x,y,1,1)}};
- const skin=SKIN[h.hud],hair=HAIR[h.har],out=OUTFIT[h.klader];
- const ox=2,oy=4,cat=h.folk==="katt";
- if(cat){
-  const fur=hair,map={F:fur,E:"#7fdc6a",N:"#e98aa8",P:"#e98aa8",W:shade(fur,.7),T:fur};
-  if(h.flackar)map.W="#fbf7ee";
-  CAT.forEach((r,y)=>[...r].forEach((ch,x)=>p(ox+x,oy+y,map[ch])));
-  if(h.flackar){ // tigrerad med vita och ljusbruna fläckar (som Sally)
-   const vit="#fbf7ee",brun="#d39a5a",rand=shade(fur,-.6),c=(pts,col)=>pts.forEach(([x,y])=>p(ox+x,oy+y,col));
-   c([[3,4],[6,4],[4,3],[5,3],[1,5],[8,5],[3,8],[2,9],[4,9],[2,12],[4,12],[8,12],[11,8],[10,10]],rand); // ränder och mörk svans
-   c([[7,6],[8,6],[1,3],[6,8],[7,8],[7,9],[8,9],[6,12],[7,12]],brun);                                   // ljusbruna fläckar
-   c([[3,6],[6,6],[3,7],[4,7],[5,7],[6,7],[4,8],[5,8],[1,13],[2,13],[4,13],[5,13],[7,13],[8,13]],vit);  // nos, haka, bröst, tassar
-  }else{
-   // halsduk i klädfärg
-   [2,3,4,5,6,7].forEach(x=>p(ox+x,oy+7,out)); p(ox+6,oy+8,out);
-  }
- }else{
-  const map={S:skin,E:"#1b1b22",M:shade(skin,-.35),O:out,D:shade(out,-.4),L:"#3a2c22"};
-  HUMAN.forEach((r,y)=>[...r].forEach((ch,x)=>p(ox+x,oy+y,map[ch])));
-  if(h.folk==="alv"){p(ox+1,oy+3,skin);p(ox+0,oy+2,skin);p(ox+10,oy+3,skin);p(ox+11,oy+2,skin)}
-  const hr=(x,y)=>p(ox+x,oy+y,hair);
-  if(h.stil!=="kal"){
-   for(let x=3;x<=8;x++)hr(x,0);for(let x=2;x<=9;x++){hr(x,1);hr(x,2)}
-   hr(2,3);hr(9,3);
-   if(h.stil==="lang"){for(let y=3;y<=9;y++){hr(1,y);hr(10,y)}hr(2,4);hr(9,4)}
-   if(h.stil==="tofs"){hr(0,2);hr(1,2);hr(0,3);hr(11,2);hr(10,2);hr(11,3);hr(0,4);hr(11,4)}
-  }else{for(let x=3;x<=8;x++)p(ox+x,oy+2,skin)}
-  if(h.folk==="dvarg"){ // skägg
-   ["..HHHHHHHH..","..HHH..HHH..","..HHHHHHHH..","...HHHHHH...","....HHHH...."].forEach((r,i)=>[...r].forEach((ch,x)=>{if(ch==="H")hr(x,5+i)}));
-   p(ox+5,oy+6,shade(skin,-.35));p(ox+6,oy+6,shade(skin,-.35));
-  }
-  if(h.folk==="halvling"){p(ox+2,oy+13,skin);p(ox+3,oy+13,skin);p(ox+8,oy+13,skin);p(ox+9,oy+13,skin)} // bara fötter
- }
- // klassprylar
- const k=h.klass;
- if(k==="trollkarl"){const c=shade(out,-.15);p(9,0,c);p(8,1,c);p(9,1,c);for(let x=7;x<=10;x++)p(x,2,c);for(let x=6;x<=10;x++)p(x,3,c);
-   for(let x=cat?2:3;x<=(cat?11:12);x++)p(x,cat?5:4,c);p(8,3,"#f2c14e");
-   for(let y=4;y<=17;y++)p(14,y,"#8a5a2b");p(14,3,"#6fe3ff");p(13,3,"#6fe3ff55");p(15,3,"#6fe3ff55");p(14,2,"#6fe3ff55")}
- if(k==="riddare"){if(!cat){const m="#b9c3cc",d="#7d8790";for(let x=4;x<=11;x++){p(x,4,m);p(x,5,m)}for(let x=5;x<=10;x++)p(x,3,m);p(4,6,d);p(11,6,d);p(4,7,d);p(11,7,d);p(7,2,"#e35d4f");p(8,2,"#e35d4f")}
-   for(let y=6;y<=13;y++)p(14,y,"#dfe6ec");p(13,14,"#f2c14e");p(14,14,"#f2c14e");p(15,14,"#f2c14e");p(14,15,"#6b4423");p(14,16,"#6b4423");
-   const s="#7d8790";for(let y=13;y<=16;y++)for(let x=0;x<=2;x++)p(x,y,s);p(1,14,"#f2c14e")}
- if(k==="bagskytt"){const b="#8a5a2b";[[13,7],[14,8],[15,9],[15,10],[15,11],[14,12],[13,13]].forEach(([x,y])=>p(x,y,b));for(let y=8;y<=12;y++)p(13,y,"#e8e3d8");
-   if(!cat){p(1,9,"#6b4423");p(1,10,"#6b4423");p(1,11,"#6b4423");p(1,8,"#e35d4f")}}
- if(k==="smygare"){p(14,14,"#dfe6ec");p(14,13,"#dfe6ec");p(14,15,"#6b4423");p(13,15,"#f2c14e");p(15,15,"#f2c14e");
-   if(!cat){const c=shade(out,-.25);for(let x=3;x<=12;x++)p(x,4,c);for(let x=2;x<=13;x++)p(x,5,c);p(4,6,c);p(11,6,c);p(4,7,c);p(11,7,c)}}
- if(k==="helare"){const yy=cat?oy+10:oy+10,xx=cat?ox+4:ox+5;p(xx,yy-1,"#f2c14e");p(xx-1,yy,"#f2c14e");p(xx,yy,"#f2c14e");p(xx+1,yy,"#f2c14e");p(xx,yy+1,"#f2c14e");
-   for(let y=10;y<=15;y++)p(14,y,"#6b4423");p(13,9,"#b9c3cc");p(14,9,"#b9c3cc");p(15,9,"#b9c3cc");p(14,8,"#b9c3cc")}
- if(k==="bard"){const w="#a8693a";[[13,12],[14,12],[13,13],[14,13],[15,13],[13,14],[14,14]].forEach(([x,y])=>p(x,y,w));p(14,13,"#3a2c22");for(let y=8;y<=11;y++)p(15,y,"#6b4423");p(15,7,"#f2c14e")}
+ const spr=heroCanvas(h);
+ if(opt.transparent){cv.width=spr.width;cv.height=spr.height;cv.getContext("2d").drawImage(spr,0,0);return}
+ const W=24,H=27;cv.width=W;cv.height=H;const g=cv.getContext("2d");
+ const K=KLASS[h.klass]||{col:"#445566"},bg=shade(K.col,-.6);
+ g.fillStyle=bg;g.fillRect(0,0,W,H);
+ for(let y=0;y<H;y++){g.fillStyle=shade(K.col,-.68+y/H*.1);g.fillRect(0,y,W,1)}
+ g.fillStyle=shade(K.col,-.75);g.fillRect(0,H-3,W,3);g.fillStyle=shade(K.col,-.5);g.fillRect(0,H-3,W,1);
+ g.drawImage(spr,Math.round((W-spr.width)/2),H-spr.height);
 }
 function portrait(h){const c=document.createElement("canvas");c.className="px";drawHero(c,h);return c}
 
@@ -780,8 +833,8 @@ function upplasGroup(){
 /* --- TV:n: pixelbilder för scenerna --- */
 const TVW=96,TVH=54;
 const SPR={
- vatte:{rows:["..G...G..",".GGGGGGG.","GGYGGGYGG",".GGGGGGG.","..GGRGG..","...GGG...","..BBBBB..",".GBBBBBG.","G.BBBBB.G","..BBBBB..","..B...B..",".GG...GG."],pal:{G:"#6fae4a",Y:"#ffe14d",R:"#3b2a1a",B:"#7a5230"}},
- troll:{rows:["....TTTT....","...TTTTTT...","..TTYTTYTT..","..TTTNNTTT..","..TTWTTWTT..","...TTTTTT...",".TTTTTTTTTT.","TTTBBBBBBTTT","TT.BBBBBB.TT","TT.BBBBBB.TT","T..BBBBBB..T","...BBBBBB...","...TT..TT...","...TT..TT...","..TTT..TTT.."],pal:{T:"#7f9a6a",Y:"#1b1b22",N:"#9fb07a",W:"#f3eedf",B:"#5a4632"}},
+ vatte:{rows:["..G...G..",".GGGGGGG.","GGYGGGYGG",".GGGGGGG.","..GGRGG..","...GGG...","..BBBBB..",".GBBBBBG.","G.BBBBB.G","..BBBBB..","..B...B..",".GG...GG."],pal:{G:"#5e8f43",Y:"#e8b84a",R:"#3b2a1a",B:"#5c4330"}},
+ troll:{rows:["....TTTT....","...TTTTTT...","..TTYTTYTT..","..TTTNNTTT..","..TTWTTWTT..","...TTTTTT...",".TTTTTTTTTT.","TTTBBBBBBTTT","TT.BBBBBB.TT","TT.BBBBBB.TT","T..BBBBBB..T","...BBBBBB...","...TT..TT...","...TT..TT...","..TTT..TTT.."],pal:{T:"#6b7f5c",Y:"#1b1b22",N:"#859467",W:"#e6e1d6",B:"#4a3a2a"},skala:2},
  varg:{rows:[".G............","GGG...........","GYGG..........","GGGGGGGGGGG...",".DGGGGGGGGGG..","..GGGGGGGGGGGG","..GG.G...GG..G","..GG.G...GG...","..G..G...G.G.."],pal:{G:"#8a8f99",Y:"#ffe14d",D:"#2a2a2a"}},
  krak:{rows:["..H..........H........","..HH........HH...AX...","...HHHHHHHHHH....AXX..","...HHHHHHHHHH....AXXX.","..GGGGGGGGGGGG...AXXX.",".GGGYYGGGGYYGGG..AXXX.","GGGGGGGGGGGGGGGG.AXX..","..GGGGGNNGGGGG...AX...","..GGRWRRRRWRGG...A....","...GGGGGGGGGG....A....",".GGBBBBBBBBBBGG..A....","GGBBBBBBBBBBBBGG.A....","GG.BBBBMMBBBB.GGGA....","GG.BBBBBBBBBB.GGGA....","GG.BBBBBBBBBB....A....",".G.SSSSSSSSSS....A....","...BBBBBBBBBB....A....","...BBBB..BBBB....A....","...BBB....BBB....A....","...GGG....GGG....A....","..GGGG....GGGG...A....","..GGGG....GGGG........"],pal:{H:"#9aa3ad",G:"#5f9a3e",Y:"#ff5a3d",N:"#4d7f32",R:"#2a1a10",W:"#f3eedf",B:"#4a3423",M:"#c9a227",S:"#2a1a10",A:"#7a5230",X:"#dfe6ec"}},
  spindel:{rows:["L..L....L..L",".L.L....L.L.","..LBBBBBBL..",".LBBRBBRBBL.","L.LBBBBBBL.L","..L.BBBB.L..",".L........L."],pal:{L:"#8a7aa3",B:"#4a3d5c",R:"#ff3d3d"}},
@@ -790,7 +843,7 @@ const SPR={
  fladdermus:{rows:["F.........F","FF..BBB..FF","FFFBBBBBFFF",".FFBYBYBFF.","...BBBBB...","....B.B...."],pal:{"F":"#5a4a4a","B":"#7a6a6a","Y":"#ff4d4d"}},
  ratta:{rows:["..RR........",".RRRRRRRR...","RYRRRRRRRR..",".RRRRRRRRRTT","..R..R..R..T"],pal:{"R":"#8a7a6a","Y":"#ff4d4d","T":"#d8a0a0"}},
  skelett:{rows:["...WWW...","..WWWWW..","..WKWKW..","..WWWWW..","...W.W...","....W....",".WWWWWWW.","W..WWW..W","...WWW...","....W....","...W.W...","...W.W...","..W...W..",".WW...WW."],pal:{"W":"#e8e3d8","K":"#1b1b22"}},
- slem:{rows:[".SSSSSSSSSS.","SSSSSSSSSSSS","SSHSSSSSSSSS","SSSSSKSSSSSS","SSSSSSSSSBSS","SSSSSSSSSSSS","SSBSSSSSSSSS","SSSSSSSSSSSS","SSSSSSSSSSSS",".SSSSSSSSSS."],pal:{"S":"#6fcf7a","H":"#e8fff0","K":"#e8e3d8","B":"#c9c2b0"}},
+ slem:{rows:[".SSSSSSSSSS.","SSSSSSSSSSSS","SSHSSSSSSSSS","SSSSSKSSSSSS","SSSSSSSSSBSS","SSSSSSSSSSSS","SSBSSSSSSSSS","SSSSSSSSSSSS","SSSSSSSSSSSS",".SSSSSSSSSS."],pal:{"S":"#5fae7a","H":"#e8fff0","K":"#e8e3d8","B":"#c9c2b0"}},
  eldimp:{rows:[".H.....H.",".HH...HH.","..RRRRR..",".RYRRRYR.",".RRRRRRR.","..RKKKR..","...RRR..T",".RRRRRRRT","R.RRRRR.T","..RR.RR..","..R...R.."],pal:{"R":"#d8452f","H":"#2a1a10","Y":"#ffe14d","K":"#5a1a10","T":"#ff8a2b"}},
  spokriddare:{rows:["....HHHH....","...HHHHHH...","...HYHHYH...","...HHHHHH...","....HHHH....","..AAAAAAAA..",".AAAAAAAAAAS","AAAAAAAAAAAS","AA.AAAAAA.AS","AA.AAAAAA.AS","...AAAAAA..S","...AAAAAA..S","...AA..AA...","...AA..AA...","...AA..AA...","..AAA..AAA.."],pal:{"H":"#7a8a9a","Y":"#7fe0ff","A":"#5a6a7a","S":"#c9e8ff"}},
  kista:{rows:["..KKKKKKKK..",".KMMMMMMMMK.","KMMMMMMMMMMK","KKKKKGGKKKKK","KMMMMGGMMMMK","KMMMMMMMMMMK","KKKKKKKKKKKK"],pal:{"K":"#3a2a1a","M":"#8a5a2b","G":"#f2c14e"}},
@@ -803,9 +856,11 @@ const SPR={
  drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
 };
 function sprDef(key){const s=SPR[key];if(!s)return null;if(s.alias){const b=SPR[s.alias];return{rows:b.rows,pal:{...b.pal,...s.pal},skala:s.skala||1}}return{...s,skala:s.skala||1}}
-function sprite(g,key,x,y,flip,alpha){const s=sprDef(key);if(!s)return;g.globalAlpha=alpha??1;const w=s.rows[0].length,k=s.skala;
- s.rows.forEach((r,j)=>[...r].forEach((ch,i)=>{const c=s.pal[ch];if(c){g.fillStyle=c;g.fillRect(x+(flip?w-1-i:i)*k,y+j*k,k,k)}}));g.globalAlpha=1}
-const sprSize=k=>{const s=sprDef(k);return s?{w:s.rows[0].length*s.skala,h:s.rows.length*s.skala}:{w:12,h:16}};
+const SPCACHE=new Map();
+function sprCanvas(key){if(!SPCACHE.has(key)){const s=sprDef(key);SPCACHE.set(key,s?rendera(gridFrom(s.rows),{K:KONTUR,...s.pal}):null)}return SPCACHE.get(key)}
+function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if(!c)return;const k=s.skala,W=c.width*k,H=c.height*k;g.globalAlpha=alpha??1;
+ if(flip){g.save();g.translate(x+W,y);g.scale(-1,1);g.drawImage(c,0,0,W,H);g.restore()}else g.drawImage(c,x,y,W,H);g.globalAlpha=1}
+const sprSize=k=>{const s=sprDef(k);return s?{w:(s.rows[0].length+2)*s.skala,h:(s.rows.length+2)*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
 function scenePaint(g,bild){
  const R=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)},rnd=seedRnd(bild.length*97+7);
@@ -897,17 +952,18 @@ const HANDLARE={folk:"halvling",klass:"ingen",hud:1,har:4,stil:"kort",klader:4,f
 const RESENAR={folk:"alv",klass:"bagskytt",hud:0,har:1,stil:"lang",klader:2};
 function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false}={}){
  cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
- if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),1+i*13,TVH-18);g.globalAlpha=1});
+ if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),i*14,TVH-25);g.globalAlpha=1});
  const right=[];
  if(fiender)fiender.forEach(f=>{if(!f.ute)right.push({k:f.bild,a:1})});
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
  let x=TVW-2;
- right.forEach(f=>{if(f.k==="greta"){x-=16;g.drawImage(heroSprite(GRETA),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+1,TVH-10,1,10);return}
-  if(f.k==="bo"){x-=16;g.drawImage(heroSprite(BO),x,TVH-18);return}
-  if(f.k==="handlare"){x-=16;g.drawImage(heroSprite(HANDLARE),x,TVH-18);g.fillStyle="#8a5a2b";g.fillRect(x+10,TVH-14,5,7);g.fillStyle="#6b4423";g.fillRect(x+10,TVH-14,5,1);return}
+ const npc=(h,xx)=>{const c=heroSprite(h);g.save();g.translate(xx+c.width,TVH-25);g.scale(-1,1);g.drawImage(c,0,0);g.restore()};
+ right.forEach(f=>{if(f.k==="greta"){x-=15;npc(GRETA,x);g.fillStyle="#6b4a2e";g.fillRect(x+2,TVH-13,1,13);g.fillRect(x+1,TVH-13,2,1);return}
+  if(f.k==="bo"){x-=15;npc(BO,x);return}
+  if(f.k==="handlare"){x-=17;npc(HANDLARE,x);g.fillStyle="#6b4a2e";g.fillRect(x+11,TVH-14,5,8);g.fillStyle="#4e3420";g.fillRect(x+11,TVH-14,5,1);g.fillRect(x+11,TVH-10,5,1);return}
   if(f.k==="resenar"){x-=18;g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
-  if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+2,TVH-15,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
-  const {w,h}=sprSize(f.k);x-=w+2;sprite(g,f.k,x,TVH-h-1,f.k==="drake"||f.k==="eldklo",f.a);
+  if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
+  const {w,h}=sprSize(f.k);x-=w;sprite(g,f.k,x,TVH-h,f.k==="drake"||f.k==="eldklo",f.a);
   if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy,3,1);g.fillRect(x+dx+2,TVH-h+dy,1,1);g.fillRect(x+dx,TVH-h+1+dy,3,1)});g.globalAlpha=1}});
 }
 
