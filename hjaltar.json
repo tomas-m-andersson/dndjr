@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-26T12:57:45.385Z",
+  "uppdaterad": "2026-10-26T13:00:47.489Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -12,7 +12,7 @@
   "grundandringar": {
     "tomas": {
       "folk": "dvarg",
-      "klass": "helare",
+      "klass": "trollkarl",
       "hud": 1,
       "har": 2,
       "stil": "kal",
