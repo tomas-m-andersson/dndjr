@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-26T13:01:36.781Z",
+  "uppdaterad": "2026-10-26T13:01:58.865Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -75,6 +75,23 @@
         "tal": 15,
         "klo": 10,
         "vis": 11,
+        "cha": 12
+      }
+    },
+    "linda": {
+      "folk": "alv",
+      "klass": "bagskytt",
+      "hud": 0,
+      "har": 5,
+      "stil": "lang",
+      "klader": 4,
+      "flackar": false,
+      "s": {
+        "sty": 11,
+        "smi": 17,
+        "tal": 12,
+        "klo": 13,
+        "vis": 14,
         "cha": 12
       }
     }
