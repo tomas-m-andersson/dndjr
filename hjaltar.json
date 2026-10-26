@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-26T13:16:36.320Z",
+  "uppdaterad": "2026-10-26T13:16:50.831Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793019463364,
+    "tid": 1793020608357,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -147,54 +147,22 @@
       }
     },
     "utr": {},
-    "run": {
-      "plats": "grottorna",
-      "kapitel": 1,
-      "djup": 1,
-      "fas": "dorrar",
-      "dorrar": [
-        {
-          "ledtrad": "Ett lågt morrande. Sedan tystnad.",
-          "typ": "sovare",
-          "kand": false
-        }
-      ],
-      "lyssnat": false,
-      "rum": null,
-      "logg": [
-        {
-          "t": "Kapitel 1 · Grottorna under Kråkberget",
-          "k": "sep"
-        },
-        {
-          "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan.",
-          "k": ""
-        }
-      ],
-      "party": [
-        "ville",
-        "svante",
-        "tomas",
-        "sally"
-      ],
-      "guld": 44,
-      "saker": [
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck"
-      ],
-      "bless": {},
-      "curse": {},
-      "ara": 0,
-      "start": 1793019463363,
-      "nastaKand": false
-    },
+    "run": null,
     "historik": [
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 1)",
+          "Svante (nivå 1)",
+          "Tomas (nivå 1)",
+          "Sally (nivå 1)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-26"
+      },
       {
         "plats": "slottet",
         "kapitel": 1,
