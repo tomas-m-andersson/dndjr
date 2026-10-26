@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-26T13:01:58.865Z",
+  "uppdaterad": "2026-10-26T13:15:54.550Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -10,38 +10,21 @@
     "sally"
   ],
   "grundandringar": {
-    "tomas": {
-      "folk": "dvarg",
-      "klass": "trollkarl",
+    "ville": {
+      "folk": "manniska",
+      "klass": "riddare",
       "hud": 1,
       "har": 2,
-      "stil": "kal",
+      "stil": "kort",
       "klader": 0,
       "flackar": false,
       "s": {
-        "sty": 14,
-        "smi": 10,
-        "tal": 16,
-        "klo": 11,
-        "vis": 15,
+        "sty": 16,
+        "smi": 12,
+        "tal": 15,
+        "klo": 10,
+        "vis": 11,
         "cha": 12
-      }
-    },
-    "sally": {
-      "folk": "katt",
-      "klass": "smygare",
-      "hud": 0,
-      "har": 10,
-      "stil": "kort",
-      "klader": 5,
-      "flackar": true,
-      "s": {
-        "sty": 8,
-        "smi": 17,
-        "tal": 11,
-        "klo": 12,
-        "vis": 15,
-        "cha": 14
       }
     },
     "svante": {
@@ -61,20 +44,20 @@
         "cha": 11
       }
     },
-    "ville": {
-      "folk": "manniska",
-      "klass": "riddare",
+    "tomas": {
+      "folk": "dvarg",
+      "klass": "trollkarl",
       "hud": 1,
       "har": 2,
-      "stil": "kort",
-      "klader": 0,
+      "stil": "kal",
+      "klader": 1,
       "flackar": false,
       "s": {
-        "sty": 16,
-        "smi": 12,
-        "tal": 15,
-        "klo": 10,
-        "vis": 11,
+        "sty": 14,
+        "smi": 10,
+        "tal": 16,
+        "klo": 11,
+        "vis": 15,
         "cha": 12
       }
     },
@@ -93,6 +76,23 @@
         "klo": 13,
         "vis": 14,
         "cha": 12
+      }
+    },
+    "sally": {
+      "folk": "katt",
+      "klass": "smygare",
+      "hud": 0,
+      "har": 10,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": true,
+      "s": {
+        "sty": 8,
+        "smi": 17,
+        "tal": 11,
+        "klo": 12,
+        "vis": 15,
+        "cha": 14
       }
     }
   },
