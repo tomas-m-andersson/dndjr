@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:04:28.362Z",
+  "uppdaterad": "2026-10-28T23:04:41.169Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793228666369,
+    "tid": 1793228679239,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -192,7 +192,7 @@
       "lyssnat": true,
       "rum": {
         "typ": "skatt",
-        "klar": false,
+        "klar": true,
         "loot": [
           {
             "k": "guld",
@@ -285,6 +285,18 @@
         {
           "t": "Efter en stund hörs ett nöjt klick. Sally har öppnat kistan.",
           "k": "hit"
+        },
+        {
+          "t": "Ni hittar 82 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en läkedryck.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -293,8 +305,10 @@
         "tomas",
         "sally"
       ],
-      "guld": 46,
+      "guld": 128,
       "saker": [
+        "Läkedryck",
+        "Läkedryck",
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
