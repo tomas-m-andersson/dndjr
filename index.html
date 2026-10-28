@@ -766,7 +766,10 @@ function vapenIkon(W){
  const f=W.form;
  if(f==="svard"||f==="klinga"){const lang=f==="svard"?16:13;put(...P(0),"G");axel(1,3,"H");tvars(4,f==="svard"?-2:-1,f==="svard"?2:1,"G");axel(5,lang,"V",2,"E");put(...P(lang+1),"E")}
  else if(f==="storsvard"){axel(0,0,"G");axel(1,3,"H",2,"h");tvars(4,-3,3,"G");put(...P(4,-3),"g");put(...P(4,3),"g");axel(5,18,"V",3,"E");put(...P(19),"E")}
- else if(f==="katana"){axel(0,4,"H");for(let t=0;t<=4;t+=2)put(...P(t),"h");ring(...P(5),1,"G");for(let t=6;t<=18;t++){const s=t>14?1:0;const[x,y]=P(t,s);put(x,y,"V");put(x+1,y,"E")}}
+ else if(f==="katana"){ // rakt, långt blad med rund parerplåt och lindat handtag
+   axel(0,4,"H",2,"H");for(let t=0;t<=4;t+=2)put(...P(t),"h");put(...P(0),"G");
+   ring(...P(5),1,"G");put(...P(5),"g");
+   axel(6,18,"V",2,"E");put(...P(19),"E");for(let t=7;t<=17;t+=3)put(...P(t),"v")}
  else if(f==="dolkar"){for(const spegel of[false,true]){const m=(x,y)=>spegel?[N-1-x,y]:[x,y];
    for(let t=2;t<=12;t++){const[x,y]=P(t);const c=t<=4?"H":t===5?"G":t===13?"E":"V";put(...m(x,y),c);if(t>5&&t<12)put(...m(x+1,y),"E")}
    for(let k=-1;k<=1;k++){const[x,y]=P(5,k);put(...m(x,y),"G")}}}
@@ -808,14 +811,16 @@ function vapenIkon(W){
  if(fx==="blixt"&&f==="hammare"){[[[5,9],[4,10],[5,11],[4,12],[5,13],[4,14]],[[16,9],[17,10],[16,11],[17,12],[16,13],[17,14]],[[1,3],[0,4],[1,5]],[[20,3],[21,4],[20,5]]].forEach(L=>L.forEach(([x,y])=>{if(tomt(x,y))put(x,y,"X")}))}
  else if(fx==="blixt"){const[x0,y0]=fyllda.reduce((a,b)=>a[1]<b[1]?a:b);[[-1,1],[1,-1]].forEach(([sx,sy],j)=>{let x=x0+sx*2,y=y0+(j?1:0);for(let i=0;i<5;i++){if(tomt(x,y))put(x,y,"X");x+=sx;y+=i%2?1:0;if(i%2)x-=sx}})}
  if(fx==="is"||fx==="stjarnor"){const n=fx==="is"?7:6;for(let i=0;i<n;i++){const x=2+Math.floor(r()*18),y=1+Math.floor(r()*12);if(tomt(x,y)&&tomt(x+1,y)&&tomt(x-1,y)){put(x,y,"*");if(fx==="stjarnor"||i%2){put(x+1,y,"+");put(x-1,y,"+");put(x,y-1,"+");put(x,y+1,"+")}}}}
- if(fx==="skugga"){for(let i=0;i<22;i++){const[x,y]=fyllda[Math.floor(r()*fyllda.length)];const nx=x+Math.floor(r()*3)-1,ny=y+Math.floor(r()*3)-1;if(tomt(nx,ny))put(nx,ny,"U")}}
+ if(fx==="skugga"){ // svävande skuggor en bit från vapnet, så att formen syns tydligt
+  const nara=(x,y)=>[[1,0],[-1,0],[0,1],[0,-1]].some(([a,b])=>!tomt(x+a,y+b));
+  for(let i=0;i<40;i++){const[x,y]=fyllda[Math.floor(r()*fyllda.length)];const nx=x+(r()<.5?-2:2)+Math.floor(r()*2),ny=y+(r()<.5?-2:2);if(tomt(nx,ny)&&!nara(nx,ny))put(nx,ny,r()<.6?"U":"u")}}
  if(fx==="helig"||fx==="liv"){const[x,y]=fyllda.reduce((a,b)=>a[1]<b[1]?a:b);[[0,-1],[1,-1],[-1,-1],[1,0],[-1,0],[2,-2],[-2,-2],[0,-2]].forEach(([dx,dy])=>{if(tomt(x+dx*2,y+dy*2))put(x+dx*2,y+dy*2,fx==="liv"?"Q":"+")})}
  if(fx==="guld"){for(let i=0;i<5;i++){const x=2+Math.floor(r()*18),y=1+Math.floor(r()*14);if(tomt(x,y)){put(x,y,"*");put(x+1,y,"+");put(x-1,y,"+");put(x,y-1,"+");put(x,y+1,"+")}}
   const g=fyllda.find(([x,y])=>G[y][x]==="G");if(g)put(g[0],g[1],"R")}
  const V=W.farg||"#d8dde2";
  const pal={V,v:shade(V,-.3),E:shade(V,.45),Z:"#7a5432",z:"#5a3c22",H:"#5a3a22",h:"#8a6a3a",G:"#d4a63a",g:"#a07a22",P:"#e6d8c8",M:"#9aa4ae",S:"#e6e1d6",W:"#a8693a",
   R:fx==="guld"?"#d83a4a":"#8a2a2a",r:"#5a1a1a",L:"#6b4a2e",X:W.farg||"#9fe8ff",x:shade(W.farg||"#9fe8ff",.5),K:KONTUR,
-  F:"#ff8a2b",f:"#ffd23d",Q:fx==="liv"?"#8fe08a":"#8fd06a",q:"#5a9a3a","*":fx==="is"?"#e8fbff":"#fff3a0","+":fx==="is"?"#9fe8ff":fx==="helig"?"#ffe9a0":"#f2c14e",U:"#8a6ac8"};
+  F:"#ff8a2b",f:"#ffd23d",Q:fx==="liv"?"#8fe08a":"#8fd06a",q:"#5a9a3a","*":fx==="is"?"#e8fbff":"#fff3a0","+":fx==="is"?"#9fe8ff":fx==="helig"?"#ffe9a0":"#f2c14e",U:"#8a6ac8",u:"#5a3a8a"};
  const c=rendera(G,pal);IKCACHE.set(W.id,c);return c;
 }
 function ikonEl(W,cls=""){const c=document.createElement("canvas");const s=vapenIkon(W);c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
