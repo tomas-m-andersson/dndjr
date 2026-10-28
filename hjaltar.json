@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:04:48.409Z",
+  "uppdaterad": "2026-10-28T23:04:51.381Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793228686509,
+    "tid": 1793228689417,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 5,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -190,7 +190,14 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "krak"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -283,6 +290,14 @@
         {
           "t": "Ni samlar ihop er och fortsätter.",
           "k": ""
+        },
+        {
+          "t": "Rum 5 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni kliver in i en grotta, och en vättehövding tittar upp från sin måltid.",
+          "k": "bad"
         }
       ],
       "party": [
