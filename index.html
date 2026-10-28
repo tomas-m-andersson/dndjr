@@ -968,7 +968,6 @@ function renderEdit(){
  app.append(el("div",{class:"field"},el("label",{},"Klass"),el("div",{class:"pills"},Object.entries(KLASS).map(([k,o])=>el("button",{class:"pill"+(draft.klass===k?" sel":""),"aria-pressed":draft.klass===k?"true":"false",
   onclick:()=>{valjKlass(k);renderEdit()}},o.n))),el("p",{class:"note"},K.t)));
  {const vv=vapenVal();if(vv)app.append(vv)}
- {const vv=vapenVal();if(vv)app.append(vv)}
  app.append(attackVal());
  app.append(...lookFields());
  const slot=el("div");
