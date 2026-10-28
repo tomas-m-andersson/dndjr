@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:55:09.744Z",
+  "uppdaterad": "2026-10-28T21:55:28.352Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -43,7 +43,7 @@
       ],
       "vapen": "svard",
       "folk": "manniska",
-      "alder": 15,
+      "alder": 6,
       "skagg": false,
       "klass": "krigare",
       "hud": 5,
