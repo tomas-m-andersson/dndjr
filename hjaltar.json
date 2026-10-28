@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:17:36.821Z",
+  "uppdaterad": "2026-10-28T23:17:59.862Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229454880,
+    "tid": 1793229477952,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -179,218 +179,22 @@
         "acb": 0
       }
     },
-    "run": {
-      "plats": "grottorna",
-      "kapitel": 1,
-      "djup": 6,
-      "fas": "vann",
-      "dorrar": null,
-      "lyssnat": false,
-      "rum": {
-        "typ": "boss",
-        "klar": false,
-        "fiender": [
-          "krak",
-          "vampyrfladdermus",
-          "svampman"
-        ],
-        "stridOpt": {
-          "boss": true
-        }
-      },
-      "logg": [
-        {
-          "t": "Kapitel 1 · Grottorna under Kråkberget",
-          "k": "sep"
-        },
-        {
-          "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan.",
-          "k": ""
-        },
-        {
-          "t": "Rum 1 · Monster",
-          "k": "sep"
-        },
-        {
-          "t": "Ni möter ett skelett och en vätte!",
-          "k": "bad"
-        },
-        {
-          "t": "Seger! Alla får 25 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Ni går djupare in.",
-          "k": ""
-        },
-        {
-          "t": "Rum 2 · Fälla",
-          "k": "sep"
-        },
-        {
-          "t": "Något susar ner från taket!",
-          "k": "bad"
-        },
-        {
-          "t": "Sally duckar för den svängande yxan!",
-          "k": "hit"
-        },
-        {
-          "t": "Ni kryper vidare genom en trång spricka.",
-          "k": ""
-        },
-        {
-          "t": "Rum 3 · Monster",
-          "k": "sep"
-        },
-        {
-          "t": "Ni har knappt kommit in förrän två vättar anfaller!",
-          "k": "bad"
-        },
-        {
-          "t": "Striden är över. Alla får 25 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Ni torkar svetten ur pannan och går vidare.",
-          "k": ""
-        },
-        {
-          "t": "Tomas lyssnar länge. Ett eko. Kanske. Det går inte att säga.",
-          "k": "note"
-        },
-        {
-          "t": "Rum 4 · Låst kista",
-          "k": "sep"
-        },
-        {
-          "t": "En kista av mörkt trä står mot väggen. Låset är rostigt men starkt.",
-          "k": ""
-        },
-        {
-          "t": "Kistan rör sig inte. Ville slår sig: 2 i skada.",
-          "k": "bad"
-        },
-        {
-          "t": "Efter en stund hörs ett nöjt klick. Sally har öppnat kistan.",
-          "k": "hit"
-        },
-        {
-          "t": "Ni hittar 82 guldmynt.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni samlar ihop er och fortsätter.",
-          "k": ""
-        },
-        {
-          "t": "Rum 5 · Monster",
-          "k": "sep"
-        },
-        {
-          "t": "Ni kliver in i en grotta, och en vättehövding tittar upp från sin måltid.",
-          "k": "bad"
-        },
-        {
-          "t": "Ni vann! Alla får 50 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Ville sätter sig en stund. +2 liv.",
-          "k": "heal"
-        },
-        {
-          "t": "Tomas dricker lite vatten och torkar svetten. +4 liv.",
-          "k": "heal"
-        },
-        {
-          "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar grottans härskare.",
-          "k": ""
-        },
-        {
-          "t": "Bossen · Grottans härskare",
-          "k": "sep"
-        },
-        {
-          "t": "Två stora ögon öppnas i mörkret. Det är en vättehövding, en vampyrfladdermus och en svampman!",
-          "k": "bad"
-        },
-        {
-          "t": "Striden är över. Alla får 75 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Ville hämtar andan och lägger om såren. +3 liv.",
-          "k": "heal"
-        },
-        {
-          "t": "Tomas slår upp ögonen och mumlar: – Vad hände?",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar 90 guldmynt.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni hittar en läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Ville får ett magiskt vapen: +1 på träff och skada.",
-          "k": "magic"
-        },
-        {
-          "t": "Ni hittar en stor läkedryck.",
-          "k": "heal"
-        },
-        {
-          "t": "Grottans härskare är besegrad!",
-          "k": "crit"
-        },
-        {
-          "t": "⚔ Ni hittar Giftdolkarna! Ninja kan nu välja det under Ändra. 1d4 + 1d4 skada, och varje träff förgiftar.",
-          "k": "crit"
-        }
-      ],
-      "party": [
-        "ville",
-        "svante",
-        "tomas",
-        "sally"
-      ],
-      "guld": 218,
-      "saker": [
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Stor läkedryck"
-      ],
-      "bless": {},
-      "curse": {},
-      "ara": 700,
-      "start": 1793224938085,
-      "nastaKand": false,
-      "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
-      "nyttVapen": "Giftdolkarna",
-      "nyttVapenId": "giftdolkar"
-    },
+    "run": null,
     "historik": [
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 700,
+        "datum": "2026-10-28"
+      },
       {
         "plats": "skogen",
         "kapitel": 1,
