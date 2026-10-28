@@ -288,6 +288,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 <div id="modal"></div>
 
 <script src="aventyr.js"></script>
+<script src="texter.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -1508,9 +1509,9 @@ function anfall(h,f,A,kvar){
    const n=Math.max(1,bas+mod(h.s[K.main])+v.wb+ext);x.liv=Math.max(0,x.liv-n);
    let tjuv="";if(W.tjuv){const fore=liv(h);setLiv(h,fore+Math.floor(n*W.tjuv));if(liv(h)>fore)tjuv=" "+h.namn+" får "+(liv(h)-fore)+" liv.";}
    const wEff=x.liv>0&&W.effekt&&Math.random()<(W.chans??1)?effekt(x,W):"";
-   rader.push((krit?"KRITISK TRÄFF! ":"")+(mal.length>1?x.namn+" tar "+n+" i skada.":h.namn+" träffar "+x.namn+" med "+W.ord+" och gör "+n+" i skada.")+(x.liv<=0?" "+fly(x):effekt(x,A)+wEff)+tjuv);
+   rader.push((krit?T("krit")+" ":"")+(mal.length>1?x.namn+" tar "+n+" i skada.":T("traff",{namn:h.namn,gen:gen(h.namn),mal:x.namn,vapen:W.ord,n},h.klass))+(x.liv<=0?" "+fly(x):effekt(x,A)+wEff)+tjuv);
   });
-  if(!nagon&&mal.length===1)rader.push(r===1?"Hoppsan! "+h.namn+" snubblar och missar helt.":h.namn+" missar. "+mal[0].namn+" hoppar undan i sista stund!");
+  if(!nagon&&mal.length===1)rader.push(T(r===1?"fummel":"miss",{namn:h.namn,gen:gen(h.namn),mal:mal[0].namn,vapen:v.W.ord}));
   res.replaceChildren(el("div",{class:"sum"},r+" + "+atk+(pb?" + "+pb+" pepp":"")+" = "+tot,el("small",{},mal.length>1?"Jämförs med varje fiendes rustning":"Behöver minst "+krav)),
    el("div",{class:"verdict "+(nagon?"ok":"bad")},nagon?"Träff!":"Miss!"),el("p",{},rader.join(" ")));
   const igen=kvar-1;
@@ -1535,8 +1536,8 @@ function fiendeTur(f){
  const btn=el("button",{class:"btn big",onclick:nastaTur},"Fortsätt");btn.hidden=true;
  app.append(el("div",{class:"rollpanel"},rader.length?el("p",{class:"event"},rader.join(" ")):null,el("p",{},f.namn+" anfaller "+h.namn+"!"),dice,res,btn));
  rullaD20(dice,([r])=>{const tot=r+anf,trf=r===20||(r!==1&&tot>=ac);let txt;
-  if(trf){const dm=slaa(f.skada,r===20);setLiv(h,liv(h)-dm.tot);txt=f.namn+" träffar "+h.namn+" och gör "+dm.tot+" i skada."+(liv(h)<=0?" "+h.namn+" blir yr och svimmar!":"")}
-  else txt=h.namn+" duckar. "+f.namn+" missar!";
+  if(trf){const dm=slaa(f.skada,r===20);setLiv(h,liv(h)-dm.tot);txt=T("fiende_traff",{mal:f.namn,namn:h.namn,gen:gen(h.namn),n:dm.tot},f.typ)+(liv(h)<=0?" "+T("svimmar",{namn:h.namn}):"")}
+  else txt=T("fiende_miss",{mal:f.namn,namn:h.namn,gen:gen(h.namn)});
   res.replaceChildren(el("div",{class:"sum"},r+(anf>=0?" + ":" − ")+Math.abs(anf)+" = "+tot,el("small",{},"Behöver minst "+ac)),el("div",{class:"verdict "+(trf?"bad":"ok")},trf?"Aj, träff!":"Miss!"),el("p",{},txt));
   sparaSpel();btn.hidden=false;
  });
@@ -1569,8 +1570,22 @@ function gainXp(h,n){
  const N={...nivaInfo(h.id)};N.xp+=n;spel.niva[h.id]=N;
  while(N.lvl<10&&N.xp>=XPT[N.lvl+1]){const fore=maxLiv(h);N.lvl++;spel.niva[h.id]={...N};const ny=maxLiv(h);
   setLiv(h,liv(h)>0?liv(h)+(ny-fore):0);
-  rlog("★ Nivå upp! "+h.namn+" är nu nivå "+N.lvl+": +"+(ny-fore)+" liv"+(N.lvl===5||N.lvl===9?" och bättre träffsäkerhet":"")+".","crit")}
+  rlog(T("niva",{namn:h.namn,n:N.lvl})+" +"+(ny-fore)+" liv"+(N.lvl===5||N.lvl===9?" och bättre träffsäkerhet":"")+".","crit")}
 }
+
+/* --- texter (texter.js): slumpa en variant, aldrig samma två gånger i rad --- */
+const SENAST={};
+function T(key,v={},sub){
+ let p=(window.TEXTER||{})[key];if(!p)return"";
+ if(!Array.isArray(p)){const pl=sub||(spel.run&&spel.run.plats);p=[...(p.alla||[]),...((pl&&p[pl])||[])]}
+ if(!p.length)return"";
+ let i=Math.floor(Math.random()*p.length),g=0;while(p.length>1&&SENAST[key+(sub||"")]===i&&g++<6)i=Math.floor(Math.random()*p.length);
+ SENAST[key+(sub||"")]=i;const x=p[i];
+ if(typeof x!=="string")return x;
+ const t=x.replace(/\{(\w+)\}/g,(m,k)=>v[k]!=null?String(v[k]):m);
+ return t.charAt(0).toUpperCase()+t.slice(1);
+}
+const namnLista=H=>H.map(h=>h.namn).join(", ").replace(/, ([^,]*)$/," och $1");
 
 /* --- platser --- */
 const PLATSER={
@@ -1624,7 +1639,14 @@ function mote(boss,typ){
  const main=plock(share/k);const ut=[main];const samma=Math.random()<.6;
  for(let i=1;i<k;i++)ut.push(samma?main:plock(share/k));return ut;
 }
-const monNamn=keys=>keys.map(k=>MONSTER[k].namn).join(", ");
+// Monster i löptext: "två vargar och en jättespindel"
+const MON_ORD={fladdermus:["en jättefladdermus","jättefladdermöss"],ratta:["en jätteråtta","jätteråttor"],vatte:["en vätte","vättar"],skelett:["ett skelett","skelett"],
+ varg:["en varg","vargar"],skuggling:["en skuggling","skugglingar"],spindel:["en jättespindel","jättespindlar"],slem:["en slemkub","slemkuber"],eldimp:["en eldimp","eldimpar"],
+ lavahund:["en lavahund","lavahundar"],krak:["en vättehövding","vättehövdingar"],troll:["ett bergstroll","bergstroll"],spokriddare:["en spökriddare","spökriddare"],
+ skuggan:["Skuggan","skuggor"],eldklo:["Eldklo, den unga draken","drakar"]};
+function monNamn(keys){const c={};keys.forEach(k=>c[k]=(c[k]||0)+1);const tal=["","","två","tre","fyra","fem"];
+ const delar=Object.entries(c).map(([k,n])=>{const o=MON_ORD[k]||[MONSTER[k].namn,MONSTER[k].namn];return n>1?(tal[n]||n)+" "+o[1]:o[0]});
+ return delar.length>1?delar.slice(0,-1).join(", ")+" och "+delar[delar.length-1]:delar[0]}
 
 /* --- dörrar och ledtrådar --- */
 const LEDTRADAR=[
@@ -1644,11 +1666,12 @@ const LEDTRADAR=[
  {h:"Små fotspår leder ditåt.",o:{handlare:3,skatt:3,falla:2,strid:2}},
  {h:"Ett lågt morrande. Sedan tystnad.",o:{strid:5,sovare:3,vaktad:2}},
  {h:"Ni känner värme mot ansiktet.",o:{lager:4,altare:2,falla:2,strid:2}}];
-const RUMNAMN={strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Skadad äventyrare",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
+const RUMNAMN={strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Någon behöver hjälp",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
 function gorDorrar(){
  const R=spel.run;if(R.djup>=DJUP)return null;
  const r=Math.random(),n=r<.22?1:r<.75?2:3,ut=[],anv=new Set();
- while(ut.length<n){const L=valj(LEDTRADAR);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:wpick(L.o),kand:!!R.nastaKand})}
+ const LT=(window.TEXTER&&window.TEXTER.ledtradar)?[...window.TEXTER.ledtradar.alla,...(window.TEXTER.ledtradar[R.plats]||[])]:LEDTRADAR;
+ while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:wpick(L.o),kand:!!R.nastaKand})}
  R.nastaKand=false;if(ut.some(d=>d.kand))R.lyssnat=true;
  return ut;
 }
@@ -1703,7 +1726,7 @@ function startRun(plats){
  lage="run";
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
  rlog("Kapitel 1 · "+P.namn,"sep");
- rlog(partyHeroes().map(h=>h.namn).join(", ").replace(/, ([^,]*)$/," och $1")+" "+P.in+".");
+ rlog(T("start",{alla:namnLista(partyHeroes())})||namnLista(partyHeroes())+" "+P.in+".");
  spel.run.dorrar=gorDorrar();sparaSpel();visaRun();
 }
 function avslutaRun(utfall){
@@ -1736,10 +1759,11 @@ function visaRun(){
   knapp("Fortsätt striden",monNamn(rum.fiender),()=>runStrid(rum.fiender,rum.stridOpt||{}));
  }else if(R.fas==="dorrar"){
   const P=PLATSER[R.plats];
-  if(!R.dorrar){akt.append(el("p",{class:"hint"},"Längst in väntar "+P.boss.toLowerCase()+". Det finns ingen väg runt."));
+  if(!R.dorrar){if(!R.dorrText)R.dorrText=T("porten",{boss:P.boss.toLowerCase()});akt.append(el("p",{class:"lead"},R.dorrText));
    knapp("Möt bossen","Det sista rummet i kapitlet",()=>gaIn("boss"),{special:true});}
   else{
-   akt.append(el("p",{class:"lead"},R.dorrar.length===1?"Det finns bara en väg framåt.":valj([...DELNING,...P.delning])));
+   if(!R.dorrText)R.dorrText=R.dorrar.length===1?T("en_vag"):T("delning");
+   akt.append(el("p",{class:"lead"},R.dorrText));
    R.dorrar.forEach((d,i)=>knapp((R.dorrar.length>1?["Vänster","Mitten","Höger"][R.dorrar.length===2?i*2:i]+": ":"")+d.ledtrad,d.kand?"Ni vet: "+RUMNAMN[d.typ]:null,()=>gaIn(i)));
    if(!R.lyssnat)knapp("Lyssna vid dörrarna","Någon slår för Visdom. Men oväsen kan väcka något.",lyssna,{special:true});
   }
@@ -1748,13 +1772,13 @@ function visaRun(){
  window.scrollTo(0,0);
 }
 function nastaRum(){
- const R=spel.run;R.djup++;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.dorrar=gorDorrar();
- rlog(R.djup>=DJUP?"Gången slutar vid en stor port.":"Ni går vidare.","sep");sparaSpel();visaRun();
+ const R=spel.run;R.djup++;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.dorrText=null;R.dorrar=gorDorrar();
+ rlog(R.djup>=DJUP?T("porten",{boss:PLATSER[R.plats].boss.toLowerCase()}):T("vidare"));sparaSpel();visaRun();
 }
 function nastaKapitel(){
  const R=spel.run;R.nyttVapen=null;R.kapitel++;R.djup=1;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.bless={};R.curse={};
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
- rlog("Kapitel "+R.kapitel+" · Djupare ner","sep");rlog("Alla har vilat och känner sig starka igen. Ni hittar "+PLATSER[R.plats].djupare+".");
+ rlog("Kapitel "+R.kapitel+" · Djupare ner","sep");R.dorrText=null;rlog(T("djupare")||"Alla har vilat och känner sig starka igen. Ni hittar "+PLATSER[R.plats].djupare+".");
  R.dorrar=gorDorrar();sparaSpel();visaRun();
 }
 
@@ -1762,19 +1786,19 @@ function nastaKapitel(){
 function gaIn(i){
  const R=spel.run,typ=i==="boss"?"boss":R.dorrar[i].typ;
  R.rum={typ,klar:false};R.fas="rum";
- rlog((typ==="boss"?"Bossen · ":"Rum "+R.djup+" · ")+RUMNAMN[typ],"sep");
- if(typ==="boss"){const f=mote(true);rlog("Ur mörkret reser sig "+PLATSER[R.plats].boss.toLowerCase()+": "+monNamn(f)+"!","bad");return runStrid(f,{boss:true})}
- if(typ==="strid"){const f=mote(false);rlog("Ni möter "+monNamn(f)+"!","bad");return runStrid(f,{})}
- if(typ==="vaktad"){const f=mote(false);R.rum.sedanSkatt=true;rlog("Bakom en hög med ben står en kista. Men något vaktar den: "+monNamn(f)+".","bad");return runStrid(f,{})}
- if(typ==="skatt"){R.rum.loot=rollLoot(false);rlog("Ni hittar en skattkista!","heal")}
- if(typ==="falla"){R.rum.falla=FALLOR.indexOf(valj(FALLOR));sparaSpel();return korFalla()}
- if(typ==="sovare"){R.rum.fiender=mote(false);rlog("Något stort sover i gången: "+monNamn(R.rum.fiender)+".","note")}
- if(typ==="kista")rlog("En järnbeslagen kista med ett tungt lås.");
- if(typ==="altare")rlog("Ett gammalt altare till en bortglömd gud.","magic");
- if(typ==="resenar")rlog("En skadad äventyrare sitter lutad mot väggen.");
- if(typ==="lager")rlog("En övergiven lägerplats. Glöden i elden är fortfarande varm.","heal");
- if(typ==="brunn")rlog("En gammal brunn. Vattnet är mörkt och stilla.");
- if(typ==="handlare")rlog("En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?","heal");
+ rlog(typ==="boss"?"Bossen · "+PLATSER[R.plats].boss:"Rum "+R.djup+" · "+RUMNAMN[typ],"sep");
+ if(typ==="boss"){const f=mote(true);rlog(T("boss",{m:monNamn(f)}),"bad");return runStrid(f,{boss:true})}
+ if(typ==="strid"){const f=mote(false);rlog(T("strid",{m:monNamn(f)}),"bad");return runStrid(f,{})}
+ if(typ==="vaktad"){const f=mote(false);R.rum.sedanSkatt=true;rlog(T("vaktad",{m:monNamn(f)}),"bad");return runStrid(f,{})}
+ if(typ==="skatt"){R.rum.loot=rollLoot(false);rlog(T("skatt"),"heal")}
+ if(typ==="falla"){R.rum.falla=T("fallor")||valj(FALLOR);sparaSpel();return korFalla()}
+ if(typ==="sovare"){R.rum.fiender=mote(false);rlog(T("sovare",{m:monNamn(R.rum.fiender)}),"note")}
+ if(typ==="kista")rlog(T("kista"));
+ if(typ==="altare"){const A=T("altare");R.rum.gud=A.gud;rlog(A.text,"magic")}
+ if(typ==="resenar"){const A=T("resenar");R.rum.res=A;rlog(A.text)}
+ if(typ==="lager")rlog(T("lager"),"heal");
+ if(typ==="brunn")rlog(T("brunn"));
+ if(typ==="handlare")rlog(T("handlare"),"heal");
  sparaSpel();visaRun();
 }
 function rumKnappar(rum,knapp,akt){
@@ -1785,58 +1809,60 @@ function rumKnappar(rum,knapp,akt){
   knapp("Ta skatten",null,()=>{taLoot(rum.loot);rum.klar=true;sparaSpel();visaRun()})}
  else if(t==="sovare"){
   knapp("Smyg förbi","En hjälte leder er. Slå Smidighet, minst 11.",()=>runProv({egen:"smi",dc:11,fraga:"Vem leder er förbi?"},(ok,h)=>{
-   if(ok){rlog(h.namn+" leder er förbi utan ett ljud. Alla får "+15*lvl+" XP.","hit");partyHeroes().forEach(x=>gainXp(x,15*lvl));rum.klar=true;sparaSpel();visaRun()}
-   else{rlog("En sten skramlar under "+gen(h.namn)+" fot. Monstret vaknar!","bad");runStrid(rum.fiender,{fiendeForst:true})}}));
-  knapp("Överfall dem medan de sover","Ni får anfalla först, en hel runda.",()=>{rlog("Ni smyger fram och anfaller!","note");runStrid(rum.fiender,{sover:true})});
+   if(ok){rlog(T("sov_ok",{namn:h.namn})+" Alla får "+15*lvl+" XP.","hit");partyHeroes().forEach(x=>gainXp(x,15*lvl));rum.klar=true;sparaSpel();visaRun()}
+   else{rlog(T("sov_vaknar",{namn:h.namn,gen:gen(h.namn)}),"bad");runStrid(rum.fiender,{fiendeForst:true})}}));
+  knapp("Överfall dem medan de sover","Ni får anfalla först, en hel runda.",()=>{rlog(T("overfall"),"note");runStrid(rum.fiender,{sover:true})});
  }
  else if(t==="kista"){
   knapp("Dyrka upp låset","Smidighet, minst 13. Misslyckas ni sticker en giftnål, men kistan öppnas.",()=>runProv({egen:"smi",dc:13,fraga:"Vem dyrkar?"},(ok,h)=>{
-   if(ok)rlog("Klick! "+h.namn+" dyrkar upp låset.","hit");
-   else{const n=Math.max(1,slaa(lvl+"d6").tot);setLiv(h,Math.max(1,liv(h)-n));rlog("En giftnål sticker "+h.namn+": "+n+" i skada. Men locket glider upp.","bad")}
+   if(ok)rlog(T("kista_dyrk_ok",{namn:h.namn}),"hit");
+   else{const n=Math.max(1,slaa(lvl+"d6").tot);setLiv(h,Math.max(1,liv(h)-n));rlog(T("kista_nal",{namn:h.namn,n}),"bad")}
    rum.typ="skatt";rum.loot=rollLoot(true);sparaSpel();visaRun()}));
   knapp("Bryt upp den","Styrka, minst 13. Går det inte kan man försöka igen.",()=>runProv({egen:"sty",dc:13,fraga:"Vem är starkast?"},(ok,h)=>{
-   if(ok){rlog(h.namn+" bänder upp locket!","hit");rum.typ="skatt";rum.loot=rollLoot(true)}
-   else{const n=d(4);setLiv(h,Math.max(1,liv(h)-n));rlog("Låset håller. "+h.namn+" skrapar knogarna: "+n+" i skada.","bad")}
+   if(ok){rlog(T("kista_bryt_ok",{namn:h.namn}),"hit");rum.typ="skatt";rum.loot=rollLoot(true)}
+   else{const n=d(4);setLiv(h,Math.max(1,liv(h)-n));rlog(T("kista_bryt_nej",{namn:h.namn,n}),"bad")}
    sparaSpel();visaRun()}));
   vidare();
  }
  else if(t==="altare"){
   const kost=15*lvl*partyHeroes().length;
   knapp("Be till guden","Visdom, minst 12. Gudarna kan bli arga.",()=>runProv({egen:"vis",dc:12,fraga:"Vem ber?"},(ok,h)=>{
-   if(ok){partyHeroes().forEach(x=>R.bless[x.id]=1);rlog(h.namn+" ber och ett varmt ljus fyller rummet. Alla får +1 på anfall tills nästa vila.","magic")}
-   else{const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));R.curse[h.id]=1;rlog("Guden blir arg! "+h.namn+" tar "+n+" i skada och får −1 rustning tills nästa vila.","bad")}
+   if(ok){partyHeroes().forEach(x=>R.bless[x.id]=1);rlog(T("altare_ok",{namn:h.namn,gen:gen(h.namn),gud:rum.gud||"guden"})+" Alla får +1 på anfall tills nästa vila.","magic")}
+   else{const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));R.curse[h.id]=1;rlog(T("altare_arg",{namn:h.namn,gud:rum.gud||"guden"})+" "+h.namn+" tar "+n+" i skada och får −1 rustning tills nästa vila.","bad")}
    rum.klar=true;sparaSpel();visaRun()}));
-  knapp("Offra "+kost+" guld","Säker välsignelse: +1 på anfall för alla tills nästa vila.",()=>{R.guld-=kost;partyHeroes().forEach(x=>R.bless[x.id]=1);rlog("Ni lägger guldet på altaret. Det försvinner i ett sken. Alla känner sig välsignade.","magic");rum.klar=true;sparaSpel();visaRun()},{av:R.guld<kost});
+  knapp("Offra "+kost+" guld","Säker välsignelse: +1 på anfall för alla tills nästa vila.",()=>{R.guld-=kost;partyHeroes().forEach(x=>R.bless[x.id]=1);rlog(T("offer")+" Alla känner sig välsignade.","magic");rum.klar=true;sparaSpel();visaRun()},{av:R.guld<kost});
   vidare();
  }
  else if(t==="resenar"){
-  knapp("Prata med henne","Charm, minst 12. Hon kanske vet vad som väntar.",()=>runProv({egen:"cha",dc:12,fraga:"Vem pratar?"},(ok,h)=>{
-   if(ok){R.nastaKand=true;rlog(h.namn+" pratar lugnt med henne. Hon viskar vad som väntar vid nästa vägskäl.","hit")}
-   else rlog("Hon litar inte på "+h.namn+" och vänder bort huvudet.","note");
+  const res=rum.res||{vem:"henne",ok:"Hon viskar vad som väntar vid nästa vägskäl.",nej:"Hon litar inte på {namn} och vänder bort huvudet.",dryck:"Hon dricker och berättar om allt hon sett."};
+  const fyll=(t,h)=>t.replace(/\{namn\}/g,h?h.namn:"");
+  knapp("Prata med "+res.vem,"Charm, minst 12. Kanske vet "+res.vem.replace(/^henne$/,"hon")+" vad som väntar.",()=>runProv({egen:"cha",dc:12,fraga:"Vem pratar?"},(ok,h)=>{
+   if(ok){R.nastaKand=true;rlog(h.namn+" pratar lugnt med "+res.vem+". "+fyll(res.ok,h),"hit")}
+   else rlog(fyll(res.nej,h),"note");
    rum.klar=true;sparaSpel();visaRun()}));
-  knapp("Ge henne en läkedryck","Hon berättar allt hon vet. Alla får XP.",()=>{const i=R.saker.indexOf("Läkedryck");R.saker.splice(i,1);R.nastaKand=true;
-   rlog("Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett. Alla får "+30*lvl+" XP.","heal");partyHeroes().forEach(x=>gainXp(x,30*lvl));rum.klar=true;sparaSpel();visaRun()},{av:!R.saker.includes("Läkedryck")});
+  knapp("Ge "+res.vem+" en läkedryck","Ni får veta allt om vägen framåt. Alla får XP.",()=>{const i=R.saker.indexOf("Läkedryck");R.saker.splice(i,1);R.nastaKand=true;
+   rlog(fyll(res.dryck)+" Alla får "+30*lvl+" XP.","heal");partyHeroes().forEach(x=>gainXp(x,30*lvl));rum.klar=true;sparaSpel();visaRun()},{av:!R.saker.includes("Läkedryck")});
   vidare();
  }
  else if(t==="lager"){
-  knapp("Kort vila","Alla får tillbaka en fjärdedel av sitt liv.",()=>{partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/4));rlog(h.namn+" vilar med ett öga öppet. +"+(liv(h)-f)+" liv.","heal")});R.curse={};rum.klar=true;sparaSpel();visaRun()});
+  knapp("Kort vila","Alla får tillbaka en fjärdedel av sitt liv.",()=>{partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/4));rlog(liv(h)>f?T("vila_kort",{namn:h.namn,n:liv(h)-f}):T("vila_full",{namn:h.namn,vapen:vapenAv(h).ord}),"heal")});R.curse={};rum.klar=true;sparaSpel();visaRun()});
   knapp("Lång vila","Halva livet tillbaka och förmågor laddas. Men röken kan locka hit något.",()=>{
-   partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/2));rlog(h.namn+" sover vid elden. +"+(liv(h)-f)+" liv.","heal")});R.curse={};R.bless={};rum.klar=true;
-   if(Math.random()<.35){const f=mote(false);rlog("Men röken lockade dit något! Ni vaknar med ett ryck: "+monNamn(f)+"!","bad");return runStrid(f,{fiendeForst:true})}
+   partyHeroes().forEach(h=>{const f=liv(h);setLiv(h,f+Math.ceil(maxLiv(h)/2));rlog(liv(h)>f?T("vila_lang",{namn:h.namn,n:liv(h)-f}):T("vila_full",{namn:h.namn,vapen:vapenAv(h).ord}),"heal")});R.curse={};R.bless={};rum.klar=true;
+   if(Math.random()<.35){const f=mote(false);rlog(T("vila_bakhall",{m:monNamn(f)}),"bad");return runStrid(f,{fiendeForst:true})}
    sparaSpel();visaRun()});
   vidare();
  }
  else if(t==="brunn"){
   knapp("Drick ur brunnen","En hjälte dricker. Det kan gå bra, eller riktigt illa.",()=>valjHjalte("Vem dricker?",vaken(),h=>{const r=Math.random();
-   if(r<.45){const f=liv(h);setLiv(h,f+slaa("2d8").tot+lvl);rlog(h.namn+" dricker. Vattnet är friskt och klart. +"+(liv(h)-f)+" liv.","heal")}
-   else if(r<.7){rlog(h.namn+" dricker ur en visdomskälla! Bilder av gamla strider flimrar förbi. +"+40*lvl+" XP.","magic");gainXp(h,40*lvl)}
-   else if(r<.85){const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));rlog("Bittert! Vattnet var förgiftat. "+h.namn+" tar "+n+" i skada.","bad")}
-   else{rum.klar=true;const f=mote(false);rlog("Vattnet börjar bubbla. Något reser sig ur brunnen: "+monNamn(f)+"!","bad");return runStrid(f,{fiendeForst:true})}
+   if(r<.45){const f=liv(h);setLiv(h,f+slaa("2d8").tot+lvl);rlog(T("brunn_bra",{namn:h.namn,n:liv(h)-f}),"heal")}
+   else if(r<.7){rlog(T("brunn_visdom",{namn:h.namn,n:40*lvl}),"magic");gainXp(h,40*lvl)}
+   else if(r<.85){const n=Math.max(1,slaa(lvl+"d4").tot);setLiv(h,Math.max(1,liv(h)-n));rlog(T("brunn_gift",{namn:h.namn,n}),"bad")}
+   else{rum.klar=true;const f=mote(false);rlog(T("brunn_monster",{m:monNamn(f)}),"bad");return runStrid(f,{fiendeForst:true})}
    rum.klar=true;sparaSpel();visaRun()},null));
   vidare();
  }
  else if(t==="handlare"){
-  [["Läkedryck",25],["Stor läkedryck",60]].forEach(([n,p])=>knapp("Köp "+n.toLowerCase()+" · "+p+" guld","Ger "+DRYCKER[n]+" liv",()=>{R.guld-=p;R.saker.push(n);rlog("Ni köper en "+n.toLowerCase()+" för "+p+" guld.","heal");sparaSpel();visaRun()},{av:R.guld<p}));
+  [["Läkedryck",25],["Stor läkedryck",60]].forEach(([n,p])=>knapp("Köp "+n.toLowerCase()+" · "+p+" guld","Ger "+DRYCKER[n]+" liv",()=>{R.guld-=p;R.saker.push(n);rlog(T("handel_kop",{sak:n.toLowerCase(),n:p}),"heal");sparaSpel();visaRun()},{av:R.guld<p}));
   const vapen=partyHeroes().filter(h=>utr(h.id).wb<3),ring=partyHeroes().filter(h=>utr(h.id).acb<2);
   const pris=(h,k)=>k==="wb"?120*(utr(h.id).wb+1):150*(utr(h.id).acb+1);
   if(vapen.length)knapp("Slipa ett vapen","+1 på träff och skada. Från 120 guld.",()=>valjHjalte("Vems vapen?",vapen,h=>{const p=pris(h,"wb");if(R.guld<p){flash("Ni har inte råd. Det kostar "+p+" guld.");return visaRun()}R.guld-=p;taLoot([{k:"wb"}],h);sparaSpel();visaRun()},visaRun,h=>({av:R.guld<pris(h,"wb"),txt:pris(h,"wb")+" guld · nu +"+utr(h.id).wb})));
@@ -1851,15 +1877,15 @@ function lyssna(){
  const R=spel.run;
  runProv({egen:"vis",dc:12,fraga:"Vem lyssnar vid dörrarna?"},(ok,h)=>{
   R.lyssnat=true;
-  if(ok){R.dorrar.forEach(x=>x.kand=true);rlog(h.namn+" trycker örat mot stenen och lyssnar. Nu vet ni vad som väntar.","hit");sparaSpel();return visaRun()}
-  if(Math.random()<.4){R.rum={typ:"strid",klar:false};R.fas="rum";const f=mote(false);rlog(h.namn+" lyssnar, men något hör er först! "+monNamn(f)+" rusar fram ur skuggorna!","bad");return runStrid(f,{fiendeForst:true})}
-  rlog(h.namn+" lyssnar, men hör bara sitt eget hjärta.","note");sparaSpel();visaRun();
+  if(ok){R.dorrar.forEach(x=>x.kand=true);rlog(T("lyssna_ok",{namn:h.namn}),"hit");sparaSpel();return visaRun()}
+  if(Math.random()<.4){R.rum={typ:"strid",klar:false};R.fas="rum";const f=mote(false);rlog(T("lyssna_bakhall",{namn:h.namn,m:monNamn(f)}),"bad");return runStrid(f,{fiendeForst:true})}
+  rlog(T("lyssna_inget",{namn:h.namn}),"note");sparaSpel();visaRun();
  });
 }
 
 /* --- fällor: en eller alla måste klara sig --- */
 function korFalla(){
- const R=spel.run,F=FALLOR[R.rum.falla],lista=F.alla?vaken():[valj(vaken())],lvl=partyNiva();
+ const R=spel.run,F=typeof R.rum.falla==="object"?R.rum.falla:FALLOR[R.rum.falla]||FALLOR[0],lista=F.alla?vaken():[valj(vaken())],lvl=partyNiva();
  rlog(F.varn,"bad");
  const steg=i=>{
   if(i>=lista.length){R.rum.klar=true;sparaSpel();return visaRun()}
@@ -1908,20 +1934,20 @@ function runStrid(keys,opt){
 function runVinst(){
  const R=spel.run,fi=strid.fiender,xp=fi.reduce((a,f)=>a+Math.max(10,MONSTER[f.typ].xp),0),H=partyHeroes(),del=Math.ceil(xp/H.length);
  strid=null;R.ara+=xp;
- rlog("Seger! Alla får "+del+" XP.","crit");
- H.forEach(h=>{if(liv(h)<=0){setLiv(h,1);rlog(h.namn+" vaknar med 1 liv.","heal")}
-  else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(h.namn+" hämtar andan och lägger om såren. +"+(liv(h)-f)+" liv.","heal")}});
+ rlog(T("seger",{n:del}),"crit");
+ H.forEach(h=>{if(liv(h)<=0){setLiv(h,1);rlog(T("vaknar",{namn:h.namn}),"heal")}
+  else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(T("andan",{namn:h.namn,n:liv(h)-f}),"heal")}});
  H.forEach(h=>gainXp(h,del));
  const boss=R.rum.typ==="boss";
- if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(PLATSER[R.plats].boss+" är besegrad!","crit");
+ if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(T("boss_besegrad",{boss:PLATSER[R.plats].boss}),"crit");
   const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn}}
- else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog("Kistan som de vaktade står öppen.","heal")}
+ else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog(T("vaktad_oppen"),"heal")}
  else{R.fas="rum";R.rum.klar=true}
  sparaSpel();visaRun();
 }
 function runForlust(){
  const R=spel.run;strid=null;R.fas="fallen";
- rlog(partyHeroes().length>1?"Sällskapet har fallit.":"Hjälten har fallit.","sep");
+ rlog(partyHeroes().length>1?T("fallen"):"Hjälten har fallit.","sep");
  avslutaRun("fallen");sparaSpel();visaRun();
 }
 function runFly(h){
@@ -1931,8 +1957,8 @@ function runFly(h){
  const btn=el("button",{class:"btn big",onclick:()=>{btn.disabled=true;rullaD20(dice,([r])=>{const tot=r+b,ok=r!==1&&tot>=dc;
   res.replaceChildren(el("div",{class:"sum"},r+" "+(b>=0?"+ ":"− ")+Math.abs(b)+" = "+tot,el("small",{},"Behöver minst "+dc)),el("div",{class:"verdict "+(ok?"ok":"bad")},ok?"Ni kommer undan!":"Vägen är blockerad!"));
   btn.replaceWith(el("button",{class:"btn big",onclick:()=>{
-   if(ok){strid=null;partyHeroes().forEach(x=>{if(liv(x)<=0)setLiv(x,1)});rlog("Sällskapet springer för livet och kommer undan!","hit");R.fas="rum";R.rum.klar=true;sparaSpel();visaRun()}
-   else{rlog(h.namn+" försöker fly, men vägen är blockerad.","bad");nastaTur()}}},"Fortsätt"))})}},"Slå!");
+   if(ok){strid=null;partyHeroes().forEach(x=>{if(liv(x)<=0)setLiv(x,1)});rlog(T("fly_ok"),"hit");R.fas="rum";R.rum.klar=true;sparaSpel();visaRun()}
+   else{rlog(T("fly_nej",{namn:h.namn}),"bad");nastaTur()}}},"Fortsätt"))})}},"Slå!");
  app.append(el("div",{class:"rollpanel"},el("p",{},"Slå minst "+dc+" för Smidighet. "+h.namn+" får "+fmt(b)+"."),dice,res,btn));
 }
 

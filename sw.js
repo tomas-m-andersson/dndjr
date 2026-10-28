@@ -2,7 +2,7 @@
 // Egna filer: nätet först (så uppdateringar syns direkt), cachen som reserv när man är offline.
 // GitHub-API:t (hjältarnas sparfil) cachas aldrig.
 const CACHE = "tarningsriket-v3";
-const SHELL = ["./", "./index.html", "./aventyr.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
