@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:55:28.352Z",
+  "uppdaterad": "2026-10-28T21:55:46.449Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -11,15 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "katana",
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 9,
