@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-26T13:16:50.831Z",
+  "uppdaterad": "2026-10-28T20:28:08.976Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -104,9 +104,9 @@
     ],
     "liv": {
       "ville": 12,
-      "svante": 7,
+      "svante": 9,
       "sally": 8,
-      "tomas": 11,
+      "tomas": 9,
       "linda": 7
     },
     "kapitel": {
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793020608357,
+    "tid": 1793219286952,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -147,7 +147,58 @@
       }
     },
     "utr": {},
-    "run": null,
+    "run": {
+      "plats": "skogen",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Något glimmar i mörkret.",
+          "typ": "vaktad",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ni känner värme mot ansiktet.",
+          "typ": "falla",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Mörkskogen",
+          "k": "sep"
+        },
+        {
+          "t": "Ville, Svante, Tomas och Sally lämnar vägen och kliver in i den mörka skogen.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 43,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793219286949,
+      "nastaKand": false
+    },
     "historik": [
       {
         "plats": "grottorna",
