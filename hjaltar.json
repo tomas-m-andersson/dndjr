@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:46:41.257Z",
+  "uppdaterad": "2026-10-28T23:04:08.921Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793227599341,
+    "tid": 1793228646873,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 4,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Ni hör ett klick, som av en mekanism.",
@@ -190,7 +190,10 @@
         }
       ],
       "lyssnat": true,
-      "rum": null,
+      "rum": {
+        "typ": "kista",
+        "klar": false
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -251,6 +254,14 @@
         {
           "t": "Tomas lyssnar länge. Ett eko. Kanske. Det går inte att säga.",
           "k": "note"
+        },
+        {
+          "t": "Rum 4 · Låst kista",
+          "k": "sep"
+        },
+        {
+          "t": "En kista av mörkt trä står mot väggen. Låset är rostigt men starkt.",
+          "k": ""
         }
       ],
       "party": [
