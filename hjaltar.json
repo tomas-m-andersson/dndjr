@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:15:09.540Z",
+  "uppdaterad": "2026-10-28T22:15:22.603Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225707651,
+    "tid": 1793225720645,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 3,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Det finns färskt blod på marken.",
@@ -185,7 +185,15 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "vatte",
+          "vatte"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -226,6 +234,14 @@
         {
           "t": "Ni kryper vidare genom en trång spricka.",
           "k": ""
+        },
+        {
+          "t": "Rum 3 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni har knappt kommit in förrän två vättar anfaller!",
+          "k": "bad"
         }
       ],
       "party": [
