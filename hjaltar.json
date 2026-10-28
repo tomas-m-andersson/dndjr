@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:37:05.626Z",
+  "uppdaterad": "2026-10-28T20:37:20.930Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219823644,
+    "tid": 1793219838980,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -151,10 +151,21 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 6,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": null,
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "boss",
+        "klar": false,
+        "fiender": [
+          "varg",
+          "vatte",
+          "varg"
+        ],
+        "stridOpt": {
+          "boss": true
+        }
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -259,6 +270,14 @@
         {
           "t": "Gången slutar vid en stor port.",
           "k": "sep"
+        },
+        {
+          "t": "Bossen · Bossen",
+          "k": "sep"
+        },
+        {
+          "t": "Ur mörkret reser sig skogens mörker: Varg, Vätte, Varg!",
+          "k": "bad"
         }
       ],
       "party": [
