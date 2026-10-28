@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:02:19.944Z",
+  "uppdaterad": "2026-10-28T22:14:00.051Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793224938088,
+    "tid": 1793225638080,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 1,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Små fotspår leder ditåt.",
@@ -190,7 +190,15 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "skelett",
+          "vatte"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -199,6 +207,14 @@
         {
           "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan.",
           "k": ""
+        },
+        {
+          "t": "Rum 1 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni möter ett skelett och en vätte!",
+          "k": "bad"
         }
       ],
       "party": [
@@ -222,7 +238,8 @@
       "curse": {},
       "ara": 0,
       "start": 1793224938085,
-      "nastaKand": false
+      "nastaKand": false,
+      "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
     },
     "historik": [
       {
