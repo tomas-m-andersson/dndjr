@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:14:00.051Z",
+  "uppdaterad": "2026-10-28T22:14:31.708Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,23 +151,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225638080,
+    "tid": 1793225669713,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 230
+        "xp": 255
       },
       "svante": {
         "lvl": 2,
-        "xp": 230
+        "xp": 255
       },
       "tomas": {
         "lvl": 2,
-        "xp": 230
+        "xp": 255
       },
       "sally": {
         "lvl": 2,
-        "xp": 230
+        "xp": 255
       }
     },
     "upplasta": [],
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 1,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Små fotspår leder ditåt.",
@@ -192,7 +192,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "strid",
-        "klar": false,
+        "klar": true,
         "fiender": [
           "skelett",
           "vatte"
@@ -215,6 +215,10 @@
         {
           "t": "Ni möter ett skelett och en vätte!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 25 XP.",
+          "k": "crit"
         }
       ],
       "party": [
@@ -236,7 +240,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 0,
+      "ara": 100,
       "start": 1793224938085,
       "nastaKand": false,
       "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
