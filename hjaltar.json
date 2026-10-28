@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:04:41.169Z",
+  "uppdaterad": "2026-10-28T23:04:48.409Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793228679239,
+    "tid": 1793228686509,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -175,40 +175,22 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 4,
-      "fas": "rum",
+      "djup": 5,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Ni hör ett klick, som av en mekanism.",
-          "typ": "kista",
+          "ledtrad": "Det droppar, långsamt och jämnt.",
+          "typ": "brunn",
           "kand": false
         },
         {
-          "ledtrad": "Väggarna glittrar av kristaller.",
-          "typ": "skatt",
+          "ledtrad": "Spindelväv täcker öppningen.",
+          "typ": "strid",
           "kand": false
         }
       ],
-      "lyssnat": true,
-      "rum": {
-        "typ": "skatt",
-        "klar": true,
-        "loot": [
-          {
-            "k": "guld",
-            "n": "82 guldmynt",
-            "v": 82
-          },
-          {
-            "k": "sak",
-            "n": "Läkedryck"
-          },
-          {
-            "k": "sak",
-            "n": "Läkedryck"
-          }
-        ]
-      },
+      "lyssnat": false,
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -297,6 +279,10 @@
         {
           "t": "Ni hittar en läkedryck.",
           "k": "heal"
+        },
+        {
+          "t": "Ni samlar ihop er och fortsätter.",
+          "k": ""
         }
       ],
       "party": [
@@ -323,7 +309,7 @@
       "ara": 200,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
+      "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
     },
     "historik": [
       {
