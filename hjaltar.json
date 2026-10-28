@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:45:33.089Z",
+  "uppdaterad": "2026-10-28T21:35:07.894Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -11,8 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
+      "attacker": [
+        "smygattack",
+        "shuriken",
+        "tryckpunkt"
+      ],
       "folk": "manniska",
-      "klass": "smygare",
+      "alder": 6,
+      "skagg": false,
+      "klass": "ninja",
       "hud": 0,
       "har": 9,
       "stil": "kort",
@@ -29,7 +36,7 @@
     },
     "svante": {
       "folk": "katt",
-      "klass": "smygare",
+      "klass": "katt",
       "hud": 5,
       "har": 9,
       "stil": "kort",
@@ -45,24 +52,24 @@
       }
     },
     "tomas": {
-      "folk": "dvarg",
-      "klass": "trollkarl",
+      "folk": "manniska",
+      "klass": "magiker",
       "hud": 1,
       "har": 2,
       "stil": "kal",
       "klader": 1,
       "flackar": false,
       "s": {
-        "sty": 14,
-        "smi": 10,
-        "tal": 16,
-        "klo": 11,
-        "vis": 15,
-        "cha": 12
+        "sty": 15,
+        "smi": 11,
+        "tal": 15,
+        "klo": 12,
+        "vis": 16,
+        "cha": 13
       }
     },
     "linda": {
-      "folk": "alv",
+      "folk": "manniska",
       "klass": "bagskytt",
       "hud": 1,
       "har": 7,
@@ -70,17 +77,17 @@
       "klader": 3,
       "flackar": false,
       "s": {
-        "sty": 11,
-        "smi": 17,
-        "tal": 12,
-        "klo": 13,
-        "vis": 14,
-        "cha": 12
+        "sty": 12,
+        "smi": 16,
+        "tal": 13,
+        "klo": 14,
+        "vis": 15,
+        "cha": 13
       }
     },
     "sally": {
       "folk": "katt",
-      "klass": "smygare",
+      "klass": "katt",
       "hud": 0,
       "har": 10,
       "stil": "kort",
