@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:28:36.230Z",
+  "uppdaterad": "2026-10-28T20:30:08.615Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,23 +127,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219314167,
+    "tid": 1793219406536,
     "niva": {
       "ville": {
         "lvl": 1,
-        "xp": 98
+        "xp": 111
       },
       "svante": {
         "lvl": 1,
-        "xp": 98
+        "xp": 111
       },
       "tomas": {
         "lvl": 1,
-        "xp": 98
+        "xp": 111
       },
       "sally": {
         "lvl": 1,
-        "xp": 98
+        "xp": 111
       }
     },
     "utr": {},
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 1,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Något glimmar i mörkret.",
@@ -166,13 +166,23 @@
       ],
       "lyssnat": false,
       "rum": {
-        "typ": "vaktad",
+        "typ": "skatt",
         "klar": false,
-        "sedanSkatt": true,
-        "fiender": [
-          "varg"
-        ],
-        "stridOpt": {}
+        "loot": [
+          {
+            "k": "guld",
+            "n": "62 guldmynt",
+            "v": 62
+          },
+          {
+            "k": "sak",
+            "n": "Stor läkedryck"
+          },
+          {
+            "k": "sak",
+            "n": "Stor läkedryck"
+          }
+        ]
       },
       "logg": [
         {
@@ -190,6 +200,14 @@
         {
           "t": "Bakom en hög med ben står en kista. Men något vaktar den: Varg.",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 13 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "Kistan som de vaktade står öppen.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -211,7 +229,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 0,
+      "ara": 50,
       "start": 1793219286949,
       "nastaKand": false
     },
