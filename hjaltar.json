@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:13:01.460Z",
+  "uppdaterad": "2026-10-28T23:13:12.193Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,10 +127,10 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 15,
+      "ville": 17,
       "svante": 18,
       "sally": 13,
-      "tomas": 10,
+      "tomas": 14,
       "linda": 7
     },
     "kapitel": {
@@ -151,23 +151,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229179504,
+    "tid": 1793229190190,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 280
+        "xp": 330
       },
       "svante": {
         "lvl": 2,
-        "xp": 280
+        "xp": 330
       },
       "tomas": {
         "lvl": 2,
-        "xp": 280
+        "xp": 330
       },
       "sally": {
         "lvl": 2,
-        "xp": 280
+        "xp": 330
       }
     },
     "upplasta": [],
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 5,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -192,7 +192,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "strid",
-        "klar": false,
+        "klar": true,
         "fiender": [
           "krak"
         ],
@@ -298,6 +298,18 @@
         {
           "t": "Ni kliver in i en grotta, och en vättehövding tittar upp från sin måltid.",
           "k": "bad"
+        },
+        {
+          "t": "Ni vann! Alla får 50 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "Ville sätter sig en stund. +2 liv.",
+          "k": "heal"
+        },
+        {
+          "t": "Tomas dricker lite vatten och torkar svetten. +4 liv.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -321,7 +333,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 200,
+      "ara": 400,
       "start": 1793224938085,
       "nastaKand": false,
       "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
