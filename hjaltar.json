@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:15:59.936Z",
+  "uppdaterad": "2026-10-28T23:16:04.290Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -130,7 +130,7 @@
       "ville": 17,
       "svante": 18,
       "sally": 13,
-      "tomas": 3,
+      "tomas": 1,
       "linda": 7
     },
     "kapitel": {
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229357967,
+    "tid": 1793229362281,
     "niva": {
       "ville": {
         "lvl": 2,
