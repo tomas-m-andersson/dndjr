@@ -881,8 +881,8 @@ function card(h){
   h.grund?null:el("span",{class:"tag"},"Egen"),
   el("div",{},el("div",{class:"name"},h.namn),el("div",{class:"meta"},F.n+(h.folk==="katt"?"":", "+alderAv(h)+" år")+" · "+K.n+" · Nivå "+vitals(h).lvl)),
   el("div",{class:"row"},
-   el("button",{onclick:()=>sheet(h),"aria-label":"Visa hjältebladet för "+h.namn},"Blad"),
-   el("button",{class:"take","aria-pressed":on?"true":"false",onclick:()=>togglePartyMember(h.id)},on?"Med ✓":"Ta med")));
+   el("button",{onclick:()=>editHero(h),"aria-label":"Info om "+h.namn},"Info"),
+   el("button",{class:"take","aria-pressed":on?"true":"false",onclick:()=>togglePartyMember(h.id)},on?"Vald ✓":"Ta med")));
 }
 function togglePartyMember(id){
  if(party.includes(id))party=party.filter(x=>x!==id);
@@ -899,33 +899,6 @@ function renderParty(){
 }
 let flashT;function flash(msg){let f=document.getElementById("flash");if(!f){f=el("div",{id:"flash",class:"note",style:"position:fixed;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom,0px));z-index:30;max-width:90vw;box-shadow:0 6px 20px #0008"});document.body.append(f)}
  f.textContent=msg;f.hidden=false;clearTimeout(flashT);flashT=setTimeout(()=>f.hidden=true,2800)}
-
-/* ===== Hjälteblad ===== */
-function sheet(h){
- const m=document.getElementById("modal"),F=FOLK[h.folk],K=KLASS[h.klass],v=vitals(h),s=finalStats(h);
- const close=()=>m.replaceChildren();
- const bars=el("div",{class:"bars"},STATS.map(st=>el("div",{class:"bar"},el("span",{},st.n),el("em",{},s[st.k]+" ("+fmt(mod(s[st.k]))+")"),el("div",{class:"track"},el("i",{style:"width:"+Math.min(100,s[st.k]/20*100)+"%"})))));
- const foot=el("div",{class:"nav"}),left=el("div",{class:"btnrow"});
- left.append(el("button",{class:"btn ghost",onclick:()=>{close();editHero(h)}},"Ändra"));
- if(!h.grund){const del=el("button",{class:"btn ghost danger",onclick:()=>{foot.replaceChildren(el("div",{class:"confirm"},el("span",{},"Ta bort "+h.namn+" för alltid?"),
-   el("button",{class:"btn",onclick:()=>{deleted.add(h.id);egna=egna.filter(x=>x.id!==h.id);party=party.filter(x=>x!==h.id);persist();close();home()}},"Ja, ta bort"),
-   el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");left.append(del)}foot.append(left);
- foot.append(el("button",{class:"btn",onclick:close},"Stäng"));
- const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Hjälteblad för "+h.namn},
-  el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+(h.folk==="katt"?"":", "+alderAv(h)+" år")+" · "+K.n+" · Nivå "+v.lvl),xpRad(h),h.om?el("p",{},h.om):null)),
-  el("div",{class:"vitals"},
-   el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
-   el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
-   el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))),
-  bars,
-  el("div",{class:"ability wability"},ikonEl(v.W),el("div",{},el("strong",{},v.W.namn+" · "+vapenEgenskaper(v.W)),el("p",{},v.W.info+" Slå en d20 och lägg till "+fmt(v.atk)+". Kommer du upp i fiendens rustning så träffar du."))),
-  el("h3",{class:"subhead"},"Specialattacker"),
-  ...attackerAv(h).map(id=>{const A=attackDef(h.klass,id);return el("div",{class:"ability special"},el("strong",{},A.namn),el("p",{},A.info+". En gång per strid."))}),
-  el("div",{class:"ability"},el("strong",{},K.n),el("p",{},K.t)),
-  foot);
- const ov=el("div",{class:"overlay",onclick:e=>{if(e.target===ov)close()}},sh);
- m.replaceChildren(ov);
-}
 
 /* ===== Karaktärsskaparen ===== */
 let draft, step;
@@ -1075,8 +1048,15 @@ function renderEdit(){
  const h=editPreview(),v=vitals(h),F=FOLK[h.folk],K=KLASS[h.klass];
  app.append(el("div",{class:"preview"},el("div",{class:"tv"},portrait(h)),
   el("div",{},el("h3",{},draft.namn||"Namnlös"),el("p",{},K.n),el("p",{},"Liv "+v.hp+" · Rustning "+v.ac+" · Anfall "+fmt(v.atk)))));
- app.append(el("div",{class:"stephead"},el("small",{},draft.grund?"Grundfigur":"Egen hjälte"),el("h2",{},"Ändra "+(draft.grund?draft.namn:"hjälten")),
-  el("p",{},draft.grund?"Välj ny klass, andra specialattacker eller nytt utseende. Namnet går inte att ändra.":"Ändra namn, klass, specialattacker eller utseende. Tärningsslagen behålls.")));
+ const s=h.s,org=byId(draft.id)||h;
+ app.append(el("div",{class:"stephead"},el("small",{},(draft.grund?"Grundfigur":"Egen hjälte")+" · Nivå "+v.lvl),el("h2",{},draft.namn||"Hjälten"),
+  el("p",{},(h.folk==="katt"?"Katt":"Människa, "+alderAv(h)+" år")+" · "+K.n+(draft.om?". "+draft.om:""))),xpRad(org));
+ app.append(el("div",{class:"vitals"},
+   el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
+   el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
+   el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))));
+ app.append(el("div",{class:"bars"},STATS.map(st=>el("div",{class:"bar"},el("span",{},st.n),el("em",{},s[st.k]+" ("+fmt(mod(s[st.k]))+")"),el("div",{class:"track"},el("i",{style:"width:"+Math.min(100,s[st.k]/20*100)+"%"}))))));
+ app.append(el("p",{class:"fieldhint"},draft.grund?"Här nedanför kan du byta klass, vapen, specialattacker och utseende. Namnet går inte att ändra.":"Här nedanför kan du ändra namn, klass, vapen, specialattacker och utseende. Tärningsslagen behålls."));
  if(!draft.grund){
   const inp=el("input",{id:"edit-namn",type:"text",maxlength:"16",value:draft.namn,autocomplete:"off"});
   inp.addEventListener("input",()=>{draft.namn=inp.value;app.querySelector(".preview h3").textContent=draft.namn||"Namnlös";app.querySelector("#edit-save").disabled=!draft.namn.trim()});
@@ -1091,9 +1071,9 @@ function renderEdit(){
  app.append(...lookFields());
  const slot=el("div");
  app.append(slot);
- const back=()=>{const id=draft.id;home();const hh=byId(id);if(hh)sheet(hh)};
+ const back=()=>{home()};
  const row=el("div",{class:"nav"},
-  el("button",{class:"btn ghost",onclick:back},"Avbryt"),
+  el("button",{class:"btn ghost",onclick:back},"Tillbaka"),
   el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
    if(attackerAv(draft).length<3||(draft.attacker||[]).length!==3){flash("Välj tre specialattacker först.");return}
    const upd={attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
@@ -1102,6 +1082,10 @@ function renderEdit(){
    persist();back();flash("Ändringarna är sparade.");
   }},"Spara ändringar"));
  app.append(row);
+ if(!draft.grund){const del=el("button",{class:"btn ghost danger",style:"align-self:flex-start",onclick:()=>{
+  slot.replaceChildren(warnBox("Ta bort "+draft.namn+" för alltid?","Hjälten försvinner från alla enheter nästa gång appen sparar till GitHub. Det går inte att ångra.","Ja, ta bort",
+   ()=>{const id=draft.id;deleted.add(id);egna=egna.filter(x=>x.id!==id);party=party.filter(x=>x!==id);persist();home();flash("Hjälten är borttagen.")},()=>slot.replaceChildren()));
+  slot.scrollIntoView({behavior:"smooth",block:"center"})}},"Ta bort hjälten");app.append(del)}
  if(draft.grund&&andringar[draft.id])app.append(el("button",{class:"btn ghost",style:"align-self:flex-start",onclick:()=>{
   slot.replaceChildren(warnBox("Återställa "+draft.namn+"?","Folk, klass, utseende och egenskaper går tillbaka till hur "+draft.namn+" var från början.","Ja, återställ",
    ()=>{delete andringar[draft.id];andrDirty=true;persist();back();flash(draft.namn+" är återställd.")},()=>slot.replaceChildren()));
