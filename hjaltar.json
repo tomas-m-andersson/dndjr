@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:35:44.890Z",
+  "uppdaterad": "2026-10-28T21:36:25.051Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -35,7 +35,13 @@
       }
     },
     "svante": {
+      "attacker": [
+        "klosattack",
+        "hoppa_ansiktet",
+        "frasa"
+      ],
       "folk": "katt",
+      "skagg": false,
       "klass": "katt",
       "hud": 5,
       "har": 9,
