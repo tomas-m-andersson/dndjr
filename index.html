@@ -775,9 +775,12 @@ function vapenIkon(W){
  else if(f==="dolkar"){for(const spegel of[false,true]){const m=(x,y)=>spegel?[N-1-x,y]:[x,y];
    for(let t=2;t<=12;t++){const[x,y]=P(t);const c=t<=4?"H":t===5?"G":t===13?"E":"V";put(...m(x,y),c);if(t>5&&t<12)put(...m(x+1,y),"E")}
    for(let k=-1;k<=1;k++){const[x,y]=P(5,k);put(...m(x,y),"G")}}}
- else if(f==="yxa"){axel(0,17,"Z");const[cx,cy]=P(14);
-   for(let y=-6;y<=6;y++)for(let x=0;x<=6;x++){const dx=x,dy=y;if(dx*dx/36+dy*dy/36<=1&&dx-Math.abs(dy)*.35>=1)put(cx+dx-1,cy+dy+1,dx*dx/36+dy*dy/36>.6?"E":"V")}
-   put(cx-2,cy,"V");put(cx-3,cy+1,"V");put(cx-2,cy+1,"V")}
+ else if(f==="yxa"){ // stående yxa: skaftet rakt upp, bladet rakt ut åt sidan (vinkelrätt mot skaftet)
+   for(let y=3;y<=20;y++){put(10,y,"Z");put(11,y,y>=15&&y%2===1?"H":"z")}put(10,20,"G");put(11,20,"G");
+   const cy=7,hojd=[2,2,3,4,5,5,6,5]; // bladets halva höjd för x=12..19, vidgas ut mot eggen
+   for(let i=0;i<hojd.length;i++){const x=12+i,h=hojd[i];for(let y=cy-h;y<=cy+h;y++)put(x,y,x>=18||(x===17&&Math.abs(y-cy)>=4)?"E":Math.abs(y-cy)===h?"v":"V")}
+   for(let y=5;y<=9;y++){put(10,y,"v");put(11,y,"v")} // metallhylsan runt skaftet
+   for(let y=6;y<=8;y++){put(8,y,"V");put(9,y,"V")}put(7,7,"E")} // liten nacke bakåt
  else if(f==="hammare"){ // stående hammare: skaftet rakt upp, huvudet rakt över
    for(let y=7;y<=20;y++){put(10,y,"Z");put(11,y,y>=16&&y%2===0?"H":"z")}put(10,20,"G");put(11,20,"G");
    for(let y=2;y<=7;y++)for(let x=3;x<=18;x++)put(x,y,x<=4||x>=17?"E":y===2?"E":y===7?"v":"V");
