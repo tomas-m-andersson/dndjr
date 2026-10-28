@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:04:20.902Z",
+  "uppdaterad": "2026-10-28T23:04:28.362Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793228659023,
+    "tid": 1793228666369,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -191,8 +191,23 @@
       ],
       "lyssnat": true,
       "rum": {
-        "typ": "kista",
-        "klar": false
+        "typ": "skatt",
+        "klar": false,
+        "loot": [
+          {
+            "k": "guld",
+            "n": "82 guldmynt",
+            "v": 82
+          },
+          {
+            "k": "sak",
+            "n": "Läkedryck"
+          },
+          {
+            "k": "sak",
+            "n": "Läkedryck"
+          }
+        ]
       },
       "logg": [
         {
@@ -266,6 +281,10 @@
         {
           "t": "Kistan rör sig inte. Ville slår sig: 2 i skada.",
           "k": "bad"
+        },
+        {
+          "t": "Efter en stund hörs ett nöjt klick. Sally har öppnat kistan.",
+          "k": "hit"
         }
       ],
       "party": [
