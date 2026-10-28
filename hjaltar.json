@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:13:31.120Z",
+  "uppdaterad": "2026-10-28T23:13:34.922Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229209155,
+    "tid": 1793229212768,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,10 +176,21 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 6,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": null,
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "boss",
+        "klar": false,
+        "fiender": [
+          "krak",
+          "vampyrfladdermus",
+          "svampman"
+        ],
+        "stridOpt": {
+          "boss": true
+        }
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -296,6 +307,14 @@
         {
           "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar grottans härskare.",
           "k": ""
+        },
+        {
+          "t": "Bossen · Grottans härskare",
+          "k": "sep"
+        },
+        {
+          "t": "Två stora ögon öppnas i mörkret. Det är en vättehövding, en vampyrfladdermus och en svampman!",
+          "k": "bad"
         }
       ],
       "party": [
