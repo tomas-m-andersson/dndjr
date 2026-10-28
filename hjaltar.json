@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:34:11.631Z",
+  "uppdaterad": "2026-10-28T20:34:24.377Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219649555,
+    "tid": 1793219662488,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -150,25 +150,22 @@
     "run": {
       "plats": "skogen",
       "kapitel": 1,
-      "djup": 3,
-      "fas": "rum",
+      "djup": 4,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Små fotspår leder ditåt.",
+          "ledtrad": "Något glimmar i mörkret.",
+          "typ": "vaktad",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
           "typ": "strid",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "fladdermus",
-          "fladdermus"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -237,6 +234,10 @@
         {
           "t": "Seger! Alla får 13 XP.",
           "k": "crit"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
