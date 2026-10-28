@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:04:08.921Z",
+  "uppdaterad": "2026-10-28T23:04:20.902Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 17,
+      "ville": 15,
       "svante": 18,
       "sally": 13,
       "tomas": 14,
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793228646873,
+    "tid": 1793228659023,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -262,6 +262,10 @@
         {
           "t": "En kista av mörkt trä står mot väggen. Låset är rostigt men starkt.",
           "k": ""
+        },
+        {
+          "t": "Kistan rör sig inte. Ville slår sig: 2 i skada.",
+          "k": "bad"
         }
       ],
       "party": [
