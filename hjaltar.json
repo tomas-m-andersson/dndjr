@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:13:12.193Z",
+  "uppdaterad": "2026-10-28T23:13:31.120Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229190190,
+    "tid": 1793229209155,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -175,29 +175,11 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 5,
-      "fas": "rum",
-      "dorrar": [
-        {
-          "ledtrad": "Det droppar, långsamt och jämnt.",
-          "typ": "brunn",
-          "kand": false
-        },
-        {
-          "ledtrad": "Spindelväv täcker öppningen.",
-          "typ": "strid",
-          "kand": false
-        }
-      ],
+      "djup": 6,
+      "fas": "dorrar",
+      "dorrar": null,
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "krak"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -310,6 +292,10 @@
         {
           "t": "Tomas dricker lite vatten och torkar svetten. +4 liv.",
           "k": "heal"
+        },
+        {
+          "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar grottans härskare.",
+          "k": ""
         }
       ],
       "party": [
@@ -336,7 +322,7 @@
       "ara": 400,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
+      "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne."
     },
     "historik": [
       {
