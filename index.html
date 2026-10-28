@@ -114,6 +114,21 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .stephead p{margin:0;color:var(--muted)}
 .choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
 .choice{background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.wchoice{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:center}
+.wtext{display:flex;flex-direction:column;gap:4px;min-width:0}
+.wicon{width:72px;height:72px;image-rendering:pixelated;image-rendering:crisp-edges;background:radial-gradient(circle,#2e4356 0%,#15202a 75%);border-radius:10px;border:2px solid var(--line)}
+.wicon.special{background:radial-gradient(circle,#5a4618 0%,#1e180c 75%);border-color:var(--gold-dk);box-shadow:0 0 14px #f2c14e40}
+.choice.sel .wicon{border-color:var(--gold)}
+.choice.wchoice:not(.locked):hover .wicon,.choice.wchoice.sel .wicon{animation:vapenglans 1.4s ease-in-out infinite}
+@keyframes vapenglans{50%{transform:rotate(-4deg) scale(1.06)}}
+.locked .wicon{filter:brightness(0) opacity(.55)}
+.wability{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center}
+.wability .wicon{width:64px;height:64px}
+.wloot{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center}
+.wicon.big{width:96px;height:96px;animation:vapenglans 1.4s ease-in-out infinite}
+.wbtn{display:grid!important;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;align-items:center}
+.wbtn .wicon.small{width:40px;height:40px;grid-row:1/3;border-radius:6px}
+@media (prefers-reduced-motion:reduce){.wicon{animation:none!important}}
 .choice.locked{opacity:.55;border-style:dashed;cursor:not-allowed}
 .theend.loot{background:#3a2f14;border-color:var(--gold)}
 .theend.loot strong{color:var(--gold)}
@@ -460,6 +475,7 @@ const VAPEN={
   {id:"ormpiska",sp:true,namn:"Ormpiskan",ord:"ormpiskan",skada:"1d6",effekt:"gift",gift:"1d4",chans:1,form:"piska",farg:"#8fd06a",info:"Varje träff förgiftar fienden."}],
  katt:[{id:"klor",namn:"Klor",ord:"klorna",skada:"1d6",form:"klor",info:"Vassa klor och tänder."}]};
 const upplast=id=>(typeof spel!=="undefined"&&Array.isArray(spel.upplasta)&&spel.upplasta.includes(id));
+const vapenById=id=>Object.values(VAPEN).flat().find(w=>w.id===id);
 const vapenOk=(klass,W)=>W&&(!W.sp||upplast(W.id));
 // Hjältens vapen (det första om inget är valt eller om valet inte är upplåst)
 function vapenAv(h){const L=VAPEN[h.klass]||VAPEN.krigare,W=L.find(w=>w.id===h.vapen);return vapenOk(h.klass,W)?W:L[0]}
@@ -732,6 +748,71 @@ function rendera(G,pal,{kontur=true,skugga=true}={}){
   if([[1,0],[-1,0],[0,1],[0,-1]].some(([dx,dy])=>{const n=col(x+dx,y+dy);return n&&n!=="K"}))g.fillRect(x+P,y+P,1,1)}}
  return cv;
 }
+/* ===== Vapenbilder =====
+   Varje vapen ritas på ett rutnät 22×22, snett från nedre vänstra hörnet (handtaget) till övre högra (spetsen).
+   Formen kommer från vapnets "form", färgen från "farg" och specialvapnen får en effekt ("fx"). */
+const FX={flammsvard:"eld",eldbage:"eld",askhammare:"blixt",stormluta:"blixt",isstav:"is",giftbage:"gift",giftdolkar:"gift",ormpiska:"gift",
+ stjarnstav:"stjarnor",manklinga:"stjarnor",skuggstav:"skugga",skuggkatana:"skugga",solklubba:"helig",livets_stav:"liv",valsignad_hammare:"helig",
+ drakdrapare:"guld",silvervarja:"guld",alvbage:"guld"};
+const IKCACHE=new Map();
+function vapenIkon(W){
+ if(IKCACHE.has(W.id))return IKCACHE.get(W.id);
+ const N=22,G=Array.from({length:N},()=>Array(N).fill("."));
+ const put=(x,y,c)=>{x=Math.round(x);y=Math.round(y);if(x>=0&&y>=0&&x<N&&y<N)G[y][x]=c};
+ const P=(t,k=0)=>[t+1+k,20-t+k]; // punkt längs diagonalen, k = åt sidan
+ const axel=(a,b,c,bredd=1,kant)=>{for(let t=a;t<=b;t++){const[x,y]=P(t);put(x,y,c);if(bredd>=2)put(x+1,y,kant||c);if(bredd>=3)put(x,y-1,c)}};
+ const tvars=(t,a,b,c)=>{for(let k=a;k<=b;k++){const[x,y]=P(t,k);put(x,y,c)}};
+ const ring=(cx,cy,r,c,fyllning)=>{for(let y=-r;y<=r;y++)for(let x=-r;x<=r;x++){const d=x*x+y*y;if(d<=r*r+r)put(cx+x,cy+y,fyllning&&d<(r-1)*(r-1)+1?fyllning:c)}};
+ const f=W.form;
+ if(f==="svard"||f==="klinga"){const lang=f==="svard"?16:13;put(...P(0),"G");axel(1,3,"H");tvars(4,f==="svard"?-2:-1,f==="svard"?2:1,"G");axel(5,lang,"V",2,"E");put(...P(lang+1),"E")}
+ else if(f==="storsvard"){axel(0,0,"G");axel(1,3,"H",2,"h");tvars(4,-3,3,"G");put(...P(4,-3),"g");put(...P(4,3),"g");axel(5,18,"V",3,"E");put(...P(19),"E")}
+ else if(f==="katana"){axel(0,4,"H");for(let t=0;t<=4;t+=2)put(...P(t),"h");ring(...P(5),1,"G");for(let t=6;t<=18;t++){const s=t>14?1:0;const[x,y]=P(t,s);put(x,y,"V");put(x+1,y,"E")}}
+ else if(f==="dolkar"){for(const spegel of[false,true]){const m=(x,y)=>spegel?[N-1-x,y]:[x,y];
+   for(let t=2;t<=12;t++){const[x,y]=P(t);const c=t<=4?"H":t===5?"G":t===13?"E":"V";put(...m(x,y),c);if(t>5&&t<12)put(...m(x+1,y),"E")}
+   for(let k=-1;k<=1;k++){const[x,y]=P(5,k);put(...m(x,y),"G")}}}
+ else if(f==="yxa"){axel(0,17,"Z");const[cx,cy]=P(14);
+   for(let y=-6;y<=6;y++)for(let x=0;x<=6;x++){const dx=x,dy=y;if(dx*dx/36+dy*dy/36<=1&&dx-Math.abs(dy)*.35>=1)put(cx+dx-1,cy+dy+1,dx*dx/36+dy*dy/36>.6?"E":"V")}
+   put(cx-2,cy,"V");put(cx-3,cy+1,"V");put(cx-2,cy+1,"V")}
+ else if(f==="hammare"){axel(0,14,"Z");const[cx,cy]=P(16);for(let y=-3;y<=3;y++)for(let x=-4;x<=4;x++)put(cx+x,cy+y,y===-3||Math.abs(x)===4?"E":"V");
+   for(let x=-3;x<=3;x+=2)put(cx+x,cy,"v")}
+ else if(f==="klubba"){axel(0,11,"Z");const[x,y]=P(14);ring(x,y,3,"V","V");put(x-1,y-1,"E");put(x,y-2,"E")}
+ else if(f==="morgonstjarna"){axel(0,10,"Z");const[x,y]=P(13);ring(x,y,3,"V","V");[[0,-5],[0,5],[-5,0],[5,0],[-4,-4],[4,4],[-4,4],[4,-4]].forEach(([dx,dy])=>{put(x+dx,y+dy,"E");put(x+dx*.6,y+dy*.6,"E")})}
+ else if(f==="stav"){axel(0,15,"Z");for(let t=1;t<=15;t+=4)put(...P(t,1),"z");const[x,y]=P(17.5);ring(x,y,2,"X","x");put(x-3,y+2,"Z");put(x+2,y+3,"Z");put(x-3,y-2,"z")}
+ else if(f==="spo"){axel(4,14,"Z");put(...P(4),"G");put(...P(5),"G");const[x,y]=P(16);put(x,y,"X");put(x-1,y,"x");put(x+1,y,"x");put(x,y-1,"x");put(x,y+1,"x");put(x+2,y-2,"x");put(x-2,y+2,"x")}
+ else if(f==="bok"){for(let y=4;y<=17;y++)for(let x=4;x<=16;x++)put(x,y,x===4||x===5?"R":y===4||y===17||x===16?"r":"R");for(let y=5;y<=16;y++)put(17,y,"W");
+   for(let y=7;y<=14;y++)for(let x=8;x<=13;x++)if((x+y)%3===0)put(x,y,"G");ring(11,10,1,"X","X")}
+ else if(f==="bage"){const kort=W.id==="kortbage";const t0=kort?5:3,t1=kort?16:18;
+   for(let y=t0;y<=t1;y++){const x=6+Math.round((kort?4:6)*Math.sin(Math.PI*(y-t0)/(t1-t0)));put(x,y,"Z");put(x+1,y,y%4===0?"z":"Z")}
+   for(let y=t0+1;y<t1;y++)put(6,y,"S");
+   for(let x=3;x<=19;x++)put(x,11,x>=18?"E":"M");put(3,10,"R");put(3,12,"R");put(4,10,"R");put(4,12,"R")}
+ else if(f==="armborst"){for(let x=2;x<=17;x++){put(x,11,"Z");put(x,12,x<6?"Z":".")}for(let y=4;y<=18;y++){const x=14-Math.round(2*Math.sin(Math.PI*(y-4)/14));put(x,y,"M")}
+   for(let y=5;y<=17;y++)put(11,y,y===11?"Z":"S");for(let x=6;x<=19;x++)put(x,10,x>=18?"E":"V");put(4,13,"Z");put(4,14,"Z")}
+ else if(f==="varja"){axel(0,0,"G");axel(1,3,"H");for(let k=-2;k<=2;k++){const[x,y]=P(4,k);put(x,y,"G");put(x+(k<0?1:0),y+(k<0?0:-1),"G")}axel(5,19,"V");for(let t=6;t<=18;t+=2)put(...P(t,1),"E")}
+ else if(f==="piska"){axel(0,4,"H");put(...P(0),"G");let x=6,y=15;const pts=[[7,13],[9,11],[11,10],[13,10],[15,9],[16,7],[17,5],[17,3],[16,2],[14,2]];put(x,y,"L");
+   pts.forEach(([a,b])=>{const dx=Math.sign(a-x),dy=Math.sign(b-y);while(x!==a||y!==b){if(x!==a)x+=dx;if(y!==b)y+=dy;put(x,y,"L")}});put(13,3,"E")}
+ else if(f==="luta"){for(let y=10;y<=19;y++)for(let x=2;x<=11;x++){const dx=(x-6.5)/4.6,dy=(y-14.5)/4.8;if(dx*dx+dy*dy<=1)put(x,y,(x+y)%5===0?"z":"W")}
+   ring(6,14,1,"K","K");for(let t=8;t<=15;t++)put(...P(t,-2),"z");const[x,y]=P(16,-2);put(x,y,"Z");put(x+1,y-1,"Z");put(x+1,y,"G");put(x,y-1,"G");
+   for(let i=0;i<6;i++)put(5+i,18-i-1,"S")}
+ else if(f==="klor"){ring(9,14,3,"P","P");[[4,8],[8,6],[12,6],[15,9]].forEach(([x,y])=>{ring(x,y,1,"P","P");put(x+1,y-2,"E");put(x+2,y-3,"E")})}
+ // effekter för specialvapen
+ const fx=FX[W.id],r=seedRnd(W.id.length*131+7),fyllda=[];for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(G[y][x]!==".")fyllda.push([x,y]);
+ const tomt=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&G[y][x]===".";
+ if(fx==="eld"){for(let i=0;i<26;i++){const[x,y]=fyllda[Math.floor(r()*fyllda.length)];const nx=x+(r()<.5?-1:1),ny=y-1-Math.floor(r()*2);if(tomt(nx,ny))put(nx,ny,r()<.5?"F":"f")}}
+ if(fx==="gift"){for(let i=0;i<10;i++){const[x,y]=fyllda[Math.floor(r()*fyllda.length)];for(let d=1;d<=1+Math.floor(r()*2);d++)if(tomt(x,y+d))put(x,y+d,d===1?"Q":"q")}}
+ if(fx==="blixt"){const[x0,y0]=fyllda.reduce((a,b)=>a[1]<b[1]?a:b);[[-1,1],[1,-1]].forEach(([sx,sy],j)=>{let x=x0+sx*2,y=y0+(j?1:0);for(let i=0;i<5;i++){if(tomt(x,y))put(x,y,"X");x+=sx;y+=i%2?1:0;if(i%2)x-=sx}})}
+ if(fx==="is"||fx==="stjarnor"){const n=fx==="is"?7:6;for(let i=0;i<n;i++){const x=2+Math.floor(r()*18),y=1+Math.floor(r()*12);if(tomt(x,y)&&tomt(x+1,y)&&tomt(x-1,y)){put(x,y,"*");if(fx==="stjarnor"||i%2){put(x+1,y,"+");put(x-1,y,"+");put(x,y-1,"+");put(x,y+1,"+")}}}}
+ if(fx==="skugga"){for(let i=0;i<22;i++){const[x,y]=fyllda[Math.floor(r()*fyllda.length)];const nx=x+Math.floor(r()*3)-1,ny=y+Math.floor(r()*3)-1;if(tomt(nx,ny))put(nx,ny,"U")}}
+ if(fx==="helig"||fx==="liv"){const[x,y]=fyllda.reduce((a,b)=>a[1]<b[1]?a:b);[[0,-1],[1,-1],[-1,-1],[1,0],[-1,0],[2,-2],[-2,-2],[0,-2]].forEach(([dx,dy])=>{if(tomt(x+dx*2,y+dy*2))put(x+dx*2,y+dy*2,fx==="liv"?"Q":"+")})}
+ if(fx==="guld"){for(let i=0;i<5;i++){const x=2+Math.floor(r()*18),y=1+Math.floor(r()*14);if(tomt(x,y)){put(x,y,"*");put(x+1,y,"+");put(x-1,y,"+");put(x,y-1,"+");put(x,y+1,"+")}}
+  const g=fyllda.find(([x,y])=>G[y][x]==="G");if(g)put(g[0],g[1],"R")}
+ const V=W.farg||"#d8dde2";
+ const pal={V,v:shade(V,-.3),E:shade(V,.45),Z:"#7a5432",z:"#5a3c22",H:"#5a3a22",h:"#8a6a3a",G:"#d4a63a",g:"#a07a22",P:"#e6d8c8",M:"#9aa4ae",S:"#e6e1d6",W:"#a8693a",
+  R:fx==="guld"?"#d83a4a":"#8a2a2a",r:"#5a1a1a",L:"#6b4a2e",X:W.farg||"#9fe8ff",x:shade(W.farg||"#9fe8ff",.5),K:KONTUR,
+  F:"#ff8a2b",f:"#ffd23d",Q:fx==="liv"?"#8fe08a":"#8fd06a",q:"#5a9a3a","*":fx==="is"?"#e8fbff":"#fff3a0","+":fx==="is"?"#9fe8ff":fx==="helig"?"#ffe9a0":"#f2c14e",U:"#8a6ac8"};
+ const c=rendera(G,pal);IKCACHE.set(W.id,c);return c;
+}
+function ikonEl(W,cls=""){const c=document.createElement("canvas");const s=vapenIkon(W);c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
+ c.className="px wicon "+cls+(W.sp?" special":"");c.setAttribute("role","img");c.setAttribute("aria-label",W.namn);return c}
 const HJCACHE=new Map();
 function heroCanvas(h){
  const key=JSON.stringify([vapenAv(h).id,h.folk,h.folk==="katt"?0:alderAv(h),!!h.skagg,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
@@ -825,7 +906,7 @@ function sheet(h){
    el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
    el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))),
   bars,
-  el("div",{class:"ability"},el("strong",{},v.W.namn+" · "+vapenEgenskaper(v.W)),el("p",{},v.W.info+" Slå en d20 och lägg till "+fmt(v.atk)+". Kommer du upp i fiendens rustning så träffar du.")),
+  el("div",{class:"ability wability"},ikonEl(v.W),el("div",{},el("strong",{},v.W.namn+" · "+vapenEgenskaper(v.W)),el("p",{},v.W.info+" Slå en d20 och lägg till "+fmt(v.atk)+". Kommer du upp i fiendens rustning så träffar du."))),
   el("h3",{class:"subhead"},"Specialattacker"),
   ...attackerAv(h).map(id=>{const A=attackDef(h.klass,id);return el("div",{class:"ability special"},el("strong",{},A.namn),el("p",{},A.info+". En gång per strid."))}),
   el("div",{class:"ability"},el("strong",{},K.n),el("p",{},K.t)),
@@ -885,8 +966,8 @@ function vapenVal(){
  const L=VAPEN[draft.klass]||[],cur=vapenAv(draft).id;
  const box=el("div",{class:"field"},el("label",{},"Vapen"),el("p",{class:"fieldhint"},"Vapnet bestämmer skadan i vanliga anfall och specialattacker med vapnet. Specialvapen låses upp när ni besegrar bossar."));
  box.append(el("div",{class:"choices"},L.map(W=>{const ok=vapenOk(draft.klass,W),on=ok&&cur===W.id;
-  return el("button",{class:"choice"+(on?" sel":"")+(ok?"":" locked"),disabled:!ok,"aria-pressed":on?"true":"false",onclick:()=>{draft.vapen=W.id;const y=window.scrollY;rerender();window.scrollTo(0,y)}},
-   el("strong",{},(ok?"":"🔒 ")+(on?"✓ ":"")+W.namn),el("div",{class:"bonus"},vapenEgenskaper(W)),el("span",{},ok?W.info:"Hittas efter en besegrad boss."))})));
+  return el("button",{class:"choice wchoice"+(on?" sel":"")+(ok?"":" locked"),disabled:!ok,"aria-pressed":on?"true":"false",onclick:()=>{draft.vapen=W.id;const y=window.scrollY;rerender();window.scrollTo(0,y)}},
+   ikonEl(W),el("div",{class:"wtext"},el("strong",{},(ok?"":"🔒 ")+(on?"✓ ":"")+W.namn),el("div",{class:"bonus"},vapenEgenskaper(W)),el("span",{},ok?W.info:"Hittas efter en besegrad boss.")))})));
  return box;
 }
 function stepAttacker(){
@@ -957,7 +1038,7 @@ function stepDone(){
   el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
   el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
   el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))));
- {const W=vapenAv(draft);app.append(el("div",{class:"ability"},el("strong",{},W.namn+" · "+vapenEgenskaper(W)),el("p",{},W.info)))}
+ {const W=vapenAv(draft);app.append(el("div",{class:"ability wability"},ikonEl(W),el("div",{},el("strong",{},W.namn+" · "+vapenEgenskaper(W)),el("p",{},W.info))))}
  attackerAv(draft).forEach(id=>{const A=attackDef(draft.klass,id);app.append(el("div",{class:"ability special"},el("strong",{},A.namn),el("p",{},A.info)))});
  const om=el("input",{id:"om",type:"text",maxlength:"60",placeholder:"T.ex. Rädd för spindlar men älskar pannkakor",value:draft.om,autocomplete:"off"});
  om.addEventListener("input",()=>draft.om=om.value);
@@ -1388,8 +1469,8 @@ function visaScen(){
  const txt=scenText(sc,K),story=storyEl(txt);app.append(story);
  const akt=el("div",{class:"actions"});
  if(sc.slut){
-  if(!K.klar){K.klar=true;K.slut=K.scen;const nytt=lasUppVapen();K.nyttVapen=nytt?nytt.text:null;sparaSpel()}
-  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot"},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen)):null,
+  if(!K.klar){K.klar=true;K.slut=K.scen;const nytt=lasUppVapen();K.nyttVapen=nytt?nytt.text:null;K.nyttVapenId=nytt?nytt.vapen.id:null;sparaSpel()}
+  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot wloot"},K.nyttVapenId&&vapenById(K.nyttVapenId)?ikonEl(vapenById(K.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen))):null,
    el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
  }else if(sc.strid){
   akt.append(el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
@@ -1547,7 +1628,7 @@ function hjalteTur(h){
  stridVy(gen(h.namn)+" tur!");
  if(pre.length)app.append(el("p",{class:"event pre"},pre.join(" ")));
  const meny=()=>{akt.replaceChildren();
-  akt.append(el("button",{class:"choicebtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},el("span",{},"Anfall med "+vapenAv(h).ord),el("small",{},vapenAv(h).namn+" · "+vapenAv(h).skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
+  akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},ikonEl(vapenAv(h),"small"),el("span",{},"Anfall med "+vapenAv(h).ord),el("small",{},vapenAv(h).namn+" · "+vapenAv(h).skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
   attackerAv(h).forEach(id=>{const A=attackDef(h.klass,id),kvar=kvarAttack(h,A);
    akt.append(el("button",{class:"choicebtn special",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},el("span",{},A.namn),el("small",{},kvar?A.info:"Använd i den här striden")))});
   if(harDryck())akt.append(el("button",{class:"choicebtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!")},()=>hjalteTur(h)),()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
@@ -1922,7 +2003,7 @@ function visaRun(){
    el("button",{class:"btn",onclick:()=>{spel.run=null;sparaSpel();lage=null;adventures()}},"Tillbaka"));
  }else if(R.fas==="vann"){
   akt.append(el("div",{class:"theend"},el("strong",{},"Bossen är besegrad!"),el("span",{},"Ni kan gå hem som hjältar, eller vila och gå djupare. Där blir det farligare.")));
-  if(R.nyttVapen)akt.append(el("div",{class:"theend loot"},el("strong",{},"Nytt vapen: "+R.nyttVapen),el("span",{},"Välj det under Ändra på hjältebladet.")));
+  if(R.nyttVapen)akt.append(el("div",{class:"theend loot wloot"},R.nyttVapenId&&vapenById(R.nyttVapenId)?ikonEl(vapenById(R.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen: "+R.nyttVapen),el("span",{},"Välj det under Ändra på hjältebladet."))));
   knapp("Gå djupare: kapitel "+(R.kapitel+1),"Alla vilar och får fullt liv. Ni hittar "+PLATSER[R.plats].djupare+".",nastaKapitel,{special:true});
   knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel.")});
  }else if(R.fas==="strid"){
@@ -2110,7 +2191,7 @@ function runVinst(){
  H.forEach(h=>gainXp(h,del));
  const boss=R.rum.typ==="boss";
  if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(T("boss_besegrad",{boss:PLATSER[R.plats].boss}),"crit");
-  const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn}}
+  const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn;R.nyttVapenId=nytt.vapen.id}}
  else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog(T("vaktad_oppen"),"heal")}
  else{R.fas="rum";R.rum.klar=true}
  sparaSpel();visaRun();
