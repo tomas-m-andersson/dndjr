@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:35:59.079Z",
+  "uppdaterad": "2026-10-28T20:36:31.297Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219757170,
+    "tid": 1793219789270,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 5,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "En mjuk sång hörs på avstånd.",
@@ -170,7 +170,10 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "resenar",
+        "klar": false
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -259,6 +262,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 5 · Skadad äventyrare",
+          "k": "sep"
+        },
+        {
+          "t": "En skadad äventyrare sitter lutad mot väggen.",
+          "k": ""
         }
       ],
       "party": [
