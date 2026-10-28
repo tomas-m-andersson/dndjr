@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:36:53.867Z",
+  "uppdaterad": "2026-10-28T20:37:05.626Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219811909,
+    "tid": 1793219823644,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -150,30 +150,11 @@
     "run": {
       "plats": "skogen",
       "kapitel": 1,
-      "djup": 5,
-      "fas": "rum",
-      "dorrar": [
-        {
-          "ledtrad": "En mjuk sång hörs på avstånd.",
-          "typ": "resenar",
-          "kand": false
-        },
-        {
-          "ledtrad": "Någonstans porlar vatten.",
-          "typ": "strid",
-          "kand": false
-        },
-        {
-          "ledtrad": "Något snarkar, djupt och långsamt.",
-          "typ": "sovare",
-          "kand": false
-        }
-      ],
+      "djup": 6,
+      "fas": "dorrar",
+      "dorrar": null,
       "lyssnat": false,
-      "rum": {
-        "typ": "resenar",
-        "klar": true
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -274,6 +255,10 @@
         {
           "t": "Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett. Alla får 30 XP.",
           "k": "heal"
+        },
+        {
+          "t": "Gången slutar vid en stor port.",
+          "k": "sep"
         }
       ],
       "party": [
