@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:32:15.328Z",
+  "uppdaterad": "2026-10-28T20:32:24.203Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219533333,
+    "tid": 1793219542209,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 3,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Små fotspår leder ditåt.",
@@ -160,7 +160,15 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "fladdermus",
+          "fladdermus"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -217,6 +225,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 3 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni möter Jättefladdermus, Jättefladdermus!",
+          "k": "bad"
         }
       ],
       "party": [
