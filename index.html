@@ -229,10 +229,33 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .grow b{text-align:left;font-weight:800}
 .grow.ok i{color:var(--moss);font-style:normal;font-weight:800}
 .grow.bad i{color:var(--red);font-style:normal;font-weight:800}
-.d20{width:110px;height:110px}
-.d20.spinning{transform:rotate(25deg) scale(.92)}
-.d20.nat20{filter:drop-shadow(0 0 12px #f2c14e)}
-.d20.nat1{filter:grayscale(.7)}
+.dicebox{cursor:pointer;min-height:120px;align-items:flex-end;perspective:400px}
+.dwrap{display:inline-block}
+.d20{width:110px;height:110px;display:block;transition:filter .3s}
+.kastar .dwrap{animation:kast .95s cubic-bezier(.3,.6,.4,1) both}
+@keyframes kast{0%{transform:translate(var(--dx),-140px) rotate(var(--rot)) scale(.5);opacity:.2}
+ 45%{transform:translate(calc(var(--dx)*.3),0) rotate(calc(var(--rot)*.35)) scale(1.05);opacity:1}
+ 62%{transform:translate(calc(var(--dx)*.15),-34px) rotate(calc(var(--rot)*.15)) scale(.97)}
+ 78%{transform:translate(0,0) rotate(-8deg) scale(1.02)}
+ 90%{transform:translate(0,-8px) rotate(4deg)}
+ 100%{transform:none}}
+.d20.rolling{filter:blur(.4px) brightness(1.05)}
+.d20.landed{animation:landa .35s ease-out}
+@keyframes landa{0%{transform:scale(1.25)}60%{transform:scale(.94)}100%{transform:scale(1)}}
+.d20.nat20{filter:drop-shadow(0 0 14px #f2c14e) drop-shadow(0 0 30px #ffd96a);animation:landa .35s ease-out,glod 1.2s ease-in-out .35s 2}
+@keyframes glod{50%{filter:drop-shadow(0 0 22px #fff3a0) drop-shadow(0 0 44px #f2c14e)}}
+.d20.nat1{filter:grayscale(.8) brightness(.8);animation:skaka .5s ease-in-out}
+@keyframes skaka{0%,100%{transform:none}20%{transform:translateX(-8px) rotate(-6deg)}40%{transform:translateX(8px) rotate(6deg)}60%{transform:translateX(-5px) rotate(-3deg)}80%{transform:translateX(4px)}}
+.sparks{position:fixed;width:0;height:0;z-index:40;pointer-events:none}
+.sparks i{position:absolute;width:6px;height:6px;margin:-3px;background:#ffd96a;box-shadow:0 0 6px #fff3a0;animation:gnista .9s ease-out forwards}
+.sparks i:nth-child(3n){background:#fff;width:4px;height:4px}
+@keyframes gnista{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(.2);opacity:0}}
+.rollres>*{animation:popin .35s ease-out both}
+.rollres>*:nth-child(2){animation-delay:.12s}
+.rollres>*:nth-child(3){animation-delay:.24s}
+@keyframes popin{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:none;opacity:1}}
+.rollpanel .btn.big:not(:disabled){animation:pulsa 1.6s ease-in-out infinite}
+@keyframes pulsa{50%{box-shadow:0 4px 0 var(--gold-dk),0 0 0 6px #f2c14e33}}
 .rollres{display:flex;flex-direction:column;gap:6px;align-items:center}
 .sum{font-family:var(--body);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;letter-spacing:.01em}
 .sum small{display:block;font-size:.95rem;font-weight:700;color:var(--muted)}
@@ -252,7 +275,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .foehp i{background:var(--gold)}
 .turn{font-size:1.5rem;color:var(--gold)}
 .turn:empty{display:none}
-@media (prefers-reduced-motion:reduce){.hp i{transition:none}}
+@media (prefers-reduced-motion:reduce){.hp i{transition:none}.kastar .dwrap,.d20.landed,.d20.nat20,.d20.nat1,.rollres>*,.rollpanel .btn.big{animation:none!important}}
 /* Grottkrypning */
 .runsec{display:flex;flex-direction:column;gap:12px}
 .places{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
@@ -492,7 +515,7 @@ function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0
 let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
 const OKEY="tarningsriket-alternativ";
-let alt=Object.assign({upplas:false,svar:"normal"},load(OKEY,{}));
+let alt=Object.assign({upplas:false,svar:"normal",ljud:true},load(OKEY,{}));
 function persist(){save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);scheduleSync()}
 
 /* ===== GitHub-sparning (hjaltar.json i repot) ===== */
@@ -1018,15 +1041,54 @@ function slaa(expr,dubbel){ // "1d6+2" → {tot,txt}
  const n=(+m[1])*(dubbel?2:1),sid=+m[2],plus=+(m[3]||0),r=[];for(let i=0;i<n;i++)r.push(d(sid));
  const tot=Math.max(1,r.reduce((a,b)=>a+b,0)+plus);return{tot,txt:r.join("+")+(plus?(plus>0?"+":"")+plus:"")};
 }
-function dieSvg(n,cls=""){return '<svg class="d20 '+cls+'" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="#f2c14e" stroke="#2a1d05" stroke-width="4"/><polygon points="50,22 76,66 24,66" fill="#f7d77f" stroke="#2a1d05" stroke-width="3"/><text x="50" y="57" text-anchor="middle" font-family="Pixelify Sans,monospace" font-weight="700" font-size="22" fill="#2a1d05">'+n+'</text></svg>'}
-// Visar en rullande d20 och anropar klar(värde) när den stannat.
+function dieSvg(n,cls=""){return '<span class="dwrap"><svg class="d20 '+cls+'" viewBox="0 0 100 100" aria-hidden="true"><polygon class="dface" points="50,4 92,28 92,72 50,96 8,72 8,28" fill="#f2c14e" stroke="#2a1d05" stroke-width="4"/><polygon class="dface2" points="50,22 76,66 24,66" fill="#f7d77f" stroke="#2a1d05" stroke-width="3"/><path d="M50 4L50 22M92 28L76 66M8 28L24 66M50 96L24 66M50 96L76 66M8 72L24 66M92 72L76 66M8 28L50 22M92 28L50 22" stroke="#2a1d05" stroke-width="2.5" fill="none" opacity=".55"/><text class="dn" x="50" y="58" text-anchor="middle" font-family="Pixelify Sans,monospace" font-weight="700" font-size="22" fill="#2a1d05">'+n+'</text></svg></span>'}
+
+/* --- ljud och vibration (kan stängas av i inställningarna) --- */
+let LJUD=null;
+function ljud(){if(alt.ljud===false)return null;try{LJUD=LJUD||new (window.AudioContext||window.webkitAudioContext)();if(LJUD.state==="suspended")LJUD.resume();return LJUD}catch(e){return null}}
+// ett kort "klick", som en tärning mot ett bord
+function klick(styrka=1,ton=1){const a=ljud();if(!a)return;const t=a.currentTime,n=Math.floor(a.sampleRate*.03),buf=a.createBuffer(1,n,a.sampleRate),d=buf.getChannelData(0);
+ for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);
+ const s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();s.buffer=buf;f.type="bandpass";f.frequency.value=1800*ton;f.Q.value=1.2;g.gain.value=.35*styrka;
+ s.connect(f);f.connect(g);g.connect(a.destination);s.start(t)}
+function ton(frekv,start,langd,typ="triangle",vol=.18){const a=ljud();if(!a)return;const t=a.currentTime+start,o=a.createOscillator(),g=a.createGain();
+ o.type=typ;o.frequency.setValueAtTime(frekv,t);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+langd);
+ o.connect(g);g.connect(a.destination);o.start(t);o.stop(t+langd+.05)}
+function vibrera(m){if(alt.ljud===false)return;try{navigator.vibrate&&navigator.vibrate(m)}catch(e){}}
+function fanfar(){[523,659,784,1047].forEach((f,i)=>ton(f,i*.09,.35,"square",.08));vibrera([60,40,60,40,160])}
+function bu(){ton(196,0,.35,"sawtooth",.08);ton(147,.18,.5,"sawtooth",.08);vibrera([200])}
+// guldgnistor runt en tärning
+function gnistor(el){const r=el.getBoundingClientRect(),box=document.createElement("div");box.className="sparks";box.style.left=(r.left+r.width/2)+"px";box.style.top=(r.top+r.height/2)+"px";
+ for(let i=0;i<18;i++){const s=document.createElement("i"),v=i/18*Math.PI*2,l=60+Math.random()*50;s.style.setProperty("--x",Math.cos(v)*l+"px");s.style.setProperty("--y",Math.sin(v)*l+"px");s.style.animationDelay=(Math.random()*.08)+"s";box.append(s)}
+ document.body.append(box);setTimeout(()=>box.remove(),1100)}
+
+// Kastar d20 med animation och anropar klar(värden) när de landat.
 function rullaD20(box,klar,antal=1){
  if(rullar)return;rullar=true;
  const slut=Array.from({length:antal},()=>d(20)),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- let t=0;const tick=()=>{box.innerHTML=slut.map(()=>dieSvg(d(20),"spinning")).join("");t++;
-  if(t<(reduce?1:12))setTimeout(tick,60);else{box.innerHTML=slut.map(v=>dieSvg(v,v===20?"nat20":v===1?"nat1":"")).join("");rullar=false;klar(slut)}};
+ box.innerHTML=slut.map(()=>dieSvg(d(20),"rolling")).join("");box.classList.add("kastar");
+ const tarn=[...box.querySelectorAll(".dwrap")];
+ tarn.forEach((w,i)=>{w.style.setProperty("--dx",((i%2?1:-1)*(20+Math.random()*30))+"px");w.style.setProperty("--rot",(Math.random()<.5?-1:1)*(540+Math.random()*360)+"deg");w.style.animationDelay=(i*.08)+"s"});
+ const steg=reduce?[0]:[30,30,35,40,45,55,65,80,95,115,140,170,210];
+ let i=0;
+ const tick=()=>{
+  tarn.forEach(w=>{w.querySelector(".dn").textContent=d(20)});
+  if(!reduce)klick(.5+Math.random()*.5,.8+Math.random()*.6);
+  if(i===4||i===9)vibrera(15);
+  if(i<steg.length-1){setTimeout(tick,steg[i++]);return}
+  setTimeout(()=>{
+   tarn.forEach((w,j)=>{const v=slut[j],sv=w.querySelector("svg");w.querySelector(".dn").textContent=v;sv.classList.remove("rolling");sv.classList.add("landed");
+    if(v===20){sv.classList.add("nat20");if(!reduce)gnistor(w)}else if(v===1)sv.classList.add("nat1")});
+   box.classList.remove("kastar");
+   if(slut.includes(20))fanfar();else if(slut.includes(1))bu();else{klick(1.2,.5);vibrera(30)}
+   rullar=false;klar(slut);
+  },reduce?0:120);
+ };
  tick();
 }
+// Tryck på tärningen för att slå (samma som knappen "Slå!")
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest(".dicebox");if(!b||rullar)return;
+ const p=b.closest(".rollpanel");const knapp=p&&[...p.querySelectorAll("button.btn.big")].find(x=>/^Slå/.test(x.textContent)&&!x.disabled);if(knapp)knapp.click()});
 
 /* --- uppläsning --- */
 const kanTala="speechSynthesis" in window;
@@ -1041,6 +1103,12 @@ function svarGroup(){
  const rad=el("div",{class:"pills"}),info=el("p",{});
  const rita=()=>{rad.replaceChildren(...Object.entries(SVAR).map(([k,v])=>el("button",{class:"pill"+((alt.svar||"normal")===k?" sel":""),"aria-pressed":(alt.svar||"normal")===k?"true":"false",onclick:()=>{alt.svar=k;save(OKEY,alt);rita()}},v.namn)));info.textContent=SV().besk};
  rita();box.append(rad,info);return box;
+}
+function ljudGroup(){
+ const cb=el("input",{id:"opt-ljud",type:"checkbox"});cb.checked=alt.ljud!==false;
+ cb.addEventListener("change",()=>{alt.ljud=cb.checked;save(OKEY,alt);if(cb.checked){klick(1.2,.6);vibrera(40)}});
+ return el("section",{class:"setgroup"},el("h3",{},"Ljud och vibration"),el("p",{},"Tärningarna klapprar, en tjugo spelar en fanfar och telefonen vibrerar lite när tärningen landar."),
+  el("label",{class:"check",for:"opt-ljud"},cb,el("span",{},"Ljud och vibration vid tärningsslag")));
 }
 function upplasGroup(){
  const cb=el("input",{id:"opt-upplas",type:"checkbox"});cb.checked=alt.upplas;
@@ -2155,6 +2223,7 @@ function settings(){
   el("div",{class:"section-head"},el("h2",{},"Inställningar"),el("button",{class:"btn ghost",onclick:close},"Stäng")),
   el("section",{class:"setgroup"},el("h3",{},"Installera som app"),installPart),
   svarGroup(),
+  ljudGroup(),
   upplasGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
    el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
