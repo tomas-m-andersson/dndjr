@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:17:19.215Z",
+  "uppdaterad": "2026-10-28T23:17:36.821Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,10 +127,10 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 14,
+      "ville": 17,
       "svante": 18,
       "sally": 13,
-      "tomas": 0,
+      "tomas": 1,
       "linda": 7
     },
     "kapitel": {
@@ -151,32 +151,39 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229437303,
+    "tid": 1793229454880,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 330
+        "xp": 405
       },
       "svante": {
         "lvl": 2,
-        "xp": 330
+        "xp": 405
       },
       "tomas": {
         "lvl": 2,
-        "xp": 330
+        "xp": 405
       },
       "sally": {
         "lvl": 2,
-        "xp": 330
+        "xp": 405
       }
     },
-    "upplasta": [],
-    "utr": {},
+    "upplasta": [
+      "giftdolkar"
+    ],
+    "utr": {
+      "ville": {
+        "wb": 1,
+        "acb": 0
+      }
+    },
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 6,
-      "fas": "strid",
+      "fas": "vann",
       "dorrar": null,
       "lyssnat": false,
       "rum": {
@@ -315,6 +322,42 @@
         {
           "t": "Två stora ögon öppnas i mörkret. Det är en vättehövding, en vampyrfladdermus och en svampman!",
           "k": "bad"
+        },
+        {
+          "t": "Striden är över. Alla får 75 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "Ville hämtar andan och lägger om såren. +3 liv.",
+          "k": "heal"
+        },
+        {
+          "t": "Tomas slår upp ögonen och mumlar: – Vad hände?",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar 90 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ville får ett magiskt vapen: +1 på träff och skada.",
+          "k": "magic"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Grottans härskare är besegrad!",
+          "k": "crit"
+        },
+        {
+          "t": "⚔ Ni hittar Giftdolkarna! Ninja kan nu välja det under Ändra. 1d4 + 1d4 skada, och varje träff förgiftar.",
+          "k": "crit"
         }
       ],
       "party": [
@@ -323,7 +366,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 128,
+      "guld": 218,
       "saker": [
         "Läkedryck",
         "Läkedryck",
@@ -334,14 +377,18 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck"
+        "Läkedryck",
+        "Läkedryck",
+        "Stor läkedryck"
       ],
       "bless": {},
       "curse": {},
-      "ara": 400,
+      "ara": 700,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne."
+      "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
+      "nyttVapen": "Giftdolkarna",
+      "nyttVapenId": "giftdolkar"
     },
     "historik": [
       {
