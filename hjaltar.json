@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:46:14.860Z",
+  "uppdaterad": "2026-10-28T22:46:19.862Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793227572935,
+    "tid": 1793227577874,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -175,25 +175,22 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 3,
-      "fas": "rum",
+      "djup": 4,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Det finns färskt blod på marken.",
-          "typ": "strid",
+          "ledtrad": "Ni hör ett klick, som av en mekanism.",
+          "typ": "kista",
+          "kand": false
+        },
+        {
+          "ledtrad": "Väggarna glittrar av kristaller.",
+          "typ": "skatt",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "vatte",
-          "vatte"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -246,6 +243,10 @@
         {
           "t": "Striden är över. Alla får 25 XP.",
           "k": "crit"
+        },
+        {
+          "t": "Ni torkar svetten ur pannan och går vidare.",
+          "k": ""
         }
       ],
       "party": [
@@ -270,7 +271,7 @@
       "ara": 200,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
     },
     "historik": [
       {
