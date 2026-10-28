@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:32:04.940Z",
+  "uppdaterad": "2026-10-28T20:32:15.328Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219522917,
+    "tid": 1793219533333,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -150,30 +150,17 @@
     "run": {
       "plats": "skogen",
       "kapitel": 1,
-      "djup": 2,
-      "fas": "rum",
+      "djup": 3,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Det luktar rök och stekt kött.",
-          "typ": "strid",
-          "kand": false
-        },
-        {
-          "ledtrad": "Det finns färskt blod på marken.",
+          "ledtrad": "Små fotspår leder ditåt.",
           "typ": "strid",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "fladdermus",
-          "fladdermus"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -226,6 +213,10 @@
         {
           "t": "Seger! Alla får 13 XP.",
           "k": "crit"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
