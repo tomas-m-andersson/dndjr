@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:34:52.801Z",
+  "uppdaterad": "2026-10-28T20:35:53.057Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,23 +127,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219690825,
+    "tid": 1793219750946,
     "niva": {
       "ville": {
         "lvl": 1,
-        "xp": 137
+        "xp": 162
       },
       "svante": {
         "lvl": 1,
-        "xp": 137
+        "xp": 162
       },
       "tomas": {
         "lvl": 1,
-        "xp": 137
+        "xp": 162
       },
       "sally": {
         "lvl": 1,
-        "xp": 137
+        "xp": 162
       }
     },
     "utr": {},
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 4,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Något glimmar i mörkret.",
@@ -167,7 +167,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "strid",
-        "klar": false,
+        "klar": true,
         "fiender": [
           "varg",
           "varg"
@@ -254,6 +254,10 @@
         {
           "t": "Ni möter Varg, Varg!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 25 XP.",
+          "k": "crit"
         }
       ],
       "party": [
@@ -277,7 +281,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 150,
+      "ara": 250,
       "start": 1793219286949,
       "nastaKand": false
     },
