@@ -114,6 +114,9 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .stephead p{margin:0;color:var(--muted)}
 .choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
 .choice{background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.choice.locked{opacity:.55;border-style:dashed;cursor:not-allowed}
+.theend.loot{background:#3a2f14;border-color:var(--gold)}
+.theend.loot strong{color:var(--gold)}
 .choice.sel{border-color:var(--gold);background:#2a3a2a}
 .choice strong{font-family:var(--display);font-size:1.15rem}
 .choice .bonus{color:var(--gold);font-weight:800;font-size:.85rem}
@@ -382,6 +385,70 @@ const attackDef=(klass,id)=>(ATTACKER[klass]||[]).find(a=>a.id===id);
 // De tre attacker en hjälte har valt (fylls på med de första om något saknas).
 function attackerAv(h){const L=ATTACKER[h.klass]||[],val=(Array.isArray(h.attacker)?h.attacker:[]).filter(id=>L.some(a=>a.id===id)).slice(0,3);
  for(const a of L){if(val.length>=3)break;if(!val.includes(a.id))val.push(a.id)}return val}
+/* Vapen. De tre första i varje klass finns alltid. Specialvapen (sp:true) låses upp efter besegrade bossar.
+   Fält: skada, traff (+/− på slaget), ac (+/− rustning), krit (kritisk träff från detta tal), extra (extra skada vid träff),
+   effekt/n/gift + chans (0–1), magi (+ på magiska attacker och helning), tjuv (andel av skadan som helar hjälten),
+   form (hur vapnet ritas), farg (vapnets färg). */
+const VAPEN={
+ krigare:[
+  {id:"svard",namn:"Svärd",ord:"svärdet",skada:"1d8",form:"svard",info:"Pålitligt och lätt att använda."},
+  {id:"tvahandssvard",namn:"Tvåhandssvärd",ord:"tvåhandssvärdet",skada:"2d6",ac:-2,form:"storsvard",info:"Hugger hårt, men ingen sköld: −2 rustning."},
+  {id:"stridsyxa",namn:"Stridsyxa",ord:"yxan",skada:"1d10",traff:-1,krit:19,form:"yxa",info:"−1 på slaget, men kritisk träff redan på 19."},
+  {id:"flammsvard",sp:true,namn:"Flammsvärdet",ord:"flammsvärdet",skada:"1d8",extra:"1d6",form:"svard",farg:"#ff8a3d",info:"Bladet brinner: +1d6 eldskada."},
+  {id:"askhammare",sp:true,namn:"Åskhammaren",ord:"åskhammaren",skada:"2d6",ac:-1,effekt:"bedova",n:1,chans:.3,form:"hammare",farg:"#9fd8ff",info:"Mullrar vid träff: 30 % chans att bedöva. −1 rustning."},
+  {id:"drakdrapare",sp:true,namn:"Drakdråparen",ord:"drakdråparen",skada:"1d10",traff:2,krit:19,form:"storsvard",farg:"#e8c34a",ac:-1,info:"+2 på slaget och kritisk träff på 19. −1 rustning."}],
+ magiker:[
+  {id:"stav",namn:"Magisk stav",ord:"staven",skada:"1d6",ac:1,form:"stav",info:"Bra att parera med: +1 rustning."},
+  {id:"trollspo",namn:"Trollspö",ord:"trollspöet",skada:"1d4",traff:2,form:"spo",info:"Träffsäkert: +2 på slaget, men lite skada."},
+  {id:"runbok",namn:"Runbok",ord:"runboken",skada:"1d4",magi:2,form:"bok",info:"Magiska attacker och helning blir +2 starkare."},
+  {id:"stjarnstav",sp:true,namn:"Stjärnstaven",ord:"stjärnstaven",skada:"1d8",magi:3,form:"stav",farg:"#fff3a0",info:"Glittrar av stjärnljus: magiska attacker +3."},
+  {id:"isstav",sp:true,namn:"Isstaven",ord:"isstaven",skada:"1d6",effekt:"svag",n:2,chans:.5,ac:1,form:"stav",farg:"#9fe8ff",info:"Kyler fienden: 50 % chans att ge −2 på deras anfall. +1 rustning."},
+  {id:"skuggstav",sp:true,namn:"Skuggstaven",ord:"skuggstaven",skada:"1d8",tjuv:.5,form:"stav",farg:"#b48ae8",info:"Stjäl kraft: hälften av skadan helar dig."}],
+ bagskytt:[
+  {id:"pilbage",namn:"Pilbåge",ord:"en pil",skada:"1d8",form:"bage",info:"Den vanliga bågen."},
+  {id:"kortbage",namn:"Kortbåge",ord:"en pil",skada:"1d6",traff:2,form:"bage",info:"Lätt och snabb: +2 på slaget."},
+  {id:"armborst",namn:"Armborst",ord:"en bult",skada:"1d10",traff:-1,krit:19,form:"armborst",info:"Tungt skott: −1 på slaget, kritisk träff på 19."},
+  {id:"alvbage",sp:true,namn:"Alvbågen",ord:"en silverpil",skada:"1d8",traff:3,form:"bage",farg:"#d8e8f0",info:"Missar nästan aldrig: +3 på slaget."},
+  {id:"eldbage",sp:true,namn:"Eldbågen",ord:"en brinnande pil",skada:"1d8",extra:"1d6",form:"bage",farg:"#ff8a3d",info:"Pilarna brinner: +1d6 eldskada."},
+  {id:"giftbage",sp:true,namn:"Ormbågen",ord:"en giftpil",skada:"1d8",effekt:"gift",gift:"1d4",chans:1,form:"bage",farg:"#8fd06a",info:"Varje träff förgiftar fienden."}],
+ ninja:[
+  {id:"klinga",namn:"Kort klinga",ord:"klingan",skada:"1d6",traff:1,form:"klinga",info:"Snabb: +1 på slaget."},
+  {id:"dubbla_dolkar",namn:"Dubbla dolkar",ord:"dolkarna",skada:"1d4",extra:"1d4",form:"dolkar",info:"Två dolkar: 1d4 + 1d4 skada."},
+  {id:"katana",namn:"Katana",ord:"katanan",skada:"1d8",krit:19,form:"katana",info:"Vass: kritisk träff redan på 19."},
+  {id:"skuggkatana",sp:true,namn:"Skuggkatanan",ord:"skuggkatanan",skada:"1d8",krit:18,form:"katana",farg:"#8a7ab8",info:"Kritisk träff redan på 18."},
+  {id:"giftdolkar",sp:true,namn:"Giftdolkarna",ord:"giftdolkarna",skada:"1d4",extra:"1d4",effekt:"gift",gift:"1d4",chans:1,form:"dolkar",farg:"#8fd06a",info:"1d4 + 1d4 skada, och varje träff förgiftar."},
+  {id:"manklinga",sp:true,namn:"Månklingan",ord:"månklingan",skada:"1d6",traff:3,effekt:"bedova",n:1,chans:.25,form:"klinga",farg:"#e8f0ff",info:"+3 på slaget och 25 % chans att bedöva."}],
+ helare:[
+  {id:"klubba",namn:"Stridsklubba",ord:"klubban",skada:"1d6",form:"klubba",info:"Enkel och stadig."},
+  {id:"morgonstjarna",namn:"Morgonstjärna",ord:"morgonstjärnan",skada:"1d8",traff:-1,form:"morgonstjarna",info:"Spikad kula: mer skada, −1 på slaget."},
+  {id:"helig_stav",namn:"Helig stav",ord:"staven",skada:"1d6",magi:2,form:"stav",info:"Helning och heligt ljus blir +2 starkare."},
+  {id:"solklubba",sp:true,namn:"Solklubban",ord:"solklubban",skada:"1d6",extra:"1d6",form:"klubba",farg:"#ffd96a",info:"Lyser som solen: +1d6 strålande skada."},
+  {id:"livets_stav",sp:true,namn:"Livets stav",ord:"livets stav",skada:"1d6",magi:4,form:"stav",farg:"#9fe0a0",info:"Helning blir +4 starkare."},
+  {id:"valsignad_hammare",sp:true,namn:"Välsignade hammaren",ord:"hammaren",skada:"1d8",ac:1,form:"hammare",farg:"#f3eedf",info:"1d8 skada och +1 rustning."}],
+ bard:[
+  {id:"varja",namn:"Värja",ord:"värjan",skada:"1d6",traff:1,form:"varja",info:"Elegant: +1 på slaget."},
+  {id:"piska",namn:"Piska",ord:"piskan",skada:"1d4",effekt:"svag",n:1,chans:.5,form:"piska",info:"50 % chans att fienden får −1 på sina anfall."},
+  {id:"forttrollad_luta",namn:"Förtrollad luta",ord:"lutan",skada:"1d4",magi:2,form:"luta",info:"Sånger som helar eller skadar blir +2 starkare."},
+  {id:"silvervarja",sp:true,namn:"Silvervärjan",ord:"silvervärjan",skada:"1d8",traff:2,form:"varja",farg:"#e8f0ff",info:"1d8 skada och +2 på slaget."},
+  {id:"stormluta",sp:true,namn:"Stormlutan",ord:"stormlutan",skada:"1d6",magi:4,form:"luta",farg:"#9fd8ff",info:"Sångerna blir +4 starkare."},
+  {id:"ormpiska",sp:true,namn:"Ormpiskan",ord:"ormpiskan",skada:"1d6",effekt:"gift",gift:"1d4",chans:1,form:"piska",farg:"#8fd06a",info:"Varje träff förgiftar fienden."}],
+ katt:[{id:"klor",namn:"Klor",ord:"klorna",skada:"1d6",form:"klor",info:"Vassa klor och tänder."}]};
+const upplast=id=>(typeof spel!=="undefined"&&Array.isArray(spel.upplasta)&&spel.upplasta.includes(id));
+const vapenOk=(klass,W)=>W&&(!W.sp||upplast(W.id));
+// Hjältens vapen (det första om inget är valt eller om valet inte är upplåst)
+function vapenAv(h){const L=VAPEN[h.klass]||VAPEN.krigare,W=L.find(w=>w.id===h.vapen);return vapenOk(h.klass,W)?W:L[0]}
+function vapenEgenskaper(W){const t=[W.skada+" skada"];if(W.traff)t.push(fmt(W.traff)+" på slaget");if(W.ac)t.push(fmt(W.ac)+" rustning");
+ if(W.krit&&W.krit<20)t.push("kritisk på "+W.krit);if(W.extra)t.push("+"+W.extra+" vid träff");return t.join(" · ")}
+// Efter en besegrad boss: lås upp ett specialvapen, helst för en klass som är med i sällskapet.
+function lasUppVapen(){
+ spel.upplasta=Array.isArray(spel.upplasta)?spel.upplasta:[];
+ const klasser=[...new Set(partyHeroes().map(h=>h.klass))].filter(k=>k!=="katt");
+ const las=k=>(VAPEN[k]||[]).filter(w=>w.sp&&!spel.upplasta.includes(w.id)).map(w=>({k,w}));
+ let pool=klasser.flatMap(las);if(!pool.length)pool=Object.keys(VAPEN).flatMap(las);
+ if(!pool.length)return null;
+ const {k,w}=pool[Math.floor(Math.random()*pool.length)];spel.upplasta.push(w.id);
+ return{klass:k,vapen:w,text:"Ni hittar "+w.namn+"! "+KLASS[k].n+" kan nu välja det under Ändra. "+w.info};
+}
 const SKIN=["#f5d3b5","#e8b48f","#c98e62","#8d5a3b","#5c3a26","#9ccf8f"];
 const HAIR=["#f3d66b","#c9732f","#6b4423","#2a1c14","#e8e3d8","#d65a8f","#6fb6e8","#ef8a2b","#8a8f99","#222222","#7d6e60"];
 const OUTFIT=["#4b6fa8","#7a4fb0","#3f8a4f","#b0475a","#c98a2e","#4a4f5c","#2f8c8c"];
@@ -405,7 +472,7 @@ function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 let egna=load(KEY,[]).map(migrera), party=load(PKEY,["ville","svante","sally"]);
 // Ändringar av folk, klass och utseende på grundfigurerna (namnen ändras aldrig).
 const AKEY="tarningsriket-grundandringar", DKEY="tarningsriket-andringar-osparade";
-const EDITABLE=["folk","alder","skagg","attacker","klass","hud","har","stil","klader","flackar","s"];
+const EDITABLE=["folk","alder","skagg","attacker","vapen","klass","hud","har","stil","klader","flackar","s"];
 let andringar=Object.fromEntries(Object.entries(load(AKEY,{})).map(([k,v])=>[k,migrera(v,true)])), andrDirty=load(DKEY,false);
 function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
  if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
@@ -417,7 +484,7 @@ let view="home";
 const SPKEY="tarningsriket-aventyr";
 function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
  liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0,
- niva:o.niva&&typeof o.niva==="object"?o.niva:{},utr:o.utr&&typeof o.utr==="object"?o.utr:{},
+ niva:o.niva&&typeof o.niva==="object"?o.niva:{},upplasta:Array.isArray(o.upplasta)?o.upplasta.filter(x=>typeof x==="string"):[],utr:o.utr&&typeof o.utr==="object"?o.utr:{},
  run:o.run&&typeof o.run==="object"&&Array.isArray(o.run.party)?o.run:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[]}}
 let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
@@ -552,31 +619,51 @@ function heroGrid(h){
   satt(G,[[5,0],[6,0],[4,0],[3,1]],"R");
   fyll(G,4,9,7,12,"M",["O"]);fyll(G,5,10,6,14,"O");fyll(G,1,10,2,12,"M",["O","o"]);fyll(G,9,10,10,12,"m",["O","o"]);
   fyll(G,0,10,2,15,"O");satt(G,[[0,10],[0,15]],"m");satt(G,[[1,12]],"G");fyll(G,0,11,0,14,"M");
-  fyll(G,11,3,11,12,"W");satt(G,[[11,2]],"w");fyll(G,10,13,12,13,"G");satt(G,[[11,14]],"L");satt(G,[[11,15]],"G");
+  const fo=vapenAv(h).form;
+  if(fo==="storsvard"){fyll(G,0,10,2,15,".");fyll(G,1,10,2,12,"M");satt(G,[[0,10],[0,11],[0,12]],"K");fyll(G,11,0,11,12,"V");satt(G,[[11,0]],"v");fyll(G,10,13,12,13,"G");fyll(G,11,14,11,16,"L");satt(G,[[11,17]],"G")}
+  else if(fo==="yxa"){fyll(G,11,4,11,16,"Z");fyll(G,12,4,13,7,"V");satt(G,[[12,8],[13,3]],"v");satt(G,[[11,3]],"M")}
+  else if(fo==="hammare"){fyll(G,11,6,11,16,"Z");fyll(G,10,3,13,5,"V");satt(G,[[13,5],[10,5]],"v")}
+  else{fyll(G,11,3,11,12,"V");satt(G,[[11,2]],"v");fyll(G,10,13,12,13,"G");satt(G,[[11,14]],"L");satt(G,[[11,15]],"G")}
   fyll(G,4,16,7,20,"m",["P"]);
  }else if(k==="magiker"){
   fyll(G,2,3,9,3,"D");satt(G,[[4,2],[5,2],[6,2],[7,2],[5,1],[6,1],[6,0],[7,0]],"O");satt(G,[[8,2],[7,1]],"o");satt(G,[[5,2]],"G");
   fyll(G,3,15,8,21,"O");fyll(G,3,16,3,21,"K");fyll(G,8,16,8,21,"K");satt(G,[[2,21],[9,21]],"K");fyll(G,4,21,7,21,"o");satt(G,[[6,16],[6,17],[6,18],[6,19],[6,20]],"o");
   satt(G,[[4,13],[5,13],[6,13],[7,13]],"G");
-  fyll(G,12,2,12,23,"Z");satt(G,[[12,0],[11,1],[13,1],[12,1]],"X");satt(G,[[12,1]],"x");satt(G,[[11,14]],"S");
+  {const fo=vapenAv(h).form;
+   if(fo==="spo"){fyll(G,11,10,11,14,"Z");satt(G,[[11,9]],"X");satt(G,[[11,8]],"x")}
+   else if(fo==="bok"){fyll(G,10,12,12,15,"R");fyll(G,11,12,11,15,"G");satt(G,[[10,12]],"X")}
+   else{fyll(G,12,2,12,23,"Z");satt(G,[[12,0],[11,1],[13,1],[12,1]],"X");satt(G,[[12,1]],"x");satt(G,[[11,14]],"S")}}
  }else if(k==="bagskytt"||k==="ninja"){
   const dark=k==="ninja";
   satt(G,[[4,1],[5,1],[6,1],[7,1]],"O");fyll(G,3,2,8,2,"O");satt(G,[[3,3],[3,4],[3,5],[3,6],[4,3],[4,7],[4,6]],"O");satt(G,[[8,2],[3,7]],"o");
   satt(G,[[2,3],[2,4],[2,5],[2,6],[2,7],[3,8]],"K");satt(G,[[3,1],[8,1],[9,2]],"K");
   fyll(G,4,9,7,12,"L",["O"]);fyll(G,1,10,2,12,"O",["O","o"]);fyll(G,9,10,10,12,"o",["O","o"]);satt(G,[[2,9],[3,9],[8,9],[9,9]],"O");
-  if(dark){fyll(G,5,7,8,7,"D",["S","s"]);satt(G,[[6,6],[7,6],[8,6]],"D");fyll(G,4,16,7,20,"D",["P","p"]);satt(G,[[11,11],[11,12]],"W");satt(G,[[11,13]],"w");satt(G,[[11,14]],"L");satt(G,[[10,14]],"S")}
-  else{satt(G,[[11,6],[12,7],[12,8],[13,9],[13,10],[13,11],[12,12],[12,13],[11,14]],"Z");fyll(G,11,7,11,13,"W");
+  const fo=vapenAv(h).form;
+  if(dark){fyll(G,5,7,8,7,"D",["S","s"]);satt(G,[[6,6],[7,6],[8,6]],"D");fyll(G,4,16,7,20,"D",["P","p"]);
+   if(fo==="katana"){fyll(G,11,4,11,13,"V");satt(G,[[12,3]],"v");satt(G,[[10,14],[12,14]],"G");fyll(G,11,14,11,16,"L")}
+   else{satt(G,[[11,11],[11,12]],"V");satt(G,[[11,13]],"v");satt(G,[[11,14]],"L");if(fo==="dolkar"){satt(G,[[0,11],[0,12]],"V");satt(G,[[0,13]],"v");satt(G,[[0,14]],"L")}}
+   satt(G,[[10,14]],"S")}
+  else if(fo==="armborst"){fyll(G,10,12,13,12,"Z");satt(G,[[13,10],[13,11],[13,13],[13,14]],"V");fyll(G,11,11,11,13,"Z");
+   satt(G,[[1,7],[2,7],[1,8],[2,8]],"l");satt(G,[[1,6],[2,6]],"W")}
+  else{satt(G,[[11,6],[12,7],[12,8],[13,9],[13,10],[13,11],[12,12],[12,13],[11,14]],vapenAv(h).farg?"V":"Z");fyll(G,11,7,11,13,"W");
    satt(G,[[1,7],[2,7],[1,8],[2,8]],"l");satt(G,[[1,6],[2,6]],"W")}
  }else if(k==="helare"){
   satt(G,[[4,1],[5,1],[6,1],[7,1]],"M");fyll(G,3,2,8,2,"M");satt(G,[[3,3],[3,4],[3,5],[4,3]],"M");satt(G,[[3,6]],"m");
   fyll(G,4,9,7,14,"W");satt(G,[[5,10],[5,11],[5,12],[4,11],[6,11]],"G");fyll(G,7,9,7,14,"w");
   fyll(G,1,10,2,12,"M",["O","o"]);fyll(G,9,10,10,12,"m",["O","o"]);
-  satt(G,[[11,9],[12,9],[11,10],[12,10]],"M");satt(G,[[12,10]],"m");fyll(G,11,11,11,15,"Z");
+  {const fo=vapenAv(h).form;
+   if(fo==="stav"){fyll(G,12,2,12,23,"Z");satt(G,[[12,1],[11,1],[13,1],[12,0]],"V");satt(G,[[11,14]],"S")}
+   else if(fo==="hammare"){fyll(G,11,8,11,15,"Z");fyll(G,10,6,13,8,"V");satt(G,[[13,8]],"v")}
+   else if(fo==="morgonstjarna"){satt(G,[[11,9],[12,9],[11,10],[12,10]],"V");satt(G,[[10,9],[13,10],[11,8],[12,11]],"v");fyll(G,11,11,11,15,"Z")}
+   else{satt(G,[[11,9],[12,9],[11,10],[12,10]],"V");satt(G,[[12,10]],"v");fyll(G,11,11,11,15,"Z")}}
   fyll(G,0,10,2,15,"O");fyll(G,0,11,0,14,"G");satt(G,[[1,12]],"W");
  }else if(k==="bard"){
   fyll(G,2,2,9,2,"o");satt(G,[[4,1],[5,1],[6,1],[7,1],[5,0],[6,0]],"O");satt(G,[[7,0],[8,0],[8,-1]],"R");satt(G,[[9,0]],"R");
   satt(G,[[5,10],[5,12]],"G");satt(G,[[6,9],[6,10],[6,11],[6,12]],"o");
-  fyll(G,8,12,11,15,"Z");satt(G,[[9,13]],"K");satt(G,[[10,14]],"z");satt(G,[[11,11],[12,10],[13,9]],"z");satt(G,[[13,8]],"G");
+  {const fo=vapenAv(h).form,Lu=fo==="luta"&&vapenAv(h).farg?"V":"Z";
+   fyll(G,8,12,11,15,Lu);satt(G,[[9,13]],"K");satt(G,[[10,14]],"z");satt(G,[[11,11],[12,10],[13,9]],"z");satt(G,[[13,8]],"G");
+   if(fo==="varja"){fyll(G,0,6,0,13,"V");satt(G,[[0,14]],"G");satt(G,[[1,14]],"G")}
+   else if(fo==="piska"){satt(G,[[1,14],[0,15],[0,16],[1,17],[2,18],[3,19]],"V");satt(G,[[1,13]],"L")}}
  }else if(k==="ingen"){
   fyll(G,3,15,8,20,"O",["P","p","K"]),fyll(G,3,15,3,20,"K"),fyll(G,8,15,8,20,"K");
  }
@@ -598,11 +685,12 @@ function kattGrid(h){
  return G;
 }
 function farger(h){
+ const Wf=vapenAv(h).farg;
  const skin=SKIN[h.hud]||SKIN[0],hair=HAIR[h.har]||HAIR[0],out=OUTFIT[h.klader]||OUTFIT[0];
  const cat=h.folk==="katt"||h.klass==="katt",fur=hair;
  return{K:KONTUR,S:skin,s:shade(skin,-.22),E:cat?"#9fd36a":"#1c1418",H:hair,h:shade(hair,-.3),O:out,o:shade(out,-.3),D:shade(out,-.55),
   P:"#4a3f38",p:"#3a302a",B:"#3a2a20",L:"#6b4a2e",l:"#4e3420",M:"#9aa4ae",m:"#6c7680",G:"#d4a63a",W:"#e6e1d6",w:"#b8b2a6",
-  Z:"#7a5432",z:"#5a3c22",R:"#a83a32",X:"#9fe8ff",x:"#e8fbff",
+  Z:"#7a5432",z:"#5a3c22",R:"#a83a32",X:Wf||"#9fe8ff",x:Wf?shade(Wf,.5):"#e8fbff",V:Wf||"#e6e1d6",v:shade(Wf||"#e6e1d6",-.3),
   F:fur,T:shade(fur,-.45),C:"#c9935a",N:"#c97a8a"};
 }
 // Lägger på kontur runt allt och skuggning: ljus uppifrån vänster.
@@ -620,7 +708,7 @@ function rendera(G,pal,{kontur=true,skugga=true}={}){
 }
 const HJCACHE=new Map();
 function heroCanvas(h){
- const key=JSON.stringify([h.folk,h.folk==="katt"?0:alderAv(h),!!h.skagg,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
+ const key=JSON.stringify([vapenAv(h).id,h.folk,h.folk==="katt"?0:alderAv(h),!!h.skagg,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
  if(!HJCACHE.has(key))HJCACHE.set(key,rendera(heroGrid(h),farger(h)));
  return HJCACHE.get(key);
 }
@@ -643,7 +731,8 @@ function vitals(h){const K=KLASS[h.klass],s=finalStats(h);
  const N=(typeof spel!=="undefined"&&spel.niva[h.id])||{lvl:1},U=(typeof spel!=="undefined"&&spel.utr[h.id])||{},lvl=N.lvl||1;
  const per=Math.max(1,Math.floor(K.hd/2)+1+mod(s.tal)),prof=2+Math.floor((lvl-1)/4);
  const R=lage==="run"&&spel.run?spel.run:null,bless=R&&R.bless&&R.bless[h.id]?1:0,curse=R&&R.curse&&R.curse[h.id]?1:0;
- return{hp:Math.max(1,K.hd+mod(s.tal))+(lvl-1)*per,ac:K.ac(h)+(U.acb||0)-curse,atk:mod(s[K.main])+prof+(U.wb||0)+bless,wb:U.wb||0,lvl}}
+ const W=vapenAv(h);
+ return{hp:Math.max(1,K.hd+mod(s.tal))+(lvl-1)*per,ac:K.ac(h)+(U.acb||0)-curse+(W.ac||0),atk:mod(s[K.main])+prof+(U.wb||0)+bless+(W.traff||0),wb:U.wb||0,lvl,W}}
 
 /* ===== Hjälpare ===== */
 const app=document.getElementById("app");
@@ -710,7 +799,7 @@ function sheet(h){
    el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
    el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))),
   bars,
-  el("div",{class:"ability"},el("strong",{},K.vapen+" · "+K.skada+" skada"),el("p",{},"Slå en d20 och lägg till "+fmt(v.atk)+". Kommer du upp i fiendens rustning så träffar du.")),
+  el("div",{class:"ability"},el("strong",{},v.W.namn+" · "+vapenEgenskaper(v.W)),el("p",{},v.W.info+" Slå en d20 och lägg till "+fmt(v.atk)+". Kommer du upp i fiendens rustning så träffar du.")),
   el("h3",{class:"subhead"},"Specialattacker"),
   ...attackerAv(h).map(id=>{const A=attackDef(h.klass,id);return el("div",{class:"ability special"},el("strong",{},A.namn),el("p",{},A.info+". En gång per strid."))}),
   el("div",{class:"ability"},el("strong",{},K.n),el("p",{},K.t)),
@@ -721,7 +810,7 @@ function sheet(h){
 
 /* ===== Karaktärsskaparen ===== */
 let draft, step;
-const STEPS=["Klass","Attacker","Utseende","Tärningar","Klar"];
+const STEPS=["Klass","Strid","Utseende","Tärningar","Klar"];
 function creator(){
  draft={id:"egen-"+Date.now(),namn:"",folk:"manniska",alder:ALDER_STD,klass:null,attacker:[],hud:0,har:0,stil:"kort",klader:0,flackar:false,rolls:null,omslag:3,om:""};
  step=0; view="creator"; document.getElementById("party").hidden=true; renderCreator();
@@ -744,7 +833,7 @@ function nav(canNext,nextTxt="Nästa"){
 }
 // Byter klass: katt-klassen gör hjälten till en katt.
 function valjKlass(k){if(draft.klass===k)return;draft.klass=k;const katt=k==="katt";
- if(katt&&draft.folk!=="katt"&&draft.har<6)draft.har=7;draft.folk=katt?"katt":"manniska";draft.attacker=attackerAv({klass:k})}
+ if(katt&&draft.folk!=="katt"&&draft.har<6)draft.har=7;draft.folk=katt?"katt":"manniska";draft.attacker=attackerAv({klass:k});draft.vapen=(VAPEN[k]||[])[0]?.id}
 function stepKlass(){
  head(1,"Vad är du bra på?","Din klass bestämmer hur du slåss och vilka specialattacker du kan välja. Välj Katt om hjälten ska vara en katt.");
  app.append(el("div",{class:"choices"},Object.entries(KLASS).map(([k,c])=>el("button",{class:"choice"+(draft.klass===k?" sel":""),"aria-pressed":draft.klass===k?"true":"false",onclick:()=>{valjKlass(k);renderCreator()}},
@@ -764,8 +853,19 @@ function attackVal(){
    const y=window.scrollY;rerender();window.scrollTo(0,y)}},el("strong",{},(on?"✓ ":"")+A.namn),el("span",{},A.info))})));
  return box;
 }
+// Välj vapen. Specialvapen syns med lås tills de hittats efter en boss.
+function vapenVal(){
+ if(draft.klass==="katt")return null;
+ const L=VAPEN[draft.klass]||[],cur=vapenAv(draft).id;
+ const box=el("div",{class:"field"},el("label",{},"Vapen"),el("p",{class:"fieldhint"},"Vapnet bestämmer skadan i vanliga anfall och specialattacker med vapnet. Specialvapen låses upp när ni besegrar bossar."));
+ box.append(el("div",{class:"choices"},L.map(W=>{const ok=vapenOk(draft.klass,W),on=ok&&cur===W.id;
+  return el("button",{class:"choice"+(on?" sel":"")+(ok?"":" locked"),disabled:!ok,"aria-pressed":on?"true":"false",onclick:()=>{draft.vapen=W.id;const y=window.scrollY;rerender();window.scrollTo(0,y)}},
+   el("strong",{},(ok?"":"🔒 ")+(on?"✓ ":"")+W.namn),el("div",{class:"bonus"},vapenEgenskaper(W)),el("span",{},ok?W.info:"Hittas efter en besegrad boss."))})));
+ return box;
+}
 function stepAttacker(){
- head(2,"Välj tre specialattacker","Varje specialattack kan användas en gång per strid. Ett vanligt anfall kan du alltid göra. Du kan byta attacker senare under Ändra.");
+ head(2,draft.klass==="katt"?"Välj tre specialattacker":"Välj vapen och specialattacker","Varje specialattack kan användas en gång per strid. Ett vanligt anfall kan du alltid göra. Du kan byta senare under Ändra.");
+ const vv=vapenVal();if(vv)app.append(vv);
  app.append(attackVal());
  nav((draft.attacker||[]).length===3);
 }
@@ -831,13 +931,14 @@ function stepDone(){
   el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
   el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
   el("div",{class:"vital atk"},el("b",{},fmt(v.atk)),el("span",{},"Anfall"))));
+ {const W=vapenAv(draft);app.append(el("div",{class:"ability"},el("strong",{},W.namn+" · "+vapenEgenskaper(W)),el("p",{},W.info)))}
  attackerAv(draft).forEach(id=>{const A=attackDef(draft.klass,id);app.append(el("div",{class:"ability special"},el("strong",{},A.namn),el("p",{},A.info)))});
  const om=el("input",{id:"om",type:"text",maxlength:"60",placeholder:"T.ex. Rädd för spindlar men älskar pannkakor",value:draft.om,autocomplete:"off"});
  om.addEventListener("input",()=>draft.om=om.value);
  app.append(el("div",{class:"field"},el("label",{for:"om"},"En mening om hjälten (valfritt)"),om));
  app.append(el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
-  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),attacker:attackerAv(draft),folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
+  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
    egna=[...egna,hero];if(party.length<4){party=[...party,hero.id]}persist();home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
 }
 
@@ -866,6 +967,8 @@ function renderEdit(){
   onclick:()=>{if(key==="folk"&&k==="katt"&&draft.folk!=="katt"&&draft.har<6)draft.har=7;draft[key]=k;renderEdit()}},o.n)));
  app.append(el("div",{class:"field"},el("label",{},"Klass"),el("div",{class:"pills"},Object.entries(KLASS).map(([k,o])=>el("button",{class:"pill"+(draft.klass===k?" sel":""),"aria-pressed":draft.klass===k?"true":"false",
   onclick:()=>{valjKlass(k);renderEdit()}},o.n))),el("p",{class:"note"},K.t)));
+ {const vv=vapenVal();if(vv)app.append(vv)}
+ {const vv=vapenVal();if(vv)app.append(vv)}
  app.append(attackVal());
  app.append(...lookFields());
  const slot=el("div");
@@ -875,7 +978,7 @@ function renderEdit(){
   el("button",{class:"btn ghost",onclick:back},"Avbryt"),
   el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
    if(attackerAv(draft).length<3||(draft.attacker||[]).length!==3){flash("Välj tre specialattacker först.");return}
-   const upd={attacker:attackerAv(draft),folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
+   const upd={attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
    if(draft.grund){andringar[draft.id]=upd;andrDirty=true}
    else egna=egna.map(x=>x.id===draft.id?{...x,...upd,namn:draft.namn.trim()}:x);
    persist();back();flash("Ändringarna är sparade.");
@@ -1183,8 +1286,8 @@ function visaScen(){
  const txt=scenText(sc,K),story=storyEl(txt);app.append(story);
  const akt=el("div",{class:"actions"});
  if(sc.slut){
-  if(!K.klar){K.klar=true;K.slut=K.scen;sparaSpel()}
-  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),
+  if(!K.klar){K.klar=true;K.slut=K.scen;const nytt=lasUppVapen();K.nyttVapen=nytt?nytt.text:null;sparaSpel()}
+  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot"},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen)):null,
    el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
  }else if(sc.strid){
   akt.append(el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
@@ -1335,7 +1438,7 @@ function hjalteTur(h){
  const K=KLASS[h.klass],akt=el("div",{class:"actions"});
  stridVy(gen(h.namn)+" tur!");
  const meny=()=>{akt.replaceChildren();
-  akt.append(el("button",{class:"choicebtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},el("span",{},"Anfall med "+K.ord),el("small",{},K.vapen+" · "+K.skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
+  akt.append(el("button",{class:"choicebtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},el("span",{},"Anfall med "+vapenAv(h).ord),el("small",{},vapenAv(h).namn+" · "+vapenAv(h).skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
   attackerAv(h).forEach(id=>{const A=attackDef(h.klass,id),kvar=kvarAttack(h,A);
    akt.append(el("button",{class:"choicebtn special",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},el("span",{},A.namn),el("small",{},kvar?A.info:"Använd i den här striden")))});
   if(harDryck())akt.append(el("button",{class:"choicebtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!")},()=>hjalteTur(h)),()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
@@ -1353,7 +1456,7 @@ function anvandAttack(h,A,meny){
  const lvl=vitals(h).lvl;
  if(A.typ==="anfall"){if(A.alla)return anfall(h,null,A);return valjMal(h,f=>anfall(h,f,A),ang)}
  if(A.typ==="auto"){const go=lista=>{const rader=[ropText(A,h,lista.length===1?lista[0].namn:"alla fiender")];
-   lista.forEach(f=>{let n=0;for(let i=0;i<(A.antal||1);i++)n+=slaa(A.skada).tot;f.liv=Math.max(0,f.liv-n);
+   lista.forEach(f=>{let n=(vapenAv(h).magi||0);for(let i=0;i<(A.antal||1);i++)n+=slaa(A.skada).tot;f.liv=Math.max(0,f.liv-n);
     rader.push(f.namn+" tar "+n+" i skada."+(f.liv<=0?" "+fly(f):effekt(f,A)))});
    visaHandelse(rader.join(" "))};
   if(A.alla)return go(levande());return valjMal(h,f=>go([f]),ang)}
@@ -1361,7 +1464,7 @@ function anvandAttack(h,A,meny){
    lista.forEach(f=>{const t=effekt(f,{...A,rundor:A.rundor||3},true);rader.push(t?t.trim():f.namn+" bryr sig inte.")});visaHandelse(rader.join(" "))};
   if(A.alla)return go(levande());return valjMal(h,f=>go([f]),ang)}
  if(A.typ==="hela"){
-  const mangd=v=>A.halva?Math.max(1,Math.ceil(maxLiv(v)/2)-Math.max(0,liv(v))):Math.max(1,slaa(A.skada).tot+(A.stat?mod(h.s[A.stat]):0)+(A.niva?lvl:0));
+  const mangd=v=>A.halva?Math.max(1,Math.ceil(maxLiv(v)/2)-Math.max(0,liv(v))):Math.max(1,slaa(A.skada).tot+(A.stat?mod(h.s[A.stat]):0)+(A.niva?lvl:0)+(vapenAv(h).magi||0));
   const hela1=v=>{const fore=liv(v),uppe=fore>0,n=mangd(v);setLiv(v,Math.max(0,fore)+n);const fick=liv(v)-Math.max(0,fore);return fick<=0?v.namn+" har redan fullt liv.":v.namn+" får "+fick+" liv tillbaka"+(!uppe?" och vaknar!":".")};
   if(A.mal==="sig")return visaHandelse(ropText(A,h)+" "+hela1(h));
   if(A.mal==="alla")return visaHandelse(ropText(A,h)+" "+partyHeroes().map(hela1).join(" "));
@@ -1401,9 +1504,12 @@ function anfall(h,f,A,kvar){
   mal.forEach(x=>{const trf=r===20||(r!==1&&tot>=x.rustning);
    if(!trf){if(mal.length>1)rader.push(x.namn+": miss.");return}
    nagon=true;
-   const bas=A.skada?slaa(A.skada,r===20).tot:slaa(K.skada,r===20).tot,ext=A.extra?slaa(A.extra,r===20).tot:0;
+   const W=v.W,krit=r>=(W.krit||20);
+   const bas=A.skada?slaa(A.skada,krit).tot:slaa(W.skada,krit).tot,ext=(A.extra?slaa(A.extra,krit).tot:0)+(W.extra?slaa(W.extra,krit).tot:0);
    const n=Math.max(1,bas+mod(h.s[K.main])+v.wb+ext);x.liv=Math.max(0,x.liv-n);
-   rader.push((r===20?"KRITISK TRÄFF! ":"")+(mal.length>1?x.namn+" tar "+n+" i skada.":h.namn+" träffar "+x.namn+" med "+K.ord+" och gör "+n+" i skada.")+(x.liv<=0?" "+fly(x):effekt(x,A)));
+   let tjuv="";if(W.tjuv){const fore=liv(h);setLiv(h,fore+Math.floor(n*W.tjuv));if(liv(h)>fore)tjuv=" "+h.namn+" får "+(liv(h)-fore)+" liv.";}
+   const wEff=x.liv>0&&W.effekt&&Math.random()<(W.chans??1)?effekt(x,W):"";
+   rader.push((krit?"KRITISK TRÄFF! ":"")+(mal.length>1?x.namn+" tar "+n+" i skada.":h.namn+" träffar "+x.namn+" med "+W.ord+" och gör "+n+" i skada.")+(x.liv<=0?" "+fly(x):effekt(x,A)+wEff)+tjuv);
   });
   if(!nagon&&mal.length===1)rader.push(r===1?"Hoppsan! "+h.namn+" snubblar och missar helt.":h.namn+" missar. "+mal[0].namn+" hoppar undan i sista stund!");
   res.replaceChildren(el("div",{class:"sum"},r+" + "+atk+(pb?" + "+pb+" pepp":"")+" = "+tot,el("small",{},mal.length>1?"Jämförs med varje fiendes rustning":"Behöver minst "+krav)),
@@ -1624,6 +1730,7 @@ function visaRun(){
    el("button",{class:"btn",onclick:()=>{spel.run=null;sparaSpel();lage=null;adventures()}},"Tillbaka"));
  }else if(R.fas==="vann"){
   akt.append(el("div",{class:"theend"},el("strong",{},"Bossen är besegrad!"),el("span",{},"Ni kan gå hem som hjältar, eller vila och gå djupare. Där blir det farligare.")));
+  if(R.nyttVapen)akt.append(el("div",{class:"theend loot"},el("strong",{},"Nytt vapen: "+R.nyttVapen),el("span",{},"Välj det under Ändra på hjältebladet.")));
   knapp("Gå djupare: kapitel "+(R.kapitel+1),"Alla vilar och får fullt liv. Ni hittar "+PLATSER[R.plats].djupare+".",nastaKapitel,{special:true});
   knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel.")});
  }else if(R.fas==="strid"){
@@ -1646,7 +1753,7 @@ function nastaRum(){
  rlog(R.djup>=DJUP?"Gången slutar vid en stor port.":"Ni går vidare.","sep");sparaSpel();visaRun();
 }
 function nastaKapitel(){
- const R=spel.run;R.kapitel++;R.djup=1;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.bless={};R.curse={};
+ const R=spel.run;R.nyttVapen=null;R.kapitel++;R.djup=1;R.fas="dorrar";R.rum=null;R.lyssnat=false;R.bless={};R.curse={};
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
  rlog("Kapitel "+R.kapitel+" · Djupare ner","sep");rlog("Alla har vilat och känner sig starka igen. Ni hittar "+PLATSER[R.plats].djupare+".");
  R.dorrar=gorDorrar();sparaSpel();visaRun();
@@ -1807,7 +1914,8 @@ function runVinst(){
   else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(h.namn+" hämtar andan och lägger om såren. +"+(liv(h)-f)+" liv.","heal")}});
  H.forEach(h=>gainXp(h,del));
  const boss=R.rum.typ==="boss";
- if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(PLATSER[R.plats].boss+" är besegrad!","crit")}
+ if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(PLATSER[R.plats].boss+" är besegrad!","crit");
+  const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn}}
  else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog("Kistan som de vaktade står öppen.","heal")}
  else{R.fas="rum";R.rum.klar=true}
  sparaSpel();visaRun();
