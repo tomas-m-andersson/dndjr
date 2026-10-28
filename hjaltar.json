@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:30:08.615Z",
+  "uppdaterad": "2026-10-28T20:30:36.315Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219406536,
+    "tid": 1793219434357,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -167,7 +167,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "skatt",
-        "klar": false,
+        "klar": true,
         "loot": [
           {
             "k": "guld",
@@ -208,6 +208,18 @@
         {
           "t": "Kistan som de vaktade står öppen.",
           "k": "heal"
+        },
+        {
+          "t": "Ni hittar 62 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -216,7 +228,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 43,
+      "guld": 105,
       "saker": [
         "Läkedryck",
         "Läkedryck",
@@ -225,7 +237,9 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck"
+        "Läkedryck",
+        "Stor läkedryck",
+        "Stor läkedryck"
       ],
       "bless": {},
       "curse": {},
