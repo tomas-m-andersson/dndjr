@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:46:19.862Z",
+  "uppdaterad": "2026-10-28T22:46:41.257Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793227577874,
+    "tid": 1793227599341,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -189,7 +189,7 @@
           "kand": false
         }
       ],
-      "lyssnat": false,
+      "lyssnat": true,
       "rum": null,
       "logg": [
         {
@@ -247,6 +247,10 @@
         {
           "t": "Ni torkar svetten ur pannan och går vidare.",
           "k": ""
+        },
+        {
+          "t": "Tomas lyssnar länge. Ett eko. Kanske. Det går inte att säga.",
+          "k": "note"
         }
       ],
       "party": [
