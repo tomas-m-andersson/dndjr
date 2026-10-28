@@ -1055,7 +1055,7 @@ const TVW=96,TVH=54;
 const SPR={
  vatte:{rows:["..G...G..",".GGGGGGG.","GGYGGGYGG",".GGGGGGG.","..GGRGG..","...GGG...","..BBBBB..",".GBBBBBG.","G.BBBBB.G","..BBBBB..","..B...B..",".GG...GG."],pal:{G:"#5e8f43",Y:"#e8b84a",R:"#3b2a1a",B:"#5c4330"}},
  troll:{rows:["....TTTT....","...TTTTTT...","..TTYTTYTT..","..TTTNNTTT..","..TTWTTWTT..","...TTTTTT...",".TTTTTTTTTT.","TTTBBBBBBTTT","TT.BBBBBB.TT","TT.BBBBBB.TT","T..BBBBBB..T","...BBBBBB...","...TT..TT...","...TT..TT...","..TTT..TTT.."],pal:{T:"#6b7f5c",Y:"#1b1b22",N:"#859467",W:"#e6e1d6",B:"#4a3a2a"},skala:2},
- varg:{rows:[".G............","GGG...........","GYGG..........","GGGGGGGGGGG...",".DGGGGGGGGGG..","..GGGGGGGGGGGG","..GG.G...GG..G","..GG.G...GG...","..G..G...G.G.."],pal:{G:"#8a8f99",Y:"#ffe14d",D:"#2a2a2a"}},
+ varg:{rows:["....GG................","...GGGG...............","..GGGGGD..............",".GYGGGGDDDDDDDDDD.....","NGGGGGGGDDDDDDDDDDDD..","GGGGGGGGGGGGGGGGGGGDD.",".WGWLGGGGGGGGGGGGGGGDD","..LLLGGGGGGGGGGGGGG..D","....LLLGGGGGGGGGGGG...",".....LGG..LLLL..GGG...",".....GG.....GG...GG...",".....GG.....GG...GG...","....GG.....GG...GG....","....DD.....DD...DD...."],pal:{G:"#7d8590",D:"#4a5058",L:"#b8bec6",Y:"#ffcf3d",W:"#efe6d0",N:"#15111a"}},
  krak:{rows:["..H..........H........","..HH........HH...AX...","...HHHHHHHHHH....AXX..","...HHHHHHHHHH....AXXX.","..GGGGGGGGGGGG...AXXX.",".GGGYYGGGGYYGGG..AXXX.","GGGGGGGGGGGGGGGG.AXX..","..GGGGGNNGGGGG...AX...","..GGRWRRRRWRGG...A....","...GGGGGGGGGG....A....",".GGBBBBBBBBBBGG..A....","GGBBBBBBBBBBBBGG.A....","GG.BBBBMMBBBB.GGGA....","GG.BBBBBBBBBB.GGGA....","GG.BBBBBBBBBB....A....",".G.SSSSSSSSSS....A....","...BBBBBBBBBB....A....","...BBBB..BBBB....A....","...BBB....BBB....A....","...GGG....GGG....A....","..GGGG....GGGG...A....","..GGGG....GGGG........"],pal:{H:"#9aa3ad",G:"#5f9a3e",Y:"#ff5a3d",N:"#4d7f32",R:"#2a1a10",W:"#f3eedf",B:"#4a3423",M:"#c9a227",S:"#2a1a10",A:"#7a5230",X:"#dfe6ec"}},
  spindel:{rows:["L..L....L..L",".L.L....L.L.","..LBBBBBBL..",".LBBRBBRBBL.","L.LBBBBBBL.L","..L.BBBB.L..",".L........L."],pal:{L:"#8a7aa3",B:"#4a3d5c",R:"#ff3d3d"}},
  skuggling:{rows:["...SS...","..SSSS..",".SSSSSS.",".SWSSWS.",".SSSSSS.","SSSSSSSS",".SSSSSS.",".S.SS.S.","S..S..S.","...S...."],pal:{S:"#3a2752",W:"#c9f0ff"}},
@@ -1071,7 +1071,7 @@ const SPR={
  lagereld:{rows:["....Y.....","...YOY....","..YOROY...","..ORRRO...","...ORO....","B.BBBBBB.B",".BBBBBBBB."],pal:{"Y":"#ffd96a","O":"#ff9a3d","R":"#e0603a","B":"#6b4423"}},
  brunn:{rows:["W..........W","W.RRRRRRRR.W","WRRRRRRRRRRW","W..........W","SSSSSSSSSSSS","SBBBBBBBBBBS","SSSSSSSSSSSS","SSSSSSSSSSSS"],pal:{"W":"#6b4423","R":"#7a3b2e","S":"#7d8790","B":"#1f4a6e"}},
  altare:{rows:["....CC....","....CC....","..CCCCCC..","....CC....","GGGGGGGGGG",".SSSSSSSS.",".SSSSSSSS.",".SSSSSSSS.","SSSSSSSSSS"],pal:{"C":"#f2c14e","G":"#c9c2d6","S":"#6b6478"}},
- lavahund:{alias:"varg",pal:{G:"#3a1a14",Y:"#ffd23d",D:"#ff6a2b"}},
+ lavahund:{alias:"varg",pal:{G:"#3a1a14",Y:"#ffd23d",D:"#ff6a2b",L:"#7a2a1a"}},
  eldklo:{alias:"drake",skala:2,pal:{R:"#c0392b",Y:"#ffe14d",W:"#ff8a3d",B:"#f2c14e"}},
  spoke:{rows:["....WWWW....","..WWWWWWWW..",".WWWWWWWWWW.",".WKKWWWKKWW.",".WKKWWWKKWW.","WWWWWWWWWWWW","WWWWKKKWWWWW","WWWWWKWWWWWW","WWWWWWWWWWWW","wWWWWWWWWWWw",".WWWWWWWWWW.",".WwWWwWWwWW.",".W.WW.WW.WW.","...W...W..W."],pal:{"W":"#dfe8f0","w":"#aab8c8","K":"#1a1a2a"}},
  gargoyl:{rows:["G............G","GG..GGGG....GG","GGG.GYGYG..GGG","GGGGGGGGGGGGGG",".GGGGgGGgGGGG.","..GGGGGGGGGG..","...GGGGGGGG...","..GGgGGGGgGG..","..GG.GGGG.GG..","..G..GGGG..G..",".....GG.GG....","....GG...GG...","...GGG...GGG.."],pal:{"G":"#7a7f88","g":"#5a5f68","Y":"#ffcf3d"}},
@@ -1091,7 +1091,7 @@ const SPR={
  levande_rustning:{alias:"spokriddare",pal:{H:"#8a8f99",Y:"#ff4d4d",A:"#6a6f79",S:"#c9c2b0"}},
  giftspindel:{alias:"spindel",pal:{L:"#4a7a3a",B:"#2f5a2a",R:"#e8e03a"}},
  magmaslem:{alias:"slem",pal:{S:"#e0702a",H:"#ffd23d",K:"#ffd23d",B:"#8a2a1a"}},
- dimvarg:{alias:"varg",pal:{G:"#a8b0b8",Y:"#9fe8ff"}},
+ dimvarg:{alias:"varg",pal:{G:"#a8b0b8",Y:"#9fe8ff",D:"#7a828a",L:"#d8dde2"}},
  askskelett:{alias:"skelett",pal:{W:"#6a6a6a",K:"#ff8a2b"}},
  grottroll:{alias:"troll",pal:{T:"#4a5a6a",N:"#5a6a7a",B:"#3a2a1a"},skala:2},
  eldsalamander:{alias:"basilisk",pal:{L:"#c8582a",S:"#ffd23d",Y:"#fff3a0"}},
@@ -1207,13 +1207,15 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false}={})
  if(fiender)fiender.forEach(f=>{if(!f.ute)right.push({k:f.bild,a:1})});
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
  let x=TVW-2;
+ const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+(SPR[f.k]?sprSize(f.k).w:16),0);
+ const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
  const npc=(h,xx)=>{const c=heroSprite(h);g.save();g.translate(xx+c.width,TVH-25);g.scale(-1,1);g.drawImage(c,0,0);g.restore()};
  right.forEach(f=>{if(f.k==="greta"){x-=15;npc(GRETA,x);g.fillStyle="#6b4a2e";g.fillRect(x+2,TVH-13,1,13);g.fillRect(x+1,TVH-13,2,1);return}
   if(f.k==="bo"){x-=15;npc(BO,x);return}
   if(f.k==="handlare"){x-=17;npc(HANDLARE,x);g.fillStyle="#6b4a2e";g.fillRect(x+11,TVH-14,5,8);g.fillStyle="#4e3420";g.fillRect(x+11,TVH-14,5,1);g.fillRect(x+11,TVH-10,5,1);return}
   if(f.k==="resenar"){x-=18;g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
-  const {w,h}=sprSize(f.k);x-=w;sprite(g,f.k,x,TVH-h,f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero),f.a);
+  const {w,h}=sprSize(f.k);x-=w-(forsta?0:Math.round(krymp));forsta=false;sprite(g,f.k,x,TVH-h,f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero),f.a);
   if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy,3,1);g.fillRect(x+dx+2,TVH-h+dy,1,1);g.fillRect(x+dx,TVH-h+1+dy,3,1)});g.globalAlpha=1}});
 }
 
