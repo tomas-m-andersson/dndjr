@@ -117,8 +117,8 @@ window.AVENTYR = [
         bild: "skog",
         text: "Svartskogen är kolsvart. Granarna står så tätt att månljuset knappt når marken. Någonstans långt bort ylar en varg. Sedan en till. Närmare.\n\nVättarnas spår är svåra att följa i mörkret. Går ni fel kan ni gå rakt i armarna på det som ylar.",
         val: [
-          { text: "{namn} ser i mörker och leder vägen", krav: { folk: "alv" }, utfall: {
-              text: "För {namn} är natten inte svart, bara grå. Spåren syns tydligt. {namn} leder er i en stor båge runt vargarnas revir och fram till bäcken utan ett ljud.",
+          { text: "{namn} ser i mörker och leder vägen", krav: { folk: "katt" }, utfall: {
+              text: "För {namn} är natten inte svart, bara grå. Spåren syns tydligt, och {namn} kan lukta sig fram. {namn} leder er i en stor båge runt vargarnas revir och fram till bäcken utan ett ljud.",
               till: "vadet" } },
           { text: "{namn} spårar vättarna", krav: { klass: "bagskytt" }, prov: {
               egenskap: "vis", svarighet: 9, fraga: "",

@@ -121,6 +121,10 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .field{display:flex;flex-direction:column;gap:8px}
 .field label{font-weight:800}
 .field input{font:inherit;font-size:1.2rem;padding:12px;border-radius:6px;border:2px solid var(--line);background:var(--bg2);color:var(--fg);width:100%}
+.field input[type=range]{padding:0;border:0;background:none;accent-color:var(--gold);height:32px;flex:1;min-width:0}
+.agerow{display:flex;align-items:center;gap:12px}
+.agerow output{font-weight:800;min-width:7.5em;text-align:right;font-variant-numeric:tabular-nums}
+.fieldhint{color:var(--muted);font-size:.85rem}
 .swatches{display:flex;flex-wrap:wrap;gap:8px}
 .sw{width:42px;height:42px;border-radius:6px;border:3px solid var(--line)}
 .sw.sel{border-color:var(--gold);transform:scale(1.08)}
@@ -289,10 +293,19 @@ const STATS=[
  {k:"cha",n:"Charm",d:"prata, övertala, sjunga"}];
 const FOLK={
  manniska:{n:"Människa",bonus:{sty:1,smi:1,tal:1,klo:1,vis:1,cha:1},b:"+1 på allt",t:"Bra på lite av allt."},
- alv:{n:"Alv",bonus:{smi:2},b:"+2 Smidighet",t:"Ser i mörker och har spetsiga öron som hör långt."},
- dvarg:{n:"Dvärg",bonus:{tal:2},b:"+2 Tålighet",t:"Seg som en sten. Hittar hemliga gångar i grottor."},
- halvling:{n:"Halvling",bonus:{smi:2},b:"+2 Smidighet",t:"Tur: får slå om när tärningen visar 1."},
- katt:{n:"Katt",bonus:{smi:2,vis:1},b:"+2 Smidighet, +1 Visdom",t:"Landar alltid på fötterna och hör en mus på långt håll."}};
+ katt:{n:"Katt",bonus:{smi:2,vis:1},b:"+2 Smidighet, +1 Visdom",t:"Ser i mörker, landar alltid på fötterna och hör en mus på långt håll."}};
+// Ålder för människor. Längst är man mellan 18 och 60 år.
+const ALDER_MIN=6,ALDER_MAX=90,ALDER_STD=30;
+const alderAv=h=>{const a=Number(h&&h.alder);return Number.isFinite(a)?Math.max(ALDER_MIN,Math.min(ALDER_MAX,Math.round(a))):ALDER_STD};
+const alderOrd=a=>a<13?"barn":a<18?"tonåring":a<=60?"vuxen":"äldre";
+// Gamla folk som inte finns längre görs om till människor. Folkbonusen byts ut.
+const GAMLA_FOLK={alv:{smi:2},dvarg:{tal:2},halvling:{smi:2}};
+function migrera(h,andring){
+ if(!h||typeof h!=="object"||!GAMLA_FOLK[h.folk])return h;
+ const ob=GAMLA_FOLK[h.folk],nb=FOLK.manniska.bonus,o={...h,folk:"manniska"};if(!andring&&!o.alder)o.alder=ALDER_STD;
+ if(h.s&&typeof h.s==="object"){o.s={...h.s};Object.keys(nb).forEach(k=>{if(typeof o.s[k]==="number")o.s[k]=o.s[k]-(ob[k]||0)+(nb[k]||0)})}
+ return o;
+}
 const KLASS={
  riddare:{n:"Riddare",hd:10,main:"sty",ac:h=>16,acTxt:"Ringbrynja och sköld",vapen:"Svärd",skada:"1d8",fa:"Andra andningen",ft:"En gång per strid kan du hela dig själv med 1d10 kraft.",col:"#4b6fa8",t:"Stark och modig. Står längst fram och skyddar vännerna."},
  trollkarl:{n:"Trollkarl",hd:6,main:"klo",ac:h=>10+mod(h.s.smi),acTxt:"Inga rustningar, bara kåpa",vapen:"Trollstav",skada:"1d6",fa:"Magisk pil",ft:"Tre glödande pilar som alltid träffar. 1d4+1 skada var.",col:"#7a4fb0",t:"Kan trollformler. Klokast i gänget."},
@@ -309,10 +322,10 @@ const fmt=n=>(n>=0?"+":"")+n;
 
 /* ===== Grundfigurerna ===== */
 const BASE=[
- {id:"ville",namn:"Ville",folk:"manniska",klass:"riddare",hud:0,har:0,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
- {id:"svante",namn:"Svante",folk:"manniska",klass:"trollkarl",hud:1,har:1,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
- {id:"tomas",namn:"Tomas",folk:"dvarg",klass:"helare",hud:1,har:2,stil:"kal",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
- {id:"linda",namn:"Linda",folk:"alv",klass:"bagskytt",hud:0,har:3,stil:"lang",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
+ {id:"ville",namn:"Ville",alder:30,folk:"manniska",klass:"riddare",hud:0,har:0,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
+ {id:"svante",namn:"Svante",alder:30,folk:"manniska",klass:"trollkarl",hud:1,har:1,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
+ {id:"tomas",namn:"Tomas",folk:"manniska",alder:40,skagg:true,klass:"helare",hud:1,har:2,stil:"kal",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
+ {id:"linda",namn:"Linda",alder:40,folk:"manniska",klass:"bagskytt",hud:0,har:3,stil:"lang",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
  {id:"sally",namn:"Sally",folk:"katt",klass:"smygare",hud:0,har:10,stil:"kort",flackar:true,klader:5,s:{sty:8,smi:17,tal:11,klo:12,vis:15,cha:14},om:"Katt. Smyger, nosar och hittar alltid hem."}];
 BASE.forEach(h=>h.grund=true);
 
@@ -320,11 +333,11 @@ BASE.forEach(h=>h.grund=true);
 const KEY="tarningsriket-hjaltar", PKEY="tarningsriket-sallskap";
 function load(k,def){try{const v=JSON.parse(localStorage.getItem(k));return v??def}catch(e){return def}}
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-let egna=load(KEY,[]), party=load(PKEY,["ville","svante","sally"]);
+let egna=load(KEY,[]).map(migrera), party=load(PKEY,["ville","svante","sally"]);
 // Ändringar av folk, klass och utseende på grundfigurerna (namnen ändras aldrig).
 const AKEY="tarningsriket-grundandringar", DKEY="tarningsriket-andringar-osparade";
-const EDITABLE=["folk","klass","hud","har","stil","klader","flackar","s"];
-let andringar=load(AKEY,{}), andrDirty=load(DKEY,false);
+const EDITABLE=["folk","alder","skagg","klass","hud","har","stil","klader","flackar","s"];
+let andringar=Object.fromEntries(Object.entries(load(AKEY,{})).map(([k,v])=>[k,migrera(v,true)])), andrDirty=load(DKEY,false);
 function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
  if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
  if(o.s&&!STATS.every(st=>typeof o.s[st.k]==="number"))delete o.s;return o}
@@ -373,7 +386,7 @@ let synkade=new Set(load(SKEY,[]));
 function markSynced(){synkade=new Set(egna.map(h=>h.id));save(SKEY,[...synkade])}
 function applyData(d,replace){
  if(Array.isArray(d.egna)){
-  const remote=d.egna.filter(validHero),ids=new Set(remote.map(h=>h.id));
+  const remote=d.egna.map(migrera).filter(validHero),ids=new Set(remote.map(h=>h.id));
   const bara_har=replace?[]:egna.filter(h=>!ids.has(h.id)&&!synkade.has(h.id));
   egna=[...remote,...bara_har];
   synkade=ids;save(SKEY,[...ids]);
@@ -381,7 +394,7 @@ function applyData(d,replace){
  }
  if(Array.isArray(d.sallskap))party=d.sallskap.filter(id=>typeof id==="string").slice(0,4);
  // Grundfigurernas ändringar: osparade ändringar på den här enheten vinner, annars gäller GitHub.
- if(replace||!andrDirty){andringar={};const g=d.grundandringar||{};BASE.forEach(b=>{const a=cleanAndring(g[b.id]);if(a)andringar[b.id]=a});andrDirty=false}
+ if(replace||!andrDirty){andringar={};const g=d.grundandringar||{};BASE.forEach(b=>{const a=cleanAndring(migrera(g[b.id],true));if(a)andringar[b.id]=a});andrDirty=false}
  else setTimeout(scheduleSync,0);
  // Äventyrets framsteg: det som sparades senast vinner.
  if(d.aventyr&&typeof d.aventyr==="object"&&(d.aventyr.tid||0)>(spel.tid||0)){spel=normSpel(d.aventyr);save(SPKEY,spel)}
@@ -461,8 +474,9 @@ function heroGrid(h){
  if(st!=="kal"){satt(G,[[4,1],[5,1],[6,1],[7,1],[3,2],[8,2]],"K");fyll(G,4,2,7,3,"H");satt(G,[[4,4],[4,5]],"H");satt(G,[[8,3]],"h")}
  if(st==="lang"){fyll(G,3,4,3,9,"H");fyll(G,2,3,2,9,"K");satt(G,[[3,10]],"h")}
  if(st==="tofs"){satt(G,[[2,3],[1,4],[1,5],[2,4],[1,6]],"H");satt(G,[[1,3],[0,4],[0,5],[0,6],[1,7]],"K")}
- if(folk==="alv"){satt(G,[[2,3],[3,4]],"S");satt(G,[[1,2],[2,2]],"K")}
- if(folk==="dvarg"){satt(G,[[5,6],[6,6],[7,6],[8,6],[5,7],[6,7],[7,7],[5,8],[6,8],[5,9],[6,9],[5,10],[6,10]],"H");satt(G,[[6,10],[7,8]],"h");satt(G,[[6,5]],"s")}
+ const alder=alderAv(h);
+ // skägg för vuxna män med frisyren "Kal + skägg" (Tomas)
+ if(h.skagg&&alder>=16){satt(G,[[5,6],[6,6],[7,6],[8,6],[5,7],[6,7],[7,7],[5,8],[6,8],[5,9],[6,9],[5,10],[6,10]],"H");satt(G,[[6,10],[7,8]],"h");satt(G,[[6,5]],"s")}
  // utrustning per klass
  if(k==="riddare"){
   satt(G,[[4,1],[5,1],[6,1],[7,1]],"M");fyll(G,3,2,8,2,"M");satt(G,[[4,3],[4,4],[4,5],[4,6],[3,3],[3,4],[3,5]],"M");satt(G,[[8,3],[3,6]],"m");
@@ -495,13 +509,15 @@ function heroGrid(h){
   satt(G,[[5,10],[5,12]],"G");satt(G,[[6,9],[6,10],[6,11],[6,12]],"o");
   fyll(G,8,12,11,15,"Z");satt(G,[[9,13]],"K");satt(G,[[10,14]],"z");satt(G,[[11,11],[12,10],[13,9]],"z");satt(G,[[13,8]],"G");
  }else if(k==="ingen"){
-  if(h.folk!=="halvling")fyll(G,3,15,8,20,"O",["P","p","K"]),fyll(G,3,15,3,20,"K"),fyll(G,8,15,8,20,"K");
+  fyll(G,3,15,8,20,"O",["P","p","K"]),fyll(G,3,15,3,20,"K"),fyll(G,8,15,8,20,"K");
  }
  // kortare folk: ta bort rader i kroppen
- const bort=folk==="dvarg"?[16,17,11]:folk==="halvling"?[16,17,18,11,8]:[];
+ // Ju yngre (under 18) eller äldre (över 60), desto fler rader tas bort ur kroppen.
+ const n=alder<=7?7:alder<=9?6:alder<=11?5:alder<=13?3:alder<=15?2:alder<=17?1:alder<=60?0:alder<=72?1:2;
+ const bort=[17,19,11,18,12,8,16].slice(0,n);
  bort.sort((a,b)=>b-a).forEach(r=>G.splice(r,1));
  while(G.length<24)G.unshift([..."..............".split("")]);
- if(folk==="halvling"){const n=G.length;for(let y=n-3;y<n-1;y++)G[y]=G[y].map(c=>c==="B"?"S":c)}
+
  return G;
 }
 function kattGrid(h){
@@ -535,7 +551,7 @@ function rendera(G,pal,{kontur=true,skugga=true}={}){
 }
 const HJCACHE=new Map();
 function heroCanvas(h){
- const key=JSON.stringify([h.folk,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
+ const key=JSON.stringify([h.folk,h.folk==="katt"?0:alderAv(h),!!h.skagg,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
  if(!HJCACHE.has(key))HJCACHE.set(key,rendera(heroGrid(h),farger(h)));
  return HJCACHE.get(key);
 }
@@ -586,7 +602,7 @@ function card(h){
  return el("div",{class:"card"+(on?" on":"")},
   el("div",{class:"tv"},portrait(h)),
   h.grund?null:el("span",{class:"tag"},"Egen"),
-  el("div",{},el("div",{class:"name"},h.namn),el("div",{class:"meta"},F.n+" · "+K.n+" · Nivå "+vitals(h).lvl)),
+  el("div",{},el("div",{class:"name"},h.namn),el("div",{class:"meta"},F.n+(h.folk==="katt"?"":", "+alderAv(h)+" år")+" · "+K.n+" · Nivå "+vitals(h).lvl)),
   el("div",{class:"row"},
    el("button",{onclick:()=>sheet(h),"aria-label":"Visa hjältebladet för "+h.namn},"Blad"),
    el("button",{class:"take","aria-pressed":on?"true":"false",onclick:()=>togglePartyMember(h.id)},on?"Med ✓":"Ta med")));
@@ -619,7 +635,7 @@ function sheet(h){
    el("button",{class:"btn ghost",onclick:()=>{close();sheet(h)}},"Nej")))}},"Ta bort");left.append(del)}foot.append(left);
  foot.append(el("button",{class:"btn",onclick:close},"Stäng"));
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":"Hjälteblad för "+h.namn},
-  el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+" · "+K.n+" · Nivå "+v.lvl),xpRad(h),h.om?el("p",{},h.om):null)),
+  el("div",{class:"sheet-top"},el("div",{class:"tv"},portrait(h)),el("div",{},el("h2",{},h.namn),el("p",{},F.n+(h.folk==="katt"?"":", "+alderAv(h)+" år")+" · "+K.n+" · Nivå "+v.lvl),xpRad(h),h.om?el("p",{},h.om):null)),
   el("div",{class:"vitals"},
    el("div",{class:"vital hp"},el("b",{},v.hp),el("span",{},"Liv")),
    el("div",{class:"vital ac"},el("b",{},v.ac),el("span",{},"Rustning")),
@@ -637,7 +653,7 @@ function sheet(h){
 let draft, step;
 const STEPS=["Folk","Klass","Utseende","Tärningar","Klar"];
 function creator(){
- draft={id:"egen-"+Date.now(),namn:"",folk:null,klass:null,hud:0,har:0,stil:"kort",klader:0,flackar:false,rolls:null,omslag:3,om:""};
+ draft={id:"egen-"+Date.now(),namn:"",folk:null,alder:ALDER_STD,klass:null,hud:0,har:0,stil:"kort",klader:0,flackar:false,rolls:null,omslag:3,om:""};
  step=0; view="creator"; document.getElementById("party").hidden=true; renderCreator();
 }
 function rolled(){const s={};STATS.forEach(st=>{s[st.k]=(draft.rolls?draft.rolls[st.k].tot:10)+((FOLK[draft.folk]||{bonus:{}}).bonus[st.k]||0)});return s}
@@ -672,11 +688,23 @@ const rerender=()=>view==="edit"?renderEdit():renderCreator();
 function swatchRow(label,arr,key){
  return el("div",{class:"field"},el("label",{},label),el("div",{class:"swatches"},arr.map((c,i)=>el("button",{class:"sw"+(draft[key]===i?" sel":""),style:"background:"+c,"aria-label":label+" "+(i+1),"aria-pressed":draft[key]===i?"true":"false",onclick:()=>{draft[key]=i;rerender()}}))));
 }
+function alderFalt(){
+ const val=alderAv(draft),inp=el("input",{id:"alder",type:"range",min:String(ALDER_MIN),max:String(ALDER_MAX),step:"1",value:String(val)});
+ const lbl=el("output",{for:"alder"},val+" år · "+alderOrd(val));
+ inp.addEventListener("input",()=>{draft.alder=+inp.value;lbl.textContent=draft.alder+" år · "+alderOrd(draft.alder);
+  const c=app.querySelector(".preview .tv canvas");if(c)drawHero(c,view==="edit"?editPreview():draftHero())});
+ // när man släpper reglaget: rita om formuläret (t.ex. visa eller dölj skägg)
+ inp.addEventListener("change",()=>{const y=window.scrollY;rerender();window.scrollTo(0,y);const n=document.getElementById("alder");if(n)n.focus({preventScroll:true})});
+ return el("div",{class:"field"},el("label",{for:"alder"},"Ålder"),el("div",{class:"agerow"},inp,lbl),
+  el("small",{class:"fieldhint"},"Åldern avgör hur lång hjälten är. Längst är man mellan 18 och 60 år."));
+}
 function lookFields(){
  const cat=draft.folk==="katt",out=[];
+ if(!cat)out.push(alderFalt());
  if(!cat)out.push(swatchRow("Hudfärg",SKIN,"hud"));
  out.push(swatchRow(cat?"Pälsfärg":"Hårfärg",HAIR,"har"));
  if(cat)out.push(el("div",{class:"field"},el("label",{},"Teckning"),el("div",{class:"pills"},[[false,"Enfärgad"],[true,"Tigrerad med vita och ljusbruna fläckar"]].map(([v,n])=>el("button",{class:"pill"+(!!draft.flackar===v?" sel":""),onclick:()=>{draft.flackar=v;rerender()}},n)))));
+ if(!cat&&alderAv(draft)>=16)out.push(el("div",{class:"field"},el("label",{},"Skägg"),el("div",{class:"pills"},[[false,"Inget skägg"],[true,"Skägg"]].map(([v,n])=>el("button",{class:"pill"+(!!draft.skagg===v?" sel":""),onclick:()=>{draft.skagg=v;rerender()}},n)))));
  if(!cat)out.push(el("div",{class:"field"},el("label",{},"Frisyr"),el("div",{class:"pills"},Object.entries(STYLES).map(([k,n])=>el("button",{class:"pill"+(draft.stil===k?" sel":""),onclick:()=>{draft.stil=k;rerender()}},n)))));
  if(!(cat&&draft.flackar))out.push(swatchRow(cat?"Halsduk":"Kläder",OUTFIT,"klader"));
  return out;
@@ -724,7 +752,7 @@ function stepDone(){
  app.append(el("div",{class:"field"},el("label",{for:"om"},"En mening om hjälten (valfritt)"),om));
  app.append(el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:()=>{step--;renderCreator()}},"Tillbaka"),
-  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
+  el("button",{class:"btn",onclick:()=>{const hero={id:draft.id,namn:draft.namn.trim(),folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:rolled(),om:draft.om.trim()};
    egna=[...egna,hero];if(party.length<4){party=[...party,hero.id]}persist();home();flash(hero.namn+" är sparad!")}},"Spara hjälten")));
 }
 
@@ -760,7 +788,7 @@ function renderEdit(){
  const row=el("div",{class:"nav"},
   el("button",{class:"btn ghost",onclick:back},"Avbryt"),
   el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
-   const upd={folk:draft.folk,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
+   const upd={folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
    if(draft.grund){andringar[draft.id]=upd;andrDirty=true}
    else egna=egna.map(x=>x.id===draft.id?{...x,...upd,namn:draft.namn.trim()}:x);
    persist();back();flash("Ändringarna är sparade.");
@@ -946,10 +974,10 @@ function scenePaint(g,bild){
 }
 const HERO_SPRITE={};
 function heroSprite(h){const c=document.createElement("canvas");drawHero(c,h,{transparent:true});return c}
-const GRETA={folk:"manniska",klass:"ingen",hud:0,har:4,stil:"lang",klader:1};
-const BO={folk:"manniska",klass:"riddare",hud:2,har:2,stil:"kort",klader:6};
-const HANDLARE={folk:"halvling",klass:"ingen",hud:1,har:4,stil:"kort",klader:4,flackar:false};
-const RESENAR={folk:"alv",klass:"bagskytt",hud:0,har:1,stil:"lang",klader:2};
+const GRETA={folk:"manniska",alder:78,klass:"ingen",hud:0,har:4,stil:"lang",klader:1};
+const BO={folk:"manniska",alder:35,klass:"riddare",hud:2,har:2,stil:"kort",klader:6};
+const HANDLARE={folk:"manniska",alder:80,skagg:true,klass:"ingen",hud:1,har:4,stil:"kort",klader:4,flackar:false};
+const RESENAR={folk:"manniska",alder:26,klass:"bagskytt",hud:0,har:1,stil:"lang",klader:2};
 function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false}={}){
  cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
  if(visaParty)partyHeroes().forEach((h,i)=>{g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),i*14,TVH-25);g.globalAlpha=1});
