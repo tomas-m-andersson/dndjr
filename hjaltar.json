@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:34:24.377Z",
+  "uppdaterad": "2026-10-28T20:34:52.801Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219662488,
+    "tid": 1793219690825,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 4,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Något glimmar i mörkret.",
@@ -165,7 +165,15 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "varg",
+          "varg"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -238,6 +246,14 @@
         {
           "t": "Ni går vidare.",
           "k": "sep"
+        },
+        {
+          "t": "Rum 4 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni möter Varg, Varg!",
+          "k": "bad"
         }
       ],
       "party": [
