@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:35:53.057Z",
+  "uppdaterad": "2026-10-28T20:35:59.079Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219750946,
+    "tid": 1793219757170,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -150,30 +150,27 @@
     "run": {
       "plats": "skogen",
       "kapitel": 1,
-      "djup": 4,
-      "fas": "rum",
+      "djup": 5,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Något glimmar i mörkret.",
-          "typ": "vaktad",
+          "ledtrad": "En mjuk sång hörs på avstånd.",
+          "typ": "resenar",
           "kand": false
         },
         {
-          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+          "ledtrad": "Någonstans porlar vatten.",
           "typ": "strid",
+          "kand": false
+        },
+        {
+          "ledtrad": "Något snarkar, djupt och långsamt.",
+          "typ": "sovare",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "varg",
-          "varg"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -258,6 +255,10 @@
         {
           "t": "Seger! Alla får 25 XP.",
           "k": "crit"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
