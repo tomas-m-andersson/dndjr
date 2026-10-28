@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:55:46.449Z",
+  "uppdaterad": "2026-10-28T22:02:19.944Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -11,15 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "katana",
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 9,
@@ -36,15 +36,15 @@
       }
     },
     "svante": {
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "attacker": [
         "kraftslag",
         "dubbelhugg",
         "virvelhugg"
       ],
       "vapen": "svard",
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "klass": "krigare",
       "hud": 5,
       "har": 9,
@@ -127,10 +127,10 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 20,
-      "svante": 15,
+      "ville": 17,
+      "svante": 18,
       "sally": 13,
-      "tomas": 16,
+      "tomas": 14,
       "linda": 7
     },
     "kapitel": {
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219985465,
+    "tid": 1793224938088,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -172,7 +172,58 @@
     },
     "upplasta": [],
     "utr": {},
-    "run": null,
+    "run": {
+      "plats": "grottorna",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Små fotspår leder ditåt.",
+          "typ": "skatt",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ett lågt morrande. Sedan tystnad.",
+          "typ": "strid",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Grottorna under Kråkberget",
+          "k": "sep"
+        },
+        {
+          "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 46,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793224938085,
+      "nastaKand": false
+    },
     "historik": [
       {
         "plats": "skogen",
