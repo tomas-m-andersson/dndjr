@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:42:42.128Z",
+  "uppdaterad": "2026-10-28T20:43:33.465Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -28,19 +28,19 @@
       }
     },
     "svante": {
-      "folk": "halvling",
+      "folk": "katt",
       "klass": "smygare",
       "hud": 5,
-      "har": 0,
+      "har": 9,
       "stil": "kort",
-      "klader": 0,
+      "klader": 5,
       "flackar": false,
       "s": {
         "sty": 8,
         "smi": 14,
         "tal": 11,
         "klo": 15,
-        "vis": 12,
+        "vis": 13,
         "cha": 10
       }
     },
