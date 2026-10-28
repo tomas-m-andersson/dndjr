@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:30:36.315Z",
+  "uppdaterad": "2026-10-28T20:30:41.733Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,7 +127,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219434357,
+    "tid": 1793219439774,
     "niva": {
       "ville": {
         "lvl": 1,
@@ -150,40 +150,22 @@
     "run": {
       "plats": "skogen",
       "kapitel": 1,
-      "djup": 1,
-      "fas": "rum",
+      "djup": 2,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Något glimmar i mörkret.",
-          "typ": "vaktad",
+          "ledtrad": "Det luktar rök och stekt kött.",
+          "typ": "strid",
           "kand": false
         },
         {
-          "ledtrad": "Ni känner värme mot ansiktet.",
-          "typ": "falla",
+          "ledtrad": "Det finns färskt blod på marken.",
+          "typ": "strid",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "skatt",
-        "klar": true,
-        "loot": [
-          {
-            "k": "guld",
-            "n": "62 guldmynt",
-            "v": 62
-          },
-          {
-            "k": "sak",
-            "n": "Stor läkedryck"
-          },
-          {
-            "k": "sak",
-            "n": "Stor läkedryck"
-          }
-        ]
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Mörkskogen",
@@ -220,6 +202,10 @@
         {
           "t": "Ni hittar en stor läkedryck.",
           "k": "heal"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": "sep"
         }
       ],
       "party": [
