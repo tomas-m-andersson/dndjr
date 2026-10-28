@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:14:40.576Z",
+  "uppdaterad": "2026-10-28T22:14:47.744Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225678546,
+    "tid": 1793225685808,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 2,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Något glimmar i mörkret.",
@@ -190,7 +190,17 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "falla",
+        "klar": false,
+        "falla": {
+          "egen": "smi",
+          "alla": false,
+          "varn": "Något susar ner från taket!",
+          "ok": "duckar för den svängande yxan",
+          "traff": "träffas av en svängande yxa"
+        }
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -215,6 +225,14 @@
         {
           "t": "Ni går djupare in.",
           "k": ""
+        },
+        {
+          "t": "Rum 2 · Fälla",
+          "k": "sep"
+        },
+        {
+          "t": "Något susar ner från taket!",
+          "k": "bad"
         }
       ],
       "party": [
