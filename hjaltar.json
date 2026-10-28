@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:36:31.297Z",
+  "uppdaterad": "2026-10-28T20:36:53.867Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,23 +127,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219789270,
+    "tid": 1793219811909,
     "niva": {
       "ville": {
         "lvl": 1,
-        "xp": 162
+        "xp": 192
       },
       "svante": {
         "lvl": 1,
-        "xp": 162
+        "xp": 192
       },
       "tomas": {
         "lvl": 1,
-        "xp": 162
+        "xp": 192
       },
       "sally": {
         "lvl": 1,
-        "xp": 162
+        "xp": 192
       }
     },
     "utr": {},
@@ -172,7 +172,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "resenar",
-        "klar": false
+        "klar": true
       },
       "logg": [
         {
@@ -270,6 +270,10 @@
         {
           "t": "En skadad äventyrare sitter lutad mot väggen.",
           "k": ""
+        },
+        {
+          "t": "Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett. Alla får 30 XP.",
+          "k": "heal"
         }
       ],
       "party": [
@@ -287,7 +291,6 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck",
         "Stor läkedryck",
         "Stor läkedryck"
       ],
@@ -295,7 +298,7 @@
       "curse": {},
       "ara": 250,
       "start": 1793219286949,
-      "nastaKand": false
+      "nastaKand": true
     },
     "historik": [
       {
