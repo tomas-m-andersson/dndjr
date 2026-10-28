@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:14:31.708Z",
+  "uppdaterad": "2026-10-28T22:14:40.576Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225669713,
+    "tid": 1793225678546,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -175,30 +175,22 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 1,
-      "fas": "rum",
+      "djup": 2,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Små fotspår leder ditåt.",
+          "ledtrad": "Något glimmar i mörkret.",
           "typ": "skatt",
           "kand": false
         },
         {
-          "ledtrad": "Ett lågt morrande. Sedan tystnad.",
-          "typ": "strid",
+          "ledtrad": "En underjordisk bäck rinner in i gången.",
+          "typ": "falla",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": true,
-        "fiender": [
-          "skelett",
-          "vatte"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -219,6 +211,10 @@
         {
           "t": "Seger! Alla får 25 XP.",
           "k": "crit"
+        },
+        {
+          "t": "Ni går djupare in.",
+          "k": ""
         }
       ],
       "party": [
@@ -243,7 +239,7 @@
       "ara": 100,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+      "dorrText": "Ni tittar på varandra. Någon måste bestämma."
     },
     "historik": [
       {
