@@ -194,12 +194,12 @@ window.AVENTYR = [
               lyckas: { text: "Ni rör er i skuggorna, ett steg i taget. En vätte vänder sig om, men tittar rakt förbi er. Ni når buren.", till: "buren" },
               misslyckas: { text: "Någon kliver på en torr gren. Fyra par gula ögon vänds mot er. – Inkräktare! skriker en vätte och tar sitt spjut.", till: "vattestrid" }
             } },
-          { text: "{namn} smyger fram ensam", krav: { klass: "smygare" }, prov: {
+          { text: "{namn} smyger fram ensam", krav: { klass: "ninja" }, prov: {
               egenskap: "smi", svarighet: 11,
               lyckas: { text: "{namn} glider fram som en skugga och vinkar åt er att följa i exakt samma spår. Ni når buren utan att någon märker något.", till: "buren" },
               misslyckas: { text: "{namn} är nästan framme när en vätte reser sig för att hämta mer ved och tittar rakt på {namn}. – Larm!", till: "vattestrid" }
             } },
-          { text: "{namn} skapar en illusion", krav: { klass: "trollkarl" }, prov: {
+          { text: "{namn} skapar en illusion", krav: { klass: "magiker" }, prov: {
               egenskap: "klo", svarighet: 12,
               lyckas: { text: "{namn} viskar en formel. Ute i skogen hörs plötsligt ljudet av något stort som bryter grenar. Vättarna hoppar upp, tar sina spjut och springer dit. Ni har fri väg till buren.", till: "buren" },
               misslyckas: { text: "Illusionen fladdrar och försvinner. Vättarna stirrar på det glittrande ljuset, och sedan på er.", till: "vattestrid" }
