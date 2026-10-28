@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:14:57.151Z",
+  "uppdaterad": "2026-10-28T22:15:09.540Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225695208,
+    "tid": 1793225707651,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -175,32 +175,17 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 2,
-      "fas": "rum",
+      "djup": 3,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Något glimmar i mörkret.",
-          "typ": "skatt",
-          "kand": false
-        },
-        {
-          "ledtrad": "En underjordisk bäck rinner in i gången.",
-          "typ": "falla",
+          "ledtrad": "Det finns färskt blod på marken.",
+          "typ": "strid",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "falla",
-        "klar": true,
-        "falla": {
-          "egen": "smi",
-          "alla": false,
-          "varn": "Något susar ner från taket!",
-          "ok": "duckar för den svängande yxan",
-          "traff": "träffas av en svängande yxa"
-        }
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -237,6 +222,10 @@
         {
           "t": "Sally duckar för den svängande yxan!",
           "k": "hit"
+        },
+        {
+          "t": "Ni kryper vidare genom en trång spricka.",
+          "k": ""
         }
       ],
       "party": [
@@ -261,7 +250,7 @@
       "ara": 100,
       "start": 1793224938085,
       "nastaKand": false,
-      "dorrText": "Ni tittar på varandra. Någon måste bestämma."
+      "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
     },
     "historik": [
       {
