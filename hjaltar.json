@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:25:16.124Z",
+  "uppdaterad": "2026-10-28T23:25:18.189Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793229914213,
+    "tid": 1793229916267,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -183,7 +183,7 @@
       "plats": "slottet",
       "kapitel": 1,
       "djup": 1,
-      "fas": "dorrar",
+      "fas": "strid",
       "dorrar": [
         {
           "ledtrad": "Ett lågt morrande. Sedan tystnad.",
@@ -192,7 +192,16 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "fladdermus",
+          "fladdermus",
+          "ratta"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -201,6 +210,14 @@
         {
           "t": "Ville, Svante, Tomas och Sally knuffar upp den knarrande porten och kliver in i Spökslottet Korpholm. Dörren slår igen bakom er.",
           "k": ""
+        },
+        {
+          "t": "Rum 1 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Dörren slår upp, och där står två jättefladdermöss och en jätteråtta!",
+          "k": "bad"
         }
       ],
       "party": [
