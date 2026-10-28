@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:45:45.873Z",
+  "uppdaterad": "2026-10-28T22:46:14.860Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,23 +151,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793227543993,
+    "tid": 1793227572935,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 255
+        "xp": 280
       },
       "svante": {
         "lvl": 2,
-        "xp": 255
+        "xp": 280
       },
       "tomas": {
         "lvl": 2,
-        "xp": 255
+        "xp": 280
       },
       "sally": {
         "lvl": 2,
-        "xp": 255
+        "xp": 280
       }
     },
     "upplasta": [],
@@ -176,7 +176,7 @@
       "plats": "grottorna",
       "kapitel": 1,
       "djup": 3,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Det finns färskt blod på marken.",
@@ -187,7 +187,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "strid",
-        "klar": false,
+        "klar": true,
         "fiender": [
           "vatte",
           "vatte"
@@ -242,6 +242,10 @@
         {
           "t": "Ni har knappt kommit in förrän två vättar anfaller!",
           "k": "bad"
+        },
+        {
+          "t": "Striden är över. Alla får 25 XP.",
+          "k": "crit"
         }
       ],
       "party": [
@@ -263,7 +267,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 100,
+      "ara": 200,
       "start": 1793224938085,
       "nastaKand": false,
       "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
