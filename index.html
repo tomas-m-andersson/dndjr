@@ -213,6 +213,10 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
 .chip.out{opacity:.5}
+/* förgiftad: grön livmätare och grön kant så länge giftet verkar */
+.chip.gift{border-color:#4fae3c}
+.chip.gift .hp i{background:#5fd34a!important}
+.chip.gift .chipinfo span{color:#8fe07a}
 .chipinfo{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
 .chipinfo b{font-family:var(--display);font-size:1rem;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chipinfo span{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
@@ -840,8 +844,15 @@ function heroCanvas(h){
  return HJCACHE.get(key);
 }
 // Porträtt (med bakgrund) eller bara figuren (transparent, för TV:n)
+// Är hjälten förgiftad i den pågående striden?
+function forgiftad(h){return typeof strid!=="undefined"&&!!strid&&!!strid.giftH&&!!strid.giftH[h.id]}
+// Samma figur med en grön ton (används så länge förgiftningen pågår)
+const GIFTCACHE=new WeakMap();
+function giftTon(spr){if(!GIFTCACHE.has(spr)){const c=document.createElement("canvas");c.width=spr.width;c.height=spr.height;const g=c.getContext("2d");
+  g.drawImage(spr,0,0);g.globalCompositeOperation="source-atop";g.fillStyle="rgba(90,220,70,.36)";g.fillRect(0,0,c.width,c.height);GIFTCACHE.set(spr,c)}
+ return GIFTCACHE.get(spr)}
 function drawHero(cv,h,opt={}){
- const spr=heroCanvas(h);
+ const spr=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h);
  if(opt.transparent){cv.width=spr.width;cv.height=spr.height;cv.getContext("2d").drawImage(spr,0,0);return}
  const W=24,H=27;cv.width=W;cv.height=H;const g=cv.getContext("2d");
  const K=KLASS[h.klass]||{col:"#445566"},bg=shade(K.col,-.6);
@@ -1440,7 +1451,7 @@ function valjHjalte(fraga,lista,klar,avbryt,info){
 /* --- scenen --- */
 function partyStrip(){
  return el("div",{class:"strip"},partyHeroes().map(h=>{const l=liv(h),m=maxLiv(h);
-  return el("div",{class:"chip"+(l>0?"":" out")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
+  return el("div",{class:"chip"+(l>0?"":" out")+(l>0&&forgiftad(h)?" gift":"")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
    el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.giftH&&strid.giftH[h.id]?" · förgiftad":"")+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")))}));
 }
 function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
