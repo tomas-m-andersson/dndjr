@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:38:42.857Z",
+  "uppdaterad": "2026-10-28T20:39:34.340Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -103,10 +103,10 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 12,
-      "svante": 9,
-      "sally": 8,
-      "tomas": 9,
+      "ville": 20,
+      "svante": 15,
+      "sally": 13,
+      "tomas": 16,
       "linda": 7
     },
     "kapitel": {
@@ -127,23 +127,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219920836,
+    "tid": 1793219972392,
     "niva": {
       "ville": {
-        "lvl": 1,
-        "xp": 192
+        "lvl": 2,
+        "xp": 230
       },
       "svante": {
-        "lvl": 1,
-        "xp": 192
+        "lvl": 2,
+        "xp": 230
       },
       "tomas": {
-        "lvl": 1,
-        "xp": 192
+        "lvl": 2,
+        "xp": 230
       },
       "sally": {
-        "lvl": 1,
-        "xp": 192
+        "lvl": 2,
+        "xp": 230
       }
     },
     "utr": {},
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 6,
-      "fas": "strid",
+      "fas": "vann",
       "dorrar": null,
       "lyssnat": false,
       "rum": {
@@ -278,6 +278,46 @@
         {
           "t": "Ur mörkret reser sig skogens mörker: Varg, Vätte, Varg!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 38 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "★ Nivå upp! Ville är nu nivå 2: +8 liv.",
+          "k": "crit"
+        },
+        {
+          "t": "★ Nivå upp! Svante är nu nivå 2: +6 liv.",
+          "k": "crit"
+        },
+        {
+          "t": "★ Nivå upp! Tomas är nu nivå 2: +7 liv.",
+          "k": "crit"
+        },
+        {
+          "t": "★ Nivå upp! Sally är nu nivå 2: +5 liv.",
+          "k": "crit"
+        },
+        {
+          "t": "Ni hittar 102 guldmynt.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni hittar en stor läkedryck.",
+          "k": "heal"
+        },
+        {
+          "t": "Skogens mörker är besegrad!",
+          "k": "crit"
         }
       ],
       "party": [
@@ -286,7 +326,7 @@
         "tomas",
         "sally"
       ],
-      "guld": 105,
+      "guld": 207,
       "saker": [
         "Läkedryck",
         "Läkedryck",
@@ -296,11 +336,14 @@
         "Läkedryck",
         "Läkedryck",
         "Stor läkedryck",
+        "Stor läkedryck",
+        "Läkedryck",
+        "Läkedryck",
         "Stor läkedryck"
       ],
       "bless": {},
       "curse": {},
-      "ara": 250,
+      "ara": 400,
       "start": 1793219286949,
       "nastaKand": true
     },
