@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T20:32:24.203Z",
+  "uppdaterad": "2026-10-28T20:34:11.631Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,23 +127,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793219542209,
+    "tid": 1793219649555,
     "niva": {
       "ville": {
         "lvl": 1,
-        "xp": 124
+        "xp": 137
       },
       "svante": {
         "lvl": 1,
-        "xp": 124
+        "xp": 137
       },
       "tomas": {
         "lvl": 1,
-        "xp": 124
+        "xp": 137
       },
       "sally": {
         "lvl": 1,
-        "xp": 124
+        "xp": 137
       }
     },
     "utr": {},
@@ -151,7 +151,7 @@
       "plats": "skogen",
       "kapitel": 1,
       "djup": 3,
-      "fas": "strid",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Små fotspår leder ditåt.",
@@ -162,7 +162,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "strid",
-        "klar": false,
+        "klar": true,
         "fiender": [
           "fladdermus",
           "fladdermus"
@@ -233,6 +233,10 @@
         {
           "t": "Ni möter Jättefladdermus, Jättefladdermus!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 13 XP.",
+          "k": "crit"
         }
       ],
       "party": [
@@ -256,7 +260,7 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 100,
+      "ara": 150,
       "start": 1793219286949,
       "nastaKand": false
     },
