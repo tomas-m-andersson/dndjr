@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:53:28.233Z",
+  "uppdaterad": "2026-10-28T21:55:09.744Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -11,15 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "katana",
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 9,
@@ -36,38 +36,40 @@
       }
     },
     "svante": {
-      "folk": "katt",
-      "skagg": false,
       "attacker": [
-        "klosattack",
-        "hoppa_ansiktet",
-        "frasa"
+        "kraftslag",
+        "dubbelhugg",
+        "virvelhugg"
       ],
-      "klass": "katt",
+      "vapen": "svard",
+      "folk": "manniska",
+      "alder": 15,
+      "skagg": false,
+      "klass": "krigare",
       "hud": 5,
       "har": 9,
       "stil": "kort",
       "klader": 5,
       "flackar": false,
       "s": {
-        "sty": 8,
-        "smi": 14,
-        "tal": 11,
-        "klo": 15,
+        "sty": 9,
+        "smi": 13,
+        "tal": 12,
+        "klo": 16,
         "vis": 13,
-        "cha": 10
+        "cha": 11
       }
     },
     "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
       "vapen": "trollspo",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
