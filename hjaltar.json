@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T22:14:47.744Z",
+  "uppdaterad": "2026-10-28T22:14:57.151Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -151,7 +151,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793225685808,
+    "tid": 1793225695208,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -192,7 +192,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "falla",
-        "klar": false,
+        "klar": true,
         "falla": {
           "egen": "smi",
           "alla": false,
@@ -233,6 +233,10 @@
         {
           "t": "Något susar ner från taket!",
           "k": "bad"
+        },
+        {
+          "t": "Sally duckar för den svängande yxan!",
+          "k": "hit"
         }
       ],
       "party": [
