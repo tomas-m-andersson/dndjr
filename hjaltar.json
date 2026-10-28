@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T21:36:27.882Z",
+  "uppdaterad": "2026-10-28T21:52:41.223Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -16,6 +16,7 @@
         "shuriken",
         "tryckpunkt"
       ],
+      "vapen": "katana",
       "folk": "manniska",
       "alder": 6,
       "skagg": false,
@@ -35,13 +36,13 @@
       }
     },
     "svante": {
+      "folk": "katt",
+      "skagg": false,
       "attacker": [
         "klosattack",
         "hoppa_ansiktet",
         "frasa"
       ],
-      "folk": "katt",
-      "skagg": false,
       "klass": "katt",
       "hud": 5,
       "har": 9,
@@ -58,14 +59,14 @@
       }
     },
     "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
@@ -166,6 +167,7 @@
         "xp": 230
       }
     },
+    "upplasta": [],
     "utr": {},
     "run": null,
     "historik": [
