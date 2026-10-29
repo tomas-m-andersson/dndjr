@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T10:00:45.327Z",
+  "uppdaterad": "2026-10-29T10:05:47.049Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793268043392,
+    "tid": 1793268345140,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,7 +208,64 @@
         "acb": 0
       }
     },
-    "run": null,
+    "run": {
+      "plats": "vulkanen",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Något snarkar, djupt och långsamt.",
+          "typ": "sovare",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ni hör många små fötter som springer.",
+          "typ": "strid",
+          "kand": false
+        },
+        {
+          "ledtrad": "Golvet är alldeles för rent här.",
+          "typ": "skatt",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Drakvulkanen",
+          "k": "sep"
+        },
+        {
+          "t": "Ett mullrande hörs djupt inne i berget när Ville, Svante, Tomas och Sally kliver in i Drakvulkanen. Något stort sover därinne.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 49,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793268345139,
+      "nastaKand": false,
+      "dorrText": "Ni kan lyssna först. Men gör det tyst."
+    },
     "historik": [
       {
         "plats": "grottorna",
