@@ -52,6 +52,7 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero .titles{min-width:0;flex:1}
 .titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
+@media (min-width:700px){.hero .titles>p,.hero .titles>.sync{margin-left:calc(clamp(56px,13vw,88px) + 12px)}} /* på datorn: undertexten rakt under rubriken */
 .hero h1{overflow-wrap:anywhere}
 @media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
 .gear{flex:none;align-self:flex-start;width:48px;height:48px;border-radius:8px;border:2px solid var(--line);background:var(--bg2);display:grid;place-items:center;padding:0}
