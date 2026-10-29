@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tärningsriket</title>
+<title>Bland monster och tärningar</title>
 <meta name="description" content="Ett svenskt rollspelsäventyr för hela familjen.">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#142029">
@@ -12,7 +12,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Tärningsriket">
+<meta name="apple-mobile-web-app-title" content="Bland monster och tärningar">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap">
 <style>
@@ -663,7 +663,7 @@ async function ghGet(){
  if(!r.ok)throw new Error(ghErr(r.status));
  const j=await r.json();return{sha:j.sha,data:JSON.parse(b64d(j.content))};
 }
-function dataObj(){return{app:"Tärningsriket",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party,grundandringar:andringar,aventyr:spel}}
+function dataObj(){return{app:"Bland monster och tärningar",version:1,uppdaterad:new Date().toISOString(),egna,sallskap:party,grundandringar:andringar,aventyr:spel}}
 // Id:n som fanns i GitHub-filen senast vi synkade. Används för att skilja "ny här" från "borttagen på annan enhet".
 const SKEY="tarningsriket-synkade";
 let synkade=new Set(load(SKEY,[]));
@@ -709,7 +709,7 @@ async function ghPut(){
   save(KEY,egna);
  }
  if(cur&&cur.data&&cur.data.aventyr&&typeof cur.data.aventyr==="object"){spel=mergeSpel(spel,cur.data.aventyr);save(SPKEY,spel)}
- const body={message:"Tärningsriket: uppdatera hjältar",content:b64e(JSON.stringify(dataObj(),null,2)+"\n"),branch:gh.branch.trim()};
+ const body={message:"Bland monster och tärningar: uppdatera hjältar",content:b64e(JSON.stringify(dataObj(),null,2)+"\n"),branch:gh.branch.trim()};
  if(cur)body.sha=cur.sha;
  const r=await fetch(ghFileUrl(),{method:"PUT",headers:{...ghHeaders(),"Content-Type":"application/json"},body:JSON.stringify(body)});
  if(!r.ok)throw new Error(ghErr(r.status));
@@ -745,7 +745,7 @@ function scheduleSync(){
 /* ===== App-installation ===== */
 let installEvt=null;
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();installEvt=e});
-window.addEventListener("appinstalled",()=>{installEvt=null;flash("Tärningsriket är installerat!")});
+window.addEventListener("appinstalled",()=>{installEvt=null;flash("Bland monster och tärningar är installerat!")});
 const isStandalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
 if("serviceWorker" in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 const byId=id=>alla().find(h=>h.id===id);
@@ -1003,7 +1003,7 @@ function start(){
  view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
- app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen."),
+ app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Bland monster och tärningar"),el("p",{},"Ett rollspelsäventyr för hela familjen."),
   el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
@@ -2154,7 +2154,7 @@ const MON_BESK={
  ent:"Ett levande träd, äldre än skogen själv. Rötterna läker hans sår.",
  jattemask:"En mask så stor att den gräver tunnlar i berget. När den rör sig skakar hela grottan.",
  golem:"En jätte av svart glas, skapad av vulkanens hetta. Nästan omöjlig att skada.",
- eldklo:"En ung röd drake som hugger två gånger. Det farligaste monstret i hela Tärningsriket."};
+ eldklo:"En ung röd drake som hugger två gånger. Det farligaste monstret av dem alla."};
 // Hur farligt är monstret? (efter hur mycket XP det ger)
 const FARA=[[25,1,"Lätt"],[50,2,"Ganska lätt"],[100,3,"Medel"],[200,4,"Farlig"],[450,5,"Mycket farlig"],[700,6,"Livsfarlig"],[1100,7,"Bossnivå"],[1800,8,"Legendarisk"]];
 const faraAv=M=>FARA.find(f=>M.xp<=f[0])||FARA[FARA.length-1];
@@ -2169,7 +2169,7 @@ let bibPlats="alla";
 function monsterBibliotek(){
  view="bibliotek";lage=null;tyst();app.replaceChildren();document.getElementById("party").hidden=true;
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Monsterbibliotek")));
- app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i Tärningsriket, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i spelet, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
  const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.namn.split(" ")[0]])];
  app.append(el("div",{class:"pills"},val.map(([k,n])=>el("button",{class:"pill"+(bibPlats===k?" sel":""),"aria-pressed":bibPlats===k?"true":"false",onclick:()=>{bibPlats=k;const y=window.scrollY;monsterBibliotek();window.scrollTo(0,y)}},n))));
  const lista=Object.keys(MONSTER).filter(k=>bibPlats==="alla"||MONSTER[k].platser.includes(bibPlats)).sort((a,b)=>MONSTER[a].xp-MONSTER[b].xp||MONSTER[a].namn.localeCompare(MONSTER[b].namn,"sv"));
@@ -2677,8 +2677,8 @@ function settings(){
    ()=>slot.replaceChildren()))}},"Glöm token");
 
  let installPart;
- if(isStandalone())installPart=el("p",{},"Tärningsriket körs redan som app på den här enheten.");
- else if(installEvt)installPart=el("button",{class:"btn",onclick:async()=>{installEvt.prompt();const r=await installEvt.userChoice;installEvt=null;if(r.outcome==="accepted")close()}},"Installera Tärningsriket");
+ if(isStandalone())installPart=el("p",{},"Bland monster och tärningar körs redan som app på den här enheten.");
+ else if(installEvt)installPart=el("button",{class:"btn",onclick:async()=>{installEvt.prompt();const r=await installEvt.userChoice;installEvt=null;if(r.outcome==="accepted")close()}},"Installera Bland monster och tärningar");
  else installPart=el("ol",{class:"howto"},
   el("li",{},"iPhone/iPad (Safari): tryck på Dela-knappen (fyrkant med pil uppåt) längst ner, välj Lägg till på hemskärmen och tryck Lägg till."),
   el("li",{},"Android (Chrome): tryck på ⋮ uppe till höger och välj Installera app eller Lägg till på startskärmen."),

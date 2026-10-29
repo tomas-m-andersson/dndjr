@@ -1,5 +1,5 @@
 /* =====================================================================
-   Tärningsriket – äventyrens innehåll
+   Bland monster och tärningar – äventyrens innehåll
    ---------------------------------------------------------------------
    Här finns all text, alla val, prov och strider. Spelmotorn finns i
    index.html. Vill du ändra en text räcker det att ändra här.

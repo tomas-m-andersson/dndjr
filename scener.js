@@ -1,4 +1,4 @@
-/* Tärningsriket – bakgrunder för grottkrypningen.
+/* Bland monster och tärningar – bakgrunder för grottkrypningen.
    runScen(g, bild) ritar en scen på TV:n (96×54 pixlar).
    bild = "run|plats|kapitel|djup|fas|rumtyp"
      fas: "d1"/"d2"/"d3" = vägval med 1–3 dörrar/gångar/stigar (vänster → höger)

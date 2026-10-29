@@ -1,5 +1,5 @@
 /* =====================================================================
-   Tärningsriket – texter till grottkrypningen
+   Bland monster och tärningar – texter till grottkrypningen
    ---------------------------------------------------------------------
    Varje händelse har en lista med varianter. Spelet väljer en på måfå,
    och samma rad visas aldrig två gånger i rad.

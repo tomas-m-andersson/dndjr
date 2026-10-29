@@ -1,4 +1,4 @@
-/* Tärningsriket – Hjältarnas läger.
+/* Bland monster och tärningar – Hjältarnas läger.
    Hit kommer hjältarna mellan äventyren. Guldet från grottkrypningarna hamnar i lägrets kassa
    och kan användas till att bygga ut lägret. Besegrade bossar hänger på troféväggen.
    Använder funktioner från index.html (el, spel, heroCanvas, sprCanvas …), som finns när sidan körs. */
