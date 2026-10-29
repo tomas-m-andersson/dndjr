@@ -301,6 +301,9 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 .bp-magi{display:flex;flex-wrap:wrap;gap:6px}.bp-magi span{font-size:.8rem;font-weight:800;padding:2px 8px;border-radius:10px;background:#3d1f4f;color:#e3c2ff}
 .bp-upp{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
 .bp-sheet>.btn{align-self:flex-start}
+.devyta{display:flex;flex-direction:column;gap:10px}
+.devyta h4{margin:4px 0 0;font-family:var(--display);font-weight:800;font-size:.95rem;color:var(--gold)}
+.devlage{margin:0;font-size:.88rem;color:var(--muted)}
 .pickers{display:flex;flex-direction:column;gap:8px}
 .picker{display:flex;gap:12px;align-items:center;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:8px 10px}
 .picker .tv.mini{width:48px}
@@ -2538,6 +2541,41 @@ function warnBox(title,text,yesTxt,onYes,onNo){
   el("div",{class:"btnrow"},el("button",{class:"btn",onclick:onYes},yesTxt),el("button",{class:"btn ghost",onclick:onNo},"Avbryt")));
  return w;
 }
+/* --- Utvecklarläge: nollställ och testa saker i äventyren --- */
+function devGroup(){
+ const cb=el("input",{id:"opt-dev",type:"checkbox"});cb.checked=!!alt.dev;
+ const box=el("section",{class:"setgroup devgroup"},el("h3",{},"Utvecklarläge"),
+  el("p",{},"Verktyg för att testa spelet: nollställ upplåsta vapen, nivåer, guld och annat. Hjältarna själva (namn, utseende, klass) påverkas inte."),
+  el("label",{class:"check",for:"opt-dev"},cb,el("span",{},"Visa utvecklarverktygen")));
+ const yta=el("div",{class:"devyta"}),slot=el("div"),status=el("div",{class:"status",hidden:true,role:"status"});
+ const show=(t,ok)=>{status.hidden=false;status.className="status "+(ok?"ok":"");status.textContent=t};
+ const synkTxt=()=>gh.token&&gh.auto?" Ändringen sparas också automatiskt i "+gh.path+" i GitHub och skriver över äventyrets framsteg där.":gh.token?" Nästa gång du sparar till GitHub skrivs äventyrets framsteg i "+gh.path+" över.":"";
+ // Två steg: först en förklaring, sedan en sista fråga. Inget ändras förrän man trycker Ja två gånger.
+ const fraga=(titel,text,gor,klart)=>slot.replaceChildren(warnBox(titel,text+synkTxt(),"Ja, fortsätt",()=>slot.replaceChildren(warnBox("Är du helt säker?","Det här går inte att ångra.","Ja, gör det",()=>{gor();sparaSpel();slot.replaceChildren();show(klart,true);rita()},()=>slot.replaceChildren())),()=>slot.replaceChildren()));
+ const knapp=(txt,fn,farlig)=>el("button",{class:"btn ghost small"+(farlig?" danger":""),onclick:fn},txt);
+ const rita=()=>{if(!cb.checked){yta.replaceChildren();return}
+  const upp=(spel.upplasta||[]).length,alla=Object.values(VAPEN).flat().filter(w=>w.sp).length;
+  yta.replaceChildren(
+   el("p",{class:"devlage"},"Just nu: "+upp+" av "+alla+" specialvapen upplåsta · "+Object.keys(spel.utr||{}).length+" hjältar med magiska föremål · "+spel.guld+" guld · "+(spel.run?"ett äventyr pågår":"inget äventyr pågår")+" · "+spel.historik.length+" i krönikan."),
+   el("h4",{},"Nollställ"),
+   el("div",{class:"btnrow"},
+    knapp("Upplåsta specialvapen",()=>fraga("Nollställa specialvapnen?","Alla "+upp+" upplåsta specialvapen låses igen. Hjältar som använder ett specialvapen får tillbaka klassens första vapen.",()=>{spel.upplasta=[]},"Specialvapnen är låsta igen."),true),
+    knapp("Magiska föremål",()=>fraga("Nollställa magiska föremål?","Alla magiska vapen (+1) och skyddsringar som hjältarna har hittat tas bort.",()=>{spel.utr={}},"De magiska föremålen är borttagna."),true),
+    knapp("Nivåer och XP",()=>fraga("Nollställa nivåerna?","Alla hjältar går tillbaka till nivå 1 med 0 XP.",()=>{spel.niva={};spel.liv={}},"Alla hjältar är på nivå 1 igen."),true),
+    knapp("Guld och drycker",()=>fraga("Nollställa guld och saker?","Guld och alla saker utanför äventyren (till exempel läkedrycker) tas bort.",()=>{spel.guld=0;spel.saker=[]},"Guld och saker är borttagna."),true),
+    knapp("Pågående äventyr",()=>fraga("Avsluta alla pågående äventyr?","Grottkrypningen som pågår och alla påbörjade berättelser nollställs. Det skrivs inte in i krönikan.",()=>{spel.run=null;spel.kapitel={};lage=null},"Inga äventyr pågår längre."),true),
+    knapp("Krönikan",()=>fraga("Rensa krönikan?","Listan med tidigare äventyr töms.",()=>{spel.historik=[]},"Krönikan är tom."),true),
+    knapp("Allt i äventyren",()=>fraga("Nollställa allt i äventyren?","Specialvapen, magiska föremål, nivåer, guld, saker, pågående äventyr och krönikan nollställs. Hjältarna och sällskapet finns kvar.",()=>{const t=spel.tid;spel=normSpel(null);spel.tid=t;lage=null},"Allt i äventyren är nollställt."),true)),
+   el("h4",{},"Testa"),
+   el("div",{class:"btnrow"},
+    knapp("Lås upp alla specialvapen",()=>{spel.upplasta=Object.values(VAPEN).flat().filter(w=>w.sp).map(w=>w.id);sparaSpel();show("Alla specialvapen är upplåsta.",true);rita()}),
+    knapp("+500 guld",()=>{spel.guld+=500;if(spel.run)spel.run.guld+=500;sparaSpel();show("500 guld har lagts till"+(spel.run?" (även i det pågående äventyret).":"."),true);rita()}),
+    knapp("Sällskapet +1 nivå",()=>{const H=party.map(byId).filter(Boolean);if(!H.length){show("Välj hjältar först.",false);return}
+     H.forEach(h=>{const N=nivaInfo(h.id);if(N.lvl<10)gainXp(h,XPT[N.lvl+1]-N.xp)});sparaSpel();show(H.map(h=>h.namn+" nivå "+vitals(h).lvl).join(", ")+".",true);rita()})),
+   slot,status)};
+ cb.addEventListener("change",()=>{alt.dev=cb.checked;save(OKEY,alt);slot.replaceChildren();status.hidden=true;rita()});
+ rita();box.append(yta);return box;
+}
 function settings(){
  const m=document.getElementById("modal"),close=()=>{m.replaceChildren();if(view==="home")home();else if(view==="start")start()};
  const tok=el("input",{id:"gh-token",type:"password",autocomplete:"off",spellcheck:"false",placeholder:"github_pat_…",value:gh.token});
@@ -2599,6 +2637,7 @@ function settings(){
   svarGroup(),
   ljudGroup(),
   upplasGroup(),
+  devGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
    el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
    el("div",{class:"field"},el("label",{for:"gh-token"},"GitHub-token"),el("div",{class:"inrow"},tok,eye)),
