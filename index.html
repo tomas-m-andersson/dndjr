@@ -45,11 +45,13 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-o
 canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;width:100%;height:auto}
 
 /* Hero */
-.hero{display:flex;align-items:center;gap:16px}
+.hero{display:flex;align-items:flex-start;gap:16px}
 .hero svg{width:72px;height:72px;flex:none}
 .hero h1{font-size:clamp(2rem,8vw,3rem);color:var(--gold);line-height:1}
 .hero p{margin:6px 0 0;color:var(--muted);max-width:46ch}
 .hero .titles{min-width:0;flex:1}
+.titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
+.titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
 .hero h1{overflow-wrap:anywhere}
 @media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
 .gear{flex:none;align-self:flex-start;width:48px;height:48px;border-radius:8px;border:2px solid var(--line);background:var(--bg2);display:grid;place-items:center;padding:0}
@@ -1003,7 +1005,7 @@ function start(){
  view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
- app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Bland monster och tärningar"),el("p",{},"Ett rollspelsäventyr för hela familjen."),
+ app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},d20svg(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen."),
   el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
