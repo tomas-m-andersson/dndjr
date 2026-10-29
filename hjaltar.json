@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T09:34:33.897Z",
+  "uppdaterad": "2026-10-29T09:34:41.880Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793266471321,
+    "tid": 1793266481547,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,94 +208,22 @@
         "acb": 0
       }
     },
-    "run": {
-      "plats": "vulkanen",
-      "kapitel": 1,
-      "djup": 1,
-      "fas": "rum",
-      "dorrar": [
-        {
-          "ledtrad": "Någon har ristat en varning här.",
-          "typ": "falla",
-          "kand": false
-        },
-        {
-          "ledtrad": "Små fotspår leder ditåt.",
-          "typ": "strid",
-          "kand": false
-        }
-      ],
-      "lyssnat": false,
-      "rum": {
-        "typ": "falla",
-        "klar": true,
-        "falla": {
-          "egen": "smi",
-          "alla": true,
-          "varn": "Lava sprutar upp ur en spricka!",
-          "ok": "hoppar över lavan",
-          "traff": "bränns av lavan"
-        }
-      },
-      "logg": [
-        {
-          "t": "Kapitel 1 · Drakvulkanen",
-          "k": "sep"
-        },
-        {
-          "t": "Svavelrök sticker i näsan när Ville, Svante, Tomas och Sally går in i Drakvulkanen. Marken under fötterna är varm.",
-          "k": ""
-        },
-        {
-          "t": "Rum 1 · Fälla",
-          "k": "sep"
-        },
-        {
-          "t": "Lava sprutar upp ur en spricka!",
-          "k": "bad"
-        },
-        {
-          "t": "Ville bränns av lavan: 6 i skada.",
-          "k": "bad"
-        },
-        {
-          "t": "Svante bränns av lavan: 3 i skada.",
-          "k": "bad"
-        },
-        {
-          "t": "Tomas hoppar över lavan!",
-          "k": "hit"
-        },
-        {
-          "t": "Sally hoppar över lavan!",
-          "k": "hit"
-        }
-      ],
-      "party": [
-        "ville",
-        "svante",
-        "tomas",
-        "sally"
-      ],
-      "guld": 54,
-      "saker": [
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck"
-      ],
-      "bless": {},
-      "curse": {},
-      "ara": 0,
-      "start": 1793266431034,
-      "nastaKand": false,
-      "dorrText": "Röken driver över vägskälet. Alla vägar luktar svavel."
-    },
+    "run": null,
     "historik": [
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-29"
+      },
       {
         "plats": "vulkanen",
         "kapitel": 1,
