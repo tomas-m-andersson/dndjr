@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:05:19.539Z",
+  "uppdaterad": "2026-10-29T13:07:17.956Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -158,7 +158,7 @@
     "liv": {
       "ville": 17,
       "svante": 18,
-      "sally": 13,
+      "sally": 6,
       "tomas": 14,
       "linda": 7
     },
@@ -180,23 +180,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793279117400,
+    "tid": 1793279235448,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 405
+        "xp": 435
       },
       "svante": {
         "lvl": 2,
-        "xp": 405
+        "xp": 435
       },
       "tomas": {
         "lvl": 2,
-        "xp": 405
+        "xp": 435
       },
       "sally": {
         "lvl": 2,
-        "xp": 405
+        "xp": 435
       }
     },
     "upplasta": [
@@ -211,22 +211,36 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 1,
-      "fas": "dorrar",
+      "djup": 2,
+      "fas": "strid",
       "dorrar": [
         {
-          "ledtrad": "Någon andas tungt. Det låter stort.",
-          "typ": "sovare",
+          "ledtrad": "Något skrattar tyst därinne.",
+          "typ": "strid",
           "kand": false
         },
         {
-          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+          "ledtrad": "Fladdermöss flyger ut ur öppningen.",
+          "typ": "strid",
+          "kand": false
+        },
+        {
+          "ledtrad": "En gammal sång nynnas, lite falskt.",
           "typ": "resenar",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "vatte",
+          "skelett",
+          "svampman"
+        ],
+        "stridOpt": {}
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -235,6 +249,30 @@
         {
           "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan under Kråkberget. Vatten droppar från taket.",
           "k": ""
+        },
+        {
+          "t": "Rum 1 · Sovande monster",
+          "k": "sep"
+        },
+        {
+          "t": "Mitt i rummet sover två vättesjamaner. Ett öga verkar nästan öppet.",
+          "k": "note"
+        },
+        {
+          "t": "Ett snarkande ljud, ett mumlande. Men ni kommer förbi. Alla får 30 XP.",
+          "k": "hit"
+        },
+        {
+          "t": "Ni går vidare.",
+          "k": ""
+        },
+        {
+          "t": "Rum 2 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Ni möter en vätte, ett skelett och en svampman!",
+          "k": "bad"
         }
       ],
       "party": [
@@ -259,7 +297,7 @@
       "ara": 0,
       "start": 1793278939019,
       "nastaKand": false,
-      "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
     },
     "historik": [
       {
