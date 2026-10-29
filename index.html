@@ -52,6 +52,10 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero .titles{min-width:0;flex:1}
 .titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
+.d20logo{filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
+.d20gnista{transform-origin:22px 20px;animation:gnistra 3.2s ease-in-out infinite}
+@keyframes gnistra{0%,70%,100%{opacity:0;transform:scale(.4)}80%{opacity:1;transform:scale(1)}90%{opacity:.6;transform:scale(.7)}}
+@media (prefers-reduced-motion:reduce){.d20gnista{animation:none;opacity:.8}}
 @media (min-width:700px){.hero .titles>p{margin-left:calc(clamp(56px,13vw,88px) + 12px)}} /* på datorn: undertexten rakt under rubriken */
 .hero h1{overflow-wrap:anywhere}
 @media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
@@ -1000,7 +1004,36 @@ function vitals(h){const K=KLASS[h.klass],s=finalStats(h);
 const app=document.getElementById("app");
 function el(tag,attrs={},...kids){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")e.className=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(v!==false&&v!=null)e.setAttribute(k,v===true?"":v)}
  kids.flat().forEach(c=>c!=null&&e.append(c.nodeType?c:document.createTextNode(c)));return e}
-function d20svg(){const s=el("div");s.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="#f2c14e" stroke="#2a1d05" stroke-width="3"/><polygon points="50,22 76,66 24,66" fill="#f7d77f" stroke="#2a1d05" stroke-width="3"/><path d="M50 4L50 22M92 28L76 66M8 28L24 66M50 96L24 66M50 96L76 66M8 72L24 66M92 72L76 66M8 28L50 22M92 28L50 22" stroke="#2a1d05" stroke-width="3" fill="none"/><text x="50" y="58" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="20" fill="#2a1d05">20</text></svg>`;return s.firstChild}
+function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning med glans
+ s.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true" class="d20logo">
+ <defs>
+  <linearGradient id="lg-ljus" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6cf"/><stop offset=".55" stop-color="#f7d777"/><stop offset="1" stop-color="#e9b440"/></linearGradient>
+  <linearGradient id="lg-mitt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9dc85"/><stop offset=".6" stop-color="#eebd4a"/><stop offset="1" stop-color="#d09a2c"/></linearGradient>
+  <linearGradient id="lg-mork" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9a237"/><stop offset="1" stop-color="#9a6a1c"/></linearGradient>
+  <linearGradient id="lg-djup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b07e22"/><stop offset="1" stop-color="#6e4810"/></linearGradient>
+  <linearGradient id="lg-text" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a3a0a"/><stop offset="1" stop-color="#2a1803"/></linearGradient>
+  <radialGradient id="lg-glans" cx=".35" cy=".3" r=".5"><stop offset="0" stop-color="#fffbe8" stop-opacity=".85"/><stop offset="1" stop-color="#fffbe8" stop-opacity="0"/></radialGradient>
+ </defs>
+ <g stroke="#8a5a14" stroke-width="1.2" stroke-linejoin="round">
+  <polygon points="50,4 8,28 50,22" fill="url(#lg-ljus)"/>
+  <polygon points="50,4 92,28 50,22" fill="url(#lg-mitt)"/>
+  <polygon points="8,28 50,22 24,66" fill="url(#lg-ljus)"/>
+  <polygon points="92,28 50,22 76,66" fill="url(#lg-mork)"/>
+  <polygon points="8,28 8,72 24,66" fill="url(#lg-mitt)"/>
+  <polygon points="92,28 92,72 76,66" fill="url(#lg-djup)"/>
+  <polygon points="8,72 50,96 24,66" fill="url(#lg-mork)"/>
+  <polygon points="92,72 50,96 76,66" fill="url(#lg-djup)"/>
+  <polygon points="24,66 76,66 50,96" fill="url(#lg-mork)"/>
+  <polygon points="50,22 76,66 24,66" fill="url(#lg-mitt)"/>
+ </g>
+ <polygon points="50,22 76,66 24,66" fill="url(#lg-glans)"/>
+ <polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="none" stroke="#3a2508" stroke-width="3" stroke-linejoin="round"/>
+ <path d="M50 6.5 L10.5 29 M50 6.5 L50 21" stroke="#fff6cf" stroke-width="1.1" stroke-linecap="round" opacity=".9"/>
+ <path d="M26.5 64.5 L49.5 25" stroke="#fff6cf" stroke-width="1" stroke-linecap="round" opacity=".7"/>
+ <text x="50" y="58.5" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="21" fill="#fff3c4" opacity=".7" transform="translate(.8 .9)">20</text>
+ <text x="50" y="58" text-anchor="middle" font-family="Nunito,system-ui,sans-serif" font-weight="900" font-size="21" fill="url(#lg-text)">20</text>
+ <g class="d20gnista" fill="#fffbe8"><path d="M22 14 L23.2 18.8 L28 20 L23.2 21.2 L22 26 L20.8 21.2 L16 20 L20.8 18.8 Z"/></g>
+ </svg>`;return s.firstChild}
 
 /* ===== Startsidan: välj Hjältarna eller Äventyr ===== */
 function start(){
