@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T06:54:25.987Z",
+  "uppdaterad": "2026-10-29T07:16:12.783Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -90,15 +90,15 @@
       }
     },
     "tomas": {
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
-      "vapen": "trollspo",
+      "vapen": "stav",
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
