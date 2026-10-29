@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:46:51.397Z",
+  "uppdaterad": "2026-10-29T13:54:53.859Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793281606219,
+    "tid": 1793282091831,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -199,15 +199,14 @@
         "xp": 405
       }
     },
-    "upplasta": [
-      "giftdolkar"
-    ],
+    "upplasta": [],
     "utr": {
       "ville": {
         "wb": 1,
         "acb": 0
       }
     },
+    "reset": 1793282091831,
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
