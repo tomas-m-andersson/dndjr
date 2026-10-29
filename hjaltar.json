@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T08:53:31.513Z",
+  "uppdaterad": "2026-10-29T09:33:37.356Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793264009565,
+    "tid": 1793264011958,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,60 +208,22 @@
         "acb": 0
       }
     },
-    "run": {
-      "plats": "vulkanen",
-      "kapitel": 1,
-      "djup": 1,
-      "fas": "dorrar",
-      "dorrar": [
-        {
-          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-          "typ": "strid",
-          "kand": false
-        },
-        {
-          "ledtrad": "Ett svagt blått sken syns under dörren.",
-          "typ": "falla",
-          "kand": false
-        }
-      ],
-      "lyssnat": false,
-      "rum": null,
-      "logg": [
-        {
-          "t": "Kapitel 1 · Drakvulkanen",
-          "k": "sep"
-        },
-        {
-          "t": "Lavan lyser rött långt där nere. Ville, Svante, Tomas och Sally börjar gå nedför den smala stigen in i vulkanen.",
-          "k": ""
-        }
-      ],
-      "party": [
-        "ville",
-        "svante",
-        "tomas",
-        "sally"
-      ],
-      "guld": 38,
-      "saker": [
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck",
-        "Läkedryck"
-      ],
-      "bless": {},
-      "curse": {},
-      "ara": 0,
-      "start": 1793264004690,
-      "nastaKand": false,
-      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
-    },
+    "run": null,
     "historik": [
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-29"
+      },
       {
         "plats": "slottet",
         "kapitel": 1,
