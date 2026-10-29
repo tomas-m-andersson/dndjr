@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:37:27.116Z",
+  "uppdaterad": "2026-10-29T13:46:51.397Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -150,7 +150,7 @@
     }
   },
   "aventyr": {
-    "guld": 73,
+    "guld": 103,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -158,8 +158,8 @@
     "liv": {
       "ville": 17,
       "svante": 18,
-      "sally": 10,
-      "tomas": 9,
+      "sally": 13,
+      "tomas": 14,
       "linda": 7
     },
     "kapitel": {
@@ -180,26 +180,28 @@
         "slut": "slut"
       }
     },
-    "tid": 1793281045161,
+    "tid": 1793281606219,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 473
+        "xp": 405
       },
       "svante": {
         "lvl": 2,
-        "xp": 473
+        "xp": 405
       },
       "tomas": {
         "lvl": 2,
-        "xp": 473
+        "xp": 405
       },
       "sally": {
         "lvl": 2,
-        "xp": 473
+        "xp": 405
       }
     },
-    "upplasta": [],
+    "upplasta": [
+      "giftdolkar"
+    ],
     "utr": {
       "ville": {
         "wb": 1,
@@ -209,110 +211,30 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 4,
-      "fas": "strid",
+      "djup": 1,
+      "fas": "dorrar",
       "dorrar": [
         {
-          "ledtrad": "Det finns färskt blod på marken.",
-          "typ": "strid",
+          "ledtrad": "Något snarkar, djupt och långsamt.",
+          "typ": "sovare",
           "kand": false
         },
         {
-          "ledtrad": "Ett lågt morrande. Sedan tystnad.",
-          "typ": "strid",
+          "ledtrad": "Spindelväv täcker öppningen.",
+          "typ": "skatt",
           "kand": false
         }
       ],
       "lyssnat": false,
-      "rum": {
-        "typ": "strid",
-        "klar": false,
-        "fiender": [
-          "giftspindel",
-          "giftspindel"
-        ],
-        "stridOpt": {}
-      },
+      "rum": null,
       "logg": [
         {
           "t": "Kapitel 1 · Grottorna under Kråkberget",
           "k": "sep"
         },
         {
-          "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan under Kråkberget. Vatten droppar från taket.",
+          "t": "En kall vind blåser ut ur Kråkberget. Ville, Svante, Tomas och Sally drar åt mantlarna och går in i grottan.",
           "k": ""
-        },
-        {
-          "t": "Rum 1 · Sovande monster",
-          "k": "sep"
-        },
-        {
-          "t": "Mitt i rummet sover två vättesjamaner. Ett öga verkar nästan öppet.",
-          "k": "note"
-        },
-        {
-          "t": "Ett snarkande ljud, ett mumlande. Men ni kommer förbi. Alla får 30 XP.",
-          "k": "hit"
-        },
-        {
-          "t": "Ni går vidare.",
-          "k": ""
-        },
-        {
-          "t": "Rum 2 · Monster",
-          "k": "sep"
-        },
-        {
-          "t": "Ni möter en vätte, ett skelett och en svampman!",
-          "k": "bad"
-        },
-        {
-          "t": "Seger! Alla får 38 XP.",
-          "k": "crit"
-        },
-        {
-          "t": "Sally hostar och sätter sig upp. 1 liv.",
-          "k": "heal"
-        },
-        {
-          "t": "Ni samlar ihop er och fortsätter.",
-          "k": ""
-        },
-        {
-          "t": "Rum 3 · Fälla",
-          "k": "sep"
-        },
-        {
-          "t": "Istappar av sten lossnar från taket!",
-          "k": "bad"
-        },
-        {
-          "t": "Ville hoppar undan!",
-          "k": "hit"
-        },
-        {
-          "t": "Svante hoppar undan!",
-          "k": "hit"
-        },
-        {
-          "t": "Tomas träffas av en vass sten: 5 i skada.",
-          "k": "bad"
-        },
-        {
-          "t": "Sally träffas av en vass sten: 4 i skada.",
-          "k": "bad"
-        },
-        {
-          "t": "Ni tar en klunk vatten och går vidare.",
-          "k": ""
-        },
-        {
-          "t": "Rum 4 · Monster",
-          "k": "sep"
-        },
-        {
-          "t": "Plötsligt står två giftspindlar framför er.",
-          "k": "bad"
         }
       ],
       "party": [
@@ -321,8 +243,10 @@
         "tomas",
         "sally"
       ],
-      "guld": 2044,
+      "guld": 49,
       "saker": [
+        "Läkedryck",
+        "Läkedryck",
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
@@ -332,163 +256,12 @@
       ],
       "bless": {},
       "curse": {},
-      "ara": 150,
-      "start": 1793278939019,
+      "ara": 0,
+      "start": 1793267529837,
       "nastaKand": false,
-      "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
-      "stridSpar": {
-        "def": {
-          "fiender": [
-            {
-              "namn": "Giftspindel 1",
-              "liv": 14,
-              "rustning": 13,
-              "anfall": 6,
-              "skada": "1d6",
-              "xp": 100,
-              "platser": [
-                "skogen",
-                "grottorna"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "giftspindel",
-              "bild": "giftspindel",
-              "max": 14,
-              "ute": false
-            },
-            {
-              "namn": "Giftspindel 2",
-              "liv": 14,
-              "rustning": 13,
-              "anfall": 6,
-              "skada": "1d6",
-              "xp": 100,
-              "platser": [
-                "skogen",
-                "grottorna"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "giftspindel",
-              "bild": "giftspindel",
-              "max": 14,
-              "ute": false
-            }
-          ],
-          "run": true,
-          "boss": false,
-          "fiendeForst": false,
-          "sover": false,
-          "noter": []
-        },
-        "bild": "run|grottorna|1|4|rum|strid",
-        "fiender": [
-          {
-            "namn": "Giftspindel 1",
-            "liv": 14,
-            "rustning": 13,
-            "anfall": 6,
-            "skada": "1d6",
-            "xp": 100,
-            "platser": [
-              "skogen",
-              "grottorna"
-            ],
-            "flyr": "kryper ihop och slutar röra sig.",
-            "egen": {
-              "gift": "1d4"
-            },
-            "typ": "giftspindel",
-            "bild": "giftspindel",
-            "max": 14,
-            "ute": false
-          },
-          {
-            "namn": "Giftspindel 2",
-            "liv": 14,
-            "rustning": 13,
-            "anfall": 6,
-            "skada": "1d6",
-            "xp": 100,
-            "platser": [
-              "skogen",
-              "grottorna"
-            ],
-            "flyr": "kryper ihop och slutar röra sig.",
-            "egen": {
-              "gift": "1d4"
-            },
-            "typ": "giftspindel",
-            "bild": "giftspindel",
-            "max": 14,
-            "ute": false
-          }
-        ],
-        "anvant": {},
-        "pepp": {},
-        "skydd": {},
-        "fokus": {},
-        "locka": null,
-        "runda": 1,
-        "ko": [
-          {
-            "h": "ville"
-          },
-          {
-            "h": "svante"
-          },
-          {
-            "h": "tomas"
-          },
-          {
-            "h": "sally"
-          },
-          {
-            "f": 0
-          },
-          {
-            "f": 1
-          }
-        ],
-        "logg": [],
-        "noter": [],
-        "nu": null
-      }
+      "dorrText": "Ni tittar på varandra. Någon måste bestämma."
     },
     "historik": [
-      {
-        "plats": "vulkanen",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-29"
-      },
-      {
-        "plats": "grottorna",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-29"
-      },
       {
         "plats": "vulkanen",
         "kapitel": 1,
@@ -589,14 +362,7 @@
       }
     ],
     "lager": {
-      "byggt": {
-        "eld": 3,
-        "talt": 2,
-        "smedja": 2,
-        "ovning": 2,
-        "skatt": 2,
-        "trofe": 1
-      },
+      "byggt": {},
       "trofeer": {}
     }
   }
