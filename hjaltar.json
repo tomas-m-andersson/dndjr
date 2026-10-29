@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T09:34:11.993Z",
+  "uppdaterad": "2026-10-29T09:34:33.897Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -156,8 +156,8 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 17,
-      "svante": 18,
+      "ville": 11,
+      "svante": 15,
       "sally": 13,
       "tomas": 14,
       "linda": 7
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793266449539,
+    "tid": 1793266471321,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -228,7 +228,7 @@
       "lyssnat": false,
       "rum": {
         "typ": "falla",
-        "klar": false,
+        "klar": true,
         "falla": {
           "egen": "smi",
           "alla": true,
@@ -253,6 +253,22 @@
         {
           "t": "Lava sprutar upp ur en spricka!",
           "k": "bad"
+        },
+        {
+          "t": "Ville bränns av lavan: 6 i skada.",
+          "k": "bad"
+        },
+        {
+          "t": "Svante bränns av lavan: 3 i skada.",
+          "k": "bad"
+        },
+        {
+          "t": "Tomas hoppar över lavan!",
+          "k": "hit"
+        },
+        {
+          "t": "Sally hoppar över lavan!",
+          "k": "hit"
         }
       ],
       "party": [
