@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T09:33:53.438Z",
+  "uppdaterad": "2026-10-29T09:34:11.993Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793266431035,
+    "tid": 1793266449539,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -212,7 +212,7 @@
       "plats": "vulkanen",
       "kapitel": 1,
       "djup": 1,
-      "fas": "dorrar",
+      "fas": "rum",
       "dorrar": [
         {
           "ledtrad": "Någon har ristat en varning här.",
@@ -226,7 +226,17 @@
         }
       ],
       "lyssnat": false,
-      "rum": null,
+      "rum": {
+        "typ": "falla",
+        "klar": false,
+        "falla": {
+          "egen": "smi",
+          "alla": true,
+          "varn": "Lava sprutar upp ur en spricka!",
+          "ok": "hoppar över lavan",
+          "traff": "bränns av lavan"
+        }
+      },
       "logg": [
         {
           "t": "Kapitel 1 · Drakvulkanen",
@@ -235,6 +245,14 @@
         {
           "t": "Svavelrök sticker i näsan när Ville, Svante, Tomas och Sally går in i Drakvulkanen. Marken under fötterna är varm.",
           "k": ""
+        },
+        {
+          "t": "Rum 1 · Fälla",
+          "k": "sep"
+        },
+        {
+          "t": "Lava sprutar upp ur en spricka!",
+          "k": "bad"
         }
       ],
       "party": [
