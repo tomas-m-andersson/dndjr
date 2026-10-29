@@ -2435,12 +2435,13 @@ function runKort(){
  if(R){const P=PLATSER[R.plats];
   const btns=el("div",{class:"btnrow"},el("button",{class:"btn",onclick:visaRun},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
    btns.replaceChildren(warnBox("Ge upp äventyret?","Äventyret avslutas och skrivs in i krönikan. Hjältarna behåller sina nivåer.","Ja, ge upp",()=>{lage="run";avslutaRun("gav upp");spel.run=null;lage=null;sparaSpel();adventures()},adventures))}},"Ge upp"));
-  box.append(el("div",{class:"chapter"},el("small",{},"Pågår · kapitel "+R.kapitel+" · "+(R.fas==="fallen"?"fallna":R.djup>=DJUP?"vid bossen":"rum "+R.djup+" av "+DJUP)),el("h3",{},P.namn),
+  const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild(R),{visaParty:false}); // där ni står just nu
+  box.append(el("div",{class:"chapter"},el("div",{class:"tvbig"},tv),el("small",{},"Pågår · kapitel "+R.kapitel+" · "+(R.fas==="fallen"?"fallna":R.djup>=DJUP?"vid bossen":"rum "+R.djup+" av "+DJUP)),el("h3",{},P.namn),
    el("p",{},R.party.map(byId).filter(Boolean).map(h=>h.namn).join(", ")),btns));
   return box}
  const grid=el("div",{class:"places"});
  Object.entries(PLATSER).forEach(([k,P])=>{const c=document.createElement("canvas");c.className="px";
-  lage=null;drawTV(c,P.bild,{visaParty:false});
+  lage=null;drawTV(c,k==="skogen"?"run|skogen|1|2|d3|":"run|"+k+"|1|6|port|",{visaParty:false}); // platsens nya bakgrund: bossens port (skogen: stigarna mellan träden)
   grid.append(el("button",{class:"place",onclick:()=>startRun(k)},el("div",{class:"tvbig"},c),el("b",{},P.namn),el("small",{},P.besk)))});
  box.append(grid);
  return box;
