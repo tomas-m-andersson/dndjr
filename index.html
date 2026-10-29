@@ -67,7 +67,12 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .bigtile-txt p{margin:0;font-weight:800}
 .bigtile-txt small{color:var(--muted);font-size:.9rem;line-height:1.4}
 .stephead .btn.small{align-self:flex-start;margin-top:6px}
-.lagertv{margin:0}
+.lagertv{margin:0;position:relative;padding:0;overflow:hidden}
+.lagerscroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;cursor:grab}
+.lagerscroll canvas.lagerduk{display:block;max-width:none;height:auto}
+.lagerpil{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:44px;border:0;border-radius:8px;background:#0c151ccc;color:var(--gold);font-size:1.8rem;font-weight:800;line-height:1;cursor:pointer}
+.lagerpil.v{left:6px}.lagerpil.h{right:6px}
+.lagerzoner .pill{font-size:.85rem;padding:6px 12px}.lagerzoner .pill.tom{color:var(--muted);border-style:dashed}
 .lagerrad{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
 .lagertext{margin:0;flex:1;min-width:200px;font-size:1.02rem;font-style:italic;color:var(--fg)}
 .bygggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
