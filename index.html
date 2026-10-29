@@ -351,6 +351,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 
 <script src="aventyr.js"></script>
 <script src="texter.js"></script>
+<script src="scener.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -904,7 +905,7 @@ function start(){
  const hjaltar=el("button",{class:"bigtile",onclick:home},rad,
   el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")),el("small",{},"Välj vem som följer med, ändra utseende och vapen, eller skapa en egen hjälte.")));
  // Äventyr: sällskapet i en grotta (eller där ni är just nu)
- const tv=document.createElement("canvas");tv.className="px";drawTV(tv,PLATSER[spel.run?spel.run.plats:"grottorna"].bild);
+ const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild());
  const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Äventyr"),
    el("p",{},ph.length?"Sällskapet: "+ph.map(h=>h.namn).join(", "):"Välj hjältar först"),
@@ -1312,6 +1313,7 @@ function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if
 const sprSize=k=>{const s=sprDef(k);if(s&&s.hero){const c=sprCanvas(k);return{w:c.width,h:c.height-1}}return s?{w:(s.rows[0].length+2)*s.skala,h:(s.rows.length+2)*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
 function scenePaint(g,bild){
+ if(typeof bild==="string"&&bild.startsWith("run|")&&window.runScen)return window.runScen(g,bild); // grottkrypningens scener (scener.js)
  const R=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)},rnd=seedRnd(bild.length*97+7);
  const sky=(a,b,top=0,bot=40)=>{const n=8;for(let i=0;i<n;i++){const t=i/(n-1),mix=(c1,c2)=>{const p=h=>parseInt(h.slice(1),16),A=p(c1),B=p(c2),ch=sh=>Math.round(((A>>sh)&255)*(1-t)+((B>>sh)&255)*t);return"rgb("+ch(16)+","+ch(8)+","+ch(0)+")"};
    R(0,top+Math.floor(i*(bot-top)/n),TVW,Math.ceil((bot-top)/n)+1,mix(a,b))}};
@@ -2049,7 +2051,11 @@ function avslutaRun(utfall){
 function runHuvud(){const R=spel.run,P=PLATSER[R.plats];
  return el("div",{class:"topbar"},pausKnapp(()=>{rullGen++;rullar=false;document.getElementById("modal").replaceChildren();sparaSpel();lage=null;adventures();flash("Äventyret är pausat. Tryck på Fortsätt när ni vill spela vidare.")}),
   el("span",{class:"purse"},P.namn.split(" ")[0]+" · kap "+R.kapitel+" · "+(R.djup>=DJUP?"bossen":"rum "+R.djup+"/"+DJUP)))}
-function runTV(o={}){const R=spel.run;return tvBox(PLATSER[R.plats].bild,o)}
+// Vilken bild ska visas just nu? Vägval visar lika många dörrar/gångar som valen, bossen har sin port.
+function runBild(R=spel.run){if(!R)return"run|grottorna|1|1|d2|";
+ const t=R.rum&&R.rum.typ,fas=R.fas==="dorrar"?(R.dorrar?"d"+R.dorrar.length:"port"):t==="boss"||R.fas==="vann"?"boss":"rum";
+ return["run",R.plats,R.kapitel,R.djup,fas,t||""].join("|")}
+function runTV(o={}){return tvBox(runBild(),o)}
 function visaRun(){
  tyst();strid=null;lage="run";view="run";document.getElementById("party").hidden=true;
  const R=spel.run;if(!R){adventures();return}
@@ -2068,7 +2074,7 @@ function visaRun(){
   knapp("Gå djupare: kapitel "+(R.kapitel+1),"Alla vilar och får fullt liv. Ni hittar "+PLATSER[R.plats].djupare+".",nastaKapitel,{special:true});
   knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel.")});
  }else if(R.fas==="strid"){
-  knapp("Fortsätt striden",monNamn(rum.fiender),()=>R.stridSpar?fortsattStrid(R.stridSpar,PLATSER[R.plats].bild):runStrid(rum.fiender,rum.stridOpt||{}));
+  knapp("Fortsätt striden",monNamn(rum.fiender),()=>R.stridSpar?fortsattStrid(R.stridSpar,runBild()):runStrid(rum.fiender,rum.stridOpt||{}));
  }else if(R.fas==="dorrar"){
   const P=PLATSER[R.plats];
   if(!R.dorrar){if(!R.dorrText)R.dorrText=T("porten",{boss:P.boss.toLowerCase()});akt.append(el("p",{class:"lead"},R.dorrText));
@@ -2241,7 +2247,7 @@ function runStrid(keys,opt){
   return{...M,typ:k,bild:k,namn:M.namn+(ant[k]>1?" "+nr[k]:""),liv,max:liv,anfall:M.anfall+SV().atk,ute:false}});
  if(opt.boss&&fiender[0])fiender[0].boss=true;
  startStrid({fiender,run:true,boss:!!opt.boss,fiendeForst:!!opt.fiendeForst,sover:!!opt.sover,
-  noter:opt.fiendeForst?["Bakhåll! Fienderna anfaller först."]:opt.sover?["Ni smyger fram. Fienderna sover den första rundan."]:[]},PLATSER[R.plats].bild);
+  noter:opt.fiendeForst?["Bakhåll! Fienderna anfaller först."]:opt.sover?["Ni smyger fram. Fienderna sover den första rundan."]:[]},runBild());
 }
 function runVinst(){
  const R=spel.run,fi=strid.fiender,xp=fi.reduce((a,f)=>a+Math.max(10,MONSTER[f.typ].xp),0),H=partyHeroes(),del=Math.ceil(xp/H.length);
