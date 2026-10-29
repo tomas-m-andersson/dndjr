@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T07:16:12.783Z",
+  "uppdaterad": "2026-10-29T08:53:26.581Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -90,15 +90,15 @@
       }
     },
     "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
       "vapen": "stav",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793256863942,
+    "tid": 1793264004691,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,7 +208,59 @@
         "acb": 0
       }
     },
-    "run": null,
+    "run": {
+      "plats": "vulkanen",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+          "typ": "strid",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ett svagt blått sken syns under dörren.",
+          "typ": "falla",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Drakvulkanen",
+          "k": "sep"
+        },
+        {
+          "t": "Lavan lyser rött långt där nere. Ville, Svante, Tomas och Sally börjar gå nedför den smala stigen in i vulkanen.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 38,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793264004690,
+      "nastaKand": false,
+      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
+    },
     "historik": [
       {
         "plats": "slottet",
