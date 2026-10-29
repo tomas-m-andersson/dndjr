@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T10:05:57.896Z",
+  "uppdaterad": "2026-10-29T13:02:21.130Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793268355931,
+    "tid": 1793278939020,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,7 +208,59 @@
         "acb": 0
       }
     },
-    "run": null,
+    "run": {
+      "plats": "grottorna",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Någon andas tungt. Det låter stort.",
+          "typ": "sovare",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+          "typ": "resenar",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Grottorna under Kråkberget",
+          "k": "sep"
+        },
+        {
+          "t": "Ville, Svante, Tomas och Sally tänder facklorna och kryper in i grottan under Kråkberget. Vatten droppar från taket.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 44,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793278939019,
+      "nastaKand": false,
+      "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+    },
     "historik": [
       {
         "plats": "vulkanen",
