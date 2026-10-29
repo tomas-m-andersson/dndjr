@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:08:19.598Z",
+  "uppdaterad": "2026-10-29T13:09:13.343Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -158,7 +158,7 @@
     "liv": {
       "ville": 17,
       "svante": 18,
-      "sally": 1,
+      "sally": 10,
       "tomas": 9,
       "linda": 7
     },
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793279297690,
+    "tid": 1793279314780,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -211,26 +211,29 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 3,
-      "fas": "rum",
+      "djup": 4,
+      "fas": "strid",
       "dorrar": [
         {
-          "ledtrad": "Någon har ristat en varning här.",
-          "typ": "falla",
+          "ledtrad": "Det finns färskt blod på marken.",
+          "typ": "strid",
+          "kand": false
+        },
+        {
+          "ledtrad": "Ett lågt morrande. Sedan tystnad.",
+          "typ": "strid",
           "kand": false
         }
       ],
       "lyssnat": false,
       "rum": {
-        "typ": "falla",
-        "klar": true,
-        "falla": {
-          "egen": "smi",
-          "alla": true,
-          "varn": "Istappar av sten lossnar från taket!",
-          "ok": "hoppar undan",
-          "traff": "träffas av en vass sten"
-        }
+        "typ": "strid",
+        "klar": false,
+        "fiender": [
+          "giftspindel",
+          "giftspindel"
+        ],
+        "stridOpt": {}
       },
       "logg": [
         {
@@ -300,6 +303,18 @@
         {
           "t": "Sally träffas av en vass sten: 4 i skada.",
           "k": "bad"
+        },
+        {
+          "t": "Ni tar en klunk vatten och går vidare.",
+          "k": ""
+        },
+        {
+          "t": "Rum 4 · Monster",
+          "k": "sep"
+        },
+        {
+          "t": "Plötsligt står två giftspindlar framför er.",
+          "k": "bad"
         }
       ],
       "party": [
@@ -315,7 +330,6 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck",
         "Läkedryck"
       ],
       "bless": {},
@@ -323,7 +337,130 @@
       "ara": 150,
       "start": 1793278939019,
       "nastaKand": false,
-      "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+      "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
+      "stridSpar": {
+        "def": {
+          "fiender": [
+            {
+              "namn": "Giftspindel 1",
+              "liv": 14,
+              "rustning": 13,
+              "anfall": 6,
+              "skada": "1d6",
+              "xp": 100,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "kryper ihop och slutar röra sig.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "giftspindel",
+              "bild": "giftspindel",
+              "max": 14,
+              "ute": false
+            },
+            {
+              "namn": "Giftspindel 2",
+              "liv": 14,
+              "rustning": 13,
+              "anfall": 6,
+              "skada": "1d6",
+              "xp": 100,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "kryper ihop och slutar röra sig.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "giftspindel",
+              "bild": "giftspindel",
+              "max": 14,
+              "ute": false
+            }
+          ],
+          "run": true,
+          "boss": false,
+          "fiendeForst": false,
+          "sover": false,
+          "noter": []
+        },
+        "bild": "run|grottorna|1|4|rum|strid",
+        "fiender": [
+          {
+            "namn": "Giftspindel 1",
+            "liv": 14,
+            "rustning": 13,
+            "anfall": 6,
+            "skada": "1d6",
+            "xp": 100,
+            "platser": [
+              "skogen",
+              "grottorna"
+            ],
+            "flyr": "kryper ihop och slutar röra sig.",
+            "egen": {
+              "gift": "1d4"
+            },
+            "typ": "giftspindel",
+            "bild": "giftspindel",
+            "max": 14,
+            "ute": false
+          },
+          {
+            "namn": "Giftspindel 2",
+            "liv": 14,
+            "rustning": 13,
+            "anfall": 6,
+            "skada": "1d6",
+            "xp": 100,
+            "platser": [
+              "skogen",
+              "grottorna"
+            ],
+            "flyr": "kryper ihop och slutar röra sig.",
+            "egen": {
+              "gift": "1d4"
+            },
+            "typ": "giftspindel",
+            "bild": "giftspindel",
+            "max": 14,
+            "ute": false
+          }
+        ],
+        "anvant": {},
+        "pepp": {},
+        "skydd": {},
+        "fokus": {},
+        "locka": null,
+        "runda": 1,
+        "ko": [
+          {
+            "h": "ville"
+          },
+          {
+            "h": "svante"
+          },
+          {
+            "h": "tomas"
+          },
+          {
+            "h": "sally"
+          },
+          {
+            "f": 0
+          },
+          {
+            "f": 1
+          }
+        ],
+        "logg": [],
+        "noter": [],
+        "nu": null
+      }
     },
     "historik": [
       {
