@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T09:33:37.356Z",
+  "uppdaterad": "2026-10-29T09:33:53.438Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793264011958,
+    "tid": 1793266431035,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,7 +208,59 @@
         "acb": 0
       }
     },
-    "run": null,
+    "run": {
+      "plats": "vulkanen",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Någon har ristat en varning här.",
+          "typ": "falla",
+          "kand": false
+        },
+        {
+          "ledtrad": "Små fotspår leder ditåt.",
+          "typ": "strid",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Drakvulkanen",
+          "k": "sep"
+        },
+        {
+          "t": "Svavelrök sticker i näsan när Ville, Svante, Tomas och Sally går in i Drakvulkanen. Marken under fötterna är varm.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 54,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793266431034,
+      "nastaKand": false,
+      "dorrText": "Röken driver över vägskälet. Alla vägar luktar svavel."
+    },
     "historik": [
       {
         "plats": "vulkanen",
