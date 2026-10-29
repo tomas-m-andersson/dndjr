@@ -199,12 +199,28 @@ function skog(S){
 }
 function dodtrad(S,x,base,h){const {R}=S,c="#2a2030";R(x-1,base-h,3,h,c);R(x-2,base-2,5,2,c);
  for(let i=0;i<3;i++){const y=base-h+3+i*4,dir=i%2?1:-1;for(let j=0;j<4+i;j++)S.P(x+dir*(2+j),y-Math.floor(j/2),c)}}
-function skogStig(S,x,v){const {R}=S,mork=S.kap>=2?"#0a0710":"#050a08";
- const lov=S.kap>=2?"#1e1530":"#14261d";valv(S,x,F-23,18,lov);
- for(let i=0;i<26;i++){const a=S.r()*Math.PI,rr=8+S.r()*2;S.P(x+Math.cos(a)*rr,F-14-Math.sin(a)*rr*1.1,S.kap>=2?"#2a1f40":"#1f3a2a")}
- valv(S,x,F-19,12,lit(lov,-.45));valv(S,x,F-15,7,mork);
- for(let y=F-1;y<H;y++){const t=(y-F+1)/(H-F+1),half=2+t*8;R(x-half,y,half*2,1,"#4e4030");R(x-half,y,1,1,"#3a3024");R(x+half-1,y,1,1,"#3a3024")}
- for(let i=0;i<5;i++)S.P(x-4+S.r()*8,F+2+S.r()*9,"#6b5a44");
+// En mörk stig som går in mellan två stora trädstammar
+function skogStig(S,x,v){const {R}=S,lila=S.kap>=2,mork=lila?"#07050c":"#030605";
+ const bark=lila?"#3a3242":"#3a2a1e",barkM=lila?"#28222f":"#261a12",barkL=lila?"#4e4458":"#4e3a28",lov=lila?"#1a1228":"#0f1f17",lovL=lila?"#2a1f40":"#1c3426";
+ // mörkret mellan stammarna, som blir djupare längre in
+ R(x-6,F-30,12,30,mork);
+ for(let y=F-30;y<F;y++){const t=(F-y)/30;S.A(.35*(1-t),()=>R(x-6,y,12,1,lit(mork,.12)))}
+ // stigen: ljus närmast, försvinner in i mörkret mellan träden
+ for(let y=F-8;y<H;y++){const t=(y-(F-8))/(H-(F-8)),half=1+t*t*9+t*2,c=mix(mork,"#4e4030",Math.min(1,t*1.4));R(x-half,y,half*2,1,c);
+  if(t>.3){S.P(x-half,y,mix(c,"#000000",.3));S.P(x+half-1,y,mix(c,"#000000",.3))}}
+ for(let i=0;i<5;i++)S.P(x-4+S.r()*8,F+3+S.r()*8,"#6b5a44");
+ // två tjocka stammar med bark och rötter
+ for(const sida of[-1,1]){const x0=sida<0?x-11:x+6,w=5;
+  R(x0,0,w,F,bark);R(sida<0?x0:x0+w-1,0,1,F,barkL);R(sida<0?x0+w-1:x0,0,1,F,barkM);
+  for(let y=2;y<F;y+=3+Math.floor(S.r()*3))S.P(x0+1+Math.floor(S.r()*(w-2)),y,barkM);
+  if(S.r()<.6){const ky=10+Math.floor(S.r()*16);R(x0+1,ky,2,2,barkM)}// kvisthål
+  R(x0-1,F-3,w+2,3,bark);R(x0-2,F-1,w+4,2,bark);S.P(x0-3,F,barkM);S.P(x0+w+2,F,barkM);
+  R(sida<0?x0-4:x0+w,F+1,4,1,barkM)}
+ // grenar och löv som möts ovanför stigen
+ for(let y=0;y<14;y++){const half=12-Math.abs(y-6)*.9;R(x-half,F-44+y+4,half*2,1,lov)}
+ for(let i=0;i<30;i++){const xx=x-12+S.r()*24,yy=2+S.r()*14;S.P(xx,yy,S.r()<.5?lovL:lov)}
+ for(let i=0;i<4;i++){const dir=i%2?1:-1,y=F-30+i*2;for(let j=0;j<4;j++)S.P(x+dir*(6-j),y+Math.floor(j/2),bark)}
+ if(S.deep>.5&&S.r()<.6){const yy=F-18+Math.floor(S.r()*8);S.eld.push(()=>{S.P(x-2,yy,"#ffcf3d");S.P(x+1,yy,"#ffcf3d")})}
  if(v===1){for(let i=0;i<4;i++){const y=F+1+i*3,xx=x+(i%2?7:-8);R(xx,y-1,1,2,"#cfc8b4");R(xx-1,y-2,3,1,"#4fd0a0");S.glow(xx,y-2,5,"#4fd0a0",.35)}}
  if(v===2){R(x-9,F+5,18,3,"#4a3423");R(x-9,F+5,18,1,"#6b4a2e");S.P(x-9,F+6,"#2a1e16");S.P(x+8,F+6,"#2a1e16")}}
 function skylt(S,x,n){const {R}=S;R(x,F-14,1,16,"#5a3a22");for(let i=0;i<Math.min(n,3);i++){const y=F-13+i*4,dir=i%2?-1:1;R(dir>0?x+1:x-6,y,6,2,"#7a5232");S.P(dir>0?x+7:x-7,y,"#7a5232");S.P(dir>0?x+7:x-7,y+1,"#7a5232")}}
