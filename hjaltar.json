@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:07:17.956Z",
+  "uppdaterad": "2026-10-29T13:08:19.598Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -158,8 +158,8 @@
     "liv": {
       "ville": 17,
       "svante": 18,
-      "sally": 6,
-      "tomas": 14,
+      "sally": 1,
+      "tomas": 9,
       "linda": 7
     },
     "kapitel": {
@@ -180,23 +180,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793279235448,
+    "tid": 1793279297690,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 435
+        "xp": 473
       },
       "svante": {
         "lvl": 2,
-        "xp": 435
+        "xp": 473
       },
       "tomas": {
         "lvl": 2,
-        "xp": 435
+        "xp": 473
       },
       "sally": {
         "lvl": 2,
-        "xp": 435
+        "xp": 473
       }
     },
     "upplasta": [
@@ -211,35 +211,26 @@
     "run": {
       "plats": "grottorna",
       "kapitel": 1,
-      "djup": 2,
-      "fas": "strid",
+      "djup": 3,
+      "fas": "rum",
       "dorrar": [
         {
-          "ledtrad": "Något skrattar tyst därinne.",
-          "typ": "strid",
-          "kand": false
-        },
-        {
-          "ledtrad": "Fladdermöss flyger ut ur öppningen.",
-          "typ": "strid",
-          "kand": false
-        },
-        {
-          "ledtrad": "En gammal sång nynnas, lite falskt.",
-          "typ": "resenar",
+          "ledtrad": "Någon har ristat en varning här.",
+          "typ": "falla",
           "kand": false
         }
       ],
       "lyssnat": false,
       "rum": {
-        "typ": "strid",
-        "klar": false,
-        "fiender": [
-          "vatte",
-          "skelett",
-          "svampman"
-        ],
-        "stridOpt": {}
+        "typ": "falla",
+        "klar": true,
+        "falla": {
+          "egen": "smi",
+          "alla": true,
+          "varn": "Istappar av sten lossnar från taket!",
+          "ok": "hoppar undan",
+          "traff": "träffas av en vass sten"
+        }
       },
       "logg": [
         {
@@ -273,6 +264,42 @@
         {
           "t": "Ni möter en vätte, ett skelett och en svampman!",
           "k": "bad"
+        },
+        {
+          "t": "Seger! Alla får 38 XP.",
+          "k": "crit"
+        },
+        {
+          "t": "Sally hostar och sätter sig upp. 1 liv.",
+          "k": "heal"
+        },
+        {
+          "t": "Ni samlar ihop er och fortsätter.",
+          "k": ""
+        },
+        {
+          "t": "Rum 3 · Fälla",
+          "k": "sep"
+        },
+        {
+          "t": "Istappar av sten lossnar från taket!",
+          "k": "bad"
+        },
+        {
+          "t": "Ville hoppar undan!",
+          "k": "hit"
+        },
+        {
+          "t": "Svante hoppar undan!",
+          "k": "hit"
+        },
+        {
+          "t": "Tomas träffas av en vass sten: 5 i skada.",
+          "k": "bad"
+        },
+        {
+          "t": "Sally träffas av en vass sten: 4 i skada.",
+          "k": "bad"
         }
       ],
       "party": [
@@ -289,15 +316,14 @@
         "Läkedryck",
         "Läkedryck",
         "Läkedryck",
-        "Läkedryck",
         "Läkedryck"
       ],
       "bless": {},
       "curse": {},
-      "ara": 0,
+      "ara": 150,
       "start": 1793278939019,
       "nastaKand": false,
-      "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
+      "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
     },
     "historik": [
       {
