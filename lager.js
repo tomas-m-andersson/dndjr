@@ -18,7 +18,7 @@ const lagerNiva=id=>(spel.lager&&spel.lager.byggt&&spel.lager.byggt[id])||0;
    övningsplatsen – tälten – lägerelden (mitten) – smedjan – skattkammaren – troféväggen. */
 const LW=440,LH=72,LVIS=128,LFX=200,BAS=66;
 const ZONER=[{id:"ovning",namn:"Övningsplatsen",x:40},{id:"talt",namn:"Tälten",x:115},{id:"eld",namn:"Lägerelden",x:LFX},{id:"smedja",namn:"Smedjan",x:285},{id:"skatt",namn:"Skattkammaren",x:345},{id:"trofe",namn:"Troféväggen",x:405}];
-function lagerHjaltar(){return alla().slice(0,5)}
+function lagerHjaltar(){return alla()} // alla hjältar, även egna, hänger i lägret
 const HANG=["elden","berattar","korv","ovar","sover"];
 function lagerText(hang,H){
  const n=H.map(h=>h.namn),en=n[Math.floor(Math.random()*n.length)]||"Någon",lista=typeof namnLista==="function"?namnLista(H):n.join(", ");
@@ -138,22 +138,25 @@ function ritaElden(g,t){
  g.globalCompositeOperation="lighter";g.fillStyle=gr;g.fillRect(x-80,0,160,LH);g.globalCompositeOperation="source-over"}
 
 // Var står eller sitter hjältarna i varje häng? [x, tittar åt vänster?, sitter?]  (x räknas från elden)
+// Var står eller sitter hjältarna i varje häng? [x, tittar åt vänster?, sitter?, fötternas höjd]
+// Fler hjältar ställer sig i rader bakom varandra, så att alla får plats runt elden.
 function lagerPlatser(hang,n){
- const d=LFX-64,runt=[[50,0],[78,1],[38,0],[90,1],[26,0]].map(([x,v])=>[x+d,v]);
- if(hang==="berattar")return Array.from({length:n},(_,i)=>i===0?[88+d,1,0]:[[50+d,0,1],[38+d,0,1],[26+d,0,1],[14+d,0,1]][i-1]);
- if(hang==="ovar"){const o=lagerNiva("ovning")?[[34,0,0],[48,1,0]]:[[20+d,0,0],[34+d,1,0]];return Array.from({length:n},(_,i)=>i<2?o[i]:[[78+d,1,1],[90+d,1,1],[102+d,1,1]][i-2])}
- if(hang==="sover")return Array.from({length:n},(_,i)=>[[46+d,0],[84+d,1],[24+d,0],[108+d,1],[100+d,1]][i]);
- return Array.from({length:n},(_,i)=>[runt[i][0],runt[i][1],hang==="korv"?1:0]);
+ const steg=hang==="sover"?27:12,narmast=hang==="sover"?19:14,perSida=hang==="sover"?Math.max(2,Math.ceil(n/4)):3;
+ const plats=k=>{const rad=Math.floor(k/(perSida*2)),i=k%(perSida*2),sida=i%2?1:-1,nr=Math.floor(i/2),forskj=rad%2?steg/2:0;
+  return[LFX+sida*(narmast+forskj+nr*steg),sida>0?1:0,0,BAS-rad*(hang==="sover"?7:5)]};
+ if(hang==="berattar"){const ber=[LFX+26,1,0,BAS];const P=[ber];for(let k=0;P.length<n;k++){const p=plats(k);if(Math.abs(p[0]-ber[0])<8&&p[3]===BAS)continue;P.push([p[0],p[0]>ber[0]?1:0,1,p[3]])}return P}
+ if(hang==="ovar"){const o=lagerNiva("ovning")?[[34,0,0,BAS],[48,1,0,BAS]]:[[LFX-44,0,0,BAS],[LFX-30,1,0,BAS]];return Array.from({length:n},(_,i)=>i<2?o[i]:(p=>[p[0],p[1],1,p[3]])(plats(i-2+(i-2>=0&&!lagerNiva("ovning")?0:0))))}
+ return Array.from({length:n},(_,i)=>{const p=plats(i);if(hang==="korv")p[2]=1;return p});
 }
 function ritaLager(cv,bg,hang,H,t,anim){
  const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(bg.c,0,0);ritaTrofeer(g);bg.anim.forEach(f=>f(g,t));
- const pos=lagerPlatser(hang,H.length),bas=BAS;
+ const pos=lagerPlatser(hang,H.length),ordning=H.map((h,i)=>i).sort((a,b)=>pos[a][3]-pos[b][3]);
  if(hang==="sover"){g.fillStyle="rgba(5,8,20,.35)";g.fillRect(0,0,LW,LH)}
  ritaElden(g,t);
- H.forEach((h,i)=>{const c=heroCanvas(h),L=anim?livTid(t,i):{blink:false,titt:0,upp:0},[x,vand,sitt]=pos[i],katt=h.folk==="katt";
+ ordning.forEach(i=>{const h=H[i],c=heroCanvas(h),L=anim?livTid(t,i):{blink:false,titt:0,upp:0},[x,vand,sitt,bas]=pos[i],katt=h.folk==="katt";
   if(hang==="sover"){ // ligger ner med stängda ögon
    const tmp=document.createElement("canvas");tmp.width=c.width;tmp.height=c.height;ritaLevande(tmp.getContext("2d"),c,heroOgon(h,c),0,0,{blink:true});
-   const y=i===4?56:bas-3;g.save();g.translate(x,y);if(katt){g.drawImage(tmp,-c.width/2,-c.height+3)}else{g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(tmp,-c.width/2,-c.height/2-4)}g.restore();
+   const y=bas-3;g.save();g.translate(x,y);if(katt){g.drawImage(tmp,-c.width/2,-c.height+3)}else{g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(tmp,-c.width/2,-c.height/2-4)}g.restore();
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";const zx=x+(vand?-6:4)+z*4,zy=y-12-z*10;g.fillRect(zx,zy,3,1);g.fillRect(zx+2,zy+1,1,1);g.fillRect(zx,zy+2,3,1);g.globalAlpha=1;return}
   const sitter=sitt&&!katt;let y=bas-c.height+L.upp+(sitter?6:0);
   ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
