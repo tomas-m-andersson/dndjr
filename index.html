@@ -52,7 +52,7 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero .titles{min-width:0;flex:1}
 .titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
-@media (min-width:700px){.hero .titles>p,.hero .titles>.sync{margin-left:calc(clamp(56px,13vw,88px) + 12px)}} /* på datorn: undertexten rakt under rubriken */
+@media (min-width:700px){.hero .titles>p{margin-left:calc(clamp(56px,13vw,88px) + 12px)}} /* på datorn: undertexten rakt under rubriken */
 .hero h1{overflow-wrap:anywhere}
 @media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
 .gear{flex:none;align-self:flex-start;width:48px;height:48px;border-radius:8px;border:2px solid var(--line);background:var(--bg2);display:grid;place-items:center;padding:0}
@@ -112,6 +112,7 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .mvar{color:var(--muted);font-size:.95rem}.mvar strong{color:var(--fg)}
 .minfo .btn{align-self:flex-start}
 .sync{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:.82rem;color:var(--muted)}
+.syncrad{display:flex;justify-content:center;padding:8px 0 4px;border-top:1px dashed var(--line)}
 .sync i{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .sync.ok i{background:var(--moss)} .sync.bad i{background:var(--red)} .sync.bad{color:#f3a99f}
 
@@ -1006,8 +1007,7 @@ function start(){
  view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
- app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},d20svg(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen."),
-  el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
+ app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},d20svg(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
  const htv=document.createElement("canvas");htv.className="px";htv.width=TVW;htv.height=TVH;{const g=htv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"torg");
@@ -1028,6 +1028,8 @@ function start(){
   el("div",{class:"bigtile-txt"},el("h2",{},"Monsterbibliotek"),el("p",{},Object.keys(MONSTER).length+" monster"),el("small",{},"Bilder och fakta om alla monster ni kan möta, från fladdermöss till drakar.")));
  app.append(el("div",{class:"bigtiles"},hjaltar,lagerRuta(),aventyr,bibl));
  if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
+ // GitHub-status längst ner på sidan
+ app.append(el("div",{class:"syncrad"},el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))));
  window.scrollTo(0,0);
 }
 /* ===== Hjältarna ===== */
