@@ -54,6 +54,19 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 @media (max-width:440px){.hero{gap:10px}.hero svg{width:52px;height:52px}.hero h1{font-size:1.75rem}}
 .gear{flex:none;align-self:flex-start;width:48px;height:48px;border-radius:8px;border:2px solid var(--line);background:var(--bg2);display:grid;place-items:center;padding:0}
 .gear svg{width:26px;height:26px}
+.bigtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.bigtile{display:flex;flex-direction:column;gap:12px;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:12px;padding:14px;color:var(--fg);font:inherit;cursor:pointer;box-shadow:0 5px 0 #0c151c;transition:transform .08s,border-color .15s}
+.bigtile:hover,.bigtile:focus-visible{border-color:var(--gold)}
+.bigtile:active{transform:translateY(3px);box-shadow:0 2px 0 #0c151c}
+.bigtile .tvbig{margin:0}
+.bigtile-faces{display:flex;gap:6px;align-items:flex-end;min-height:84px}
+.bigtile-faces .tv{flex:1;min-width:0;max-width:72px}
+.bigtile-faces .fler{font-family:var(--display);color:var(--muted);align-self:center}
+.bigtile-txt{display:flex;flex-direction:column;gap:4px}
+.bigtile-txt h2{font-size:1.7rem;color:var(--gold)}
+.bigtile-txt p{margin:0;font-weight:800}
+.bigtile-txt small{color:var(--muted);font-size:.9rem;line-height:1.4}
+.stephead .btn.small{align-self:flex-start;margin-top:6px}
 .sync{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:.82rem;color:var(--muted)}
 .sync i{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .sync.ok i{background:var(--moss)} .sync.bad i{background:var(--red)} .sync.bad{color:#f3a99f}
@@ -610,12 +623,12 @@ async function ghLoad(replace){
   if(!r){setSync("Ingen sparfil i GitHub än. Den skapas när du sparar första gången.");return false}
   ghSha=r.sha;applyData(r.data,replace);
   if(sync.txt==="Hämtar från GitHub…")setSync("Hämtat från GitHub "+nu(),"ok");
-  if(view==="home")home();return true;
+  if(view==="home")home();else if(view==="start")start();return true;
  }catch(e){setSync("Kunde inte hämta från GitHub. "+e.message,"bad");return false}
 }
 async function syncNow(){
  setSync("Sparar i GitHub…");
- try{await ghPut();setSync("Sparat i GitHub "+nu(),"ok");if(view==="home")home()}
+ try{await ghPut();setSync("Sparat i GitHub "+nu(),"ok");if(view==="home")home();else if(view==="start")start()}
  catch(e){setSync("Kunde inte spara. "+e.message,"bad")}
 }
 function scheduleSync(){
@@ -878,19 +891,37 @@ function el(tag,attrs={},...kids){const e=document.createElement(tag);for(const[
  kids.flat().forEach(c=>c!=null&&e.append(c.nodeType?c:document.createTextNode(c)));return e}
 function d20svg(){const s=el("div");s.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="#f2c14e" stroke="#2a1d05" stroke-width="3"/><polygon points="50,22 76,66 24,66" fill="#f7d77f" stroke="#2a1d05" stroke-width="3"/><path d="M50 4L50 22M92 28L76 66M8 28L24 66M50 96L24 66M50 96L76 66M8 72L24 66M92 72L76 66M8 28L50 22M92 28L50 22" stroke="#2a1d05" stroke-width="3" fill="none"/><text x="50" y="58" text-anchor="middle" font-family="Pixelify Sans,monospace" font-weight="700" font-size="20" fill="#2a1d05">20</text></svg>`;return s.firstChild}
 
-/* ===== Startsidan ===== */
-function home(){
- view="home"; lage=null; app.replaceChildren();
+/* ===== Startsidan: välj Hjältarna eller Äventyr ===== */
+function start(){
+ view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
- app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen. Välj vilka hjältar som ska med, eller skapa en egen."),
+ app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen."),
   el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
- app.append(el("div",{class:"section-head"},el("h2",{},"Hjältarna"),el("span",{},"Tryck på en hjälte för att se hjältebladet")));
+ const ph=partyHeroes(),A=alla();
+ // Hjältarna: en rad med porträtt
+ const rad=el("div",{class:"bigtile-faces"},A.slice(0,5).map(h=>el("div",{class:"tv"},portrait(h))),A.length>5?el("span",{class:"fler"},"+"+(A.length-5)):null);
+ const hjaltar=el("button",{class:"bigtile",onclick:home},rad,
+  el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")),el("small",{},"Välj vem som följer med, ändra utseende och vapen, eller skapa en egen hjälte.")));
+ // Äventyr: sällskapet i en grotta (eller där ni är just nu)
+ const tv=document.createElement("canvas");tv.className="px";drawTV(tv,PLATSER[spel.run?spel.run.plats:"grottorna"].bild);
+ const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),
+  el("div",{class:"bigtile-txt"},el("h2",{},"Äventyr"),
+   el("p",{},ph.length?"Sällskapet: "+ph.map(h=>h.namn).join(", "):"Välj hjältar först"),
+   el("small",{},spel.run?"Ett äventyr pågår. Fortsätt där ni slutade.":"Grottkrypningar och berättelser med val.")));
+ app.append(el("div",{class:"bigtiles"},hjaltar,aventyr));
+ if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
+ window.scrollTo(0,0);
+}
+/* ===== Hjältarna ===== */
+function home(){
+ view="home"; lage=null; app.replaceChildren();
+ app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Hjältarna")));
+ app.append(el("div",{class:"section-head"},el("h2",{},"Hjältarna"),el("span",{},"Välj vilka som ska med, eller skapa en egen")));
  const grid=el("div",{class:"grid"});
  alla().forEach(h=>grid.append(card(h)));
  grid.append(el("button",{class:"card newcard",onclick:()=>creator()},el("b",{},"+"),"Skapa egen hjälte"));
  app.append(grid);
- if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
  renderParty(); window.scrollTo(0,0);
 }
 function card(h){
@@ -1392,8 +1423,9 @@ function adventures(){
  tyst();lage=null;view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
  const ph=partyHeroes();
  if(!ph.length){home();flash("Välj minst en hjälte först.");return}
- app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:home},"← Hjältarna"),el("span",{class:"purse"},spel.guld+" guld")));
- app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+".")));
+ app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},spel.guld+" guld")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+"."),
+  el("button",{class:"btn ghost small",onclick:home},"Byt hjältar")));
  app.append(runKort());
  app.append(el("div",{class:"section-head"},el("h2",{},"Berättelser"),el("span",{},"Skrivna äventyr med val")));
  const list=el("div",{class:"chapters"});
@@ -2275,7 +2307,7 @@ function warnBox(title,text,yesTxt,onYes,onNo){
  return w;
 }
 function settings(){
- const m=document.getElementById("modal"),close=()=>{m.replaceChildren();if(view==="home")home()};
+ const m=document.getElementById("modal"),close=()=>{m.replaceChildren();if(view==="home")home();else if(view==="start")start()};
  const tok=el("input",{id:"gh-token",type:"password",autocomplete:"off",spellcheck:"false",placeholder:"github_pat_…",value:gh.token});
  const repo=el("input",{id:"gh-repo",type:"text",autocomplete:"off",spellcheck:"false",value:gh.repo});
  const branch=el("input",{id:"gh-branch",type:"text",autocomplete:"off",spellcheck:"false",value:gh.branch});
@@ -2349,7 +2381,7 @@ function settings(){
  m.replaceChildren(ov);
 }
 
-home();
+start();
 ghLoad();
 </script>
 </body>
