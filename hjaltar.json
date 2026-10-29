@@ -1,8 +1,37 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-28T23:25:18.189Z",
-  "egna": [],
+  "uppdaterad": "2026-10-29T06:53:35.130Z",
+  "egna": [
+    {
+      "id": "egen-1793256667251",
+      "namn": "Hans-Ola",
+      "attacker": [
+        "peppsang",
+        "hanfullt_skamt",
+        "vaggvisa"
+      ],
+      "vapen": "forttrollad_luta",
+      "folk": "manniska",
+      "alder": 70,
+      "skagg": false,
+      "klass": "bard",
+      "hud": 1,
+      "har": 8,
+      "stil": "kal",
+      "klader": 0,
+      "flackar": false,
+      "s": {
+        "sty": 11,
+        "smi": 12,
+        "tal": 7,
+        "klo": 13,
+        "vis": 14,
+        "cha": 14
+      },
+      "om": ""
+    }
+  ],
   "sallskap": [
     "ville",
     "svante",
