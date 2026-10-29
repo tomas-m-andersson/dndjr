@@ -67,6 +67,24 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .bigtile-txt p{margin:0;font-weight:800}
 .bigtile-txt small{color:var(--muted);font-size:.9rem;line-height:1.4}
 .stephead .btn.small{align-self:flex-start;margin-top:6px}
+.lagertv{margin:0}
+.lagerrad{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.lagertext{margin:0;flex:1;min-width:200px;font-size:1.02rem;font-style:italic;color:var(--fg)}
+.bygggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.bygge{display:flex;flex-direction:column;gap:6px;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:12px}
+.bygge.byggt{border-color:#4a6a3a}
+.bygge-topp{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.bygge-topp b{font-family:var(--display);font-weight:800;font-size:1.1rem}
+.bygge small{color:var(--muted);font-size:.85rem;line-height:1.4}
+.nivapips{display:flex;gap:3px}.nivapips i{width:10px;height:10px;border-radius:2px;background:#0c151c;border:1px solid var(--line)}.nivapips i.pa{background:var(--gold);border-color:var(--gold-dk)}
+.bygge-nu{font-size:.85rem;font-weight:800;color:var(--moss)}
+.bygge-kop{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+.bygge-kop>span{font-size:.85rem}
+.bygge-kop .btn{align-self:flex-start}
+.bygge-klar{font-weight:800;color:var(--moss);margin-top:auto}
+.bp-sak.last{opacity:.55}
+.lastikon{display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--muted);flex:none}
+
 .mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .mcard{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:8px;color:var(--fg);font:inherit;cursor:pointer}
 .mcard:hover,.mcard:focus-visible{border-color:var(--gold)}
@@ -410,6 +428,7 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 <script src="aventyr.js"></script>
 <script src="texter.js"></script>
 <script src="scener.js"></script>
+<script src="lager.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -608,7 +627,8 @@ const SPKEY="tarningsriket-aventyr";
 function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
  liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0,
  niva:o.niva&&typeof o.niva==="object"?o.niva:{},upplasta:Array.isArray(o.upplasta)?o.upplasta.filter(x=>typeof x==="string"):[],utr:o.utr&&typeof o.utr==="object"?o.utr:{},
- run:o.run&&typeof o.run==="object"&&Array.isArray(o.run.party)?o.run:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[]}}
+ run:o.run&&typeof o.run==="object"&&Array.isArray(o.run.party)?o.run:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[],
+ lager:{byggt:o.lager&&o.lager.byggt&&typeof o.lager.byggt==="object"?o.lager.byggt:{},trofeer:o.lager&&o.lager.trofeer&&typeof o.lager.trofeer==="object"?o.lager.trofeer:{}}}}
 let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
 const OKEY="tarningsriket-alternativ";
@@ -942,7 +962,8 @@ function vitals(h){const K=KLASS[h.klass],s=finalStats(h);
  const per=Math.max(1,Math.floor(K.hd/2)+1+mod(s.tal)),prof=2+Math.floor((lvl-1)/4);
  const R=lage==="run"&&spel.run?spel.run:null,bless=R&&R.bless&&R.bless[h.id]?1:0,curse=R&&R.curse&&R.curse[h.id]?1:0;
  const W=vapenAv(h);
- return{hp:Math.max(1,K.hd+mod(s.tal))+(lvl-1)*per,ac:K.ac(h)+(U.acb||0)-curse+(W.ac||0),atk:mod(s[K.main])+prof+(U.wb||0)+bless+(W.traff||0),wb:U.wb||0,lvl,W}}
+ const LG=k=>typeof lagerNiva==='function'&&typeof spel!=='undefined'?lagerNiva(k):0; // Hjältarnas läger: smedjan och övningsplatsen
+ return{hp:Math.max(1,K.hd+mod(s.tal))+(lvl-1)*per,ac:K.ac(h)+(U.acb||0)-curse+(W.ac||0)+LG('ovning'),atk:mod(s[K.main])+prof+(U.wb||0)+bless+(W.traff||0)+LG('smedja'),wb:U.wb||0,lvl,W}}
 
 /* ===== Hjälpare ===== */
 const app=document.getElementById("app");
@@ -975,7 +996,7 @@ function start(){
   let x=TVW-2;["troll","spindel","vatte","fladdermus"].forEach(k=>{const z=sprSize(k);x-=z.w;sprite(g,k,x,k==="fladdermus"?8:TVH-z.h,true)})}
  const bibl=el("button",{class:"bigtile",onclick:()=>monsterBibliotek()},el("div",{class:"tvbig"},mtv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Monsterbibliotek"),el("p",{},Object.keys(MONSTER).length+" monster"),el("small",{},"Bilder och fakta om alla monster ni kan möta, från fladdermöss till drakar.")));
- app.append(el("div",{class:"bigtiles"},hjaltar,aventyr,bibl));
+ app.append(el("div",{class:"bigtiles"},hjaltar,lagerRuta(),aventyr,bibl));
  if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
  window.scrollTo(0,0);
 }
@@ -2227,7 +2248,7 @@ const FALLOR=[
 /* --- skatter --- */
 function rollLoot(rik){
  const l=partyNiva(),n=partyHeroes().length,R=spel.run,ut=[];
- const g=Math.round((slaa("2d10").tot*l+R.kapitel*5+(rik?10*l:0))*n/2);ut.push({k:"guld",n:g+" guldmynt",v:g});
+ const g=Math.round((slaa("2d10").tot*l+R.kapitel*5+(rik?10*l:0))*n/2*(1+.2*lagerNiva("skatt")));ut.push({k:"guld",n:g+" guldmynt",v:g});
  for(let i=0;i<(rik?2:1);i++){const r=Math.random();
   if(r<.42)ut.push({k:"sak",n:"Läkedryck"});
   else if(r<.57)ut.push({k:"sak",n:"Stor läkedryck"});
@@ -2260,7 +2281,8 @@ function startRun(plats){
  const ph=party.map(byId).filter(Boolean);if(!ph.length){home();flash("Välj minst en hjälte först.");return}
  const P=PLATSER[plats];
  spel.run={plats,kapitel:1,djup:1,fas:"dorrar",dorrar:null,lyssnat:false,rum:null,logg:[],party:ph.map(h=>h.id),
-  guld:ph.reduce(a=>a+d(10)+5,0),saker:Array(SV().dryck*ph.length).fill("Läkedryck"),bless:{},curse:{},ara:0,start:Date.now(),nastaKand:false};
+  guld:ph.reduce(a=>a+d(10)+5,0),saker:Array(SV().dryck*ph.length+lagerNiva("eld")).fill("Läkedryck"),bless:{},curse:{},ara:0,start:Date.now(),nastaKand:false};
+ spel.run.startGuld=spel.run.guld; // bara guld man hittar förs hem till lägret
  lage="run";
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
  rlog("Kapitel 1 · "+P.namn,"sep");
@@ -2269,6 +2291,8 @@ function startRun(plats){
 }
 function avslutaRun(utfall){
  const R=spel.run;
+ // guldet ni hittat förs hem till lägrets kassa (hälften om sällskapet föll)
+ if(R.hemGuld==null){const hittat=Math.max(0,(R.guld||0)-(R.startGuld||0));R.hemGuld=utfall==="fallen"?Math.floor(hittat/2):hittat;spel.guld+=R.hemGuld}
  spel.historik.unshift({plats:R.plats,kapitel:R.kapitel,djup:R.djup,utfall,hjaltar:partyHeroes().map(h=>h.namn+" (nivå "+vitals(h).lvl+")"),ara:R.ara,datum:new Date().toISOString().slice(0,10)});
  spel.historik=spel.historik.slice(0,20);
 }
@@ -2294,13 +2318,13 @@ function visaRun(){
  const akt=el("div",{class:"actions"});app.append(akt);
  const knapp=(txt,sub,fn,o={})=>akt.append(el("button",{class:"choicebtn"+(o.special?" special":""),disabled:!!o.av,onclick:fn},el("span",{},txt),sub?el("small",{},sub):null));
  if(R.fas==="fallen"){
-  akt.append(el("div",{class:"theend bad"},el("strong",{},"Sällskapet har fallit"),el("span",{},"Hjältarna behåller sina nivåer och kan ge sig av igen.")),
+  akt.append(el("div",{class:"theend bad"},el("strong",{},"Sällskapet har fallit"),el("span",{},"Hjältarna behåller sina nivåer och kan ge sig av igen."+(R.hemGuld?" Ni räddade "+R.hemGuld+" guld till lägrets kassa.":""))),
    el("button",{class:"btn",onclick:()=>{spel.run=null;sparaSpel();lage=null;adventures()}},"Tillbaka"));
  }else if(R.fas==="vann"){
   akt.append(el("div",{class:"theend"},el("strong",{},"Bossen är besegrad!"),el("span",{},"Ni kan gå hem som hjältar, eller vila och gå djupare. Där blir det farligare.")));
   if(R.nyttVapen)akt.append(el("div",{class:"theend loot wloot"},R.nyttVapenId&&vapenById(R.nyttVapenId)?ikonEl(vapenById(R.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen: "+R.nyttVapen),el("span",{},"Välj det under Ändra på hjältebladet."))));
   knapp("Gå djupare: kapitel "+(R.kapitel+1),"Alla vilar och får fullt liv. Ni hittar "+PLATSER[R.plats].djupare+".",nastaKapitel,{special:true});
-  knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel.")});
+  knapp("Gå hem som hjältar","Äventyret avslutas och skrivs in i krönikan.",()=>{avslutaRun("hem");const R2=spel.run;spel.run=null;sparaSpel();lage=null;adventures();flash("Välkomna hem, hjältar! Ni klarade "+R2.kapitel+" kapitel och tog med "+R2.hemGuld+" guld till lägret.")});
  }else if(R.fas==="strid"){
   knapp("Fortsätt striden",monNamn(rum.fiender),()=>R.stridSpar?fortsattStrid(R.stridSpar,runBild()):runStrid(rum.fiender,rum.stridOpt||{}));
  }else if(R.fas==="dorrar"){
@@ -2478,14 +2502,15 @@ function runStrid(keys,opt){
   noter:opt.fiendeForst?["Bakhåll! Fienderna anfaller först."]:opt.sover?["Ni smyger fram. Fienderna sover den första rundan."]:[]},runBild());
 }
 function runVinst(){
- const R=spel.run,fi=strid.fiender,xp=fi.reduce((a,f)=>a+Math.max(10,MONSTER[f.typ].xp),0),H=partyHeroes(),del=Math.ceil(xp/H.length);
+ const R=spel.run,fi=strid.fiender,xp=fi.reduce((a,f)=>a+Math.max(10,MONSTER[f.typ].xp),0),H=partyHeroes(),del=Math.ceil(xp/H.length*(1+.1*lagerNiva("talt")));
  strid=null;R.ara+=xp;
  rlog(T("seger",{n:del}),"crit");
  H.forEach(h=>{if(liv(h)<=0){setLiv(h,1);rlog(T("vaknar",{namn:h.namn}),"heal")}
   else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(T("andan",{namn:h.namn,n:liv(h)-f}),"heal")}});
  H.forEach(h=>gainXp(h,del));
  const boss=R.rum.typ==="boss";
- if(boss){R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(T("boss_besegrad",{boss:PLATSER[R.plats].boss}),"crit");
+ if(boss){const bf=fi.find(f=>f.boss)||fi[0];spel.lager.trofeer[bf.typ]=(spel.lager.trofeer[bf.typ]||0)+1; // en trofé till lägret
+  R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(T("boss_besegrad",{boss:PLATSER[R.plats].boss}),"crit");
   const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn;R.nyttVapenId=nytt.vapen.id}}
  else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog(T("vaktad_oppen"),"heal")}
  else{R.fas="rum";R.rum.klar=true}
@@ -2564,8 +2589,9 @@ function devGroup(){
     knapp("Nivåer och XP",()=>fraga("Nollställa nivåerna?","Alla hjältar går tillbaka till nivå 1 med 0 XP.",()=>{spel.niva={};spel.liv={}},"Alla hjältar är på nivå 1 igen."),true),
     knapp("Guld och drycker",()=>fraga("Nollställa guld och saker?","Guld och alla saker utanför äventyren (till exempel läkedrycker) tas bort.",()=>{spel.guld=0;spel.saker=[]},"Guld och saker är borttagna."),true),
     knapp("Pågående äventyr",()=>fraga("Avsluta alla pågående äventyr?","Grottkrypningen som pågår och alla påbörjade berättelser nollställs. Det skrivs inte in i krönikan.",()=>{spel.run=null;spel.kapitel={};lage=null},"Inga äventyr pågår längre."),true),
+    knapp("Lägret",()=>fraga("Riva lägret?","Alla byggen i Hjältarnas läger och alla troféer tas bort. Guldet i kassan finns kvar.",()=>{spel.lager={byggt:{},trofeer:{}}},"Lägret är rivet."),true),
     knapp("Krönikan",()=>fraga("Rensa krönikan?","Listan med tidigare äventyr töms.",()=>{spel.historik=[]},"Krönikan är tom."),true),
-    knapp("Allt i äventyren",()=>fraga("Nollställa allt i äventyren?","Specialvapen, magiska föremål, nivåer, guld, saker, pågående äventyr och krönikan nollställs. Hjältarna och sällskapet finns kvar.",()=>{const t=spel.tid;spel=normSpel(null);spel.tid=t;lage=null},"Allt i äventyren är nollställt."),true)),
+    knapp("Allt i äventyren",()=>fraga("Nollställa allt i äventyren?","Specialvapen, magiska föremål, nivåer, guld, saker, lägret, pågående äventyr och krönikan nollställs. Hjältarna och sällskapet finns kvar.",()=>{const t=spel.tid;spel=normSpel(null);spel.tid=t;lage=null},"Allt i äventyren är nollställt."),true)),
    el("h4",{},"Testa"),
    el("div",{class:"btnrow"},
     knapp("Lås upp alla specialvapen",()=>{spel.upplasta=Object.values(VAPEN).flat().filter(w=>w.sp).map(w=>w.id);sparaSpel();show("Alla specialvapen är upplåsta.",true);rita()}),
