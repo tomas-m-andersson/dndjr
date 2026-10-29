@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T09:34:44.035Z",
+  "uppdaterad": "2026-10-29T09:52:11.891Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -156,8 +156,8 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 11,
-      "svante": 15,
+      "ville": 17,
+      "svante": 18,
       "sally": 13,
       "tomas": 14,
       "linda": 7
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793266481547,
+    "tid": 1793267529839,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -208,7 +208,59 @@
         "acb": 0
       }
     },
-    "run": null,
+    "run": {
+      "plats": "grottorna",
+      "kapitel": 1,
+      "djup": 1,
+      "fas": "dorrar",
+      "dorrar": [
+        {
+          "ledtrad": "Något snarkar, djupt och långsamt.",
+          "typ": "sovare",
+          "kand": false
+        },
+        {
+          "ledtrad": "Spindelväv täcker öppningen.",
+          "typ": "skatt",
+          "kand": false
+        }
+      ],
+      "lyssnat": false,
+      "rum": null,
+      "logg": [
+        {
+          "t": "Kapitel 1 · Grottorna under Kråkberget",
+          "k": "sep"
+        },
+        {
+          "t": "En kall vind blåser ut ur Kråkberget. Ville, Svante, Tomas och Sally drar åt mantlarna och går in i grottan.",
+          "k": ""
+        }
+      ],
+      "party": [
+        "ville",
+        "svante",
+        "tomas",
+        "sally"
+      ],
+      "guld": 49,
+      "saker": [
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck",
+        "Läkedryck"
+      ],
+      "bless": {},
+      "curse": {},
+      "ara": 0,
+      "start": 1793267529837,
+      "nastaKand": false,
+      "dorrText": "Ni tittar på varandra. Någon måste bestämma."
+    },
     "historik": [
       {
         "plats": "vulkanen",
