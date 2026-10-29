@@ -918,10 +918,12 @@ function start(){
  app.append(el("header",{class:"hero"},d20svg(),el("div",{class:"titles"},el("h1",{},"Tärningsriket"),el("p",{},"Ett rollspelsäventyr för hela familjen."),
   el("div",{id:"sync",class:"sync "+sync.cls,role:"status"},el("i"),el("span",{},sync.txt))),gear));
  const ph=partyHeroes(),A=alla();
- // Hjältarna: en rad med porträtt
- const rad=el("div",{class:"bigtile-faces"},A.slice(0,5).map(h=>el("div",{class:"tv"},portrait(h))),A.length>5?el("span",{class:"fler"},"+"+(A.length-5)):null);
- const hjaltar=el("button",{class:"bigtile",onclick:home},rad,
-  el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")),el("small",{},"Välj vem som följer med, ändra utseende och vapen, eller skapa en egen hjälte.")));
+ // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
+ const htv=document.createElement("canvas");htv.className="px";htv.width=TVW;htv.height=TVH;{const g=htv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"torg");
+  const visa=A.slice(0,6),steg=Math.min(16,(TVW-16)/Math.max(1,visa.length-1||1)),bredd=steg*(visa.length-1)+14;
+  visa.forEach((h,i)=>{const c=heroSprite(h);g.drawImage(c,Math.round((TVW-bredd)/2+i*steg),TVH-c.height-1)})}
+ const hjaltar=el("button",{class:"bigtile",onclick:home},el("div",{class:"tvbig"},htv),
+  el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")+(A.length>6?" (visar 6)":"")),el("small",{},"Välj vem som följer med, ändra utseende och vapen, eller skapa en egen hjälte.")));
  // Äventyr: sällskapet i en grotta (eller där ni är just nu)
  const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild());
  const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),
