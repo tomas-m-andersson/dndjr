@@ -264,6 +264,43 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .choicebtn:active:not(:disabled){transform:translateY(2px)}
 .pack{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-size:.9rem;color:var(--muted);border-top:2px dashed var(--line);padding-top:12px}
 .pack strong{font-family:var(--display);font-weight:800;color:var(--fg)}
+canvas.pixikon{display:inline-block;width:16px;height:16px;vertical-align:-3px;margin-right:4px;flex:none}
+canvas.pixikon.mellan{width:32px;height:auto;margin:0 4px}
+canvas.pixikon.stor{width:40px;height:40px;margin:0}
+canvas.pixikon.jatte{width:64px;height:auto;margin:0}
+.backpack{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:12px;padding:10px 12px;color:var(--fg);font:inherit;cursor:pointer;box-shadow:0 4px 0 #0c151c}
+.backpack:hover,.backpack:focus-visible{border-color:var(--gold)}
+.backpack:active{transform:translateY(2px);box-shadow:0 2px 0 #0c151c}
+.bp-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.bp-txt strong{font-family:var(--display);font-weight:800;font-size:1.1rem}
+.bp-rad{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--muted);font-size:.9rem}
+.bp-oppna{font-weight:800;color:var(--gold);font-size:.9rem}
+.bp-sheet{display:flex;flex-direction:column;gap:14px}
+.bp-topp{display:flex;gap:14px;align-items:center}
+.bp-topp h2{font-size:1.7rem;color:var(--gold)}
+.bp-topp p{margin:2px 0 0;color:var(--muted)}
+.bp-guld{display:flex;gap:12px;align-items:center;background:#2a2312;border:2px solid var(--gold-dk);border-radius:10px;padding:10px 12px}
+.bp-guld b{font-family:var(--display);font-weight:800;font-size:1.5rem;color:var(--gold);display:block}
+.bp-guld small,.bp-sak small,.bp-vapen small,.bp-hhuvud small{color:var(--muted);font-size:.82rem;display:block}
+.bp-sek{display:flex;flex-direction:column;gap:8px}
+.bp-sek h3{font-size:1.05rem;color:var(--gold);letter-spacing:.04em;text-transform:uppercase}
+.bp-sak{display:flex;gap:10px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:8px 10px}
+.bp-sak>div{flex:1;min-width:0}
+.bp-sak b,.bp-vapen b,.bp-hhuvud b{font-family:var(--display);font-weight:800}
+.bp-tom{margin:0;color:var(--muted);font-size:.9rem}
+.bp-bra{margin:0;color:var(--moss)}.bp-ont{margin:0;color:#f3a99f}
+.bp-hjalte{display:flex;flex-direction:column;gap:8px;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:10px}
+.bp-hhuvud{display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px;align-items:center}
+.bp-hhuvud .tv{border-radius:6px;overflow:hidden}
+.bp-hhuvud .tv canvas{width:100%;display:block}
+.bp-hhuvud .hp{margin:4px 0 2px}
+.bp-vapen{display:flex;gap:10px;align-items:center;background:#0e171e;border-radius:8px;padding:6px 8px}
+.bp-vapen>div{min-width:0}
+.bp-vapen .wicon.small,.bp-sak .wicon.small{width:44px;height:44px;flex:none;border-radius:6px}
+.bp-info{margin-top:2px}
+.bp-magi{display:flex;flex-wrap:wrap;gap:6px}.bp-magi span{font-size:.8rem;font-weight:800;padding:2px 8px;border-radius:10px;background:#3d1f4f;color:#e3c2ff}
+.bp-upp{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.bp-sheet>.btn{align-self:flex-start}
 .pickers{display:flex;flex-direction:column;gap:8px}
 .picker{display:flex;gap:12px;align-items:center;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:8px 10px}
 .picker .tv.mini{width:48px}
@@ -1517,11 +1554,51 @@ function startKapitel(id){
 /* --- packning och läkedrycker --- */
 const DRYCKER={"Läkedryck":"2d4+2","Stor läkedryck":"4d4+4"};
 const harDryck=()=>pack().saker.some(x=>DRYCKER[x]);
+/* --- Ryggsäcken: guld, drycker, saker och hjältarnas utrustning --- */
+// Små pixelbilder: ryggsäck, guldmynt och dryckesflaskor
+const PIXIKON={
+ ryggsack:{rows:["....LLLL....","...L....L...","..BBBBBBBB..",".BBbbbbbbBB.",".BbBBBBBBbB.",".BbBGGGGBbB.",".BbBGYYGBbB.",".BbBBBBBBbB.",".BbbbbbbbbB.",".BBBBBBBBBB.","..BBBBBBBB.."],pal:{L:"#6b4a2e",B:"#8a5a2b",b:"#6b4423",G:"#5a3a1e",Y:"#f2c14e"}},
+ guld:{rows:["..YYYY..",".YyYYyY.","YYyYYyYY","YYyyyyYY","YYYyyYYY","YYyYYyYY",".YyyyyY.","..YYYY.."],pal:{Y:"#f2c14e",y:"#b8862a"}},
+ dryck:{rows:["...CC...","...WW...","..WRRW..",".WRRRRW.","WRRHRRRW","WRRRRRRW","WRRRRRRW",".WRRRRW.","..WWWW.."],pal:{C:"#8a5a2b",W:"#cfe2ff",R:"#d8452f",H:"#ffb3a8"}},
+ storDryck:{rows:["....CC....","....WW....","...WRRW...","..WRRRRW..",".WRRHRRRW.","WRRRRRRRRW","WRRRRRRRRW","WRRRRRRRRW","WRRRRRRRRW",".WRRRRRRW.","..WWWWWW.."],pal:{C:"#8a5a2b",W:"#cfe2ff",R:"#b8382e",H:"#ffb3a8"}}};
+function pixIkon(k,cls=""){const d=PIXIKON[k],s=rendera(gridFrom(d.rows),{K:KONTUR,...d.pal}),c=document.createElement("canvas");c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
+ c.className="px pixikon "+cls;c.setAttribute("aria-hidden","true");return c}
+function raknaSaker(){const c={};pack().saker.forEach(x=>c[x]=(c[x]||0)+1);return c}
+// Knappen längst ner i äventyren
 function packning(efter){
- const P=pack();
- const box=el("div",{class:"pack"},el("strong",{},"Packning"),el("span",{},P.guld+" guld"+(P.saker.length?" · "+summeraSaker():"")));
- if(harDryck()&&!strid)box.append(el("button",{class:"btn ghost small",onclick:()=>valjDryck(()=>valjHjalte("Vem dricker?",partyHeroes(),h=>{dryck(h,valdDryck);efter()},efter),efter)},"Använd läkedryck"));
- return box;
+ const P=pack(),c=raknaSaker(),dr=(c["Läkedryck"]||0)+(c["Stor läkedryck"]||0);
+ return el("button",{class:"backpack",onclick:()=>ryggsack(efter),"aria-label":"Öppna ryggsäcken"},pixIkon("ryggsack","stor"),
+  el("div",{class:"bp-txt"},el("strong",{},"Ryggsäcken"),
+   el("span",{class:"bp-rad"},el("span",{},pixIkon("guld"),P.guld+" guld"),el("span",{},pixIkon("dryck"),dr+" "+(dr===1?"dryck":"drycker")),partyHeroes().length?el("span",{},partyHeroes().length+" hjältar"):null)),
+  el("span",{class:"bp-oppna"},"Öppna"));
+}
+function ryggsack(efter){
+ const P=pack(),c=raknaSaker(),m=document.getElementById("modal"),close=()=>m.replaceChildren(),R=lage==="run"?spel.run:null,ph=partyHeroes();
+ const sek=(rubrik,...inne)=>el("section",{class:"bp-sek"},el("h3",{},rubrik),...inne);
+ const drycker=Object.keys(DRYCKER).filter(k=>c[k]).map(k=>el("div",{class:"bp-sak"},pixIkon(k==="Läkedryck"?"dryck":"storDryck","mellan"),
+  el("div",{},el("b",{},k+(c[k]>1?" × "+c[k]:"")),el("small",{},"Ger "+DRYCKER[k]+" liv tillbaka")),
+  !strid&&ph.length?el("button",{class:"btn ghost small",onclick:()=>{close();valdDryck=k;valjHjalte("Vem dricker "+k.toLowerCase()+"?",ph,h=>{dryck(h,k);efter()},()=>ryggsack(efter),h=>({av:liv(h)>=maxLiv(h),txt:"Liv "+Math.max(0,liv(h))+" av "+maxLiv(h)+(liv(h)>=maxLiv(h)?" · redan fullt":"")}))}},"Ge till …"):null));
+ const ovrigt=Object.entries(c).filter(([k])=>!DRYCKER[k]).map(([k,n])=>el("div",{class:"bp-sak"},el("div",{},el("b",{},k+(n>1?" × "+n:"")))));
+ const valsignad=R?ph.filter(h=>R.bless&&R.bless[h.id]).map(h=>h.namn):[],forbannad=R?ph.filter(h=>R.curse&&R.curse[h.id]).map(h=>h.namn):[];
+ const hjaltar=ph.map(h=>{const v=vitals(h),W=v.W,U=utr(h.id),K=KLASS[h.klass],l=liv(h),mx=maxLiv(h);
+  return el("div",{class:"bp-hjalte"},
+   el("div",{class:"bp-hhuvud"},el("div",{class:"tv"},portrait(h)),el("div",{},el("b",{},h.namn),el("small",{},K.n+" · nivå "+v.lvl),
+    el("div",{class:"hp"},el("i",{style:"width:"+Math.max(0,l/mx*100)+"%"})),el("small",{},(l>0?l+"/"+mx+" liv":"Svimmad")+" · rustning "+v.ac+" · anfall "+fmt(v.atk)))),
+   h.klass==="katt"?el("div",{class:"bp-vapen"},el("div",{},el("b",{},"Klor och tänder"),el("small",{},"Katter behöver inga vapen.")))
+   :el("div",{class:"bp-vapen"},ikonEl(W,"small"),el("div",{},el("b",{},W.namn),el("small",{},W.skada+" skada"+(W.traff?" · "+fmt(W.traff)+" på träff":"")+(W.krit&&W.krit<20?" · kritisk på "+W.krit:"")),W.info?el("small",{class:"bp-info"},W.info):null)),
+   U.wb||U.acb?el("div",{class:"bp-magi"},U.wb?el("span",{},"Magiskt vapen +"+U.wb):null,U.acb?el("span",{},"Skyddsring +"+U.acb):null):null)});
+ const upp=(spel.upplasta||[]).map(vapenById).filter(Boolean);
+ const sh=el("div",{class:"sheet bp-sheet",role:"dialog","aria-modal":"true","aria-label":"Ryggsäcken"},
+  el("div",{class:"bp-topp"},pixIkon("ryggsack","jatte"),el("div",{},el("h2",{},"Ryggsäcken"),el("p",{},R?"Det här bär sällskapet med sig i "+PLATSER[R.plats].namn+".":"Det här bär sällskapet med sig."))),
+  el("div",{class:"bp-guld"},pixIkon("guld","stor"),el("div",{},el("b",{},P.guld+" guld"),el("small",{},"Används hos handlare och vid altare"))),
+  sek("Läkedrycker",...(drycker.length?drycker:[el("p",{class:"bp-tom"},"Inga drycker kvar. Handlare och skattkistor kan ha fler.")])),
+  ovrigt.length?sek("Övriga saker",...ovrigt):null,
+  valsignad.length||forbannad.length?sek("Välsignelser och förbannelser",valsignad.length?el("p",{class:"bp-bra"},namnLista(valsignad.map(n=>({namn:n})))+(valsignad.length>1?" är välsignade":" är välsignad")+": +1 på anfall tills nästa vila."):null,
+   forbannad.length?el("p",{class:"bp-ont"},namnLista(forbannad.map(n=>({namn:n})))+(forbannad.length>1?" är förbannade":" är förbannad")+": −1 rustning tills nästa vila."):null):null,
+  sek("Hjältarnas utrustning",...(hjaltar.length?hjaltar:[el("p",{class:"bp-tom"},"Inga hjältar valda.")])),
+  upp.length?sek("Upplåsta specialvapen",el("p",{class:"bp-tom"},"Hittade efter besegrade bossar. Välj dem på hjältens Info-sida."),el("div",{class:"bp-upp"},upp.map(W=>el("div",{class:"bp-sak"},ikonEl(W,"small"),el("div",{},el("b",{},W.namn),el("small",{},W.skada+" skada")))))):null,
+  el("button",{class:"btn",onclick:close},"Stäng ryggsäcken"));
+ m.replaceChildren(el("div",{class:"overlay",onclick:e=>{if(e.target===e.currentTarget)close()}},sh));
 }
 let valdDryck="Läkedryck";
 // Finns båda sorterna får man välja vilken.
