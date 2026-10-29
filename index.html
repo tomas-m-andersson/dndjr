@@ -67,6 +67,24 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .bigtile-txt p{margin:0;font-weight:800}
 .bigtile-txt small{color:var(--muted);font-size:.9rem;line-height:1.4}
 .stephead .btn.small{align-self:flex-start;margin-top:6px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.mcard{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:8px;color:var(--fg);font:inherit;cursor:pointer}
+.mcard:hover,.mcard:focus-visible{border-color:var(--gold)}
+.mcard .tv{border-radius:6px;overflow:hidden;aspect-ratio:96/54}
+.mcard .tv canvas{width:100%;height:100%;display:block}
+.mcard b{font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.15}
+.fara{align-self:flex-start;font-size:.78rem;font-weight:800;padding:2px 8px;border-radius:10px;background:#24394a;color:#cfe8d0}
+.fara.f3,.fara.f4{background:#4a3a1c;color:#f5d27e}.fara.f5,.fara.f6{background:#5a2420;color:#ffb3a8}.fara.f7,.fara.f8{background:#3d1f4f;color:#e3c2ff}
+.minfo{display:flex;flex-direction:column;gap:10px;padding-top:12px}
+.minfo h2{font-size:1.7rem;color:var(--gold)}
+.minfo p{margin:0}
+.mstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mstats div{background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px;text-align:center}
+.mstats small{display:block;color:var(--muted);font-size:.75rem;font-weight:800}
+.mstats b{font-family:var(--display);font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.megen{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.mvar{color:var(--muted);font-size:.95rem}.mvar strong{color:var(--fg)}
+.minfo .btn{align-self:flex-start}
 .sync{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:.82rem;color:var(--muted)}
 .sync i{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
 .sync.ok i{background:var(--moss)} .sync.bad i{background:var(--red)} .sync.bad{color:#f3a99f}
@@ -910,7 +928,12 @@ function start(){
   el("div",{class:"bigtile-txt"},el("h2",{},"Äventyr"),
    el("p",{},ph.length?"Sällskapet: "+ph.map(h=>h.namn).join(", "):"Välj hjältar först"),
    el("small",{},spel.run?"Ett äventyr pågår. Fortsätt där ni slutade.":"Grottkrypningar och berättelser med val.")));
- app.append(el("div",{class:"bigtiles"},hjaltar,aventyr));
+ // Monsterbiblioteket: några monster i en grotta
+ const mtv=document.createElement("canvas");mtv.className="px";mtv.width=TVW;mtv.height=TVH;{const g=mtv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"run|grottorna|1|3|rum|");
+  let x=TVW-2;["troll","spindel","vatte","fladdermus"].forEach(k=>{const z=sprSize(k);x-=z.w;sprite(g,k,x,k==="fladdermus"?8:TVH-z.h,true)})}
+ const bibl=el("button",{class:"bigtile",onclick:()=>monsterBibliotek()},el("div",{class:"tvbig"},mtv),
+  el("div",{class:"bigtile-txt"},el("h2",{},"Monsterbibliotek"),el("p",{},Object.keys(MONSTER).length+" monster"),el("small",{},"Bilder och fakta om alla monster ni kan möta, från fladdermöss till drakar.")));
+ app.append(el("div",{class:"bigtiles"},hjaltar,aventyr,bibl));
  if(!egna.length&&!gh.token)app.append(el("p",{class:"note"},"Egna hjältar sparas i den här webbläsaren. Vill du ha dem på alla enheter: tryck på kugghjulet uppe till höger och koppla in GitHub."));
  window.scrollTo(0,0);
 }
@@ -1919,6 +1942,89 @@ const MONSTER={
  jattemask:{namn:"Jättemasken",liv:80,rustning:13,anfall:7,skada:"2d8+4",xp:1100,platser:["grottorna"],flyr:"gräver ner sig så snabbt att hela grottan skakar.",egen:{bedova:.25}},
  golem:{namn:"Obsidiangolemen",liv:75,rustning:18,anfall:7,skada:"2d8+3",xp:1100,platser:["vulkanen"],flyr:"spricker i tusen svarta skärvor."},
  eldklo:{namn:"Eldklo, den unga draken",liv:75,rustning:17,anfall:7,skada:"2d8+4",xp:1800,platser:["vulkanen"],flyr:"vrålar, slår med vingarna och flyger ut genom vulkanens topp.",egen:{tva:true}}};
+/* --- Monsterbiblioteket --- */
+const MON_BESK={
+ fladdermus:"Stor som en katt och flyger i mörkret. Den gillar att dyka ner mot huvudet på folk.",
+ ratta:"En råtta lika stor som en hund. Bettet kan göra en lite förgiftad.",
+ kobold:"En liten ödlelik varelse som gräver gångar och samlar på allt som glänser.",
+ krakor:"En hel svärm svarta kråkor som hackar och skriker på en gång.",
+ vatte:"Liten, grön och elak. Vättar bor i hålor och älskar att stjäla.",
+ skelett:"Gamla ben som har vaknat till liv. Det skramlar när de går.",
+ varg:"Vargarna jagar i flock i Mörkskogen. Akta er när ni hör dem yla.",
+ vildsvin:"Ett argt svin med vassa betar. Det rusar rakt fram utan att tveka.",
+ bandit:"En tjuv som lurar vid stigarna och vill ha ert guld.",
+ svampman:"En svamp som går. Slår man på den sprutar den giftiga sporer.",
+ vampyrfladdermus:"En mörkröd fladdermus som suger kraft ur den den biter.",
+ skuggling:"En liten varelse gjord av skugga. Den syns nästan inte i mörkret.",
+ eldimp:"Ett litet eldväsen som fnissar hela tiden. När den besegras exploderar den!",
+ spoke:"Ett kallt spöke som svävar genom väggar och suger värmen ur en.",
+ vattesjaman:"Vättarnas trollkarl. Han trummar och helar sina vänner.",
+ kultist:"En präst i svart kåpa som ber till mörka makter. Hans formler kan göra en omtöcknad.",
+ askskelett:"Ett skelett av glödande aska. Det exploderar i gnistor när det faller.",
+ dimvarg:"En blek varg gjord av dimma. Den dyker upp ur ingenstans.",
+ giftspindel:"En grön spindel med giftigt bett. Den gömmer sig i nät mellan träden.",
+ spindel:"Stor som en häst, med röda ögon. Bettet är giftigt.",
+ slem:"En genomskinlig kub av slem. Den slukar allt den rullar över, till och med ben.",
+ krak:"Krak är vättarnas hövding, dubbelt så stor som en vanlig vätte.",
+ orm:"En orm lång som en båt. Den väser och biter med giftiga huggtänder.",
+ bjorn:"En stor björn som inte gillar att bli väckt. Den slår med båda ramarna.",
+ levande_rustning:"En rustning utan någon inuti, som går omkring av sig själv. Den är väldigt svår att träffa.",
+ rovarhovding:"Banditernas ledare, med skägg och stridsyxa. Han hugger två gånger.",
+ magmaslem:"En slemkub av het lava. Den exploderar när den besegras.",
+ eldsalamander:"En ödla som simmar i lava. Bettet bränner som gift.",
+ troll:"Ett enormt troll av sten och mossa. Såren läker av sig själva.",
+ lavahund:"En hund av glödande sten som bor i vulkanen. Den biter två gånger.",
+ gargoyl:"En stenstaty som vaknar till liv. Det är svårt att skada sten.",
+ haxa:"En gammal häxa med gröna drycker. Hon förgiftar sina fiender och helar sig själv.",
+ varulv:"En människa som blir varg i månskenet. Snabb, stark och läker sina sår.",
+ nekromantiker:"En trollkarl som väcker de döda och helar sina vänner med mörk magi.",
+ eldprast:"En präst som tillber vulkanens eld och helar sina vänner.",
+ spokriddare:"En riddare som dog för länge sedan, men som fortfarande vaktar slottet.",
+ grottroll:"Ett blåaktigt troll från djupet. Det läker ännu snabbare än ett bergstroll.",
+ basilisk:"En jätteödla med stirrande gula ögon. Den som möter blicken kan bli omtöcknad.",
+ mork_riddare:"En riddare i svart rustning som hugger två gånger. Hjälmen är tom inuti.",
+ skuggan:"En mörk varelse av svarta trådar som stjäl livet ur hjältar.",
+ vampyr:"Slottsherren i Korpholm. Han suger liv ur sina fiender och läker sig själv.",
+ ent:"Ett levande träd, äldre än skogen själv. Rötterna läker hans sår.",
+ jattemask:"En mask så stor att den gräver tunnlar i berget. När den rör sig skakar hela grottan.",
+ golem:"En jätte av svart glas, skapad av vulkanens hetta. Nästan omöjlig att skada.",
+ eldklo:"En ung röd drake som hugger två gånger. Det farligaste monstret i hela Tärningsriket."};
+// Hur farligt är monstret? (efter hur mycket XP det ger)
+const FARA=[[25,1,"Lätt"],[50,2,"Ganska lätt"],[100,3,"Medel"],[200,4,"Farlig"],[450,5,"Mycket farlig"],[700,6,"Livsfarlig"],[1100,7,"Bossnivå"],[1800,8,"Legendarisk"]];
+const faraAv=M=>FARA.find(f=>M.xp<=f[0])||FARA[FARA.length-1];
+const EGEN_LANG={gift:"Giftig: den som träffas tar skada några rundor till.",tva:"Två anfall: anfaller två gånger varje tur.",regen:"Läker sig: får tillbaka liv varje tur.",
+ bedova:"Kan bedöva: den som träffas kan bli omtöcknad och missa en tur.",drana:"Stjäl liv: blir frisk av skadan den gör.",helar:"Helar andra: lagar sina skadade vänner.",sprangs:"Exploderar: skadar alla hjältar när den besegras."};
+// Ritar ett monster framför en bakgrund från platsen där det bor
+function monsterBild(k){const M=MONSTER[k],c=document.createElement("canvas");c.className="px";c.width=TVW;c.height=TVH;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
+ scenePaint(g,"run|"+(M.platser[0]||"grottorna")+"|1|3|rum|");const z=sprSize(k),flyg=/fladdermus|krakor/.test(k);
+ const f=z.h<=18?2:1,flip=!!(SPR[k]&&(SPR[k].hero||k==="drake"||k==="eldklo")); // små monster visas dubbelt så stora
+ g.save();g.translate(Math.round((TVW-z.w*f)/2),flyg?Math.round(TVH/2-z.h*f/2):TVH-z.h*f);g.scale(f,f);sprite(g,k,0,0,flip);g.restore();return c}
+let bibPlats="alla";
+function monsterBibliotek(){
+ view="bibliotek";lage=null;tyst();app.replaceChildren();document.getElementById("party").hidden=true;
+ app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Monsterbibliotek")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i Tärningsriket, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
+ const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.namn.split(" ")[0]])];
+ app.append(el("div",{class:"pills"},val.map(([k,n])=>el("button",{class:"pill"+(bibPlats===k?" sel":""),"aria-pressed":bibPlats===k?"true":"false",onclick:()=>{bibPlats=k;const y=window.scrollY;monsterBibliotek();window.scrollTo(0,y)}},n))));
+ const lista=Object.keys(MONSTER).filter(k=>bibPlats==="alla"||MONSTER[k].platser.includes(bibPlats)).sort((a,b)=>MONSTER[a].xp-MONSTER[b].xp||MONSTER[a].namn.localeCompare(MONSTER[b].namn,"sv"));
+ app.append(el("div",{class:"mgrid"},lista.map(k=>{const M=MONSTER[k],f=faraAv(M);
+  return el("button",{class:"mcard",onclick:()=>monsterInfo(k),"aria-label":M.namn+", "+f[2]},el("div",{class:"tv"},monsterBild(k)),
+   el("b",{},M.namn),el("span",{class:"fara f"+f[1]},f[2]))})));
+ window.scrollTo(0,0);
+}
+function monsterInfo(k){const M=MONSTER[k],f=faraAv(M),m=document.getElementById("modal"),close=()=>m.replaceChildren();
+ const boss=Object.entries(BOSSAR).filter(([,l])=>l.includes(k)).map(([p])=>PLATSER[p].namn.split(" ")[0]);
+ const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":M.namn},
+  el("div",{class:"tvbig"},monsterBild(k)),
+  el("div",{class:"minfo"},el("h2",{},M.namn),el("span",{class:"fara f"+f[1]},"Fara: "+f[2]+" ("+f[1]+" av 8)"),el("p",{},MON_BESK[k]||""),
+   el("div",{class:"mstats"},[["Liv",M.liv],["Rustning",M.rustning],["Skada",M.skada],["XP",M.xp]].map(([n,v])=>el("div",{},el("small",{},n),el("b",{},String(v))))),
+   M.egen?el("ul",{class:"megen"},Object.keys(M.egen).map(e=>EGEN_LANG[e]?el("li",{},EGEN_LANG[e]):null)):null,
+   el("p",{class:"mvar"},el("strong",{},"Finns i: "),M.platser.map(p=>PLATSER[p].namn).join(", ")+"."),
+   boss.length?el("p",{class:"mvar"},el("strong",{},"Kan vara boss i: "),boss.join(", ")+"."):null,
+   el("p",{class:"mvar"},el("strong",{},"När den besegras: "),M.namn+" "+M.flyr),
+   el("button",{class:"btn",onclick:close},"Stäng")));
+ m.replaceChildren(el("div",{class:"overlay",onclick:e=>{if(e.target===e.currentTarget)close()}},sh));
+}
 const BOSSAR={slottet:["vampyr","skuggan","mork_riddare","spokriddare","nekromantiker","gargoyl","levande_rustning"],
  grottorna:["jattemask","grottroll","basilisk","troll","bjorn","slem","krak","spindel"],
  skogen:["ent","varulv","haxa","troll","rovarhovding","bjorn","krak","spindel"],
