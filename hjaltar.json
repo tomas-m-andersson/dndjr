@@ -1,7 +1,7 @@
 {
   "app": "Tärningsriket",
   "version": 1,
-  "uppdaterad": "2026-10-29T13:37:15.519Z",
+  "uppdaterad": "2026-10-29T13:37:19.394Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -150,7 +150,7 @@
     }
   },
   "aventyr": {
-    "guld": 623,
+    "guld": 573,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -180,7 +180,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793281033597,
+    "tid": 1793281037445,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -594,7 +594,8 @@
         "talt": 1,
         "smedja": 2,
         "ovning": 2,
-        "skatt": 2
+        "skatt": 2,
+        "trofe": 1
       },
       "trofeer": {}
     }
