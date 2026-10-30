@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:51:19.497Z",
+  "uppdaterad": "2026-10-30T16:53:52.089Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,19 +207,19 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379077357,
+    "tid": 1793379230053,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 461
+        "xp": 482
       },
       "svante": {
         "lvl": 2,
-        "xp": 461
+        "xp": 482
       },
       "tomas": {
         "lvl": 2,
-        "xp": 461
+        "xp": 482
       },
       "sally": {
         "lvl": 2,
@@ -227,7 +227,7 @@
       },
       "egen-1793378426345": {
         "lvl": 1,
-        "xp": 56
+        "xp": 77
       }
     },
     "upplasta": [],
@@ -304,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon viskar.",
@@ -325,7 +325,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "kobold",
             "kobold",
@@ -369,6 +369,14 @@
           {
             "t": "Tre kobolder har väntat på er.",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 21 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Tomas binder om ett sår. +1 liv.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -389,7 +397,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 200,
+        "ara": 275,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
@@ -398,7 +406,7 @@
           "ville": 17,
           "svante": 13,
           "egen-1793378426345": 10,
-          "tomas": 13
+          "tomas": 14
         },
         "dorrText": "Kedjor skramlar längre fram. Vägen delar sig i hettan."
       }
