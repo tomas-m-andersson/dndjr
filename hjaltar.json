@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:01:46.728Z",
+  "uppdaterad": "2026-10-30T17:03:04.915Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,27 +207,27 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379704720,
+    "tid": 1793379782866,
     "niva": {
       "ville": {
-        "lvl": 2,
-        "xp": 594
+        "lvl": 3,
+        "xp": 608
       },
       "svante": {
-        "lvl": 2,
-        "xp": 594
+        "lvl": 3,
+        "xp": 608
       },
       "tomas": {
-        "lvl": 2,
-        "xp": 594
+        "lvl": 3,
+        "xp": 608
       },
       "sally": {
         "lvl": 2,
         "xp": 405
       },
       "egen-1793378426345": {
-        "lvl": 1,
-        "xp": 189
+        "lvl": 2,
+        "xp": 203
       }
     },
     "upplasta": [],
@@ -316,7 +316,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar rökelse.",
@@ -336,48 +336,25 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "kobold",
-            "kobold"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "118 guldmynt",
+              "v": 118
+            },
+            {
+              "k": "sak",
+              "n": "Stor läkedryck"
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            }
+          ]
         },
         "logg": [
-          {
-            "t": "Ni har knappt kommit in förrän en eldsalamander anfaller!",
-            "k": "bad"
-          },
-          {
-            "t": "Ni vann! Alla får 56 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Svante dricker lite vatten och torkar svetten. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Tre kobolder har väntat på er.",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 21 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Tomas binder om ett sår. +1 liv.",
-            "k": "heal"
-          },
           {
             "t": "Askan virvlar runt era fötter när ni går vidare.",
             "k": ""
@@ -505,6 +482,38 @@
           {
             "t": "Guld glimmar i hörnet. Men två kobolder reser sig och spärrar vägen.",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 14 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville binder om ett sår. +3 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas sätter sig en stund. +6 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Ville känner sig mäktigare. Nivå 3! +7 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Svante är nu nivå 3! +5 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Benjamin har blivit starkare och är nu nivå 2! +7 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Tomas är nu nivå 3! +6 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Nu är vägen fri till skatten.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -524,16 +533,16 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 675,
+        "ara": 725,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
-          "ville": 11,
-          "svante": 13,
-          "egen-1793378426345": 10,
-          "tomas": 8
+          "ville": 21,
+          "svante": 18,
+          "egen-1793378426345": 17,
+          "tomas": 20
         },
         "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
       }
