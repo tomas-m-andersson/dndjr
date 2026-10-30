@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:38:04.716Z",
+  "uppdaterad": "2026-10-30T20:39:38.591Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,11 +207,11 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392682669,
+    "tid": 1793392776578,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 844
+        "xp": 872
       },
       "svante": {
         "lvl": 3,
@@ -219,15 +219,15 @@
       },
       "tomas": {
         "lvl": 3,
-        "xp": 844
+        "xp": 872
       },
       "sally": {
         "lvl": 2,
-        "xp": 530
+        "xp": 558
       },
       "egen-1793378426345": {
         "lvl": 2,
-        "xp": 439
+        "xp": 467
       }
     },
     "upplasta": [
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -344,7 +344,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "fladdermus",
             "skelett",
@@ -368,6 +368,10 @@
           {
             "t": "Ni har knappt kommit in förrän en jättefladdermus, ett skelett och en jätteråtta anfaller!",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 28 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -389,7 +393,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 100,
         "start": 1793392642266,
         "nastaKand": false,
         "id": "rmvvfob16vrj1",
