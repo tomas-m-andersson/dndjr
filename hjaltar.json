@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:43:04.638Z",
+  "uppdaterad": "2026-10-30T16:43:39.809Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378582689,
+    "tid": 1793378617858,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -300,7 +300,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -319,7 +319,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "eldsalamander"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -328,6 +335,14 @@
           {
             "t": "Svavelrök sticker i näsan när Ville, Svante, Benjamin och Tomas går in i Drakvulkanen. Marken under fötterna är varm.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni har knappt kommit in förrän en eldsalamander anfaller!",
+            "k": "bad"
           }
         ],
         "party": [
