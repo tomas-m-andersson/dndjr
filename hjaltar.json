@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:48:48.847Z",
+  "uppdaterad": "2026-10-30T16:49:18.441Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378926877,
+    "tid": 1793378956333,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -304,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någon viskar.",
@@ -323,7 +323,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "kobold",
+            "kobold",
+            "kobold"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -352,6 +361,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Tre kobolder har väntat på er.",
+            "k": "bad"
           }
         ],
         "party": [
