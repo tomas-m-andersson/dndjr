@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:00:11.766Z",
+  "uppdaterad": "2026-10-30T17:00:36.817Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379609722,
+    "tid": 1793379634919,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -234,7 +234,11 @@
     "utr": {
       "ville": {
         "wb": 1,
-        "acb": 0
+        "acb": 1
+      },
+      "svante": {
+        "wb": 0,
+        "acb": 1
       }
     },
     "reset": 1793282091831,
@@ -446,6 +450,18 @@
           {
             "t": "Ingen vaktar skatten längre. Den är er.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 126 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ville får en skyddsring: +1 rustning.",
+            "k": "magic"
+          },
+          {
+            "t": "Svante får en skyddsring: +1 rustning.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -454,7 +470,7 @@
           "egen-1793378426345",
           "tomas"
         ],
-        "guld": 43,
+        "guld": 169,
         "saker": [
           "Läkedryck",
           "Läkedryck",
