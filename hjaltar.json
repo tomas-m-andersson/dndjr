@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:28:59.154Z",
+  "uppdaterad": "2026-10-30T20:29:15.977Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392137262,
+    "tid": 1793392154083,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -387,6 +387,10 @@
           {
             "t": "Små hål i väggen. Klick!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas träffas av giftiga pilar: 9 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -416,7 +420,7 @@
         "liv": {
           "ville": 24,
           "egen-1793378426345": 20,
-          "tomas": 20,
+          "tomas": 11,
           "sally": 13
         },
         "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
