@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:26:54.672Z",
+  "uppdaterad": "2026-10-30T20:27:10.898Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392012679,
+    "tid": 1793392028965,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
@@ -332,7 +332,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "svampman",
+            "svampman"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -353,6 +361,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Något rör sig i skuggorna. Det är två svampmän!",
+            "k": "bad"
           }
         ],
         "party": [
