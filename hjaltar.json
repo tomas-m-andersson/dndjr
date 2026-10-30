@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:42:43.274Z",
+  "uppdaterad": "2026-10-30T16:43:04.638Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378120966,
+    "tid": 1793378582689,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -295,9 +295,75 @@
           "tomas": 14,
           "linda": 7
         }
+      },
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "brunn",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör många små fötter som springer.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon har ristat en varning här.",
+            "typ": "vaktad",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Drakvulkanen",
+            "k": "sep"
+          },
+          {
+            "t": "Svavelrök sticker i näsan när Ville, Svante, Benjamin och Tomas går in i Drakvulkanen. Marken under fötterna är varm.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "ville",
+          "svante",
+          "egen-1793378426345",
+          "tomas"
+        ],
+        "guld": 43,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793378582685,
+        "nastaKand": false,
+        "id": "rmvv7ayl9ho5p",
+        "startGuld": 43,
+        "liv": {
+          "ville": 17,
+          "svante": 13,
+          "egen-1793378426345": 10,
+          "tomas": 14
+        },
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmvv7ayl9ho5p",
     "historik": [
       {
         "plats": "vulkanen",
