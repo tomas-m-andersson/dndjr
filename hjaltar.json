@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:39:43.038Z",
+  "uppdaterad": "2026-10-30T20:40:01.588Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392781093,
+    "tid": 1793392799616,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni känner en svag doft av mat.",
@@ -337,7 +337,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "lager",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -362,6 +365,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Lägerplats",
+            "k": "sep"
+          },
+          {
+            "t": "Ett skyddat hörn med en gammal eldstad. Här kan man vila.",
+            "k": "heal"
           }
         ],
         "party": [
