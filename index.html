@@ -703,6 +703,18 @@ function mergeSpel(a,b){
  Object.entries(gl.lager.byggt||{}).forEach(([k,n])=>{R.lager.byggt[k]=Math.max(R.lager.byggt[k]||0,n||0)});
  Object.entries(gl.lager.trofeer||{}).forEach(([k,n])=>{R.lager.trofeer[k]=Math.max(R.lager.trofeer[k]||0,n||0)});
  return R}
+// Tar in framsteg från GitHub UTAN att byta ut spel-objektet när den här enheten har det senaste.
+// (Att byta ut objektet mitt i spelet gjorde att knappar på skärmen pekade på gamla rum, t.ex. att skatten kunde tas flera gånger.)
+function slaIhopMed(fj){
+ fj=normSpel(fj);
+ if((fj.tid||0)>(spel.tid||0)){spel=mergeSpel(spel,fj);save(SPKEY,spel);return true} // den andra enheten sparade senare
+ if((spel.reset||0)>(fj.tid||0))return false;
+ fj.upplasta.forEach(id=>{if(!spel.upplasta.includes(id))spel.upplasta.push(id)});
+ Object.entries(fj.niva||{}).forEach(([id,N])=>{const M=spel.niva[id];if(!M||(N.xp||0)>(M.xp||0))spel.niva[id]=N});
+ Object.entries(fj.utr||{}).forEach(([id,U])=>{const M=spel.utr[id]||{wb:0,acb:0};spel.utr[id]={wb:Math.max(M.wb||0,U.wb||0),acb:Math.max(M.acb||0,U.acb||0)}});
+ Object.entries(fj.lager.byggt||{}).forEach(([k,n])=>{spel.lager.byggt[k]=Math.max(spel.lager.byggt[k]||0,n||0)});
+ Object.entries(fj.lager.trofeer||{}).forEach(([k,n])=>{spel.lager.trofeer[k]=Math.max(spel.lager.trofeer[k]||0,n||0)});
+ save(SPKEY,spel);return false}
 function applyData(d,replace){
  if(Array.isArray(d.egna)){
   const remote=d.egna.map(migrera).filter(validHero),ids=new Set(remote.map(h=>h.id));
@@ -716,8 +728,8 @@ function applyData(d,replace){
  if(replace||!andrDirty){andringar={};const g=d.grundandringar||{};BASE.forEach(b=>{const a=cleanAndring(migrera(g[b.id],true));if(a)andringar[b.id]=a});andrDirty=false}
  else setTimeout(scheduleSync,0);
  // Äventyrets framsteg: det som sparades senast vinner.
- if(d.aventyr&&typeof d.aventyr==="object"){const fjarr=normSpel(d.aventyr),m=replace?fjarr:mergeSpel(spel,fjarr);spel=m;save(SPKEY,spel);
-  if(JSON.stringify(m)!==JSON.stringify(fjarr))setTimeout(scheduleSync,0)} // något finns bara här: spara det till GitHub också
+ if(d.aventyr&&typeof d.aventyr==="object"){const fjarr=normSpel(d.aventyr);if(replace){spel=fjarr;save(SPKEY,spel)}else slaIhopMed(fjarr);
+  if(JSON.stringify(spel)!==JSON.stringify(fjarr))setTimeout(scheduleSync,0)} // något finns bara här: spara det till GitHub också
  else if(spel.tid)setTimeout(scheduleSync,0);
  save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);
 }
@@ -730,7 +742,7 @@ async function ghPut(){
   cur.data.egna.forEach(h=>{if(validHero(h)&&!mine.has(h.id)&&!deleted.has(h.id))egna.push(h)});
   save(KEY,egna);
  }
- if(cur&&cur.data&&cur.data.aventyr&&typeof cur.data.aventyr==="object"){spel=mergeSpel(spel,cur.data.aventyr);save(SPKEY,spel)}
+ if(cur&&cur.data&&cur.data.aventyr&&typeof cur.data.aventyr==="object"&&slaIhopMed(cur.data.aventyr)&&view==="run"&&!strid)visaRun(); // ritar om så att knapparna pekar rätt
  const body={message:"Bland monster och tärningar: uppdatera hjältar",content:b64e(JSON.stringify(dataObj(),null,2)+"\n"),branch:gh.branch.trim()};
  if(cur)body.sha=cur.sha;
  const r=await fetch(ghFileUrl(),{method:"PUT",headers:{...ghHeaders(),"Content-Type":"application/json"},body:JSON.stringify(body)});
