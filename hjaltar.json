@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:28:36.343Z",
+  "uppdaterad": "2026-10-30T20:28:41.215Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392114132,
+    "tid": 1793392119248,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -317,30 +317,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "sovare",
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Ni hör många små fötter som springer.",
-            "typ": "strid",
+            "ledtrad": "Fladdermöss flyger ut ur öppningen.",
+            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "svampman",
-            "svampman"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -373,6 +365,10 @@
           {
             "t": "Det sista monstret faller. Alla får 28 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -405,7 +401,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
+        "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
