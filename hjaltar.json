@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:03:04.915Z",
+  "uppdaterad": "2026-10-30T17:03:30.531Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379782866,
+    "tid": 1793379810439,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -337,7 +337,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -355,30 +355,6 @@
           ]
         },
         "logg": [
-          {
-            "t": "Askan virvlar runt era fötter när ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ni har knappt kommit in förrän en magmaslem anfaller!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 56 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville vaknar med 1 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Svante sätter sig en stund. +8 liv.",
-            "k": "heal"
-          },
           {
             "t": "Benjamin dricker lite vatten och torkar svetten. +7 liv.",
             "k": "heal"
@@ -514,6 +490,30 @@
           {
             "t": "Nu är vägen fri till skatten.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 118 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar 118 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -522,13 +522,17 @@
           "egen-1793378426345",
           "tomas"
         ],
-        "guld": 547,
+        "guld": 783,
         "saker": [
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck",
+          "Läkedryck",
+          "Stor läkedryck",
           "Läkedryck"
         ],
         "bless": {},
