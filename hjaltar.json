@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:43:20.027Z",
+  "uppdaterad": "2026-10-30T20:43:33.163Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392998051,
+    "tid": 1793393011076,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,10 +323,21 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "levande_rustning",
+            "spoke",
+            "skuggling"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -419,6 +430,14 @@
           {
             "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar slottsherren.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Slottsherren",
+            "k": "sep"
+          },
+          {
+            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, ett spöke och en skuggling!",
+            "k": "bad"
           }
         ],
         "party": [
