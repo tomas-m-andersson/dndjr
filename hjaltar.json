@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:29:15.977Z",
+  "uppdaterad": "2026-10-30T20:29:31.041Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392154083,
+    "tid": 1793392169133,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -317,32 +317,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Spindelväv täcker öppningen.",
+            "ledtrad": "Det luktar mögel och något surt.",
             "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Fladdermöss flyger ut ur öppningen.",
-            "typ": "skatt",
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": false,
-          "falla": {
-            "egen": "smi",
-            "alla": false,
-            "varn": "Små hål i väggen. Klick!",
-            "ok": "duckar för giftpilarna",
-            "traff": "träffas av giftiga pilar"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -391,6 +381,10 @@
           {
             "t": "Tomas träffas av giftiga pilar: 9 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Vattnet plaskar runt era fötter när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -423,7 +417,7 @@
           "tomas": 11,
           "sally": 13
         },
-        "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
+        "dorrText": "Vägen delar sig. Varje väg döljer något olika."
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
