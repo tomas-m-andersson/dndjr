@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:35:23.214Z",
+  "uppdaterad": "2026-10-30T16:36:59.867Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -40,15 +40,15 @@
   ],
   "grundandringar": {
     "ville": {
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
-        "tryckpunkt"
+        "rokbomb"
       ],
       "vapen": "katana",
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 9,
