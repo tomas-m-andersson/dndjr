@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:57:59.330Z",
+  "uppdaterad": "2026-10-30T16:58:22.721Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379477276,
+    "tid": 1793379500836,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -417,7 +417,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -428,7 +427,7 @@
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
-          "ville": 1,
+          "ville": 8,
           "svante": 13,
           "egen-1793378426345": 9,
           "tomas": 9
