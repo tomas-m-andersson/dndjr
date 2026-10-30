@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:40:01.588Z",
+  "uppdaterad": "2026-10-30T20:40:16.275Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392799616,
+    "tid": 1793392814351,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,25 +322,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "lager",
+            "ledtrad": "En rustning bredvid dörren har ett glänsande svärd.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
-            "typ": "falla",
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "lager",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -373,6 +370,10 @@
           {
             "t": "Ett skyddat hörn med en gammal eldstad. Här kan man vila.",
             "k": "heal"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -405,7 +406,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
