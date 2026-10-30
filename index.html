@@ -74,6 +74,8 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .bigtile-txt p{margin:0;font-weight:800}
 .bigtile-txt small{color:var(--muted);font-size:.9rem;line-height:1.4}
 .stephead .btn.small{align-self:flex-start;margin-top:6px}
+.runlista{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.runparty{font-weight:800}
 .lagertv{margin:0;position:relative;padding:0;overflow:hidden}
 .lagerscroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;cursor:grab}
 .lagerscroll canvas.lagerduk{display:block;max-width:none;height:auto}
@@ -637,11 +639,23 @@ const alla=()=>[...BASE.map(withAndring),...egna];
 let view="home";
 // Äventyrets framsteg: guld, packning, liv och hur långt man kommit i varje kapitel.
 const SPKEY="tarningsriket-aventyr";
-function normSpel(o){o=o&&typeof o==="object"?o:{};return{guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
+// Flera grottkrypningar kan pågå samtidigt, med olika sällskap. De sparas i spel.runs.
+// spel.run är det äventyr som är öppet just nu (sätts när man trycker Fortsätt).
+const nyRunId=()=>"r"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function normRuns(o){
+ const ok=r=>r&&typeof r==="object"&&Array.isArray(r.party);
+ if(Array.isArray(o.runs))return o.runs.filter(ok).map(r=>({...r,id:r.id||nyRunId()}));
+ if(ok(o.run)){const r={...o.run,id:o.run.id||nyRunId()};if(!r.liv)r.liv={...(o.liv||{})};return[r]} // gammal sparfil med ett enda äventyr
+ return[]}
+function medRun(o){Object.defineProperty(o,"run",{enumerable:false,configurable:true,
+  get(){return this.runs.find(r=>r.id===this.aktivRun)||null},
+  set(v){if(v==null){this.runs=this.runs.filter(r=>r.id!==this.aktivRun);this.aktivRun=null;return}
+   v.id=v.id||nyRunId();if(!this.runs.includes(v))this.runs.push(v);this.aktivRun=v.id}});return o}
+function normSpel(o){o=o&&typeof o==="object"?o:{};return medRun({guld:Number(o.guld)||0,saker:Array.isArray(o.saker)?o.saker.filter(x=>typeof x==="string"):[],
  liv:o.liv&&typeof o.liv==="object"?o.liv:{},kapitel:o.kapitel&&typeof o.kapitel==="object"?o.kapitel:{},tid:Number(o.tid)||0,
  niva:o.niva&&typeof o.niva==="object"?o.niva:{},upplasta:Array.isArray(o.upplasta)?o.upplasta.filter(x=>typeof x==="string"):[],utr:o.utr&&typeof o.utr==="object"?o.utr:{},
- reset:Number(o.reset)||0,run:o.run&&typeof o.run==="object"&&Array.isArray(o.run.party)?o.run:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[],
- lager:{byggt:o.lager&&o.lager.byggt&&typeof o.lager.byggt==="object"?o.lager.byggt:{},trofeer:o.lager&&o.lager.trofeer&&typeof o.lager.trofeer==="object"?o.lager.trofeer:{}}}}
+ reset:Number(o.reset)||0,runs:normRuns(o),aktivRun:typeof o.aktivRun==="string"?o.aktivRun:null,historik:Array.isArray(o.historik)?o.historik.slice(0,20):[],
+ lager:{byggt:o.lager&&o.lager.byggt&&typeof o.lager.byggt==="object"?o.lager.byggt:{},trofeer:o.lager&&o.lager.trofeer&&typeof o.lager.trofeer==="object"?o.lager.trofeer:{}}})}
 let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
 const OKEY="tarningsriket-alternativ";
@@ -1053,7 +1067,7 @@ function start(){
  const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Äventyr"),
    el("p",{},ph.length?"Sällskapet: "+ph.map(h=>h.namn).join(", "):"Välj hjältar först"),
-   el("small",{},spel.run?"Ett äventyr pågår. Fortsätt där ni slutade.":"Grottkrypningar och berättelser med val.")));
+   el("small",{},spel.runs.length?(spel.runs.length===1?"Ett äventyr pågår.":spel.runs.length+" äventyr pågår.")+" Fortsätt där ni slutade, eller starta ett nytt.":"Grottkrypningar och berättelser med val.")));
  // Monsterbiblioteket: några monster i en grotta
  const mtv=document.createElement("canvas");mtv.className="px";mtv.width=TVW;mtv.height=TVH;{const g=mtv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"run|grottorna|1|3|rum|");
   let x=TVW-2;["troll","spindel","vatte","fladdermus"].forEach(k=>{const z=sprSize(k);x-=z.w;sprite(g,k,x,k==="fladdermus"?8:TVH-z.h,true)})}
@@ -1304,8 +1318,9 @@ let kapId=null, strid=null, rullar=false;
 const partyHeroes=()=>(lage==="run"&&spel.run?spel.run.party:party).map(byId).filter(Boolean);
 const pack=()=>lage==="run"&&spel.run?spel.run:spel;
 const maxLiv=h=>vitals(h).hp;
-const liv=h=>{const m=maxLiv(h),v=spel.liv[h.id];return typeof v==="number"?Math.max(0,Math.min(m,v)):m};
-const setLiv=(h,v)=>{spel.liv[h.id]=Math.max(0,Math.min(maxLiv(h),v))};
+const livLista=()=>{if(lage==="run"&&spel.run){spel.run.liv=spel.run.liv||{};return spel.run.liv}return spel.liv};
+const liv=h=>{const m=maxLiv(h),v=livLista()[h.id];return typeof v==="number"?Math.max(0,Math.min(m,v)):m};
+const setLiv=(h,v)=>{livLista()[h.id]=Math.max(0,Math.min(maxLiv(h),v))};
 const vaken=()=>partyHeroes().filter(h=>liv(h)>0);
 function sparaSpel(){spel.tid=Date.now();save(SPKEY,spel);scheduleSync()}
 const kap=()=>spel.kapitel[kapId];
@@ -1611,10 +1626,9 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
 function adventures(){
  tyst();lage=null;view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
  const ph=partyHeroes();
- if(!ph.length){home();flash("Välj minst en hjälte först.");return}
+ if(!ph.length&&!spel.runs.length){home();flash("Välj minst en hjälte först.");return}
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},spel.guld+" guld")));
- app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},"Sällskapet: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+"."),
-  el("button",{class:"btn ghost small",onclick:home},"Byt hjältar")));
+ app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},ph.length?"Valda hjältar: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+". Flera sällskap kan vara ute på äventyr samtidigt.":"Inga hjältar valda just nu.")));
  app.append(runKort());
  app.append(el("div",{class:"section-head"},el("h2",{},"Berättelser"),el("span",{},"Skrivna äventyr med val")));
  const list=el("div",{class:"chapters"});
@@ -2599,19 +2613,29 @@ function runFly(h){
 }
 
 /* --- valet av äventyr --- */
+const MAX_RUNS=6;
 function runKort(){
- const R=spel.run,box=el("section",{class:"runsec"});
- box.append(el("div",{class:"section-head"},el("h2",{},"Grottkrypning"),el("span",{},"Ny karta varje gång")));
- if(R){const P=PLATSER[R.plats];
-  const btns=el("div",{class:"btnrow"},el("button",{class:"btn",onclick:visaRun},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
-   btns.replaceChildren(warnBox("Ge upp äventyret?","Äventyret avslutas och skrivs in i krönikan. Hjältarna behåller sina nivåer.","Ja, ge upp",()=>{lage="run";avslutaRun("gav upp");spel.run=null;lage=null;sparaSpel();adventures()},adventures))}},"Ge upp"));
-  const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild(R),{visaParty:false}); // där ni står just nu
-  box.append(el("div",{class:"chapter"},el("div",{class:"tvbig"},tv),el("small",{},"Pågår · kapitel "+R.kapitel+" · "+(R.fas==="fallen"?"fallna":R.djup>=DJUP?"vid bossen":"rum "+R.djup+" av "+DJUP)),el("h3",{},P.namn),
-   el("p",{},R.party.map(byId).filter(Boolean).map(h=>h.namn).join(", ")),btns));
-  return box}
+ const box=el("section",{class:"runsec"});
+ // pågående äventyr: ett kort per sällskap
+ if(spel.runs.length){
+  box.append(el("div",{class:"section-head"},el("h2",{},"Pågående äventyr"),el("span",{},spel.runs.length===1?"1 äventyr":spel.runs.length+" äventyr")));
+  const lista=el("div",{class:"runlista"});
+  spel.runs.forEach(R=>{const P=PLATSER[R.plats]||PLATSER.grottorna,oppna=()=>{spel.aktivRun=R.id;visaRun()};
+   const btns=el("div",{class:"btnrow"},el("button",{class:"btn",onclick:oppna},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
+    btns.replaceChildren(warnBox("Ge upp äventyret?","Äventyret i "+P.namn+" avslutas och skrivs in i krönikan. Hjältarna behåller sina nivåer.","Ja, ge upp",()=>{spel.aktivRun=R.id;lage="run";avslutaRun("gav upp");spel.run=null;lage=null;sparaSpel();adventures()},adventures))}},"Ge upp"));
+   const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild(R),{visaParty:false}); // där sällskapet står just nu
+   lista.append(el("div",{class:"chapter"},el("div",{class:"tvbig"},tv),el("small",{},"Kapitel "+R.kapitel+" · "+(R.fas==="fallen"?"fallna":R.fas==="vann"?"bossen besegrad":R.djup>=DJUP?"vid bossen":"rum "+R.djup+" av "+DJUP)),el("h3",{},P.namn),
+    el("p",{class:"runparty"},R.party.map(byId).filter(Boolean).map(h=>h.namn).join(", ")),btns))});
+  box.append(lista)}
+ // starta ett nytt
+ const ph=party.map(byId).filter(Boolean);
+ box.append(el("div",{class:"section-head"},el("h2",{},spel.runs.length?"Starta ett nytt äventyr":"Grottkrypning"),el("span",{},"Ny karta varje gång")));
+ if(spel.runs.length>=MAX_RUNS){box.append(el("p",{class:"note"},"Ni har redan "+MAX_RUNS+" äventyr igång. Avsluta eller ge upp något av dem för att starta ett nytt."));return box}
+ if(!ph.length){box.append(el("p",{class:"note"},"Välj vilka hjältar som ska med under Hjältarna för att starta ett nytt äventyr."),el("button",{class:"btn ghost",onclick:home},"Välj hjältar"));return box}
+ box.append(el("p",{class:"lead"},"Nytt äventyr med: "+ph.map(h=>h.namn).join(", ")+". ",el("button",{class:"btn ghost small",onclick:home},"Byt hjältar")));
  const grid=el("div",{class:"places"});
  Object.entries(PLATSER).forEach(([k,P])=>{const c=document.createElement("canvas");c.className="px";
-  lage=null;drawTV(c,k==="skogen"?"run|skogen|1|2|d3|":"run|"+k+"|1|6|port|",{visaParty:false}); // platsens nya bakgrund: bossens port (skogen: stigarna mellan träden)
+  lage=null;const akt=spel.aktivRun;spel.aktivRun=null;drawTV(c,k==="skogen"?"run|skogen|1|2|d3|":"run|"+k+"|1|6|port|",{visaParty:false});spel.aktivRun=akt; // platsens nya bakgrund: bossens port (skogen: stigarna mellan träden)
   grid.append(el("button",{class:"place",onclick:()=>startRun(k)},el("div",{class:"tvbig"},c),el("b",{},P.namn),el("small",{},P.besk)))});
  box.append(grid);
  return box;
@@ -2646,21 +2670,21 @@ function devGroup(){
  const rita=()=>{if(!cb.checked){yta.replaceChildren();return}
   const upp=(spel.upplasta||[]).length,alla=Object.values(VAPEN).flat().filter(w=>w.sp).length;
   yta.replaceChildren(
-   el("p",{class:"devlage"},"Just nu: "+upp+" av "+alla+" specialvapen upplåsta · "+Object.keys(spel.utr||{}).length+" hjältar med magiska föremål · "+spel.guld+" guld · "+(spel.run?"ett äventyr pågår":"inget äventyr pågår")+" · "+spel.historik.length+" i krönikan."),
+   el("p",{class:"devlage"},"Just nu: "+upp+" av "+alla+" specialvapen upplåsta · "+Object.keys(spel.utr||{}).length+" hjältar med magiska föremål · "+spel.guld+" guld · "+(spel.runs.length?spel.runs.length+" äventyr pågår":"inget äventyr pågår")+" · "+spel.historik.length+" i krönikan."),
    el("h4",{},"Nollställ"),
    el("div",{class:"btnrow"},
     knapp("Upplåsta specialvapen",()=>fraga("Nollställa specialvapnen?","Alla "+upp+" upplåsta specialvapen låses igen. Hjältar som använder ett specialvapen får tillbaka klassens första vapen.",()=>{spel.upplasta=[]},"Specialvapnen är låsta igen."),true),
     knapp("Magiska föremål",()=>fraga("Nollställa magiska föremål?","Alla magiska vapen (+1) och skyddsringar som hjältarna har hittat tas bort.",()=>{spel.utr={}},"De magiska föremålen är borttagna."),true),
     knapp("Nivåer och XP",()=>fraga("Nollställa nivåerna?","Alla hjältar går tillbaka till nivå 1 med 0 XP.",()=>{spel.niva={};spel.liv={}},"Alla hjältar är på nivå 1 igen."),true),
     knapp("Guld och drycker",()=>fraga("Nollställa guld och saker?","Guld och alla saker utanför äventyren (till exempel läkedrycker) tas bort.",()=>{spel.guld=0;spel.saker=[]},"Guld och saker är borttagna."),true),
-    knapp("Pågående äventyr",()=>fraga("Avsluta alla pågående äventyr?","Grottkrypningen som pågår och alla påbörjade berättelser nollställs. Det skrivs inte in i krönikan.",()=>{spel.run=null;spel.kapitel={};lage=null},"Inga äventyr pågår längre."),true),
+    knapp("Pågående äventyr",()=>fraga("Avsluta alla pågående äventyr?","Alla grottkrypningar som pågår och alla påbörjade berättelser nollställs. Det skrivs inte in i krönikan.",()=>{spel.runs=[];spel.aktivRun=null;spel.kapitel={};lage=null},"Inga äventyr pågår längre."),true),
     knapp("Lägret",()=>fraga("Riva lägret?","Alla byggen i Hjältarnas läger och alla troféer tas bort. Guldet i kassan finns kvar.",()=>{spel.lager={byggt:{},trofeer:{}}},"Lägret är rivet."),true),
     knapp("Krönikan",()=>fraga("Rensa krönikan?","Listan med tidigare äventyr töms.",()=>{spel.historik=[]},"Krönikan är tom."),true),
     knapp("Allt i äventyren",()=>fraga("Nollställa allt i äventyren?","Specialvapen, magiska föremål, nivåer, guld, saker, lägret, pågående äventyr och krönikan nollställs. Hjältarna och sällskapet finns kvar.",()=>{const t=spel.tid;spel=normSpel(null);spel.tid=t;lage=null},"Allt i äventyren är nollställt."),true)),
    el("h4",{},"Testa"),
    el("div",{class:"btnrow"},
     knapp("Lås upp alla specialvapen",()=>{spel.upplasta=Object.values(VAPEN).flat().filter(w=>w.sp).map(w=>w.id);sparaSpel();show("Alla specialvapen är upplåsta.",true);rita()}),
-    knapp("+500 guld",()=>{spel.guld+=500;if(spel.run)spel.run.guld+=500;sparaSpel();show("500 guld har lagts till"+(spel.run?" (även i det pågående äventyret).":"."),true);rita()}),
+    knapp("+500 guld",()=>{spel.guld+=500;sparaSpel();show("500 guld har lagts till i lägrets kassa.",true);rita()}),
     knapp("Sällskapet +1 nivå",()=>{const H=party.map(byId).filter(Boolean);if(!H.length){show("Välj hjältar först.",false);return}
      H.forEach(h=>{const N=nivaInfo(h.id);if(N.lvl<10)gainXp(h,XPT[N.lvl+1]-N.xp)});sparaSpel();show(H.map(h=>h.namn+" nivå "+vitals(h).lvl).join(", ")+".",true);rita()})),
    slot,status)};
