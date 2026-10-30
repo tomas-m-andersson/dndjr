@@ -1471,7 +1471,36 @@ const SPR={
  eldprast:{hero:{folk:"manniska",klass:"helare",alder:50,hud:2,har:7,stil:"kal",klader:3,vapen:"morgonstjarna",skagg:true}},
  drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
 };
-function sprDef(key){const s=SPR[key];if(!s)return null;if(s.alias){const b=SPR[s.alias];return{rows:b.rows,pal:{...b.pal,...s.pal},skala:s.skala||1}}return{...s,skala:s.skala||1}}
+/* --- Monstrens vapen ---
+   Monster med armar håller ett vapen. Vapnet ritas in i monstrets bild vid handen (siffrorna är vapnets färger).
+   Varulven och Trädväktaren slåss med klor och grenar, så de har inga vapen. */
+const VAPENPAL={"1":"#dfe6ec","2":"#9aa3ad","3":"#c9a227","4":"#6b4423","5":"#4a3020","6":"#7a5232","7":"#c9ccd2","8":"#4a4a56","9":"#9a6ae0","0":"#ff8a2b"};
+const VAPENKONST={ // [bild, handens plats i bilden]
+ kortsvard:[[".1.",".1.",".2.",".1.","333",".4."],[1,5]],
+ handyxa:[["11..","1124","1..4","...4","...4"],[3,4]],
+ skallstav:[[".7.","777","7.7",".4.",".4.",".4.",".4.",".4.",".4."],[1,5]],
+ klubba:[[".7..","7667","6566","6656",".66.","..4.","..4.","..4."],[2,7]],
+ pinne:[[".6.","666","656",".4.",".4."],[1,4]],
+ morgonstjarna:[["..7..",".333.","73337",".333.","..7..","..4..","..4..","..4.."],[2,7]],
+ treudd:[["0.0.0","8.8.8","88888","..4..","..4..","..4..","..4.."],[2,4]],
+ dolk:[["9","9","3","4"],[0,3]],
+ morktsvard:[[".9.",".9.",".9.",".9.",".9.","333",".4."],[1,6]],
+ hammare:[["222","202","222",".4.",".4.",".4."],[1,4]]};
+const MONVAPEN={vatte:"kortsvard",kobold:"handyxa",vattesjaman:"skallstav",troll:"klubba",skelett:"kortsvard",skuggling:"dolk",skuggan:"morktsvard",eldimp:"treudd",gargoyl:"morgonstjarna",svampman:"pinne",golem:"hammare"};
+const MONHAND={vatte:[0,8],troll:[0,10],skelett:[0,7],skuggling:[0,8],skuggan:[0,11],eldimp:[0,8],gargoyl:[2,9],svampman:[0,8],golem:[0,7]}; // vänstra handen
+function medVapen(rows,[art,[ax,ay]],[hx,hy]){
+ const ox=hx-ax,oy=hy-ay,padL=Math.max(0,-ox),padT=Math.max(0,-oy),rw=Math.max(...rows.map(r=>r.length));
+ const W=Math.max(rw+padL,ox+padL+art[0].length),H=Math.max(rows.length+padT,oy+padT+art.length);
+ const G=Array.from({length:H},()=>Array(W).fill("."));
+ rows.forEach((r,y)=>[...r].forEach((c,x)=>{G[y+padT][x+padL]=c}));
+ art.forEach((r,y)=>[...r].forEach((c,x)=>{if(c!==".")G[y+oy+padT][x+ox+padL]=c}));
+ return G.map(r=>r.join(""))}
+const SPDEFCACHE=new Map();
+function sprDef(key){if(SPDEFCACHE.has(key))return SPDEFCACHE.get(key);const s=SPR[key];if(!s)return null;
+ let d=s.alias?{rows:SPR[s.alias].rows,pal:{...SPR[s.alias].pal,...s.pal},skala:s.skala||1}:{...s,skala:s.skala||1};
+ const v=MONVAPEN[key]||(s.alias&&MONVAPEN[s.alias]),hand=MONHAND[key]||(s.alias&&MONHAND[s.alias]);
+ if(v&&hand&&d.rows)d={...d,rows:medVapen(d.rows,VAPENKONST[v],hand),pal:{...VAPENPAL,...d.pal}};
+ SPDEFCACHE.set(key,d);return d}
 const SPCACHE=new Map();
 function sprCanvas(key){if(!SPCACHE.has(key)){const s=sprDef(key);SPCACHE.set(key,!s?null:s.hero?heroCanvas(s.hero):rendera(gridFrom(s.rows),{K:KONTUR,...s.pal}))}return SPCACHE.get(key)}
 function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if(!c)return;const k=s.skala,W=c.width*k,H=c.height*k;g.globalAlpha=alpha??1;
