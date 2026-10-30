@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:29:31.041Z",
+  "uppdaterad": "2026-10-30T20:29:47.799Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392169133,
+    "tid": 1793392185870,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar mögel och något surt.",
@@ -332,7 +332,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -385,6 +388,14 @@
           {
             "t": "Vattnet plaskar runt era fötter när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
+            "k": "heal"
           }
         ],
         "party": [
