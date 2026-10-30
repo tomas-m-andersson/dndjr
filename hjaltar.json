@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:00:54.429Z",
+  "uppdaterad": "2026-10-30T17:00:59.588Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379652523,
+    "tid": 1793379657575,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -242,11 +242,11 @@
       },
       "egen-1793378426345": {
         "wb": 0,
-        "acb": 1
+        "acb": 2
       },
       "tomas": {
         "wb": 0,
-        "acb": 1
+        "acb": 2
       }
     },
     "reset": 1793282091831,
@@ -327,7 +327,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -494,6 +494,18 @@
           {
             "t": "Svante får en skyddsring: +2 rustning.",
             "k": "magic"
+          },
+          {
+            "t": "Ni hittar 126 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Benjamin får en skyddsring: +2 rustning.",
+            "k": "magic"
+          },
+          {
+            "t": "Tomas får en skyddsring: +2 rustning.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -502,7 +514,7 @@
           "egen-1793378426345",
           "tomas"
         ],
-        "guld": 421,
+        "guld": 547,
         "saker": [
           "Läkedryck",
           "Läkedryck",
