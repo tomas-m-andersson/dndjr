@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:37:24.173Z",
+  "uppdaterad": "2026-10-30T20:38:04.716Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392642267,
+    "tid": 1793392682669,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -342,7 +342,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "fladdermus",
+            "skelett",
+            "ratta"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -351,6 +360,14 @@
           {
             "t": "Ville, Benjamin, Tomas och Sally smyger in genom ett trasigt fönster i Korpholms gamla kök. Någonstans uppe i slottet slår en klocka tolv.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni har knappt kommit in förrän en jättefladdermus, ett skelett och en jätteråtta anfaller!",
+            "k": "bad"
           }
         ],
         "party": [
