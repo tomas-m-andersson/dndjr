@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:56:11.143Z",
+  "uppdaterad": "2026-10-30T16:57:59.330Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,19 +207,19 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379369131,
+    "tid": 1793379477276,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 482
+        "xp": 538
       },
       "svante": {
         "lvl": 2,
-        "xp": 482
+        "xp": 538
       },
       "tomas": {
         "lvl": 2,
-        "xp": 482
+        "xp": 538
       },
       "sally": {
         "lvl": 2,
@@ -227,7 +227,7 @@
       },
       "egen-1793378426345": {
         "lvl": 1,
-        "xp": 77
+        "xp": 133
       }
     },
     "upplasta": [],
@@ -304,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någonstans porlar vatten.",
@@ -320,7 +320,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "magmaslem"
           ],
@@ -382,6 +382,26 @@
           {
             "t": "Ni har knappt kommit in förrän en magmaslem anfaller!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 56 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville vaknar med 1 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Svante sätter sig en stund. +8 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Benjamin dricker lite vatten och torkar svetten. +7 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas binder om ett sår. +3 liv.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -402,16 +422,16 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 275,
+        "ara": 475,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
-          "ville": 3,
+          "ville": 1,
           "svante": 13,
-          "egen-1793378426345": 10,
-          "tomas": 14
+          "egen-1793378426345": 9,
+          "tomas": 9
         },
         "dorrText": "Marken spricker upp i flera brinnande stigar."
       }
