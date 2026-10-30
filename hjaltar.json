@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:24:27.461Z",
+  "uppdaterad": "2026-10-30T20:24:56.500Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -35,15 +35,15 @@
       "id": "egen-1793378426345",
       "namn": "Benjamin",
       "attacker": [
-        "smygattack",
-        "shuriken",
-        "giftklinga"
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
       ],
-      "vapen": "dubbla_dolkar",
+      "vapen": "pilbage",
       "folk": "manniska",
       "alder": 20,
       "skagg": false,
-      "klass": "ninja",
+      "klass": "bagskytt",
       "hud": 2,
       "har": 9,
       "stil": "kort",
