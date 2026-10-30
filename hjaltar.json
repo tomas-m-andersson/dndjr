@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:06:03.009Z",
+  "uppdaterad": "2026-10-30T17:08:21.686Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,19 +207,19 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379960970,
+    "tid": 1793380099677,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 608
+        "xp": 719
       },
       "svante": {
         "lvl": 3,
-        "xp": 608
+        "xp": 719
       },
       "tomas": {
         "lvl": 3,
-        "xp": 608
+        "xp": 719
       },
       "sally": {
         "lvl": 2,
@@ -227,17 +227,19 @@
       },
       "egen-1793378426345": {
         "lvl": 2,
-        "xp": 203
+        "xp": 314
       }
     },
-    "upplasta": [],
+    "upplasta": [
+      "giftdolkar"
+    ],
     "utr": {
       "ville": {
         "wb": 1,
         "acb": 2
       },
       "svante": {
-        "wb": 0,
+        "wb": 1,
         "acb": 2
       },
       "egen-1793378426345": {
@@ -316,7 +318,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -332,50 +334,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Rum 4 · Vaktad skatt",
-            "k": "sep"
-          },
-          {
-            "t": "Ni ser en glittrande skatt. Framför den står en magmaslem.",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 56 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville hämtar andan och lägger om såren. +7 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Svante binder om ett sår. +4 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Benjamin hämtar andan och lägger om såren. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Tomas sätter sig en stund. +3 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ingen vaktar skatten längre. Den är er.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 126 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ville får en skyddsring: +1 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Svante får en skyddsring: +1 rustning.",
-            "k": "magic"
-          },
           {
             "t": "Ni hittar 126 guldmynt.",
             "k": "heal"
@@ -491,6 +449,50 @@
           {
             "t": "Vingar slår i hettan. en magmaslem, en eldimp och en skuggling landar framför er!",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 111 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville dricker lite vatten och torkar svetten. +8 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Svante hämtar andan och lägger om såren. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Benjamin dricker lite vatten och torkar svetten. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas binder om ett sår. +4 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar 124 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Svante får ett magiskt vapen: +1 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Vulkanens väktare är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Giftdolkarna! Ninja kan nu välja det under Ändra. 1d4 + 1d4 skada, och varje träff förgiftar.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -499,7 +501,7 @@
           "egen-1793378426345",
           "tomas"
         ],
-        "guld": 783,
+        "guld": 907,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -510,22 +512,26 @@
           "Stor läkedryck",
           "Läkedryck",
           "Stor läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 725,
+        "ara": 1125,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
-          "ville": 18,
-          "svante": 15,
-          "egen-1793378426345": 14,
-          "tomas": 13
+          "ville": 24,
+          "svante": 18,
+          "egen-1793378426345": 17,
+          "tomas": 15
         },
-        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar vulkanens väktare."
+        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar vulkanens väktare.",
+        "nyttVapen": "Giftdolkarna",
+        "nyttVapenId": "giftdolkar"
       }
     ],
     "aktivRun": "rmvv7ayl9ho5p",
@@ -633,7 +639,9 @@
       "byggt": {
         "talt": 1
       },
-      "trofeer": {}
+      "trofeer": {
+        "magmaslem": 1
+      }
     }
   }
 }
