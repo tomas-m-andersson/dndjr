@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:36:59.867Z",
+  "uppdaterad": "2026-10-30T16:39:21.244Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -65,18 +65,18 @@
       }
     },
     "svante": {
+      "attacker": [
+        "smygattack",
+        "shuriken",
+        "skuggsteg"
+      ],
+      "vapen": "dubbla_dolkar",
       "folk": "manniska",
       "alder": 6,
       "skagg": false,
-      "attacker": [
-        "kraftslag",
-        "dubbelhugg",
-        "virvelhugg"
-      ],
-      "vapen": "svard",
-      "klass": "krigare",
-      "hud": 5,
-      "har": 9,
+      "klass": "ninja",
+      "hud": 1,
+      "har": 0,
       "stil": "kort",
       "klader": 5,
       "flackar": false,
