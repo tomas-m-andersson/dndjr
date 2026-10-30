@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:05:56.982Z",
+  "uppdaterad": "2026-10-30T17:06:03.009Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379954849,
+    "tid": 1793379960970,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -523,7 +523,7 @@
           "ville": 18,
           "svante": 15,
           "egen-1793378426345": 14,
-          "tomas": 17
+          "tomas": 13
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar vulkanens väktare."
       }
