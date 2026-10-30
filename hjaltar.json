@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:42:46.546Z",
+  "uppdaterad": "2026-10-30T20:42:58.047Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392964556,
+    "tid": 1793392976150,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,27 +322,11 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "falla",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": false,
-          "falla": {
-            "egen": "smi",
-            "alla": true,
-            "varn": "Taket mullrar. Stenar faller!",
-            "ok": "hoppar åt sidan",
-            "traff": "träffas av fallande sten"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -431,6 +415,10 @@
           {
             "t": "Sally träffas av fallande sten: 5 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar slottsherren.",
+            "k": ""
           }
         ],
         "party": [
@@ -462,7 +450,7 @@
           "tomas": 9,
           "sally": 8
         },
-        "dorrText": "Ingen väg att välja. Bara framåt."
+        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
