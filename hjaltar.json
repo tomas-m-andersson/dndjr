@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:45:03.408Z",
+  "uppdaterad": "2026-10-30T20:46:26.070Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,11 +207,11 @@
         "slut": "slut"
       }
     },
-    "tid": 1793393101520,
+    "tid": 1793393184068,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 872
+        "xp": 1163
       },
       "svante": {
         "lvl": 3,
@@ -219,20 +219,21 @@
       },
       "tomas": {
         "lvl": 3,
-        "xp": 872
+        "xp": 1163
       },
       "sally": {
-        "lvl": 2,
-        "xp": 558
+        "lvl": 3,
+        "xp": 849
       },
       "egen-1793378426345": {
-        "lvl": 2,
-        "xp": 467
+        "lvl": 3,
+        "xp": 758
       }
     },
     "upplasta": [
       "giftdolkar",
-      "stjarnstav"
+      "stjarnstav",
+      "isstav"
     ],
     "utr": {
       "ville": {
@@ -323,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -438,6 +439,54 @@
           {
             "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, ett spöke och en skuggling!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 111 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville hämtar andan och lägger om såren. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas binder om ett sår. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Sally dricker lite vatten och torkar svetten. +7 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Sally har blivit starkare och är nu nivå 3! +5 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 190 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Benjamin känner sig mäktigare. Nivå 3! +8 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Slottsherren är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Isstaven! Magiker kan nu välja det under Ändra. Kyler fienden: 50 % chans att ge −2 på deras anfall. +1 rustning.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -446,28 +495,31 @@
           "tomas",
           "sally"
         ],
-        "guld": 53,
+        "guld": 243,
         "saker": [
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 100,
+        "ara": 500,
         "start": 1793392642266,
         "nastaKand": false,
         "id": "rmvvfob16vrj1",
         "startGuld": 53,
         "liv": {
-          "ville": 19,
-          "egen-1793378426345": 20,
-          "tomas": 15,
-          "sally": 3
+          "ville": 24,
+          "egen-1793378426345": 28,
+          "tomas": 20,
+          "sally": 15
         },
-        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
+        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren.",
+        "nyttVapen": "Isstaven",
+        "nyttVapenId": "isstav"
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
@@ -606,7 +658,8 @@
       },
       "trofeer": {
         "magmaslem": 1,
-        "spindel": 1
+        "spindel": 1,
+        "levande_rustning": 1
       }
     }
   }
