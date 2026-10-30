@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:42:07.627Z",
+  "uppdaterad": "2026-10-30T20:42:17.559Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392925638,
+    "tid": 1793392935600,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
@@ -332,7 +332,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": true,
+            "varn": "Taket mullrar. Stenar faller!",
+            "ok": "hoppar åt sidan",
+            "traff": "träffas av fallande sten"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -397,6 +407,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Taket mullrar. Stenar faller!",
+            "k": "bad"
           }
         ],
         "party": [
