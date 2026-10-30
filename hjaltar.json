@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:30:32.423Z",
+  "uppdaterad": "2026-10-30T20:30:43.277Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392230473,
+    "tid": 1793392241214,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -321,32 +321,11 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det luktar sött, som blommor.",
-            "typ": "skatt",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "82 guldmynt",
-              "v": 82
-            },
-            {
-              "k": "acb",
-              "n": "Skyddsring",
-              "info": "+1 rustning"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -443,6 +422,10 @@
           {
             "t": "Ville får en skyddsring: +3 rustning.",
             "k": "magic"
+          },
+          {
+            "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
+            "k": ""
           }
         ],
         "party": [
@@ -475,7 +458,7 @@
           "tomas": 11,
           "sally": 13
         },
-        "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare."
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
