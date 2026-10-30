@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:08:21.686Z",
+  "uppdaterad": "2026-10-30T17:08:42.328Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -177,7 +177,7 @@
     }
   },
   "aventyr": {
-    "guld": 23,
+    "guld": 887,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793380099677,
+    "tid": 1793380120368,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -313,229 +313,24 @@
           "tomas": 14,
           "linda": 7
         }
-      },
+      }
+    ],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "magmaslem",
-            "eldimp",
-            "skuggling"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Ni hittar 126 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Benjamin får en skyddsring: +1 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Tomas får en skyddsring: +1 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar 126 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ville får en skyddsring: +2 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Svante får en skyddsring: +2 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar 126 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Benjamin får en skyddsring: +2 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Tomas får en skyddsring: +2 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Vaktad skatt",
-            "k": "sep"
-          },
-          {
-            "t": "Guld glimmar i hörnet. Men två kobolder reser sig och spärrar vägen.",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 14 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville binder om ett sår. +3 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Tomas sätter sig en stund. +6 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Ville känner sig mäktigare. Nivå 3! +7 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Nivå upp! Svante är nu nivå 3! +5 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Benjamin har blivit starkare och är nu nivå 2! +7 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Nivå upp! Tomas är nu nivå 3! +6 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Nu är vägen fri till skatten.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 118 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 118 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Hettan är nästan för mycket. Längst ner i kratern rör sig något stort.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Vulkanens väktare",
-            "k": "sep"
-          },
-          {
-            "t": "Vingar slår i hettan. en magmaslem, en eldimp och en skuggling landar framför er!",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 111 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville dricker lite vatten och torkar svetten. +8 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Svante hämtar andan och lägger om såren. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Benjamin dricker lite vatten och torkar svetten. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Tomas binder om ett sår. +4 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 124 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Svante får ett magiskt vapen: +1 på träff och skada.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Vulkanens väktare är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Giftdolkarna! Ninja kan nu välja det under Ändra. 1d4 + 1d4 skada, och varje träff förgiftar.",
-            "k": "crit"
-          }
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 3)",
+          "Svante (nivå 3)",
+          "Benjamin (nivå 2)",
+          "Tomas (nivå 3)"
         ],
-        "party": [
-          "ville",
-          "svante",
-          "egen-1793378426345",
-          "tomas"
-        ],
-        "guld": 907,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck",
-          "Läkedryck",
-          "Stor läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 1125,
-        "start": 1793378582685,
-        "nastaKand": false,
-        "id": "rmvv7ayl9ho5p",
-        "startGuld": 43,
-        "liv": {
-          "ville": 24,
-          "svante": 18,
-          "egen-1793378426345": 17,
-          "tomas": 15
-        },
-        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar vulkanens väktare.",
-        "nyttVapen": "Giftdolkarna",
-        "nyttVapenId": "giftdolkar"
-      }
-    ],
-    "aktivRun": "rmvv7ayl9ho5p",
-    "historik": [
+        "datum": "2026-10-30"
+      },
       {
         "plats": "vulkanen",
         "kapitel": 1,
