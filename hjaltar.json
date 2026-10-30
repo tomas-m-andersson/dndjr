@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:27:10.898Z",
+  "uppdaterad": "2026-10-30T20:28:36.343Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,11 +207,11 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392028965,
+    "tid": 1793392114132,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 719
+        "xp": 747
       },
       "svante": {
         "lvl": 3,
@@ -219,15 +219,15 @@
       },
       "tomas": {
         "lvl": 3,
-        "xp": 719
+        "xp": 747
       },
       "sally": {
         "lvl": 2,
-        "xp": 405
+        "xp": 433
       },
       "egen-1793378426345": {
         "lvl": 2,
-        "xp": 314
+        "xp": 342
       }
     },
     "upplasta": [
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
@@ -334,7 +334,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "svampman",
             "svampman"
@@ -369,6 +369,10 @@
           {
             "t": "Något rör sig i skuggorna. Det är två svampmän!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 28 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -390,7 +394,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 100,
         "start": 1793391941631,
         "nastaKand": false,
         "id": "rmvvf9af35y6v",
