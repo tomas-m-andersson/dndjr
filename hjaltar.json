@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:46:26.070Z",
+  "uppdaterad": "2026-10-30T20:46:45.094Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -177,7 +177,7 @@
     }
   },
   "aventyr": {
-    "guld": 1249,
+    "guld": 1439,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793393184068,
+    "tid": 1793393203010,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -319,211 +319,24 @@
           "tomas": 14,
           "linda": 7
         }
-      },
+      }
+    ],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "levande_rustning",
-            "spoke",
-            "skuggling"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Spökslottet Korpholm",
-            "k": "sep"
-          },
-          {
-            "t": "Ville, Benjamin, Tomas och Sally smyger in genom ett trasigt fönster i Korpholms gamla kök. Någonstans uppe i slottet slår en klocka tolv.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ni har knappt kommit in förrän en jättefladdermus, ett skelett och en jätteråtta anfaller!",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 28 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Lägerplats",
-            "k": "sep"
-          },
-          {
-            "t": "Ett skyddat hörn med en gammal eldstad. Här kan man vila.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Handlare",
-            "k": "sep"
-          },
-          {
-            "t": "En räv i väst och hatt bugar djupt. – Varor för modiga resenärer!",
-            "k": "heal"
-          },
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Golvet ger vika under fötterna!",
-            "k": "bad"
-          },
-          {
-            "t": "Ville faller ner i en spjutgrop: 13 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Taket mullrar. Stenar faller!",
-            "k": "bad"
-          },
-          {
-            "t": "Ville hoppar åt sidan!",
-            "k": "hit"
-          },
-          {
-            "t": "Benjamin hoppar åt sidan!",
-            "k": "hit"
-          },
-          {
-            "t": "Tomas träffas av fallande sten: 11 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Sally träffas av fallande sten: 5 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar slottsherren.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Slottsherren",
-            "k": "sep"
-          },
-          {
-            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, ett spöke och en skuggling!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 111 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville hämtar andan och lägger om såren. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Tomas binder om ett sår. +5 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Sally dricker lite vatten och torkar svetten. +7 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Sally har blivit starkare och är nu nivå 3! +5 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 190 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Benjamin känner sig mäktigare. Nivå 3! +8 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Slottsherren är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Isstaven! Magiker kan nu välja det under Ändra. Kyler fienden: 50 % chans att ge −2 på deras anfall. +1 rustning.",
-            "k": "crit"
-          }
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 3)",
+          "Benjamin (nivå 3)",
+          "Tomas (nivå 3)",
+          "Sally (nivå 3)"
         ],
-        "party": [
-          "ville",
-          "egen-1793378426345",
-          "tomas",
-          "sally"
-        ],
-        "guld": 243,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 500,
-        "start": 1793392642266,
-        "nastaKand": false,
-        "id": "rmvvfob16vrj1",
-        "startGuld": 53,
-        "liv": {
-          "ville": 24,
-          "egen-1793378426345": 28,
-          "tomas": 20,
-          "sally": 15
-        },
-        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren.",
-        "nyttVapen": "Isstaven",
-        "nyttVapenId": "isstav"
-      }
-    ],
-    "aktivRun": "rmvvfob16vrj1",
-    "historik": [
+        "datum": "2026-10-30"
+      },
       {
         "plats": "grottorna",
         "kapitel": 1,
