@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:43:12.449Z",
+  "uppdaterad": "2026-10-30T20:43:20.027Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392990328,
+    "tid": 1793392998051,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -433,7 +433,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -447,7 +446,7 @@
           "ville": 19,
           "egen-1793378426345": 20,
           "tomas": 15,
-          "sally": 8
+          "sally": 13
         },
         "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
       }
