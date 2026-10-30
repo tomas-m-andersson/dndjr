@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:31:06.257Z",
+  "uppdaterad": "2026-10-30T20:32:35.732Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392264254,
+    "tid": 1793392353726,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -473,7 +473,7 @@
         "startGuld": 40,
         "liv": {
           "ville": 24,
-          "egen-1793378426345": 20,
+          "egen-1793378426345": 14,
           "tomas": 11,
           "sally": 13
         },
