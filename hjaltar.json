@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:29:47.799Z",
+  "uppdaterad": "2026-10-30T20:30:10.608Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392185870,
+    "tid": 1793392208602,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -317,25 +317,17 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar mögel och något surt.",
-            "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "handlare",
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -396,6 +388,10 @@
           {
             "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
             "k": "heal"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -428,7 +424,7 @@
           "tomas": 11,
           "sally": 13
         },
-        "dorrText": "Vägen delar sig. Varje väg döljer något olika."
+        "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
