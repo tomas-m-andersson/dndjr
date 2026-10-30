@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:24:56.500Z",
+  "uppdaterad": "2026-10-30T20:25:43.524Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793380195780,
+    "tid": 1793391941637,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -313,9 +313,70 @@
           "tomas": 14,
           "linda": 7
         }
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon viskar.",
+            "typ": "strid",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Ville, Benjamin, Tomas och Sally klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "ville",
+          "egen-1793378426345",
+          "tomas",
+          "sally"
+        ],
+        "guld": 40,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793391941631,
+        "nastaKand": false,
+        "id": "rmvvf9af35y6v",
+        "startGuld": 40,
+        "liv": {
+          "ville": 24,
+          "egen-1793378426345": 20,
+          "tomas": 20,
+          "sally": 13
+        },
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmvvf9af35y6v",
     "historik": [
       {
         "plats": "vulkanen",
