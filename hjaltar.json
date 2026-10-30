@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:42:17.559Z",
+  "uppdaterad": "2026-10-30T20:42:46.546Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392935600,
+    "tid": 1793392964556,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -415,6 +415,22 @@
           {
             "t": "Taket mullrar. Stenar faller!",
             "k": "bad"
+          },
+          {
+            "t": "Ville hoppar åt sidan!",
+            "k": "hit"
+          },
+          {
+            "t": "Benjamin hoppar åt sidan!",
+            "k": "hit"
+          },
+          {
+            "t": "Tomas träffas av fallande sten: 11 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Sally träffas av fallande sten: 5 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -443,8 +459,8 @@
         "liv": {
           "ville": 19,
           "egen-1793378426345": 20,
-          "tomas": 20,
-          "sally": 13
+          "tomas": 9,
+          "sally": 8
         },
         "dorrText": "Ingen väg att välja. Bara framåt."
       }
