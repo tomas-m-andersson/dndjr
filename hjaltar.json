@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:08:42.328Z",
+  "uppdaterad": "2026-10-30T17:09:08.866Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -73,7 +73,7 @@
         "shuriken",
         "rokbomb"
       ],
-      "vapen": "katana",
+      "vapen": "giftdolkar",
       "folk": "manniska",
       "alder": 7,
       "skagg": false,
