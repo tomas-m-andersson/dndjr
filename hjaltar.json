@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:25:43.524Z",
+  "uppdaterad": "2026-10-30T20:26:19.300Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793391941637,
+    "tid": 1793391977285,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något skrattar tyst därinne.",
@@ -332,7 +332,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -341,6 +344,14 @@
           {
             "t": "Ville, Benjamin, Tomas och Sally klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En lång, smal man i lila mantel. Han ler lite för mycket. – Jag har precis det ni behöver.",
+            "k": "heal"
           }
         ],
         "party": [
