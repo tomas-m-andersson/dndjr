@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:03:33.415Z",
+  "uppdaterad": "2026-10-30T17:03:44.580Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379811517,
+    "tid": 1793379822524,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -316,19 +316,22 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "magmaslem",
+            "eldimp",
+            "skuggling"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
-          {
-            "t": "Tomas binder om ett sår. +3 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni samlar ihop er och fortsätter.",
-            "k": ""
-          },
           {
             "t": "Rum 4 · Vaktad skatt",
             "k": "sep"
@@ -480,6 +483,14 @@
           {
             "t": "Hettan är nästan för mycket. Längst ner i kratern rör sig något stort.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Vulkanens väktare",
+            "k": "sep"
+          },
+          {
+            "t": "Vingar slår i hettan. en magmaslem, en eldimp och en skuggling landar framför er!",
+            "k": "bad"
           }
         ],
         "party": [
