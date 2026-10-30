@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:35:27.554Z",
+  "uppdaterad": "2026-10-30T20:36:55.699Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -117,15 +117,15 @@
       }
     },
     "tomas": {
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
-      "vapen": "stav",
+      "vapen": "stjarnstav",
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
