@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:30:20.750Z",
+  "uppdaterad": "2026-10-30T20:30:28.740Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392218790,
+    "tid": 1793392226785,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -249,6 +249,10 @@
       "tomas": {
         "wb": 0,
         "acb": 2
+      },
+      "sally": {
+        "wb": 0,
+        "acb": 1
       }
     },
     "reset": 1793282091831,
@@ -415,6 +419,14 @@
           {
             "t": "Ni hittar en skattkista!",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 82 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Sally får en skyddsring: +1 rustning.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -423,7 +435,7 @@
           "tomas",
           "sally"
         ],
-        "guld": 40,
+        "guld": 122,
         "saker": [
           "Läkedryck",
           "Läkedryck",
