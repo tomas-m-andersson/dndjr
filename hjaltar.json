@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:47:36.937Z",
+  "uppdaterad": "2026-10-30T16:48:14.583Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,23 +207,27 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378854915,
+    "tid": 1793378892605,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 405
+        "xp": 461
       },
       "svante": {
         "lvl": 2,
-        "xp": 405
+        "xp": 461
       },
       "tomas": {
         "lvl": 2,
-        "xp": 405
+        "xp": 461
       },
       "sally": {
         "lvl": 2,
         "xp": 405
+      },
+      "egen-1793378426345": {
+        "lvl": 1,
+        "xp": 56
       }
     },
     "upplasta": [],
@@ -300,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -321,7 +325,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "eldsalamander"
           ],
@@ -343,6 +347,14 @@
           {
             "t": "Ni har knappt kommit in förrän en eldsalamander anfaller!",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 56 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Svante dricker lite vatten och torkar svetten. +5 liv.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -364,14 +376,14 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 200,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
           "ville": 17,
-          "svante": 3,
+          "svante": 8,
           "egen-1793378426345": 10,
           "tomas": 14
         },
