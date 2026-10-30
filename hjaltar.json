@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:30:28.740Z",
+  "uppdaterad": "2026-10-30T20:30:32.423Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392226785,
+    "tid": 1793392230473,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -236,7 +236,7 @@
     "utr": {
       "ville": {
         "wb": 1,
-        "acb": 2
+        "acb": 3
       },
       "svante": {
         "wb": 1,
@@ -252,7 +252,7 @@
       },
       "sally": {
         "wb": 0,
-        "acb": 1
+        "acb": 2
       }
     },
     "reset": 1793282091831,
@@ -333,7 +333,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -427,6 +427,22 @@
           {
             "t": "Sally får en skyddsring: +1 rustning.",
             "k": "magic"
+          },
+          {
+            "t": "Ni hittar 82 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Sally får en skyddsring: +2 rustning.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar 82 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ville får en skyddsring: +3 rustning.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -435,7 +451,7 @@
           "tomas",
           "sally"
         ],
-        "guld": 122,
+        "guld": 286,
         "saker": [
           "Läkedryck",
           "Läkedryck",
