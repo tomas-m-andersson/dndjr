@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:30:43.277Z",
+  "uppdaterad": "2026-10-30T20:31:06.257Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392241214,
+    "tid": 1793392264254,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,10 +322,21 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "spindel",
+            "giftspindel",
+            "vatte"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -426,6 +437,14 @@
           {
             "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Grottans härskare",
+            "k": "sep"
+          },
+          {
+            "t": "Stenar rasar. Något enormt vaknar: en jättespindel, en giftspindel och en vätte!",
+            "k": "bad"
           }
         ],
         "party": [
