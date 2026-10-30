@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:30:10.608Z",
+  "uppdaterad": "2026-10-30T20:30:20.750Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392208602,
+    "tid": 1793392218790,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -327,7 +327,22 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "skatt",
+          "klar": false,
+          "loot": [
+            {
+              "k": "guld",
+              "n": "82 guldmynt",
+              "v": 82
+            },
+            {
+              "k": "acb",
+              "n": "Skyddsring",
+              "info": "+1 rustning"
+            }
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -392,6 +407,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Ni hittar en skattkista!",
+            "k": "heal"
           }
         ],
         "party": [
