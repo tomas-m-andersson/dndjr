@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:39:21.244Z",
+  "uppdaterad": "2026-10-30T16:40:21.337Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -66,27 +66,26 @@
     },
     "svante": {
       "attacker": [
-        "smygattack",
-        "shuriken",
-        "skuggsteg"
+        "klosattack",
+        "hoppa_ansiktet",
+        "frasa"
       ],
-      "vapen": "dubbla_dolkar",
-      "folk": "manniska",
-      "alder": 6,
+      "vapen": "klor",
+      "folk": "katt",
       "skagg": false,
-      "klass": "ninja",
+      "klass": "katt",
       "hud": 1,
-      "har": 0,
+      "har": 9,
       "stil": "kort",
       "klader": 5,
       "flackar": false,
       "s": {
-        "sty": 9,
-        "smi": 13,
-        "tal": 12,
-        "klo": 16,
+        "sty": 8,
+        "smi": 14,
+        "tal": 11,
+        "klo": 15,
         "vis": 13,
-        "cha": 11
+        "cha": 10
       }
     },
     "tomas": {
