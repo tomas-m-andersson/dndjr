@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:01:19.483Z",
+  "uppdaterad": "2026-10-30T17:01:46.728Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379677575,
+    "tid": 1793379704720,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -316,7 +316,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det luktar rökelse.",
@@ -335,16 +335,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "kobold",
+            "kobold"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
-          {
-            "t": "Svavelrök sticker i näsan när Ville, Svante, Benjamin och Tomas går in i Drakvulkanen. Marken under fötterna är varm.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Monster",
-            "k": "sep"
-          },
           {
             "t": "Ni har knappt kommit in förrän en eldsalamander anfaller!",
             "k": "bad"
@@ -496,6 +497,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Guld glimmar i hörnet. Men två kobolder reser sig och spärrar vägen.",
+            "k": "bad"
           }
         ],
         "party": [
