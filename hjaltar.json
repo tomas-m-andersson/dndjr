@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:09:57.802Z",
+  "uppdaterad": "2026-10-30T20:24:21.786Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -62,21 +62,20 @@
   ],
   "sallskap": [
     "ville",
-    "svante",
     "egen-1793378426345",
     "tomas"
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "rokbomb"
       ],
       "vapen": "giftdolkar",
-      "folk": "manniska",
-      "alder": 7,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 9,
@@ -93,14 +92,14 @@
       }
     },
     "svante": {
+      "folk": "katt",
+      "skagg": false,
       "attacker": [
         "klosattack",
         "hoppa_ansiktet",
         "frasa"
       ],
       "vapen": "klor",
-      "folk": "katt",
-      "skagg": false,
       "klass": "katt",
       "hud": 1,
       "har": 9,
