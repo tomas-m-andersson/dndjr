@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:49:18.441Z",
+  "uppdaterad": "2026-10-30T16:51:19.497Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378956333,
+    "tid": 1793379077357,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -398,7 +398,7 @@
           "ville": 17,
           "svante": 13,
           "egen-1793378426345": 10,
-          "tomas": 14
+          "tomas": 13
         },
         "dorrText": "Kedjor skramlar längre fram. Vägen delar sig i hettan."
       }
