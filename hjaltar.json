@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:00:59.588Z",
+  "uppdaterad": "2026-10-30T17:01:19.483Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379657575,
+    "tid": 1793379677575,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -315,42 +315,28 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar rök och stekt kött.",
+            "ledtrad": "Det luktar rökelse.",
+            "typ": "handlare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någonstans porlar vatten.",
+            "typ": "brunn",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör mynt som klirrar.",
             "typ": "vaktad",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "126 guldmynt",
-              "v": 126
-            },
-            {
-              "k": "acb",
-              "n": "Skyddsring",
-              "info": "+1 rustning"
-            },
-            {
-              "k": "acb",
-              "n": "Skyddsring",
-              "info": "+1 rustning"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Kapitel 1 · Drakvulkanen",
-            "k": "sep"
-          },
           {
             "t": "Svavelrök sticker i näsan när Ville, Svante, Benjamin och Tomas går in i Drakvulkanen. Marken under fötterna är varm.",
             "k": ""
@@ -506,6 +492,10 @@
           {
             "t": "Tomas får en skyddsring: +2 rustning.",
             "k": "magic"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -536,7 +526,7 @@
           "egen-1793378426345": 10,
           "tomas": 8
         },
-        "dorrText": "Stigen är smal och leder bara vidare in."
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
       }
     ],
     "aktivRun": "rmvv7ayl9ho5p",
