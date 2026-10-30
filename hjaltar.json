@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T17:03:30.531Z",
+  "uppdaterad": "2026-10-30T17:03:33.415Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379810439,
+    "tid": 1793379811517,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -315,50 +315,12 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det luktar rökelse.",
-            "typ": "handlare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "brunn",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör mynt som klirrar.",
-            "typ": "vaktad",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "118 guldmynt",
-              "v": 118
-            },
-            {
-              "k": "sak",
-              "n": "Stor läkedryck"
-            },
-            {
-              "k": "sak",
-              "n": "Läkedryck"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Benjamin dricker lite vatten och torkar svetten. +7 liv.",
-            "k": "heal"
-          },
           {
             "t": "Tomas binder om ett sår. +3 liv.",
             "k": "heal"
@@ -514,6 +476,10 @@
           {
             "t": "Ni hittar en läkedryck.",
             "k": "heal"
+          },
+          {
+            "t": "Hettan är nästan för mycket. Längst ner i kratern rör sig något stort.",
+            "k": ""
           }
         ],
         "party": [
@@ -548,7 +514,7 @@
           "egen-1793378426345": 17,
           "tomas": 20
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar vulkanens väktare."
       }
     ],
     "aktivRun": "rmvv7ayl9ho5p",
