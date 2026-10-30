@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:26:19.300Z",
+  "uppdaterad": "2026-10-30T20:26:54.672Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793391977285,
+    "tid": 1793392012679,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -317,25 +317,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "handlare",
+            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+            "typ": "sovare",
             "kand": false
           },
           {
-            "ledtrad": "Någon viskar.",
+            "ledtrad": "Ni hör många små fötter som springer.",
             "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -352,6 +349,10 @@
           {
             "t": "En lång, smal man i lila mantel. Han ler lite för mycket. – Jag har precis det ni behöver.",
             "k": "heal"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -384,7 +385,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
