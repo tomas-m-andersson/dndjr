@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:41:03.880Z",
+  "uppdaterad": "2026-10-30T20:41:30.525Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392861767,
+    "tid": 1793392888476,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någonstans porlar vatten.",
@@ -342,7 +342,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Golvet ger vika under fötterna!",
+            "ok": "hoppar undan i sista stund",
+            "traff": "faller ner i en spjutgrop"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -391,6 +401,14 @@
           {
             "t": "Ni går djupare in.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Golvet ger vika under fötterna!",
+            "k": "bad"
           }
         ],
         "party": [
