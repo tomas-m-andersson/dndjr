@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:42:03.554Z",
+  "uppdaterad": "2026-10-30T20:42:07.627Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392921641,
+    "tid": 1793392925638,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,37 +322,17 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "brunn",
-            "kand": false
-          },
-          {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
             "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": false,
-          "falla": {
-            "egen": "smi",
-            "alla": false,
-            "varn": "Golvet ger vika under fötterna!",
-            "ok": "hoppar undan i sista stund",
-            "traff": "faller ner i en spjutgrop"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -413,6 +393,10 @@
           {
             "t": "Ville faller ner i en spjutgrop: 13 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -444,7 +428,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Kall luft strömmar ut ur mer än en dörröppning."
+        "dorrText": "Ingen väg att välja. Bara framåt."
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
