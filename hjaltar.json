@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:34:25.675Z",
+  "uppdaterad": "2026-10-30T20:35:15.231Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,11 +207,11 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392463684,
+    "tid": 1793392513158,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 747
+        "xp": 844
       },
       "svante": {
         "lvl": 3,
@@ -219,19 +219,20 @@
       },
       "tomas": {
         "lvl": 3,
-        "xp": 747
+        "xp": 844
       },
       "sally": {
         "lvl": 2,
-        "xp": 433
+        "xp": 530
       },
       "egen-1793378426345": {
         "lvl": 2,
-        "xp": 342
+        "xp": 439
       }
     },
     "upplasta": [
-      "giftdolkar"
+      "giftdolkar",
+      "stjarnstav"
     ],
     "utr": {
       "ville": {
@@ -322,7 +323,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -445,6 +446,42 @@
           {
             "t": "Stenar rasar. Något enormt vaknar: en jättespindel, en giftspindel och en vätte!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 97 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Benjamin dricker lite vatten och torkar svetten. +11 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas binder om ett sår. +3 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar 166 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Grottans härskare är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Stjärnstaven! Magiker kan nu välja det under Ändra. Glittrar av stjärnljus: magiska attacker +3.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -453,7 +490,7 @@
           "tomas",
           "sally"
         ],
-        "guld": 286,
+        "guld": 452,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -462,22 +499,27 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 100,
+        "ara": 450,
         "start": 1793391941631,
         "nastaKand": false,
         "id": "rmvvf9af35y6v",
         "startGuld": 40,
         "liv": {
           "ville": 24,
-          "egen-1793378426345": 10,
-          "tomas": 11,
+          "egen-1793378426345": 20,
+          "tomas": 14,
           "sally": 13
         },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
+        "nyttVapen": "Stjärnstaven",
+        "nyttVapenId": "stjarnstav"
       }
     ],
     "aktivRun": "rmvvf9af35y6v",
@@ -601,7 +643,8 @@
         "trofe": 1
       },
       "trofeer": {
-        "magmaslem": 1
+        "magmaslem": 1,
+        "spindel": 1
       }
     }
   }
