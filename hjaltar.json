@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:53:52.089Z",
+  "uppdaterad": "2026-10-30T16:53:58.118Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379230053,
+    "tid": 1793379236208,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -303,36 +303,22 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon viskar.",
+            "ledtrad": "Någonstans porlar vatten.",
             "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "skatt",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "brunn",
+            "ledtrad": "Lavan bubblar och sprutar gnistor.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "kobold",
-            "kobold",
-            "kobold"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -377,6 +363,10 @@
           {
             "t": "Tomas binder om ett sår. +1 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Askan virvlar runt era fötter när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -408,7 +398,7 @@
           "egen-1793378426345": 10,
           "tomas": 14
         },
-        "dorrText": "Kedjor skramlar längre fram. Vägen delar sig i hettan."
+        "dorrText": "Marken spricker upp i flera brinnande stigar."
       }
     ],
     "aktivRun": "rmvv7ayl9ho5p",
