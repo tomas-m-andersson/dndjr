@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:53:58.118Z",
+  "uppdaterad": "2026-10-30T16:54:27.691Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379236208,
+    "tid": 1793379265758,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -304,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någonstans porlar vatten.",
@@ -318,7 +318,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "magmaslem"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -367,6 +374,14 @@
           {
             "t": "Askan virvlar runt era fötter när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni har knappt kommit in förrän en magmaslem anfaller!",
+            "k": "bad"
           }
         ],
         "party": [
