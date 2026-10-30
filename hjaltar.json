@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:40:30.850Z",
+  "uppdaterad": "2026-10-30T20:41:03.880Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392828942,
+    "tid": 1793392861767,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,25 +322,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "En rustning bredvid dörren har ett glänsande svärd.",
+            "ledtrad": "Någonstans porlar vatten.",
+            "typ": "brunn",
+            "kand": false
+          },
+          {
+            "ledtrad": "Spindelväv täcker öppningen.",
             "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "handlare",
+            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -385,6 +387,10 @@
           {
             "t": "En räv i väst och hatt bugar djupt. – Varor för modiga resenärer!",
             "k": "heal"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -417,7 +423,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Kall luft strömmar ut ur mer än en dörröppning."
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
