@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:40:16.275Z",
+  "uppdaterad": "2026-10-30T20:40:30.850Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392814351,
+    "tid": 1793392828942,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "En rustning bredvid dörren har ett glänsande svärd.",
@@ -337,7 +337,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -374,6 +377,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En räv i väst och hatt bugar djupt. – Varor för modiga resenärer!",
+            "k": "heal"
           }
         ],
         "party": [
