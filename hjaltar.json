@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:28:41.215Z",
+  "uppdaterad": "2026-10-30T20:28:59.154Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392119248,
+    "tid": 1793392137262,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,7 +318,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Spindelväv täcker öppningen.",
@@ -332,7 +332,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Små hål i väggen. Klick!",
+            "ok": "duckar för giftpilarna",
+            "traff": "träffas av giftiga pilar"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -369,6 +379,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Små hål i väggen. Klick!",
+            "k": "bad"
           }
         ],
         "party": [
