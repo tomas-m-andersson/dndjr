@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:48:37.334Z",
+  "uppdaterad": "2026-10-30T16:48:48.847Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793378915389,
+    "tid": 1793378926877,
     "niva": {
       "ville": {
         "lvl": 2,
@@ -303,34 +303,27 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar sött, som blommor.",
-            "typ": "brunn",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör många små fötter som springer.",
+            "ledtrad": "Någon viskar.",
             "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Någon har ristat en varning här.",
-            "typ": "vaktad",
+            "ledtrad": "Det glittrar i en spricka i dörren.",
+            "typ": "skatt",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
+            "typ": "brunn",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "eldsalamander"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -355,6 +348,10 @@
           {
             "t": "Svante dricker lite vatten och torkar svetten. +5 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -386,7 +383,7 @@
           "egen-1793378426345": 10,
           "tomas": 14
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Kedjor skramlar längre fram. Vägen delar sig i hettan."
       }
     ],
     "aktivRun": "rmvv7ayl9ho5p",
