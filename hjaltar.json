@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:58:59.128Z",
+  "uppdaterad": "2026-10-30T17:00:11.766Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,19 +207,19 @@
         "slut": "slut"
       }
     },
-    "tid": 1793379537093,
+    "tid": 1793379609722,
     "niva": {
       "ville": {
         "lvl": 2,
-        "xp": 538
+        "xp": 594
       },
       "svante": {
         "lvl": 2,
-        "xp": 538
+        "xp": 594
       },
       "tomas": {
         "lvl": 2,
-        "xp": 538
+        "xp": 594
       },
       "sally": {
         "lvl": 2,
@@ -227,7 +227,7 @@
       },
       "egen-1793378426345": {
         "lvl": 1,
-        "xp": 133
+        "xp": 189
       }
     },
     "upplasta": [],
@@ -304,7 +304,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar rök och stekt kött.",
@@ -314,13 +314,25 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "magmaslem"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "126 guldmynt",
+              "v": 126
+            },
+            {
+              "k": "acb",
+              "n": "Skyddsring",
+              "info": "+1 rustning"
+            },
+            {
+              "k": "acb",
+              "n": "Skyddsring",
+              "info": "+1 rustning"
+            }
+          ]
         },
         "logg": [
           {
@@ -410,6 +422,30 @@
           {
             "t": "Ni ser en glittrande skatt. Framför den står en magmaslem.",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 56 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville hämtar andan och lägger om såren. +7 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Svante binder om ett sår. +4 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Benjamin hämtar andan och lägger om såren. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas sätter sig en stund. +3 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Ingen vaktar skatten längre. Den är er.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -429,16 +465,16 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 475,
+        "ara": 675,
         "start": 1793378582685,
         "nastaKand": false,
         "id": "rmvv7ayl9ho5p",
         "startGuld": 43,
         "liv": {
-          "ville": 8,
+          "ville": 11,
           "svante": 13,
-          "egen-1793378426345": 9,
-          "tomas": 9
+          "egen-1793378426345": 10,
+          "tomas": 8
         },
         "dorrText": "Stigen är smal och leder bara vidare in."
       }
