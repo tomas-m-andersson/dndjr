@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T16:42:02.061Z",
+  "uppdaterad": "2026-10-30T16:42:07.439Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -62,7 +62,8 @@
   ],
   "sallskap": [
     "ville",
-    "svante"
+    "svante",
+    "egen-1793378426345"
   ],
   "grundandringar": {
     "ville": {
