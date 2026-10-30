@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-30T20:39:38.591Z",
+  "uppdaterad": "2026-10-30T20:39:43.038Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,7 +207,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793392776578,
+    "tid": 1793392781093,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,36 +322,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
-            "typ": "altare",
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "lager",
             "kand": false
           },
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "strid",
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "fladdermus",
-            "skelett",
-            "ratta"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -372,6 +358,10 @@
           {
             "t": "Seger! Alla får 28 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -404,7 +394,7 @@
           "tomas": 20,
           "sally": 13
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
       }
     ],
     "aktivRun": "rmvvfob16vrj1",
