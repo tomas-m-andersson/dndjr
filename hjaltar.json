@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:57:20.416Z",
+  "uppdaterad": "2026-10-31T20:57:23.489Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -214,7 +214,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793480238473,
+    "tid": 1793480241562,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -278,26 +278,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "sovare",
+            "ledtrad": "Någon stönar svagt, som om den har ont.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Det luktar rökelse.",
-            "typ": "altare",
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "vaktad",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": false,
-          "gud": "De tusen ljusens gud"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -338,6 +334,10 @@
           {
             "t": "Ett altare med tusen små ljus som tänds av sig själva.",
             "k": "magic"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -362,7 +362,7 @@
         "ara": 0,
         "start": 1793267529837,
         "nastaKand": false,
-        "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret.",
+        "dorrText": "Facklans sken når mer än en öppning i berget.",
         "id": "rmvv50vu675ts",
         "liv": {
           "ville": 17,
