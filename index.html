@@ -2135,9 +2135,9 @@ function stridForlust(){if(strid.def.run)return runForlust();const til=strid.def
 const DJUP=6; // rum per kapitel, det sista är bossen
 const XPT=[0,0,200,600,1500,3200,6000,10000,15000,22000,30000]; // XP som krävs för nivå 1–10 (samma som Nat20)
 // Svårighetsgrad, som i Nat20
-const SVAR={latt:{namn:"Lätt",hp:.7,atk:-2,dc:-2,falla:.5,dryck:3,hela:1.5,besk:"Svagare monster, lättare prov och fler läkedrycker. Bra för nya spelare."},
- normal:{namn:"Normal",hp:1,atk:0,dc:0,falla:1,dryck:2,hela:1,besk:"Det vanliga äventyret."},
- svar:{namn:"Svår",hp:1.15,atk:1,dc:2,falla:1.25,dryck:1,hela:.75,besk:"Tuffare monster som slår hårdare, svårare prov och färre drycker."}};
+const SVAR={latt:{namn:"Lätt",hp:.7,atk:-2,dc:-2,falla:.5,dryck:3,hela:1.5,besk:"Svagare monster, lättare prov och fler läkedrycker. Efter varje strid hämtar hjältarna andan och får tillbaka lite liv. Bra för nya spelare."},
+ normal:{namn:"Normal",hp:1,atk:0,dc:0,falla:1,dryck:2,hela:0,besk:"Det vanliga äventyret. Liv får hjältarna bara tillbaka med läkedrycker, helande förmågor och vid lägereldar."},
+ svar:{namn:"Svår",hp:1.15,atk:1,dc:2,falla:1.25,dryck:1,hela:0,besk:"Tuffare monster som slår hårdare, svårare prov och färre drycker. Liv får hjältarna bara tillbaka med läkedrycker, helande förmågor och vid lägereldar."}};
 const SV=()=>SVAR[alt.svar]||SVAR.normal;
 const nivaInfo=id=>spel.niva[id]||{lvl:1,xp:0};
 function xpRad(h){const N=nivaInfo(h.id);if(N.lvl>=10)return el("p",{class:"xp"},"Högsta nivån!");
@@ -2653,7 +2653,7 @@ function runVinst(){
  strid=null;R.ara+=xp;
  rlog(T("seger",{n:del}),"crit");
  H.forEach(h=>{if(liv(h)<=0){setLiv(h,1);rlog(T("vaknar",{namn:h.namn}),"heal")}
-  else if(liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(T("andan",{namn:h.namn,n:liv(h)-f}),"heal")}});
+  else if(SV().hela>0&&liv(h)<maxLiv(h)){const f=liv(h);setLiv(h,f+Math.max(1,Math.round((d(KLASS[h.klass].hd)+mod(h.s.tal))*SV().hela)));rlog(T("andan",{namn:h.namn,n:liv(h)-f}),"heal")}});
  H.forEach(h=>gainXp(h,del));
  const boss=R.rum.typ==="boss";
  if(boss){const bf=fi.find(f=>f.boss)||fi[0];spel.lager.trofeer[bf.typ]=(spel.lager.trofeer[bf.typ]||0)+1; // en trofé till lägret
