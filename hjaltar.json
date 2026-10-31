@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:31:28.136Z",
+  "uppdaterad": "2026-10-31T20:31:58.317Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -141,7 +141,15 @@
       }
     },
     "linda": {
+      "attacker": [
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
+      ],
+      "vapen": "giftbage",
       "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
       "klass": "bagskytt",
       "hud": 1,
       "har": 7,
