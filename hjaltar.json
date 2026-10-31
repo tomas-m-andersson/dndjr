@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:29:23.170Z",
+  "uppdaterad": "2026-10-31T20:29:58.541Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478561205,
+    "tid": 1793478596531,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -214,11 +214,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 849
+        "xp": 1049
       },
       "tomas": {
         "lvl": 3,
-        "xp": 1293
+        "xp": 1493
       },
       "sally": {
         "lvl": 3,
@@ -229,14 +229,15 @@
         "xp": 758
       },
       "linda": {
-        "lvl": 1,
-        "xp": 130
+        "lvl": 2,
+        "xp": 330
       }
     },
     "upplasta": [
       "giftdolkar",
       "stjarnstav",
-      "isstav"
+      "isstav",
+      "giftbage"
     ],
     "utr": {
       "ville": {
@@ -331,7 +332,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -347,18 +348,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Kapitel 1 · Spökslottet Korpholm",
-            "k": "sep"
-          },
-          {
-            "t": "Vindbryggan gnisslar under era fötter. Tomas, Svante och Linda går in genom porten till Korpholm, där ingen har bott på hundra år.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Monster",
-            "k": "sep"
-          },
           {
             "t": "Plötsligt står tre kråksvärmar framför er.",
             "k": "bad"
@@ -474,6 +463,50 @@
           {
             "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, en bandit och en jättefladdermus!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 110 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Tomas hämtar andan och lägger om såren. +4 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Svante dricker lite vatten och torkar svetten. +3 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Linda binder om ett sår. +7 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Linda har blivit starkare och är nu nivå 2! +7 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 111 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Slottsherren är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Ormbågen! Bågskytt kan nu välja det under Ändra. Varje träff förgiftar fienden.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -481,26 +514,30 @@
           "svante",
           "linda"
         ],
-        "guld": 104,
+        "guld": 215,
         "saker": [
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 175,
+        "ara": 450,
         "start": 1793477768023,
         "nastaKand": false,
         "id": "rmvwucuhjib26",
         "startGuld": 36,
         "liv": {
-          "tomas": 10,
-          "svante": 15,
-          "linda": 4
+          "tomas": 14,
+          "svante": 18,
+          "linda": 18
         },
-        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
+        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren.",
+        "nyttVapen": "Ormbågen",
+        "nyttVapenId": "giftbage"
       }
     ],
     "aktivRun": "rmvwucuhjib26",
@@ -654,7 +691,7 @@
       "trofeer": {
         "magmaslem": 1,
         "spindel": 1,
-        "levande_rustning": 1
+        "levande_rustning": 2
       }
     }
   }
