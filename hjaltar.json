@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:23:49.565Z",
+  "uppdaterad": "2026-10-31T20:23:56.114Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478227655,
+    "tid": 1793478234126,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -330,32 +330,11 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
-            "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "skatt",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": true,
-            "varn": "En platta klickar. Flammor sprutar ur golvet!",
-            "ok": "kastar sig undan lågorna",
-            "traff": "bränns av lågorna"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -472,6 +451,10 @@
           {
             "t": "Linda bränns av lågorna: 3 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
+            "k": ""
           }
         ],
         "party": [
@@ -499,7 +482,7 @@
           "svante": 15,
           "linda": 8
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
+        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
       }
     ],
     "aktivRun": "rmvwucuhjib26",
