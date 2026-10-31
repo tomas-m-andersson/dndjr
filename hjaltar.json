@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:23:56.114Z",
+  "uppdaterad": "2026-10-31T20:24:08.892Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478234126,
+    "tid": 1793478246917,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -331,10 +331,21 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "levande_rustning",
+            "bandit",
+            "fladdermus"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -455,6 +466,14 @@
           {
             "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Slottsherren",
+            "k": "sep"
+          },
+          {
+            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, en bandit och en jättefladdermus!",
+            "k": "bad"
           }
         ],
         "party": [
