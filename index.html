@@ -192,6 +192,7 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .wicon.big{width:96px;height:96px;animation:vapenglans 1.4s ease-in-out infinite}
 .wbtn{display:grid!important;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;align-items:center}
 .wbtn .wicon.small{width:40px;height:40px;grid-row:1/3;border-radius:6px}
+.wbtn .atkikon,.wbtn .monikon{padding:3px;box-sizing:border-box}
 @media (prefers-reduced-motion:reduce){.wicon{animation:none!important}}
 .choice.locked{opacity:.55;border-style:dashed;cursor:not-allowed}
 .theend.loot{background:#3a2f14;border-color:var(--gold)}
@@ -444,6 +445,7 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 <script src="texter.js"></script>
 <script src="scener.js"></script>
 <script src="lager.js"></script>
+<script src="ikoner.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -1975,13 +1977,13 @@ function hjalteTur(h){
  const meny=()=>{akt.replaceChildren();
   akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},ikonEl(vapenAv(h),"small"),el("span",{},"Anfall med "+vapenAv(h).ord),el("small",{},vapenAv(h).namn+" · "+vapenAv(h).skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
   attackerAv(h).forEach(id=>{const A=attackDef(h.klass,id),kvar=kvarAttack(h,A);
-   akt.append(el("button",{class:"choicebtn special",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},el("span",{},A.namn),el("small",{},kvar?A.info:"Använd i den här striden")))});
-  if(harDryck())akt.append(el("button",{class:"choicebtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!")},()=>hjalteTur(h)),()=>hjalteTur(h))},el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
-  if(strid.def.run&&!strid.def.boss)akt.append(el("button",{class:"choicebtn",onclick:()=>runFly(h)},el("span",{},"Fly!"),el("small",{},gen(h.namn)+" smidighet mot fiendernas fart")));
+   akt.append(el("button",{class:"choicebtn special wbtn",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},attackIkon(A.id),el("span",{},A.namn),el("small",{},kvar?A.info:"Använd i den här striden")))});
+  if(harDryck())akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!")},()=>hjalteTur(h)),()=>hjalteTur(h))},attackIkon("dryck"),el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
+  if(strid.def.run&&!strid.def.boss)akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>runFly(h)},attackIkon("fly"),el("span",{},"Fly!"),el("small",{},gen(h.namn)+" smidighet mot fiendernas fart")));
  };
  // välj vilken fiende (hoppas över om det bara finns en)
  window.valjMal=(hh,fn,tillbaka)=>{const L=levande();if(L.length===1)return fn(L[0]);
-  akt.replaceChildren(el("p",{class:"hint"},"Vem anfaller "+hh.namn+"?"),...L.map(f=>el("button",{class:"choicebtn",onclick:()=>fn(f)},el("span",{},f.namn),el("small",{},f.liv+" liv kvar · "+fiendeStatus(f)))),
+  akt.replaceChildren(el("p",{class:"hint"},"Vem anfaller "+hh.namn+"?"),...L.map(f=>el("button",{class:"choicebtn wbtn",onclick:()=>fn(f)},monsterIkon(f.bild||f.typ),el("span",{},f.namn),el("small",{},f.liv+" liv kvar · "+fiendeStatus(f)))),
    el("button",{class:"btn ghost",onclick:()=>{if(tillbaka)tillbaka();meny()}},"Tillbaka"))};
  meny();app.append(akt);
 }
