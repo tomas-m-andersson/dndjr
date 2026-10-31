@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:16:41.624Z",
+  "uppdaterad": "2026-10-31T20:17:32.941Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477799613,
+    "tid": 1793477850998,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
@@ -344,7 +344,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "krakor",
             "krakor",
@@ -368,6 +368,10 @@
           {
             "t": "Plötsligt står tre kråksvärmar framför er.",
             "k": "bad"
+          },
+          {
+            "t": "Sällskapet springer för livet och kommer undan!",
+            "k": "hit"
           }
         ],
         "party": [
