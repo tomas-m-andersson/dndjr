@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:17:45.401Z",
+  "uppdaterad": "2026-10-31T20:18:24.038Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477863470,
+    "tid": 1793477902074,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "En mjuk sång hörs på avstånd.",
@@ -337,7 +337,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "kista",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -361,6 +364,14 @@
           },
           {
             "t": "Ni lämnar rummet bakom er.",
+            "k": ""
+          },
+          {
+            "t": "Rum 2 · Låst kista",
+            "k": "sep"
+          },
+          {
+            "t": "En liten kista med ett hänglås format som en dödskalle.",
             "k": ""
           }
         ],
