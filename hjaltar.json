@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:21:26.942Z",
+  "uppdaterad": "2026-10-31T20:21:34.995Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478085063,
+    "tid": 1793478093080,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -330,34 +330,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Små fotspår leder ditåt.",
+            "ledtrad": "En spöklik melodi spelas på ett gammalt piano.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon stönar svagt, som om den har ont.",
             "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "lager",
-            "kand": false
-          },
-          {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "falla",
+            "ledtrad": "Golvet är alldeles för rent här.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "skuggling"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -430,6 +423,10 @@
           {
             "t": "Svante sätter sig en stund. +2 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -458,7 +455,7 @@
           "svante": 9,
           "linda": 11
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
       }
     ],
     "aktivRun": "rmvwucuhjib26",
