@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:57:23.489Z",
+  "uppdaterad": "2026-10-31T20:57:26.259Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -214,7 +214,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793480241562,
+    "tid": 1793480244343,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -279,7 +279,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någon stönar svagt, som om den har ont.",
@@ -293,7 +293,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "giftspindel",
+            "giftspindel",
+            "giftspindel"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -338,6 +348,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Ni ser en glittrande skatt. Framför den står tre giftspindlar.",
+            "k": "bad"
           }
         ],
         "party": [
