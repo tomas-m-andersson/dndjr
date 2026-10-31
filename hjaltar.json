@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:22:57.365Z",
+  "uppdaterad": "2026-10-31T20:22:59.551Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478175483,
+    "tid": 1793478177664,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -330,36 +330,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "En spöklik melodi spelas på ett gammalt piano.",
+            "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
             "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Någon stönar svagt, som om den har ont.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Golvet är alldeles för rent här.",
-            "typ": "altare",
+            "ledtrad": "Det glittrar i en spricka i dörren.",
+            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "ratta",
-            "ratta",
-            "ratta"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -452,6 +438,10 @@
           {
             "t": "Svante dricker lite vatten och torkar svetten. +7 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -479,7 +469,7 @@
           "svante": 18,
           "linda": 11
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
     "aktivRun": "rmvwucuhjib26",
