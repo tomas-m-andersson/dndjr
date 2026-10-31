@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:28:38.807Z",
+  "uppdaterad": "2026-10-31T20:29:23.170Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478516706,
+    "tid": 1793478561205,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -498,7 +498,7 @@
         "liv": {
           "tomas": 10,
           "svante": 15,
-          "linda": 8
+          "linda": 4
         },
         "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren."
       }
