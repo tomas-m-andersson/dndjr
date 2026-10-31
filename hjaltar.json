@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:30:30.301Z",
+  "uppdaterad": "2026-10-31T20:31:28.136Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -176,7 +176,7 @@
     }
   },
   "aventyr": {
-    "guld": 1418,
+    "guld": 1298,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478628307,
+    "tid": 1793478686128,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -488,7 +488,8 @@
     "lager": {
       "byggt": {
         "talt": 2,
-        "trofe": 1
+        "trofe": 1,
+        "ovning": 1
       },
       "trofeer": {
         "magmaslem": 1,
