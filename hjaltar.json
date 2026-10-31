@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:57:12.106Z",
+  "uppdaterad": "2026-10-31T20:57:15.819Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -214,23 +214,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793480230190,
+    "tid": 1793480235664,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 1163
+        "xp": 1253
       },
       "svante": {
         "lvl": 3,
-        "xp": 1049
+        "xp": 1139
       },
       "tomas": {
-        "lvl": 3,
-        "xp": 1493
+        "lvl": 4,
+        "xp": 1583
       },
       "sally": {
         "lvl": 3,
-        "xp": 849
+        "xp": 939
       },
       "egen-1793378426345": {
         "lvl": 3,
@@ -278,8 +278,8 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -287,28 +287,13 @@
             "kand": false
           },
           {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "skatt",
+            "ledtrad": "Det luktar rökelse.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": false,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "106 guldmynt",
-              "v": 106
-            },
-            {
-              "k": "xp",
-              "n": "En gammal karta full med ledtrådar",
-              "v": 90
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -325,6 +310,22 @@
           {
             "t": "I ett hörn står en gammal kista. Locket glider upp.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 106 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Nivå upp! Tomas är nu nivå 4! +6 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Vattnet plaskar runt era fötter när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -333,7 +334,7 @@
           "tomas",
           "sally"
         ],
-        "guld": 49,
+        "guld": 155,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -349,13 +350,13 @@
         "ara": 0,
         "start": 1793267529837,
         "nastaKand": false,
-        "dorrText": "Ni tittar på varandra. Någon måste bestämma.",
+        "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret.",
         "id": "rmvv50vu675ts",
         "liv": {
           "ville": 17,
           "svante": 18,
           "sally": 13,
-          "tomas": 14,
+          "tomas": 20,
           "linda": 7
         }
       }
