@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:19:41.568Z",
+  "uppdaterad": "2026-10-31T20:20:09.015Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477979675,
+    "tid": 1793478007074,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -331,7 +331,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Små fotspår leder ditåt.",
@@ -350,7 +350,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "skuggling"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -403,6 +410,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni har knappt kommit in förrän en skuggling anfaller!",
+            "k": "bad"
           }
         ],
         "party": [
