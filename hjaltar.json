@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:19:32.171Z",
+  "uppdaterad": "2026-10-31T20:19:41.568Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477970293,
+    "tid": 1793477979675,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -330,42 +330,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "En mjuk sång hörs på avstånd.",
-            "typ": "falla",
+            "ledtrad": "Små fotspår leder ditåt.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Det luktar gammalt vin och damm.",
-            "typ": "kista",
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "68 guldmynt",
-              "v": 68
-            },
-            {
-              "k": "acb",
-              "n": "Skyddsring",
-              "info": "+1 rustning"
-            },
-            {
-              "k": "xp",
-              "n": "En gammal karta full med ledtrådar",
-              "v": 60
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -414,6 +399,10 @@
           {
             "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 60 XP.",
             "k": "magic"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -442,7 +431,7 @@
           "svante": 18,
           "linda": 11
         },
-        "dorrText": "Vägen delar sig. Varje väg döljer något olika."
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
       }
     ],
     "aktivRun": "rmvwucuhjib26",
