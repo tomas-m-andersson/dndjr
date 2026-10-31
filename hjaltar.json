@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:22:04.793Z",
+  "uppdaterad": "2026-10-31T20:22:28.000Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478122854,
+    "tid": 1793478146095,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -214,11 +214,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 819
+        "xp": 849
       },
       "tomas": {
         "lvl": 3,
-        "xp": 1263
+        "xp": 1293
       },
       "sally": {
         "lvl": 3,
@@ -230,7 +230,7 @@
       },
       "linda": {
         "lvl": 1,
-        "xp": 100
+        "xp": 130
       }
     },
     "upplasta": [
@@ -331,7 +331,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "En spöklik melodi spelas på ett gammalt piano.",
@@ -352,7 +352,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "ratta",
             "ratta",
@@ -444,6 +444,14 @@
           {
             "t": "Ur mörkret kliver tre jätteråttor!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 30 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Svante dricker lite vatten och torkar svetten. +7 liv.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -462,14 +470,14 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 100,
+        "ara": 175,
         "start": 1793477768023,
         "nastaKand": false,
         "id": "rmvwucuhjib26",
         "startGuld": 36,
         "liv": {
           "tomas": 20,
-          "svante": 9,
+          "svante": 16,
           "linda": 11
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
