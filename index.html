@@ -274,6 +274,8 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .chapter.done{border-color:var(--moss)}
 .chapter.locked{opacity:.55;border-style:dashed}
 .tvbig{border:3px solid #0c151c;border-radius:6px;overflow:hidden;box-shadow:0 0 0 2px var(--line)}
+/* i äventyren och striderna ligger TV:n kvar högst upp när man scrollar */
+#app>.tvbig:not(.lagertv){position:sticky;top:env(safe-area-inset-top,0px);z-index:15;box-shadow:0 0 0 2px var(--line),0 10px 18px -6px #000c}
 .tv.mini{width:40px;flex:none;border-radius:3px;overflow:hidden;border:2px solid #0c151c}
 .strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
@@ -1376,7 +1378,9 @@ function rullaD20(box,klar,antal=1){
  if(rullar)return;rullar=true;const minGen=rullGen;
  const slut=Array.from({length:antal},()=>d(20)),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
  box.innerHTML=slut.map(()=>dieSvg(d(20),"rolling")).join("");box.classList.add("kastar");
- const syns=el=>{if(el)el.scrollIntoView({block:"nearest",behavior:reduce?"auto":"smooth"})}; // visa tärningen ovanför knappen
+ // visa tärningen mellan TV:n (som ligger kvar högst upp) och knappen längst ner
+ const syns=el=>{if(!el)return;const tv=document.querySelector("#app>.tvbig"),topp=(tv?tv.getBoundingClientRect().bottom:0)+10,botten=innerHeight-96,r=el.getBoundingClientRect();
+  let dy=0;if(r.bottom>botten)dy=r.bottom-botten;if(r.top-dy<topp)dy=r.top-topp;if(dy)window.scrollBy({top:dy,behavior:reduce?"auto":"smooth"})};
  syns(box);
  const tarn=[...box.querySelectorAll(".dwrap")];
  tarn.forEach((w,i)=>{w.style.setProperty("--dx",((i%2?1:-1)*(20+Math.random()*30))+"px");w.style.setProperty("--rot",(Math.random()<.5?-1:1)*(540+Math.random()*360)+"deg");w.style.animationDelay=(i*.08)+"s"});
