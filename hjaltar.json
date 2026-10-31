@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:17:32.941Z",
+  "uppdaterad": "2026-10-31T20:17:45.401Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477850998,
+    "tid": 1793477863470,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -322,36 +322,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
             "ledtrad": "En mjuk sång hörs på avstånd.",
-            "typ": "handlare",
+            "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "lager",
+            "ledtrad": "Det luktar gammalt vin och damm.",
+            "typ": "kista",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "krakor",
-            "krakor",
-            "krakor"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -372,6 +358,10 @@
           {
             "t": "Sällskapet springer för livet och kommer undan!",
             "k": "hit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -400,7 +390,7 @@
           "svante": 18,
           "linda": 11
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt."
+        "dorrText": "Vägen delar sig. Varje väg döljer något olika."
       }
     ],
     "aktivRun": "rmvwucuhjib26",
