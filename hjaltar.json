@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:16:09.901Z",
+  "uppdaterad": "2026-10-31T20:16:41.624Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477768024,
+    "tid": 1793477799613,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -323,7 +323,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
@@ -342,7 +342,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "krakor",
+            "krakor",
+            "krakor"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -351,6 +360,14 @@
           {
             "t": "Vindbryggan gnisslar under era fötter. Tomas, Svante och Linda går in genom porten till Korpholm, där ingen har bott på hundra år.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Plötsligt står tre kråksvärmar framför er.",
+            "k": "bad"
           }
         ],
         "party": [
