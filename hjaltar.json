@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:22:59.551Z",
+  "uppdaterad": "2026-10-31T20:23:23.276Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478177664,
+    "tid": 1793478201411,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -331,7 +331,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
@@ -345,7 +345,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": true,
+            "varn": "En platta klickar. Flammor sprutar ur golvet!",
+            "ok": "kastar sig undan lågorna",
+            "traff": "bränns av lågorna"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -442,6 +452,14 @@
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "En platta klickar. Flammor sprutar ur golvet!",
+            "k": "bad"
           }
         ],
         "party": [
