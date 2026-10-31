@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:19:18.041Z",
+  "uppdaterad": "2026-10-31T20:19:32.171Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477956057,
+    "tid": 1793477970293,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -214,11 +214,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 719
+        "xp": 779
       },
       "tomas": {
         "lvl": 3,
-        "xp": 1163
+        "xp": 1223
       },
       "sally": {
         "lvl": 3,
@@ -227,6 +227,10 @@
       "egen-1793378426345": {
         "lvl": 3,
         "xp": 758
+      },
+      "linda": {
+        "lvl": 1,
+        "xp": 60
       }
     },
     "upplasta": [
@@ -254,6 +258,10 @@
       "sally": {
         "wb": 0,
         "acb": 2
+      },
+      "linda": {
+        "wb": 0,
+        "acb": 1
       }
     },
     "reset": 1793282091831,
@@ -339,7 +347,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -394,6 +402,18 @@
           {
             "t": "Efter en stund hörs ett nöjt klick. Linda har öppnat kistan.",
             "k": "hit"
+          },
+          {
+            "t": "Ni hittar 68 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Linda får en skyddsring: +1 rustning.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 60 XP.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -401,7 +421,7 @@
           "svante",
           "linda"
         ],
-        "guld": 36,
+        "guld": 104,
         "saker": [
           "Läkedryck",
           "Läkedryck",
