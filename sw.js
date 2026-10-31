@@ -1,8 +1,8 @@
 // Bland monster och tärningar – service worker.
 // Egna filer: nätet först (så uppdateringar syns direkt), cachen som reserv när man är offline.
 // GitHub-API:t (hjältarnas sparfil) cachas aldrig.
-const CACHE = "tarningsriket-v7";
-const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = "tarningsriket-v8";
+const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

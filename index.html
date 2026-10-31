@@ -448,6 +448,7 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 <script src="scener.js"></script>
 <script src="lager.js"></script>
 <script src="ikoner.js"></script>
+<script src="fx.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -1645,12 +1646,20 @@ function ritaLevande(g,c,ogon,x,y,{skala=1,flip=false,blink=false,titt=0,alpha=1
 const BGCACHE=new Map();
 function bakgrund(bild){if(!BGCACHE.has(bild)){const c=document.createElement("canvas");c.width=TVW;c.height=TVH;const g=c.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,bild);
   BGCACHE.set(bild,c);if(BGCACHE.size>40)BGCACHE.delete(BGCACHE.keys().next().value)}return BGCACHE.get(bild)}
+const TONCACHE=new WeakMap();
+function ritaTon(g,c,x,y,skala,flip,col,a){if(!a)return;let M=TONCACHE.get(c);if(!M){M=new Map();TONCACHE.set(c,M)}
+ if(!M.has(col)){const t=document.createElement("canvas");t.width=c.width;t.height=c.height;const tg=t.getContext("2d");tg.drawImage(c,0,0);tg.globalCompositeOperation="source-atop";tg.fillStyle=col;tg.fillRect(0,0,t.width,t.height);M.set(col,t)}
+ const t=M.get(col),W=c.width*skala,H=c.height*skala;g.globalAlpha=Math.min(1,a);
+ if(flip){g.save();g.translate(x+W,y);g.scale(-1,1);g.drawImage(t,0,0,W,H);g.restore()}else g.drawImage(t,x,y,W,H);g.globalAlpha=1}
 function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim=null}={}){
  cv.width=TVW;cv.height=TVH;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(bakgrund(bild),0,0);
- if(visaParty)partyHeroes().forEach((h,i)=>{if(anim&&liv(h)>0){const c=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h),L=livTid(anim.t,i);ritaLevande(g,c,heroOgon(h,c),i*14,TVH-25+L.upp,{blink:L.blink,titt:L.titt});return}
-  g.globalAlpha=liv(h)>0?1:.35;g.drawImage(heroSprite(h),i*14,TVH-25);g.globalAlpha=1});
+ const OFF=k=>anim&&anim.off?anim.off(k):null,POS=(k,x,y,w,h)=>{if(anim&&anim.pos)anim.pos[k]={x,y,w,h}};
+ if(visaParty)partyHeroes().forEach((h,i)=>{const k="h:"+h.id,o=OFF(k),dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;
+  if(anim&&liv(h)>0){const c=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h),L=livTid(anim.t,i);ritaLevande(g,c,heroOgon(h,c),i*14+dx,TVH-25+L.upp+dy,{blink:L.blink,titt:L.titt});
+   if(o&&o.tint)ritaTon(g,c,i*14+dx,TVH-25+L.upp+dy,1,false,o.tint,o.tintA);POS(k,i*14,TVH-25,c.width,c.height);return}
+  const c=heroSprite(h);g.globalAlpha=liv(h)>0?1:.35;g.drawImage(c,i*14+dx,TVH-25+dy);g.globalAlpha=1;POS(k,i*14,TVH-25,c.width,c.height)});
  const right=[];
- if(fiender)fiender.forEach(f=>{if(!f.ute)right.push({k:f.bild,a:1})});
+ if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i})}); // ett besegrat monster tonar bort
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
  let x=TVW-2;
  const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+(SPR[f.k]?sprSize(f.k).w:16),0);
@@ -1664,7 +1673,9 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
   const {w,h}=sprSize(f.k);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
   const sd=anim&&sprDef(f.k),sc=sd&&sprCanvas(f.k);
-  if(sc){const L=livTid(anim.t,nr++);ritaLevande(g,sc,monOgon(f.k),x,TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp),{skala:sd.skala,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:f.a})}
+  const o=f.key?OFF(f.key):null,dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;
+  if(sc){const L=livTid(anim.t,nr++),yy=TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp)+dy;ritaLevande(g,sc,monOgon(f.k),x+dx,yy,{skala:sd.skala,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:(f.a??1)*(o?o.alpha:1)});
+   if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h,w,h)}
   else sprite(g,f.k,x,TVH-h,vand,f.a);
   if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy,3,1);g.fillRect(x+dx+2,TVH-h+dy,1,1);g.fillRect(x+dx,TVH-h+1+dy,3,1)});g.globalAlpha=1}});
 }
@@ -1760,7 +1771,7 @@ function valjDryck(klar,avbryt){const P=pack(),sorter=Object.keys(DRYCKER).filte
   el("button",{class:"btn ghost",onclick:()=>{close();if(avbryt)avbryt()}},"Avbryt"))));
 }
 function summeraSaker(){const c={};pack().saker.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).map(([k,v])=>v>1?k+" ×"+v:k).join(", ")}
-function dryck(h,typ="Läkedryck"){const P=pack(),i=P.saker.indexOf(typ);if(i<0)return 0;P.saker.splice(i,1);const r=slaa(DRYCKER[typ]);setLiv(h,liv(h)+r.tot);sparaSpel();flash(h.namn+" dricker och får "+r.tot+" liv tillbaka.");return r.tot}
+function dryck(h,typ="Läkedryck"){const P=pack(),i=P.saker.indexOf(typ);if(i<0)return 0;P.saker.splice(i,1);const r=slaa(DRYCKER[typ]);if(strid)tvFx("hela",{till:"h:"+h.id,n:r.tot});setLiv(h,liv(h)+r.tot);sparaSpel();flash(h.namn+" dricker och får "+r.tot+" liv tillbaka.");return r.tot}
 function valjHjalte(fraga,lista,klar,avbryt,info){
  const m=document.getElementById("modal"),close=()=>m.replaceChildren();
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":fraga},el("h2",{},fraga),
@@ -1957,10 +1968,17 @@ function nastaTur(){
 const EGEN_ORD={gift:"giftig",tva:"två anfall",regen:"läker sig",bedova:"kan bedöva",drana:"stjäl liv",helar:"helar andra",sprangs:"exploderar"};
 function fiendeStatus(f){if(f.ute)return"Borta";const s=["Rustning "+f.rustning];
  if(f.bedovad)s.push("bedövad");if(f.svag)s.push("−"+f.svag.n+" anfall");if(f.gift)s.push("förgiftad");return s.join(" · ")}
+function stridTV(){const box=tvBox(strid.bild,{fiender:strid.fiender}),c=box.querySelector("canvas");
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches)return box;
+ const id=setInterval(()=>{if(!c.isConnected||!strid){clearInterval(id);return}const t=performance.now(),pos={};
+  drawTV(c,strid.bild,{fiender:strid.fiender,anim:{t,off:k=>fxOff(k,t),pos}});fxRita(c.getContext("2d"),t,pos);
+  const sk=fxSkak(t);c.style.transform=sk?"translate("+Math.round((Math.random()-.5)*sk*2)+"px,"+Math.round((Math.random()-.5)*sk*2)+"px)":""},45);
+ return box}
+const fk=x=>"f:"+strid.fiender.indexOf(x); // nyckel till ett monster på TV:n
 function stridVy(rubrik){
  app.replaceChildren(
   el("div",{class:"topbar"},pausKnapp(pausaStrid),el("span",{class:"purse"},(strid.def.boss?"Bossen · ":"Strid · ")+"runda "+strid.runda)),
-  tvBox(strid.bild,{fiender:strid.fiender}),
+  stridTV(),
   el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")},el("b",{},f.namn),
    el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},fiendeStatus(f)),
    f.egen&&!f.ute?el("small",{class:"traits"},Object.keys(f.egen).map(k=>EGEN_ORD[k]).filter(Boolean).join(" · ")):null))),
@@ -1972,7 +1990,7 @@ const ropText=(A,h,mal)=>(A.rop||"").replace(/\{gen\}/g,gen(h.namn)).replace(/\{
 const kvarAttack=(h,A)=>!(strid.anvant[h.id]&&strid.anvant[h.id][A.id]);
 function hjalteTur(h){
  const pre=[];
- if(strid.giftH&&strid.giftH[h.id]){const g=strid.giftH[h.id],n=slaa(g.expr).tot;setLiv(h,liv(h)-n);pre.push(h.namn+" tar "+n+" i giftskada.");if(--g.rundor<=0)delete strid.giftH[h.id];
+ if(strid.giftH&&strid.giftH[h.id]){const g=strid.giftH[h.id],n=slaa(g.expr).tot;setLiv(h,liv(h)-n);tvFx("gift",{till:"h:"+h.id,n});pre.push(h.namn+" tar "+n+" i giftskada.");if(--g.rundor<=0)delete strid.giftH[h.id];
   if(liv(h)<=0){pre.push(T("svimmar",{namn:h.namn}));return visaHandelse(pre.join(" "))}}
  if(strid.bedovH&&strid.bedovH[h.id]){delete strid.bedovH[h.id];pre.push(h.namn+" är omtöcknad och kan inte göra något den här turen.");return visaHandelse(pre.join(" "))}
  const K=KLASS[h.klass],akt=el("div",{class:"actions"});
@@ -1997,28 +2015,29 @@ function anvandAttack(h,A,meny){
  const lvl=vitals(h).lvl;
  if(A.typ==="anfall"){if(A.alla)return anfall(h,null,A);return valjMal(h,f=>anfall(h,f,A),ang)}
  if(A.typ==="auto"){const go=lista=>{const rader=[ropText(A,h,lista.length===1?lista[0].namn:"alla fiender")];
-   lista.forEach(f=>{let n=(vapenAv(h).magi||0);for(let i=0;i<(A.antal||1);i++)n+=slaa(A.skada).tot;f.liv=Math.max(0,f.liv-n);
+   lista.forEach((f,j)=>{let n=(vapenAv(h).magi||0);for(let i=0;i<(A.antal||1);i++)n+=slaa(A.skada).tot;f.liv=Math.max(0,f.liv-n);
+    tvFx("traff",{fran:"h:"+h.id,till:fk(f),n,stil:fxStil(h,A,vapenAv(h)),delay:j*150});if(f.liv<=0)tvFx("dod",{till:fk(f),delay:j*150+400});
     rader.push(f.namn+" tar "+n+" i skada."+(f.liv<=0?" "+fly(f):effekt(f,A)))});
    visaHandelse(rader.join(" "))};
   if(A.alla)return go(levande());return valjMal(h,f=>go([f]),ang)}
  if(A.typ==="status"){const go=lista=>{const rader=[ropText(A,h,lista.length===1?lista[0].namn:"alla fiender")];
-   lista.forEach(f=>{const t=effekt(f,{...A,rundor:A.rundor||3},true);rader.push(t?t.trim():f.namn+" bryr sig inte.")});visaHandelse(rader.join(" "))};
+   lista.forEach(f=>{tvFx("status",{till:fk(f),stil:A.effekt==="bedova"?"zz":"svag"});const t=effekt(f,{...A,rundor:A.rundor||3},true);rader.push(t?t.trim():f.namn+" bryr sig inte.")});visaHandelse(rader.join(" "))};
   if(A.alla)return go(levande());return valjMal(h,f=>go([f]),ang)}
  if(A.typ==="hela"){
   const mangd=v=>A.halva?Math.max(1,Math.ceil(maxLiv(v)/2)-Math.max(0,liv(v))):Math.max(1,slaa(A.skada).tot+(A.stat?mod(h.s[A.stat]):0)+(A.niva?lvl:0)+(vapenAv(h).magi||0));
-  const hela1=v=>{if(strid.giftH)delete strid.giftH[v.id];const fore=liv(v),uppe=fore>0,n=mangd(v);setLiv(v,Math.max(0,fore)+n);const fick=liv(v)-Math.max(0,fore);return fick<=0?v.namn+" har redan fullt liv.":v.namn+" får "+fick+" liv tillbaka"+(!uppe?" och vaknar!":".")};
+  const hela1=v=>{if(strid.giftH)delete strid.giftH[v.id];const fore=liv(v),uppe=fore>0,n=mangd(v);setLiv(v,Math.max(0,fore)+n);tvFx("hela",{till:"h:"+v.id,n:liv(v)-Math.max(0,fore)});const fick=liv(v)-Math.max(0,fore);return fick<=0?v.namn+" har redan fullt liv.":v.namn+" får "+fick+" liv tillbaka"+(!uppe?" och vaknar!":".")};
   if(A.mal==="sig")return visaHandelse(ropText(A,h)+" "+hela1(h));
   if(A.mal==="alla")return visaHandelse(ropText(A,h)+" "+partyHeroes().map(hela1).join(" "));
   return valjHjalte("Vem ska "+h.namn+" hela?",partyHeroes(),v=>visaHandelse(ropText(A,h,v.namn)+" "+hela1(v)),()=>{ang();hjalteTur(h)});
  }
  if(A.typ==="skydd"){
-  const ge=v=>{strid.skydd[v.id]={ac:A.ac,rundor:A.rundor+1};if(A.fokus)strid.fokus[v.id]=true};
+  const ge=v=>{tvFx("skydd",{till:"h:"+v.id});strid.skydd[v.id]={ac:A.ac,rundor:A.rundor+1};if(A.fokus)strid.fokus[v.id]=true};
   if(A.mal==="sig"){ge(h);return visaHandelse(ropText(A,h)+" "+h.namn+" får +"+A.ac+" rustning"+(A.fokus?" och två tärningar på nästa anfall.":"."))}
   if(A.mal==="alla"){vaken().forEach(ge);return visaHandelse(ropText(A,h)+" Alla får +"+A.ac+" rustning i "+A.rundor+" "+(A.rundor===1?"runda":"rundor")+".")}
   return valjHjalte("Vem ska skyddas?",vaken(),v=>{ge(v);visaHandelse(ropText(A,h,v.namn)+" "+v.namn+" får +"+A.ac+" rustning i "+A.rundor+" rundor.")},()=>{ang();hjalteTur(h)});
  }
- if(A.typ==="pepp"){vaken().forEach(v=>{if(v.id!==h.id)strid.pepp[v.id]=true});return visaHandelse(ropText(A,h)+" Alla andra får +1d6 på sitt nästa anfall.")}
- if(A.typ==="locka"){strid.locka={id:h.id,rundor:A.rundor+1};strid.skydd[h.id]={ac:A.ac,rundor:A.rundor+1};
+ if(A.typ==="pepp"){vaken().forEach(v=>{if(v.id!==h.id){strid.pepp[v.id]=true;tvFx("pepp",{till:"h:"+v.id})}});return visaHandelse(ropText(A,h)+" Alla andra får +1d6 på sitt nästa anfall.")}
+ if(A.typ==="locka"){tvFx("skydd",{till:"h:"+h.id});strid.locka={id:h.id,rundor:A.rundor+1};strid.skydd[h.id]={ac:A.ac,rundor:A.rundor+1};
   return visaHandelse(ropText(A,h)+" Fienderna anfaller bara "+h.namn+" i "+A.rundor+" rundor, och "+h.namn+" får +"+A.ac+" rustning.")}
 }
 // Lägger en effekt på en fiende. Returnerar en kort text.
@@ -2042,12 +2061,14 @@ function anfall(h,f,A,kvar){
   const r=Math.max(...rs),pb=pepp?d(6):0,tot=r+atk+pb,rader=[];
   if(A.rop&&kvar===(A.slag||1))rader.push(ropText(A,h,f?f.namn:"alla fiender"));
   let nagon=false;
+  let fxNr=0;const stil=fxStil(h,A,v.W);
   mal.forEach(x=>{const trf=r===20||(r!==1&&tot>=x.rustning);
-   if(!trf){if(mal.length>1)rader.push(x.namn+": miss.");return}
+   if(!trf){tvFx("miss",{fran:"h:"+h.id,till:fk(x),stil,delay:fxNr++*120});if(mal.length>1)rader.push(x.namn+": miss.");return}
    nagon=true;
    const W=v.W,krit=r>=(W.krit||20);
    const bas=A.skada?slaa(A.skada,krit).tot:slaa(W.skada,krit).tot,ext=(A.extra?slaa(A.extra,krit).tot:0)+(W.extra?slaa(W.extra,krit).tot:0);
    const n=Math.max(1,bas+mod(h.s[K.main])+v.wb+ext);x.liv=Math.max(0,x.liv-n);
+   tvFx("traff",{fran:"h:"+h.id,till:fk(x),n,krit,stil,delay:fxNr*120});if(x.liv<=0)tvFx("dod",{till:fk(x),delay:fxNr*120+400});fxNr++;
    let tjuv="";if(W.tjuv){const fore=liv(h);setLiv(h,fore+Math.floor(n*W.tjuv));if(liv(h)>fore)tjuv=" "+h.namn+" får "+(liv(h)-fore)+" liv.";}
    const wEff=x.liv>0&&W.effekt&&Math.random()<(W.chans??1)?effekt(x,W):"";
    rader.push((krit?T("krit")+" ":"")+(mal.length>1?x.namn+" tar "+n+" i skada.":T("traff",{namn:h.namn,gen:gen(h.namn),mal:x.namn,vapen:W.ord,n},h.klass))+(x.liv<=0?" "+fly(x):effekt(x,A)+wEff)+tjuv);
@@ -2070,12 +2091,12 @@ function visaHandelse(txt){stridVy("");app.append(el("div",{class:"rollpanel"},e
 function fiendeTur(f){
  if(strid.def.sover&&strid.runda===1)return visaHandelse(f.namn+" sover fortfarande och märker ingenting!");
  const rader=[],E=f.egen||{};
- if(f.gift){const n=slaa(f.gift.expr).tot;f.liv=Math.max(0,f.liv-n);rader.push(f.namn+" tar "+n+" i giftskada.");if(--f.gift.rundor<=0)f.gift=null;
+ if(f.gift){const n=slaa(f.gift.expr).tot;f.liv=Math.max(0,f.liv-n);tvFx("gift",{till:fk(f),n});if(f.liv<=0)tvFx("dod",{till:fk(f),delay:200});rader.push(f.namn+" tar "+n+" i giftskada.");if(--f.gift.rundor<=0)f.gift=null;
   if(f.liv<=0)return visaHandelse(rader.join(" ")+" "+fly(f))}
  if(f.bedovad){f.bedovad--;return visaHandelse((rader.length?rader.join(" ")+" ":"")+f.namn+" är bedövad och kan inte göra något!")}
- if(E.regen&&f.liv<f.max){const n=Math.min(E.regen,f.max-f.liv);f.liv+=n;rader.push(f.namn+" läker sina sår. +"+n+" liv.")}
+ if(E.regen&&f.liv<f.max){const n=Math.min(E.regen,f.max-f.liv);f.liv+=n;tvFx("hela",{till:fk(f),n});rader.push(f.namn+" läker sina sår. +"+n+" liv.")}
  if(E.helar){const skadad=levande().filter(x=>x!==f&&x.liv<x.max*.6).sort((a,b)=>a.liv/a.max-b.liv/b.max)[0];
-  if(skadad&&Math.random()<.7){const n=Math.min(slaa(E.helar).tot,skadad.max-skadad.liv);skadad.liv+=n;
+  if(skadad&&Math.random()<.7){const n=Math.min(slaa(E.helar).tot,skadad.max-skadad.liv);skadad.liv+=n;tvFx("hela",{till:fk(skadad),n});
    return visaHandelse(rader.concat(f.namn+" mumlar en formel och helar "+skadad.namn+". +"+n+" liv.").join(" "))}}
  const lockare=strid.locka&&byId(strid.locka.id),mal=lockare&&liv(lockare)>0?[lockare]:vaken();
  const h=mal[Math.floor(Math.random()*mal.length)],ac=vitals(h).ac+((strid.skydd[h.id]||{}).ac||0),anf=f.anfall-((f.svag||{}).n||0);
@@ -2086,9 +2107,9 @@ function fiendeTur(f){
  app.append(el("div",{class:"rollpanel"},rader.length?el("p",{class:"event"},rader.join(" ")):null,el("p",{},f.namn+" anfaller "+h.namn+(antal>1?" två gånger!":"!")),dice,res,btn));
  rullaD20(dice,rs=>{const txt=[],sum=[];let nagon=false;
   strid.giftH=strid.giftH||{};strid.bedovH=strid.bedovH||{};
-  rs.forEach(r=>{if(liv(h)<=0)return;const tot=r+anf,trf=r===20||(r!==1&&tot>=ac);sum.push(r+(anf>=0?" + ":" − ")+Math.abs(anf)+" = "+tot);
-   if(!trf){txt.push(T("fiende_miss",{mal:f.namn,namn:h.namn,gen:gen(h.namn)}));return}
-   nagon=true;const dm=slaa(f.skada,r===20).tot;setLiv(h,liv(h)-dm);
+  rs.forEach((r,j)=>{if(liv(h)<=0)return;const tot=r+anf,trf=r===20||(r!==1&&tot>=ac);sum.push(r+(anf>=0?" + ":" − ")+Math.abs(anf)+" = "+tot);
+   if(!trf){tvFx("miss",{fran:fk(f),till:"h:"+h.id,delay:j*550});txt.push(T("fiende_miss",{mal:f.namn,namn:h.namn,gen:gen(h.namn)}));return}
+   nagon=true;const dm=slaa(f.skada,r===20).tot;setLiv(h,liv(h)-dm);tvFx("traff",{fran:fk(f),till:"h:"+h.id,n:dm,krit:r===20,stil:"bett",delay:j*550});
    txt.push(T("fiende_traff",{mal:f.namn,namn:h.namn,gen:gen(h.namn),n:dm},f.typ));
    if(E.drana&&f.liv<f.max){const n=Math.min(f.max-f.liv,Math.ceil(dm/2));f.liv+=n;txt.push(f.namn+" suger åt sig kraft. +"+n+" liv.")}
    if(liv(h)<=0){txt.push(T("svimmar",{namn:h.namn}));return}
