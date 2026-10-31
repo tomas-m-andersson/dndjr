@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:57:17.566Z",
+  "uppdaterad": "2026-10-31T20:57:20.416Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -214,7 +214,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793480235664,
+    "tid": 1793480238473,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -279,7 +279,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -293,7 +293,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "De tusen ljusens gud"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -326,6 +330,14 @@
           {
             "t": "Vattnet plaskar runt era fötter när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med tusen små ljus som tänds av sig själva.",
+            "k": "magic"
           }
         ],
         "party": [
