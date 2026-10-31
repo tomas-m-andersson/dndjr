@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:15:52.802Z",
+  "uppdaterad": "2026-10-31T20:16:09.901Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793393266042,
+    "tid": 1793477768024,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -318,9 +318,71 @@
           "tomas": 14,
           "linda": 7
         }
+      },
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "En mjuk sång hörs på avstånd.",
+            "typ": "handlare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något snarkar, djupt och långsamt.",
+            "typ": "lager",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Spökslottet Korpholm",
+            "k": "sep"
+          },
+          {
+            "t": "Vindbryggan gnisslar under era fötter. Tomas, Svante och Linda går in genom porten till Korpholm, där ingen har bott på hundra år.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante",
+          "linda"
+        ],
+        "guld": 36,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793477768023,
+        "nastaKand": false,
+        "id": "rmvwucuhjib26",
+        "startGuld": 36,
+        "liv": {
+          "tomas": 20,
+          "svante": 18,
+          "linda": 11
+        },
+        "dorrText": "Ledtrådarna säger lite, men inte allt."
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmvwucuhjib26",
     "historik": [
       {
         "plats": "slottet",
