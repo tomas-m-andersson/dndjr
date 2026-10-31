@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:21:10.774Z",
+  "uppdaterad": "2026-10-31T20:21:26.942Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478068789,
+    "tid": 1793478085063,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -214,11 +214,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 779
+        "xp": 819
       },
       "tomas": {
         "lvl": 3,
-        "xp": 1223
+        "xp": 1263
       },
       "sally": {
         "lvl": 3,
@@ -230,7 +230,7 @@
       },
       "linda": {
         "lvl": 1,
-        "xp": 60
+        "xp": 100
       }
     },
     "upplasta": [
@@ -331,7 +331,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Små fotspår leder ditåt.",
@@ -352,7 +352,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "skuggling"
           ],
@@ -422,6 +422,14 @@
           {
             "t": "Svante försöker fly, men vägen är blockerad.",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 40 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Svante sätter sig en stund. +2 liv.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -440,14 +448,14 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 100,
         "start": 1793477768023,
         "nastaKand": false,
         "id": "rmvwucuhjib26",
         "startGuld": 36,
         "liv": {
           "tomas": 20,
-          "svante": 7,
+          "svante": 9,
           "linda": 11
         },
         "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
