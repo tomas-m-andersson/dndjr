@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:31:58.317Z",
+  "uppdaterad": "2026-10-31T20:57:12.106Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -116,15 +116,15 @@
       }
     },
     "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "eldklot",
         "frostblixt",
         "blixt"
       ],
       "vapen": "isstav",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "magiker",
       "hud": 1,
       "har": 2,
@@ -141,15 +141,15 @@
       }
     },
     "linda": {
+      "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
       "attacker": [
         "sikta_noga",
         "dubbelskott",
         "pilregn"
       ],
       "vapen": "giftbage",
-      "folk": "manniska",
-      "alder": 40,
-      "skagg": false,
       "klass": "bagskytt",
       "hud": 1,
       "har": 7,
@@ -214,7 +214,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478686128,
+    "tid": 1793480230190,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -279,7 +279,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -293,7 +293,22 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "skatt",
+          "klar": false,
+          "loot": [
+            {
+              "k": "guld",
+              "n": "106 guldmynt",
+              "v": 106
+            },
+            {
+              "k": "xp",
+              "n": "En gammal karta full med ledtrådar",
+              "v": 90
+            }
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -302,6 +317,14 @@
           {
             "t": "En kall vind blåser ut ur Kråkberget. Ville, Svante, Tomas och Sally drar åt mantlarna och går in i grottan.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Skatt",
+            "k": "sep"
+          },
+          {
+            "t": "I ett hörn står en gammal kista. Locket glider upp.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -337,7 +360,7 @@
         }
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmvv50vu675ts",
     "historik": [
       {
         "plats": "slottet",
