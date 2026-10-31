@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:29:58.541Z",
+  "uppdaterad": "2026-10-31T20:30:30.301Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -176,7 +176,7 @@
     }
   },
   "aventyr": {
-    "guld": 1239,
+    "guld": 1418,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478596531,
+    "tid": 1793478628307,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -327,221 +327,23 @@
           "tomas": 14,
           "linda": 7
         }
-      },
+      }
+    ],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "levande_rustning",
-            "bandit",
-            "fladdermus"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Plötsligt står tre kråksvärmar framför er.",
-            "k": "bad"
-          },
-          {
-            "t": "Sällskapet springer för livet och kommer undan!",
-            "k": "hit"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Låst kista",
-            "k": "sep"
-          },
-          {
-            "t": "En liten kista med ett hänglås format som en dödskalle.",
-            "k": ""
-          },
-          {
-            "t": "Efter en stund hörs ett nöjt klick. Linda har öppnat kistan.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni hittar 68 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Linda får en skyddsring: +1 rustning.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 60 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ni har knappt kommit in förrän en skuggling anfaller!",
-            "k": "bad"
-          },
-          {
-            "t": "Svante försöker fly, men vägen är blockerad.",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 40 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Svante sätter sig en stund. +2 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ur mörkret kliver tre jätteråttor!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 30 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Svante dricker lite vatten och torkar svetten. +7 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni samlar ihop er och fortsätter.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "En platta klickar. Flammor sprutar ur golvet!",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas bränns av lågorna: 4 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Svante bränns av lågorna: 3 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Linda bränns av lågorna: 3 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Slottsherren",
-            "k": "sep"
-          },
-          {
-            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är en levande rustning, en bandit och en jättefladdermus!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 110 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Tomas hämtar andan och lägger om såren. +4 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Svante dricker lite vatten och torkar svetten. +3 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Linda binder om ett sår. +7 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Linda har blivit starkare och är nu nivå 2! +7 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 111 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Det är över. Slottsherren är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Ormbågen! Bågskytt kan nu välja det under Ändra. Varje träff förgiftar fienden.",
-            "k": "crit"
-          }
+        "utfall": "hem",
+        "hjaltar": [
+          "Tomas (nivå 3)",
+          "Svante (nivå 3)",
+          "Linda (nivå 2)"
         ],
-        "party": [
-          "tomas",
-          "svante",
-          "linda"
-        ],
-        "guld": 215,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 450,
-        "start": 1793477768023,
-        "nastaKand": false,
-        "id": "rmvwucuhjib26",
-        "startGuld": 36,
-        "liv": {
-          "tomas": 14,
-          "svante": 18,
-          "linda": 18
-        },
-        "dorrText": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren.",
-        "nyttVapen": "Ormbågen",
-        "nyttVapenId": "giftbage"
-      }
-    ],
-    "aktivRun": "rmvwucuhjib26",
-    "historik": [
+        "datum": "2026-10-31"
+      },
       {
         "plats": "slottet",
         "kapitel": 1,
