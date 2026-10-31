@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:23:23.276Z",
+  "uppdaterad": "2026-10-31T20:23:49.565Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793478201411,
+    "tid": 1793478227655,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -347,7 +347,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": true,
@@ -460,6 +460,18 @@
           {
             "t": "En platta klickar. Flammor sprutar ur golvet!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas bränns av lågorna: 4 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Svante bränns av lågorna: 3 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Linda bränns av lågorna: 3 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -483,9 +495,9 @@
         "id": "rmvwucuhjib26",
         "startGuld": 36,
         "liv": {
-          "tomas": 20,
-          "svante": 18,
-          "linda": 11
+          "tomas": 16,
+          "svante": 15,
+          "linda": 8
         },
         "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
