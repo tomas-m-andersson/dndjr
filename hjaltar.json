@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T20:18:24.038Z",
+  "uppdaterad": "2026-10-31T20:19:18.041Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -206,7 +206,7 @@
         "slut": "slut"
       }
     },
-    "tid": 1793477902074,
+    "tid": 1793477956057,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -338,8 +338,25 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "kista",
-          "klar": false
+          "typ": "skatt",
+          "klar": false,
+          "loot": [
+            {
+              "k": "guld",
+              "n": "68 guldmynt",
+              "v": 68
+            },
+            {
+              "k": "acb",
+              "n": "Skyddsring",
+              "info": "+1 rustning"
+            },
+            {
+              "k": "xp",
+              "n": "En gammal karta full med ledtrådar",
+              "v": 60
+            }
+          ]
         },
         "logg": [
           {
@@ -373,6 +390,10 @@
           {
             "t": "En liten kista med ett hänglås format som en dödskalle.",
             "k": ""
+          },
+          {
+            "t": "Efter en stund hörs ett nöjt klick. Linda har öppnat kistan.",
+            "k": "hit"
           }
         ],
         "party": [
