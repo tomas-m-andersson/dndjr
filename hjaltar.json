@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-10-31T21:57:23.326Z",
+  "uppdaterad": "2026-10-31T21:57:57.450Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -214,23 +214,23 @@
         "slut": "slut"
       }
     },
-    "tid": 1793483841448,
+    "tid": 1793483875450,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 1253
+        "xp": 1343
       },
       "svante": {
         "lvl": 3,
-        "xp": 1139
+        "xp": 1229
       },
       "tomas": {
         "lvl": 4,
-        "xp": 1583
+        "xp": 1673
       },
       "sally": {
         "lvl": 3,
-        "xp": 939
+        "xp": 1029
       },
       "egen-1793378426345": {
         "lvl": 3,
@@ -279,7 +279,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon stönar svagt, som om den har ont.",
@@ -294,15 +294,25 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "giftspindel",
-            "giftspindel",
-            "giftspindel"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "130 guldmynt",
+              "v": 130
+            },
+            {
+              "k": "wb",
+              "n": "Magiskt vapen",
+              "info": "+1 på träff och skada"
+            },
+            {
+              "k": "xp",
+              "n": "En gammal karta full med ledtrådar",
+              "v": 90
+            }
+          ]
         },
         "logg": [
           {
@@ -356,6 +366,26 @@
           {
             "t": "Ni ser en glittrande skatt. Framför den står tre giftspindlar.",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 90 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ville dricker lite vatten och torkar svetten. +7 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas hämtar andan och lägger om såren. +6 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Sally dricker lite vatten och torkar svetten. +5 liv.",
+            "k": "heal"
+          },
+          {
+            "t": "Ingen vaktar skatten längre. Den är er.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -377,16 +407,16 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 300,
         "start": 1793267529837,
         "nastaKand": false,
         "dorrText": "Facklans sken når mer än en öppning i berget.",
         "id": "rmvv50vu675ts",
         "liv": {
-          "ville": 17,
+          "ville": 24,
           "svante": 18,
-          "sally": 13,
-          "tomas": 20,
+          "sally": 18,
+          "tomas": 26,
           "linda": 7
         }
       }
