@@ -1659,10 +1659,13 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
    if(o&&o.tint)ritaTon(g,c,i*14+dx,TVH-25+L.upp+dy,1,false,o.tint,o.tintA);POS(k,i*14,TVH-25,c.width,c.height);return}
   const c=heroSprite(h);g.globalAlpha=liv(h)>0?1:.35;g.drawImage(c,i*14+dx,TVH-25+dy);g.globalAlpha=1;POS(k,i*14,TVH-25,c.width,c.height)});
  const right=[];
- if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i})}); // ett besegrat monster tonar bort
+ if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss})}); // ett besegrat monster tonar bort
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
  let x=TVW-2;
- const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+(SPR[f.k]?sprSize(f.k).w:16),0);
+ // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
+ const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
+ right.forEach(f=>{if(f.boss&&SPR[f.k]){const z=sprSize(f.k);f.f=z.h*2<=TVH-4?2:z.h*1.5<=TVH-4?1.5:1;if(z.w*f.f>ledigt)f.f=Math.max(1,Math.floor(ledigt/z.w*2)/2)}});
+ const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+(SPR[f.k]?sprSize(f.k).w*(f.f||1):16),0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
  let nr=10;const npc=(h,xx)=>{if(anim){const c=heroCanvas(h),L=livTid(anim.t,nr++);ritaLevande(g,c,heroOgon(h,c),xx,TVH-25,{flip:true,blink:L.blink,titt:L.titt});return}
   const c=heroSprite(h);g.save();g.translate(xx+c.width,TVH-25);g.scale(-1,1);g.drawImage(c,0,0);g.restore()};
@@ -1671,11 +1674,12 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   if(f.k==="handlare"){x-=17;npc(HANDLARE,x);g.fillStyle="#6b4a2e";g.fillRect(x+11,TVH-14,5,8);g.fillStyle="#4e3420";g.fillRect(x+11,TVH-14,5,1);g.fillRect(x+11,TVH-10,5,1);return}
   if(f.k==="resenar"){x-=18;g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
-  const {w,h}=sprSize(f.k);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
+  const z0=sprSize(f.k),fs=f.f||1,w=Math.round(z0.w*fs),h=Math.round(z0.h*fs);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
   const sd=anim&&sprDef(f.k),sc=sd&&sprCanvas(f.k);
   const o=f.key?OFF(f.key):null,dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;
-  if(sc){const L=livTid(anim.t,nr++),yy=TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp)+dy;ritaLevande(g,sc,monOgon(f.k),x+dx,yy,{skala:sd.skala,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:(f.a??1)*(o?o.alpha:1)});
-   if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h,w,h)}
+  if(sc){const L=livTid(anim.t,nr++),yy=TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp)+dy;ritaLevande(g,sc,monOgon(f.k),x+dx,yy,{skala:sd.skala*fs,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:(f.a??1)*(o?o.alpha:1)});
+   if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h,w,h)}
+  else if(fs!==1&&sprCanvas(f.k))ritaLevande(g,sprCanvas(f.k),null,x,TVH-h,{skala:sprDef(f.k).skala*fs,flip:vand});
   else sprite(g,f.k,x,TVH-h,vand,f.a);
   if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy,3,1);g.fillRect(x+dx+2,TVH-h+dy,1,1);g.fillRect(x+dx,TVH-h+1+dy,3,1)});g.globalAlpha=1}});
 }
@@ -2325,15 +2329,18 @@ function mote(boss,typ){
  const dk=alt.svar||"normal",dp=R.djup,r2=Math.random();
  let tier=boss?(dk==="latt"?1:dk==="svar"?3:2):dk==="latt"?(dp>=5&&r2<.3?1:0):dk==="svar"?(dp>=5&&r2<.4?2:1):(dp<=2||r2<.25?0:1);
  const budget=([.85,1,1.2][Math.min(3,n)-1]||1)*H.reduce((a,h)=>a+XPB[Math.min(10,vitals(h).lvl)][tier],0);
- let k=boss?Math.min(3,n):n===1?(r<.75?1:2):n===2?(r<.35?1:r<.85?2:3):(r<.25?1:r<.6?2:3);
+ let k=boss?1:n===1?(r<.75?1:2):n===2?(r<.35?1:r<.85?2:3):(r<.25?1:r<.6?2:3);
  const share=budget/GRUPP(k),bas=typ?[typ]:Object.keys(MONSTER).filter(m=>MONSTER[m].platser.includes(R.plats));
  const plock=(max,fav)=>{let pool=bas.filter(m=>MONSTER[m].xp<=max&&MONSTER[m].xp>=max*.4);
   if(fav){const f=pool.filter(m=>fav.includes(m));if(f.length)pool=f}
   if(!pool.length)pool=bas.filter(m=>MONSTER[m].xp<=max);
   if(!pool.length){const lo=Math.min(...bas.map(m=>MONSTER[m].xp));pool=bas.filter(m=>MONSTER[m].xp===lo)}
   return valj(pool)};
- if(boss){const main=plock(k>1?share*.65:share,BOSSAR[R.plats]);const ut=[main];const rest=(share-MONSTER[main].xp)/Math.max(1,k-1);
-  for(let i=1;i<k;i++)ut.push(plock(Math.max(25,rest)));return ut}
+ if(boss){ // bossen kommer alltid ensam, och väljs bland platsens riktiga bossar
+  const L=BOSSAR[R.plats].filter(m=>MONSTER[m]),passar=L.filter(m=>MONSTER[m].xp<=share*.9&&MONSTER[m].xp>=share*.3);
+  const k1=passar.length?valj(passar):L.slice().sort((a,b)=>Math.abs(MONSTER[a].xp-share*.6)-Math.abs(MONSTER[b].xp-share*.6))[0];
+  R.bossFaktor=Math.max(.55,Math.min(1.3,share*.7/MONSTER[k1].xp)); // anpassar bossens liv efter sällskapets styrka
+  return[k1]}
  const main=plock(share/k);const ut=[main];const samma=Math.random()<.6;
  for(let i=1;i<k;i++)ut.push(samma?main:plock(share/k));return ut;
 }
@@ -2644,7 +2651,8 @@ function runStrid(keys,opt){
  const fiender=keys.map(k=>{const M=MONSTER[k],skala=SV().hp*(1+(R.kapitel-1)*.1);nr[k]=(nr[k]||0)+1;
   const liv=Math.max(1,Math.round(M.liv*skala));
   return{...M,typ:k,bild:k,namn:M.namn+(ant[k]>1?" "+nr[k]:""),liv,max:liv,anfall:M.anfall+SV().atk,ute:false}});
- if(opt.boss&&fiender[0])fiender[0].boss=true;
+ if(opt.boss&&fiender[0]){const B=fiender[0];B.boss=true; // bossen: ensam, större och starkare
+  B.liv=B.max=Math.max(B.liv,Math.round(B.liv*1.5*(R.bossFaktor||1)));B.rustning+=1;B.anfall+=1;B.namn=B.namn.replace(/^(.)/,c=>c.toUpperCase())}
  startStrid({fiender,run:true,boss:!!opt.boss,fiendeForst:!!opt.fiendeForst,sover:!!opt.sover,
   noter:opt.fiendeForst?["Bakhåll! Fienderna anfaller först."]:opt.sover?["Ni smyger fram. Fienderna sover den första rundan."]:[]},runBild());
 }
