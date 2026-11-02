@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:09:52.317Z",
+  "uppdaterad": "2026-11-02T20:11:05.097Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650190418,
+    "tid": 1793650262936,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -600,7 +600,7 @@
           "tomas": 19,
           "ville": 26,
           "sally": 18,
-          "egen-1793378426345": 28
+          "egen-1793378426345": 22
         },
         "dorrText": "Träden står i en ring runt en glänta. Mitt i den väntar något.",
         "bossFaktor": 1.3
