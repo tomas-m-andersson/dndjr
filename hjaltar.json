@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:04:34.372Z",
+  "uppdaterad": "2026-11-02T20:04:45.615Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649872446,
+    "tid": 1793649883704,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -428,7 +428,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det finns färskt blod på marken.",
@@ -437,7 +437,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "vattesjaman",
+            "giftspindel",
+            "giftspindel"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -498,6 +508,14 @@
           {
             "t": "Ni följer stigen djupare in bland träden.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "En kista står mitt i rummet. en vättesjaman och två giftspindlar har bestämt att den är deras.",
+            "k": "bad"
           }
         ],
         "party": [
