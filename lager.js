@@ -153,6 +153,7 @@ function ritaLager(cv,bg,hang,H,t,anim){
  const pos=lagerPlatser(hang,H.length),ordning=H.map((h,i)=>i).sort((a,b)=>pos[a][3]-pos[b][3]);
  if(hang==="sover"){g.fillStyle="rgba(5,8,20,.35)";g.fillRect(0,0,LW,LH)}
  ritaElden(g,t);
+ const gosedjurSist=[];
  ordning.forEach(i=>{const h=H[i],c=heroCanvas(h),L=anim?livTid(t,i):{blink:false,titt:0,upp:0},[x,vand,sitt,bas]=pos[i],katt=h.folk==="katt";
   if(hang==="sover"){ // ligger ner med stängda ögon
    const tmp=document.createElement("canvas");tmp.width=c.width;tmp.height=c.height;ritaLevande(tmp.getContext("2d"),c,heroOgon(h,c),0,0,{blink:true});
@@ -160,11 +161,12 @@ function ritaLager(cv,bg,hang,H,t,anim){
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";const zx=x+(vand?-6:4)+z*4,zy=y-12-z*10;g.fillRect(zx,zy,3,1);g.fillRect(zx+2,zy+1,1,1);g.fillRect(zx,zy+2,3,1);g.globalAlpha=1;return}
   const sitter=sitt&&!katt;let y=bas-c.height+L.upp+(sitter?6:0);
   ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
+  {const gd=typeof gosedjurAv==="function"&&gosedjurAv(h);if(gd){const s=gosedjurCanvas(gd);gosedjurSist.push(()=>g.drawImage(s,Math.round(x+(vand?c.width/2-3:-c.width/2-s.width+3)),bas-s.height+1))}} // gosedjuret bredvid, på sidan bort från elden (ritas sist så det syns)
   if(sitter){g.fillStyle="#5a3a22";g.fillRect(Math.round(x-7),bas-3,14,4);g.fillStyle="#7a5232";g.fillRect(Math.round(x-7),bas-3,14,1)}
   if(hang==="korv"&&!katt){const hx=x+(vand?-4:4),hy=y+15,ex=LFX+(vand?5:-5),ey=51;g.fillStyle="#b08a5a";const n=14;for(let k=0;k<=n;k++)g.fillRect(Math.round(hx+(ex-hx)*k/n),Math.round(hy+(ey-hy)*k/n),1,1);g.fillStyle="#a0522d";g.fillRect(Math.round(ex)-1,ey-1,3,2);g.fillStyle="#6a2a14";g.fillRect(Math.round(ex),ey-1,1,1)}
   if(hang==="berattar"&&i===0&&Math.floor(t/600)%2){g.fillStyle="#f3eedf";g.fillRect(x-14,y-7,9,5);g.fillRect(x-6,y-2,1,1);g.fillStyle="#15111a";g.fillRect(x-12,y-5,1,1);g.fillRect(x-10,y-5,1,1);g.fillRect(x-8,y-5,1,1)}
   if(hang==="ovar"&&i===1&&Math.floor(t/350)%2){g.fillStyle="#fff3b0";const mx=(pos[0][0]+pos[1][0])/2;g.fillRect(Math.round(mx),y+9,1,1);g.fillRect(Math.round(mx)-1,y+8,1,1);g.fillRect(Math.round(mx)+1,y+8,1,1)}
- })}
+ });gosedjurSist.forEach(f=>f())}
 
 /* ---------- Sidan ---------- */
 let lagerHang=null,lagerFokus=null; // lagerFokus: området som visas efter ett bygge

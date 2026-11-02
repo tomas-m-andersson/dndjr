@@ -192,7 +192,9 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .wicon.big{width:96px;height:96px;animation:vapenglans 1.4s ease-in-out infinite}
 .wbtn{display:grid!important;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;align-items:center}
 .wbtn .wicon.small{width:40px;height:40px;grid-row:1/3;border-radius:6px}
-.wbtn .atkikon,.wbtn .monikon{padding:3px;box-sizing:border-box}
+.wbtn .atkikon,.wbtn .monikon,.wbtn .gdikon{padding:3px;box-sizing:border-box}
+.choicebtn.gdbtn{border-left-color:#ffd23d}
+.wchoice .gdikon{width:72px;height:auto}
 @media (prefers-reduced-motion:reduce){.wicon{animation:none!important}}
 .choice.locked{opacity:.55;border-style:dashed;cursor:not-allowed}
 .theend.loot{background:#3a2f14;border-color:var(--gold)}
@@ -449,6 +451,7 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 <script src="lager.js"></script>
 <script src="ikoner.js"></script>
 <script src="fx.js"></script>
+<script src="gosedjur.js"></script>
 <script>
 /* ===== Regeldata ===== */
 const STATS=[
@@ -620,7 +623,7 @@ const fmt=n=>(n>=0?"+":"")+n;
 
 /* ===== Grundfigurerna ===== */
 const BASE=[
- {id:"ville",namn:"Ville",alder:30,folk:"manniska",klass:"krigare",hud:0,har:0,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
+ {id:"ville",namn:"Ville",alder:30,folk:"manniska",klass:"krigare",gosedjur:"blackis",hud:0,har:0,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
  {id:"svante",namn:"Svante",alder:30,folk:"manniska",klass:"magiker",hud:1,har:1,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
  {id:"tomas",namn:"Tomas",folk:"manniska",alder:40,skagg:true,klass:"helare",hud:1,har:2,stil:"kal",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
  {id:"linda",namn:"Linda",alder:40,folk:"manniska",klass:"bagskytt",hud:0,har:3,stil:"lang",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
@@ -634,7 +637,7 @@ function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 let egna=load(KEY,[]).map(migrera), party=load(PKEY,["ville","svante","sally"]);
 // Ändringar av folk, klass och utseende på grundfigurerna (namnen ändras aldrig).
 const AKEY="tarningsriket-grundandringar", DKEY="tarningsriket-andringar-osparade";
-const EDITABLE=["folk","alder","skagg","attacker","vapen","klass","hud","har","stil","klader","flackar","s"];
+const EDITABLE=["folk","alder","skagg","attacker","vapen","klass","hud","har","stil","klader","flackar","s","gosedjur"];
 let andringar=Object.fromEntries(Object.entries(load(AKEY,{})).map(([k,v])=>[k,migrera(v,true)])), andrDirty=load(DKEY,false);
 function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
  if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
@@ -1179,6 +1182,13 @@ function attackVal(){
  return box;
 }
 // Välj vapen. Specialvapen syns med lås tills de hittats efter en boss.
+function gosedjurVal(){
+ const box=el("div",{class:"field"},el("label",{},"Gosedjur"),el("p",{class:"fieldhint"},"Ett gosedjur följer med på äventyren och har en egen specialförmåga som kan användas en gång per strid."));
+ const val=(id,inne)=>el("button",{class:"choice"+(id?" wchoice":"")+(gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?" sel":""),"aria-pressed":gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?"true":"false",
+  onclick:()=>{draft.gosedjur=id||"";const y=window.scrollY;rerender();window.scrollTo(0,y)}},...inne);
+ box.append(el("div",{class:"choices"},val("",[el("strong",{},"Inget gosedjur"),el("span",{},"Hjälten går ensam.")]),
+  Object.entries(GOSEDJUR).map(([id,G])=>val(id,[gosedjurIkon(id),el("div",{class:"wtext"},el("strong",{},G.namn+(G.agare?" ("+G.agare+"s)":"")),el("div",{class:"bonus"},G.djur),el("span",{},G.attack.namn.replace(/^[^:]*:\s*/,"")+": "+G.attack.info))]))));
+ return box}
 function vapenVal(){
  if(draft.klass==="katt")return null;
  const L=VAPEN[draft.klass]||[],cur=vapenAv(draft).id;
@@ -1301,6 +1311,7 @@ function renderEdit(){
   onclick:()=>{valjKlass(k);renderEdit()}},o.n))),el("p",{class:"note"},K.t)));
  {const vv=vapenVal();if(vv)app.append(vv)}
  app.append(attackVal());
+ app.append(gosedjurVal());
  app.append(...lookFields());
  const slot=el("div");
  app.append(slot);
@@ -1309,7 +1320,7 @@ function renderEdit(){
   el("button",{class:"btn ghost",onclick:back},"Tillbaka"),
   el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
    if(attackerAv(draft).length<3||(draft.attacker||[]).length!==3){flash("Välj tre specialattacker först.");return}
-   const upd={attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats()};
+   const upd={attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats(),gosedjur:gosedjurAv(draft)||""};
    if(draft.grund){andringar[draft.id]=upd;andrDirty=true}
    else egna=egna.map(x=>x.id===draft.id?{...x,...upd,namn:draft.namn.trim()}:x);
    persist();back();flash("Ändringarna är sparade.");
@@ -1658,6 +1669,8 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   if(anim&&liv(h)>0){const c=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h),L=livTid(anim.t,i);ritaLevande(g,c,heroOgon(h,c),i*14+dx,TVH-25+L.upp+dy,{blink:L.blink,titt:L.titt});
    if(o&&o.tint)ritaTon(g,c,i*14+dx,TVH-25+L.upp+dy,1,false,o.tint,o.tintA);POS(k,i*14,TVH-25,c.width,c.height);return}
   const c=heroSprite(h);g.globalAlpha=liv(h)>0?1:.35;g.drawImage(c,i*14+dx,TVH-25+dy);g.globalAlpha=1;POS(k,i*14,TVH-25,c.width,c.height)});
+ if(visaParty)partyHeroes().forEach((h,i)=>{const gd=gosedjurAv(h);if(!gd)return;const s=gosedjurCanvas(gd),o=OFF("h:"+h.id),hopp=anim?(Math.floor((anim.t+i*500)/450)%4===0?-1:0):0;
+  g.globalAlpha=liv(h)>0?1:.4;g.drawImage(s,i*14+9+(o?Math.round(o.dx):0),TVH-s.height+hopp);g.globalAlpha=1}); // gosedjuret vid hjältens fötter
  const right=[];
  if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss})}); // ett besegrat monster tonar bort
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
@@ -2002,6 +2015,8 @@ function hjalteTur(h){
  if(pre.length)app.append(el("p",{class:"event pre"},pre.join(" ")));
  const meny=()=>{akt.replaceChildren();
   akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>valjMal(h,f=>anfall(h,f,null))},ikonEl(vapenAv(h),"small"),el("span",{},"Anfall med "+vapenAv(h).ord),el("small",{},vapenAv(h).namn+" · "+vapenAv(h).skada+" skada"+(strid.fokus[h.id]?" · två tärningar":""))));
+  const gd=gosedjurAv(h);if(gd){const A=GOSEDJUR[gd].attack,kvar=kvarAttack(h,A); // gosedjurets förmåga, en gång per strid
+   akt.append(el("button",{class:"choicebtn special wbtn gdbtn",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},gosedjurIkon(gd),el("span",{},A.namn),el("small",{},kvar?A.info:GOSEDJUR[gd].namn+" vilar. Använd i den här striden")))}
   attackerAv(h).forEach(id=>{const A=attackDef(h.klass,id),kvar=kvarAttack(h,A);
    akt.append(el("button",{class:"choicebtn special wbtn",disabled:!kvar,onclick:()=>anvandAttack(h,A,meny)},attackIkon(A.id),el("span",{},A.namn),el("small",{},kvar?A.info:"Använd i den här striden")))});
   if(harDryck())akt.append(el("button",{class:"choicebtn wbtn",onclick:()=>valjDryck(()=>valjHjalte("Vem får drycken?",partyHeroes(),v=>{const n=dryck(v,valdDryck);visaHandelse(h.namn+" ger "+(v.id===h.id?"sig själv":v.namn)+" en "+valdDryck.toLowerCase()+". +"+n+" liv!")},()=>hjalteTur(h)),()=>hjalteTur(h))},attackIkon("dryck"),el("span",{},"Använd läkedryck"),el("small",{},"Ger tillbaka liv")));
