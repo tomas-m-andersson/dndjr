@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:02:14.536Z",
+  "uppdaterad": "2026-11-02T20:02:38.116Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649732431,
+    "tid": 1793649756177,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -428,7 +428,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -442,7 +442,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "Ljusbärerskan"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -451,6 +455,14 @@
           {
             "t": "Månen försvinner bakom molnen när Tomas, Ville, Sally och Benjamin går in i Mörkskogen. Det enda som hörs är era steg.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
           }
         ],
         "party": [
