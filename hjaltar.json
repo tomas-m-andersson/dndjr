@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:02:38.116Z",
+  "uppdaterad": "2026-11-02T20:03:04.158Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649756177,
+    "tid": 1793649782203,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -444,7 +444,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "Ljusbärerskan"
         },
         "logg": [
@@ -462,6 +462,10 @@
           },
           {
             "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
+          },
+          {
+            "t": "Ljusen flammar upp. Ljusbärerskan välsignar er. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
           }
         ],
@@ -482,7 +486,12 @@
           "Läkedryck",
           "Läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "tomas": 1,
+          "ville": 1,
+          "sally": 1,
+          "egen-1793378426345": 1
+        },
         "curse": {},
         "ara": 0,
         "start": 1793649732427,
