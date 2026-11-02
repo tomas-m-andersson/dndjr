@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:09:33.721Z",
+  "uppdaterad": "2026-11-02T20:09:41.101Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650171789,
+    "tid": 1793650179154,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,25 +427,11 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "strid",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "giftspindel",
-            "giftspindel"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -554,6 +540,10 @@
           {
             "t": "Ni vann! Alla får 60 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar skogens mörker.",
+            "k": ""
           }
         ],
         "party": [
@@ -595,7 +585,7 @@
           "sally": 18,
           "egen-1793378426345": 28
         },
-        "dorrText": "Ingen väg att välja. Bara framåt."
+        "dorrText": "Träden står i en ring runt en glänta. Mitt i den väntar något."
       }
     ],
     "aktivRun": "rmvzoqn2jjne7",
