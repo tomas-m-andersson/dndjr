@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T19:54:29.026Z",
+  "uppdaterad": "2026-11-02T19:55:27.074Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -207,13 +207,14 @@
           "vet_skuggan",
           "bo_omlagd",
           "glod_fri",
-          "krak_borta"
+          "krak_borta",
+          "glod_eld"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1793649267076,
+    "tid": 1793649324994,
     "niva": {
       "ville": {
         "lvl": 3,
