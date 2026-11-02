@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T19:57:57.501Z",
+  "uppdaterad": "2026-11-02T20:01:08.707Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -68,20 +68,20 @@
   ],
   "grundandringar": {
     "ville": {
+      "attacker": [
+        "eldklot",
+        "frostblixt",
+        "somnformel"
+      ],
+      "vapen": "skuggstav",
       "folk": "manniska",
       "alder": 7,
       "skagg": false,
-      "attacker": [
-        "smygattack",
-        "shuriken",
-        "rokbomb"
-      ],
-      "vapen": "giftdolkar",
-      "klass": "ninja",
+      "klass": "magiker",
       "hud": 0,
-      "har": 9,
+      "har": 5,
       "stil": "kort",
-      "klader": 5,
+      "klader": 1,
       "flackar": false,
       "s": {
         "sty": 16,
