@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:01:08.707Z",
+  "uppdaterad": "2026-11-02T20:01:56.637Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -117,20 +117,20 @@
       }
     },
     "tomas": {
+      "attacker": [
+        "dubbelhugg",
+        "virvelhugg",
+        "skoldslag"
+      ],
+      "vapen": "stridsyxa",
       "folk": "manniska",
       "alder": 43,
       "skagg": true,
-      "attacker": [
-        "eldklot",
-        "frostblixt",
-        "blixt"
-      ],
-      "vapen": "isstav",
-      "klass": "magiker",
+      "klass": "krigare",
       "hud": 1,
       "har": 2,
       "stil": "kal",
-      "klader": 6,
+      "klader": 2,
       "flackar": false,
       "s": {
         "sty": 15,
