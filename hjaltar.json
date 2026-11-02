@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T19:40:56.413Z",
+  "uppdaterad": "2026-11-02T19:41:37.312Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -191,31 +191,22 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 17,
+      "ville": 24,
       "svante": 18,
-      "sally": 13,
-      "tomas": 14,
-      "linda": 7
+      "sally": 18,
+      "tomas": 26,
+      "linda": 7,
+      "egen-1793378426345": 28
     },
     "kapitel": {
       "k1": {
-        "scen": "slut",
-        "flaggor": [
-          "sett_torget",
-          "sett_bo",
-          "vet_lager",
-          "vet_skuggan",
-          "bo_omlagd",
-          "krak_borta",
-          "vilat",
-          "ljusbon"
-        ],
-        "klar": true,
-        "v": 2,
-        "slut": "slut"
+        "scen": "start",
+        "flaggor": [],
+        "klar": false,
+        "v": 2
       }
     },
-    "tid": 1793483977125,
+    "tid": 1793648495225,
     "niva": {
       "ville": {
         "lvl": 3,
