@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:09:41.101Z",
+  "uppdaterad": "2026-11-02T20:09:52.317Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650179154,
+    "tid": 1793650190418,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -428,10 +428,19 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "troll"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -544,6 +553,14 @@
           {
             "t": "Gången slutar vid en stor port. Längst in väntar skogens mörker.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Skogens mörker",
+            "k": "sep"
+          },
+          {
+            "t": "Dimman samlas till en skugga. Ur den kliver ett bergstroll!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -585,7 +602,8 @@
           "sally": 18,
           "egen-1793378426345": 28
         },
-        "dorrText": "Träden står i en ring runt en glänta. Mitt i den väntar något."
+        "dorrText": "Träden står i en ring runt en glänta. Mitt i den väntar något.",
+        "bossFaktor": 1.3
       }
     ],
     "aktivRun": "rmvzoqn2jjne7",
