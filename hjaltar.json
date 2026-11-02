@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:13:58.848Z",
+  "uppdaterad": "2026-11-02T20:14:16.243Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -122,7 +122,7 @@
         "virvelhugg",
         "skoldslag"
       ],
-      "vapen": "stridsyxa",
+      "vapen": "drakdrapare",
       "folk": "manniska",
       "alder": 43,
       "skagg": true,
