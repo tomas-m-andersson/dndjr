@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:09:17.363Z",
+  "uppdaterad": "2026-11-02T20:09:33.721Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,11 +217,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650155272,
+    "tid": 1793650171789,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 1523
+        "xp": 1583
       },
       "svante": {
         "lvl": 3,
@@ -229,15 +229,15 @@
       },
       "tomas": {
         "lvl": 4,
-        "xp": 1853
+        "xp": 1913
       },
       "sally": {
         "lvl": 3,
-        "xp": 1209
+        "xp": 1269
       },
       "egen-1793378426345": {
         "lvl": 3,
-        "xp": 938
+        "xp": 998
       },
       "linda": {
         "lvl": 2,
@@ -428,7 +428,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något skrattar tyst därinne.",
@@ -439,7 +439,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "giftspindel",
             "giftspindel"
@@ -550,6 +550,10 @@
           {
             "t": "Ni kommer ut på en glänta. två giftspindlar väntar i månskenet.",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 60 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -580,13 +584,13 @@
         "curse": {
           "tomas": 1
         },
-        "ara": 300,
+        "ara": 500,
         "start": 1793649732427,
         "nastaKand": false,
         "id": "rmvzoqn2jjne7",
         "startGuld": 38,
         "liv": {
-          "tomas": 23,
+          "tomas": 19,
           "ville": 26,
           "sally": 18,
           "egen-1793378426345": 28
