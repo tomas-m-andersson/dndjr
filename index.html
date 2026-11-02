@@ -408,6 +408,7 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 .foehp i{background:var(--gold)}
 .turn{font-size:1.5rem;color:var(--gold)}
 .turn:empty{display:none}
+.turordning{margin:-6px 0 0;font-size:.82rem;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.hp i{transition:none}.kastar .dwrap,.d20.landed,.d20.nat20,.d20.nat1,.rollres>*,.rollpanel .btn.big{animation:none!important}}
 /* Grottkrypning */
 .runsec{display:flex;flex-direction:column;gap:12px}
@@ -1962,7 +1963,15 @@ function nyRunda(){
   strid.fiender.forEach(f=>{if(f.svag&&--f.svag.rundor<=0)f.svag=null});
  }
  const H=vaken().map(h=>({h:h.id})),F=strid.fiender.map((f,i)=>({f:i}));
- strid.ko=strid.runda===1&&strid.def.fiendeForst?[...F,...H]:[...H,...F]}
+ // initiativ: alla slår en gång när striden börjar (hjältar: d20 + Smidighet, monster: d20 + snabbhet). Högst börjar.
+ if(!strid.init){strid.init={};partyHeroes().forEach(h=>{strid.init["h:"+h.id]=d(20)+mod(finalStats(h).smi)+.1}); // vid lika vinner hjälten
+  strid.fiender.forEach((f,i)=>{strid.init["f:"+i]=d(20)+Math.max(0,f.anfall-4)+(f.boss?1:0)})}
+ if(strid.runda===1&&strid.def.fiendeForst){strid.ko=[...F,...H];return} // bakhåll: fienderna börjar första rundan
+ const varde=t=>strid.init[t.h?"h:"+t.h:"f:"+t.f]??0;
+ strid.ko=[...H,...F].sort((a,b)=>varde(b)-varde(a))}
+// Turordningen som text, t.ex. "Vätte → Ville → Svante → Bergstroll"
+function turordning(){if(!strid||!strid.init)return"";const alla=[...vaken().map(h=>({h:h.id,n:h.namn})),...strid.fiender.map((f,i)=>({f:i,n:f.namn,ute:f.ute}))].filter(x=>!x.ute);
+ return alla.sort((a,b)=>(strid.init[b.h?"h:"+b.h:"f:"+b.f]??0)-(strid.init[a.h?"h:"+a.h:"f:"+a.f]??0)).map(x=>x.n).join(" → ")}
 const levande=()=>strid.fiender.filter(f=>!f.ute);
 // Pausa: spara striden precis som den är och gå till äventyrslistan.
 function pausaStrid(){
@@ -1999,7 +2008,7 @@ function stridVy(rubrik){
   el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")},el("b",{},f.namn),
    el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},fiendeStatus(f)),
    f.egen&&!f.ute?el("small",{class:"traits"},Object.keys(f.egen).map(k=>EGEN_ORD[k]).filter(Boolean).join(" · ")):null))),
-  partyStrip(),el("h2",{class:"turn"},rubrik));
+  partyStrip(),el("h2",{class:"turn"},rubrik),turordning()?el("p",{class:"turordning"},"Turordning: "+turordning()):null);
  window.scrollTo(0,0);
 }
 const gen=n=>/[sxz]$/i.test(n)?n:n+"s"; // svensk genitiv: Tomas tur, Villes tur
