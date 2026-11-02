@@ -17,7 +17,25 @@ const GOSEDJUR={
    ".Y..Y.Y..Y."],
   pal:{Y:"#ffd23d",L:"#fff3a0",W:"#ffffff",E:"#2a1a10"},
   attack:{id:"g_blackmoln",namn:"Bläckis: Bläckmoln",info:"Bläckis sprutar bläck på alla fiender. De får −3 på sina anfall i 2 rundor. Träffar alltid",
-   typ:"status",alla:true,effekt:"svag",n:3,rundor:2,rop:"Bläckis sträcker ut alla åtta armarna och sprutar ett stort moln av bläck!"}}
+   typ:"status",alla:true,effekt:"svag",n:3,rundor:2,rop:"Bläckis sträcker ut alla åtta armarna och sprutar ett stort moln av bläck!"}},
+ tigris:{namn:"Tigris",djur:"Liten vit tiger med svarta ränder och blå ögon",agare:"Svante",
+  rows:[
+   "..BW.....WB..",
+   ".WWBBBBBBBWW.",
+   "WWWWWWWWWWWWW",
+   "WBBBWWWWWBBBW",
+   "WEPEWWWWWEPEW",
+   "BWEWWMNMWWEWB",
+   "WBWWMMMMMWWBW",
+   ".WWWWMMMWWWW.",
+   "..WBWWWWWBW..",
+   ".WBBWIIIWBBW.",
+   "WBBWWIIIWWBBW",
+   ".WWW.III.WWW.",
+   ".IIB.....BII."],
+  pal:{W:"#f4f4f0",B:"#2a2a33",E:"#4ab8e8",P:"#101018",M:"#efe2cc",N:"#1a1a22",I:"#e3dccd"},
+  attack:{id:"g_tigerklo",namn:"Tigris: Tigerklös",info:"Tigris hoppar på en fiende och klöser: 2d6 skada som alltid träffar, och fienden får −2 på sina anfall i 2 rundor",
+   typ:"auto",skada:"2d6",effekt:"svag",n:2,rundor:2,stil:"klo",rop:"Tigris fräser, tar sats och hoppar rakt på {mal} med vassa klor!"}}
 };
 const GDCACHE={};
 // Gosedjurets bild (med samma kontur och skuggning som resten av spelet)

@@ -73,6 +73,6 @@ window.fxSkak=function(t){let s=0;ko.forEach(e=>{const i=t-e.start-IMP;if(e.typ=
 // Vilken effekt passar attacken?
 const STIL={eldklot:"eld",frostblixt:"is",blixt:"blixt",magisk_pil:"magi",heligt_ljus:"ljus",heligt_slag:"ljus",brinnande_pil:"eldpil",giftpil:"giftpil",giftklinga:"gift",
  shuriken:"stjarna",klosattack:"klo",hoppa_ansiktet:"klo",kasta_sig:"klo",dissonans:"ljud",hanfullt_skamt:"ljud"};
-window.fxStil=function(h,A,W){if(A&&A.id&&STIL[A.id])return STIL[A.id];const f=W&&W.form;
+window.fxStil=function(h,A,W){if(A&&A.stil)return A.stil;if(A&&A.id&&STIL[A.id])return STIL[A.id];const f=W&&W.form;
  if(h.klass==="katt"||f==="klor")return"klo";if(f==="bage"||f==="armborst")return"pil";if(f==="stav"||f==="spo"||f==="bok")return"magi";if(f==="luta")return"ljud";return"hugg"};
 })();
