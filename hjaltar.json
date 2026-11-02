@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:03:45.414Z",
+  "uppdaterad": "2026-11-02T20:03:48.227Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649823530,
+    "tid": 1793649826306,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -427,37 +427,27 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar rök och stekt kött.",
-            "typ": "handlare",
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
+            "typ": "altare",
             "kand": false
           },
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "skatt",
+            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "76 guldmynt",
-              "v": 76
-            },
-            {
-              "k": "xp",
-              "n": "En gammal karta full med ledtrådar",
-              "v": 90
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -498,6 +488,10 @@
           {
             "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
             "k": "magic"
+          },
+          {
+            "t": "Ni torkar svetten ur pannan och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -535,7 +529,7 @@
           "sally": 18,
           "egen-1793378426345": 28
         },
-        "dorrText": "Ni tittar på varandra. Någon måste bestämma."
+        "dorrText": "Stigarna slingrar bort i dimman. Ingen av dem ser vänlig ut."
       }
     ],
     "aktivRun": "rmvzoqn2jjne7",
