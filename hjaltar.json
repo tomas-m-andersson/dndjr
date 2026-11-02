@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:01:56.637Z",
+  "uppdaterad": "2026-11-02T20:02:14.536Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649475543,
+    "tid": 1793649732431,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -423,9 +423,70 @@
           "tomas": 26,
           "linda": 7
         }
+      },
+      {
+        "plats": "skogen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "altare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon andas tungt. Det låter stort.",
+            "typ": "sovare",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Mörkskogen",
+            "k": "sep"
+          },
+          {
+            "t": "Månen försvinner bakom molnen när Tomas, Ville, Sally och Benjamin går in i Mörkskogen. Det enda som hörs är era steg.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "egen-1793378426345"
+        ],
+        "guld": 38,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793649732427,
+        "nastaKand": false,
+        "id": "rmvzoqn2jjne7",
+        "startGuld": 38,
+        "liv": {
+          "tomas": 36,
+          "ville": 20,
+          "sally": 18,
+          "egen-1793378426345": 28
+        },
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
       }
     ],
-    "aktivRun": "rmvv50vu675ts",
+    "aktivRun": "rmvzoqn2jjne7",
     "historik": [
       {
         "plats": "slottet",
