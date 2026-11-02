@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T19:44:10.632Z",
+  "uppdaterad": "2026-11-02T19:44:46.312Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -211,7 +211,7 @@
         "v": 2
       }
     },
-    "tid": 1793648648542,
+    "tid": 1793648684216,
     "niva": {
       "ville": {
         "lvl": 3,
