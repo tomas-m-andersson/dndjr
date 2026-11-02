@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:07:35.562Z",
+  "uppdaterad": "2026-11-02T20:07:41.805Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650053635,
+    "tid": 1793650059824,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -428,7 +428,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Något skrattar tyst därinne.",
@@ -437,7 +437,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "giftspindel",
+            "giftspindel"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -534,6 +542,14 @@
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni kommer ut på en glänta. två giftspindlar väntar i månskenet.",
+            "k": "bad"
           }
         ],
         "party": [
