@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:04:22.129Z",
+  "uppdaterad": "2026-11-02T20:04:34.372Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649860201,
+    "tid": 1793649872446,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -427,31 +427,17 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "altare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
-            "typ": "altare",
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "vaktad",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "den bortglömda guden"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -508,6 +494,10 @@
           {
             "t": "Altaret blir svart. den bortglömda guden tycker inte om Tomas. Tomas tar 8 i skada och får −1 rustning tills nästa vila.",
             "k": "bad"
+          },
+          {
+            "t": "Ni följer stigen djupare in bland träden.",
+            "k": ""
           }
         ],
         "party": [
@@ -547,7 +537,7 @@
           "sally": 18,
           "egen-1793378426345": 28
         },
-        "dorrText": "Stigarna slingrar bort i dimman. Ingen av dem ser vänlig ut."
+        "dorrText": "Stigen är smal och leder bara vidare in."
       }
     ],
     "aktivRun": "rmvzoqn2jjne7",
