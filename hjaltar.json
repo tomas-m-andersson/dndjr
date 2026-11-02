@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:03:29.118Z",
+  "uppdaterad": "2026-11-02T20:03:45.414Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,11 +217,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649807207,
+    "tid": 1793649823530,
     "niva": {
       "ville": {
         "lvl": 3,
-        "xp": 1343
+        "xp": 1433
       },
       "svante": {
         "lvl": 3,
@@ -229,15 +229,15 @@
       },
       "tomas": {
         "lvl": 4,
-        "xp": 1673
+        "xp": 1763
       },
       "sally": {
         "lvl": 3,
-        "xp": 1029
+        "xp": 1119
       },
       "egen-1793378426345": {
         "lvl": 3,
-        "xp": 758
+        "xp": 848
       },
       "linda": {
         "lvl": 2,
@@ -444,7 +444,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -490,6 +490,14 @@
           {
             "t": "Under en lös sten ligger ett paket inslaget i tyg.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 76 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 90 XP.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -498,7 +506,7 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 38,
+        "guld": 114,
         "saker": [
           "Läkedryck",
           "Läkedryck",
