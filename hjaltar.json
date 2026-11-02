@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:03:04.158Z",
+  "uppdaterad": "2026-11-02T20:03:10.846Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649782203,
+    "tid": 1793649788939,
     "niva": {
       "ville": {
         "lvl": 3,
@@ -427,26 +427,22 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar sött, som blommor.",
-            "typ": "altare",
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "handlare",
             "kand": false
           },
           {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
-            "typ": "sovare",
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "Ljusbärerskan"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -467,6 +463,10 @@
           {
             "t": "Ljusen flammar upp. Ljusbärerskan välsignar er. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
+          },
+          {
+            "t": "Grenarna river i kläderna när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -504,7 +504,7 @@
           "sally": 18,
           "egen-1793378426345": 28
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Ni tittar på varandra. Någon måste bestämma."
       }
     ],
     "aktivRun": "rmvzoqn2jjne7",
