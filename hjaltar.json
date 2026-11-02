@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:04:45.615Z",
+  "uppdaterad": "2026-11-02T20:07:15.600Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,11 +217,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793649883704,
+    "tid": 1793650033556,
     "niva": {
       "ville": {
-        "lvl": 3,
-        "xp": 1433
+        "lvl": 4,
+        "xp": 1523
       },
       "svante": {
         "lvl": 3,
@@ -229,15 +229,15 @@
       },
       "tomas": {
         "lvl": 4,
-        "xp": 1763
+        "xp": 1853
       },
       "sally": {
         "lvl": 3,
-        "xp": 1119
+        "xp": 1209
       },
       "egen-1793378426345": {
         "lvl": 3,
-        "xp": 848
+        "xp": 938
       },
       "linda": {
         "lvl": 2,
@@ -428,7 +428,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det finns färskt blod på marken.",
@@ -438,15 +438,23 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "vattesjaman",
-            "giftspindel",
-            "giftspindel"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "170 guldmynt",
+              "v": 170
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            }
+          ]
         },
         "logg": [
           {
@@ -516,6 +524,18 @@
           {
             "t": "En kista står mitt i rummet. en vättesjaman och två giftspindlar har bestämt att den är deras.",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 90 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Ville har blivit starkare och är nu nivå 4! +6 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ingen vaktar skatten längre. Den är er.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -544,14 +564,14 @@
         "curse": {
           "tomas": 1
         },
-        "ara": 0,
+        "ara": 300,
         "start": 1793649732427,
         "nastaKand": false,
         "id": "rmvzoqn2jjne7",
         "startGuld": 38,
         "liv": {
           "tomas": 28,
-          "ville": 20,
+          "ville": 26,
           "sally": 18,
           "egen-1793378426345": 28
         },
