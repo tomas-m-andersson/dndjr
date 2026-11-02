@@ -5,17 +5,17 @@
 const GOSEDJUR={
  blackis:{namn:"Bläckis",djur:"Gul bläckfisk med åtta armar",agare:"Ville",
   rows:[
-   "....YYY....",
    "...YYYYY...",
-   "..YLLYYYY..",
+   "..YYYYYYY..",
+   "..YLYYYYY..",
    "..YWWYWWY..",
    "..YWEYWEY..",
-   "..YPYMYPY..",
-   "...YYYYY...",
+   "..YYYYYYY..",
+   "..YYYYYYY..",
    ".YY.Y.Y.YY.",
    "Y..YY.YY..Y",
    ".Y..Y.Y..Y."],
-  pal:{Y:"#ffd23d",L:"#fff3a0",W:"#ffffff",E:"#2a1a10",P:"#ff8fa0",M:"#c0602a"},
+  pal:{Y:"#ffd23d",L:"#fff3a0",W:"#ffffff",E:"#2a1a10"},
   attack:{id:"g_blackmoln",namn:"Bläckis: Bläckmoln",info:"Bläckis sprutar bläck på alla fiender. De får −3 på sina anfall i 2 rundor. Träffar alltid",
    typ:"status",alla:true,effekt:"svag",n:3,rundor:2,rop:"Bläckis sträcker ut alla åtta armarna och sprutar ett stort moln av bläck!"}}
 };
