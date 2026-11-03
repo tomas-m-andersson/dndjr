@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:56:53.395Z",
+  "uppdaterad": "2026-11-03T19:57:41.378Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735811344,
+    "tid": 1793735859359,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -223,11 +223,11 @@
       },
       "svante": {
         "lvl": 4,
-        "xp": 1574
+        "xp": 1844
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2633
+        "xp": 2903
       },
       "sally": {
         "lvl": 4,
@@ -248,7 +248,8 @@
       "isstav",
       "giftbage",
       "skuggstav",
-      "drakdrapare"
+      "drakdrapare",
+      "flammsvard"
     ],
     "utr": {
       "ville": {
@@ -427,7 +428,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -441,10 +442,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Kapitel 1 · Grottorna under Kråkberget",
-            "k": "sep"
-          },
           {
             "t": "Tomas och Svante klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
             "k": ""
@@ -576,26 +573,57 @@
           {
             "t": "Golvet skakar. Ur mörkret reser sig grottans härskare: ett bergstroll!",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 270 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 73 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Grottans härskare är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Flammsvärdet! Krigare kan nu välja det under Ändra. Bladet brinner: +1d6 eldskada.",
+            "k": "crit"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 134,
+        "guld": 207,
         "saker": [
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {
           "tomas": 1,
           "svante": 1
         },
         "curse": {},
-        "ara": 375,
+        "ara": 825,
         "start": 1793734749581,
         "nastaKand": false,
         "id": "rmw13cuq5cwvy",
@@ -605,7 +633,9 @@
           "svante": 2
         },
         "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
-        "bossFaktor": 1.1666666666666667
+        "bossFaktor": 1.1666666666666667,
+        "nyttVapen": "Flammsvärdet",
+        "nyttVapenId": "flammsvard"
       }
     ],
     "aktivRun": "rmw13cuq5cwvy",
@@ -788,7 +818,7 @@
         "magmaslem": 1,
         "spindel": 1,
         "levande_rustning": 2,
-        "troll": 1
+        "troll": 2
       }
     }
   }
