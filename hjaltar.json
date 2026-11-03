@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:51:05.395Z",
+  "uppdaterad": "2026-11-03T19:51:28.438Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735463471,
+    "tid": 1793735486524,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,10 +427,19 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "troll"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -559,6 +568,14 @@
           {
             "t": "Det finns ingen väg runt. Bakom nästa dörr väntar grottans härskare.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Grottans härskare",
+            "k": "sep"
+          },
+          {
+            "t": "Golvet skakar. Ur mörkret reser sig grottans härskare: ett bergstroll!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -587,7 +604,8 @@
           "tomas": 22,
           "svante": 18
         },
-        "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne."
+        "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
+        "bossFaktor": 1.1666666666666667
       }
     ],
     "aktivRun": "rmw13cuq5cwvy",
