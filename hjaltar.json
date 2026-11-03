@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:47:24.646Z",
+  "uppdaterad": "2026-11-03T19:47:35.953Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735242707,
+    "tid": 1793735253942,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -564,7 +564,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {
@@ -579,7 +578,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 31,
-          "svante": 9
+          "svante": 14
         },
         "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
       }
