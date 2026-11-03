@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:41:09.789Z",
+  "uppdaterad": "2026-11-03T19:41:27.917Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734867534,
+    "tid": 1793734885954,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -223,11 +223,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 1229
+        "xp": 1274
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2288
+        "xp": 2333
       },
       "sally": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Fladdermöss flyger ut ur öppningen.",
@@ -442,15 +442,23 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "fladdermus",
-            "fladdermus",
-            "fladdermus"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "113 guldmynt",
+              "v": 113
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            }
+          ]
         },
         "logg": [
           {
@@ -468,6 +476,14 @@
           {
             "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre jättefladdermöss.",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 45 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Nu är vägen fri till skatten.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -483,7 +499,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 75,
         "start": 1793734749581,
         "nastaKand": false,
         "id": "rmw13cuq5cwvy",
