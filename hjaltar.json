@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:48:14.791Z",
+  "uppdaterad": "2026-11-03T19:49:00.834Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735292808,
+    "tid": 1793735338805,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -597,7 +597,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 22,
-          "svante": 14
+          "svante": 6
         },
         "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret."
       }
