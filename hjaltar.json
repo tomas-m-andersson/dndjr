@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:47:03.016Z",
+  "uppdaterad": "2026-11-03T19:47:24.646Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735221100,
+    "tid": 1793735242707,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -438,7 +438,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": true,
@@ -543,6 +543,14 @@
           {
             "t": "En platta klickar. Flammor sprutar ur golvet!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas kastar sig undan lågorna!",
+            "k": "hit"
+          },
+          {
+            "t": "Svante bränns av lågorna: 8 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -571,7 +579,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 31,
-          "svante": 17
+          "svante": 9
         },
         "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
       }
