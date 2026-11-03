@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:46:53.751Z",
+  "uppdaterad": "2026-11-03T19:47:03.016Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735211849,
+    "tid": 1793735221100,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon har ristat en varning här.",
@@ -436,7 +436,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": true,
+            "varn": "En platta klickar. Flammor sprutar ur golvet!",
+            "ok": "kastar sig undan lågorna",
+            "traff": "bränns av lågorna"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -525,6 +535,14 @@
           {
             "t": "Vattnet plaskar runt era fötter när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "En platta klickar. Flammor sprutar ur golvet!",
+            "k": "bad"
           }
         ],
         "party": [
