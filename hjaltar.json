@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:38:28.303Z",
+  "uppdaterad": "2026-11-03T19:39:11.613Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793650436842,
+    "tid": 1793734749584,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -422,9 +422,62 @@
           "tomas": 26,
           "linda": 7
         }
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Fladdermöss flyger ut ur öppningen.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "vaktad",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas och Svante klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante"
+        ],
+        "guld": 20,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793734749581,
+        "nastaKand": false,
+        "id": "rmw13cuq5cwvy",
+        "startGuld": 20,
+        "liv": {
+          "tomas": 36,
+          "svante": 18
+        },
+        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar."
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmw13cuq5cwvy",
     "historik": [
       {
         "plats": "skogen",
