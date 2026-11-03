@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-02T20:14:16.243Z",
+  "uppdaterad": "2026-11-03T19:38:15.303Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -62,21 +62,20 @@
   ],
   "sallskap": [
     "tomas",
-    "ville",
     "sally",
     "egen-1793378426345"
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "attacker": [
         "eldklot",
         "frostblixt",
         "somnformel"
       ],
       "vapen": "skuggstav",
-      "folk": "manniska",
-      "alder": 7,
-      "skagg": false,
       "klass": "magiker",
       "hud": 0,
       "har": 5,
@@ -117,15 +116,15 @@
       }
     },
     "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "dubbelhugg",
         "virvelhugg",
         "skoldslag"
       ],
       "vapen": "drakdrapare",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "krigare",
       "hud": 1,
       "har": 2,
