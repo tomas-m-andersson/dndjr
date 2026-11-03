@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:47:41.163Z",
+  "uppdaterad": "2026-11-03T19:48:14.791Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735259265,
+    "tid": 1793735292808,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -446,7 +446,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "bjorn"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -555,6 +562,14 @@
           {
             "t": "Ni kryper vidare genom en trång spricka.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Stenar rasar från taket. Ur dammet kommer en grottbjörn!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -581,7 +596,7 @@
         "id": "rmw13cuq5cwvy",
         "startGuld": 20,
         "liv": {
-          "tomas": 31,
+          "tomas": 22,
           "svante": 14
         },
         "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret."
