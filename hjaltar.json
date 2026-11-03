@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:41:55.663Z",
+  "uppdaterad": "2026-11-03T19:42:13.541Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734913711,
+    "tid": 1793734931612,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "En mjuk sång hörs på avstånd.",
@@ -441,7 +441,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "Ljusbärerskan"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -482,6 +486,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
           }
         ],
         "party": [
