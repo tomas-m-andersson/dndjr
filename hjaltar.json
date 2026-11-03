@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:39:11.613Z",
+  "uppdaterad": "2026-11-03T19:39:57.641Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734749584,
+    "tid": 1793734795649,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Fladdermöss flyger ut ur öppningen.",
@@ -441,7 +441,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "fladdermus",
+            "fladdermus",
+            "fladdermus"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -450,6 +460,14 @@
           {
             "t": "Tomas och Svante klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre jättefladdermöss.",
+            "k": "bad"
           }
         ],
         "party": [
