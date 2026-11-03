@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:56:08.119Z",
+  "uppdaterad": "2026-11-03T19:56:53.395Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735766171,
+    "tid": 1793735811344,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -602,7 +602,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 16,
-          "svante": 11
+          "svante": 2
         },
         "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
         "bossFaktor": 1.1666666666666667
