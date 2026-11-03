@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:44:51.286Z",
+  "uppdaterad": "2026-11-03T19:46:23.119Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735089300,
+    "tid": 1793735181048,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -546,7 +546,7 @@
         "id": "rmw13cuq5cwvy",
         "startGuld": 20,
         "liv": {
-          "tomas": 36,
+          "tomas": 31,
           "svante": 17
         },
         "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
