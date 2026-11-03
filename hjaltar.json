@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:47:35.953Z",
+  "uppdaterad": "2026-11-03T19:47:41.163Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735253942,
+    "tid": 1793735259265,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -426,27 +426,27 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon har ristat en varning här.",
-            "typ": "falla",
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "brunn",
+            "kand": false
+          },
+          {
+            "ledtrad": "Golvet är alldeles för rent här.",
+            "typ": "altare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det luktar mögel och något surt.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": true,
-            "varn": "En platta klickar. Flammor sprutar ur golvet!",
-            "ok": "kastar sig undan lågorna",
-            "traff": "bränns av lågorna"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -551,6 +551,10 @@
           {
             "t": "Svante bränns av lågorna: 8 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Ni kryper vidare genom en trång spricka.",
+            "k": ""
           }
         ],
         "party": [
@@ -580,7 +584,7 @@
           "tomas": 31,
           "svante": 14
         },
-        "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
+        "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret."
       }
     ],
     "aktivRun": "rmw13cuq5cwvy",
