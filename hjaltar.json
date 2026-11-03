@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:39:57.641Z",
+  "uppdaterad": "2026-11-03T19:40:55.288Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734795649,
+    "tid": 1793734853230,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -490,7 +490,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 36,
-          "svante": 18
+          "svante": 17
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar."
       }
