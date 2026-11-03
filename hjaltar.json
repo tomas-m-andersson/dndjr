@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:43:16.865Z",
+  "uppdaterad": "2026-11-03T19:43:38.911Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734994979,
+    "tid": 1793735016991,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någonstans porlar vatten.",
@@ -446,7 +446,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "vatte",
+            "skelett"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -503,6 +512,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Ni ser en glittrande skatt. Framför den står en vätte och ett skelett.",
+            "k": "bad"
           }
         ],
         "party": [
