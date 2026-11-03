@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:49:00.834Z",
+  "uppdaterad": "2026-11-03T19:49:40.387Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735338805,
+    "tid": 1793735378317,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -582,7 +582,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {
@@ -597,7 +596,7 @@
         "startGuld": 20,
         "liv": {
           "tomas": 22,
-          "svante": 6
+          "svante": 13
         },
         "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret."
       }
