@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:42:13.541Z",
+  "uppdaterad": "2026-11-03T19:42:58.465Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793734931612,
+    "tid": 1793734976347,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -443,7 +443,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "Ljusbärerskan"
         },
         "logg": [
@@ -494,13 +494,17 @@
           {
             "t": "Ett altare med en staty av en kvinna som håller en lykta.",
             "k": "magic"
+          },
+          {
+            "t": "Guldet smälter och rinner ner i altaret. Ni känner er välsignade. Alla känner sig välsignade.",
+            "k": "magic"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 133,
+        "guld": 13,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -509,7 +513,10 @@
           "Läkedryck",
           "Läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "tomas": 1,
+          "svante": 1
+        },
         "curse": {},
         "ara": 75,
         "start": 1793734749581,
