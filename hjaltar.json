@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:46:37.564Z",
+  "uppdaterad": "2026-11-03T19:46:49.788Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,7 +215,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735195630,
+    "tid": 1793735207885,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -223,11 +223,11 @@
       },
       "svante": {
         "lvl": 3,
-        "xp": 1334
+        "xp": 1454
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2393
+        "xp": 2513
       },
       "sally": {
         "lvl": 4,
@@ -448,7 +448,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -538,14 +538,27 @@
           {
             "t": "Ingen vaktar skatten längre. Den är er.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 121 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 120 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 13,
+        "guld": 134,
         "saker": [
+          "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
