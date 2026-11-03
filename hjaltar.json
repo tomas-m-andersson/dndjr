@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-03T19:50:13.886Z",
+  "uppdaterad": "2026-11-03T19:50:50.398Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -215,19 +215,19 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735411823,
+    "tid": 1793735448405,
     "niva": {
       "ville": {
         "lvl": 4,
         "xp": 1958
       },
       "svante": {
-        "lvl": 3,
-        "xp": 1454
+        "lvl": 4,
+        "xp": 1574
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2513
+        "xp": 2633
       },
       "sally": {
         "lvl": 4,
@@ -427,7 +427,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -448,7 +448,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "bjorn"
           ],
@@ -570,6 +570,14 @@
           {
             "t": "Stenar rasar från taket. Ur dammet kommer en grottbjörn!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 120 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Svante är nu nivå 4! +5 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -589,14 +597,14 @@
           "svante": 1
         },
         "curse": {},
-        "ara": 175,
+        "ara": 375,
         "start": 1793734749581,
         "nastaKand": false,
         "id": "rmw13cuq5cwvy",
         "startGuld": 20,
         "liv": {
           "tomas": 22,
-          "svante": 13
+          "svante": 18
         },
         "dorrText": "Tunneln delar sig. Vatten droppar någonstans i mörkret."
       }
