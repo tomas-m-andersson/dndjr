@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:48:08.507Z",
+  "uppdaterad": "2026-11-04T19:48:25.300Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821686508,
+    "tid": 1793821703373,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon viskar.",
@@ -445,7 +445,17 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
+            "vem": "spelmannen",
+            "ok": "Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
+            "nej": "Spelmannen sjunger bara en sorglig visa.",
+            "dryck": "Spelmannen dricker, stämmer fiolen och spelar en visa om allt han sett."
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -510,6 +520,14 @@
           {
             "t": "Tomas håller andan och lyssnar länge. Varje dörr har sitt eget ljud.",
             "k": "hit"
+          },
+          {
+            "t": "Rum 4 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
+            "k": ""
           }
         ],
         "party": [
