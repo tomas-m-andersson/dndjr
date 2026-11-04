@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:54:17.214Z",
+  "uppdaterad": "2026-11-04T19:55:32.145Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,27 +218,27 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793822055194,
+    "tid": 1793822130049,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2153
+        "xp": 2483
       },
       "svante": {
         "lvl": 4,
         "xp": 1844
       },
       "tomas": {
-        "lvl": 4,
-        "xp": 3098
+        "lvl": 5,
+        "xp": 3428
       },
       "sally": {
         "lvl": 4,
-        "xp": 1839
+        "xp": 2169
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 1568
+        "xp": 1898
       },
       "linda": {
         "lvl": 2,
@@ -252,7 +252,8 @@
       "giftbage",
       "skuggstav",
       "drakdrapare",
-      "flammsvard"
+      "flammsvard",
+      "eldbage"
     ],
     "utr": {
       "ville": {
@@ -431,7 +432,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -544,6 +545,38 @@
           {
             "t": "Två stora ögon öppnas i mörkret. Det är en basilisk!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 210 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Tomas känner sig mäktigare. Nivå 5! +8 liv och bättre träffsäkerhet.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 154 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 120 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Grottans härskare är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Eldbågen! Bågskytt kan nu välja det under Ändra. Pilarna brinner: +1d6 eldskada.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -552,7 +585,7 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 41,
+        "guld": 195,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -561,23 +594,27 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 650,
+        "ara": 1350,
         "start": 1793821245779,
         "nastaKand": false,
         "id": "rmw2iurmbk2qh",
         "startGuld": 41,
         "liv": {
-          "tomas": 30,
+          "tomas": 38,
           "ville": 26,
           "sally": 23,
           "egen-1793378426345": 22
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
-        "bossFaktor": 1.3
+        "bossFaktor": 1.3,
+        "nyttVapen": "Eldbågen",
+        "nyttVapenId": "eldbage"
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
@@ -772,7 +809,8 @@
         "magmaslem": 1,
         "spindel": 1,
         "levande_rustning": 2,
-        "troll": 2
+        "troll": 2,
+        "basilisk": 1
       }
     }
   }
