@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:46:38.008Z",
+  "uppdaterad": "2026-11-04T19:47:14.615Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821596102,
+    "tid": 1793821632611,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -430,25 +430,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "strid",
+            "ledtrad": "Någon viskar.",
+            "typ": "resenar",
             "kand": false
           },
           {
-            "ledtrad": "En gammal sång nynnas, lite falskt.",
-            "typ": "handlare",
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "sovare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -505,6 +502,10 @@
           {
             "t": "En gammal dam med en kärra full av flaskor. – Bästa dryckerna i hela berget!",
             "k": "heal"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -537,7 +538,7 @@
           "sally": 23,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+        "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
