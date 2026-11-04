@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:48:25.300Z",
+  "uppdaterad": "2026-11-04T19:48:57.786Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821703373,
+    "tid": 1793821735809,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -447,7 +447,7 @@
         "lyssnat": true,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
             "vem": "spelmannen",
@@ -528,6 +528,10 @@
           {
             "t": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
             "k": ""
+          },
+          {
+            "t": "Sally pratar lugnt med spelmannen. Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
+            "k": "hit"
           }
         ],
         "party": [
@@ -551,7 +555,7 @@
         "curse": {},
         "ara": 650,
         "start": 1793821245779,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmw2iurmbk2qh",
         "startGuld": 41,
         "liv": {
