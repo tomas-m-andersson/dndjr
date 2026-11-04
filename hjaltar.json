@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:49:07.196Z",
+  "uppdaterad": "2026-11-04T19:49:22.349Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821745270,
+    "tid": 1793821760367,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar rök och stekt kött.",
@@ -445,7 +445,10 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -526,6 +529,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En lång, smal man i lila mantel. Han ler lite för mycket. – Jag har precis det ni behöver.",
+            "k": "heal"
           }
         ],
         "party": [
