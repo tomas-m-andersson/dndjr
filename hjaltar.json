@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:40:47.823Z",
+  "uppdaterad": "2026-11-04T19:41:34.662Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821245782,
+    "tid": 1793821292545,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Spindelväv täcker öppningen.",
@@ -445,7 +445,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "vattesjaman",
+            "vattesjaman"
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -454,6 +461,14 @@
           {
             "t": "Tomas, Ville, Sally och Benjamin tänder facklorna och kryper in i grottan under Kråkberget. Vatten droppar från taket.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Något stort sover i gången: två vättesjamaner.",
+            "k": "note"
           }
         ],
         "party": [
