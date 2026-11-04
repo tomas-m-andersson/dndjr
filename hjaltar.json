@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:53:12.063Z",
+  "uppdaterad": "2026-11-04T19:54:17.214Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821989962,
+    "tid": 1793822055194,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -574,7 +574,7 @@
           "tomas": 30,
           "ville": 26,
           "sally": 23,
-          "egen-1793378426345": 36
+          "egen-1793378426345": 22
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
         "bossFaktor": 1.3
