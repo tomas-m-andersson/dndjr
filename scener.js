@@ -25,7 +25,7 @@ function runScen(g,bild){
  S.glow=(x,y,rad,col,str=.45)=>S.ljus.push([x,y,rad,col,str]);
  S.dorrar=fas[0]==="d"?doorX(+fas.slice(1)||1):[];
  S.fritt=x=>S.dorrar.every(d=>Math.abs(d-x)>11);
- ({slottet:slott,grottorna:grotta,skogen:skog,vulkanen:vulkan}[plats]||grotta)(S);
+ ({slottet:slott,grottorna:grotta,skogen:skog,vulkanen:vulkan,herrgarden:herrgard}[plats]||grotta)(S);
  // ju djupare, desto mörkare
  g.fillStyle="rgba(4,3,10,"+Math.min(.45,.05+deep*.17)+")";g.fillRect(0,0,W,H);
  // ljuset från facklor, lava och kristaller lyser igenom mörkret
@@ -273,6 +273,74 @@ function vulkPort(S){const {R}=S,x=68;
 function vulkKrater(S){const {R}=S;
  for(let y=F+2;y<H;y++){const t=(y-F-2)/10,half=28-t*6;R(64-half,y,half*2,1,y%2?"#ff6a2b":"#ff8a2b")}R(42,F+3,10,1,"#ffd23d");R(70,F+6,12,1,"#ffd23d");
  S.glow(64,F+6,34,"#ff6a2b",.45);vulkDekor(S,"obsidian",30);vulkDekor(S,"obsidian",92);vulkDekor(S,"kedjor",50);vulkDekor(S,"kedjor",80)}
+
+/* =================== HEMSÖKTA HERRGÅRDEN =================== */
+// Kapitel 1: blekta tapeter, träpanel, damm och dimma längs golvet. Kapitel 2+: vinkällaren.
+function herrgard(S){
+ const {R,r,kap}=S,kallare=kap>=2;
+ if(kallare){const base="#2a2a2e",mort="#18181c";R(0,0,W,F,mort);
+  for(let y=1,row=0;y<F;y+=5,row++){const off=row%2?5:0;for(let x=-off;x<W;x+=10)R(x+1,y,9,4,lit(base,(r()-.5)*.18))}
+  for(let i=0;i<8;i++){const x=r()*W,y=4+r()*30;R(x,y,3,1,"#2f3a2a")}
+  R(0,F,W,H-F,"#26231f");for(let i=0;i<30;i++)R(r()*W,F+1+r()*(H-F-2),3+r()*5,1,"#1c1a17")}
+ else{
+  const tap=["#3a2c44","#2c3a3a","#3e2c2c"][Math.floor(r()*3)],mon=lit(tap,.12);
+  R(0,0,W,F,tap);for(let y=3;y<28;y+=6)for(let x=(y/6)%2?4:0;x<W;x+=8){S.P(x,y,mon);S.P(x-1,y+1,mon);S.P(x+1,y+1,mon);S.P(x,y+2,mon)} // tapetmönster
+  for(let i=0;i<5;i++){const x=r()*W;S.A(.35,()=>R(x,2+r()*10,4+r()*6,14+r()*10,lit(tap,-.3)))} // fläckar och fukt
+  R(0,28,W,F-28,"#4a3222");for(let x=0;x<W;x+=12){R(x,30,10,F-32,"#553a28");R(x,30,10,1,"#6b4a32")}R(0,28,W,2,"#6b4a32"); // träpanel
+  for(let y=F;y<H;y+=3)R(0,y,W,3,y%6?"#3e2a1c":"#46301f");for(let i=0;i<14;i++)R(r()*W,F+r()*(H-F),1,2,"#2a1c12"); // golvplankor
+ }
+ R(0,F,W,1,"#120c0a");
+ if(S.fas==="port")return herrPort(S);
+ if(S.fas==="boss")return herrSal(S);
+ const sorter=kallare?["kedjor","fat","fat","ljus","spindel","galler"]:["portratt","kandelaber","klocka","skynke","fonster","spegel","portratt","kandelaber"];
+ [8,26,44,62,80].filter(S.fritt).forEach((x,i)=>{if(r()<.25&&i)return;herrDekor(S,sorter[Math.floor(r()*sorter.length)],x)});
+ if(r()<.6)herrDekor(S,"spindel",r()<.5?0:W);
+ S.dorrar.forEach(x=>herrDorr(S,x,Math.floor(r()*4)));
+ if(S.fas==="rum"&&S.typ==="fange"){for(const x of[64,80]){S.R(x,10,1,2,"#6c7078");for(let y=12;y<26;y+=2){S.P(x,y,"#8a8e98");S.P(x+(y%4?1:0),y+1,"#5a5e66")}}}
+ if(S.fas==="rum"&&(S.typ==="skatt"||S.typ==="vaktad"))guldglitter(S,60,30);
+ dimma(S,F-4,4,.16+S.dd*.14,"#c8d4e0");dimma(S,F+2,3,.12+S.dd*.1,"#c8d4e0");
+ if(S.deep>.4&&r()<.7){const x=30+r()*60,y=12+r()*14;S.eld.push(()=>{S.A(.5,()=>{S.R(x,y,5,7,"#dfe8f0");S.R(x+1,y+7,1,2,"#dfe8f0");S.R(x+3,y+7,1,1,"#dfe8f0")});S.P(x+1,y+2,"#101018");S.P(x+3,y+2,"#101018")})} // en spöklik skepnad i bakgrunden
+}
+function herrDekor(S,k,x){const {R,r}=S;
+ if(k==="portratt"){R(x-5,6,11,14,"#8a6a2a");R(x-4,7,9,12,"#1d1820");R(x-2,9,5,5,"#c9b8a8");R(x-2,8,5,2,"#3a2a20");S.P(x-1,11,"#1a1010");S.P(x+1,11,"#1a1010");R(x-3,14,7,5,"#2a2a3a");
+  if(S.deep>.3){S.P(x-1,11,"#7fffd8");S.P(x+1,11,"#7fffd8");S.glow(x,11,4,"#7fffd8",.2)}}
+ else if(k==="kandelaber"){R(x,20,1,10,"#c9a227");R(x-3,20,7,1,"#c9a227");for(const dx of[-3,0,3]){R(x+dx,17,1,3,"#efe6d0");S.eld.push(()=>{S.P(x+dx,16,"#a8f0ff");S.P(x+dx,15,"#e8ffff")});S.glow(x+dx,15,6,"#8fe6ff",.25)}R(x-1,30,3,1,"#c9a227")}
+ else if(k==="klocka"){R(x-3,12,7,F-12,"#5a3a22");R(x-2,13,5,5,"#e8e0c8");S.P(x,15,"#1a1010");S.P(x+1,14,"#1a1010");R(x-2,20,5,F-24,"#3a2414");R(x,24,1,6,"#c9a227");R(x-1,30,3,2,"#c9a227")}
+ else if(k==="skynke"){// lakan över en gammal fåtölj
+   R(x-3,F-13,7,1,"#bfb9ac");R(x-4,F-12,9,2,"#d8d3c8");R(x-5,F-10,11,4,"#d8d3c8");R(x-6,F-6,13,6,"#cfcabd");
+   R(x-6,F-7,2,7,"#bdb7a9");R(x+5,F-7,2,7,"#bdb7a9");R(x-5,F-8,11,1,"#b3ad9f");
+   [-3,0,3].forEach(o=>R(x+o,F-5,1,5,"#b3ad9f"));R(x-2,F-11,3,1,"#efeae0");
+   for(let i=-6;i<7;i+=2)S.P(x+i,F-1,"#a8a398")}
+ else if(k==="fonster"){valv(S,x,6,10,"#3a4258",24);valv(S,x,7,8,"#141c30",23);R(x,7,1,16,"#3a4258");R(x-4,15,8,1,"#3a4258");R(x+2,9,2,1,"#5a6a88");S.P(x-2,12,"#cfe2ff");ljusstrale(S,x-3,5,"#cfe2ff",.07);
+  R(x-6,6,2,18,"#5a2020");R(x+5,6,2,18,"#5a2020")}
+ else if(k==="spegel"){R(x-4,8,9,13,"#c9a227");R(x-3,9,7,11,"#6a7a8a");S.A(.6,()=>{R(x-1,11,3,6,"#dfe8f0")});S.P(x,12,"#101018");S.P(x+1,12,"#101018")}
+ else if(k==="spindel"){const v=x===0?1:-1,x0=x===0?0:W-1;S.A(.5,()=>{for(let i=0;i<10;i++){S.P(x0+v*i,1,"#c9c2d6");S.P(x0,1+i,"#c9c2d6");S.P(x0+v*i,1+i,"#c9c2d6")}for(let k2=3;k2<10;k2+=3)for(let i=0;i<=k2;i++)S.P(x0+v*i,1+k2-i,"#c9c2d6")})}
+ else if(k==="kedjor"){for(const dx of[-3,3]){for(let y=2;y<22;y+=2){S.P(x+dx,y,"#6c7078");S.P(x+dx+(y%4?1:0),y+1,"#4a4e56")}R(x+dx-1,22,3,2,"#6c7078")}}
+ else if(k==="fat"){R(x-5,F-12,11,12,"#6b4423");R(x-5,F-12,11,1,"#8a5a2b");R(x-5,F-8,11,1,"#3a3a40");R(x-5,F-3,11,1,"#3a3a40");R(x-1,F-7,2,2,"#2a1a10")}
+ else if(k==="ljus"){R(x,F-6,2,6,"#efe6d0");S.eld.push(()=>{S.P(x,F-7,"#ffd96a");S.P(x+1,F-8,"#fff3c0")});S.glow(x+1,F-7,8,"#ffd96a",.3)}
+ else if(k==="galler"){R(x-5,6,10,8,"#0b0a0c");for(let i=-4;i<5;i+=2)R(x+i,6,1,8,"#6c7078");R(x-5,6,10,1,"#6c7078");S.glow(x,10,8,"#9ab8e8",.15)}
+}
+function herrDorr(S,x,v){const {R}=S,top=F-24;
+ R(x-7,top-2,14,F-top+2,"#3a2414");R(x-7,top-2,14,2,"#6b4a32");
+ if(v===2){R(x-6,top,12,F-top,"#08070a");for(let i=0;i<6;i++){R(x-5+i,F-2-i*3,11-i,1,"#5a3a22");R(x+5-i,F-2-i*3,1,3,"#3a2414")} return} // trappa upp
+ if(v===3){R(x-6,top,12,F-top,"#06060a");S.glow(x,F-8,8,"#7fffb0",.25);return} // öppen och mörk
+ R(x-6,top,12,F-top,"#5a3a22");for(let yy=top+2;yy<F-2;yy+=7){R(x-5,yy,4,5,"#4a2e1a");R(x+1,yy,4,5,"#4a2e1a")}S.P(x+3,F-12,"#c9a227");S.P(x+3,F-11,"#8a6a2a");
+ if(v===1){R(x+2,top+1,4,F-top-1,"#07060a");S.glow(x+4,F-8,7,"#7fffb0",.25)} // på glänt, ett grönt sken
+}
+function herrPort(S){const {R}=S,x=66;
+ R(x-16,6,32,F-6,"#2a1a10");R(x-16,6,32,2,"#8a6a2a");R(x-14,9,28,F-9,"#4a2e1a");R(x,9,1,F-9,"#1d1209");
+ for(const dx of[-10,4])for(let yy=12;yy<F-2;yy+=9){R(x+dx,yy,6,7,"#3a2414");R(x+dx,yy,6,1,"#5a3a22")}
+ R(x-3,4,7,6,"#d8d2c0");S.P(x-2,6,"#101018");S.P(x+2,6,"#101018");R(x-1,9,3,1,"#d8d2c0"); // skalle över dörren
+ R(x-4,26,2,3,"#c9a227");R(x+3,26,2,3,"#c9a227");
+ herrDekor(S,"kandelaber",44);herrDekor(S,"kandelaber",88);
+ S.glow(x,F-2,18,"#7fffb0",.3);S.A(.35,()=>{for(let i=0;i<14;i++)R(x-14+i*2,F-1-(i%3),3,2,"#c8f0e0")})}
+function herrSal(S){const {R}=S;
+ // balsalen: kristallkrona, schackrutigt golv och höga fönster
+ for(let y=F;y<H;y+=3)for(let x=(y-F)%6?0:4;x<W;x+=8){R(x,y,4,3,"#d8d3c8");R(x+4,y,4,3,"#3a3540")}
+ herrDekor(S,"fonster",14);herrDekor(S,"fonster",90);herrDekor(S,"portratt",36);
+ R(62,0,1,6,"#8a8e98");R(52,6,21,2,"#c9a227");R(56,8,13,1,"#c9a227");for(const dx of[-9,-4,0,4,9]){R(62+dx,4,1,2,"#efe6d0");S.eld.push(()=>S.P(62+dx,3,"#a8f0ff"));S.glow(62+dx,3,7,"#8fe6ff",.25)}
+ for(let i=0;i<7;i++)S.P(54+i*2,9+(i%2),"#cfe8ff");
+ dimma(S,F-6,5,.25,"#c8d4e0");dimma(S,F,4,.2,"#c8d4e0")}
 
 window.runScen=runScen;
 })();

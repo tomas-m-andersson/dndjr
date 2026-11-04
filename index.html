@@ -1500,6 +1500,9 @@ const SPR={
  mork_riddare:{hero:{folk:"manniska",klass:"krigare",alder:40,hud:4,har:9,stil:"kort",klader:5,vapen:"tvahandssvard"}},
  vampyr:{hero:{folk:"manniska",klass:"bard",alder:40,hud:0,har:9,stil:"kort",klader:3,vapen:"varja"}},
  eldprast:{hero:{folk:"manniska",klass:"helare",alder:50,hud:2,har:7,stil:"kal",klader:3,vapen:"morgonstjarna",skagg:true}},
+ irrbloss:{rows:["...C...","..CWC..",".CWWWC.","CWWWWWC","CWYWYWC","CWWWWWC",".CWWWC.","..CCC..","...C..."],pal:{C:"#5ac8f0",W:"#dff8ff",Y:"#1a3a5a"}},
+ dimvasen:{rows:["....DDDD....","...DDDDDD...","..DDYDDYDD..","..DDDDDDDD..","..DDDOODDD..",".DDDDDDDDDD.","DD.DDDDDD.DD","D..DDDDDD..D","d..DDDDDD..d","...dDDDDd...","....dDDd....",".....dd.....","......d....."],pal:{D:"#b8c4d0",d:"#7a8898",Y:"#2a3448",O:"#2a3448"}},
+ dimfrun:{rows:["....HHHHH....","...HHHHHHH...","...HHHHHHH...","....FFFFF....","....FYFYF....","....FFFFF....",".....FMF.....","......F......","...GGGGGGG...","..GGGGLGGGG..",".FGGGGLGGGGF.","F.GGGGLGGGG.F","..GGGGGGGGG..","..GGGGGGGGG..",".GGGGGGGGGGG.",".GGGGGGGGGGG.","GGGGGGGGGGGGG","GgGGgGGGgGGgG","g.g.g.G.g.g.g","......g......"],pal:{H:"#9aa8c0",F:"#dfe8f0",Y:"#7fffd8",M:"#5a6a80",G:"#8aa0c0",L:"#dfe8f0",g:"#5a7090"}},
  drake:{rows:["...RR...........","..RRRR..........",".RRRYR......WW..","RRRRRRR....WWWW.","....RRRR..WWWWWW",".....RRRRRWWWWW.",".....RRRRRRRWW..","....RRRRRRRR....","....RRRBBBBRR...","....RRRBBBBRRR..",".....RRRRRRR.RR.",".....RR...RR..RR",".....RR...RR...R"],pal:{R:"#e0603a",Y:"#ffe14d",W:"#f2a65a",B:"#f7d77f"}}
 };
 /* --- Monstrens vapen ---
@@ -1686,6 +1689,9 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  right.forEach(f=>{if(f.k==="greta"){x-=15;npc(GRETA,x);g.fillStyle="#6b4a2e";g.fillRect(x+2,TVH-13,1,13);g.fillRect(x+1,TVH-13,2,1);return}
   if(f.k==="bo"){x-=15;npc(BO,x);return}
   if(f.k==="handlare"){x-=17;npc(HANDLARE,x);g.fillStyle="#6b4a2e";g.fillRect(x+11,TVH-14,5,8);g.fillStyle="#4e3420";g.fillRect(x+11,TVH-14,5,1);g.fillRect(x+11,TVH-10,5,1);return}
+  if(f.k==="fange"){x-=17;const fh=(spel.run&&spel.run.rum&&spel.run.rum.fangeHero)||RESENAR;npc(fh,x);
+   g.fillStyle="#8a8e98";for(const [hx,wx] of[[x+2,x],[x+13,x+15]])for(let yy=TVH-34;yy<TVH-13;yy+=2){const p=(yy-(TVH-34))/21;g.fillRect(Math.round(wx+(hx-wx)*p),yy,1,1)}
+   g.fillStyle="#5a5e66";g.fillRect(x+1,TVH-14,3,2);g.fillRect(x+12,TVH-14,3,2);g.fillRect(x+3,TVH-2,10,1);return}
   if(f.k==="resenar"){x-=18;g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
   const z0=sprSize(f.k),fs=f.f||1,w=Math.round(z0.w*fs),h=Math.round(z0.h*fs);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
@@ -2202,7 +2208,9 @@ const PLATSER={
  skogen:{namn:"Mörkskogen",bild:"skog",besk:"Månsken, dimma och ögon mellan träden.",in:"lämnar vägen och kliver in i den mörka skogen",djupare:"en igenvuxen stig som leder djupare in i skogen",boss:"Skogens mörker",
   delning:["Stigen delar sig mellan de gamla träden. Något prasslar.","Stigarna slingrar bort i dimman. Ingen av dem ser vänlig ut.","En uggla hoar. Stigarna framför er försvinner i mörkret."]},
  vulkanen:{namn:"Drakvulkanen",bild:"vulkan",besk:"Lava, svavel och det farligaste av allt. Bäst för hjältar på högre nivå.",in:"tar ett djupt andetag och kliver in genom den heta porten",djupare:"en bro av kedjor över lavan som leder djupare ner",boss:"Vulkanens väktare",
-  delning:["Marken spricker upp i flera brinnande stigar.","Röken driver över vägskälet. Alla vägar luktar svavel.","Kedjor skramlar längre fram. Vägen delar sig i hettan."]}};
+  delning:["Marken spricker upp i flera brinnande stigar.","Röken driver över vägskälet. Alla vägar luktar svavel.","Kedjor skramlar längre fram. Vägen delar sig i hettan."]},
+ herrgarden:{namn:"Hemsökta herrgården",kort:"Herrgården",bild:"herrgard",besk:"Spöken, skuggor och dimma i en gammal herrgård. Någonstans sitter fångar i kedjor som behöver räddas.",in:"knuffar upp de rostiga grindarna och går in i den hemsökta herrgården",djupare:"en knarrande trappa ner till den mörka vinkällaren",boss:"Herrgårdens fru",
+  delning:["Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.","Dimman ringlar längs golvet där gångarna möts.","En dörr slår igen långt bort. Vägen delar sig."]}};
 const DELNING=["Vägen delar sig. Varje väg döljer något olika.","Ni stannar där vägen delar sig. Vilken känns rätt?","Ledtrådarna säger lite, men inte allt.","Ni kan lyssna först. Men gör det tyst."];
 
 /* --- monster: xp avgör hur farliga de är --- */
@@ -2211,7 +2219,7 @@ const DELNING=["Vägen delar sig. Varje väg döljer något olika.","Ni stannar 
    bedova (chans att bedöva vid träff), drana (helar sig på skadan den gör),
    helar (helar en skadad vän i stället för att anfalla), sprangs (exploderar när den besegras). */
 const MONSTER={
- fladdermus:{namn:"Jättefladdermus",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","slottet","skogen"],flyr:"fladdrar iväg ut i mörkret."},
+ fladdermus:{namn:"Jättefladdermus",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","slottet","skogen","herrgarden"],flyr:"fladdrar iväg ut i mörkret."},
  ratta:{namn:"Jätteråtta",liv:7,rustning:12,anfall:4,skada:"1d4+2",xp:25,platser:["grottorna","slottet"],flyr:"piper och försvinner ner i ett hål.",egen:{gift:"1d2"}},
  kobold:{namn:"Kobold",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","vulkanen"],flyr:"gnyr och kryper in i en spricka."},
  krakor:{namn:"Kråksvärm",liv:8,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["skogen","slottet"],flyr:"skingras åt alla håll med hesa skrin."},
@@ -2221,21 +2229,21 @@ const MONSTER={
  vildsvin:{namn:"Vildsvin",liv:13,rustning:12,anfall:4,skada:"1d6+2",xp:50,platser:["skogen"],flyr:"grymtar och rusar in i snåren."},
  bandit:{namn:"Bandit",liv:11,rustning:12,anfall:4,skada:"1d6+2",xp:50,platser:["skogen","slottet"],flyr:"kastar sin kniv och springer sin väg."},
  svampman:{namn:"Svampman",liv:12,rustning:11,anfall:4,skada:"1d6",xp:50,platser:["grottorna","skogen"],flyr:"sjunker ihop i ett moln av sporer.",egen:{gift:"1d4"}},
- vampyrfladdermus:{namn:"Vampyrfladdermus",liv:9,rustning:13,anfall:4,skada:"1d6+1",xp:50,platser:["slottet","grottorna"],flyr:"skriker gällt och flyger iväg.",egen:{drana:true}},
- skuggling:{namn:"Skuggling",liv:10,rustning:12,anfall:4,skada:"1d6+2",xp:100,platser:["slottet","vulkanen"],flyr:"löses upp som rök."},
+ vampyrfladdermus:{namn:"Vampyrfladdermus",liv:9,rustning:13,anfall:4,skada:"1d6+1",xp:50,platser:["slottet","grottorna","herrgarden"],flyr:"skriker gällt och flyger iväg.",egen:{drana:true}},
+ skuggling:{namn:"Skuggling",liv:10,rustning:12,anfall:4,skada:"1d6+2",xp:100,platser:["slottet","vulkanen","herrgarden"],flyr:"löses upp som rök."},
  eldimp:{namn:"Eldimp",liv:12,rustning:13,anfall:5,skada:"1d6+3",xp:100,platser:["vulkanen"],flyr:"fräser och slocknar som en tändsticka.",egen:{sprangs:"1d6"}},
- spoke:{namn:"Spöke",liv:14,rustning:12,anfall:5,skada:"1d8",xp:100,platser:["slottet"],flyr:"suckar och bleknar bort.",egen:{drana:true}},
+ spoke:{namn:"Spöke",liv:14,rustning:12,anfall:5,skada:"1d8",xp:100,platser:["slottet","herrgarden"],flyr:"suckar och bleknar bort.",egen:{drana:true}},
  vattesjaman:{namn:"Vättesjaman",liv:12,rustning:12,anfall:4,skada:"1d6+1",xp:100,platser:["skogen","grottorna"],flyr:"tappar sin trumma och springer.",egen:{helar:"2d4+2"}},
  kultist:{namn:"Kultist",liv:14,rustning:12,anfall:5,skada:"1d8",xp:100,platser:["slottet","vulkanen"],flyr:"mumlar en sista bön och faller.",egen:{bedova:.2}},
  askskelett:{namn:"Askskelett",liv:15,rustning:13,anfall:5,skada:"1d6+3",xp:100,platser:["vulkanen"],flyr:"faller ihop i ett moln av glödande aska.",egen:{sprangs:"1d6"}},
- dimvarg:{namn:"Dimvarg",liv:16,rustning:14,anfall:5,skada:"2d4+2",xp:100,platser:["skogen"],flyr:"löses upp i dimman."},
+ dimvarg:{namn:"Dimvarg",liv:16,rustning:14,anfall:5,skada:"2d4+2",xp:100,platser:["skogen","herrgarden"],flyr:"löses upp i dimman."},
  giftspindel:{namn:"Giftspindel",liv:12,rustning:13,anfall:5,skada:"1d6",xp:100,platser:["skogen","grottorna"],flyr:"kryper ihop och slutar röra sig.",egen:{gift:"1d4"}},
  spindel:{namn:"Jättespindel",liv:20,rustning:14,anfall:5,skada:"1d8+3",xp:200,platser:["grottorna","skogen"],flyr:"kryper ihop och slutar röra sig.",egen:{gift:"1d4"}},
  slem:{namn:"Slemkub",liv:30,rustning:8,anfall:4,skada:"3d6",xp:200,platser:["grottorna"],flyr:"rinner ut över golvet och blir en pöl."},
  krak:{namn:"Vättehövding",liv:24,rustning:15,anfall:5,skada:"1d8+2",xp:200,platser:["skogen","grottorna"],flyr:"vrålar av ilska och flyr."},
  orm:{namn:"Jätteorm",liv:24,rustning:13,anfall:5,skada:"1d8+2",xp:200,platser:["skogen","grottorna"],flyr:"slingrar sig bort mellan stenarna.",egen:{gift:"1d6"}},
  bjorn:{namn:"Grottbjörn",liv:30,rustning:12,anfall:5,skada:"1d8+3",xp:200,platser:["skogen","grottorna"],flyr:"brummar och lunkar iväg.",egen:{tva:true}},
- levande_rustning:{namn:"Levande rustning",liv:28,rustning:18,anfall:5,skada:"1d8+3",xp:200,platser:["slottet"],flyr:"rasar ihop i en hög med plåt."},
+ levande_rustning:{namn:"Levande rustning",liv:28,rustning:18,anfall:5,skada:"1d8+3",xp:200,platser:["slottet","herrgarden"],flyr:"rasar ihop i en hög med plåt."},
  rovarhovding:{namn:"Rövarhövding",liv:28,rustning:14,anfall:5,skada:"1d8+2",xp:200,platser:["skogen"],flyr:"svär och flyr ut i skogen.",egen:{tva:true}},
  magmaslem:{namn:"Magmaslem",liv:28,rustning:9,anfall:4,skada:"2d6+2",xp:200,platser:["vulkanen"],flyr:"stelnar till svart sten.",egen:{sprangs:"2d6"}},
  eldsalamander:{namn:"Eldsalamander",liv:24,rustning:14,anfall:5,skada:"1d8+2",xp:200,platser:["vulkanen"],flyr:"kryper ner i lavan.",egen:{gift:"1d6"}},
@@ -2244,17 +2252,20 @@ const MONSTER={
  gargoyl:{namn:"Gargoyl",liv:40,rustning:17,anfall:6,skada:"1d10+3",xp:450,platser:["slottet","vulkanen"],flyr:"stelnar och blir en vanlig staty igen."},
  haxa:{namn:"Häxa",liv:36,rustning:13,anfall:6,skada:"2d6+2",xp:450,platser:["skogen"],flyr:"flyger iväg på sin kvast med ett skrattande skrik.",egen:{gift:"1d6",helar:"2d6"}},
  varulv:{namn:"Varulv",liv:42,rustning:13,anfall:6,skada:"1d10+3",xp:450,platser:["skogen"],flyr:"ylar mot månen och försvinner.",egen:{regen:4,tva:true}},
- nekromantiker:{namn:"Nekromantiker",liv:34,rustning:12,anfall:6,skada:"2d6+2",xp:450,platser:["slottet"],flyr:"försvinner i en virvel av svart rök.",egen:{helar:"3d6"}},
+ nekromantiker:{namn:"Nekromantiker",liv:34,rustning:12,anfall:6,skada:"2d6+2",xp:450,platser:["slottet","herrgarden"],flyr:"försvinner i en virvel av svart rök.",egen:{helar:"3d6"}},
  eldprast:{namn:"Eldpräst",liv:38,rustning:15,anfall:6,skada:"2d6+2",xp:450,platser:["vulkanen"],flyr:"faller på knä och ber om nåd.",egen:{helar:"2d6+2"}},
- spokriddare:{namn:"Spökriddare",liv:40,rustning:16,anfall:6,skada:"1d10+3",xp:700,platser:["slottet"],flyr:"faller sönder i en hög med rostig rustning."},
+ spokriddare:{namn:"Spökriddare",liv:40,rustning:16,anfall:6,skada:"1d10+3",xp:700,platser:["slottet","herrgarden"],flyr:"faller sönder i en hög med rostig rustning."},
  grottroll:{namn:"Grottroll",liv:58,rustning:13,anfall:7,skada:"2d8+3",xp:700,platser:["grottorna"],flyr:"rasar ihop och blir till sten.",egen:{regen:5}},
  basilisk:{namn:"Basilisk",liv:52,rustning:15,anfall:7,skada:"2d6+3",xp:700,platser:["grottorna"],flyr:"blundar och kryper ner i en spricka.",egen:{bedova:.3}},
  mork_riddare:{namn:"Mörk riddare",liv:55,rustning:17,anfall:7,skada:"2d6+3",xp:700,platser:["slottet"],flyr:"faller på knä. Hjälmen rullar iväg. Den är tom.",egen:{tva:true}},
- skuggan:{namn:"Skuggan",liv:50,rustning:13,anfall:6,skada:"2d6+2",xp:1100,platser:["slottet","vulkanen"],flyr:"skriker och löses upp i tusen svarta trådar.",egen:{drana:true}},
+ skuggan:{namn:"Skuggan",liv:50,rustning:13,anfall:6,skada:"2d6+2",xp:1100,platser:["slottet","vulkanen","herrgarden"],flyr:"skriker och löses upp i tusen svarta trådar.",egen:{drana:true}},
  vampyr:{namn:"Vampyrgreven",liv:70,rustning:15,anfall:7,skada:"2d8+3",xp:1100,platser:["slottet"],flyr:"förvandlas till en fladdermus och flyger ut genom fönstret.",egen:{drana:true,regen:3}},
  ent:{namn:"Trädväktaren",liv:85,rustning:15,anfall:7,skada:"2d8+4",xp:1100,platser:["skogen"],flyr:"sjunker ner i marken och slår rot.",egen:{regen:6}},
  jattemask:{namn:"Jättemasken",liv:80,rustning:13,anfall:7,skada:"2d8+4",xp:1100,platser:["grottorna"],flyr:"gräver ner sig så snabbt att hela grottan skakar.",egen:{bedova:.25}},
  golem:{namn:"Obsidiangolemen",liv:75,rustning:18,anfall:7,skada:"2d8+3",xp:1100,platser:["vulkanen"],flyr:"spricker i tusen svarta skärvor."},
+ irrbloss:{namn:"Irrbloss",liv:5,rustning:13,anfall:4,skada:"1d4+1",xp:25,platser:["herrgarden"],flyr:"slocknar med ett litet pling."},
+ dimvasen:{namn:"Dimväsen",liv:10,rustning:12,anfall:4,skada:"1d6+1",xp:50,platser:["herrgarden"],flyr:"löses upp i tunna dimslöjor.",egen:{bedova:.15}},
+ dimfrun:{namn:"Grevinnan Dimma",liv:66,rustning:14,anfall:7,skada:"2d8+2",xp:1100,platser:["herrgarden"],flyr:"suckar djupt och försvinner genom väggen. Herrgården blir alldeles tyst.",egen:{drana:true,bedova:.2}},
  eldklo:{namn:"Eldklo, den unga draken",liv:75,rustning:17,anfall:7,skada:"2d8+4",xp:1800,platser:["vulkanen"],flyr:"vrålar, slår med vingarna och flyger ut genom vulkanens topp.",egen:{tva:true}}};
 /* --- Monsterbiblioteket --- */
 const MON_BESK={
@@ -2302,6 +2313,9 @@ const MON_BESK={
  ent:"Ett levande träd, äldre än skogen själv. Rötterna läker hans sår.",
  jattemask:"En mask så stor att den gräver tunnlar i berget. När den rör sig skakar hela grottan.",
  golem:"En jätte av svart glas, skapad av vulkanens hetta. Nästan omöjlig att skada.",
+ irrbloss:"Ett litet blått sken som svävar i mörkret och lockar vilsna besökare fel.",
+ dimvasen:"En varelse av grå dimma med mörka hål till ögon. Den som rör vid den kan bli alldeles omtöcknad.",
+ dimfrun:"Herrgårdens fru, som aldrig lämnade sitt hem. Hon svävar i en klänning av dimma, stjäl liv och kan göra hjältar omtöcknade.",
  eldklo:"En ung röd drake som hugger två gånger. Det farligaste monstret av dem alla."};
 // Hur farligt är monstret? (efter hur mycket XP det ger)
 const FARA=[[25,1,"Lätt"],[50,2,"Ganska lätt"],[100,3,"Medel"],[200,4,"Farlig"],[450,5,"Mycket farlig"],[700,6,"Livsfarlig"],[1100,7,"Bossnivå"],[1800,8,"Legendarisk"]];
@@ -2318,7 +2332,7 @@ function monsterBibliotek(){
  view="bibliotek";lage=null;tyst();app.replaceChildren();document.getElementById("party").hidden=true;
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Monsterbibliotek")));
  app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i spelet, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
- const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.namn.split(" ")[0]])];
+ const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.kort||P.namn.split(" ")[0]])];
  app.append(el("div",{class:"pills"},val.map(([k,n])=>el("button",{class:"pill"+(bibPlats===k?" sel":""),"aria-pressed":bibPlats===k?"true":"false",onclick:()=>{bibPlats=k;const y=window.scrollY;monsterBibliotek();window.scrollTo(0,y)}},n))));
  const lista=Object.keys(MONSTER).filter(k=>bibPlats==="alla"||MONSTER[k].platser.includes(bibPlats)).sort((a,b)=>MONSTER[a].xp-MONSTER[b].xp||MONSTER[a].namn.localeCompare(MONSTER[b].namn,"sv"));
  app.append(el("div",{class:"mgrid"},lista.map(k=>{const M=MONSTER[k],f=faraAv(M);
@@ -2327,7 +2341,7 @@ function monsterBibliotek(){
  window.scrollTo(0,0);
 }
 function monsterInfo(k){const M=MONSTER[k],f=faraAv(M),m=document.getElementById("modal"),close=()=>m.replaceChildren();
- const boss=Object.entries(BOSSAR).filter(([,l])=>l.includes(k)).map(([p])=>PLATSER[p].namn.split(" ")[0]);
+ const boss=Object.entries(BOSSAR).filter(([,l])=>l.includes(k)).map(([p])=>PLATSER[p].kort||PLATSER[p].namn.split(" ")[0]);
  const sh=el("div",{class:"sheet",role:"dialog","aria-modal":"true","aria-label":M.namn},
   el("div",{class:"tvbig"},monsterBild(k)),
   el("div",{class:"minfo"},el("h2",{},M.namn),el("span",{class:"fara f"+f[1]},"Fara: "+f[2]+" ("+f[1]+" av 8)"),el("p",{},MON_BESK[k]||""),
@@ -2342,7 +2356,8 @@ function monsterInfo(k){const M=MONSTER[k],f=faraAv(M),m=document.getElementById
 const BOSSAR={slottet:["vampyr","skuggan","mork_riddare","spokriddare","nekromantiker","gargoyl","levande_rustning"],
  grottorna:["jattemask","grottroll","basilisk","troll","bjorn","slem","krak","spindel"],
  skogen:["ent","varulv","haxa","troll","rovarhovding","bjorn","krak","spindel"],
- vulkanen:["eldklo","golem","skuggan","eldprast","lavahund","gargoyl","magmaslem"]};
+ vulkanen:["eldklo","golem","skuggan","eldprast","lavahund","gargoyl","magmaslem"],
+ herrgarden:["dimfrun","skuggan","spokriddare","nekromantiker","levande_rustning"]};
 // XP-budget per hjälte och nivå: lätt, medel, svår, mycket svår (som i D&D)
 const XPB={1:[25,50,75,100],2:[50,100,150,200],3:[75,150,225,400],4:[125,250,375,500],5:[250,500,750,1100],6:[300,600,900,1400],7:[350,750,1100,1700],8:[450,900,1400,2100],9:[550,1100,1600,2400],10:[600,1200,1900,2800]};
 const GRUPP=k=>k<=1?1:k===2?1.5:2;
@@ -2380,7 +2395,7 @@ const MON_ORD={fladdermus:["en jättefladdermus","jättefladdermöss"],ratta:["e
  magmaslem:["en magmaslem","magmaslemmar"],eldsalamander:["en eldsalamander","eldsalamandrar"],gargoyl:["en gargoyl","gargoyler"],haxa:["en häxa","häxor"],
  varulv:["en varulv","varulvar"],nekromantiker:["en nekromantiker","nekromantiker"],eldprast:["en eldpräst","eldpräster"],grottroll:["ett grottroll","grottroll"],
  basilisk:["en basilisk","basilisker"],mork_riddare:["en mörk riddare","mörka riddare"],vampyr:["Vampyrgreven","vampyrer"],ent:["Trädväktaren","trädväktare"],
- jattemask:["Jättemasken","jättemaskar"],golem:["Obsidiangolemen","golemer"]};
+ jattemask:["Jättemasken","jättemaskar"],irrbloss:["ett irrbloss","irrbloss"],dimvasen:["ett dimväsen","dimväsen"],dimfrun:["Grevinnan Dimma","grevinnor"],golem:["Obsidiangolemen","golemer"]};
 function monNamn(keys){const c={};keys.forEach(k=>c[k]=(c[k]||0)+1);const tal=["","","två","tre","fyra","fem"];
  const delar=Object.entries(c).map(([k,n])=>{const o=MON_ORD[k]||[MONSTER[k].namn,MONSTER[k].namn];return n>1?(tal[n]||n)+" "+o[1]:o[0]});
  return delar.length>1?delar.slice(0,-1).join(", ")+" och "+delar[delar.length-1]:delar[0]}
@@ -2403,12 +2418,15 @@ const LEDTRADAR=[
  {h:"Små fotspår leder ditåt.",o:{handlare:3,skatt:3,falla:2,strid:2}},
  {h:"Ett lågt morrande. Sedan tystnad.",o:{strid:5,sovare:3,vaktad:2}},
  {h:"Ni känner värme mot ansiktet.",o:{lager:4,altare:2,falla:2,strid:2}}];
-const RUMNAMN={strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Någon behöver hjälp",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
+const RUMNAMN={fange:"Fångar i kedjor",strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Någon behöver hjälp",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
 function gorDorrar(){
  const R=spel.run;if(R.djup>=DJUP)return null;
  const r=Math.random(),n=r<.22?1:r<.75?2:3,ut=[],anv=new Set();
  const LT=(window.TEXTER&&window.TEXTER.ledtradar)?[...window.TEXTER.ledtradar.alla,...(window.TEXTER.ledtradar[R.plats]||[])]:LEDTRADAR;
  while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:wpick(L.o),kand:!!R.nastaKand})}
+ // I herrgården finns alltid minst en fånge att rädda i varje kapitel
+ if(R.plats==="herrgarden"&&R.fangeKap!==R.kapitel&&!ut.some(d=>d.typ==="fange")&&Math.random()<(R.djup>=3?1:.35)){
+  const FL=LT.filter(L=>L.o.fange>=6);if(FL.length){const L=valj(FL);ut[Math.floor(Math.random()*ut.length)]={ledtrad:L.h,typ:"fange",kand:!!R.nastaKand}}}
  R.nastaKand=false;if(ut.some(d=>d.kand))R.lyssnat=true;
  return ut;
 }
@@ -2471,12 +2489,12 @@ function avslutaRun(utfall){
  const R=spel.run;
  // guldet ni hittat förs hem till lägrets kassa (hälften om sällskapet föll)
  if(R.hemGuld==null){const hittat=Math.max(0,(R.guld||0)-(R.startGuld||0));R.hemGuld=utfall==="fallen"?Math.floor(hittat/2):hittat;spel.guld+=R.hemGuld}
- spel.historik.unshift({plats:R.plats,kapitel:R.kapitel,djup:R.djup,utfall,hjaltar:partyHeroes().map(h=>h.namn+" (nivå "+vitals(h).lvl+")"),ara:R.ara,datum:new Date().toISOString().slice(0,10)});
+ spel.historik.unshift({plats:R.plats,kapitel:R.kapitel,djup:R.djup,utfall,raddade:R.raddade||0,hjaltar:partyHeroes().map(h=>h.namn+" (nivå "+vitals(h).lvl+")"),ara:R.ara,datum:new Date().toISOString().slice(0,10)});
  spel.historik=spel.historik.slice(0,20);
 }
 function runHuvud(){const R=spel.run,P=PLATSER[R.plats];
  return el("div",{class:"topbar"},pausKnapp(()=>{rullGen++;rullar=false;document.getElementById("modal").replaceChildren();sparaSpel();lage=null;adventures();flash("Äventyret är pausat. Tryck på Fortsätt när ni vill spela vidare.")}),
-  el("span",{class:"purse"},P.namn.split(" ")[0]+" · kap "+R.kapitel+" · "+(R.djup>=DJUP?"bossen":"rum "+R.djup+"/"+DJUP)))}
+  el("span",{class:"purse"},(P.kort||P.namn.split(" ")[0])+" · kap "+R.kapitel+" · "+(R.djup>=DJUP?"bossen":"rum "+R.djup+"/"+DJUP)+(R.raddade?" · "+R.raddade+" räddade":"")))}
 // Vilken bild ska visas just nu? Vägval visar lika många dörrar/gångar som valen, bossen har sin port.
 function runBild(R=spel.run){if(!R)return"run|grottorna|1|1|d2|";
  const t=R.rum&&R.rum.typ,fas=R.fas==="dorrar"?(R.dorrar?"d"+R.dorrar.length:"port"):t==="boss"||R.fas==="vann"?"boss":"rum";
@@ -2490,7 +2508,7 @@ function visaRun(){
  tyst();strid=null;lage="run";view="run";document.getElementById("party").hidden=true;
  const R=spel.run;if(!R){adventures();return}
  const rum=R.rum,t=rum&&rum.typ;
- const prop=R.fas==="rum"&&!rum.klar?({skatt:"kista_oppen",kista:"kista",lager:"lagereld",brunn:"brunn",altare:"altare",handlare:"handlare",resenar:"resenar"})[t]:null;
+ const prop=R.fas==="rum"&&!rum.klar?({fange:"fange",skatt:"kista_oppen",kista:"kista",lager:"lagereld",brunn:"brunn",altare:"altare",handlare:"handlare",resenar:"resenar"})[t]:null;
  const fig=R.fas==="rum"&&t==="sovare"&&!rum.klar?rum.fiender.map(k=>k):prop?[prop]:null;
  app.replaceChildren(runHuvud(),runTV({figur:fig,sover:t==="sovare"}),partyStrip(),kronika());
  const akt=el("div",{class:"actions"});app.append(akt);
@@ -2531,6 +2549,9 @@ function nastaKapitel(){
 }
 
 /* --- gå in i ett rum --- */
+// En fånge ser olika ut varje gång
+function slumpFange(){const v=a=>a[Math.floor(Math.random()*a.length)];
+ return{folk:"manniska",klass:"ingen",alder:v([9,12,16,30,45,70]),hud:Math.floor(Math.random()*6),har:Math.floor(Math.random()*6),stil:v(["kort","lang","kort","kal"]),klader:Math.floor(Math.random()*7)}}
 function gaIn(i){
  const R=spel.run,typ=i==="boss"?"boss":R.dorrar[i].typ;
  R.rum={typ,klar:false};R.fas="rum";
@@ -2547,6 +2568,7 @@ function gaIn(i){
  if(typ==="lager")rlog(T("lager"),"heal");
  if(typ==="brunn")rlog(T("brunn"));
  if(typ==="handlare")rlog(T("handlare"),"heal");
+ if(typ==="fange"){R.fangeKap=R.kapitel;const F=T("fange")||{text:"Någon sitter fastkedjad vid väggen.",vem:"fången",tack:"– Tack!"};R.rum.fange=F;R.rum.fangeHero=slumpFange();rlog(F.text,"note")}
  sparaSpel();visaRun();
 }
 function rumKnappar(rum,knapp,akt){
@@ -2590,6 +2612,17 @@ function rumKnappar(rum,knapp,akt){
    rum.klar=true;sparaSpel();visaRun()}));
   knapp("Ge "+res.vem+" en läkedryck","Ni får veta allt om vägen framåt. Alla får XP.",()=>{const i=R.saker.indexOf("Läkedryck");R.saker.splice(i,1);R.nastaKand=true;
    rlog(fyll(res.dryck)+" Alla får "+30*lvl+" XP.","heal");partyHeroes().forEach(x=>gainXp(x,30*lvl));rum.klar=true;sparaSpel();visaRun()},{av:!R.saker.includes("Läkedryck")});
+  vidare();
+ }
+ else if(t==="fange"){ // fångar i kedjor: bryt kedjorna eller dyrka upp låset
+  const F=rum.fange||{vem:"fången",tack:"– Tack!"},fyll=(t,h)=>(t||"").replace(/\{namn\}/g,h?h.namn:"").replace(/\{vem\}/g,F.vem);
+  const lyckat=h=>{R.raddade=(R.raddade||0)+1;const g=5*lvl+d(10);R.guld+=g;partyHeroes().forEach(x=>gainXp(x,25*lvl));
+   rlog(fyll(T("fange_fri"),h)+" "+F.tack+" Ni får "+g+" guld, och alla får "+25*lvl+" XP.","hit");
+   if(Math.random()<.5){R.nastaKand=true;rlog(fyll(T("fange_tips"),h),"magic")}
+   rum.klar=true;sparaSpel();visaRun()};
+  const misslyckat=(text,risk)=>{rlog(text,"bad");if(Math.random()<risk){const f=mote(false);rlog(T("fange_spoke",{m:monNamn(f)}),"bad");return runStrid(f,{fiendeForst:true})}sparaSpel();visaRun()};
+  knapp("Bryt kedjorna","Styrka, minst 12. Misslyckas ni kan oväsendet locka hit något.",()=>runProv({egen:"sty",dc:12,fraga:"Vem bryter kedjorna?"},(ok,h)=>ok?lyckat(h):misslyckat(fyll(T("fange_bryt_nej"),h),.45)));
+  knapp("Dyrka upp hänglåset","Smidighet, minst 13. Tystare, men svårare.",()=>runProv({egen:"smi",dc:13,fraga:"Vem dyrkar?"},(ok,h)=>ok?lyckat(h):misslyckat(fyll(T("fange_dyrk_nej"),h),.2)));
   vidare();
  }
  else if(t==="lager"){
@@ -2692,7 +2725,7 @@ function runVinst(){
   R.fas="vann";const L=rollLoot(true);L.push({k:"sak",n:"Stor läkedryck"});taLoot(L);rlog(T("boss_besegrad",{boss:PLATSER[R.plats].boss}),"crit");
   const nytt=lasUppVapen();if(nytt){rlog("⚔ "+nytt.text,"crit");R.nyttVapen=nytt.vapen.namn;R.nyttVapenId=nytt.vapen.id}}
  else if(R.rum.sedanSkatt){R.fas="rum";R.rum={typ:"skatt",klar:false,loot:rollLoot(true)};rlog(T("vaktad_oppen"),"heal")}
- else{R.fas="rum";R.rum.klar=true}
+ else{R.fas="rum";R.rum.klar=R.rum.typ!=="fange"}
  sparaSpel();visaRun();
 }
 function runForlust(){
@@ -2745,7 +2778,7 @@ function kronikaLista(){
  return el("section",{class:"runsec"},el("div",{class:"section-head"},el("h2",{},"Krönikan"),el("span",{},"De senaste äventyren")),
   el("div",{class:"hist"},spel.historik.slice(0,6).map(x=>el("div",{class:"histrow "+(x.utfall==="hem"?"ok":"bad")},
    el("b",{},PLATSER[x.plats]?PLATSER[x.plats].namn:x.plats),
-   el("span",{},(x.utfall==="hem"?"Kom hem som hjältar":x.utfall==="fallen"?"Föll":"Gav upp")+" i kapitel "+x.kapitel+" · "+x.ara+" ära · "+x.datum),
+   el("span",{},(x.utfall==="hem"?"Kom hem som hjältar":x.utfall==="fallen"?"Föll":"Gav upp")+" i kapitel "+x.kapitel+" · "+x.ara+" ära"+(x.raddade?" · "+x.raddade+" räddade":"")+" · "+x.datum),
    el("small",{},x.hjaltar.join(", "))))));
 }
 

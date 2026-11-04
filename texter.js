@@ -518,3 +518,39 @@ window.TEXTER = {
   ],
   svimmar: ["{namn} blir yr och svimmar!", "{namn} faller ihop.", "{namn} segnar ner på golvet."]
 };
+
+/* ===== Hemsökta herrgården ===== */
+(function(){const T=window.TEXTER;const add=(k,pl,lista)=>{T[k]=T[k]||{};if(Array.isArray(T[k]))T[k]={alla:T[k]};T[k][pl]=(T[k][pl]||[]).concat(lista)};
+ add("start","herrgarden",["{alla} knuffar upp de rostiga grindarna och går uppför gången mot den hemsökta herrgården. Dimman ligger tät över gräsmattan.",
+  "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. {alla} går in genom den knarrande ytterdörren.",
+  "Det luktar damm och gamla rosor. {alla} kliver in i herrgårdens hall. Någonstans tickar en klocka.",
+  "En korp flaxar upp från taket när {alla} går in i herrgården. Dörren slår igen bakom er av sig själv."]);
+ add("delning","herrgarden",["Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.","Dimman ringlar längs golvet där gångarna möts.",
+  "Porträtten på väggen följer er med blicken. Vägen delar sig.","Någon gråter långt borta. Det kommer från en av dörrarna.","Golvplankorna knarrar. Flera dörrar står framför er."]);
+ add("porten","herrgarden",["En hög dubbeldörr med en skalle i trä ovanför. Dimma sipprar ut under den. Bakom väntar herrgårdens fru.",
+  "Balsalens dörrar står på glänt. Därinne dansar någon helt ensam."]);
+ add("vidare","herrgarden",["Ni smyger vidare genom de dammiga salarna.","Ett ljus slocknar av sig självt när ni går förbi.","Golvplankorna knarrar under era fötter."]);
+ add("djupare","herrgarden",["Alla har vilat och känner sig starka igen. Ni hittar en knarrande trappa ner till den mörka vinkällaren."]);
+ add("ledtradar","herrgarden",[
+  {h:"Någon gråter tyst bakom dörren.",o:{fange:6,resenar:2}},
+  {h:"Kedjor skramlar, och någon ropar svagt på hjälp.",o:{fange:6,strid:2}},
+  {h:"Ett spöklikt piano spelar en sorglig melodi.",o:{strid:3,altare:2,falla:2}},
+  {h:"Dimma sipprar ut under dörren.",o:{strid:4,sovare:2,falla:2}},
+  {h:"Det doftar av gamla rosor och stearin.",o:{skatt:3,kista:3,lager:2,handlare:1}},
+  {h:"Ett porträtt bredvid dörren blinkar.",o:{falla:3,strid:3,vaktad:2}},
+  {h:"Det är alldeles tyst. Alldeles för tyst.",o:{sovare:3,strid:2,fange:2,skatt:2}}]);
+ add("fallor","herrgarden",[{egen:"smi",alla:false,varn:"Kristallkronan i taket knakar och faller!",ok:"kastar sig undan",traff:"träffas av glassplitter"},
+  {egen:"vis",alla:true,varn:"Iskalla spökhänder sträcker sig upp ur golvet!",ok:"blundar och tänker på något varmt",traff:"blir greppade av iskalla händer"}]);
+ T.fange=[
+  {text:"En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",vem:"flickan",tack:"Flickan kramar er och springer mot utgången."},
+  {text:"En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",vem:"trädgårdsmästaren",tack:"– Tack, unga hjältar! Han ger er några mynt han gömt i skon."},
+  {text:"En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",vem:"pojken",tack:"Pojken skrattar högt och lovar att aldrig mer gå in i herrgården."},
+  {text:"Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",vem:"kokerskan",tack:"– Ni ska få de bästa bullarna i hela landet när vi kommer hem!"},
+  {text:"En vandrande musikant sitter i kedjor med sin luta bredvid sig.",vem:"musikanten",tack:"Musikanten spelar en glad visa medan hen springer därifrån."},
+  {text:"En flicka och hennes lillebror sitter fastkedjade tillsammans.",vem:"syskonen",tack:"Syskonen håller varandra i handen och tackar er om och om igen."}];
+ T.fange_fri=["{namn} får loss kedjorna! {vem} är fri.","Kedjorna rasslar ner på golvet. {namn} har befriat {vem}!","Klick! Låset går upp, och {vem} kan äntligen resa sig."];
+ T.fange_bryt_nej=["{namn} drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.","Kedjan är för stark. Ljudet ekar genom herrgården."];
+ T.fange_dyrk_nej=["Dyrken går av i låset. {namn} får försöka igen.","Låset är rostigt och vill inte öppna sig."];
+ T.fange_spoke=["Oväsendet väcker något. {m} sveper in genom väggen!","Det blir iskallt i rummet. {m} dyker upp ur dimman!"];
+ T.fange_tips=["– Jag vet vad som finns bakom nästa dörrar, viskar {vem}.","{vem} berättar vad som väntar längre in i herrgården."];
+})();
