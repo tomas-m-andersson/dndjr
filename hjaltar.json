@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:46:02.340Z",
+  "uppdaterad": "2026-11-04T19:46:11.153Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821560104,
+    "tid": 1793821569159,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -430,29 +430,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
-          {
-            "ledtrad": "Det luktar sött, som blommor.",
-            "typ": "skatt",
-            "kand": false
-          },
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
             "typ": "strid",
             "kand": false
+          },
+          {
+            "ledtrad": "En gammal sång nynnas, lite falskt.",
+            "typ": "handlare",
+            "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "troll"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -497,6 +490,10 @@
           {
             "t": "★ Nivå upp! Benjamin är nu nivå 4! +8 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -529,7 +526,7 @@
           "sally": 23,
           "egen-1793378426345": 36
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+        "dorrText": "Ni kan lyssna först. Men gör det tyst."
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
