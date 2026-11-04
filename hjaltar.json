@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:15:34.848Z",
+  "uppdaterad": "2026-11-04T20:15:37.500Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -219,7 +219,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793823332893,
+    "tid": 1793823335519,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -283,71 +283,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
-        "dorrar": [
-          {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "lager",
-            "kand": false
-          }
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 4)"
         ],
-        "lyssnat": false,
-        "rum": null,
-        "logg": [
-          {
-            "t": "Kapitel 1 · Hemsökta herrgården",
-            "k": "sep"
-          },
-          {
-            "t": "En korp flaxar upp från taket när Tomas, Ville, Sally och Benjamin går in i herrgården. Dörren slår igen bakom er av sig själv.",
-            "k": ""
-          }
-        ],
-        "party": [
-          "tomas",
-          "ville",
-          "sally",
-          "egen-1793378426345"
-        ],
-        "guld": 47,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 0,
-        "start": 1793823315278,
-        "nastaKand": false,
-        "id": "rmw2k34gecpwl",
-        "startGuld": 47,
-        "liv": {
-          "tomas": 44,
-          "ville": 36,
-          "sally": 23,
-          "egen-1793378426345": 36
-        },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
-      }
-    ],
-    "aktivRun": null,
-    "historik": [
+        "datum": "2026-11-04"
+      },
       {
         "plats": "grottorna",
         "kapitel": 1,
