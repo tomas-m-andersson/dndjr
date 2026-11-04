@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:47:14.615Z",
+  "uppdaterad": "2026-11-04T19:48:08.507Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821632611,
+    "tid": 1793821686508,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -436,15 +436,15 @@
           {
             "ledtrad": "Någon viskar.",
             "typ": "resenar",
-            "kand": false
+            "kand": true
           },
           {
             "ledtrad": "Det är alldeles för tyst.",
             "typ": "sovare",
-            "kand": false
+            "kand": true
           }
         ],
-        "lyssnat": false,
+        "lyssnat": true,
         "rum": null,
         "logg": [
           {
@@ -506,6 +506,10 @@
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
+          },
+          {
+            "t": "Tomas håller andan och lyssnar länge. Varje dörr har sitt eget ljud.",
+            "k": "hit"
           }
         ],
         "party": [
