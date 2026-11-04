@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:41:34.662Z",
+  "uppdaterad": "2026-11-04T19:41:58.032Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821292545,
+    "tid": 1793821315924,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "rum",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Spindelväv täcker öppningen.",
@@ -451,7 +451,10 @@
           "fiender": [
             "vattesjaman",
             "vattesjaman"
-          ]
+          ],
+          "stridOpt": {
+            "sover": true
+          }
         },
         "logg": [
           {
@@ -468,6 +471,10 @@
           },
           {
             "t": "Något stort sover i gången: två vättesjamaner.",
+            "k": "note"
+          },
+          {
+            "t": "Ni kryper närmare. Nu!",
             "k": "note"
           }
         ],
