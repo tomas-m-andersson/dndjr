@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:48:57.786Z",
+  "uppdaterad": "2026-11-04T19:49:07.196Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821735809,
+    "tid": 1793821745270,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -430,32 +430,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon viskar.",
-            "typ": "resenar",
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "handlare",
             "kand": true
           },
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "sovare",
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "falla",
             "kand": true
           }
         ],
         "lyssnat": true,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
-            "vem": "spelmannen",
-            "ok": "Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
-            "nej": "Spelmannen sjunger bara en sorglig visa.",
-            "dryck": "Spelmannen dricker, stämmer fiolen och spelar en visa om allt han sett."
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -532,6 +522,10 @@
           {
             "t": "Sally pratar lugnt med spelmannen. Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
             "k": "hit"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -555,7 +549,7 @@
         "curse": {},
         "ara": 650,
         "start": 1793821245779,
-        "nastaKand": true,
+        "nastaKand": false,
         "id": "rmw2iurmbk2qh",
         "startGuld": 41,
         "liv": {
@@ -564,7 +558,7 @@
           "sally": 23,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar."
+        "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
