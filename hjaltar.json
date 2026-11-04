@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:41:58.032Z",
+  "uppdaterad": "2026-11-04T19:43:59.670Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,11 +218,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821315924,
+    "tid": 1793821437648,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 1958
+        "xp": 2018
       },
       "svante": {
         "lvl": 4,
@@ -230,15 +230,15 @@
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2903
+        "xp": 2963
       },
       "sally": {
         "lvl": 4,
-        "xp": 1644
+        "xp": 1704
       },
       "egen-1793378426345": {
         "lvl": 3,
-        "xp": 1373
+        "xp": 1433
       },
       "linda": {
         "lvl": 2,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Spindelväv täcker öppningen.",
@@ -447,7 +447,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "sovare",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "vattesjaman",
             "vattesjaman"
@@ -476,6 +476,10 @@
           {
             "t": "Ni kryper närmare. Nu!",
             "k": "note"
+          },
+          {
+            "t": "Seger! Alla får 60 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -497,7 +501,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 200,
         "start": 1793821245779,
         "nastaKand": false,
         "id": "rmw2iurmbk2qh",
