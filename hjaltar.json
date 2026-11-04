@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:40:34.869Z",
+  "uppdaterad": "2026-11-04T19:40:47.823Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793735883460,
+    "tid": 1793821245782,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -426,9 +426,70 @@
           "tomas": 26,
           "linda": 7
         }
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något glimmar i mörkret.",
+            "typ": "skatt",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas, Ville, Sally och Benjamin tänder facklorna och kryper in i grottan under Kråkberget. Vatten droppar från taket.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "egen-1793378426345"
+        ],
+        "guld": 41,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793821245779,
+        "nastaKand": false,
+        "id": "rmw2iurmbk2qh",
+        "startGuld": 41,
+        "liv": {
+          "tomas": 36,
+          "ville": 26,
+          "sally": 23,
+          "egen-1793378426345": 28
+        },
+        "dorrText": "Ledtrådarna säger lite, men inte allt."
       }
     ],
-    "aktivRun": null,
+    "aktivRun": "rmw2iurmbk2qh",
     "historik": [
       {
         "plats": "grottorna",
