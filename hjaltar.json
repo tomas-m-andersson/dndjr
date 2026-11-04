@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:49:38.192Z",
+  "uppdaterad": "2026-11-04T19:49:50.719Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821776227,
+    "tid": 1793821788657,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,10 +431,19 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "basilisk"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -527,6 +536,14 @@
           {
             "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Grottans härskare",
+            "k": "sep"
+          },
+          {
+            "t": "Två stora ögon öppnas i mörkret. Det är en basilisk!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -559,7 +576,8 @@
           "sally": 23,
           "egen-1793378426345": 36
         },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
+        "bossFaktor": 1.3
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
