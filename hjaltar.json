@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:56:03.666Z",
+  "uppdaterad": "2026-11-04T19:58:21.571Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -70,19 +70,19 @@
   "grundandringar": {
     "ville": {
       "attacker": [
-        "eldklot",
-        "frostblixt",
-        "somnformel"
+        "kraftslag",
+        "virvelhugg",
+        "skoldslag"
       ],
-      "vapen": "skuggstav",
+      "vapen": "flammsvard",
       "folk": "manniska",
       "alder": 7,
       "skagg": false,
-      "klass": "magiker",
-      "hud": 0,
-      "har": 5,
+      "klass": "krigare",
+      "hud": 1,
+      "har": 3,
       "stil": "kort",
-      "klader": 1,
+      "klader": 3,
       "flackar": false,
       "s": {
         "sty": 16,
