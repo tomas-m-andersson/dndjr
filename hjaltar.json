@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:45:06.506Z",
+  "uppdaterad": "2026-11-04T19:46:02.340Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,11 +218,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821504472,
+    "tid": 1793821560104,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2018
+        "xp": 2153
       },
       "svante": {
         "lvl": 4,
@@ -230,15 +230,15 @@
       },
       "tomas": {
         "lvl": 4,
-        "xp": 2963
+        "xp": 3098
       },
       "sally": {
         "lvl": 4,
-        "xp": 1704
+        "xp": 1839
       },
       "egen-1793378426345": {
-        "lvl": 3,
-        "xp": 1433
+        "lvl": 4,
+        "xp": 1568
       },
       "linda": {
         "lvl": 2,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -447,7 +447,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "troll"
           ],
@@ -489,6 +489,14 @@
           {
             "t": "Det är inte tomt här. ett bergstroll vänder sig mot er!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 135 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Benjamin är nu nivå 4! +8 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -510,7 +518,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 200,
+        "ara": 650,
         "start": 1793821245779,
         "nastaKand": false,
         "id": "rmw2iurmbk2qh",
@@ -519,7 +527,7 @@
           "tomas": 36,
           "ville": 26,
           "sally": 23,
-          "egen-1793378426345": 28
+          "egen-1793378426345": 36
         },
         "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
       }
