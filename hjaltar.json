@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:46:11.153Z",
+  "uppdaterad": "2026-11-04T19:46:38.008Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821569159,
+    "tid": 1793821596102,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -431,7 +431,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
@@ -445,7 +445,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -494,6 +497,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En gammal dam med en kärra full av flaskor. – Bästa dryckerna i hela berget!",
+            "k": "heal"
           }
         ],
         "party": [
