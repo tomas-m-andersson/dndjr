@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:40:10.744Z",
+  "uppdaterad": "2026-11-04T19:40:24.552Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -66,15 +66,15 @@
   ],
   "grundandringar": {
     "ville": {
-      "folk": "manniska",
-      "alder": 7,
-      "skagg": false,
       "attacker": [
         "eldklot",
         "frostblixt",
         "somnformel"
       ],
       "vapen": "skuggstav",
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "klass": "magiker",
       "hud": 0,
       "har": 5,
@@ -88,7 +88,8 @@
         "klo": 10,
         "vis": 11,
         "cha": 12
-      }
+      },
+      "gosedjur": "blackis"
     },
     "svante": {
       "folk": "katt",
