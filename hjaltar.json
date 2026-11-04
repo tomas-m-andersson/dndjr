@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T19:43:59.670Z",
+  "uppdaterad": "2026-11-04T19:44:04.278Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793821437648,
+    "tid": 1793821442350,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -430,32 +430,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "sovare",
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "skatt",
             "kand": false
           },
           {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "skatt",
+            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": true,
-          "fiender": [
-            "vattesjaman",
-            "vattesjaman"
-          ],
-          "stridOpt": {
-            "sover": true
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -480,6 +470,10 @@
           {
             "t": "Seger! Alla får 60 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -512,7 +506,7 @@
           "sally": 23,
           "egen-1793378426345": 28
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt."
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
       }
     ],
     "aktivRun": "rmw2iurmbk2qh",
