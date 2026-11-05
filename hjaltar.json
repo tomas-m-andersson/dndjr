@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:44:29.458Z",
+  "uppdaterad": "2026-11-05T19:44:48.410Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -186,7 +186,7 @@
     }
   },
   "aventyr": {
-    "guld": 2268,
+    "guld": 2506,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907867526,
+    "tid": 1793907886260,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -283,191 +283,22 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "nekromantiker"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Hemsökta herrgården",
-            "k": "sep"
-          },
-          {
-            "t": "Det luktar damm och gamla rosor. Tomas och Svante kliver in i herrgårdens hall. Någonstans tickar en klocka.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Handlare",
-            "k": "sep"
-          },
-          {
-            "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni köper en läkedryck för 25 guld.",
-            "k": "heal"
-          },
-          {
-            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Fångar i kedjor",
-            "k": "sep"
-          },
-          {
-            "t": "En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",
-            "k": "note"
-          },
-          {
-            "t": "Klick! Låset går upp, och pojken kan äntligen resa sig. Pojken skrattar högt och lovar att aldrig mer gå in i herrgården. Ni får 34 guld, och alla får 125 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "– Jag vet vad som finns bakom nästa dörrar, viskar pojken.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni samlar ihop er och fortsätter.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Små hål i väggen. Klick!",
-            "k": "bad"
-          },
-          {
-            "t": "Svante träffas av giftiga pilar: 19 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Golvplankorna knarrar under era fötter.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Fångar i kedjor",
-            "k": "sep"
-          },
-          {
-            "t": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
-            "k": "note"
-          },
-          {
-            "t": "Tomas får loss kedjorna! kokerskan är fri. – Ni ska få de bästa bullarna i hela landet när vi kommer hem! Ni får 34 guld, och alla får 125 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Skatt",
-            "k": "sep"
-          },
-          {
-            "t": "Mitt på golvet står en kista. Ingen vaktar den. Konstigt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 50 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "En hög dubbeldörr med en skalle i trä ovanför. Dimma sipprar ut under den. Bakom väntar herrgårdens fru.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Herrgårdens fru",
-            "k": "sep"
-          },
-          {
-            "t": "",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 270 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 145 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Det är över. Herrgårdens fru är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Åskhammaren! Krigare kan nu välja det under Ändra. Mullrar vid träff: 30 % chans att bedöva. −1 rustning.",
-            "k": "crit"
-          }
-        ],
-        "party": [
-          "tomas",
-          "svante"
-        ],
-        "guld": 265,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
-        "ara": 450,
-        "start": 1793906951075,
-        "nastaKand": false,
-        "id": "rmw3xvq8z6j11",
-        "startGuld": 27,
-        "liv": {
-          "tomas": 4,
-          "svante": 9
-        },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
-        "fangeKap": 1,
+        "utfall": "hem",
         "raddade": 2,
-        "bossFaktor": 1.3,
-        "nyttVapen": "Åskhammaren",
-        "nyttVapenId": "askhammare"
-      }
-    ],
-    "aktivRun": "rmw3xvq8z6j11",
-    "historik": [
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Svante (nivå 4)"
+        ],
+        "ara": 450,
+        "datum": "2026-11-05"
+      },
       {
         "plats": "herrgarden",
         "kapitel": 1,
