@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:29:54.878Z",
+  "uppdaterad": "2026-11-05T19:30:14.009Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793906992757,
+    "tid": 1793907012026,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -326,14 +326,19 @@
           {
             "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
             "k": "heal"
+          },
+          {
+            "t": "Ni köper en läkedryck för 25 guld.",
+            "k": "heal"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 27,
+        "guld": 2,
         "saker": [
+          "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
