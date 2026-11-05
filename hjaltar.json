@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:30:38.686Z",
+  "uppdaterad": "2026-11-05T19:31:17.308Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907036698,
+    "tid": 1793907075152,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -226,11 +226,11 @@
       },
       "svante": {
         "lvl": 4,
-        "xp": 1844
+        "xp": 1969
       },
       "tomas": {
         "lvl": 5,
-        "xp": 3428
+        "xp": 3553
       },
       "sally": {
         "lvl": 4,
@@ -298,7 +298,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "fange",
-          "klar": false,
+          "klar": true,
           "fange": {
             "text": "En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",
             "vem": "pojken",
@@ -346,13 +346,21 @@
           {
             "t": "En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",
             "k": "note"
+          },
+          {
+            "t": "Klick! Låset går upp, och pojken kan äntligen resa sig. Pojken skrattar högt och lovar att aldrig mer gå in i herrgården. Ni får 34 guld, och alla får 125 XP.",
+            "k": "hit"
+          },
+          {
+            "t": "– Jag vet vad som finns bakom nästa dörrar, viskar pojken.",
+            "k": "magic"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 2,
+        "guld": 36,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -364,7 +372,7 @@
         "curse": {},
         "ara": 0,
         "start": 1793906951075,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmw3xvq8z6j11",
         "startGuld": 27,
         "liv": {
@@ -372,7 +380,8 @@
           "svante": 23
         },
         "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
-        "fangeKap": 1
+        "fangeKap": 1,
+        "raddade": 1
       }
     ],
     "aktivRun": "rmw3xvq8z6j11",
