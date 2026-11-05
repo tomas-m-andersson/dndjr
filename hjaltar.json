@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:28:37.920Z",
+  "uppdaterad": "2026-11-05T19:28:45.641Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -217,7 +217,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793906893082,
+    "tid": 1793906925383,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -337,9 +337,57 @@
           "egen-1793378426345": 36
         },
         "dorrText": "Ingen väg att välja. Bara framåt."
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "lager",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Hemsökta herrgården",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas och Svante knuffar upp de rostiga grindarna och går uppför gången mot den hemsökta herrgården. Dimman ligger tät över gräsmattan.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante"
+        ],
+        "guld": 14,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793906925382,
+        "nastaKand": false,
+        "id": "rmw3xv6fauh2t",
+        "startGuld": 14,
+        "liv": {
+          "tomas": 44,
+          "svante": 23
+        },
+        "dorrText": "Stigen är smal och leder bara vidare in."
       }
     ],
-    "aktivRun": "rmw3xu9qboikv",
+    "aktivRun": "rmw3xv6fauh2t",
     "historik": [
       {
         "plats": "herrgarden",
