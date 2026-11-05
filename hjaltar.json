@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-04T20:15:37.500Z",
+  "uppdaterad": "2026-11-05T19:28:05.042Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -219,7 +219,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793823335519,
+    "tid": 1793906883015,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -283,8 +283,65 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Kedjor skramlar, och någon ropar svagt på hjälp.",
+            "typ": "fange",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Hemsökta herrgården",
+            "k": "sep"
+          },
+          {
+            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "egen-1793378426345"
+        ],
+        "guld": 39,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1793906883011,
+        "nastaKand": false,
+        "id": "rmw3xu9qboikv",
+        "startGuld": 39,
+        "liv": {
+          "tomas": 44,
+          "ville": 36,
+          "sally": 23,
+          "egen-1793378426345": 36
+        },
+        "dorrText": "Ingen väg att välja. Bara framåt."
+      }
+    ],
+    "aktivRun": "rmw3xu9qboikv",
     "historik": [
       {
         "plats": "herrgarden",
