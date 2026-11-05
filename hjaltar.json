@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:42:16.349Z",
+  "uppdaterad": "2026-11-05T19:42:26.900Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907734333,
+    "tid": 1793907744910,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -414,7 +414,6 @@
         "saker": [
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -426,7 +425,7 @@
         "startGuld": 27,
         "liv": {
           "tomas": 25,
-          "svante": 0
+          "svante": 4
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
         "fangeKap": 1,
