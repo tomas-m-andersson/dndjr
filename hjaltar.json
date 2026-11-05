@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:34:03.349Z",
+  "uppdaterad": "2026-11-05T19:34:06.257Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907241424,
+    "tid": 1793907244270,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -286,36 +286,11 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "skatt",
-            "kand": false
-          },
-          {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "skatt",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "50 guldmynt",
-              "v": 50
-            },
-            {
-              "k": "sak",
-              "n": "Läkedryck"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -408,6 +383,10 @@
           {
             "t": "Ni hittar en läkedryck.",
             "k": "heal"
+          },
+          {
+            "t": "En hög dubbeldörr med en skalle i trä ovanför. Dimma sipprar ut under den. Bakom väntar herrgårdens fru.",
+            "k": ""
           }
         ],
         "party": [
@@ -433,7 +412,7 @@
           "tomas": 44,
           "svante": 10
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
         "fangeKap": 1,
         "raddade": 2
       }
