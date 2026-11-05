@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:29:13.080Z",
+  "uppdaterad": "2026-11-05T19:29:54.878Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793906951076,
+    "tid": 1793906992757,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -287,7 +287,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något skrattar tyst därinne.",
@@ -306,7 +306,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "handlare",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -315,6 +318,14 @@
           {
             "t": "Det luktar damm och gamla rosor. Tomas och Svante kliver in i herrgårdens hall. Någonstans tickar en klocka.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
+            "k": "heal"
           }
         ],
         "party": [
