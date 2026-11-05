@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:39:07.758Z",
+  "uppdaterad": "2026-11-05T19:39:42.798Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -93,14 +93,14 @@
       "gosedjur": "blackis"
     },
     "svante": {
+      "folk": "katt",
+      "skagg": false,
       "attacker": [
         "klosattack",
         "hoppa_ansiktet",
         "frasa"
       ],
       "vapen": "klor",
-      "folk": "katt",
-      "skagg": false,
       "klass": "katt",
       "hud": 1,
       "har": 9,
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907545850,
+    "tid": 1793907580816,
     "niva": {
       "ville": {
         "lvl": 4,
