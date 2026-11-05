@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:31:33.982Z",
+  "uppdaterad": "2026-11-05T19:31:50.577Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907091989,
+    "tid": 1793907108634,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -287,7 +287,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar sött, som blommor.",
@@ -301,7 +301,17 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Små hål i väggen. Klick!",
+            "ok": "duckar för giftpilarna",
+            "traff": "träffas av giftiga pilar"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -346,6 +356,14 @@
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Små hål i väggen. Klick!",
+            "k": "bad"
           }
         ],
         "party": [
