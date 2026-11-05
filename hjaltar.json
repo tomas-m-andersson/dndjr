@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:31:50.577Z",
+  "uppdaterad": "2026-11-05T19:31:58.870Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907108634,
+    "tid": 1793907116899,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -303,7 +303,7 @@
         "lyssnat": true,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": false,
@@ -364,6 +364,10 @@
           {
             "t": "Små hål i väggen. Klick!",
             "k": "bad"
+          },
+          {
+            "t": "Svante träffas av giftiga pilar: 19 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -387,7 +391,7 @@
         "startGuld": 27,
         "liv": {
           "tomas": 44,
-          "svante": 23
+          "svante": 4
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
         "fangeKap": 1,
