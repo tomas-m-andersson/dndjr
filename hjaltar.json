@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:32:43.006Z",
+  "uppdaterad": "2026-11-05T19:33:16.514Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907161088,
+    "tid": 1793907194516,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -226,11 +226,11 @@
       },
       "svante": {
         "lvl": 4,
-        "xp": 1969
+        "xp": 2094
       },
       "tomas": {
         "lvl": 5,
-        "xp": 3553
+        "xp": 3678
       },
       "sally": {
         "lvl": 4,
@@ -303,7 +303,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "fange",
-          "klar": false,
+          "klar": true,
           "fange": {
             "text": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
             "vem": "kokerskan",
@@ -387,13 +387,17 @@
           {
             "t": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
             "k": "note"
+          },
+          {
+            "t": "Tomas får loss kedjorna! kokerskan är fri. – Ni ska få de bästa bullarna i hela landet när vi kommer hem! Ni får 34 guld, och alla får 125 XP.",
+            "k": "hit"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 36,
+        "guld": 70,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -413,7 +417,7 @@
         },
         "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
         "fangeKap": 1,
-        "raddade": 1
+        "raddade": 2
       }
     ],
     "aktivRun": "rmw3xvq8z6j11",
