@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:42:31.056Z",
+  "uppdaterad": "2026-11-05T19:42:50.809Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907749137,
+    "tid": 1793907768876,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -425,7 +425,7 @@
         "startGuld": 27,
         "liv": {
           "tomas": 13,
-          "svante": 4
+          "svante": 0
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
         "fangeKap": 1,
