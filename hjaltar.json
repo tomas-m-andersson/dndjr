@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:29:05.392Z",
+  "uppdaterad": "2026-11-05T19:29:13.080Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793906932466,
+    "tid": 1793906951076,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -290,8 +290,18 @@
         "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Kedjor skramlar, och någon ropar svagt på hjälp.",
-            "typ": "fange",
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något glimmar i mörkret.",
+            "typ": "skatt",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någonstans porlar vatten.",
+            "typ": "altare",
             "kand": false
           }
         ],
@@ -303,63 +313,7 @@
             "k": "sep"
           },
           {
-            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
-            "k": ""
-          }
-        ],
-        "party": [
-          "tomas",
-          "ville",
-          "sally",
-          "egen-1793378426345"
-        ],
-        "guld": 39,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
-        "ara": 0,
-        "start": 1793906883011,
-        "nastaKand": false,
-        "id": "rmw3xu9qboikv",
-        "startGuld": 39,
-        "liv": {
-          "tomas": 44,
-          "ville": 36,
-          "sally": 23,
-          "egen-1793378426345": 36
-        },
-        "dorrText": "Ingen väg att välja. Bara framåt."
-      },
-      {
-        "plats": "herrgarden",
-        "kapitel": 1,
-        "djup": 1,
-        "fas": "dorrar",
-        "dorrar": [
-          {
-            "ledtrad": "Det luktar rök och stekt kött.",
-            "typ": "lager",
-            "kand": false
-          }
-        ],
-        "lyssnat": false,
-        "rum": null,
-        "logg": [
-          {
-            "t": "Kapitel 1 · Hemsökta herrgården",
-            "k": "sep"
-          },
-          {
-            "t": "Tomas och Svante knuffar upp de rostiga grindarna och går uppför gången mot den hemsökta herrgården. Dimman ligger tät över gräsmattan.",
+            "t": "Det luktar damm och gamla rosor. Tomas och Svante kliver in i herrgårdens hall. Någonstans tickar en klocka.",
             "k": ""
           }
         ],
@@ -367,7 +321,7 @@
           "tomas",
           "svante"
         ],
-        "guld": 14,
+        "guld": 27,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -377,19 +331,47 @@
         "bless": {},
         "curse": {},
         "ara": 0,
-        "start": 1793906925382,
+        "start": 1793906951075,
         "nastaKand": false,
-        "id": "rmw3xv6fauh2t",
-        "startGuld": 14,
+        "id": "rmw3xvq8z6j11",
+        "startGuld": 27,
         "liv": {
           "tomas": 44,
           "svante": 23
         },
-        "dorrText": "Stigen är smal och leder bara vidare in."
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
       }
     ],
-    "aktivRun": "rmw3xv6fauh2t",
+    "aktivRun": "rmw3xvq8z6j11",
     "historik": [
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Svante (nivå 4)"
+        ],
+        "ara": 0,
+        "datum": "2026-11-05"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 0,
+        "datum": "2026-11-05"
+      },
       {
         "plats": "herrgarden",
         "kapitel": 1,
