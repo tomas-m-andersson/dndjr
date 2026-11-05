@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:30:14.009Z",
+  "uppdaterad": "2026-11-05T19:30:19.843Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907012026,
+    "tid": 1793907017907,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -286,30 +286,17 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "handlare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "skatt",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
+            "ledtrad": "Kedjor skramlar, och någon ropar svagt på hjälp.",
+            "typ": "fange",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -330,6 +317,10 @@
           {
             "t": "Ni köper en läkedryck för 25 guld.",
             "k": "heal"
+          },
+          {
+            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
+            "k": ""
           }
         ],
         "party": [
@@ -355,7 +346,7 @@
           "tomas": 44,
           "svante": 23
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmw3xvq8z6j11",
