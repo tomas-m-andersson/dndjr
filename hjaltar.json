@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:33:16.514Z",
+  "uppdaterad": "2026-11-05T19:33:29.513Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907194516,
+    "tid": 1793907207575,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -286,39 +286,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det är alldeles tyst. Alldeles för tyst.",
-            "typ": "fange",
+            "ledtrad": "Det glittrar i en spricka i dörren.",
+            "typ": "skatt",
             "kand": false
           },
           {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
-            "typ": "altare",
+            "ledtrad": "Något glimmar i mörkret.",
+            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "fange",
-          "klar": true,
-          "fange": {
-            "text": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
-            "vem": "kokerskan",
-            "tack": "– Ni ska få de bästa bullarna i hela landet när vi kommer hem!"
-          },
-          "fangeHero": {
-            "folk": "manniska",
-            "klass": "ingen",
-            "alder": 70,
-            "hud": 1,
-            "har": 5,
-            "stil": "lang",
-            "klader": 4
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -391,6 +374,10 @@
           {
             "t": "Tomas får loss kedjorna! kokerskan är fri. – Ni ska få de bästa bullarna i hela landet när vi kommer hem! Ni får 34 guld, och alla får 125 XP.",
             "k": "hit"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -415,7 +402,7 @@
           "tomas": 44,
           "svante": 10
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "fangeKap": 1,
         "raddade": 2
       }
