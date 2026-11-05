@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:30:19.843Z",
+  "uppdaterad": "2026-11-05T19:30:38.686Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907017907,
+    "tid": 1793907036698,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -287,7 +287,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Kedjor skramlar, och någon ropar svagt på hjälp.",
@@ -296,7 +296,24 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "fange",
+          "klar": false,
+          "fange": {
+            "text": "En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",
+            "vem": "pojken",
+            "tack": "Pojken skrattar högt och lovar att aldrig mer gå in i herrgården."
+          },
+          "fangeHero": {
+            "folk": "manniska",
+            "klass": "ingen",
+            "alder": 70,
+            "hud": 3,
+            "har": 1,
+            "stil": "kal",
+            "klader": 0
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -321,6 +338,14 @@
           {
             "t": "Ett ljus slocknar av sig självt när ni går förbi.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Fångar i kedjor",
+            "k": "sep"
+          },
+          {
+            "t": "En pojke i trasiga kläder är fastlåst med ett stort hänglås. Han skakar av kyla.",
+            "k": "note"
           }
         ],
         "party": [
@@ -346,7 +371,8 @@
           "tomas": 44,
           "svante": 23
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
+        "fangeKap": 1
       }
     ],
     "aktivRun": "rmw3xvq8z6j11",
