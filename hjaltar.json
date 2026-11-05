@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:46:56.336Z",
+  "uppdaterad": "2026-11-05T19:47:23.433Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -100,7 +100,7 @@
       ],
       "vapen": "askhammare",
       "folk": "manniska",
-      "alder": 30,
+      "alder": 8,
       "skagg": false,
       "klass": "krigare",
       "hud": 1,
