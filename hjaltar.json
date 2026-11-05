@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:32:18.322Z",
+  "uppdaterad": "2026-11-05T19:32:43.006Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907136276,
+    "tid": 1793907161088,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -287,7 +287,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles tyst. Alldeles för tyst.",
@@ -301,7 +301,24 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "fange",
+          "klar": false,
+          "fange": {
+            "text": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
+            "vem": "kokerskan",
+            "tack": "– Ni ska få de bästa bullarna i hela landet när vi kommer hem!"
+          },
+          "fangeHero": {
+            "folk": "manniska",
+            "klass": "ingen",
+            "alder": 70,
+            "hud": 1,
+            "har": 5,
+            "stil": "lang",
+            "klader": 4
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -362,6 +379,14 @@
           {
             "t": "Golvplankorna knarrar under era fötter.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Fångar i kedjor",
+            "k": "sep"
+          },
+          {
+            "t": "Herrgårdens gamla kokerska sitter fastkedjad bredvid spisen.",
+            "k": "note"
           }
         ],
         "party": [
