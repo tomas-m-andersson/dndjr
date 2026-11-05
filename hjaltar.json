@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:34:06.257Z",
+  "uppdaterad": "2026-11-05T19:34:23.736Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -218,7 +218,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907244270,
+    "tid": 1793907261836,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -287,10 +287,19 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "nekromantiker"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -387,6 +396,14 @@
           {
             "t": "En hög dubbeldörr med en skalle i trä ovanför. Dimma sipprar ut under den. Bakom väntar herrgårdens fru.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Herrgårdens fru",
+            "k": "sep"
+          },
+          {
+            "t": "",
+            "k": "bad"
           }
         ],
         "party": [
@@ -414,7 +431,8 @@
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
         "fangeKap": 1,
-        "raddade": 2
+        "raddade": 2,
+        "bossFaktor": 1.3
       }
     ],
     "aktivRun": "rmw3xvq8z6j11",
