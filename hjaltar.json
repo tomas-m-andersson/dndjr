@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:31:04.251Z",
+  "uppdaterad": "2026-11-08T19:31:16.330Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166262357,
+    "tid": 1794166274441,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "rum",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -376,6 +376,14 @@
           },
           {
             "t": "Ville drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.",
+            "k": "bad"
+          },
+          {
+            "t": "Låset är rostigt och vill inte öppna sig.",
+            "k": "bad"
+          },
+          {
+            "t": "Det blir iskallt i rummet. en nekromantiker dyker upp ur dimman!",
             "k": "bad"
           }
         ],
