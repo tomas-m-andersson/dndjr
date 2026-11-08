@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:33:20.480Z",
+  "uppdaterad": "2026-11-08T19:33:34.875Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166398571,
+    "tid": 1794166412832,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -290,47 +290,17 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någon gråter tyst bakom dörren.",
-            "typ": "fange",
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "lager",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "fange",
-          "klar": true,
-          "fange": {
-            "text": "En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",
-            "vem": "trädgårdsmästaren",
-            "tack": "– Tack, unga hjältar! Han ger er några mynt han gömt i skon."
-          },
-          "fangeHero": {
-            "folk": "manniska",
-            "klass": "ingen",
-            "alder": 9,
-            "hud": 5,
-            "har": 3,
-            "stil": "kort",
-            "klader": 6
-          },
-          "fiender": [
-            "vampyrfladdermus",
-            "vampyrfladdermus",
-            "vampyrfladdermus"
-          ],
-          "stridOpt": {
-            "fiendeForst": true
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -407,6 +377,10 @@
           {
             "t": "Klick! Låset går upp, och trädgårdsmästaren kan äntligen resa sig. – Tack, unga hjältar! Han ger er några mynt han gömt i skon. Ni får 25 guld, och alla får 100 XP.",
             "k": "hit"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -439,7 +413,7 @@
           "sally": 23,
           "egen-1793378426345": 31
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
+        "dorrText": "Ingen väg att välja. Bara framåt.",
         "fangeKap": 1,
         "raddade": 1
       }
