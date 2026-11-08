@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:25:40.002Z",
+  "uppdaterad": "2026-11-08T19:25:49.151Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1793907886260,
+    "tid": 1794165947183,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -286,8 +286,70 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon gråter tyst bakom dörren.",
+            "typ": "fange",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Hemsökta herrgården",
+            "k": "sep"
+          },
+          {
+            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "egen-1793378426345"
+        ],
+        "guld": 43,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794165947180,
+        "nastaKand": false,
+        "id": "rmw882wx8h1e4",
+        "startGuld": 43,
+        "liv": {
+          "tomas": 44,
+          "ville": 36,
+          "sally": 23,
+          "egen-1793378426345": 36
+        },
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+      }
+    ],
+    "aktivRun": "rmw882wx8h1e4",
     "historik": [
       {
         "plats": "herrgarden",
