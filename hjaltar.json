@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:32:25.103Z",
+  "uppdaterad": "2026-11-08T19:32:32.602Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166343068,
+    "tid": 1794166350690,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "rum",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -323,7 +323,9 @@
             "klader": 6
           },
           "fiender": [
-            "nekromantiker"
+            "vampyrfladdermus",
+            "vampyrfladdermus",
+            "vampyrfladdermus"
           ],
           "stridOpt": {
             "fiendeForst": true
@@ -389,6 +391,14 @@
           {
             "t": "Striden är över. Alla får 135 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
+            "k": "bad"
+          },
+          {
+            "t": "Oväsendet väcker något. tre vampyrfladdermöss sveper in genom väggen!",
+            "k": "bad"
           }
         ],
         "party": [
