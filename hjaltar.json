@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:36:39.879Z",
+  "uppdaterad": "2026-11-08T19:36:49.178Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166597949,
+    "tid": 1794166607220,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -290,32 +290,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Dimma sipprar ut under dörren.",
-            "typ": "falla",
+            "ledtrad": "Ett lågt morrande. Sedan tystnad.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
-            "typ": "falla",
+            "ledtrad": "Ni känner värme mot ansiktet.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "tal",
-            "alla": true,
-            "varn": "Grön rök väller fram ur väggarna!",
-            "ok": "håller andan",
-            "traff": "hostar och mår illa av gasen"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -432,6 +422,10 @@
           {
             "t": "Benjamin hostar och mår illa av gasen: 7 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -464,7 +458,7 @@
           "sally": 12,
           "egen-1793378426345": 24
         },
-        "dorrText": "Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.",
+        "dorrText": "Ledtrådarna säger lite, men inte allt.",
         "fangeKap": 1,
         "raddade": 1
       }
