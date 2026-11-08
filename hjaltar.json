@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:26:47.812Z",
+  "uppdaterad": "2026-11-08T19:27:13.063Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166005807,
+    "tid": 1794166031171,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "rum",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -321,6 +321,13 @@
             "har": 3,
             "stil": "kort",
             "klader": 6
+          },
+          "fiender": [
+            "spoke",
+            "spoke"
+          ],
+          "stridOpt": {
+            "fiendeForst": true
           }
         },
         "logg": [
@@ -342,6 +349,14 @@
           },
           {
             "t": "Ville drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.",
+            "k": "bad"
+          },
+          {
+            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
+            "k": "bad"
+          },
+          {
+            "t": "Det blir iskallt i rummet. två spöken dyker upp ur dimman!",
             "k": "bad"
           }
         ],
