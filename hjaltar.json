@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:29:09.611Z",
+  "uppdaterad": "2026-11-08T19:30:51.135Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166147752,
+    "tid": 1794166249045,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2543
+        "xp": 2678
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 4008
+        "xp": 4143
       },
       "sally": {
         "lvl": 4,
-        "xp": 2229
+        "xp": 2364
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 1958
+        "xp": 2093
       },
       "linda": {
         "lvl": 2,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -369,6 +369,10 @@
           {
             "t": "Oväsendet väcker något. en nekromantiker sveper in genom väggen!",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 135 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -390,7 +394,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 200,
+        "ara": 650,
         "start": 1794165947180,
         "nastaKand": false,
         "id": "rmw882wx8h1e4",
