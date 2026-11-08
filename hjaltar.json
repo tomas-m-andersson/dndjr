@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:26:15.220Z",
+  "uppdaterad": "2026-11-08T19:26:47.812Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794165973337,
+    "tid": 1794166005807,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -339,6 +339,10 @@
           {
             "t": "En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",
             "k": "note"
+          },
+          {
+            "t": "Ville drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.",
+            "k": "bad"
           }
         ],
         "party": [
