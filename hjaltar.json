@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:32:39.912Z",
+  "uppdaterad": "2026-11-08T19:32:43.177Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166358034,
+    "tid": 1794166361131,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -429,7 +429,7 @@
           "tomas": 44,
           "ville": 29,
           "sally": 23,
-          "egen-1793378426345": 36
+          "egen-1793378426345": 31
         },
         "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
         "fangeKap": 1
