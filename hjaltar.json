@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:33:34.875Z",
+  "uppdaterad": "2026-11-08T19:34:05.168Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166412832,
+    "tid": 1794166443269,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ni känner en svag doft av mat.",
@@ -299,8 +299,19 @@
             "kand": false
           }
         ],
-        "lyssnat": false,
-        "rum": null,
+        "lyssnat": true,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "vampyrfladdermus",
+            "vampyrfladdermus",
+            "vampyrfladdermus"
+          ],
+          "stridOpt": {
+            "fiendeForst": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -381,6 +392,10 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Tomas lyssnar, men något hör er först! tre vampyrfladdermöss rusar fram ur skuggorna!",
+            "k": "bad"
           }
         ],
         "party": [
