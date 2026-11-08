@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:34:15.472Z",
+  "uppdaterad": "2026-11-08T19:35:51.746Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166453577,
+    "tid": 1794166551515,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2958
+        "xp": 3003
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 4423
+        "xp": 4468
       },
       "sally": {
         "lvl": 4,
-        "xp": 2644
+        "xp": 2689
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 2373
+        "xp": 2418
       },
       "linda": {
         "lvl": 2,
@@ -290,28 +290,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "strid",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "lager",
+            "ledtrad": "Dimma sipprar ut under dörren.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "falla",
             "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "strid",
-          "klar": false,
-          "fiender": [
-            "vampyrfladdermus",
-            "vampyrfladdermus",
-            "vampyrfladdermus"
-          ],
-          "stridOpt": {
-            "fiendeForst": true
-          }
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -396,6 +390,14 @@
           {
             "t": "Tomas lyssnar, men något hör er först! tre vampyrfladdermöss rusar fram ur skuggorna!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 45 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
+            "k": ""
           }
         ],
         "party": [
@@ -417,7 +419,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 1250,
+        "ara": 1400,
         "start": 1794165947180,
         "nastaKand": false,
         "id": "rmw882wx8h1e4",
@@ -428,7 +430,7 @@
           "sally": 23,
           "egen-1793378426345": 31
         },
-        "dorrText": "Ingen väg att välja. Bara framåt.",
+        "dorrText": "Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.",
         "fangeKap": 1,
         "raddade": 1
       }
