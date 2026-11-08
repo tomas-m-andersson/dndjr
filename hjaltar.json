@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:39:38.420Z",
+  "uppdaterad": "2026-11-08T19:39:55.414Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166776546,
+    "tid": 1794166793536,
     "niva": {
       "ville": {
-        "lvl": 4,
-        "xp": 3198
+        "lvl": 5,
+        "xp": 3318
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 4663
+        "xp": 4783
       },
       "sally": {
         "lvl": 4,
-        "xp": 2884
+        "xp": 3004
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 2613
+        "xp": 2733
       },
       "linda": {
         "lvl": 2,
@@ -312,7 +312,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
             "vem": "tomten",
@@ -465,6 +465,14 @@
           {
             "t": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
             "k": ""
+          },
+          {
+            "t": "Tomten dricker, hoppar högt av glädje och berättar allt. Alla får 120 XP.",
+            "k": "heal"
+          },
+          {
+            "t": "★ Ville känner sig mäktigare. Nivå 5! +8 liv och bättre träffsäkerhet.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -481,19 +489,18 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
         "curse": {},
         "ara": 2050,
         "start": 1794165947180,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmw882wx8h1e4",
         "startGuld": 43,
         "liv": {
           "tomas": 38,
-          "ville": 29,
+          "ville": 37,
           "sally": 12,
           "egen-1793378426345": 24
         },
