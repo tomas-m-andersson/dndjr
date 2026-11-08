@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-05T19:48:08.157Z",
+  "uppdaterad": "2026-11-08T19:25:30.346Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -63,7 +63,7 @@
   ],
   "sallskap": [
     "tomas",
-    "svante"
+    "ville"
   ],
   "grundandringar": {
     "ville": {
@@ -93,15 +93,15 @@
       "gosedjur": "blackis"
     },
     "svante": {
+      "folk": "manniska",
+      "alder": 19,
+      "skagg": false,
       "attacker": [
         "kraftslag",
         "dubbelhugg",
         "skoldslag"
       ],
       "vapen": "askhammare",
-      "folk": "manniska",
-      "alder": 19,
-      "skagg": false,
       "klass": "krigare",
       "hud": 1,
       "har": 9,
