@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:25:49.151Z",
+  "uppdaterad": "2026-11-08T19:26:15.220Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794165947183,
+    "tid": 1794165973337,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -305,7 +305,24 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "fange",
+          "klar": false,
+          "fange": {
+            "text": "En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",
+            "vem": "trädgårdsmästaren",
+            "tack": "– Tack, unga hjältar! Han ger er några mynt han gömt i skon."
+          },
+          "fangeHero": {
+            "folk": "manniska",
+            "klass": "ingen",
+            "alder": 9,
+            "hud": 5,
+            "har": 3,
+            "stil": "kort",
+            "klader": 6
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -314,6 +331,14 @@
           {
             "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Fångar i kedjor",
+            "k": "sep"
+          },
+          {
+            "t": "En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",
+            "k": "note"
           }
         ],
         "party": [
@@ -346,7 +371,8 @@
           "sally": 23,
           "egen-1793378426345": 36
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er."
+        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
+        "fangeKap": 1
       }
     ],
     "aktivRun": "rmw882wx8h1e4",
