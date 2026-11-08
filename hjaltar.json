@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:39:55.414Z",
+  "uppdaterad": "2026-11-08T19:40:08.023Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166793536,
+    "tid": 1794166806132,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -290,37 +290,11 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Någon stönar svagt, som om den har ont.",
-            "typ": "resenar",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni känner en svag doft av mat.",
-            "typ": "lager",
-            "kand": false
-          },
-          {
-            "ledtrad": "En mjuk sång hörs på avstånd.",
-            "typ": "resenar",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
-            "vem": "tomten",
-            "ok": "Tomten viskar vad som gömmer sig bakom nästa dörrar.",
-            "nej": "Tomten fnyser och vägrar säga något.",
-            "dryck": "Tomten dricker, hoppar högt av glädje och berättar allt."
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -473,6 +447,10 @@
           {
             "t": "★ Ville känner sig mäktigare. Nivå 5! +8 liv och bättre träffsäkerhet.",
             "k": "crit"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
+            "k": ""
           }
         ],
         "party": [
@@ -504,7 +482,7 @@
           "sally": 12,
           "egen-1793378426345": 24
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst.",
+        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar herrgårdens fru.",
         "fangeKap": 1,
         "raddade": 1
       }
