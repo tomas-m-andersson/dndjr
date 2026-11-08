@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:32:46.580Z",
+  "uppdaterad": "2026-11-08T19:33:12.548Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166364697,
+    "tid": 1794166390592,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2813
+        "xp": 2858
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 4278
+        "xp": 4323
       },
       "sally": {
         "lvl": 4,
-        "xp": 2499
+        "xp": 2544
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 2228
+        "xp": 2273
       },
       "linda": {
         "lvl": 2,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -399,6 +399,10 @@
           {
             "t": "Oväsendet väcker något. tre vampyrfladdermöss sveper in genom väggen!",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 45 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -420,7 +424,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 1100,
+        "ara": 1250,
         "start": 1794165947180,
         "nastaKand": false,
         "id": "rmw882wx8h1e4",
