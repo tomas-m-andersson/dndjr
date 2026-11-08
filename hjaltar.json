@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:40:14.699Z",
+  "uppdaterad": "2026-11-08T19:42:37.516Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166812622,
+    "tid": 1794166955479,
     "niva": {
       "ville": {
         "lvl": 5,
