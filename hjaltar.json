@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:35:53.416Z",
+  "uppdaterad": "2026-11-08T19:36:14.427Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166551515,
+    "tid": 1794166572526,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Dimma sipprar ut under dörren.",
@@ -305,7 +305,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "tal",
+            "alla": true,
+            "varn": "Grön rök väller fram ur väggarna!",
+            "ok": "håller andan",
+            "traff": "hostar och mår illa av gasen"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -398,6 +408,14 @@
           {
             "t": "Ett ljus slocknar av sig självt när ni går förbi.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Grön rök väller fram ur väggarna!",
+            "k": "bad"
           }
         ],
         "party": [
