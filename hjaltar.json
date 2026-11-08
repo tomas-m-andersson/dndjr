@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:46:21.620Z",
+  "uppdaterad": "2026-11-08T19:46:49.451Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -189,7 +189,7 @@
     }
   },
   "aventyr": {
-    "guld": 2506,
+    "guld": 2701,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794167179640,
+    "tid": 1794167207469,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -287,227 +287,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "dimfrun"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Oväsendet väcker något. en nekromantiker sveper in genom väggen!",
-            "k": "bad"
-          },
-          {
-            "t": "Ni vann! Alla får 135 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.",
-            "k": "bad"
-          },
-          {
-            "t": "Låset är rostigt och vill inte öppna sig.",
-            "k": "bad"
-          },
-          {
-            "t": "Det blir iskallt i rummet. en nekromantiker dyker upp ur dimman!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 135 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
-            "k": "bad"
-          },
-          {
-            "t": "Oväsendet väcker något. tre vampyrfladdermöss sveper in genom väggen!",
-            "k": "bad"
-          },
-          {
-            "t": "Ni vann! Alla får 45 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Klick! Låset går upp, och trädgårdsmästaren kan äntligen resa sig. – Tack, unga hjältar! Han ger er några mynt han gömt i skon. Ni får 25 guld, och alla får 100 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Tomas lyssnar, men något hör er först! tre vampyrfladdermöss rusar fram ur skuggorna!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 45 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Grön rök väller fram ur väggarna!",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas håller andan!",
-            "k": "hit"
-          },
-          {
-            "t": "Ville håller andan!",
-            "k": "hit"
-          },
-          {
-            "t": "Sally hostar och mår illa av gasen: 11 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Benjamin hostar och mår illa av gasen: 7 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ni möter en levande rustning och en nekromantiker!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 195 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Någon behöver hjälp",
-            "k": "sep"
-          },
-          {
-            "t": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
-            "k": ""
-          },
-          {
-            "t": "Tomten dricker, hoppar högt av glädje och berättar allt. Alla får 120 XP.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Ville känner sig mäktigare. Nivå 5! +8 liv och bättre träffsäkerhet.",
-            "k": "crit"
-          },
-          {
-            "t": "Gången slutar vid en stor port. Längst in väntar herrgårdens fru.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Herrgårdens fru",
-            "k": "sep"
-          },
-          {
-            "t": "",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 330 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Nivå upp! Sally är nu nivå 5! +5 liv och bättre träffsäkerhet.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 170 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Tomas får ett magiskt vapen: +1 på träff och skada.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Herrgårdens fru är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Alvbågen! Bågskytt kan nu välja det under Ändra. Missar nästan aldrig: +3 på slaget.",
-            "k": "crit"
-          }
-        ],
-        "party": [
-          "tomas",
-          "ville",
-          "sally",
-          "egen-1793378426345"
-        ],
-        "guld": 238,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
-        "ara": 3150,
-        "start": 1794165947180,
-        "nastaKand": true,
-        "id": "rmw882wx8h1e4",
-        "startGuld": 43,
-        "liv": {
-          "tomas": 38,
-          "ville": 37,
-          "sally": 17,
-          "egen-1793378426345": 24
-        },
-        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar herrgårdens fru.",
-        "fangeKap": 1,
+        "utfall": "hem",
         "raddade": 1,
-        "bossFaktor": 1.3,
-        "nyttVapen": "Alvbågen",
-        "nyttVapenId": "alvbage"
-      }
-    ],
-    "aktivRun": "rmw882wx8h1e4",
-    "historik": [
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 5)",
+          "Sally (nivå 5)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 3150,
+        "datum": "2026-11-08"
+      },
       {
         "plats": "herrgarden",
         "kapitel": 1,
