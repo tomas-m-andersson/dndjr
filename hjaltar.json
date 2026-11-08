@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:27:30.836Z",
+  "uppdaterad": "2026-11-08T19:28:40.322Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166048968,
+    "tid": 1794166118261,
     "niva": {
       "ville": {
         "lvl": 4,
-        "xp": 2483
+        "xp": 2543
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 3948
+        "xp": 4008
       },
       "sally": {
         "lvl": 4,
-        "xp": 2169
+        "xp": 2229
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 1898
+        "xp": 1958
       },
       "linda": {
         "lvl": 2,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -358,6 +358,10 @@
           {
             "t": "Det blir iskallt i rummet. två spöken dyker upp ur dimman!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 60 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -379,7 +383,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 200,
         "start": 1794165947180,
         "nastaKand": false,
         "id": "rmw882wx8h1e4",
