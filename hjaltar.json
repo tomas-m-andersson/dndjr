@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:39:16.588Z",
+  "uppdaterad": "2026-11-08T19:39:38.420Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166754537,
+    "tid": 1794166776546,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -291,7 +291,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon stönar svagt, som om den har ont.",
@@ -310,7 +310,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
+            "vem": "tomten",
+            "ok": "Tomten viskar vad som gömmer sig bakom nästa dörrar.",
+            "nej": "Tomten fnyser och vägrar säga något.",
+            "dryck": "Tomten dricker, hoppar högt av glädje och berättar allt."
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -446,6 +456,14 @@
           },
           {
             "t": "Ett ljus slocknar av sig självt när ni går förbi.",
+            "k": ""
+          },
+          {
+            "t": "Rum 5 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
             "k": ""
           }
         ],
