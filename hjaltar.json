@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:39:11.688Z",
+  "uppdaterad": "2026-11-08T19:39:16.588Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,7 +221,7 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794166749553,
+    "tid": 1794166754537,
     "niva": {
       "ville": {
         "lvl": 4,
@@ -290,30 +290,27 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett lågt morrande. Sedan tystnad.",
-            "typ": "strid",
+            "ledtrad": "Någon stönar svagt, som om den har ont.",
+            "typ": "resenar",
             "kand": false
           },
           {
-            "ledtrad": "Ni känner värme mot ansiktet.",
-            "typ": "strid",
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "En mjuk sång hörs på avstånd.",
+            "typ": "resenar",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "levande_rustning",
-            "nekromantiker"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -446,6 +443,10 @@
           {
             "t": "Det sista monstret faller. Alla får 195 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ett ljus slocknar av sig självt när ni går förbi.",
+            "k": ""
           }
         ],
         "party": [
@@ -478,7 +479,7 @@
           "sally": 12,
           "egen-1793378426345": 24
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt.",
+        "dorrText": "Ni kan lyssna först. Men gör det tyst.",
         "fangeKap": 1,
         "raddade": 1
       }
