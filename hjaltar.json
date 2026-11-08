@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:45:42.277Z",
+  "uppdaterad": "2026-11-08T19:46:21.620Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -221,11 +221,11 @@
         "nyttVapenId": "skuggstav"
       }
     },
-    "tid": 1794167140199,
+    "tid": 1794167179640,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 3318
+        "xp": 3648
       },
       "svante": {
         "lvl": 4,
@@ -233,15 +233,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 4783
+        "xp": 5113
       },
       "sally": {
-        "lvl": 4,
-        "xp": 3004
+        "lvl": 5,
+        "xp": 3334
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 2733
+        "xp": 3063
       },
       "linda": {
         "lvl": 2,
@@ -257,7 +257,8 @@
       "drakdrapare",
       "flammsvard",
       "eldbage",
-      "askhammare"
+      "askhammare",
+      "alvbage"
     ],
     "utr": {
       "ville": {
@@ -273,7 +274,7 @@
         "acb": 2
       },
       "tomas": {
-        "wb": 0,
+        "wb": 1,
         "acb": 2
       },
       "sally": {
@@ -291,7 +292,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -305,38 +306,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Fångar i kedjor",
-            "k": "sep"
-          },
-          {
-            "t": "En gammal trädgårdsmästare hänger i kedjor. Han har suttit här länge.",
-            "k": "note"
-          },
-          {
-            "t": "Ville drar och sliter, men kedjorna håller. Det skramlar högt i hela huset.",
-            "k": "bad"
-          },
-          {
-            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
-            "k": "bad"
-          },
-          {
-            "t": "Det blir iskallt i rummet. två spöken dyker upp ur dimman!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 60 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Dyrken går av i låset. Sally får försöka igen.",
-            "k": "bad"
-          },
           {
             "t": "Oväsendet väcker något. en nekromantiker sveper in genom väggen!",
             "k": "bad"
@@ -464,6 +433,38 @@
           {
             "t": "",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 330 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Sally är nu nivå 5! +5 liv och bättre träffsäkerhet.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 170 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas får ett magiskt vapen: +1 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Herrgårdens fru är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Alvbågen! Bågskytt kan nu välja det under Ändra. Missar nästan aldrig: +3 på slaget.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -472,7 +473,7 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 68,
+        "guld": 238,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -480,11 +481,13 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 2050,
+        "ara": 3150,
         "start": 1794165947180,
         "nastaKand": true,
         "id": "rmw882wx8h1e4",
@@ -492,13 +495,15 @@
         "liv": {
           "tomas": 38,
           "ville": 37,
-          "sally": 12,
+          "sally": 17,
           "egen-1793378426345": 24
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar herrgårdens fru.",
         "fangeKap": 1,
         "raddade": 1,
-        "bossFaktor": 1.3
+        "bossFaktor": 1.3,
+        "nyttVapen": "Alvbågen",
+        "nyttVapenId": "alvbage"
       }
     ],
     "aktivRun": "rmw882wx8h1e4",
@@ -780,7 +785,8 @@
         "levande_rustning": 2,
         "troll": 2,
         "basilisk": 1,
-        "nekromantiker": 1
+        "nekromantiker": 1,
+        "dimfrun": 1
       }
     }
   }
