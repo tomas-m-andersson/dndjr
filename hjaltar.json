@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-08T19:46:49.451Z",
+  "uppdaterad": "2026-11-08T19:47:24.843Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -39,7 +39,7 @@
         "dubbelskott",
         "pilregn"
       ],
-      "vapen": "eldbage",
+      "vapen": "alvbage",
       "folk": "manniska",
       "alder": 20,
       "skagg": false,
