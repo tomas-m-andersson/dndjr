@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-09T19:45:01.219Z",
+  "uppdaterad": "2026-11-09T19:46:01.237Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -93,15 +93,15 @@
       "gosedjur": "blackis"
     },
     "svante": {
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "attacker": [
         "kraftslag",
         "dubbelhugg",
         "skoldslag"
       ],
       "vapen": "askhammare",
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "klass": "krigare",
       "hud": 1,
       "har": 9,
@@ -211,13 +211,14 @@
           "sett_torget",
           "spar",
           "vet_drake",
-          "glod_fri"
+          "glod_fri",
+          "krak_borta"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794253499253,
+    "tid": 1794253559151,
     "niva": {
       "ville": {
         "lvl": 5,
