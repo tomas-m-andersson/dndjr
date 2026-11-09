@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-09T19:36:34.337Z",
+  "uppdaterad": "2026-11-09T19:36:57.323Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -194,32 +194,21 @@
     ],
     "liv": {
       "ville": 23,
-      "svante": 18,
+      "svante": 32,
       "sally": 17,
-      "tomas": 25,
+      "tomas": 44,
       "linda": 7,
       "egen-1793378426345": 27
     },
     "kapitel": {
       "k1": {
-        "scen": "slut_glod",
-        "flaggor": [
-          "sett_bo",
-          "vet_lager",
-          "vet_skuggan",
-          "bo_omlagd",
-          "glod_fri",
-          "krak_borta",
-          "glod_eld"
-        ],
-        "klar": true,
-        "v": 2,
-        "slut": "slut_glod",
-        "nyttVapen": "Ni hittar Skuggstaven! Magiker kan nu välja det under Ändra. Stjäl kraft: hälften av skadan helar dig.",
-        "nyttVapenId": "skuggstav"
+        "scen": "start",
+        "flaggor": [],
+        "klar": false,
+        "v": 2
       }
     },
-    "tid": 1794167207469,
+    "tid": 1794253015183,
     "niva": {
       "ville": {
         "lvl": 5,
