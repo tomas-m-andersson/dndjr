@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-09T19:53:03.337Z",
+  "uppdaterad": "2026-11-09T19:53:17.254Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -106,7 +106,7 @@
       "hud": 1,
       "har": 9,
       "stil": "kort",
-      "klader": 2,
+      "klader": 5,
       "flackar": false,
       "s": {
         "sty": 9,
