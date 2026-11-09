@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-09T19:51:57.308Z",
+  "uppdaterad": "2026-11-09T19:53:03.337Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -93,16 +93,16 @@
       "gosedjur": "blackis"
     },
     "svante": {
+      "attacker": [
+        "smygattack",
+        "shuriken",
+        "tryckpunkt"
+      ],
+      "vapen": "manklinga",
       "folk": "manniska",
       "alder": 8,
       "skagg": false,
-      "attacker": [
-        "kraftslag",
-        "dubbelhugg",
-        "skoldslag"
-      ],
-      "vapen": "askhammare",
-      "klass": "krigare",
+      "klass": "ninja",
       "hud": 1,
       "har": 9,
       "stil": "kort",
