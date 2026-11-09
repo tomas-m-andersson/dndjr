@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-09T19:46:01.237Z",
+  "uppdaterad": "2026-11-09T19:46:17.894Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -202,7 +202,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "gruvan",
+        "scen": "gruva_inne",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -218,7 +218,7 @@
         "v": 2
       }
     },
-    "tid": 1794253559151,
+    "tid": 1794253575915,
     "niva": {
       "ville": {
         "lvl": 5,
