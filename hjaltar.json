@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:43:31.490Z",
+  "uppdaterad": "2026-11-10T19:43:51.320Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794253915260,
+    "tid": 1794339829157,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -291,8 +291,70 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Någon gråter tyst bakom dörren.",
+            "typ": "fange",
+            "kand": false
+          },
+          {
+            "ledtrad": "En gammal sång nynnas, lite falskt.",
+            "typ": "resenar",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Hemsökta herrgården",
+            "k": "sep"
+          },
+          {
+            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "egen-1793378426345"
+        ],
+        "guld": 37,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794339829153,
+        "nastaKand": false,
+        "id": "rmwb3lt41j05r",
+        "startGuld": 37,
+        "liv": {
+          "tomas": 44,
+          "ville": 44,
+          "sally": 28,
+          "egen-1793378426345": 36
+        },
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+      }
+    ],
+    "aktivRun": "rmwb3lt41j05r",
     "historik": [
       {
         "plats": "herrgarden",
