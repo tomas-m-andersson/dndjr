@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:48:22.584Z",
+  "uppdaterad": "2026-11-10T19:48:36.720Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340100521,
+    "tid": 1794340114737,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -296,7 +296,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
@@ -310,7 +310,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "brunn",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -406,6 +409,14 @@
           },
           {
             "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
+          },
+          {
+            "t": "Rum 5 · Brunn",
+            "k": "sep"
+          },
+          {
+            "t": "En brunn av sten med en hink på ett rep. Det luktar friskt.",
             "k": ""
           }
         ],
