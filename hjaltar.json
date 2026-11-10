@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:53:27.340Z",
+  "uppdaterad": "2026-11-10T19:53:40.136Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -189,7 +189,7 @@
     }
   },
   "aventyr": {
-    "guld": 2721,
+    "guld": 3086,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340405263,
+    "tid": 1794340418156,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -292,217 +292,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "skuggan"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Hemsökta herrgården",
-            "k": "sep"
-          },
-          {
-            "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Fångar i kedjor",
-            "k": "sep"
-          },
-          {
-            "t": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
-            "k": "note"
-          },
-          {
-            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
-            "k": "bad"
-          },
-          {
-            "t": "Benjamin får loss kedjorna! flickan är fri. Flickan kramar er och springer mot utgången. Ni får 35 guld, och alla får 125 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "flickan berättar vad som väntar längre in i herrgården.",
-            "k": "magic"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Något susar ner från taket!",
-            "k": "bad"
-          },
-          {
-            "t": "Ville träffas av en svängande yxa: 17 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Ni smyger vidare genom de dammiga salarna.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Skatt",
-            "k": "sep"
-          },
-          {
-            "t": "En död äventyrare har lämnat sin ryggsäck här. Den är full.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 100 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Sally får ett magiskt vapen: +1 på träff och skada.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Ett högt ljud skär i öronen!",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas håller för öronen i tid!",
-            "k": "hit"
-          },
-          {
-            "t": "Ville blir yr av ljudet: 15 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Sally blir yr av ljudet: 15 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Benjamin håller för öronen i tid!",
-            "k": "hit"
-          },
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Brunn",
-            "k": "sep"
-          },
-          {
-            "t": "En brunn av sten med en hink på ett rep. Det luktar friskt.",
-            "k": ""
-          },
-          {
-            "t": "Tomas får ont i magen direkt. 18 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar herrgårdens fru.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Herrgårdens fru",
-            "k": "sep"
-          },
-          {
-            "t": "",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 330 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Benjamin har blivit starkare och är nu nivå 5! +8 liv och bättre träffsäkerhet.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 230 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Det är över. Herrgårdens fru är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "⚔ Ni hittar Skuggkatanan! Ninja kan nu välja det under Ändra. Kritisk träff redan på 18.",
-            "k": "crit"
-          }
-        ],
-        "party": [
-          "tomas",
-          "ville",
-          "sally",
-          "egen-1793378426345"
-        ],
-        "guld": 402,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
-        "ara": 1100,
-        "start": 1794339829153,
-        "nastaKand": false,
-        "id": "rmwb3lt41j05r",
-        "startGuld": 37,
-        "liv": {
-          "tomas": 26,
-          "ville": 28,
-          "sally": 6,
-          "egen-1793378426345": 38
-        },
-        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar herrgårdens fru.",
-        "fangeKap": 1,
+        "utfall": "hem",
         "raddade": 1,
-        "bossFaktor": 1.3,
-        "nyttVapen": "Skuggkatanan",
-        "nyttVapenId": "skuggkatana"
-      }
-    ],
-    "aktivRun": "rmwb3lt41j05r",
-    "historik": [
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 5)",
+          "Sally (nivå 5)",
+          "Benjamin (nivå 5)"
+        ],
+        "ara": 1100,
+        "datum": "2026-11-10"
+      },
       {
         "plats": "herrgarden",
         "kapitel": 1,
@@ -767,20 +574,6 @@
         ],
         "ara": 0,
         "datum": "2026-10-26"
-      },
-      {
-        "plats": "slottet",
-        "kapitel": 1,
-        "djup": 6,
-        "utfall": "hem",
-        "hjaltar": [
-          "Ville (nivå 1)",
-          "Svante (nivå 1)",
-          "Tomas (nivå 1)",
-          "Sally (nivå 1)"
-        ],
-        "ara": 150,
-        "datum": "2026-10-23"
       }
     ],
     "lager": {
