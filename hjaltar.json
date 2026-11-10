@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:48:17.986Z",
+  "uppdaterad": "2026-11-10T19:48:22.584Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340095914,
+    "tid": 1794340100521,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -295,32 +295,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "lager",
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
+            "typ": "brunn",
             "kand": false
           },
           {
-            "ledtrad": "Ni känner värme mot ansiktet.",
-            "typ": "falla",
+            "ledtrad": "Någon andas tungt. Det låter stort.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "vis",
-            "alla": true,
-            "varn": "Ett högt ljud skär i öronen!",
-            "ok": "håller för öronen i tid",
-            "traff": "blir yr av ljudet"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -413,6 +403,10 @@
           {
             "t": "Benjamin håller för öronen i tid!",
             "k": "hit"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -443,7 +437,7 @@
           "sally": 13,
           "egen-1793378426345": 36
         },
-        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
+        "dorrText": "Ledtrådarna säger lite, men inte allt.",
         "fangeKap": 1,
         "raddade": 1
       }
