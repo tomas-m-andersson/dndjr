@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:53:00.613Z",
+  "uppdaterad": "2026-11-10T19:53:27.340Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,11 +224,11 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340378471,
+    "tid": 1794340405263,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 3773
+        "xp": 4253
       },
       "svante": {
         "lvl": 4,
@@ -236,15 +236,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 5238
+        "xp": 5718
       },
       "sally": {
         "lvl": 5,
-        "xp": 3459
+        "xp": 3939
       },
       "egen-1793378426345": {
-        "lvl": 4,
-        "xp": 3188
+        "lvl": 5,
+        "xp": 3668
       },
       "linda": {
         "lvl": 2,
@@ -262,7 +262,8 @@
       "eldbage",
       "askhammare",
       "alvbage",
-      "manklinga"
+      "manklinga",
+      "skuggkatana"
     ],
     "utr": {
       "ville": {
@@ -296,7 +297,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -429,6 +430,38 @@
           {
             "t": "",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 330 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Benjamin har blivit starkare och är nu nivå 5! +8 liv och bättre träffsäkerhet.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 230 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Herrgårdens fru är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Skuggkatanan! Ninja kan nu välja det under Ändra. Kritisk träff redan på 18.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -437,17 +470,19 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 172,
+        "guld": 402,
         "saker": [
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 1100,
         "start": 1794339829153,
         "nastaKand": false,
         "id": "rmwb3lt41j05r",
@@ -456,12 +491,14 @@
           "tomas": 26,
           "ville": 28,
           "sally": 6,
-          "egen-1793378426345": 30
+          "egen-1793378426345": 38
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar herrgårdens fru.",
         "fangeKap": 1,
         "raddade": 1,
-        "bossFaktor": 1.3
+        "bossFaktor": 1.3,
+        "nyttVapen": "Skuggkatanan",
+        "nyttVapenId": "skuggkatana"
       }
     ],
     "aktivRun": "rmwb3lt41j05r",
@@ -759,7 +796,8 @@
         "troll": 2,
         "basilisk": 1,
         "nekromantiker": 1,
-        "dimfrun": 1
+        "dimfrun": 1,
+        "skuggan": 1
       }
     }
   }
