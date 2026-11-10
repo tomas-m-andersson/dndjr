@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:47:24.183Z",
+  "uppdaterad": "2026-11-10T19:47:49.420Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340042112,
+    "tid": 1794340067345,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -312,7 +312,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "vis",
             "alla": true,
@@ -397,6 +397,22 @@
           {
             "t": "Ett högt ljud skär i öronen!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas håller för öronen i tid!",
+            "k": "hit"
+          },
+          {
+            "t": "Ville blir yr av ljudet: 15 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Sally blir yr av ljudet: 15 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Benjamin håller för öronen i tid!",
+            "k": "hit"
           }
         ],
         "party": [
@@ -425,8 +441,8 @@
         "startGuld": 37,
         "liv": {
           "tomas": 44,
-          "ville": 27,
-          "sally": 28,
+          "ville": 12,
+          "sally": 13,
           "egen-1793378426345": 36
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
