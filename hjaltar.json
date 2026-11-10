@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:44:18.951Z",
+  "uppdaterad": "2026-11-10T19:44:42.124Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339856582,
+    "tid": 1794339879954,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -344,6 +344,10 @@
           {
             "t": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
             "k": "note"
+          },
+          {
+            "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
+            "k": "bad"
           }
         ],
         "party": [
