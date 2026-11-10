@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:53:40.136Z",
+  "uppdaterad": "2026-11-10T19:54:09.247Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -70,19 +70,19 @@
   "grundandringar": {
     "ville": {
       "attacker": [
-        "kraftslag",
-        "virvelhugg",
-        "skoldslag"
+        "smygattack",
+        "shuriken",
+        "tryckpunkt"
       ],
-      "vapen": "drakdrapare",
+      "vapen": "skuggkatana",
       "folk": "manniska",
       "alder": 7,
       "skagg": false,
-      "klass": "krigare",
+      "klass": "ninja",
       "hud": 1,
       "har": 3,
       "stil": "kort",
-      "klader": 3,
+      "klader": 5,
       "flackar": false,
       "s": {
         "sty": 16,
