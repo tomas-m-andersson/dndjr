@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:44:59.933Z",
+  "uppdaterad": "2026-11-10T19:45:15.305Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339897887,
+    "tid": 1794339913344,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -295,39 +295,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon gråter tyst bakom dörren.",
-            "typ": "fange",
-            "kand": false
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "falla",
+            "kand": true
           },
           {
-            "ledtrad": "En gammal sång nynnas, lite falskt.",
-            "typ": "resenar",
-            "kand": false
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "falla",
+            "kand": true
           }
         ],
-        "lyssnat": false,
-        "rum": {
-          "typ": "fange",
-          "klar": true,
-          "fange": {
-            "text": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
-            "vem": "flickan",
-            "tack": "Flickan kramar er och springer mot utgången."
-          },
-          "fangeHero": {
-            "folk": "manniska",
-            "klass": "ingen",
-            "alder": 16,
-            "hud": 5,
-            "har": 0,
-            "stil": "kal",
-            "klader": 6
-          }
-        },
+        "lyssnat": true,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -356,6 +339,10 @@
           {
             "t": "flickan berättar vad som väntar längre in i herrgården.",
             "k": "magic"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -379,7 +366,7 @@
         "curse": {},
         "ara": 0,
         "start": 1794339829153,
-        "nastaKand": true,
+        "nastaKand": false,
         "id": "rmwb3lt41j05r",
         "startGuld": 37,
         "liv": {
@@ -388,7 +375,7 @@
           "sally": 28,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
+        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "fangeKap": 1,
         "raddade": 1
       }
