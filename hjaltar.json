@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:49:52.192Z",
+  "uppdaterad": "2026-11-10T19:50:36.872Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340190214,
+    "tid": 1794340234618,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -456,7 +456,7 @@
           "tomas": 26,
           "ville": 28,
           "sally": 6,
-          "egen-1793378426345": 36
+          "egen-1793378426345": 30
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar herrgårdens fru.",
         "fangeKap": 1,
