@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:45:46.028Z",
+  "uppdaterad": "2026-11-10T19:46:04.143Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339944037,
+    "tid": 1794339962006,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -295,32 +295,27 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "ledtrad": "Ni hör ett klick, som av en mekanism.",
             "typ": "falla",
-            "kand": true
+            "kand": false
           },
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "falla",
-            "kand": true
+            "ledtrad": "Ett tungt lås skramlar i draget.",
+            "typ": "skatt",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "strid",
+            "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": false,
-            "varn": "Något susar ner från taket!",
-            "ok": "duckar för den svängande yxan",
-            "traff": "träffas av en svängande yxa"
-          }
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -365,6 +360,10 @@
           {
             "t": "Ville träffas av en svängande yxa: 17 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Ni smyger vidare genom de dammiga salarna.",
+            "k": ""
           }
         ],
         "party": [
@@ -397,7 +396,7 @@
           "sally": 28,
           "egen-1793378426345": 36
         },
-        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
+        "dorrText": "Ledtrådarna säger lite, men inte allt.",
         "fangeKap": 1,
         "raddade": 1
       }
