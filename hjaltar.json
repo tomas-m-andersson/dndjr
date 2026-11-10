@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:43:51.320Z",
+  "uppdaterad": "2026-11-10T19:44:18.951Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339829157,
+    "tid": 1794339856582,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -296,7 +296,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon gråter tyst bakom dörren.",
@@ -310,7 +310,24 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "fange",
+          "klar": false,
+          "fange": {
+            "text": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
+            "vem": "flickan",
+            "tack": "Flickan kramar er och springer mot utgången."
+          },
+          "fangeHero": {
+            "folk": "manniska",
+            "klass": "ingen",
+            "alder": 16,
+            "hud": 5,
+            "har": 0,
+            "stil": "kal",
+            "klader": 6
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -319,6 +336,14 @@
           {
             "t": "Fönstren i herrgården är mörka, utom ett, där ett ljus fladdrar. Tomas, Ville, Sally och Benjamin går in genom den knarrande ytterdörren.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Fångar i kedjor",
+            "k": "sep"
+          },
+          {
+            "t": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
+            "k": "note"
           }
         ],
         "party": [
@@ -351,7 +376,8 @@
           "sally": 28,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
+        "fangeKap": 1
       }
     ],
     "aktivRun": "rmwb3lt41j05r",
