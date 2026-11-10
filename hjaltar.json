@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:46:50.647Z",
+  "uppdaterad": "2026-11-10T19:47:08.918Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340008696,
+    "tid": 1794340026971,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -295,42 +295,22 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "ledtrad": "Något snarkar, djupt och långsamt.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni känner värme mot ansiktet.",
             "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett tungt lås skramlar i draget.",
-            "typ": "skatt",
-            "kand": false
-          },
-          {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "100 guldmynt",
-              "v": 100
-            },
-            {
-              "k": "wb",
-              "n": "Magiskt vapen",
-              "info": "+1 på träff och skada"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -395,6 +375,10 @@
           {
             "t": "Sally får ett magiskt vapen: +1 på träff och skada.",
             "k": "magic"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -427,7 +411,7 @@
           "sally": 28,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt.",
+        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "fangeKap": 1,
         "raddade": 1
       }
