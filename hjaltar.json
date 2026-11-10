@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:49:07.342Z",
+  "uppdaterad": "2026-11-10T19:49:14.610Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340145331,
+    "tid": 1794340152576,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -295,25 +295,11 @@
       {
         "plats": "herrgarden",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "brunn",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
-            "typ": "strid",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "brunn",
-          "klar": true
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -422,6 +408,10 @@
           {
             "t": "Tomas får ont i magen direkt. 18 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar herrgårdens fru.",
+            "k": ""
           }
         ],
         "party": [
@@ -452,7 +442,7 @@
           "sally": 13,
           "egen-1793378426345": 36
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt.",
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar herrgårdens fru.",
         "fangeKap": 1,
         "raddade": 1
       }
