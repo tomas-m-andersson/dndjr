@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:49:42.316Z",
+  "uppdaterad": "2026-11-10T19:49:52.192Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340180395,
+    "tid": 1794340190214,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -443,7 +443,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -456,7 +455,7 @@
         "liv": {
           "tomas": 26,
           "ville": 28,
-          "sally": 2,
+          "sally": 6,
           "egen-1793378426345": 36
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar herrgårdens fru.",
