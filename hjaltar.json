@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:45:15.305Z",
+  "uppdaterad": "2026-11-10T19:45:38.511Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339913344,
+    "tid": 1794339936434,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -296,7 +296,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -310,7 +310,17 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Något susar ner från taket!",
+            "ok": "duckar för den svängande yxan",
+            "traff": "träffas av en svängande yxa"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -343,6 +353,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Något susar ner från taket!",
+            "k": "bad"
           }
         ],
         "party": [
