@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:46:31.589Z",
+  "uppdaterad": "2026-11-10T19:46:50.647Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339989241,
+    "tid": 1794340008696,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -282,7 +282,7 @@
         "acb": 2
       },
       "sally": {
-        "wb": 0,
+        "wb": 1,
         "acb": 2
       },
       "linda": {
@@ -317,7 +317,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -387,6 +387,14 @@
           {
             "t": "En död äventyrare har lämnat sin ryggsäck här. Den är full.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 100 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Sally får ett magiskt vapen: +1 på träff och skada.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -395,7 +403,7 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 72,
+        "guld": 172,
         "saker": [
           "Läkedryck",
           "Läkedryck",
