@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:47:08.918Z",
+  "uppdaterad": "2026-11-10T19:47:24.183Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340026971,
+    "tid": 1794340042112,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -296,7 +296,7 @@
         "plats": "herrgarden",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -310,7 +310,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "vis",
+            "alla": true,
+            "varn": "Ett högt ljud skär i öronen!",
+            "ok": "håller för öronen i tid",
+            "traff": "blir yr av ljudet"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Hemsökta herrgården",
@@ -379,6 +389,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Ett högt ljud skär i öronen!",
+            "k": "bad"
           }
         ],
         "party": [
