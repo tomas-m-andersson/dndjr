@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:48:09.970Z",
+  "uppdaterad": "2026-11-10T19:48:17.986Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,7 +224,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340087984,
+    "tid": 1794340095914,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -428,7 +428,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -440,7 +439,7 @@
         "startGuld": 37,
         "liv": {
           "tomas": 44,
-          "ville": 21,
+          "ville": 28,
           "sally": 13,
           "egen-1793378426345": 36
         },
