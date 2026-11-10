@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:44:42.124Z",
+  "uppdaterad": "2026-11-10T19:44:59.933Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -224,11 +224,11 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794339879954,
+    "tid": 1794339897887,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 3648
+        "xp": 3773
       },
       "svante": {
         "lvl": 4,
@@ -236,15 +236,15 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 5113
+        "xp": 5238
       },
       "sally": {
         "lvl": 5,
-        "xp": 3334
+        "xp": 3459
       },
       "egen-1793378426345": {
         "lvl": 4,
-        "xp": 3063
+        "xp": 3188
       },
       "linda": {
         "lvl": 2,
@@ -312,7 +312,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "fange",
-          "klar": false,
+          "klar": true,
           "fange": {
             "text": "En flicka sitter fastkedjad vid väggen. – Snälla, hjälp mig härifrån!",
             "vem": "flickan",
@@ -348,6 +348,14 @@
           {
             "t": "Kedjan är för stark. Ljudet ekar genom herrgården.",
             "k": "bad"
+          },
+          {
+            "t": "Benjamin får loss kedjorna! flickan är fri. Flickan kramar er och springer mot utgången. Ni får 35 guld, och alla får 125 XP.",
+            "k": "hit"
+          },
+          {
+            "t": "flickan berättar vad som väntar längre in i herrgården.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -356,7 +364,7 @@
           "sally",
           "egen-1793378426345"
         ],
-        "guld": 37,
+        "guld": 72,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -371,7 +379,7 @@
         "curse": {},
         "ara": 0,
         "start": 1794339829153,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmwb3lt41j05r",
         "startGuld": 37,
         "liv": {
@@ -381,7 +389,8 @@
           "egen-1793378426345": 36
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
-        "fangeKap": 1
+        "fangeKap": 1,
+        "raddade": 1
       }
     ],
     "aktivRun": "rmwb3lt41j05r",
