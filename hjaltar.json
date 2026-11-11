@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-11T19:37:29.223Z",
+  "uppdaterad": "2026-11-11T19:37:38.585Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -187,7 +187,7 @@
     }
   },
   "aventyr": {
-    "guld": 3106,
+    "guld": 3126,
     "saker": [
       "Läkedryck",
       "Läkedryck"
@@ -216,7 +216,7 @@
         "v": 2
       }
     },
-    "tid": 1794425847233,
+    "tid": 1794425856449,
     "niva": {
       "ville": {
         "lvl": 5,
