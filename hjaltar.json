@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-11T19:32:58.360Z",
+  "uppdaterad": "2026-11-11T19:33:05.475Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -201,7 +201,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "spindelboet",
+        "scen": "spindelstrid",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -214,7 +214,7 @@
         "v": 2
       }
     },
-    "tid": 1794425576156,
+    "tid": 1794425583388,
     "niva": {
       "ville": {
         "lvl": 5,
