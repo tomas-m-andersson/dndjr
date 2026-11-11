@@ -1,8 +1,11 @@
 // Bland monster och tärningar – service worker.
 // Egna filer: nätet först (så uppdateringar syns direkt), cachen som reserv när man är offline.
 // GitHub-API:t (hjältarnas sparfil) cachas aldrig.
-const CACHE = "tarningsriket-v10";
-const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+// Samma fil används i dev-kopian (mappen dev/). Den får en egen cache så att de inte stör varandra.
+const DEV = /\/dev\//.test(location.pathname);
+const PREFIX = DEV ? "tarningsriket-dev-" : "tarningsriket-v";
+const CACHE = PREFIX + "11";
+const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./bilder.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -11,7 +14,7 @@ self.addEventListener("install", e => {
 self.addEventListener("activate", e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.startsWith(PREFIX) && k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
