@@ -626,10 +626,10 @@ const fmt=n=>(n>=0?"+":"")+n;
 
 /* ===== Grundfigurerna ===== */
 const BASE=[
- {id:"ville",namn:"Ville",alder:30,folk:"manniska",klass:"krigare",gosedjur:"blackis",hud:0,har:0,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
- {id:"svante",namn:"Svante",gosedjur:"tigris",alder:30,folk:"manniska",klass:"magiker",hud:1,har:1,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
- {id:"tomas",namn:"Tomas",folk:"manniska",alder:40,skagg:true,klass:"helare",hud:1,har:2,stil:"kal",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
- {id:"linda",namn:"Linda",alder:40,folk:"manniska",klass:"bagskytt",hud:0,har:3,stil:"lang",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
+ {id:"ville",namn:"Ville",alder:8,folk:"manniska",klass:"krigare",gosedjur:"blackis",hud:0,har:2,stil:"kort",klader:0,s:{sty:16,smi:12,tal:15,klo:10,vis:11,cha:12},om:"Modig och alltid först in genom dörren."},
+ {id:"svante",namn:"Svante",gosedjur:"tigris",alder:6,folk:"manniska",klass:"magiker",hud:0,har:0,stil:"kort",klader:1,s:{sty:9,smi:13,tal:12,klo:16,vis:13,cha:11},om:"Kan en trollformel för nästan allt. Nästan."},
+ {id:"tomas",namn:"Tomas",folk:"manniska",alder:43,skagg:true,klass:"helare",hud:0,har:2,stil:"kort",klader:4,s:{sty:14,smi:10,tal:16,klo:11,vis:15,cha:12},om:"Har skägg, sköld och plåster i fickan."},
+ {id:"linda",namn:"Linda",alder:40,folk:"manniska",klass:"bagskytt",hud:0,har:4,stil:"kort",klader:2,s:{sty:11,smi:17,tal:12,klo:13,vis:14,cha:12},om:"Missar aldrig ett mål och hör allt som rör sig i skogen."},
  {id:"benjamin",namn:"Benjamin",alder:20,folk:"manniska",klass:"bagskytt",vapen:"alvbage",attacker:["sikta_noga","dubbelskott","pilregn"],hud:2,har:9,stil:"kort",klader:5,s:{sty:14,smi:16,tal:14,klo:11,vis:11,cha:15},om:"Ung och snabb. Siktar alltid på det svåraste målet."},
  {id:"sally",namn:"Sally",folk:"katt",klass:"katt",hud:0,har:10,stil:"kort",flackar:true,klader:5,s:{sty:8,smi:17,tal:11,klo:12,vis:15,cha:14},om:"Katt. Smyger, nosar och hittar alltid hem."}];
 BASE.forEach(h=>h.grund=true);
@@ -655,7 +655,9 @@ franEgna(egna);egna=[];party=rattParty(party);
 function bytHjalteId(o){if(!o||typeof o!=="object")return o;const b=x=>HJALTE_BYTE[x]||x,nyc=m=>m&&typeof m==="object"&&!Array.isArray(m)?Object.fromEntries(Object.entries(m).map(([k,v])=>[b(k),v])):m,
   run=r=>r&&typeof r==="object"?{...r,party:Array.isArray(r.party)?r.party.map(b):r.party,liv:nyc(r.liv)}:r;
  o={...o,niva:nyc(o.niva),utr:nyc(o.utr),liv:nyc(o.liv)};if(Array.isArray(o.runs))o.runs=o.runs.map(run);if(o.run)o.run=run(o.run);return o}
-const withAndring=b=>andringar[b.id]?{...b,...andringar[b.id],namn:b.namn,id:b.id,grund:true}:b;
+// Utseende och ålder kommer alltid från grundfiguren (de går inte att ändra). Bara klass, vapen, attacker, egenskaper och gosedjur kan sparas som ändring.
+const ANDRAS=["klass","vapen","attacker","s","gosedjur"];
+const withAndring=b=>{const a=andringar[b.id];if(!a)return b;const o={...b,grund:true};ANDRAS.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});return o};
 const alla=()=>BASE.map(withAndring);
 let view="home";
 // Äventyrets framsteg: guld, packning, liv och hur långt man kommit i varje kapitel.
@@ -1026,6 +1028,11 @@ function giftTon(spr){if(!GIFTCACHE.has(spr)){const c=document.createElement("ca
   g.drawImage(spr,0,0);g.globalCompositeOperation="source-atop";g.fillStyle="rgba(90,220,70,.36)";g.fillRect(0,0,c.width,c.height);GIFTCACHE.set(spr,c)}
  return GIFTCACHE.get(spr)}
 function drawHero(cv,h,opt={}){
+ // egen bild: porträttet visar rutan där hjälten står still (ritas om när bilden har laddats)
+ if(!opt.transparent){cv._rita=()=>drawHero(cv,h,opt);const bi=window.egenHjalte&&egenHjalte(h);
+  if(bi){const W=34,H=34;cv.width=W;cv.height=H;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;const K=KLASS[h.klass]||{col:"#445566"};
+   for(let y=0;y<H;y++){g.fillStyle=shade(K.col,-.68+y/H*.1);g.fillRect(0,y,W,1)}g.fillStyle=shade(K.col,-.75);g.fillRect(0,H-4,W,4);g.fillStyle=shade(K.col,-.5);g.fillRect(0,H-4,W,1);
+   g.drawImage(bi,1,0);if(forgiftad(h))ritaTon(g,bi,1,0,1,false,"#6fe05a",.35);return}}
  const spr=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h);
  if(opt.transparent){cv.width=spr.width;cv.height=spr.height;cv.getContext("2d").drawImage(spr,0,0);return}
  const W=24,H=27;cv.width=W;cv.height=H;const g=cv.getContext("2d");
@@ -1090,11 +1097,15 @@ function start(){
  app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},d20svg(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
- const htv=document.createElement("canvas");htv.className="px";htv.width=TVW;htv.height=TVH;{const g=htv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"torg");
+ const htv=document.createElement("canvas");htv.className="px";
+ htv._rita=()=>{const HI=window.egnaBilderAntal&&egnaBilderAntal()>0;htv.width=HI?BTW:TVW;htv.height=HI?BTH:TVH;const g=htv.getContext("2d");g.imageSmoothingEnabled=false;
+  const BG=HI&&window.bakgrundBild?bakgrundBild("torg"):null;if(BG)ritaBakgrund(g,BG,BTW,BTH);if(HI)g.setTransform(BTW/TVW,0,0,BTH/TVH,0,0);if(!BG)scenePaint(g,"torg");
   const visa=A.slice(0,6),steg=Math.min(16,(TVW-16)/Math.max(1,visa.length-1||1)),bredd=steg*(visa.length-1)+14;
-  visa.forEach((h,i)=>{const c=heroSprite(h);g.drawImage(c,Math.round((TVW-bredd)/2+i*steg),TVH-c.height-1)})}
+  visa.forEach((h,i)=>{const bi=window.egenHjalte&&egenHjalte(h),x0=Math.round((TVW-bredd)/2+i*steg);if(bi){ritaRuta(g,bi,x0+7,TVH,CU);return}
+   const c=heroSprite(h);g.drawImage(c,x0,TVH-c.height-1)})};
+ htv._rita();
  const hjaltar=el("button",{class:"bigtile",onclick:home},el("div",{class:"tvbig"},htv),
-  el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")+(A.length>6?" (visar 6)":"")),el("small",{},"Välj vem som följer med, ändra utseende och vapen, eller skapa en egen hjälte.")));
+  el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")+(A.length>6?" (visar 6)":"")),el("small",{},"Välj vem som följer med och byt klass, vapen och gosedjur.")));
  // Äventyr: sällskapet i en grotta (eller där ni är just nu)
  const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild());
  const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),

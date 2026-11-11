@@ -74,7 +74,7 @@ window.bakgrundBild=function(bild){
 
 // Bilder som står still (till exempel korten på äventyrssidan) ritas om när en ny bild har laddats
 function ritaOm(){clearTimeout(omritning);omritning=setTimeout(()=>{
- document.querySelectorAll("canvas").forEach(c=>{if(c._tv&&c.isConnected&&window.drawTV)drawTV(c,c._tv[0],c._tv[1])})},150)}
+ document.querySelectorAll("canvas").forEach(c=>{if(!c.isConnected)return;if(c._tv&&window.drawTV)drawTV(c,c._tv[0],c._tv[1]);else if(c._rita)c._rita()})},150)}
 
 // Rita en ruta: mitt på cx, fötterna på bot, storlek s (i TV:ns rutnät)
 window.ritaRuta=function(g,c,cx,bot,s,{flip=false,alpha=1}={}){

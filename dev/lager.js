@@ -160,7 +160,9 @@ function ritaLager(cv,bg,hang,H,t,anim){
    const y=bas-3;g.save();g.translate(x,y);if(katt){g.drawImage(tmp,-c.width/2,-c.height+3)}else{g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(tmp,-c.width/2,-c.height/2-4)}g.restore();
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";const zx=x+(vand?-6:4)+z*4,zy=y-12-z*10;g.fillRect(zx,zy,3,1);g.fillRect(zx+2,zy+1,1,1);g.fillRect(zx,zy+2,3,1);g.globalAlpha=1;return}
   const sitter=sitt&&!katt;let y=bas-c.height+L.upp+(sitter?6:0);
-  ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
+  const bi=window.egenHjalte&&egenHjalte(h); // egen bild: rutan där hjälten står still
+  if(bi)ritaRuta(g,bi,x,bas+L.upp+(sitter?4:0)+2,32,{flip:!!vand});
+  else ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
   {const gd=typeof gosedjurAv==="function"&&gosedjurAv(h);if(gd){const s=gosedjurCanvas(gd);gosedjurSist.push(()=>g.drawImage(s,Math.round(x+(vand?c.width/2-3:-c.width/2-s.width+3)),bas-s.height+1))}} // gosedjuret bredvid, på sidan bort från elden (ritas sist så det syns)
   if(sitter){g.fillStyle="#5a3a22";g.fillRect(Math.round(x-7),bas-3,14,4);g.fillStyle="#7a5232";g.fillRect(Math.round(x-7),bas-3,14,1)}
   if(hang==="korv"&&!katt){const hx=x+(vand?-4:4),hy=y+15,ex=LFX+(vand?5:-5),ey=51;g.fillStyle="#b08a5a";const n=14;for(let k=0;k<=n;k++)g.fillRect(Math.round(hx+(ex-hx)*k/n),Math.round(hy+(ey-hy)*k/n),1,1);g.fillStyle="#a0522d";g.fillRect(Math.round(ex)-1,ey-1,3,2);g.fillStyle="#6a2a14";g.fillRect(Math.round(ex),ey-1,1,1)}
