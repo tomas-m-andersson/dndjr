@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-11T19:37:38.585Z",
+  "uppdaterad": "2026-11-11T19:37:41.002Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -202,7 +202,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "efter",
+        "scen": "slut_glod",
         "flaggor": [
           "sett_bo",
           "vet_lager",
@@ -212,11 +212,14 @@
           "vilat",
           "glod_eld"
         ],
-        "klar": false,
-        "v": 2
+        "klar": true,
+        "v": 2,
+        "slut": "slut_glod",
+        "nyttVapen": "Ni hittar Välsignade hammaren! Helare kan nu välja det under Ändra. 1d8 skada och +1 rustning.",
+        "nyttVapenId": "valsignad_hammare"
       }
     },
-    "tid": 1794425856449,
+    "tid": 1794425859019,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -255,7 +258,8 @@
       "askhammare",
       "alvbage",
       "manklinga",
-      "skuggkatana"
+      "skuggkatana",
+      "valsignad_hammare"
     ],
     "utr": {
       "ville": {
