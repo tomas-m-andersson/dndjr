@@ -1683,7 +1683,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const HI=window.egnaBilderAntal&&egnaBilderAntal()>0,BG=window.bakgrundBild?bakgrundBild(bild):null;
  if(HI){cv.width=BTW;cv.height=BTH}else{cv.width=TVW;cv.height=TVH}
  const g=cv.getContext("2d");g.imageSmoothingEnabled=false;
- if(HI){if(BG)g.drawImage(BG,0,0,BTW,BTH);
+ if(HI){if(BG)ritaBakgrund(g,BG,BTW,BTH);
   g.setTransform(BTW/TVW,0,0,BTH/TVH,0,0);if(!BG)g.drawImage(bakgrund(bild),0,0)} // resten ritas i TV:ns vanliga rutnät
  else g.drawImage(bakgrund(bild),0,0);
  const tona=(b,r,col,a)=>{if(a)ritaTon(g,b,r.x,r.y,r.skala,false,col,a)};

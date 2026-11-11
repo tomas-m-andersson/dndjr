@@ -49,7 +49,8 @@ function ruta(mapp,namn,roll){
  const per=Math.max(1,Math.floor(ark.width/cell)),nr=roll==="anfall"&&V.anfall!=null?V.anfall:(V.sta||0);
  const k=mapp+"/"+namn+"#"+nr;
  if(!rutor.has(k)){const c=document.createElement("canvas");c.width=cell;c.height=cell;
-  c.getContext("2d").drawImage(ark,(nr%per)*cell,Math.floor(nr/per)*cell,cell,cell,0,0,cell,cell);rutor.set(k,c)}
+  const g=c.getContext("2d");if(V.flip){g.translate(cell,0);g.scale(-1,1)} // flip: figuren tittar åt andra hållet (t.ex. lånade figurer från Fantasyvärlden)
+  g.drawImage(ark,(nr%per)*cell,Math.floor(nr/per)*cell,cell,cell,0,0,cell,cell);rutor.set(k,c)}
  return rutor.get(k)}
 // Första bilden som finns, bland flera namn och mappar
 function forsta(namnLista,mappLista,roll){for(const n of namnLista)for(const m of mappLista){const c=ruta(MAPP[m],n,roll);if(c)return c}return null}
@@ -60,6 +61,9 @@ window.egenPerson=(k,roll)=>forsta([k],["figur","sak"],roll);
 window.egenSak=k=>forsta([k],["sak","figur"]);
 window.egenGosedjur=(k,roll)=>forsta([k],["sak","figur"],roll);
 
+// Rita en bakgrund på hela TV:n. Är den större än 320×180 (t.ex. 344×192) skärs kanterna bort lika mycket på alla sidor.
+window.ritaBakgrund=function(g,b,W,H){const bw=b.naturalWidth||b.width,bh=b.naturalHeight||b.height;
+ if(bw>=W&&bh>=H)g.drawImage(b,Math.floor((bw-W)/2),Math.floor((bh-H)/2),W,H,0,0,W,H);else g.drawImage(b,0,0,W,H)};
 // Vilken bakgrundsfil hör till en bild på TV:n?
 window.bakgrundBild=function(bild){
  if(typeof bild!=="string")return null;
