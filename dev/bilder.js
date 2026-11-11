@@ -42,10 +42,10 @@ function fil(mapp,namn,figur){
 window.egnaBilderAntal=()=>antal;
 
 // En ruta ur ett ark. figurval.js kan välja ruta för "sta" (stå still) och "anfall".
-function ruta(mapp,namn,roll,vapen){
+function ruta(mapp,namn,roll,vapen,Vin){
  const ark=fil(mapp,namn,true);if(!ark)return null;
  // Bossar och lägerdelar har rutor på 64×64 (4×4 i arket), allt annat 32×32 (8×8)
- const stor=mapp===MAPP.boss||mapp===MAPP.lager,V=(window.FIGURVAL||{})[namn]||{},cell=V.cell||(ark.width===256&&ark.height===256?(stor?64:32):Math.min(ark.width,ark.height));
+ const stor=mapp===MAPP.boss||mapp===MAPP.lager,V=Vin||(window.FIGURVAL||{})[namn]||{},cell=V.cell||(ark.width===256&&ark.height===256?(stor?64:32):Math.min(ark.width,ark.height));
  // hjältarnas ark har rutor per vapen: FIGURVAL.ville_ninja.vapen.katana = {sta, anfall}
  const W=(vapen&&V.vapen&&V.vapen[vapen])||V,per=Math.max(1,Math.floor(ark.width/cell)),nr=roll==="anfall"&&W.anfall!=null?W.anfall:(W.sta??V.sta??0);
  const k=mapp+"/"+namn+"#"+nr;
@@ -54,7 +54,8 @@ function ruta(mapp,namn,roll,vapen){
   g.drawImage(ark,(nr%per)*cell,Math.floor(nr/per)*cell,cell,cell,0,0,cell,cell);rutor.set(k,c)}
  return rutor.get(k)}
 // Första bilden som finns, bland flera namn och mappar
-function forsta(namnLista,mappLista,roll,vapen){for(const n of namnLista)for(const m of mappLista){const c=ruta(MAPP[m],n,roll,vapen);if(c)return c}return null}
+// En sak kan ligga i ett gemensamt ark: FIGURVAL.svard = {ark:"vapen_krigare", sta:12}. En egen fil med sakens namn går före.
+function forsta(namnLista,mappLista,roll,vapen){for(const n of namnLista)for(const m of mappLista){const A=(window.FIGURVAL||{})[n],c=ruta(MAPP[m],n,roll,vapen)||(A&&A.ark?ruta(MAPP[m],A.ark,roll,vapen,A):null);if(c)return c}return null}
 
 window.egenHjalte=(h,roll)=>{if(!h)return null;const v=window.vapenAv?vapenAv(h).id:h.vapen;return forsta([h.id+"_"+v,h.id+"_"+h.klass,h.id],["figur"],roll,v)};
 window.egenMonster=(k,boss,roll)=>forsta([k],boss?["boss","figur"]:["figur","boss"],roll);
