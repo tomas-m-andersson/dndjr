@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:54:09.247Z",
+  "uppdaterad": "2026-11-11T19:19:58.988Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -63,21 +63,21 @@
   ],
   "sallskap": [
     "tomas",
-    "ville",
     "sally",
-    "egen-1793378426345"
+    "egen-1793378426345",
+    "svante"
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "skuggkatana",
-      "folk": "manniska",
-      "alder": 7,
-      "skagg": false,
       "klass": "ninja",
       "hud": 1,
       "har": 3,
