@@ -40,6 +40,8 @@ function fil(mapp,namn,figur){
   img.onerror=()=>{s.status="saknas"};img.src=encodeURI(k)+".png"}
  return s.status==="ok"?s.c:null}
 window.egnaBilderAntal=()=>antal;
+// Lägrets delar: en bakgrund per bygge och nivå, t.ex. Lägerdelar/lager_eld_2.png
+window.lagerBild=(id,n)=>fil(MAPP.lager,"lager_"+id+"_"+n,false);
 
 // En ruta ur ett ark. figurval.js kan välja ruta för "sta" (stå still) och "anfall".
 function ruta(mapp,namn,roll,vapen,Vin){
