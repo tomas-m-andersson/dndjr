@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-11T19:38:44.647Z",
+  "uppdaterad": "2026-11-11T19:39:04.248Z",
   "egna": [
     {
       "id": "egen-1793256667251",
@@ -100,7 +100,7 @@
       ],
       "vapen": "valsignad_hammare",
       "folk": "manniska",
-      "alder": 8,
+      "alder": 9,
       "skagg": false,
       "klass": "helare",
       "hud": 1,
