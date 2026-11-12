@@ -53,6 +53,11 @@ details.grupp.klar>summary .gnamn{color:var(--moss)}
 .rad.finns:not(.klar){border-color:#6b5a2a}
 .tumme{width:92px;height:92px;border-radius:8px;background:#0c151c repeating-conic-gradient(#14202a 0 25%,#0c151c 0 50%) 0 0/16px 16px;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
 .rad.bg .tumme{width:150px;height:84px}
+.tumme{position:relative}
+.ladda{position:absolute;right:3px;bottom:3px;width:24px;height:24px;padding:0;border-radius:6px;font-size:15px;line-height:1;background:rgba(12,21,28,.85);border:1px solid var(--line);color:var(--gold)}
+.ladda:hover{border-color:var(--gold)}
+.ladda.snurrar{animation:snurr .6s linear infinite}
+@keyframes snurr{to{transform:rotate(360deg)}}
 .tumme canvas{image-rendering:pixelated;width:100%;height:100%;object-fit:contain}
 .tumme span{font-size:.72rem;color:#5f7484;text-align:center;padding:4px}
 .info b{font-size:1.02rem}
@@ -123,15 +128,17 @@ function kopiera(text,knapp,etikett){const klart=()=>{knapp.classList.add("kopie
  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(klart,()=>reserv());else reserv();
  function reserv(){const t=el("textarea");t.value=text;document.body.append(t);t.select();try{document.execCommand("copy");klart()}catch(e){}t.remove()}}
 const fullPrompt=b=>STIL[b.stil]+"\n\n"+b.p;
-function tumme(b,box){
+// Liten knapp i hörnet: ladda om just den här bilden
+function laddaOmKnapp(b,box){const k=el("button",{class:"ladda",title:"Ladda om bilden","aria-label":"Ladda om bilden",onclick:e=>{e.stopPropagation();k.classList.add("snurrar");tumme(b,box,Date.now())}},"↻");return k}
+function tumme(b,box,v){
  const img=new Image();
  img.onload=()=>{finns[id(b)]=true;box.replaceChildren();const c=el("canvas");const g=c.getContext("2d");
   if(b.stil==="bg"||b.stil==="kort"||b.hel){c.width=img.naturalWidth;c.height=img.naturalHeight;g.drawImage(img,0,0)}
   else{const stor=b.stil==="boss"||b.stil==="stor",cell=img.naturalWidth===256?(stor?64:32):Math.min(img.naturalWidth,img.naturalHeight),V=(window.FIGURVAL||{})[b.fil]||{},n=V.sta||0,per=Math.max(1,Math.floor(img.naturalWidth/cell));
    c.width=cell;c.height=cell;g.drawImage(img,(n%per)*cell,Math.floor(n/per)*cell,cell,cell,0,0,cell,cell)}
-  box.append(c);rita()};
- img.onerror=()=>{finns[id(b)]=false;rita()};
- img.src=encodeURI(b.mapp+"/"+b.fil+".png")+"?v="+omgang}
+  box.append(c,laddaOmKnapp(b,box));rita()};
+ img.onerror=()=>{finns[id(b)]=false;box.replaceChildren(el("span",{},"Ingen bild än"),laddaOmKnapp(b,box));rita()};
+ img.src=encodeURI(b.mapp+"/"+b.fil+".png")+"?v="+(v||omgang)}
 const rader={};
 function bygg(){
  const rot=document.getElementById("grupper");rot.replaceChildren();
