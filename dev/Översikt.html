@@ -176,10 +176,12 @@ function rita(){
    const t=(b.namn+" "+b.fil+" "+b.p+" "+(b.innehall||"")).toLowerCase();
    const visa=(!sok||t.includes(sok))&&(filter==="alla"||filter==="kvar"&&!ok||filter==="klara"&&ok||filter==="finns"&&f&&!ok);
    r.hidden=!visa;if(visa)syns.push(b)});
-  d.hidden=!syns.length;if((sok||filter!=="alla")&&syns.length)d.open=true;
+  d.hidden=!syns.length;d._syns=syns.length;
   const R=d._ruta;R.querySelector("small").textContent=k+" av "+B.length+" klara";R.querySelector(".gbar i").style.width=(100*k/B.length)+"%";R.classList.toggle("klar",k===B.length)})}
-document.querySelectorAll("[data-f]").forEach(k=>k.addEventListener("click",()=>{filter=k.dataset.f;document.querySelectorAll("[data-f]").forEach(x=>x.classList.toggle("pa",x===k));rita()}));
-document.getElementById("sok").addEventListener("input",e=>{sok=e.target.value.trim().toLowerCase();rita()});
+// Grupperna fälls bara ut när man byter filter eller söker, inte när en bild laddas om
+const fallUt=()=>{if(sok||filter!=="alla")document.querySelectorAll("details.grupp").forEach(d=>{if(d._syns)d.open=true})};
+document.querySelectorAll("[data-f]").forEach(k=>k.addEventListener("click",()=>{filter=k.dataset.f;document.querySelectorAll("[data-f]").forEach(x=>x.classList.toggle("pa",x===k));rita();fallUt()}));
+document.getElementById("sok").addEventListener("input",e=>{sok=e.target.value.trim().toLowerCase();rita();fallUt()});
 document.getElementById("leta").addEventListener("click",()=>{omgang++;BILDER.forEach(b=>{const r=rader[id(b)];tumme(b,r.querySelector(".tumme"))})});
 bygg();
 </script>
