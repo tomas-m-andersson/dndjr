@@ -146,7 +146,7 @@ function bygg(){
   const lista=el("div",{class:"lista"}),d=el("details",{class:"grupp"});
   const B=BILDER.filter(b=>b.g===gn);
   d.append(el("summary",{},el("span",{class:"gnamn"},gn),el("span",{class:"gbar"},el("i")),el("span",{class:"gant"})),
-   el("div",{class:"stilrad"},"Mapp: ",[...new Set(B.map(b=>b.mapp))].map((m,i)=>[i?" och ":"",el("code",{},m)])),lista);
+   el("div",{class:"stilrad"},"Mapp: ",[...new Set(B.map(b=>b.mapp))].flatMap((m,i)=>i?[" och ",el("code",{},m)]:[el("code",{},m)])),lista);
   d._B=B;
   B.forEach(b=>{
    const box=el("div",{class:"tumme"},el("span",{},"Ingen bild än"));
