@@ -3,6 +3,7 @@
    sta = när figuren står still, anfall = när den anfaller. vapen = egna rutor för ett visst vapen.
    Saknas ett ark här används ruta 0. Säg till om du vill byta ruta, så ändrar jag. */
 window.FIGURVAL={
+ appikon:{sta:1}, // appikonen ligger i ruta 1 (4×4-ark)
  // Villes ark. "vapen" väljer rutor för ett visst vapen, annars gäller sta/anfall.
  ville_ninja:{sta:2,anfall:18,vapen:{klinga:{sta:3,anfall:19},dubbla_dolkar:{sta:17,anfall:25},katana:{sta:2,anfall:18},skuggkatana:{sta:20,anfall:44},giftdolkar:{sta:41,anfall:53},manklinga:{sta:24,anfall:61}}},
  ville_krigare:{sta:0,anfall:24,vapen:{svard:{sta:0,anfall:24},tvahandssvard:{sta:10,anfall:26},stridsyxa:{sta:11,anfall:27},flammsvard:{sta:4,anfall:20},askhammare:{sta:29,anfall:37},drakdrapare:{sta:6,anfall:47}}},

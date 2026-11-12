@@ -126,7 +126,7 @@ const fullPrompt=b=>STIL[b.stil]+"\n\n"+b.p;
 function tumme(b,box){
  const img=new Image();
  img.onload=()=>{finns[id(b)]=true;box.replaceChildren();const c=el("canvas");const g=c.getContext("2d");
-  if(b.stil==="bg"||b.stil==="kort"){c.width=img.naturalWidth;c.height=img.naturalHeight;g.drawImage(img,0,0)}
+  if(b.stil==="bg"||b.stil==="kort"||b.hel){c.width=img.naturalWidth;c.height=img.naturalHeight;g.drawImage(img,0,0)}
   else{const stor=b.stil==="boss"||b.stil==="stor",cell=img.naturalWidth===256?(stor?64:32):Math.min(img.naturalWidth,img.naturalHeight),V=(window.FIGURVAL||{})[b.fil]||{},n=V.sta||0,per=Math.max(1,Math.floor(img.naturalWidth/cell));
    c.width=cell;c.height=cell;g.drawImage(img,(n%per)*cell,Math.floor(n/per)*cell,cell,cell,0,0,cell,cell)}
   box.append(c);rita()};
@@ -139,7 +139,7 @@ function bygg(){
   const lista=el("div",{class:"lista"}),d=el("details",{class:"grupp"});
   const B=BILDER.filter(b=>b.g===gn);
   d.append(el("summary",{},el("span",{class:"gnamn"},gn),el("span",{class:"gbar"},el("i")),el("span",{class:"gant"})),
-   el("div",{class:"stilrad"},"Mapp: ",el("code",{},B[0].mapp)," · Storlek: "+B[0].storlek),lista);
+   el("div",{class:"stilrad"},"Mapp: ",[...new Set(B.map(b=>b.mapp))].map((m,i)=>[i?" och ":"",el("code",{},m)])),lista);
   d._B=B;
   B.forEach(b=>{
    const box=el("div",{class:"tumme"},el("span",{},"Ingen bild än"));
@@ -151,7 +151,7 @@ function bygg(){
    const pr=el("div",{class:"prompt",title:"Klicka för att visa hela"},b.p);pr.addEventListener("click",()=>pr.classList.toggle("oppen"));
    const fchip=el("span",{class:"chip finns",hidden:""},"Bild finns");
    const r=el("div",{class:"rad"+(b.stil==="bg"||b.stil==="kort"?" bg":"")},box,
-    el("div",{class:"info"},el("b",{},b.namn),el("div",{class:"meta"},filchip,el("span",{class:"chip"},b.storlek),fchip),b.innehall?el("div",{class:"innehall"},"Innehåller: "+b.innehall):null,pr),
+    el("div",{class:"info"},el("b",{},b.namn),el("div",{class:"meta"},filchip,el("span",{class:"chip"},b.storlek),el("span",{class:"chip"},"Mapp: "+b.mapp),fchip),b.innehall?el("div",{class:"innehall"},"Innehåller: "+b.innehall):null,pr),
     el("div",{class:"knappar"},kp,el("label",{class:"klarknapp"},cb,"Klar")));
    r._b=b;r._fchip=fchip;rader[id(b)]=r;lista.append(r);tumme(b,box)});
   rot.append(d);
