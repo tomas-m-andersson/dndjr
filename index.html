@@ -1171,7 +1171,7 @@ function card(h){
 function togglePartyMember(id){
  if(party.includes(id))party=party.filter(x=>x!==id);
  else{if(party.length>=4){flash("Max fyra hjältar i sällskapet. Ta bort någon först.");return}party=[...party,id]}
- persist();home();
+ const y=window.scrollY;persist();home();window.scrollTo(0,y); // sidan stannar där man är
 }
 function renderParty(){
  const box=document.getElementById("party");
