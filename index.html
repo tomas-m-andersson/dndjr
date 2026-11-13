@@ -1623,7 +1623,7 @@ function scenePaint(g,bild){
  const pine=(x,base,h,c)=>{for(let i=0;i<h;i++){const w=Math.max(1,Math.floor(i*0.7));R(x-Math.floor(w/2),base-h+i,w+1,1,c)}R(x,base,1,2,"#3a2c22")};
  const lantern=(x,y,lit)=>{R(x,y,4,1,"#2a2a2a");R(x,y+1,1,4,"#2a2a2a");R(x+3,y+1,1,4,"#2a2a2a");R(x,y+5,4,1,"#2a2a2a");if(lit){R(x+1,y+1,2,4,"#ffd96a");glow(x+2,y+3,9,"#ffd96a")}};
  const ground=(y,c1,c2)=>{R(0,y,TVW,TVH-y,c1);for(let i=0;i<40;i++)R(Math.floor(rnd()*TVW),y+1+Math.floor(rnd()*(TVH-y-1)),2,1,c2)};
- switch(bild){
+ switch(bild.split("|")[0]){ // "gruva_inne|spindel" = gruvgången, men med en egen bakgrundsbild om den finns
   case"by":case"torg":case"hem":{
    const hem=bild==="hem";sky(hem?"#1b2347":"#0d1424",hem?"#5a3f6b":"#1f2e4a");stars(30);moon(80,4);
    house(4,26,18,16,"#6b5a48","#7a3b2e",true);house(28,28,14,14,"#5f6b7a","#3f4f63",hem);house(74,27,16,15,"#6b5a48","#4f3a2a",hem);
@@ -1764,7 +1764,13 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
  const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
  right.forEach(f=>{if(f.boss&&SPR[f.k]){const z=sprSize(f.k);f.f=z.h*2<=TVH-4?2:z.h*1.5<=TVH-4?1.5:1;if(z.w*f.f>ledigt)f.f=Math.max(1,Math.floor(ledigt/z.w*2)/2)}});
- const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+(SPR[f.k]?sprSize(f.k).w*(f.f||1):16),0);
+ // hur bred varje figur blir när den ritas, så att de sprids ut i stället för att hamna i en hög
+ const FAST={greta:15,bo:15,handlare:17,fange:17,resenar:18,drake_bur:20};
+ right.forEach(f=>{if(FAST[f.k]){f.w=FAST[f.k];return}const ofx=f.key?OFF(f.key):null;
+  f.mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
+  f.mm=f.mb?(f.boss?4:Math.max(1,Math.min(3,Math.round(sprSize(f.k).h/6)/2))):0;
+  f.w=f.mb?CU*f.mm/2*.75:Math.round(sprSize(f.k).w*(f.f||1))});
+ const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
  let nr=10;const npc=(h,xx,fil)=>{const bi=fil&&window.egenPerson&&egenPerson(fil);
   if(bi){ritaRuta(g,bi,xx+7,TVH+(anim?livTid(anim.t,nr++).upp:0),CU);return true}
@@ -1779,8 +1785,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   if(f.k==="resenar"){x-=18;const rb=window.egenPerson&&egenPerson("resenar");if(rb){ritaRuta(g,rb,x+9,TVH,CU);return}g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;const db=window.egenPerson&&egenPerson("glod_bur");if(db){ritaRuta(g,db,x+10,TVH,CU);return}sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
   // egen bild: storleken följer den gamla figuren (1–3 gånger rutan), bossen fyra gånger
-  const ofx=f.key?OFF(f.key):null,mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
-  const mm=mb?(f.boss?4:Math.max(1,Math.min(3,Math.round(sprSize(f.k).h/6)/2))):0;
+  const mb=f.mb,mm=f.mm;
   const z0=mb?{w:CU*mm/2*.75,h:CU*mm/2}:sprSize(f.k),fs=mb?1:(f.f||1),w=mb?z0.w:Math.round(z0.w*fs),h=mb?z0.h:Math.round(z0.h*fs);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
   const sd=anim&&sprDef(f.k),sc=sd&&sprCanvas(f.k);
   const o=f.key?OFF(f.key):null,dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;

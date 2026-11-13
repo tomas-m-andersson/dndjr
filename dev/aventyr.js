@@ -338,7 +338,7 @@ window.AVENTYR = [
       },
 
       spindelboet: {
-        bild: "gruva_inne", figur: ["spindel", "spindel"],
+        bild: "gruva_inne|spindel", figur: ["spindel", "spindel"],
         text: "Gången är full av spindelnät. I näten hänger gamla saker: en hjälm, en ryggsäck, en sko. Och i taket rör sig något. Två spindlar, stora som hundar, sitter och väntar.",
         val: [
           { text: "Smyg förbi under näten", prov: {

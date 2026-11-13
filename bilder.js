@@ -113,7 +113,9 @@ window.ritaBakgrund=function(g,b,W,H){const bw=b.naturalWidth||b.width,bh=b.natu
 window.bakgrundBild=function(bild){
  if(typeof bild!=="string")return null;
  if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return filEllerTom(MAPP.bakgrund,p[1]+"_"+kap+"_"+(p[4]||"rum"),320,180)}
- return filEllerTom(MAPP.bakgrund,"berattelse_"+bild.split("|")[0],320,180)};
+ // "gruva_inne|spindel": först berattelse_gruva_inne_spindel, finns den inte används berattelse_gruva_inne
+ const p=bild.split("|");if(p[1]){const b=filEllerTom(MAPP.bakgrund,"berattelse_"+p[0]+"_"+p[1],320,180);if(b)return b}
+ return filEllerTom(MAPP.bakgrund,"berattelse_"+p[0],320,180)};
 
 // Bilder som står still (till exempel korten på äventyrssidan) ritas om när en ny bild har laddats
 function ritaOm(){clearTimeout(omritning);omritning=setTimeout(()=>{
