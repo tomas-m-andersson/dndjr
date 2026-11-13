@@ -54,6 +54,12 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
 .loggabild{width:clamp(56px,13vw,88px);height:clamp(56px,13vw,88px);flex:none;image-rendering:pixelated;filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
 .loggaruta{display:flex;flex:none}
+.bildval{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;max-width:440px}
+.bildruta{padding:0;aspect-ratio:1;background:#16222c;border:2px solid var(--line);border-radius:6px;cursor:pointer;overflow:hidden}
+.bildruta canvas{width:100%;height:100%;display:block;image-rendering:pixelated}
+.bildruta.std{grid-column:1/-1;aspect-ratio:auto;padding:8px;font:inherit;font-weight:800;color:var(--fg)}
+.bildruta.sel{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset;background:#2a2410}
+.bildruta:hover{border-color:var(--gold)}
 .extraval{display:flex;align-items:center;gap:14px;margin:22px 0 0;padding:14px 18px;border:2px dashed var(--line);border-radius:12px;color:inherit;text-decoration:none;background:#16222c}
 .extraval:hover{border-color:var(--gold)}
 .extraval small{color:var(--gold);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem}
@@ -652,11 +658,12 @@ function save(k,v){try{localStorage.setItem(LSP+k,JSON.stringify(v))}catch(e){}}
 let egna=load(KEY,[]).map(migrera), party=load(PKEY,["ville","svante","sally"]);
 // Ändringar av folk, klass och utseende på grundfigurerna (namnen ändras aldrig).
 const AKEY="tarningsriket-grundandringar", DKEY="tarningsriket-andringar-osparade";
-const EDITABLE=["folk","alder","skagg","attacker","vapen","klass","hud","har","stil","klader","flackar","s","gosedjur"];
+const EDITABLE=["folk","alder","skagg","attacker","vapen","klass","hud","har","stil","klader","flackar","s","gosedjur","bildval"];
 let andringar=Object.fromEntries(Object.entries(load(AKEY,{})).map(([k,v])=>[k,migrera(v,true)])), andrDirty=load(DKEY,false);
 function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
  if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
- if(o.s&&!STATS.every(st=>typeof o.s[st.k]==="number"))delete o.s;return o}
+ if(o.s&&!STATS.every(st=>typeof o.s[st.k]==="number"))delete o.s;
+ if(o.bildval&&(typeof o.bildval!=="object"||Array.isArray(o.bildval)||!Object.values(o.bildval).every(n=>Number.isInteger(n)&&n>=0&&n<64)))delete o.bildval;return o}
 // Bara grundfigurerna finns. Benjamin var en egen hjälte förut och är nu en grundfigur: hans utseende, val och framsteg följer med.
 const HJALTE_BYTE={"egen-1793378426345":"benjamin"};
 function franEgna(lista){(lista||[]).forEach(h=>{const ny=h&&HJALTE_BYTE[h.id];if(ny&&!andringar[ny]){const a=cleanAndring(migrera(h,true));if(a)andringar[ny]=a}})}
@@ -666,7 +673,7 @@ function bytHjalteId(o){if(!o||typeof o!=="object")return o;const b=x=>HJALTE_BY
   run=r=>r&&typeof r==="object"?{...r,party:Array.isArray(r.party)?r.party.map(b):r.party,liv:nyc(r.liv)}:r;
  o={...o,niva:nyc(o.niva),utr:nyc(o.utr),liv:nyc(o.liv)};if(Array.isArray(o.runs))o.runs=o.runs.map(run);if(o.run)o.run=run(o.run);return o}
 // Utseende och ålder kommer alltid från grundfiguren (de går inte att ändra). Bara klass, vapen, attacker, egenskaper och gosedjur kan sparas som ändring.
-const ANDRAS=["klass","vapen","attacker","s","gosedjur"];
+const ANDRAS=["klass","vapen","attacker","s","gosedjur","bildval"];
 const withAndring=b=>{const a=andringar[b.id];if(!a)return b;const o={...b,grund:true};ANDRAS.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});return o};
 const alla=()=>BASE.map(withAndring);
 let view="home";
@@ -1223,6 +1230,20 @@ function attackVal(){
  return box;
 }
 // Välj vapen. Specialvapen syns med lås tills de hittats efter en boss.
+// Välj vilken bild ur hjältens ark som används (för den här klassen och det här vapnet)
+function bildVal(){
+ if(!window.hjalteArk)return null;
+ const v=vapenAv(draft),key=draft.klass+"|"+v.id,vald=(draft.bildval||{})[key],A=hjalteArk(draft);
+ const box=el("div",{class:"field"},el("label",{},"Bild"),el("p",{class:"fieldhint"},"Välj hur "+draft.namn+" ska se ut som "+KLASS[draft.klass].n.toLowerCase()+" med "+v.namn.toLowerCase()+". Standard är bilden som valdes från början. När hjälten anfaller används en egen anfallsbild."));
+ if(!A){const c=document.createElement("canvas");c.width=1;c.height=1;c._rita=()=>{if(hjalteArk(draft)){const y=window.scrollY;rerender();window.scrollTo(0,y)}};
+  box.append(el("p",{class:"fieldhint"},"Bilderna laddas …"),c);return box}
+ const valj=n=>{const b={...(draft.bildval||{})};if(n==null)delete b[key];else b[key]=n;draft.bildval=b;const y=window.scrollY;rerender();window.scrollTo(0,y)};
+ const per=Math.max(1,Math.floor(A.c.width/A.cell)),antal=per*Math.floor(A.c.height/A.cell);
+ const rutnat=el("div",{class:"bildval"},el("button",{class:"bildruta std"+(vald==null?" sel":""),onclick:()=>valj(null),"aria-pressed":vald==null?"true":"false"},"Standard"));
+ for(let n=0;n<antal;n++){const c=document.createElement("canvas");c.width=A.cell;c.height=A.cell;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
+  if(A.flip){g.translate(A.cell,0);g.scale(-1,1)}g.drawImage(A.c,(n%per)*A.cell,Math.floor(n/per)*A.cell,A.cell,A.cell,0,0,A.cell,A.cell);c.className="px";
+  rutnat.append(el("button",{class:"bildruta"+(vald===n?" sel":""),onclick:()=>valj(n),"aria-label":"Bild "+(n+1),"aria-pressed":vald===n?"true":"false"},c))}
+ box.append(rutnat);return box}
 function gosedjurVal(){
  const box=el("div",{class:"field"},el("label",{},"Gosedjur"),el("p",{class:"fieldhint"},"Ett gosedjur följer med på äventyren och har en egen specialförmåga som kan användas en gång per strid."));
  const val=(id,inne)=>el("button",{class:"choice"+(id?" wchoice":"")+(gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?" sel":""),"aria-pressed":gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?"true":"false",
@@ -1352,6 +1373,7 @@ function renderEdit(){
   onclick:()=>{valjKlass(k);renderEdit()}},o.n))),el("p",{class:"note"},K.t)));
  {const vv=vapenVal();if(vv)app.append(vv)}
  app.append(attackVal());
+ {const bv=bildVal();if(bv)app.append(bv)}
  app.append(gosedjurVal());
  // Utseendet går inte att ändra längre: hjältarna har egna bilder (se overhaul-mappen).
  const slot=el("div");
@@ -1361,7 +1383,7 @@ function renderEdit(){
   el("button",{class:"btn ghost",onclick:back},"Tillbaka"),
   el("button",{class:"btn",id:"edit-save",disabled:!draft.grund&&!draft.namn.trim(),onclick:()=>{
    if(attackerAv(draft).length<3||(draft.attacker||[]).length!==3){flash("Välj tre specialattacker först.");return}
-   const upd={attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats(),gosedjur:gosedjurAv(draft)||""};
+   const upd={bildval:draft.bildval&&Object.keys(draft.bildval).length?draft.bildval:undefined,attacker:attackerAv(draft),vapen:vapenAv(draft).id,folk:draft.folk,alder:draft.folk==="katt"?undefined:alderAv(draft),skagg:draft.folk!=="katt"&&!!draft.skagg,klass:draft.klass,hud:draft.hud,har:draft.har,stil:draft.stil,klader:draft.klader,flackar:draft.folk==="katt"&&!!draft.flackar,s:editStats(),gosedjur:gosedjurAv(draft)||""};
    if(draft.grund){andringar[draft.id]=upd;andrDirty=true}
    else egna=egna.map(x=>x.id===draft.id?{...x,...upd,namn:draft.namn.trim()}:x);
    persist();back();flash("Ändringarna är sparade.");

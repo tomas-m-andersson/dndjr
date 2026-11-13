@@ -59,7 +59,13 @@ function ruta(mapp,namn,roll,vapen,Vin){
 // En sak kan ligga i ett gemensamt ark: FIGURVAL.svard = {ark:"vapen_krigare", sta:12}. En egen fil med sakens namn går före.
 function forsta(namnLista,mappLista,roll,vapen){for(const n of namnLista)for(const m of mappLista){const A=(window.FIGURVAL||{})[n],c=ruta(MAPP[m],n,roll,vapen)||(A&&A.ark?ruta(MAPP[m],A.ark,roll,vapen,A):null);if(c)return c}return null}
 
-window.egenHjalte=(h,roll)=>{if(!h)return null;const v=window.vapenAv?vapenAv(h).id:h.vapen;return forsta([h.id+"_"+v,h.id+"_"+h.klass,h.id],["figur"],roll,v)};
+window.egenHjalte=(h,roll)=>{if(!h)return null;const v=window.vapenAv?vapenAv(h).id:h.vapen;
+ // egen vald bild (från Ändra): används när hjälten står still
+ const egen=h.bildval&&h.bildval[h.klass+"|"+v];
+ if(egen!=null&&roll!=="anfall"){const n=h.id+"_"+h.klass,c=ruta(MAPP.figur,n,"sta",null,{...((window.FIGURVAL||{})[n]||{}),vapen:null,sta:egen});if(c)return c}
+ return forsta([h.id+"_"+v,h.id+"_"+h.klass,h.id],["figur"],roll,v)};
+// Hela arket för hjältens klass, till bildväljaren under Ändra
+window.hjalteArk=h=>{const n=h.id+"_"+h.klass,c=fil(MAPP.figur,n,true);if(!c)return null;const V=(window.FIGURVAL||{})[n]||{};return{c,cell:V.cell||32,flip:!!V.flip}};
 window.egenMonster=(k,boss,roll)=>forsta([k],boss?["boss","figur"]:["figur","boss"],roll);
 window.egenPerson=(k,roll)=>forsta([k],["figur","sak"],roll);
 window.egenSak=k=>forsta([k],["sak","figur"]);
