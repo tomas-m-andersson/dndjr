@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:19:26.103Z",
+  "uppdaterad": "2026-11-13T23:19:47.704Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -173,7 +173,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "lagret",
+        "scen": "vattestrid",
         "flaggor": [
           "sett_torget",
           "spar",
@@ -187,7 +187,7 @@
         "v": 2
       }
     },
-    "tid": 1794611964149,
+    "tid": 1794611987486,
     "niva": {
       "ville": {
         "lvl": 5,
