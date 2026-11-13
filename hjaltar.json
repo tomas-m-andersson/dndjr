@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:38:51.877Z",
+  "uppdaterad": "2026-11-13T23:39:11.347Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -127,15 +127,18 @@
       "gosedjur": ""
     },
     "benjamin": {
-      "folk": "manniska",
-      "alder": 20,
-      "skagg": false,
+      "bildval": {
+        "bagskytt|alvbage": 36
+      },
       "attacker": [
         "sikta_noga",
         "dubbelskott",
         "pilregn"
       ],
       "vapen": "alvbage",
+      "folk": "manniska",
+      "alder": 20,
+      "skagg": false,
       "klass": "bagskytt",
       "hud": 2,
       "har": 9,
