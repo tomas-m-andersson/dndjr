@@ -1,12 +1,13 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:13:00.621Z",
+  "uppdaterad": "2026-11-13T23:15:04.757Z",
   "egna": [],
   "sallskap": [
     "svante",
     "benjamin",
-    "sally"
+    "sally",
+    "ville"
   ],
   "grundandringar": {
     "ville": {
@@ -111,23 +112,6 @@
         "cha": 13
       }
     },
-    "sally": {
-      "folk": "katt",
-      "klass": "katt",
-      "hud": 0,
-      "har": 10,
-      "stil": "kort",
-      "klader": 5,
-      "flackar": true,
-      "s": {
-        "sty": 8,
-        "smi": 17,
-        "tal": 11,
-        "klo": 12,
-        "vis": 15,
-        "cha": 14
-      }
-    },
     "benjamin": {
       "folk": "manniska",
       "alder": 20,
@@ -153,6 +137,23 @@
         "cha": 15
       },
       "gosedjur": ""
+    },
+    "sally": {
+      "folk": "katt",
+      "klass": "katt",
+      "hud": 0,
+      "har": 10,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": true,
+      "s": {
+        "sty": 8,
+        "smi": 17,
+        "tal": 11,
+        "klo": 12,
+        "vis": 15,
+        "cha": 14
+      }
     }
   },
   "aventyr": {
