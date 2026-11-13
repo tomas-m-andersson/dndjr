@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:20:59.362Z",
+  "uppdaterad": "2026-11-13T23:21:19.036Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -183,13 +183,14 @@
           "vet_skuggan",
           "bo_omlagd",
           "vet_drake",
-          "glod_fri"
+          "glod_fri",
+          "glod_anfall"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794612057422,
+    "tid": 1794612077089,
     "niva": {
       "ville": {
         "lvl": 5,
