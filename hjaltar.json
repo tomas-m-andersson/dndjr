@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:38:10.371Z",
+  "uppdaterad": "2026-11-13T23:38:36.020Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -69,20 +69,23 @@
       "gosedjur": ""
     },
     "tomas": {
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
+      "bildval": {
+        "krigare|drakdrapare": 39
+      },
       "attacker": [
         "dubbelhugg",
         "virvelhugg",
         "skoldslag"
       ],
       "vapen": "drakdrapare",
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "klass": "krigare",
-      "hud": 1,
+      "hud": 0,
       "har": 2,
-      "stil": "kal",
-      "klader": 2,
+      "stil": "kort",
+      "klader": 4,
       "flackar": false,
       "s": {
         "sty": 15,
@@ -91,7 +94,8 @@
         "klo": 12,
         "vis": 16,
         "cha": 13
-      }
+      },
+      "gosedjur": ""
     },
     "linda": {
       "folk": "manniska",
