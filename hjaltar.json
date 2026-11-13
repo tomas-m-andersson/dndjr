@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:39:11.347Z",
+  "uppdaterad": "2026-11-13T23:39:43.455Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -156,7 +156,17 @@
       "gosedjur": ""
     },
     "sally": {
+      "bildval": {
+        "katt|klor": -53
+      },
+      "attacker": [
+        "klosattack",
+        "hoppa_ansiktet",
+        "frasa"
+      ],
+      "vapen": "klor",
       "folk": "katt",
+      "skagg": false,
       "klass": "katt",
       "hud": 0,
       "har": 10,
@@ -170,7 +180,8 @@
         "klo": 12,
         "vis": 15,
         "cha": 14
-      }
+      },
+      "gosedjur": ""
     }
   },
   "aventyr": {
