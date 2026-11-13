@@ -1234,13 +1234,15 @@ function attackVal(){
 function bildVal(){
  if(!window.hjalteArk)return null;
  const v=vapenAv(draft),key=draft.klass+"|"+v.id,rå=(draft.bildval||{})[key],vand=rå!=null&&rå<0,vald=rå==null?null:vand?-rå-1:rå,A=hjalteArk(draft);
- const box=el("div",{class:"field"},el("label",{},"Bild"),el("p",{class:"fieldhint"},"Välj hur "+draft.namn+" ska se ut som "+KLASS[draft.klass].n.toLowerCase()+" med "+v.namn.toLowerCase()+". Standard är bilden som valdes från början. När hjälten anfaller används en egen anfallsbild."));
+ const box=el("div",{class:"field"},el("label",{},"Bild"),el("p",{class:"fieldhint"},"Välj hur "+draft.namn+" ska se ut som "+KLASS[draft.klass].n.toLowerCase()+" med "+v.namn.toLowerCase()+". Här visas bara bilderna där "+draft.namn+" håller just det vapnet. Standard är bilden som valdes från början. När hjälten anfaller används en egen anfallsbild."));
  if(!A){const c=document.createElement("canvas");c.width=1;c.height=1;c._rita=()=>{if(hjalteArk(draft)){const y=window.scrollY;rerender();window.scrollTo(0,y)}};
   box.append(el("p",{class:"fieldhint"},"Bilderna laddas …"),c);return box}
  const valj=(n,v=false)=>{const b={...(draft.bildval||{})};if(n==null)delete b[key];else b[key]=v?-n-1:n;draft.bildval=b;const y=window.scrollY;rerender();window.scrollTo(0,y)};
  const per=Math.max(1,Math.floor(A.c.width/A.cell)),antal=per*Math.floor(A.c.height/A.cell);
+ // bara bilderna där hjälten håller sitt vapen (VAPENRUTOR i figurval.js). Saknas listan visas alla bilder.
+ const lista=((window.VAPENRUTOR||{})[draft.id+"_"+draft.klass]||{})[v.id],rutor=lista&&lista.length?[...new Set([...lista,...(vald!=null?[vald]:[])])].sort((x,y)=>x-y):[...Array(antal).keys()];
  const rutnat=el("div",{class:"bildval"},el("button",{class:"bildruta std"+(vald==null?" sel":""),onclick:()=>valj(null),"aria-pressed":vald==null?"true":"false"},"Standard"));
- for(let n=0;n<antal;n++){const c=document.createElement("canvas");c.width=A.cell;c.height=A.cell;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
+ for(const n of rutor){if(n>=antal)continue;const c=document.createElement("canvas");c.width=A.cell;c.height=A.cell;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
   if(A.flip){g.translate(A.cell,0);g.scale(-1,1)}g.drawImage(A.c,(n%per)*A.cell,Math.floor(n/per)*A.cell,A.cell,A.cell,0,0,A.cell,A.cell);c.className="px";
   rutnat.append(el("button",{class:"bildruta"+(vald===n?" sel":""),onclick:()=>valj(n),"aria-label":"Bild "+(n+1),"aria-pressed":vald===n?"true":"false"},c))}
  box.append(rutnat);
