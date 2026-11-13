@@ -115,12 +115,12 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .bp-sak.last{opacity:.55}
 .lastikon{display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--muted);flex:none}
 
-.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .mcard{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--bg2);border:2px solid var(--line);border-radius:10px;padding:8px;color:var(--fg);font:inherit;cursor:pointer}
 .mcard:hover,.mcard:focus-visible{border-color:var(--gold)}
 .mcard .tv{border-radius:6px;overflow:hidden;aspect-ratio:96/54}
 .mcard .tv canvas{width:100%;height:100%;display:block}
-.mcard b{font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.15}
+.mcard b{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.15}
 .fara{align-self:flex-start;font-size:.78rem;font-weight:800;padding:2px 8px;border-radius:10px;background:#24394a;color:#cfe8d0}
 .fara.f3,.fara.f4{background:#4a3a1c;color:#f5d27e}.fara.f5,.fara.f6{background:#5a2420;color:#ffb3a8}.fara.f7,.fara.f8{background:#3d1f4f;color:#e3c2ff}
 .minfo{display:flex;flex-direction:column;gap:10px;padding-top:12px}
@@ -2417,7 +2417,7 @@ function monsterBild(k){const M=MONSTER[k],c=document.createElement("canvas");c.
  c._rita=()=>{const bild="run|"+(M.platser[0]||"grottorna")+"|1|3|rum|",mb=window.egenMonster&&egenMonster(k,true),flyg=/fladdermus|krakor|irrbloss|spoke|dimfrun/.test(k);
   if(mb){c.width=BTW;c.height=BTH;const g=c.getContext("2d");g.imageSmoothingEnabled=false;const BG=window.bakgrundBild&&bakgrundBild(bild);
    if(BG)ritaBakgrund(g,BG,BTW,BTH);else{g.save();g.scale(BTW/TVW,BTH/TVH);scenePaint(g,bild);g.restore()}
-   const s=mb.width>=64?128:96,x=Math.round((BTW-s)/2),y=flyg?Math.round((BTH-s)/2):BTH-s-4;g.drawImage(mb,x,y,s,s);return}
+   const boss=Object.values(BOSSAR).some(l=>l.includes(k)),s=mb.width>=64?128:boss?160:128,x=Math.round((BTW-s)/2),y=flyg?Math.round((BTH-s)/2):BTH-s-4;g.drawImage(mb,x,y,s,s);return}
   c.width=TVW;c.height=TVH;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
   scenePaint(g,bild);const z=sprSize(k);
   const f=z.h<=18?2:1,flip=!!(SPR[k]&&(SPR[k].hero||k==="drake"||k==="eldklo")); // små monster visas dubbelt så stora
