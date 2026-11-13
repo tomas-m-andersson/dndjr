@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:40:24.493Z",
+  "uppdaterad": "2026-11-13T23:40:28.106Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 2244,
+    "guld": 1944,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -224,7 +224,7 @@
         "nyttVapenId": "solklubba"
       }
     },
-    "tid": 1794613222548,
+    "tid": 1794613225822,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -582,7 +582,7 @@
       "byggt": {
         "talt": 2,
         "trofe": 1,
-        "ovning": 1,
+        "ovning": 2,
         "eld": 3,
         "smedja": 2
       },
