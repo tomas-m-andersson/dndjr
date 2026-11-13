@@ -49,10 +49,11 @@ function ruta(mapp,namn,roll,vapen,Vin){
  // Bossar och lägerdelar har rutor på 64×64 (4×4 i arket), allt annat 32×32 (8×8)
  const stor=mapp===MAPP.boss||mapp===MAPP.lager,V=Vin||(window.FIGURVAL||{})[namn]||{},cell=V.cell||(ark.width===256&&ark.height===256?(stor?64:32):Math.min(ark.width,ark.height));
  // hjältarnas ark har rutor per vapen: FIGURVAL.ville_ninja.vapen.katana = {sta, anfall}
- const W=(vapen&&V.vapen&&V.vapen[vapen])||V,per=Math.max(1,Math.floor(ark.width/cell)),nr=roll==="anfall"&&W.anfall!=null?W.anfall:(W.sta??V.sta??0);
- const k=mapp+"/"+namn+"#"+nr;
+ const W=(vapen&&V.vapen&&V.vapen[vapen])||V,per=Math.max(1,Math.floor(ark.width/cell)),anf=roll==="anfall"&&W.anfall!=null,nr=anf?W.anfall:(W.sta??V.sta??0);
+ // flip vänder hela arket, vs/va vänder bara stå- eller anfallsbilden (för rutor där figuren tittar åt fel håll)
+ const fl=!!V.flip!==!!(anf?W.va:W.vs),k=mapp+"/"+namn+"#"+nr+(fl?"v":"");
  if(!rutor.has(k)){const c=document.createElement("canvas");c.width=cell;c.height=cell;
-  const g=c.getContext("2d");if(V.flip){g.translate(cell,0);g.scale(-1,1)} // flip: figuren tittar åt andra hållet (t.ex. lånade figurer från Fantasyvärlden)
+  const g=c.getContext("2d");if(fl){g.translate(cell,0);g.scale(-1,1)} // flip: figuren tittar åt andra hållet (t.ex. lånade figurer från Fantasyvärlden)
   g.drawImage(ark,(nr%per)*cell,Math.floor(nr/per)*cell,cell,cell,0,0,cell,cell);rutor.set(k,c)}
  return rutor.get(k)}
 // Första bilden som finns, bland flera namn och mappar
@@ -62,7 +63,7 @@ function forsta(namnLista,mappLista,roll,vapen){for(const n of namnLista)for(con
 window.egenHjalte=(h,roll)=>{if(!h)return null;const v=window.vapenAv?vapenAv(h).id:h.vapen;
  // egen vald bild (från Ändra): används när hjälten står still
  const egen=h.bildval&&h.bildval[h.klass+"|"+v];
- if(egen!=null&&roll!=="anfall"){const n=h.id+"_"+h.klass,c=ruta(MAPP.figur,n,"sta",null,{...((window.FIGURVAL||{})[n]||{}),vapen:null,sta:egen});if(c)return c}
+ if(egen!=null&&roll!=="anfall"){const n=h.id+"_"+h.klass,c=ruta(MAPP.figur,n,"sta",null,{...((window.FIGURVAL||{})[n]||{}),vapen:null,sta:egen<0?-egen-1:egen,vs:egen<0});if(c)return c} // negativt tal = vald bild som är vänd
  return forsta([h.id+"_"+v,h.id+"_"+h.klass,h.id],["figur"],roll,v)};
 // Hela arket för hjältens klass, till bildväljaren under Ändra
 window.hjalteArk=h=>{const n=h.id+"_"+h.klass,c=fil(MAPP.figur,n,true);if(!c)return null;const V=(window.FIGURVAL||{})[n]||{};return{c,cell:V.cell||32,flip:!!V.flip}};

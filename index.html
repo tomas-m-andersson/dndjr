@@ -663,7 +663,7 @@ let andringar=Object.fromEntries(Object.entries(load(AKEY,{})).map(([k,v])=>[k,m
 function cleanAndring(a){if(!a||typeof a!=="object")return null;const o={};EDITABLE.forEach(k=>{if(a[k]!==undefined)o[k]=a[k]});
  if(o.folk&&!FOLK[o.folk])return null;if(o.klass&&!KLASS[o.klass])return null;
  if(o.s&&!STATS.every(st=>typeof o.s[st.k]==="number"))delete o.s;
- if(o.bildval&&(typeof o.bildval!=="object"||Array.isArray(o.bildval)||!Object.values(o.bildval).every(n=>Number.isInteger(n)&&n>=0&&n<64)))delete o.bildval;return o}
+ if(o.bildval&&(typeof o.bildval!=="object"||Array.isArray(o.bildval)||!Object.values(o.bildval).every(n=>Number.isInteger(n)&&n>=-64&&n<64)))delete o.bildval;return o}
 // Bara grundfigurerna finns. Benjamin var en egen hjälte förut och är nu en grundfigur: hans utseende, val och framsteg följer med.
 const HJALTE_BYTE={"egen-1793378426345":"benjamin"};
 function franEgna(lista){(lista||[]).forEach(h=>{const ny=h&&HJALTE_BYTE[h.id];if(ny&&!andringar[ny]){const a=cleanAndring(migrera(h,true));if(a)andringar[ny]=a}})}
@@ -1233,17 +1233,20 @@ function attackVal(){
 // Välj vilken bild ur hjältens ark som används (för den här klassen och det här vapnet)
 function bildVal(){
  if(!window.hjalteArk)return null;
- const v=vapenAv(draft),key=draft.klass+"|"+v.id,vald=(draft.bildval||{})[key],A=hjalteArk(draft);
+ const v=vapenAv(draft),key=draft.klass+"|"+v.id,rå=(draft.bildval||{})[key],vand=rå!=null&&rå<0,vald=rå==null?null:vand?-rå-1:rå,A=hjalteArk(draft);
  const box=el("div",{class:"field"},el("label",{},"Bild"),el("p",{class:"fieldhint"},"Välj hur "+draft.namn+" ska se ut som "+KLASS[draft.klass].n.toLowerCase()+" med "+v.namn.toLowerCase()+". Standard är bilden som valdes från början. När hjälten anfaller används en egen anfallsbild."));
  if(!A){const c=document.createElement("canvas");c.width=1;c.height=1;c._rita=()=>{if(hjalteArk(draft)){const y=window.scrollY;rerender();window.scrollTo(0,y)}};
   box.append(el("p",{class:"fieldhint"},"Bilderna laddas …"),c);return box}
- const valj=n=>{const b={...(draft.bildval||{})};if(n==null)delete b[key];else b[key]=n;draft.bildval=b;const y=window.scrollY;rerender();window.scrollTo(0,y)};
+ const valj=(n,v=false)=>{const b={...(draft.bildval||{})};if(n==null)delete b[key];else b[key]=v?-n-1:n;draft.bildval=b;const y=window.scrollY;rerender();window.scrollTo(0,y)};
  const per=Math.max(1,Math.floor(A.c.width/A.cell)),antal=per*Math.floor(A.c.height/A.cell);
  const rutnat=el("div",{class:"bildval"},el("button",{class:"bildruta std"+(vald==null?" sel":""),onclick:()=>valj(null),"aria-pressed":vald==null?"true":"false"},"Standard"));
  for(let n=0;n<antal;n++){const c=document.createElement("canvas");c.width=A.cell;c.height=A.cell;const g=c.getContext("2d");g.imageSmoothingEnabled=false;
   if(A.flip){g.translate(A.cell,0);g.scale(-1,1)}g.drawImage(A.c,(n%per)*A.cell,Math.floor(n/per)*A.cell,A.cell,A.cell,0,0,A.cell,A.cell);c.className="px";
   rutnat.append(el("button",{class:"bildruta"+(vald===n?" sel":""),onclick:()=>valj(n),"aria-label":"Bild "+(n+1),"aria-pressed":vald===n?"true":"false"},c))}
- box.append(rutnat);return box}
+ box.append(rutnat);
+ // tittar den valda bilden åt vänster kan den vändas, så att hjälten tittar mot monstren
+ if(vald!=null)box.append(el("button",{class:"btn ghost small",style:"margin-top:8px",onclick:()=>valj(vald,!vand)},vand?"Vänd tillbaka bilden":"Vänd bilden åt andra hållet"));
+ return box}
 function gosedjurVal(){
  const box=el("div",{class:"field"},el("label",{},"Gosedjur"),el("p",{class:"fieldhint"},"Ett gosedjur följer med på äventyren och har en egen specialförmåga som kan användas en gång per strid."));
  const val=(id,inne)=>el("button",{class:"choice"+(id?" wchoice":"")+(gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?" sel":""),"aria-pressed":gosedjurAv(draft)===id||(!id&&!gosedjurAv(draft))?"true":"false",
