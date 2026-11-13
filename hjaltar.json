@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:23:11.064Z",
+  "uppdaterad": "2026-11-13T23:23:14.597Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -166,8 +166,8 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 32,
-      "svante": 26,
+      "ville": 38,
+      "svante": 27,
       "sally": 28,
       "tomas": 44,
       "linda": 7,
@@ -175,7 +175,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "salen_fore",
+        "scen": "salen",
         "flaggor": [
           "sett_torget",
           "spar",
@@ -186,13 +186,14 @@
           "vet_drake",
           "glod_fri",
           "glod_anfall",
-          "krak_borta"
+          "krak_borta",
+          "vilat"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794612189164,
+    "tid": 1794612194405,
     "niva": {
       "ville": {
         "lvl": 5,
