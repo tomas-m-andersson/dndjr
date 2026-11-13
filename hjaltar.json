@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:20:57.297Z",
+  "uppdaterad": "2026-11-13T23:20:59.362Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -174,7 +174,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "buren",
+        "scen": "gruvan",
         "flaggor": [
           "sett_torget",
           "spar",
@@ -189,7 +189,7 @@
         "v": 2
       }
     },
-    "tid": 1794612055267,
+    "tid": 1794612057422,
     "niva": {
       "ville": {
         "lvl": 5,
