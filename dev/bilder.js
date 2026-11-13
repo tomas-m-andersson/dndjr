@@ -35,17 +35,42 @@ function nyckla(img){
 // Ladda en fil (en gång). Ger null tills den finns.
 function fil(mapp,namn,figur){
  const k=mapp+"/"+namn;let s=filer.get(k);
- if(!s){s={status:"laddar",c:null};filer.set(k,s);const img=new Image();
-  img.onload=()=>{try{s.c=figur?nyckla(img):img}catch(e){s.c=null}s.status=s.c?"ok":"saknas";if(s.c){antal++;ritaOm()}};
-  img.onerror=()=>{s.status="saknas"};img.src=encodeURI(k)+".png"}
+ if(!s){s={status:"laddar",c:null,klar:[]};filer.set(k,s);const img=new Image();
+  const fardig=()=>{const f=s.klar;s.klar=[];f.forEach(x=>x())};
+  img.onload=()=>{try{s.c=figur?nyckla(img):img}catch(e){s.c=null}s.status=s.c?"ok":"saknas";if(s.c){antal++;ritaOm()}fardig()};
+  img.onerror=()=>{s.status="saknas";fardig()};img.src=encodeURI(k)+".png"}
  return s.status==="ok"?s.c:null}
+
+// Förladdning: alla figurer, ikoner, lägerdelar och startsidans bilder laddas innan spelet visas,
+// så att de gamla bilderna aldrig hinner synas. Bakgrunderna till rummen laddas strax efter.
+// Tar det för lång tid (första gången på ett långsamt nät) startar spelet ändå efter maxMs.
+window.forladda=function(klar,maxMs=6000,visa){
+ const L=window.BILDFILER;if(!L){klar();return}
+ const figurMappar=["figur","boss","sak"],viktiga=[],senare=[];
+ for(const [m,namn] of Object.entries(L))for(const n of namn){
+  const post=[MAPP[m],n,figurMappar.includes(m)];
+  (m!=="bakgrund"||n.startsWith("kort_")?viktiga:senare).push(post)}
+ let kvar=viktiga.length,gjort=false;
+ const slut=()=>{if(gjort)return;gjort=true;klar();senare.forEach(p=>fil(...p))};
+ if(!kvar){slut();return}
+ setTimeout(slut,maxMs);
+ for(const p of viktiga){fil(...p);const s=filer.get(p[0]+"/"+p[1]);
+  const en=()=>{kvar--;if(visa)visa(viktiga.length-kvar,viktiga.length);if(kvar<=0)slut()};
+  if(s.status==="laddar")s.klar.push(en);else en()}};
 window.egnaBilderAntal=()=>antal;
+// Finns bilden (enligt bildlista.js) men har inte laddats klart än? Då ritas ingenting i stället för
+// den gamla bilden, och den nya ritas in så fort den har laddats.
+const listade=new Set();for(const [m,L] of Object.entries(window.BILDFILER||{}))for(const n of L)listade.add(MAPP[m]+"/"+n);
+function vantar(mapp,namn){const s=filer.get(mapp+"/"+namn);return listade.has(mapp+"/"+namn)&&(!s||s.status==="laddar")}
+const tomma=new Map();
+function tom(w,h=w){const k=w+"x"+h;if(!tomma.has(k)){const c=document.createElement("canvas");c.width=w;c.height=h;tomma.set(k,c)}return tomma.get(k)}
+const filEllerTom=(mapp,namn,w,h)=>fil(mapp,namn,false)||(vantar(mapp,namn)?tom(w,h):null);
 // Lägrets delar: en bakgrund per bygge och nivå, t.ex. Lägerdelar/lager_eld_2.png
-window.lagerBild=(id,n)=>fil(MAPP.lager,"lager_"+id+"_"+n,false);
+window.lagerBild=(id,n)=>filEllerTom(MAPP.lager,"lager_"+id+"_"+n,320,180);
 
 // En ruta ur ett ark. figurval.js kan välja ruta för "sta" (stå still) och "anfall".
 function ruta(mapp,namn,roll,vapen,Vin){
- const ark=fil(mapp,namn,true);if(!ark)return null;
+ const ark=fil(mapp,namn,true);if(!ark)return vantar(mapp,namn)?tom((Vin||(window.FIGURVAL||{})[namn]||{}).cell||32):null;
  // Bossar och lägerdelar har rutor på 64×64 (4×4 i arket), allt annat 32×32 (8×8)
  const stor=mapp===MAPP.boss||mapp===MAPP.lager,V=Vin||(window.FIGURVAL||{})[namn]||{},cell=V.cell||(ark.width===256&&ark.height===256?(stor?64:32):Math.min(ark.width,ark.height));
  // hjältarnas ark har rutor per vapen: FIGURVAL.ville_ninja.vapen.katana = {sta, anfall}
@@ -71,7 +96,7 @@ window.egenMonster=(k,boss,roll)=>forsta([k],boss?["boss","figur"]:["figur","bos
 window.egenPerson=(k,roll)=>forsta([k],["figur","sak"],roll);
 window.egenSak=k=>forsta([k],["sak","figur"]);
 window.egenIkon=k=>forsta(["ikon_"+k],["ikon"]);
-window.kortBild=namn=>fil(MAPP.bakgrund,namn,false);
+window.kortBild=namn=>filEllerTom(MAPP.bakgrund,namn,320,180);
 // Byt en liten bild mot den egna bilden när den finns (ritas om när bilden har laddats)
 window.medEgenBild=(cv,hamta)=>{const gammal=cv._rita;cv._rita=()=>{const b=hamta();if(!b){if(gammal)gammal();return}
  cv.width=b.width;cv.height=b.height;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.clearRect(0,0,cv.width,cv.height);g.drawImage(b,0,0)};cv._rita();return cv};
@@ -87,8 +112,8 @@ window.ritaBakgrund=function(g,b,W,H){const bw=b.naturalWidth||b.width,bh=b.natu
 // Vilken bakgrundsfil hör till en bild på TV:n?
 window.bakgrundBild=function(bild){
  if(typeof bild!=="string")return null;
- if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return fil(MAPP.bakgrund,p[1]+"_"+kap+"_"+(p[4]||"rum"),false)}
- return fil(MAPP.bakgrund,"berattelse_"+bild.split("|")[0],false)};
+ if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return filEllerTom(MAPP.bakgrund,p[1]+"_"+kap+"_"+(p[4]||"rum"),320,180)}
+ return filEllerTom(MAPP.bakgrund,"berattelse_"+bild.split("|")[0],320,180)};
 
 // Bilder som står still (till exempel korten på äventyrssidan) ritas om när en ny bild har laddats
 function ritaOm(){clearTimeout(omritning);omritning=setTimeout(()=>{

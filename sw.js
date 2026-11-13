@@ -4,8 +4,8 @@
 // Samma fil används i dev-kopian (mappen dev/). Den får en egen cache så att de inte stör varandra.
 const DEV = /\/dev\//.test(location.pathname);
 const PREFIX = DEV ? "tarningsriket-dev-" : "tarningsriket-v";
-const CACHE = PREFIX + "17";
-const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./bilder.js", "./figurval.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = PREFIX + "18";
+const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./bilder.js", "./figurval.js", "./bildlista.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -32,6 +32,17 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.hostname === "api.github.com") return;
+
+  // Bilder: från cachen direkt (snabbt), och samtidigt hämtas en ny kopia i bakgrunden.
+  // En bild som har bytts ut syns alltså från och med nästa gång spelet öppnas.
+  if (url.origin === location.origin && url.pathname.endsWith(".png") && !url.pathname.includes("/icons/")) {
+    e.respondWith(caches.match(req).then(r => {
+      const nytt = fetch(req, { cache: "no-cache" }).then(res => put(req, res));
+      if (r) { e.waitUntil(nytt.catch(() => {})); return r; }
+      return nytt;
+    }));
+    return;
+  }
 
   if (url.origin === location.origin) {
     e.respondWith(
