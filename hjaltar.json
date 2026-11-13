@@ -1,68 +1,9 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-11T19:39:04.248Z",
-  "egna": [
-    {
-      "id": "egen-1793256667251",
-      "namn": "Hans-Ola",
-      "attacker": [
-        "peppsang",
-        "hanfullt_skamt",
-        "vaggvisa"
-      ],
-      "vapen": "forttrollad_luta",
-      "folk": "manniska",
-      "alder": 70,
-      "skagg": false,
-      "klass": "bard",
-      "hud": 1,
-      "har": 8,
-      "stil": "kal",
-      "klader": 0,
-      "flackar": false,
-      "s": {
-        "sty": 11,
-        "smi": 12,
-        "tal": 7,
-        "klo": 13,
-        "vis": 14,
-        "cha": 14
-      },
-      "om": ""
-    },
-    {
-      "id": "egen-1793378426345",
-      "namn": "Benjamin",
-      "attacker": [
-        "sikta_noga",
-        "dubbelskott",
-        "pilregn"
-      ],
-      "vapen": "alvbage",
-      "folk": "manniska",
-      "alder": 20,
-      "skagg": false,
-      "klass": "bagskytt",
-      "hud": 2,
-      "har": 9,
-      "stil": "kort",
-      "klader": 5,
-      "flackar": false,
-      "s": {
-        "sty": 14,
-        "smi": 16,
-        "tal": 14,
-        "klo": 11,
-        "vis": 11,
-        "cha": 15
-      },
-      "om": "",
-      "gosedjur": ""
-    }
-  ],
+  "uppdaterad": "2026-11-13T23:12:50.038Z",
+  "egna": [],
   "sallskap": [
-    "tomas",
     "svante"
   ],
   "grundandringar": {
@@ -93,15 +34,15 @@
       "gosedjur": "blackis"
     },
     "svante": {
+      "folk": "manniska",
+      "alder": 9,
+      "skagg": false,
       "attacker": [
         "lakande_ord",
         "helande_vag",
         "valsignelse"
       ],
       "vapen": "valsignad_hammare",
-      "folk": "manniska",
-      "alder": 9,
-      "skagg": false,
       "klass": "helare",
       "hud": 1,
       "har": 9,
@@ -184,6 +125,32 @@
         "vis": 15,
         "cha": 14
       }
+    },
+    "benjamin": {
+      "folk": "manniska",
+      "alder": 20,
+      "skagg": false,
+      "attacker": [
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
+      ],
+      "vapen": "alvbage",
+      "klass": "bagskytt",
+      "hud": 2,
+      "har": 9,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": false,
+      "s": {
+        "sty": 14,
+        "smi": 16,
+        "tal": 14,
+        "klo": 11,
+        "vis": 11,
+        "cha": 15
+      },
+      "gosedjur": ""
     }
   },
   "aventyr": {
@@ -198,7 +165,7 @@
       "sally": 17,
       "tomas": 44,
       "linda": 7,
-      "egen-1793378426345": 27
+      "benjamin": 27
     },
     "kapitel": {
       "k1": {
@@ -237,7 +204,7 @@
         "lvl": 5,
         "xp": 3939
       },
-      "egen-1793378426345": {
+      "benjamin": {
         "lvl": 5,
         "xp": 3668
       },
@@ -270,7 +237,7 @@
         "wb": 1,
         "acb": 2
       },
-      "egen-1793378426345": {
+      "benjamin": {
         "wb": 0,
         "acb": 2
       },
