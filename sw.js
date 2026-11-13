@@ -4,8 +4,8 @@
 // Samma fil används i dev-kopian (mappen dev/). Den får en egen cache så att de inte stör varandra.
 const DEV = /\/dev\//.test(location.pathname);
 const PREFIX = DEV ? "tarningsriket-dev-" : "tarningsriket-v";
-const CACHE = PREFIX + "11";
-const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./bilder.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = PREFIX + "12";
+const SHELL = ["./", "./index.html", "./aventyr.js", "./texter.js", "./scener.js", "./lager.js", "./ikoner.js", "./fx.js", "./gosedjur.js", "./bilder.js", "./figurval.js", "./manifest.json", "./icons/icon-180.png", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

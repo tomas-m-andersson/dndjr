@@ -1,0 +1,593 @@
+{
+  "app": "Bland monster och tärningar",
+  "version": 1,
+  "uppdaterad": "2026-11-11T19:39:04.248Z",
+  "egna": [
+    {
+      "id": "egen-1793256667251",
+      "namn": "Hans-Ola",
+      "attacker": [
+        "peppsang",
+        "hanfullt_skamt",
+        "vaggvisa"
+      ],
+      "vapen": "forttrollad_luta",
+      "folk": "manniska",
+      "alder": 70,
+      "skagg": false,
+      "klass": "bard",
+      "hud": 1,
+      "har": 8,
+      "stil": "kal",
+      "klader": 0,
+      "flackar": false,
+      "s": {
+        "sty": 11,
+        "smi": 12,
+        "tal": 7,
+        "klo": 13,
+        "vis": 14,
+        "cha": 14
+      },
+      "om": ""
+    },
+    {
+      "id": "egen-1793378426345",
+      "namn": "Benjamin",
+      "attacker": [
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
+      ],
+      "vapen": "alvbage",
+      "folk": "manniska",
+      "alder": 20,
+      "skagg": false,
+      "klass": "bagskytt",
+      "hud": 2,
+      "har": 9,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": false,
+      "s": {
+        "sty": 14,
+        "smi": 16,
+        "tal": 14,
+        "klo": 11,
+        "vis": 11,
+        "cha": 15
+      },
+      "om": "",
+      "gosedjur": ""
+    }
+  ],
+  "sallskap": [
+    "tomas",
+    "svante"
+  ],
+  "grundandringar": {
+    "ville": {
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
+      "attacker": [
+        "smygattack",
+        "shuriken",
+        "tryckpunkt"
+      ],
+      "vapen": "skuggkatana",
+      "klass": "ninja",
+      "hud": 1,
+      "har": 3,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": false,
+      "s": {
+        "sty": 16,
+        "smi": 12,
+        "tal": 15,
+        "klo": 10,
+        "vis": 11,
+        "cha": 12
+      },
+      "gosedjur": "blackis"
+    },
+    "svante": {
+      "attacker": [
+        "lakande_ord",
+        "helande_vag",
+        "valsignelse"
+      ],
+      "vapen": "valsignad_hammare",
+      "folk": "manniska",
+      "alder": 9,
+      "skagg": false,
+      "klass": "helare",
+      "hud": 1,
+      "har": 9,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": false,
+      "s": {
+        "sty": 9,
+        "smi": 13,
+        "tal": 12,
+        "klo": 16,
+        "vis": 13,
+        "cha": 11
+      },
+      "gosedjur": ""
+    },
+    "tomas": {
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
+      "attacker": [
+        "dubbelhugg",
+        "virvelhugg",
+        "skoldslag"
+      ],
+      "vapen": "drakdrapare",
+      "klass": "krigare",
+      "hud": 1,
+      "har": 2,
+      "stil": "kal",
+      "klader": 2,
+      "flackar": false,
+      "s": {
+        "sty": 15,
+        "smi": 11,
+        "tal": 15,
+        "klo": 12,
+        "vis": 16,
+        "cha": 13
+      }
+    },
+    "linda": {
+      "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
+      "attacker": [
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
+      ],
+      "vapen": "giftbage",
+      "klass": "bagskytt",
+      "hud": 1,
+      "har": 7,
+      "stil": "tofs",
+      "klader": 3,
+      "flackar": false,
+      "s": {
+        "sty": 12,
+        "smi": 16,
+        "tal": 13,
+        "klo": 14,
+        "vis": 15,
+        "cha": 13
+      }
+    },
+    "sally": {
+      "folk": "katt",
+      "klass": "katt",
+      "hud": 0,
+      "har": 10,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": true,
+      "s": {
+        "sty": 8,
+        "smi": 17,
+        "tal": 11,
+        "klo": 12,
+        "vis": 15,
+        "cha": 14
+      }
+    }
+  },
+  "aventyr": {
+    "guld": 3126,
+    "saker": [
+      "Läkedryck",
+      "Läkedryck"
+    ],
+    "liv": {
+      "ville": 23,
+      "svante": 24,
+      "sally": 17,
+      "tomas": 44,
+      "linda": 7,
+      "egen-1793378426345": 27
+    },
+    "kapitel": {
+      "k1": {
+        "scen": "slut_glod",
+        "flaggor": [
+          "sett_bo",
+          "vet_lager",
+          "bo_svimmad",
+          "glod_fri",
+          "krak_borta",
+          "vilat",
+          "glod_eld"
+        ],
+        "klar": true,
+        "v": 2,
+        "slut": "slut_glod",
+        "nyttVapen": "Ni hittar Välsignade hammaren! Helare kan nu välja det under Ändra. 1d8 skada och +1 rustning.",
+        "nyttVapenId": "valsignad_hammare"
+      }
+    },
+    "tid": 1794425859019,
+    "niva": {
+      "ville": {
+        "lvl": 5,
+        "xp": 4253
+      },
+      "svante": {
+        "lvl": 4,
+        "xp": 2364
+      },
+      "tomas": {
+        "lvl": 5,
+        "xp": 5718
+      },
+      "sally": {
+        "lvl": 5,
+        "xp": 3939
+      },
+      "egen-1793378426345": {
+        "lvl": 5,
+        "xp": 3668
+      },
+      "linda": {
+        "lvl": 2,
+        "xp": 330
+      }
+    },
+    "upplasta": [
+      "giftdolkar",
+      "stjarnstav",
+      "isstav",
+      "giftbage",
+      "skuggstav",
+      "drakdrapare",
+      "flammsvard",
+      "eldbage",
+      "askhammare",
+      "alvbage",
+      "manklinga",
+      "skuggkatana",
+      "valsignad_hammare"
+    ],
+    "utr": {
+      "ville": {
+        "wb": 1,
+        "acb": 3
+      },
+      "svante": {
+        "wb": 1,
+        "acb": 2
+      },
+      "egen-1793378426345": {
+        "wb": 0,
+        "acb": 2
+      },
+      "tomas": {
+        "wb": 1,
+        "acb": 2
+      },
+      "sally": {
+        "wb": 1,
+        "acb": 2
+      },
+      "linda": {
+        "wb": 0,
+        "acb": 1
+      }
+    },
+    "reset": 1793282091831,
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "raddade": 1,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 5)",
+          "Sally (nivå 5)",
+          "Benjamin (nivå 5)"
+        ],
+        "ara": 1100,
+        "datum": "2026-11-10"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "raddade": 1,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 5)",
+          "Sally (nivå 5)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 3150,
+        "datum": "2026-11-08"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "raddade": 2,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Svante (nivå 4)"
+        ],
+        "ara": 450,
+        "datum": "2026-11-05"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Svante (nivå 4)"
+        ],
+        "ara": 0,
+        "datum": "2026-11-05"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 0,
+        "datum": "2026-11-05"
+      },
+      {
+        "plats": "herrgarden",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 0,
+        "datum": "2026-11-04"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 3,
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Ville (nivå 4)",
+          "Svante (nivå 4)",
+          "Tomas (nivå 5)",
+          "Sally (nivå 4)"
+        ],
+        "ara": 300,
+        "datum": "2026-11-04"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Tomas (nivå 5)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 4)"
+        ],
+        "ara": 1350,
+        "datum": "2026-11-04"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Tomas (nivå 4)",
+          "Svante (nivå 4)"
+        ],
+        "ara": 825,
+        "datum": "2026-11-03"
+      },
+      {
+        "plats": "skogen",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Tomas (nivå 4)",
+          "Ville (nivå 4)",
+          "Sally (nivå 4)",
+          "Benjamin (nivå 3)"
+        ],
+        "ara": 950,
+        "datum": "2026-11-02"
+      },
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Tomas (nivå 3)",
+          "Svante (nivå 3)",
+          "Linda (nivå 2)"
+        ],
+        "ara": 450,
+        "datum": "2026-10-31"
+      },
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 3)",
+          "Benjamin (nivå 3)",
+          "Tomas (nivå 3)",
+          "Sally (nivå 3)"
+        ],
+        "ara": 500,
+        "datum": "2026-10-30"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 3)",
+          "Benjamin (nivå 2)",
+          "Tomas (nivå 3)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 450,
+        "datum": "2026-10-30"
+      },
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 3)",
+          "Svante (nivå 3)",
+          "Benjamin (nivå 2)",
+          "Tomas (nivå 3)"
+        ],
+        "ara": 1125,
+        "datum": "2026-10-30"
+      },
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-29"
+      },
+      {
+        "plats": "vulkanen",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-29"
+      },
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-29"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 700,
+        "datum": "2026-10-28"
+      },
+      {
+        "plats": "skogen",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "hem",
+        "hjaltar": [
+          "Ville (nivå 2)",
+          "Svante (nivå 2)",
+          "Tomas (nivå 2)",
+          "Sally (nivå 2)"
+        ],
+        "ara": 400,
+        "datum": "2026-10-28"
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "utfall": "gav upp",
+        "hjaltar": [
+          "Ville (nivå 1)",
+          "Svante (nivå 1)",
+          "Tomas (nivå 1)",
+          "Sally (nivå 1)"
+        ],
+        "ara": 0,
+        "datum": "2026-10-26"
+      }
+    ],
+    "lager": {
+      "byggt": {
+        "talt": 2,
+        "trofe": 1,
+        "ovning": 1
+      },
+      "trofeer": {
+        "magmaslem": 1,
+        "spindel": 1,
+        "levande_rustning": 2,
+        "troll": 2,
+        "basilisk": 1,
+        "nekromantiker": 1,
+        "dimfrun": 1,
+        "skuggan": 1
+      }
+    }
+  }
+}

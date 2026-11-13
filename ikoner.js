@@ -76,11 +76,11 @@ window.attackIkon=function(id){
   const G=d.G.map(r=>r.map(c=>{if(c===".")return".";if(!kod[c]){kod[c]=tecken[n++];pal[kod[c]]=F[c]||c}return kod[c]}));
   CACHE.set(id,rendera(G,{K:KONTUR,...pal}))}
  const s=CACHE.get(id),c=document.createElement("canvas");c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
- c.className="px wicon small atkikon";c.setAttribute("aria-hidden","true");return c};
+ c.className="px wicon small atkikon";c.setAttribute("aria-hidden","true");return window.medEgenBild?medEgenBild(c,()=>egenIkon(id)):c};
 // Bilden på ett monster, i samma lilla ruta
 window.monsterIkon=function(k){
  const s=sprCanvas(k),c=document.createElement("canvas");c.width=26;c.height=26;c.className="px wicon small monikon";c.setAttribute("aria-hidden","true");
  if(s){const g=c.getContext("2d");g.imageSmoothingEnabled=false;const sk=Math.min(24/s.width,24/s.height),w=Math.round(s.width*sk),h=Math.round(s.height*sk),vand=!!(SPR[k]&&(SPR[k].hero||k==="drake"||k==="eldklo"));
   if(vand){g.translate(26,0);g.scale(-1,1)}g.drawImage(s,Math.round((26-w)/2),26-h-1,w,h)}
- return c};
+ return window.medEgenBild?medEgenBild(c,()=>egenMonster(k)):c};
 })();

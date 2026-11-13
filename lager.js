@@ -160,7 +160,9 @@ function ritaLager(cv,bg,hang,H,t,anim){
    const y=bas-3;g.save();g.translate(x,y);if(katt){g.drawImage(tmp,-c.width/2,-c.height+3)}else{g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(tmp,-c.width/2,-c.height/2-4)}g.restore();
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";const zx=x+(vand?-6:4)+z*4,zy=y-12-z*10;g.fillRect(zx,zy,3,1);g.fillRect(zx+2,zy+1,1,1);g.fillRect(zx,zy+2,3,1);g.globalAlpha=1;return}
   const sitter=sitt&&!katt;let y=bas-c.height+L.upp+(sitter?6:0);
-  ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
+  const bi=window.egenHjalte&&egenHjalte(h); // egen bild: rutan där hjälten står still
+  if(bi)ritaRuta(g,bi,x,bas+L.upp+(sitter?4:0)+2,32,{flip:!!vand});
+  else ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
   {const gd=typeof gosedjurAv==="function"&&gosedjurAv(h);if(gd){const s=gosedjurCanvas(gd);gosedjurSist.push(()=>g.drawImage(s,Math.round(x+(vand?c.width/2-3:-c.width/2-s.width+3)),bas-s.height+1))}} // gosedjuret bredvid, på sidan bort från elden (ritas sist så det syns)
   if(sitter){g.fillStyle="#5a3a22";g.fillRect(Math.round(x-7),bas-3,14,4);g.fillStyle="#7a5232";g.fillRect(Math.round(x-7),bas-3,14,1)}
   if(hang==="korv"&&!katt){const hx=x+(vand?-4:4),hy=y+15,ex=LFX+(vand?5:-5),ey=51;g.fillStyle="#b08a5a";const n=14;for(let k=0;k<=n;k++)g.fillRect(Math.round(hx+(ex-hx)*k/n),Math.round(hy+(ey-hy)*k/n),1,1);g.fillStyle="#a0522d";g.fillRect(Math.round(ex)-1,ey-1,3,2);g.fillStyle="#6a2a14";g.fillRect(Math.round(ex),ey-1,1,1)}
@@ -169,25 +171,59 @@ function ritaLager(cv,bg,hang,H,t,anim){
  });gosedjurSist.forEach(f=>f())}
 
 /* ---------- Sidan ---------- */
-let lagerHang=null,lagerFokus=null; // lagerFokus: området som visas efter ett bygge
+/* ---------- Lägret med egna bilder ----------
+   Sex delar i rad, 320×180 var: skattkammaren – smedjan – lägerelden – tälten – övningsplatsen – troféväggen.
+   Varje del har en bild per nivå (Lägerdelar/lager_eld_2.png osv). Används så fort bilden för lägerelden finns. */
+const BZ=["skatt","smedja","eld","talt","ovning","trofe"],BZW=320,BZH=180,BLW=BZW*BZ.length,BFX=BZW*2+BZW/2,BBAS=174,BS=64/24;
+const bildLager=()=>!!(window.lagerBild&&lagerBild("eld",lagerNiva("eld")));
+const zonX=id=>bildLager()?BZ.indexOf(id)*BZW+BZW/2:(ZONER.find(Z=>Z.id===id)||{x:LFX}).x;
+// Troféernas platser på troféväggen (mitt i bilden lager_trofe_1). Justeras när bilden finns.
+let TROFEPLATS=[[119,84],[146,84],[173,84],[200,84],[119,112],[146,112],[173,112],[200,112]]; // mitt i sköldarna på lager_trofe_1
+function ritaBildLager(cv,hang,H,t,anim){
+ const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.clearRect(0,0,BLW,BZH);
+ BZ.forEach((id,i)=>{const x0=i*BZW,b=lagerBild(id,lagerNiva(id));
+  if(b){const bw=b.naturalWidth||b.width,bh=b.naturalHeight||b.height;if(bw>=BZW&&bh>=BZH)g.drawImage(b,Math.floor((bw-BZW)/2),Math.floor((bh-BZH)/2),BZW,BZH,x0,0,BZW,BZH);else g.drawImage(b,x0,0,BZW,BZH);return}
+  const gr=g.createLinearGradient(0,0,0,BZH);gr.addColorStop(0,"#2b2340");gr.addColorStop(.62,"#5a3f4a");gr.addColorStop(.63,"#2f3a24");gr.addColorStop(1,"#1d2616");g.fillStyle=gr;g.fillRect(x0,0,BZW,BZH);
+  g.fillStyle="rgba(255,255,255,.35)";g.font="bold 12px Nunito,sans-serif";g.textAlign="center";g.fillText("Ingen bild än: lager_"+id+"_"+lagerNiva(id),x0+BZW/2,60)});
+ if(lagerNiva("trofe")){const T=Object.entries((spel.lager||{}).trofeer||{}).sort((a,b)=>MONSTER[b[0]].xp-MONSTER[a[0]].xp).slice(0,8),x0=BZ.indexOf("trofe")*BZW;
+  T.forEach(([k],i)=>{const [tx,ty]=TROFEPLATS[i],c=(window.egenMonster&&egenMonster(k,true))||sprCanvas(k);if(!c)return;const s=Math.min(17/c.width,17/c.height);g.drawImage(c,Math.round(x0+tx-c.width*s/2),Math.round(ty-c.height*s/2),c.width*s,c.height*s)})}
+ // ljuset från elden fladdrar
+ const n=lagerNiva("eld"),gr=g.createRadialGradient(BFX,150,0,BFX,150,70+n*18+Math.sin(t/150)*4);gr.addColorStop(0,"rgba(255,150,60,.22)");gr.addColorStop(1,"rgba(255,150,60,0)");
+ g.globalCompositeOperation="lighter";g.fillStyle=gr;g.fillRect(BFX-220,0,440,BZH);g.globalCompositeOperation="source-over";
+ if(hang==="sover"){g.fillStyle="rgba(5,8,20,.4)";g.fillRect(0,0,BLW,BZH)}
+ const pos=lagerPlatser(hang,H.length),ordning=H.map((h,i)=>i).sort((a,b)=>pos[a][3]-pos[b][3]),ovningX=BZ.indexOf("ovning")*BZW+BZW/2;
+ ordning.forEach(i=>{const h=H[i],[x,vand,sitt,bas]=pos[i],L=anim?livTid(t,i):{upp:0};
+  const X=Math.round(x<100?ovningX+(x-40)*BS:BFX+(x-LFX)*BS),Y=Math.round(BBAS-(BAS-bas)*BS);
+  const bi=window.egenHjalte&&egenHjalte(h),gd=typeof gosedjurAv==="function"&&gosedjurAv(h);
+  if(hang==="sover"){const c=bi||heroCanvas(h),w=bi?64:c.width*BS,hh=bi?64:c.height*BS;g.save();g.translate(X,Y-10);g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(c,-w/2,-hh/2,w,hh);g.restore();
+   const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";g.font="bold 12px Nunito,sans-serif";g.fillText("z",X+(vand?-14:10)+z*8,Y-40-z*24);g.globalAlpha=1;return}
+  const upp=Math.round(L.upp*2)+(sitt&&h.folk!=="katt"?8:0);
+  if(bi)ritaRuta(g,bi,X,Y+upp,64,{flip:!!vand});
+  else{const c=heroCanvas(h),w=c.width*BS,hh=c.height*BS;g.save();if(vand){g.translate(X+w/2,0);g.scale(-1,1);g.drawImage(c,0,Y+upp-hh,w,hh)}else g.drawImage(c,X-w/2,Y+upp-hh,w,hh);g.restore()}
+  if(gd){const gb=window.egenGosedjur&&egenGosedjur(gd);const gx=X+(vand?24:-24);if(gb)ritaRuta(g,gb,gx,Y,32,{flip:!!vand});else{const s2=gosedjurCanvas(gd);g.drawImage(s2,gx-s2.width,Y-s2.height*2,s2.width*2,s2.height*2)}}});
+}
+let lagerHang=null,lagerFokus=null; // lagerFokus: id för området som visas efter ett bygge
 function lagerVy(){
  view="lager";lage=null;tyst();app.replaceChildren();document.getElementById("party").hidden=true;
  spel.lager=spel.lager||{byggt:{},trofeer:{}};
  const H=lagerHjaltar();if(!lagerHang)lagerHang=HANG[Math.floor(Math.random()*HANG.length)];
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:()=>{lagerHang=null;start()}},"← Start"),el("span",{class:"purse"},spel.guld+" guld i kassan")));
  // den levande bilden: en bred remsa som man drar åt sidorna
- const cv=document.createElement("canvas");cv.className="px lagerduk";cv.width=LW;cv.height=LH;cv.style.width=(LW/LVIS*100)+"%";const bg=lagerBakgrund();
- const still=matchMedia("(prefers-reduced-motion: reduce)").matches;ritaLager(cv,bg,lagerHang,H,performance.now(),!still);
- if(!still){const id=setInterval(()=>{if(!cv.isConnected){clearInterval(id);return}ritaLager(cv,bg,lagerHang,H,performance.now(),true)},110)}
+ const BL=bildLager(),W=BL?BLW:LW,VIS=BL?BZW:LVIS;
+ const cv=document.createElement("canvas");cv.className="px lagerduk";cv.width=W;cv.height=BL?BZH:LH;cv.style.width=(W/VIS*100)+"%";const bg=BL?null:lagerBakgrund();
+ const rita=(t,an)=>BL?ritaBildLager(cv,lagerHang,H,t,an):ritaLager(cv,bg,lagerHang,H,t,an);
+ const still=matchMedia("(prefers-reduced-motion: reduce)").matches;rita(performance.now(),!still);
+ // laddas lägerbilden först nu: byt till bildläget
+ const id=setInterval(()=>{if(!cv.isConnected){clearInterval(id);return}if(bildLager()!==BL){clearInterval(id);const y=scrollY;lagerVy();scrollTo(0,y);return}if(!still||BL)rita(performance.now(),!still)},110);
  const remsa=el("div",{class:"lagerscroll",tabindex:"0","aria-label":"Lägret. Dra åt sidorna för att se hela lägret."},cv);
- const till=(x,mjukt)=>{remsa.scrollTo({left:(x-LVIS/2)/LW*remsa.scrollWidth,behavior:mjukt&&!still?"smooth":"auto"})};
+ const till=(x,mjukt)=>{remsa.scrollTo({left:(x-VIS/2)/W*remsa.scrollWidth,behavior:mjukt&&!still?"smooth":"auto"})};
  const pil=(dir,txt)=>el("button",{class:"lagerpil "+(dir<0?"v":"h"),"aria-label":txt,onclick:()=>remsa.scrollBy({left:dir*remsa.clientWidth*.8,behavior:still?"auto":"smooth"})},dir<0?"‹":"›");
  const text=el("p",{class:"lagertext"},H.length?lagerText(lagerHang,H):"Lägret är tomt. Skapa eller välj hjältar först.");
  app.append(el("div",{class:"stephead"},el("small",{},"Mellan äventyren"),el("h2",{},"Hjältarnas läger")),
   el("div",{class:"tvbig lagertv"},remsa,pil(-1,"Titta åt vänster"),pil(1,"Titta åt höger")),
-  el("div",{class:"pills lagerzoner"},ZONER.map(Z=>el("button",{class:"pill"+(lagerNiva(Z.id)||Z.id==="eld"?"":" tom"),onclick:()=>till(Z.x,true)},Z.namn+(Z.id!=="eld"&&!lagerNiva(Z.id)?" (ej byggt)":"")))),
+  el("div",{class:"pills lagerzoner"},(BL?BZ.map(id=>ZONER.find(Z=>Z.id===id)):ZONER).map(Z=>el("button",{class:"pill"+(lagerNiva(Z.id)||Z.id==="eld"?"":" tom"),onclick:()=>till(zonX(Z.id),true)},Z.namn+(Z.id!=="eld"&&!lagerNiva(Z.id)?" (ej byggt)":"")))),
   el("div",{class:"lagerrad"},text,el("button",{class:"btn ghost small",onclick:()=>{let n;do n=HANG[Math.floor(Math.random()*HANG.length)];while(n===lagerHang);lagerHang=n;const y=scrollY,x=remsa.scrollLeft;lagerVy();scrollTo(0,y);const r2=app.querySelector(".lagerscroll");if(r2)r2.scrollLeft=x}},"Nytt häng")));
- const fokus=lagerFokus??LFX;lagerFokus=null;requestAnimationFrame(()=>till(fokus,false));
+ const fokus=zonX(lagerFokus||"eld");lagerFokus=null;requestAnimationFrame(()=>till(fokus,false));
  // kassan
  app.append(el("div",{class:"bp-guld"},pixIkon("guld","stor"),el("div",{},el("b",{},spel.guld+" guld i lägrets kassa"),el("small",{},"Guldet ni hittar i grottkrypningarna hamnar här när ni kommer hem. Faller sällskapet räddar ni hälften."))));
  // bygg ut lägret
@@ -196,7 +232,7 @@ function lagerVy(){
   return el("div",{class:"bygge"+(n?" byggt":"")},el("div",{class:"bygge-topp"},el("b",{},B.namn),el("span",{class:"nivapips","aria-label":"Nivå "+n+" av "+max},Array.from({length:max},(_,i)=>el("i",{class:i<n?"pa":""})))),
    el("small",{},B.besk),n?el("span",{class:"bygge-nu"},"Nu: "+B.nytta(n)):null,
    klar?el("span",{class:"bygge-klar"},"Färdigbyggt ✓"):el("div",{class:"bygge-kop"},el("span",{},(n?"Nästa: ":"")+B.nytta(n+1)),
-    el("button",{class:"btn small"+(spel.guld<kost?" ghost":""),disabled:spel.guld<kost,onclick:()=>{spel.guld-=kost;spel.lager.byggt[B.id]=n+1;sparaSpel();flash(B.namn+" är "+(n?"uppgraderad":"byggd")+"! Titta i bilden.");lagerFokus=(ZONER.find(Z=>Z.id===B.id)||{}).x;lagerVy()}},
+    el("button",{class:"btn small"+(spel.guld<kost?" ghost":""),disabled:spel.guld<kost,onclick:()=>{spel.guld-=kost;spel.lager.byggt[B.id]=n+1;sparaSpel();flash(B.namn+" är "+(n?"uppgraderad":"byggd")+"! Titta i bilden.");lagerFokus=B.id;lagerVy()}},
      pixIkon("guld"),(n?"Uppgradera":"Bygg")+" · "+kost+" guld")))})));
  // troféväggen
  const T=Object.entries(spel.lager.trofeer||{}).sort((a,b)=>MONSTER[b[0]].xp-MONSTER[a[0]].xp);
@@ -220,9 +256,11 @@ function lagerVy(){
 }
 // Rutan på startsidan: mitten av lägret, runt elden
 function lagerRuta(){
- const full=document.createElement("canvas");full.width=LW;full.height=LH;const H=lagerHjaltar();
- ritaLager(full,lagerBakgrund(),"elden",H,1000,false);
- const cv=document.createElement("canvas");cv.className="px";cv.width=LVIS;cv.height=LH;cv.getContext("2d").drawImage(full,LFX-LVIS/2,0,LVIS,LH,0,0,LVIS,LH);
+ const H=lagerHjaltar(),cv=document.createElement("canvas");cv.className="px";
+ cv._rita=()=>{const BL=bildLager(),full=document.createElement("canvas");
+  if(BL){full.width=BLW;full.height=BZH;ritaBildLager(full,"elden",H,1000,false);cv.width=BZW;cv.height=BZH;cv.getContext("2d").drawImage(full,BFX-BZW/2,0,BZW,BZH,0,0,BZW,BZH)}
+  else{full.width=LW;full.height=LH;ritaLager(full,lagerBakgrund(),"elden",H,1000,false);cv.width=LVIS;cv.height=LH;cv.getContext("2d").drawImage(full,LFX-LVIS/2,0,LVIS,LH,0,0,LVIS,LH)}};
+ cv._rita();if(window.medKort)medKort(cv,"kort_lager");
  const byggda=LAGERBYGGEN.filter(B=>lagerNiva(B.id)).length;
  return el("button",{class:"bigtile",onclick:()=>{lagerHang=null;lagerVy()}},el("div",{class:"tvbig"},cv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarnas läger"),el("p",{},spel.guld+" guld i kassan · "+byggda+" av "+LAGERBYGGEN.length+" byggen"),
