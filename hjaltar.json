@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:21:21.125Z",
+  "uppdaterad": "2026-11-13T23:21:50.760Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -157,7 +157,7 @@
     }
   },
   "aventyr": {
-    "guld": 3134,
+    "guld": 3144,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -174,7 +174,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "krakstrid2",
+        "scen": "gruva_inne",
         "flaggor": [
           "sett_torget",
           "spar",
@@ -184,13 +184,14 @@
           "bo_omlagd",
           "vet_drake",
           "glod_fri",
-          "glod_anfall"
+          "glod_anfall",
+          "krak_borta"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794612079251,
+    "tid": 1794612108694,
     "niva": {
       "ville": {
         "lvl": 5,
