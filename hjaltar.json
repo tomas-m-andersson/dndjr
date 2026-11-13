@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:16:59.211Z",
+  "uppdaterad": "2026-11-13T23:19:24.435Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -157,7 +157,7 @@
     }
   },
   "aventyr": {
-    "guld": 3136,
+    "guld": 3126,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -173,20 +173,21 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "vadet",
+        "scen": "lagret",
         "flaggor": [
           "sett_torget",
           "spar",
           "sett_bo",
           "vet_lager",
           "vet_skuggan",
-          "bo_omlagd"
+          "bo_omlagd",
+          "vet_drake"
         ],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794611817178,
+    "tid": 1794611964149,
     "niva": {
       "ville": {
         "lvl": 5,
