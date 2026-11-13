@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:38:36.020Z",
+  "uppdaterad": "2026-11-13T23:38:51.877Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -98,20 +98,23 @@
       "gosedjur": ""
     },
     "linda": {
-      "folk": "manniska",
-      "alder": 40,
-      "skagg": false,
+      "bildval": {
+        "bagskytt|giftbage": 7
+      },
       "attacker": [
         "sikta_noga",
         "dubbelskott",
         "pilregn"
       ],
       "vapen": "giftbage",
+      "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
       "klass": "bagskytt",
-      "hud": 1,
-      "har": 7,
-      "stil": "tofs",
-      "klader": 3,
+      "hud": 0,
+      "har": 4,
+      "stil": "kort",
+      "klader": 2,
       "flackar": false,
       "s": {
         "sty": 12,
@@ -120,7 +123,8 @@
         "klo": 14,
         "vis": 15,
         "cha": 13
-      }
+      },
+      "gosedjur": ""
     },
     "benjamin": {
       "folk": "manniska",
