@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:37:32.248Z",
+  "uppdaterad": "2026-11-13T23:38:10.371Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -40,20 +40,23 @@
       "gosedjur": "blackis"
     },
     "svante": {
-      "folk": "manniska",
-      "alder": 9,
-      "skagg": false,
+      "bildval": {
+        "helare|valsignad_hammare": -24
+      },
       "attacker": [
         "lakande_ord",
         "helande_vag",
         "valsignelse"
       ],
       "vapen": "valsignad_hammare",
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "klass": "helare",
-      "hud": 1,
-      "har": 9,
+      "hud": 0,
+      "har": 0,
       "stil": "kort",
-      "klader": 5,
+      "klader": 1,
       "flackar": false,
       "s": {
         "sty": 9,
