@@ -178,7 +178,7 @@ const BZ=["skatt","smedja","eld","talt","ovning","trofe"],BZW=320,BZH=180,BLW=BZ
 const bildLager=()=>!!(window.lagerBild&&lagerBild("eld",lagerNiva("eld")));
 const zonX=id=>bildLager()?BZ.indexOf(id)*BZW+BZW/2:(ZONER.find(Z=>Z.id===id)||{x:LFX}).x;
 // Troféernas platser på troféväggen (mitt i bilden lager_trofe_1). Justeras när bilden finns.
-let TROFEPLATS=[[112,62],[144,62],[176,62],[208,62],[112,98],[144,98],[176,98],[208,98]];
+let TROFEPLATS=[[119,84],[146,84],[173,84],[200,84],[119,112],[146,112],[173,112],[200,112]]; // mitt i sköldarna på lager_trofe_1
 function ritaBildLager(cv,hang,H,t,anim){
  const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.clearRect(0,0,BLW,BZH);
  BZ.forEach((id,i)=>{const x0=i*BZW,b=lagerBild(id,lagerNiva(id));
@@ -186,7 +186,7 @@ function ritaBildLager(cv,hang,H,t,anim){
   const gr=g.createLinearGradient(0,0,0,BZH);gr.addColorStop(0,"#2b2340");gr.addColorStop(.62,"#5a3f4a");gr.addColorStop(.63,"#2f3a24");gr.addColorStop(1,"#1d2616");g.fillStyle=gr;g.fillRect(x0,0,BZW,BZH);
   g.fillStyle="rgba(255,255,255,.35)";g.font="bold 12px Nunito,sans-serif";g.textAlign="center";g.fillText("Ingen bild än: lager_"+id+"_"+lagerNiva(id),x0+BZW/2,60)});
  if(lagerNiva("trofe")){const T=Object.entries((spel.lager||{}).trofeer||{}).sort((a,b)=>MONSTER[b[0]].xp-MONSTER[a[0]].xp).slice(0,8),x0=BZ.indexOf("trofe")*BZW;
-  T.forEach(([k],i)=>{const [tx,ty]=TROFEPLATS[i],c=(window.egenMonster&&egenMonster(k,true))||sprCanvas(k);if(!c)return;const s=Math.min(26/c.width,26/c.height);g.drawImage(c,Math.round(x0+tx-c.width*s/2),Math.round(ty-c.height*s/2),c.width*s,c.height*s)})}
+  T.forEach(([k],i)=>{const [tx,ty]=TROFEPLATS[i],c=(window.egenMonster&&egenMonster(k,true))||sprCanvas(k);if(!c)return;const s=Math.min(17/c.width,17/c.height);g.drawImage(c,Math.round(x0+tx-c.width*s/2),Math.round(ty-c.height*s/2),c.width*s,c.height*s)})}
  // ljuset från elden fladdrar
  const n=lagerNiva("eld"),gr=g.createRadialGradient(BFX,150,0,BFX,150,70+n*18+Math.sin(t/150)*4);gr.addColorStop(0,"rgba(255,150,60,.22)");gr.addColorStop(1,"rgba(255,150,60,0)");
  g.globalCompositeOperation="lighter";g.fillStyle=gr;g.fillRect(BFX-220,0,440,BZH);g.globalCompositeOperation="source-over";
@@ -260,7 +260,7 @@ function lagerRuta(){
  cv._rita=()=>{const BL=bildLager(),full=document.createElement("canvas");
   if(BL){full.width=BLW;full.height=BZH;ritaBildLager(full,"elden",H,1000,false);cv.width=BZW;cv.height=BZH;cv.getContext("2d").drawImage(full,BFX-BZW/2,0,BZW,BZH,0,0,BZW,BZH)}
   else{full.width=LW;full.height=LH;ritaLager(full,lagerBakgrund(),"elden",H,1000,false);cv.width=LVIS;cv.height=LH;cv.getContext("2d").drawImage(full,LFX-LVIS/2,0,LVIS,LH,0,0,LVIS,LH)}};
- cv._rita();
+ cv._rita();if(window.medKort)medKort(cv,"kort_lager");
  const byggda=LAGERBYGGEN.filter(B=>lagerNiva(B.id)).length;
  return el("button",{class:"bigtile",onclick:()=>{lagerHang=null;lagerVy()}},el("div",{class:"tvbig"},cv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarnas läger"),el("p",{},spel.guld+" guld i kassan · "+byggda+" av "+LAGERBYGGEN.length+" byggen"),

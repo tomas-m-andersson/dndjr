@@ -63,6 +63,15 @@ window.egenHjalte=(h,roll)=>{if(!h)return null;const v=window.vapenAv?vapenAv(h)
 window.egenMonster=(k,boss,roll)=>forsta([k],boss?["boss","figur"]:["figur","boss"],roll);
 window.egenPerson=(k,roll)=>forsta([k],["figur","sak"],roll);
 window.egenSak=k=>forsta([k],["sak","figur"]);
+window.egenIkon=k=>forsta(["ikon_"+k],["ikon"]);
+window.kortBild=namn=>fil(MAPP.bakgrund,namn,false);
+// Byt en liten bild mot den egna bilden när den finns (ritas om när bilden har laddats)
+window.medEgenBild=(cv,hamta)=>{const gammal=cv._rita;cv._rita=()=>{const b=hamta();if(!b){if(gammal)gammal();return}
+ cv.width=b.width;cv.height=b.height;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;g.clearRect(0,0,cv.width,cv.height);g.drawImage(b,0,0)};cv._rita();return cv};
+// Startsidans och äventyrssidans stora bilder: kortbilden om den finns, annars som förut
+window.medKort=(cv,namn)=>{const gammal=cv._rita,tv=cv._tv;delete cv._tv;cv._rita=()=>{const b=kortBild(namn);
+ if(b){cv.width=320;cv.height=180;const g=cv.getContext("2d");g.imageSmoothingEnabled=false;ritaBakgrund(g,b,320,180);return}
+ if(gammal)gammal();else if(tv&&window.drawTV){drawTV(cv,tv[0],tv[1]);delete cv._tv}};cv._rita();return cv};
 window.egenGosedjur=(k,roll)=>forsta([k],["sak","figur"],roll);
 
 // Rita en bakgrund på hela TV:n. Är den större än 320×180 (t.ex. 344×192) skärs kanterna bort lika mycket på alla sidor.
@@ -76,7 +85,7 @@ window.bakgrundBild=function(bild){
 
 // Bilder som står still (till exempel korten på äventyrssidan) ritas om när en ny bild har laddats
 function ritaOm(){clearTimeout(omritning);omritning=setTimeout(()=>{
- document.querySelectorAll("canvas").forEach(c=>{if(!c.isConnected)return;if(c._tv&&window.drawTV)drawTV(c,c._tv[0],c._tv[1]);else if(c._rita)c._rita()})},150)}
+ document.querySelectorAll("canvas").forEach(c=>{if(!c.isConnected)return;if(c._rita)c._rita();else if(c._tv&&window.drawTV)drawTV(c,c._tv[0],c._tv[1])})},150)}
 
 // Rita en ruta: mitt på cx, fötterna på bot, storlek s (i TV:ns rutnät)
 window.ritaRuta=function(g,c,cx,bot,s,{flip=false,alpha=1}={}){

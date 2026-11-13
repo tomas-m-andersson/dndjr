@@ -40,4 +40,4 @@ function gosedjurCanvas(id){const G=GOSEDJUR[id];if(!G)return null;if(!GDCACHE[i
 const gosedjurAv=h=>h&&GOSEDJUR[h.gosedjur]?h.gosedjur:null;
 // Liten ruta med gosedjuret, till knappar och val
 function gosedjurIkon(id,cls="small"){const s=gosedjurCanvas(id),c=document.createElement("canvas");c.width=s.width+4;c.height=s.height+4;c.getContext("2d").drawImage(s,2,2);
- c.className="px wicon "+cls+" gdikon";c.setAttribute("aria-hidden","true");return c}
+ c.className="px wicon "+cls+" gdikon";c.setAttribute("aria-hidden","true");return window.medEgenBild?medEgenBild(c,()=>egenGosedjur(id)):c}

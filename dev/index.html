@@ -52,6 +52,10 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero .titles{min-width:0;flex:1}
 .titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
+.loggabild{width:clamp(56px,13vw,88px);height:clamp(56px,13vw,88px);flex:none;image-rendering:pixelated;filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
+.loggaruta{display:flex;flex:none}
+.berattelseruta{margin:0 0 14px}
+.berattelseruta canvas{display:block;width:100%;height:auto;image-rendering:pixelated}
 .d20logo{filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
 .d20gnista{transform-origin:22px 20px;animation:gnistra 3.2s ease-in-out infinite}
 @keyframes gnistra{0%,70%,100%{opacity:0;transform:scale(.4)}80%{opacity:1;transform:scale(1)}90%{opacity:.6;transform:scale(.7)}}
@@ -1012,7 +1016,7 @@ function vapenIkon(W){
  const c=rendera(G,pal);IKCACHE.set(W.id,c);return c;
 }
 function ikonEl(W,cls=""){const c=document.createElement("canvas");const s=vapenIkon(W);c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
- c.className="px wicon "+cls+(W.sp?" special":"");c.setAttribute("role","img");c.setAttribute("aria-label",W.namn);return c}
+ c.className="px wicon "+cls+(W.sp?" special":"");c.setAttribute("role","img");c.setAttribute("aria-label",W.namn);return window.medEgenBild?medEgenBild(c,()=>egenSak(W.id)):c}
 const HJCACHE=new Map();
 function heroCanvas(h){
  const key=JSON.stringify([vapenAv(h).id,h.folk,h.folk==="katt"?0:alderAv(h),!!h.skagg,h.klass,h.hud,h.har,h.stil,h.klader,!!h.flackar]);
@@ -1058,6 +1062,10 @@ function vitals(h){const K=KLASS[h.klass],s=finalStats(h);
 const app=document.getElementById("app");
 function el(tag,attrs={},...kids){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")e.className=v;else if(k.startsWith("on"))e.addEventListener(k.slice(2),v);else if(v!==false&&v!=null)e.setAttribute(k,v===true?"":v)}
  kids.flat().forEach(c=>c!=null&&e.append(c.nodeType?c:document.createTextNode(c)));return e}
+// Loggan: den egna guldtärningen om bilden finns, annars den ritade
+function logga(){const s=d20svg(),c=document.createElement("canvas");c.className="px loggabild";c.hidden=true;c.setAttribute("aria-hidden","true");
+ c._rita=()=>{const b=window.egenSak&&egenSak("logga");if(!b)return;c.width=b.width;c.height=b.height;const g=c.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(b,0,0);c.hidden=false;c.style.display="block";s.style.display="none"};
+ c._rita();return el("div",{class:"loggaruta"},s,c)}
 function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning med glans
  s.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true" class="d20logo">
  <defs>
@@ -1094,7 +1102,7 @@ function start(){
  view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
- app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},d20svg(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
+ app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},logga(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
  const htv=document.createElement("canvas");htv.className="px";
@@ -1103,11 +1111,11 @@ function start(){
   const visa=A.slice(0,6),steg=Math.min(16,(TVW-16)/Math.max(1,visa.length-1||1)),bredd=steg*(visa.length-1)+14;
   visa.forEach((h,i)=>{const bi=window.egenHjalte&&egenHjalte(h),x0=Math.round((TVW-bredd)/2+i*steg);if(bi){ritaRuta(g,bi,x0+7,TVH,CU);return}
    const c=heroSprite(h);g.drawImage(c,x0,TVH-c.height-1)})};
- htv._rita();
+ htv._rita();medKort(htv,"kort_hjaltar");
  const hjaltar=el("button",{class:"bigtile",onclick:home},el("div",{class:"tvbig"},htv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Hjältarna"),el("p",{},A.length+" hjältar · "+(ph.length?ph.length+" valda":"ingen vald ännu")+(A.length>6?" (visar 6)":"")),el("small",{},"Välj vem som följer med och byt klass, vapen och gosedjur.")));
  // Äventyr: sällskapet i en grotta (eller där ni är just nu)
- const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild());
+ const tv=document.createElement("canvas");tv.className="px";drawTV(tv,runBild());medKort(tv,"kort_aventyr");
  const aventyr=el("button",{class:"bigtile",onclick:()=>{if(!ph.length){home();flash("Välj minst en hjälte först.");return}adventures()}},el("div",{class:"tvbig"},tv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Äventyr"),
    el("p",{},ph.length?"Sällskapet: "+ph.map(h=>h.namn).join(", "):"Välj hjältar först"),
@@ -1115,6 +1123,7 @@ function start(){
  // Monsterbiblioteket: några monster i en grotta
  const mtv=document.createElement("canvas");mtv.className="px";mtv.width=TVW;mtv.height=TVH;{const g=mtv.getContext("2d");g.imageSmoothingEnabled=false;scenePaint(g,"run|grottorna|1|3|rum|");
   let x=TVW-2;["troll","spindel","vatte","fladdermus"].forEach(k=>{const z=sprSize(k);x-=z.w;sprite(g,k,x,k==="fladdermus"?8:TVH-z.h,true)})}
+ medKort(mtv,"kort_monster");
  const bibl=el("button",{class:"bigtile",onclick:()=>monsterBibliotek()},el("div",{class:"tvbig"},mtv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Monsterbibliotek"),el("p",{},Object.keys(MONSTER).length+" monster"),el("small",{},"Bilder och fakta om alla monster ni kan möta, från fladdermöss till drakar.")));
  app.append(el("div",{class:"bigtiles"},hjaltar,lagerRuta(),aventyr,bibl));
@@ -1754,6 +1763,7 @@ function adventures(){
  app.append(el("div",{class:"stephead"},el("small",{},"Äventyr"),el("h2",{},"Vart beger ni er?"),el("p",{},ph.length?"Valda hjältar: "+ph.map(h=>h.namn+" (nivå "+vitals(h).lvl+")").join(", ")+". Flera sällskap kan vara ute på äventyr samtidigt.":"Inga hjältar valda just nu.")));
  app.append(runKort());
  app.append(el("div",{class:"section-head"},el("h2",{},"Berättelser"),el("span",{},"Skrivna äventyr med val")));
+ {const kb=document.createElement("canvas");kb.className="px berattelsebild";kb.hidden=true;kb._rita=()=>{const b=window.kortBild&&kortBild("kort_berattelse");if(!b)return;kb.width=320;kb.height=180;ritaBakgrund(kb.getContext("2d"),b,320,180);kb.hidden=false;ru.hidden=false};const ru=el("div",{class:"tvbig berattelseruta",hidden:""},kb);kb._rita();app.append(ru)}
  const list=el("div",{class:"chapters"});
  ADV().forEach((k,i)=>{
   let st=spel.kapitel[k.id];const num="Kapitel "+(i+1);
@@ -1788,7 +1798,8 @@ const PIXIKON={
  dryck:{rows:["...CC...","...WW...","..WRRW..",".WRRRRW.","WRRHRRRW","WRRRRRRW","WRRRRRRW",".WRRRRW.","..WWWW.."],pal:{C:"#8a5a2b",W:"#cfe2ff",R:"#d8452f",H:"#ffb3a8"}},
  storDryck:{rows:["....CC....","....WW....","...WRRW...","..WRRRRW..",".WRRHRRRW.","WRRRRRRRRW","WRRRRRRRRW","WRRRRRRRRW","WRRRRRRRRW",".WRRRRRRW.","..WWWWWW.."],pal:{C:"#8a5a2b",W:"#cfe2ff",R:"#b8382e",H:"#ffb3a8"}}};
 function pixIkon(k,cls=""){const d=PIXIKON[k],s=rendera(gridFrom(d.rows),{K:KONTUR,...d.pal}),c=document.createElement("canvas");c.width=s.width;c.height=s.height;c.getContext("2d").drawImage(s,0,0);
- c.className="px pixikon "+cls;c.setAttribute("aria-hidden","true");return c}
+ c.className="px pixikon "+cls;c.setAttribute("aria-hidden","true");
+ return window.medEgenBild?medEgenBild(c,()=>egenSak(k==="storDryck"?"stor_dryck":k)||(MONSTER[k]?egenMonster(k):null)):c}
 function raknaSaker(){const c={};pack().saker.forEach(x=>c[x]=(c[x]||0)+1);return c}
 // Knappen längst ner i äventyren
 function packning(efter){
