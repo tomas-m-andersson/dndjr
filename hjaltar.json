@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:23:33.906Z",
+  "uppdaterad": "2026-11-13T23:24:12.246Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -171,7 +171,7 @@
       "sally": 28,
       "tomas": 44,
       "linda": 7,
-      "benjamin": 44
+      "benjamin": 34
     },
     "kapitel": {
       "k1": {
@@ -193,7 +193,7 @@
         "v": 2
       }
     },
-    "tid": 1794612212026,
+    "tid": 1794612250280,
     "niva": {
       "ville": {
         "lvl": 5,
