@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:40:10.616Z",
+  "uppdaterad": "2026-11-13T23:40:14.738Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 3114,
+    "guld": 2964,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -224,7 +224,7 @@
         "nyttVapenId": "solklubba"
       }
     },
-    "tid": 1794613208684,
+    "tid": 1794613212221,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -583,7 +583,7 @@
         "talt": 2,
         "trofe": 1,
         "ovning": 1,
-        "eld": 1
+        "eld": 2
       },
       "trofeer": {
         "magmaslem": 1,
