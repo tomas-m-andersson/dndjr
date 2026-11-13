@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:24:43.503Z",
+  "uppdaterad": "2026-11-13T23:24:54.669Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -157,7 +157,7 @@
     }
   },
   "aventyr": {
-    "guld": 3154,
+    "guld": 3174,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -175,7 +175,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "efter",
+        "scen": "slut_glod",
         "flaggor": [
           "sett_torget",
           "spar",
@@ -189,11 +189,14 @@
           "krak_borta",
           "vilat"
         ],
-        "klar": false,
-        "v": 2
+        "klar": true,
+        "v": 2,
+        "slut": "slut_glod",
+        "nyttVapen": "Ni hittar Solklubban! Helare kan nu välja det under Ändra. Lyser som solen: +1d6 strålande skada.",
+        "nyttVapenId": "solklubba"
       }
     },
-    "tid": 1794612281545,
+    "tid": 1794612292634,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -233,7 +236,8 @@
       "alvbage",
       "manklinga",
       "skuggkatana",
-      "valsignad_hammare"
+      "valsignad_hammare",
+      "solklubba"
     ],
     "utr": {
       "ville": {
