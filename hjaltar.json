@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:15:18.803Z",
+  "uppdaterad": "2026-11-13T23:16:14.049Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -172,13 +172,13 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "start",
+        "scen": "byn",
         "flaggor": [],
         "klar": false,
         "v": 2
       }
     },
-    "tid": 1794611716806,
+    "tid": 1794611771852,
     "niva": {
       "ville": {
         "lvl": 5,
