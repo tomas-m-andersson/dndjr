@@ -1620,7 +1620,7 @@ function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if
 const sprSize=k=>{const s=sprDef(k);if(s&&s.hero){const c=sprCanvas(k);return{w:c.width,h:c.height-1}}return s?{w:(s.rows[0].length+2)*s.skala,h:(s.rows.length+2)*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
 // Nya scener i kapitel 2 ritas som en gammal scen tills den egna bilden finns i mappen Bakgrunder och miljöer
-const SCENLIK={kallare:"gruva_inne",dimskog:"skog",gravkulle:"skog",grind:"by",hall:"sal",balsal:"sal",
+const SCENLIK={kallare:"gruva_inne",dimskog:"skog",gravkulle:"skog",grind:"by",hall:"sal",balsal:"sal",torg_frost:"torg",balsal_spoken:"sal",
  kok:"sal",bibliotek:"sal",vintertradgard:"sal",klocktorn:"sal",barnkammare:"sal",dimkallare:"gruva_inne",spegelsal:"sal"};
 function scenePaint(g,bild){
  if(typeof bild==="string"&&bild.startsWith("run|")&&window.runScen)return window.runScen(g,bild); // grottkrypningens scener (scener.js)
@@ -1787,7 +1787,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
  right.forEach(f=>{if(f.boss&&SPR[f.k]){const z=sprSize(f.k);f.f=z.h*2<=TVH-4?2:z.h*1.5<=TVH-4?1.5:1;if(z.w*f.f>ledigt)f.f=Math.max(1,Math.floor(ledigt/z.w*2)/2)}});
  // hur bred varje figur blir när den ritas, så att de sprids ut i stället för att hamna i en hög
- const FAST={greta:15,bo:15,handlare:17,fange:17,resenar:18,drake_bur:20};
+ const FAST={greta:15,bo:15,handlare:17,fange:17,resenar:18,drake_bur:20,tradgardsmastare:15,spokflicka:13};
  right.forEach(f=>{if(FAST[f.k]){f.w=FAST[f.k];return}const ofx=f.key?OFF(f.key):null;
   f.mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
   f.mm=f.mb?(((window.FIGURVAL||{})[f.k]||{}).storlek||(f.boss?4:RUMBILD[f.k]?(RUMSTORLEK[f.k]||1):Math.max(2,Math.min(3,Math.round(sprSize(f.k).h/6)/2)))):0; // storlek i figurval.js går före (2 = som en hjälte, 4 = boss) // monster minst lika stora som hjältarna
@@ -1799,7 +1799,9 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   if(anim){const c=heroCanvas(h),L=livTid(anim.t,nr++);ritaLevande(g,c,heroOgon(h,c),xx,TVH-25,{flip:true,blink:L.blink,titt:L.titt});return}
   const c=heroSprite(h);g.save();g.translate(xx+c.width,TVH-25);g.scale(-1,1);g.drawImage(c,0,0);g.restore()};
  right.forEach(f=>{if(f.k==="greta"){x-=15;if(npc(GRETA,x,"greta"))return;g.fillStyle="#6b4a2e";g.fillRect(x+2,TVH-13,1,13);g.fillRect(x+1,TVH-13,2,1);return}
-  if(f.k==="bo"){x-=15;npc(BO,x,"bo");return}
+  if(f.k==="bo"){x-=15;npc(BO,x,["bo_staende","bo"]);return}
+  if(f.k==="tradgardsmastare"){x-=15;const tb=window.egenPerson&&egenPerson("tradgardsmastare");if(tb)ritaRuta(g,tb,x+7,TVH+(anim?livTid(anim.t,nr++).upp:0),CU);return}
+  if(f.k==="spokflicka"){x-=13;const sb=window.egenPerson&&egenPerson("spokflicka");if(sb)ritaRuta(g,sb,x+6,TVH+(anim?livTid(anim.t,nr++).upp:0),CU*.8);return} // flickan är mindre än de vuxna
   if(f.k==="handlare"){x-=17;const hv=spel.run&&spel.run.rum&&spel.run.rum.handlareBild;if(npc(HANDLARE,x,hv?["handlare_"+hv,"handlare"]:"handlare"))return;g.fillStyle="#6b4a2e";g.fillRect(x+11,TVH-14,5,8);g.fillStyle="#4e3420";g.fillRect(x+11,TVH-14,5,1);g.fillRect(x+11,TVH-10,5,1);return}
   if(f.k==="fange"){x-=17;const fh=(spel.run&&spel.run.rum&&spel.run.rum.fangeHero)||RESENAR;const R0=spel.run||{};if(npc(fh,x,"fange_"+(1+((R0.djup||0)+(R0.kapitel||0))%4)))return;
    g.fillStyle="#8a8e98";for(const [hx,wx] of[[x+2,x],[x+13,x+15]])for(let yy=TVH-34;yy<TVH-13;yy+=2){const p=(yy-(TVH-34))/21;g.fillRect(Math.round(wx+(hx-wx)*p),yy,1,1)}
@@ -1963,13 +1965,17 @@ function scenText(sc,K){
  return sc.text.filter(p=>typeof p==="string"||((!p.om||[].concat(p.om).every(har))&&(!p.inteOm||![].concat(p.inteOm).some(har))))
   .map(p=>typeof p==="string"?p:p.text).join("\n\n");
 }
+// "spokflicka?barnet_hjalpte" betyder att figuren bara syns om flaggan är satt
+function figurNu(sc){const K=kap()||{},f=K.flaggor||[];
+ const ut=[].concat(sc.figur||[]).filter(n=>{const d=String(n).split("?");return d.length<2||f.includes(d[1])}).map(n=>String(n).split("?")[0]);
+ return ut.length?ut:null}
 function visaScen(){
  tyst();strid=null;lage=null;view="scen";document.getElementById("party").hidden=true;
  const K=kap();if(!K){adventures();return}
  const sc=scenDef(K.scen);if(!sc){K.scen=kapDef().start;return visaScen()}
  if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
  app.replaceChildren();
- app.append(scenHuvud(),tvBox(sc.bild,{figur:sc.figur}),partyStrip());
+ app.append(scenHuvud(),tvBox(sc.bild,{figur:figurNu(sc)}),partyStrip());
  const txt=scenText(sc,K),story=storyEl(txt);app.append(story);
  const akt=el("div",{class:"actions"});
  if(sc.slut){
@@ -1979,7 +1985,7 @@ function visaScen(){
  }else if(sc.strid){
   akt.append(K.stridSpar?el("button",{class:"btn big",onclick:()=>fortsattStrid(K.stridSpar,sc.bild)},"Fortsätt striden"):el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
  }else if(sc.prov){
-  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,sc.figur)},sc.prov.grupp?"Alla slår tärning":"Slå tärningen"));
+  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,figurNu(sc))},sc.prov.grupp?"Alla slår tärning":"Slå tärningen"));
  }else(sc.val||[]).forEach(v=>{
   if(!valSynligt(v,K))return;
   const vem=kravHjalte(v.krav),namn=vem?vem.namn:"";
@@ -1987,8 +1993,8 @@ function visaScen(){
   const saknarSak=v.krav&&v.krav.sak&&!spel.saker.includes(v.krav.sak);
   const b=el("button",{class:"choicebtn"+(vem?" special":""),disabled:saknar||saknarSak,onclick:()=>{
    if(v.engang){K.flaggor.push(v.engang);sparaSpel()}
-   if(v.prov)provUI(v.prov,sc.bild,sc.figur,vem);
-   else if(v.utfall)visaUtfall(v.utfall,namn,sc.bild,sc.figur);
+   if(v.prov)provUI(v.prov,sc.bild,figurNu(sc),vem);
+   else if(v.utfall)visaUtfall(v.utfall,namn,sc.bild,figurNu(sc));
    else gaTill(v.till)}},el("span",{},v.text.replace(/\{namn\}/g,namn)),
    v.prov?el("small",{},(v.prov.grupp?"Alla slår för ":vem?namn+" slår för ":"Slå för ")+STATNAMN[v.prov.egenskap]):
    saknar?el("small",{},"Ni har bara "+spel.guld+" guld"):saknarSak?el("small",{},"Ni har ingen "+v.krav.sak.toLowerCase()):
