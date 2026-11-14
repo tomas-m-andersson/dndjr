@@ -121,6 +121,7 @@ window.FOTLYFT={
  oknen_1_port:5,           // mörk kant längst ner
  oknen_2_rum:5, oknen_2_d1:19, oknen_2_d2:16, oknen_2_d3:16, oknen_2_port:18, oknen_2_boss:10,
 
+ berattelse_torg_gryning:12, // snön framför byborna
  berattelse_gruva_inne:14, // golvet slutar en bit ovanför kanten
  berattelse_bibliotek:10,  // golvet börjar en bit upp
  berattelse_dimkallare:8,
