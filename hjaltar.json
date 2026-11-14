@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:18:20.728Z",
+  "uppdaterad": "2026-11-14T19:18:34.446Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794683898645,
+    "tid": 1794683912538,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -348,7 +348,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -362,7 +362,13 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "sandkungen"
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -403,6 +409,14 @@
           {
             "t": "Sanden rinner ur taket i tunna strilar när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Sandkungen har somnat vid en slocknad eld. Ingen har märkt er. Än.",
+            "k": "note"
           }
         ],
         "party": [
