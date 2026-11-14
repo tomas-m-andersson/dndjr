@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:44:20.115Z",
+  "uppdaterad": "2026-11-14T23:44:27.678Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699859511,
+    "tid": 1794699866656,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -532,7 +532,7 @@
             "fiender": [
               {
                 "namn": "Obsidiangolemen",
-                "liv": 28,
+                "liv": 23,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -562,7 +562,7 @@
           "fiender": [
             {
               "namn": "Obsidiangolemen",
-              "liv": 28,
+              "liv": 23,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -645,12 +645,6 @@
           "locka": null,
           "runda": 8,
           "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 1
-            },
             {
               "h": "ville"
             },
