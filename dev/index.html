@@ -2102,9 +2102,41 @@ function pausaStrid(){
 }
 function fortsattStrid(S,bild){strid={...S,bild:S.bild||bild};if(strid.def.run)delete spel.run.stridSpar;else{const K=kap();if(K)delete K.stridSpar}sparaSpel();nastaTur()}
 function pausKnapp(fn){return el("button",{class:"btn ghost small pause",onclick:fn,"aria-label":"Pausa äventyret"},el("span",{class:"pico","aria-hidden":"true"}),"Pausa")}
+// Bossen kallar på hjälp när den är nere på en fjärdedel av sitt liv. Vilket vanligt monster som passar ihop med bossen:
+const BOSSHJALP={vampyr:"vampyrfladdermus",skuggan:"skuggling",mork_riddare:"skelett",spokriddare:"skelett",
+ nekromantiker:"skelett",gargoyl:"fladdermus",levande_rustning:"skelett",dimfrun:"dimvasen",
+ jattemask:"ratta",grottroll:"vatte",basilisk:"kobold",troll:"vatte",bjorn:"varg",slem:"ratta",
+ krak:"vatte",spindel:"giftspindel",orm:"ratta",ent:"svampman",varulv:"varg",haxa:"krakor",
+ rovarhovding:"bandit",eldklo:"eldimp",golem:"eldimp",eldprast:"kultist",lavahund:"eldimp",
+ magmaslem:"kobold",eldsalamander:"kobold"};
+// Vilket monster bossen kallar på: tabellen först, annars det lättaste monstret från samma ställe
+function hjalpTyp(b){
+ if(MONSTER[BOSSHJALP[b.typ]])return BOSSHJALP[b.typ];
+ const pl=(MONSTER[b.typ]||{}).platser||[(spel.run||{}).plats].filter(Boolean);
+ const pool=Object.keys(MONSTER).filter(k=>MONSTER[k].xp<=100&&MONSTER[k].platser.some(x=>pl.includes(x)));
+ return pool.sort((a,b2)=>MONSTER[a].xp-MONSTER[b2].xp)[0]||"fladdermus"}
+// Kallar bossen på hjälp just nu? Ger texten som ska visas, annars tom sträng. Händer en gång per strid.
+function bossHjalp(){
+ if(!strid||!strid.def.run)return"";
+ const b=strid.fiender.find(f=>f.boss&&!f.ute&&!f.hjalpKallad&&f.liv>0&&f.liv<=f.max*.25);
+ if(!b)return"";
+ b.hjalpKallad=true;
+ const k=hjalpTyp(b),M=MONSTER[k];if(!M)return"";
+ const R=spel.run,skala=SV().hp*(1+((R?R.kapitel:1)-1)*.1),hp=Math.max(1,Math.round(M.liv*skala));
+ const lika=strid.fiender.filter(f=>f.typ===k).length;
+ const ny={...M,typ:k,bild:k,namn:M.namn+(lika?" "+(lika+1):""),liv:hp,max:hp,anfall:M.anfall+SV().atk,ute:false};
+ strid.fiender.push(ny);
+ // in i turordningen på sin plats, så att listan "Turordning" stämmer
+ const idx=strid.fiender.length-1,v=d(20)+Math.max(0,ny.anfall-4);
+ if(strid.init){strid.init["f:"+idx]=v;
+  const pos=strid.ko.findIndex(t=>(strid.init[t.h?"h:"+t.h:"f:"+t.f]??0)<v);
+  strid.ko.splice(pos<0?strid.ko.length:pos,0,{f:idx})}
+ tvFx("pepp",{till:fk(ny)});
+ return b.namn+" är svårt sårad och ropar på hjälp! "+monNamn([k]).replace(/^./,c=>c.toUpperCase())+" dyker upp!"}
 function nastaTur(){
  if(!levande().length)return stridVinst();
  if(!vaken().length)return stridForlust();
+ const hjalp=bossHjalp();if(hjalp)return visaHandelse(hjalp); // hjälpen kommer direkt, och det är inte bossens tur
  let t=strid.ko.shift();
  while(t&&((t.h&&(!byId(t.h)||liv(byId(t.h))<=0))||(t.f!==undefined&&strid.fiender[t.f].ute)))t=strid.ko.shift();
  if(!t){strid.runda++;nyRunda();return nastaTur()}
