@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:54:35.336Z",
+  "uppdaterad": "2026-11-14T15:54:53.974Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -249,13 +249,14 @@
           "varit_barnkammare",
           "barnet_hjalpte",
           "fragat_barnet",
-          "varit_torn"
+          "varit_torn",
+          "klockan_ringd"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794671673385,
+    "tid": 1794671691975,
     "niva": {
       "ville": {
         "lvl": 5,
