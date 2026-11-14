@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:51:13.817Z",
+  "uppdaterad": "2026-11-14T23:51:21.068Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700271909,
+    "tid": 1794700279127,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -358,30 +358,24 @@
     "runs": [
       {
         "plats": "oknen",
-        "kapitel": 2,
-        "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "sandkungen"
-          ],
-          "stridOpt": {
-            "boss": true
+        "kapitel": 3,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det luktar rökelse.",
+            "typ": "altare",
+            "kand": false
           }
-        },
+        ],
+        "lyssnat": false,
+        "rum": null,
         "logg": [
-          {
-            "t": "Ni hittar 252 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
-            "k": "magic"
-          },
           {
             "t": "Benjamin får ett magiskt vapen: +2 på träff och skada.",
             "k": "magic"
@@ -533,6 +527,14 @@
           {
             "t": "⚔ Ni hittar Silvervärjan! Bard kan nu välja det under Ändra. 1d8 skada och +2 på slaget.",
             "k": "crit"
+          },
+          {
+            "t": "Kapitel 3 · Djupare ner",
+            "k": "sep"
+          },
+          {
+            "t": "Alla har vilat och känner sig starka igen. Ni hittar en trappa av sandsten som försvinner ner under sanden.",
+            "k": ""
           }
         ],
         "party": [
@@ -557,12 +559,7 @@
           "Stor läkedryck",
           "Stor läkedryck"
         ],
-        "bless": {
-          "benjamin": 1,
-          "svante": 1,
-          "tomas": 1,
-          "ville": 1
-        },
+        "bless": {},
         "curse": {},
         "ara": 4275,
         "start": 1794699336000,
@@ -570,14 +567,14 @@
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
-          "ville": 34,
+          "ville": 45,
           "tomas": 52,
           "svante": 33,
-          "benjamin": 36
+          "benjamin": 44
         },
-        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar stadens väktare.",
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
         "bossFaktor": 1.3,
-        "nyttVapen": "Silvervärjan",
+        "nyttVapen": null,
         "nyttVapenId": "silvervarja"
       }
     ],
