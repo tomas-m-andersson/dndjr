@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:39:13.616Z",
+  "uppdaterad": "2026-11-14T23:39:54.583Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699551742,
+    "tid": 1794699592306,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4748
+        "xp": 4838
       },
       "svante": {
         "lvl": 4,
-        "xp": 2799
+        "xp": 2889
       },
       "tomas": {
         "lvl": 6,
-        "xp": 6213
+        "xp": 6303
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 4103
+        "xp": 4193
       },
       "linda": {
         "lvl": 2,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något glimmar i mörkret.",
@@ -373,15 +373,25 @@
         ],
         "lyssnat": true,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "skorpion",
-            "skorpion",
-            "skorpion"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "364 guldmynt",
+              "v": 364
+            },
+            {
+              "k": "xp",
+              "n": "En gammal karta full med ledtrådar",
+              "v": 150
+            },
+            {
+              "k": "wb",
+              "n": "Magiskt vapen",
+              "info": "+1 på träff och skada"
+            }
+          ]
         },
         "logg": [
           {
@@ -455,6 +465,14 @@
           {
             "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre Jätteskorpion.",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 90 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Nu är vägen fri till skatten.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -478,7 +496,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 450,
+        "ara": 750,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
@@ -487,178 +505,9 @@
           "ville": 38,
           "tomas": 52,
           "svante": 27,
-          "benjamin": 39
+          "benjamin": 36
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Jätteskorpion 1",
-                "liv": 14,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": false
-              },
-              {
-                "namn": "Jätteskorpion 2",
-                "liv": 14,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": false
-              },
-              {
-                "namn": "Jätteskorpion 3",
-                "liv": 14,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|1|4|rum|vaktad",
-          "fiender": [
-            {
-              "namn": "Jätteskorpion 1",
-              "liv": 14,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": false
-            },
-            {
-              "namn": "Jätteskorpion 2",
-              "liv": 14,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": false
-            },
-            {
-              "namn": "Jätteskorpion 3",
-              "liv": 14,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "f": 2
-            },
-            {
-              "f": 0
-            },
-            {
-              "h": "ville"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:ville": 3.1,
-            "h:tomas": 10.1,
-            "h:svante": 11.1,
-            "h:benjamin": 8.1,
-            "f:0": 6,
-            "f:1": 17,
-            "f:2": 8
-          },
-          "nu": null
-        }
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
       }
     ],
     "aktivRun": "rmwh1nadcktev",
