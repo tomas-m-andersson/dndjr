@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:46:22.990Z",
+  "uppdaterad": "2026-11-14T15:47:21.066Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -191,7 +191,8 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
-      "Läkedryck"
+      "Läkedryck",
+      "Fickljus"
     ],
     "liv": {
       "ville": 38,
@@ -231,13 +232,14 @@
           "rosdoft",
           "fragat_bo",
           "vet_dimsater",
-          "kant_lyktan"
+          "kant_lyktan",
+          "fickljus"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794671180916,
+    "tid": 1794671238824,
     "niva": {
       "ville": {
         "lvl": 5,
