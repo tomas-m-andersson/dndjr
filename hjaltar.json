@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-13T23:40:33.710Z",
+  "uppdaterad": "2026-11-14T15:44:23.545Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -11,18 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
-      "bildval": {
-        "ninja|skuggkatana": 20
-      },
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "skuggkatana",
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 2,
@@ -37,21 +34,21 @@
         "vis": 11,
         "cha": 12
       },
-      "gosedjur": "blackis"
+      "gosedjur": "blackis",
+      "bildval": {
+        "ninja|skuggkatana": 20
+      }
     },
     "svante": {
-      "bildval": {
-        "helare|valsignad_hammare": -24
-      },
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "attacker": [
         "lakande_ord",
         "helande_vag",
         "valsignelse"
       ],
       "vapen": "valsignad_hammare",
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "klass": "helare",
       "hud": 0,
       "har": 0,
@@ -66,21 +63,21 @@
         "vis": 13,
         "cha": 11
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "helare|valsignad_hammare": -24
+      }
     },
     "tomas": {
-      "bildval": {
-        "krigare|drakdrapare": 39
-      },
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "dubbelhugg",
         "virvelhugg",
         "skoldslag"
       ],
       "vapen": "drakdrapare",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "krigare",
       "hud": 0,
       "har": 2,
@@ -95,21 +92,21 @@
         "vis": 16,
         "cha": 13
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "krigare|drakdrapare": 39
+      }
     },
     "linda": {
-      "bildval": {
-        "bagskytt|giftbage": 7
-      },
+      "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
       "attacker": [
         "sikta_noga",
         "dubbelskott",
         "pilregn"
       ],
       "vapen": "giftbage",
-      "folk": "manniska",
-      "alder": 40,
-      "skagg": false,
       "klass": "bagskytt",
       "hud": 0,
       "har": 4,
@@ -124,21 +121,21 @@
         "vis": 15,
         "cha": 13
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "bagskytt|giftbage": 7
+      }
     },
     "benjamin": {
-      "bildval": {
-        "bagskytt|alvbage": 36
-      },
+      "folk": "manniska",
+      "alder": 20,
+      "skagg": false,
       "attacker": [
         "sikta_noga",
         "dubbelskott",
         "pilregn"
       ],
       "vapen": "alvbage",
-      "folk": "manniska",
-      "alder": 20,
-      "skagg": false,
       "klass": "bagskytt",
       "hud": 2,
       "har": 9,
@@ -153,20 +150,20 @@
         "vis": 11,
         "cha": 15
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "bagskytt|alvbage": 36
+      }
     },
     "sally": {
-      "bildval": {
-        "katt|klor": -53
-      },
+      "folk": "katt",
+      "skagg": false,
       "attacker": [
         "klosattack",
         "hoppa_ansiktet",
         "frasa"
       ],
       "vapen": "klor",
-      "folk": "katt",
-      "skagg": false,
       "klass": "katt",
       "hud": 0,
       "har": 10,
@@ -181,7 +178,10 @@
         "vis": 15,
         "cha": 14
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "katt|klor": -53
+      }
     }
   },
   "aventyr": {
@@ -198,7 +198,7 @@
       "svante": 27,
       "sally": 28,
       "tomas": 44,
-      "linda": 7,
+      "linda": 18,
       "benjamin": 34
     },
     "kapitel": {
@@ -222,9 +222,17 @@
         "slut": "slut_glod",
         "nyttVapen": "Ni hittar Solklubban! Helare kan nu välja det under Ändra. Lyser som solen: +1d6 strålande skada.",
         "nyttVapenId": "solklubba"
+      },
+      "k2": {
+        "scen": "start",
+        "flaggor": [
+          "glod_fri"
+        ],
+        "klar": false,
+        "v": 1
       }
     },
-    "tid": 1794613231811,
+    "tid": 1794671061567,
     "niva": {
       "ville": {
         "lvl": 5,
