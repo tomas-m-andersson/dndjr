@@ -161,7 +161,7 @@ function ritaLager(cv,bg,hang,H,t,anim){
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";const zx=x+(vand?-6:4)+z*4,zy=y-12-z*10;g.fillRect(zx,zy,3,1);g.fillRect(zx+2,zy+1,1,1);g.fillRect(zx,zy+2,3,1);g.globalAlpha=1;return}
   const sitter=sitt&&!katt;let y=bas-c.height+L.upp+(sitter?6:0);
   const bi=window.egenHjalte&&egenHjalte(h); // egen bild: rutan där hjälten står still
-  if(bi)ritaRuta(g,bi,x,bas+L.upp+(sitter?4:0)+2,32,{flip:!!vand});
+  if(bi)ritaRuta(g,bi,x,bas+L.upp+(sitter?4:0)+2,h.folk==="katt"?24:32,{flip:!!vand}); // katten är mindre än människorna
   else ritaLevande(g,c,heroOgon(h,c),Math.round(x-c.width/2),y,{flip:!!vand,blink:L.blink,titt:L.titt});
   {const gd=typeof gosedjurAv==="function"&&gosedjurAv(h);if(gd){const s=gosedjurCanvas(gd);gosedjurSist.push(()=>g.drawImage(s,Math.round(x+(vand?c.width/2-3:-c.width/2-s.width+3)),bas-s.height+1))}} // gosedjuret bredvid, på sidan bort från elden (ritas sist så det syns)
   if(sitter){g.fillStyle="#5a3a22";g.fillRect(Math.round(x-7),bas-3,14,4);g.fillStyle="#7a5232";g.fillRect(Math.round(x-7),bas-3,14,1)}
@@ -198,7 +198,7 @@ function ritaBildLager(cv,hang,H,t,anim){
   if(hang==="sover"){const c=bi||heroCanvas(h),w=bi?64:c.width*BS,hh=bi?64:c.height*BS;g.save();g.translate(X,Y-10);g.rotate(vand?Math.PI/2:-Math.PI/2);g.drawImage(c,-w/2,-hh/2,w,hh);g.restore();
    const z=((t/700+i*.37)%1);g.globalAlpha=1-z;g.fillStyle="#cfe8ff";g.font="bold 12px Nunito,sans-serif";g.fillText("z",X+(vand?-14:10)+z*8,Y-40-z*24);g.globalAlpha=1;return}
   const upp=Math.round(L.upp*2)+(sitt&&h.folk!=="katt"?8:0);
-  if(bi)ritaRuta(g,bi,X,Y+upp,64,{flip:!!vand});
+  if(bi)ritaRuta(g,bi,X,Y+upp,h.folk==="katt"?48:64,{flip:!!vand});
   else{const c=heroCanvas(h),w=c.width*BS,hh=c.height*BS;g.save();if(vand){g.translate(X+w/2,0);g.scale(-1,1);g.drawImage(c,0,Y+upp-hh,w,hh)}else g.drawImage(c,X-w/2,Y+upp-hh,w,hh);g.restore()}
   if(gd){const gb=window.egenGosedjur&&egenGosedjur(gd);const gx=X+(vand?24:-24);if(gb)ritaRuta(g,gb,gx,Y,32,{flip:!!vand});else{const s2=gosedjurCanvas(gd);g.drawImage(s2,gx-s2.width,Y-s2.height*2,s2.width*2,s2.height*2)}}});
 }
