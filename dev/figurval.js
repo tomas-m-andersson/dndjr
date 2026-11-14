@@ -49,7 +49,11 @@ window.FIGURVAL={
  varulv:{sta:0,anfall:2,flip:true},vatte:{sta:0,anfall:1,flip:true},vattesjaman:{sta:0,anfall:3,flip:true},vildsvin:{sta:0,anfall:8},
  handlare:{sta:0},
  greta:{sta:0,flip:true},
- fange_1:{sta:0},fange_3:{sta:0,flip:true},
+ fange_1:{sta:0},
+ // personerna i rummen "någon behöver hjälp" och handlarna
+ resenar_dvarg:{sta:0},resenar_elev:{sta:0,flip:true},resenar_riddare:{sta:1},resenar_spelman:{sta:0},resenar_tomte:{sta:0,flip:true},
+ handlare_dam:{sta:0,bred:64},handlare_rav:{sta:2},handlare_dvarg:{sta:0,flip:true},handlare_mantel:{sta:3},
+ fange_3:{sta:0,flip:true},
  // Bossar: arken i mappen Bossar har 32×32-rutor (utom Eldklo som har 64×64)
  eldklo:{sta:0,anfall:1,flip:true},
  basilisk:{cell:32,sta:0,anfall:2},dimfrun:{cell:32,sta:0,anfall:2,flip:true},golem:{cell:32,sta:0,anfall:2},grottroll:{cell:32,sta:0,anfall:2,flip:true},jattemask:{cell:32,sta:0,anfall:2},mork_riddare:{cell:32,sta:0,anfall:2},skuggan:{cell:32,sta:0,anfall:2},vampyr:{cell:32,sta:0,anfall:2,flip:true,storlek:3},

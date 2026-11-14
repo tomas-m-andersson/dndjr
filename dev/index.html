@@ -1789,7 +1789,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
  let nr=10;const npc=(h,xx,fil)=>{const bi=fil&&window.egenPerson&&[].concat(fil).map(n=>egenPerson(n)).find(Boolean); // fil kan vara en lista: första bilden som finns
-  if(bi){ritaRuta(g,bi,xx+7,TVH+(anim?livTid(anim.t,nr++).upp:0),CU);return true}
+  if(bi){const s=CU*bi.width/32;ritaRuta(g,bi,Math.min(xx+7,TVW-1-s/2),TVH+(anim?livTid(anim.t,nr++).upp:0),s);return true} // en bredare bild (64 pixlar) ritas bredare
   if(anim){const c=heroCanvas(h),L=livTid(anim.t,nr++);ritaLevande(g,c,heroOgon(h,c),xx,TVH-25,{flip:true,blink:L.blink,titt:L.titt});return}
   const c=heroSprite(h);g.save();g.translate(xx+c.width,TVH-25);g.scale(-1,1);g.drawImage(c,0,0);g.restore()};
  right.forEach(f=>{if(f.k==="greta"){x-=15;if(npc(GRETA,x,"greta"))return;g.fillStyle="#6b4a2e";g.fillRect(x+2,TVH-13,1,13);g.fillRect(x+1,TVH-13,2,1);return}

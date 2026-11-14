@@ -77,7 +77,11 @@ function ruta(mapp,namn,roll,vapen,Vin){
  const W=(vapen&&V.vapen&&V.vapen[vapen])||V,per=Math.max(1,Math.floor(ark.width/cell)),anf=roll==="anfall"&&W.anfall!=null,nr=anf?W.anfall:(W.sta??V.sta??0);
  // flip vänder hela arket, vs/va vänder bara stå- eller anfallsbilden (för rutor där figuren tittar åt fel håll)
  const fl=!!V.flip!==!!(anf?W.va:W.vs),k=mapp+"/"+namn+"#"+nr+(fl?"v":"");
- if(!rutor.has(k)){const c=document.createElement("canvas");c.width=cell;c.height=cell;
+ if(!rutor.has(k)){const c=document.createElement("canvas");
+  // bred: bilden är bredare än hög (t.ex. damen med sin kärra, 64×32). Den läggs längst ner i en kvadratisk ruta.
+  if(V.bred){const B=V.bred,pb=Math.max(1,Math.floor(ark.width/B));c.width=B;c.height=B;const g=c.getContext("2d");if(fl){g.translate(B,0);g.scale(-1,1)}
+   g.drawImage(ark,(nr%pb)*B,Math.floor(nr/pb)*cell,B,cell,0,B-cell,B,cell);rutor.set(k,c);return c}
+  c.width=cell;c.height=cell;
   const g=c.getContext("2d");if(fl){g.translate(cell,0);g.scale(-1,1)} // flip: figuren tittar åt andra hållet (t.ex. lånade figurer från Fantasyvärlden)
   g.drawImage(ark,(nr%per)*cell,Math.floor(nr/per)*cell,cell,cell,0,0,cell,cell);rutor.set(k,c)}
  return rutor.get(k)}
