@@ -2100,6 +2100,15 @@ function pausaStrid(){
  if(strid.def.run)spel.run.stridSpar=S;else{const K=kap();if(K)K.stridSpar=S}
  strid=null;sparaSpel();lage=null;adventures();flash("Striden är pausad. Tryck på Fortsätt när ni vill spela vidare.");
 }
+// Spara striden som den är just nu, så att den kan fortsätta även om appen stängs mitt i en strid
+function sparaStridLage(){
+ if(!strid)return;
+ try{const S=JSON.parse(JSON.stringify({...strid,ko:strid.nu?[strid.nu,...strid.ko]:strid.ko,nu:null}));
+  if(strid.def.run){if(spel.run)spel.run.stridSpar=S}else{const K=kap();if(K)K.stridSpar=S}
+  // bara på den här enheten: striden sparas till GitHub först när den är slut eller pausas
+  spel.tid=Date.now();save(SPKEY,spel)}catch(e){}}
+// Striden är slut: glöm den sparade striden
+function glomStridSpar(){try{if(spel.run)delete spel.run.stridSpar;const K=kap();if(K)delete K.stridSpar;sparaSpel()}catch(e){}}
 function fortsattStrid(S,bild){strid={...S,bild:S.bild||bild};if(strid.def.run)delete spel.run.stridSpar;else{const K=kap();if(K)delete K.stridSpar}sparaSpel();nastaTur()}
 function pausKnapp(fn){return el("button",{class:"btn ghost small pause",onclick:fn,"aria-label":"Pausa äventyret"},el("span",{class:"pico","aria-hidden":"true"}),"Pausa")}
 // Bossen kallar på hjälp när den är nere på en fjärdedel av sitt liv. Vilket vanligt monster som passar ihop med bossen:
@@ -2140,7 +2149,7 @@ function nastaTur(){
  let t=strid.ko.shift();
  while(t&&((t.h&&(!byId(t.h)||liv(byId(t.h))<=0))||(t.f!==undefined&&strid.fiender[t.f].ute)))t=strid.ko.shift();
  if(!t){strid.runda++;nyRunda();return nastaTur()}
- strid.nu=t;
+ strid.nu=t;sparaStridLage(); // sparas varje tur, så att en avbruten strid kan fortsätta
  if(t.h)hjalteTur(byId(t.h));else fiendeTur(strid.fiender[t.f]);
 }
 const EGEN_ORD={gift:"giftig",tva:"två anfall",regen:"läker sig",bedova:"kan bedöva",drana:"stjäl liv",helar:"helar andra",sprangs:"exploderar"};
@@ -2301,12 +2310,13 @@ function fiendeTur(f){
  },antal);
 }
 function stridVinst(){
+ glomStridSpar();
  if(strid.def.run)return runVinst();
  partyHeroes().forEach(h=>{if(liv(h)<=0)setLiv(h,1)});
  const def=strid.def,bild=strid.bild;strid=null;sparaSpel();
  visaUtfall(def.vinst,null,bild,null,el("div",{class:"theend"},el("strong",{},"Ni vann striden!"),el("span",{},"Den som svimmade vaknar med 1 liv.")));
 }
-function stridForlust(){if(strid.def.run)return runForlust();const til=strid.def.forlust;strid=null;gaTill(til)}
+function stridForlust(){glomStridSpar();if(strid.def.run)return runForlust();const til=strid.def.forlust;strid=null;gaTill(til)}
 
 /* =====================================================================
    GROTTKRYPNING – som i Nat20: välj plats, välj dörr, klara rummen,
