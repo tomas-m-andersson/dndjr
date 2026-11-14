@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:17:28.063Z",
+  "uppdaterad": "2026-11-14T19:17:43.146Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794683846155,
+    "tid": 1794683861228,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -348,7 +348,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -367,7 +367,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Ett nät faller ner från taket!",
+            "ok": "rullar undan",
+            "traff": "trasslar in sig och slår sig"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -376,6 +386,14 @@
           {
             "t": "Vinden sveper sanden över en gata som ingen har gått på de senaste tusen åren. Ville, Tomas, Linda och Sally går in.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Ett nät faller ner från taket!",
+            "k": "bad"
           }
         ],
         "party": [
