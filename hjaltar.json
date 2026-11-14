@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:06:57.495Z",
+  "uppdaterad": "2026-11-14T16:07:30.570Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -207,7 +207,7 @@
       "ville": 31,
       "svante": 27,
       "sally": 21,
-      "tomas": 37,
+      "tomas": 24,
       "linda": 11,
       "benjamin": 34
     },
@@ -280,10 +280,133 @@
           "ros_given"
         ],
         "klar": false,
-        "v": 1
+        "v": 1,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              "dimfrun",
+              "dimvasen"
+            ],
+            "justera": [
+              {
+                "flagga": "namnet_sagt",
+                "typ": "dimfrun",
+                "liv": -8,
+                "rustning": -1,
+                "text": "Hennes namn hänger kvar i luften. Hon är mindre än hon vill vara."
+              },
+              {
+                "flagga": "ros_given",
+                "typ": "dimfrun",
+                "liv": -6,
+                "text": "Hon slåss med en hand, för i den andra håller hon rosen."
+              },
+              {
+                "flagga": "barnet_kom",
+                "typ": "dimfrun",
+                "rustning": -2,
+                "text": "Flickan står i dörren och tittar på. Grevinnan kan inte låta bli att titta tillbaka."
+              },
+              {
+                "flagga": "ljus_i_salen",
+                "typ": "dimfrun",
+                "rustning": -1,
+                "text": "Det varma skenet gör henne lättare att se, och lättare att träffa."
+              },
+              {
+                "flagga": "spegel_sprucken",
+                "typ": "dimfrun",
+                "liv": -10,
+                "text": "Revan i spegeln läcker. Hon får inte tillbaka kylan lika fort."
+              },
+              {
+                "flagga": "klockan_ringd",
+                "typ": "dimvasen",
+                "liv": -4,
+                "text": "Klockan ringer fortfarande svagt i öronen på allt som är gjort av dimma."
+              },
+              {
+                "flagga": "glod_fri",
+                "typ": "dimfrun",
+                "liv": -8,
+                "text": "Glöd kommer nerför trappan som en eldkula, sätter sig på spegelramen och blåser. Salen blir varm för första gången på hundra år."
+              }
+            ],
+            "vinst": {
+              "text": "Grevinnan blir tunnare och tunnare, och till slut sugs hon in i sin egen spegel med ett långt, argt skrik.\n\nSedan är det tyst. Den vita ytan i ramen rör sig långsamt, som vatten som lagt sig.\n\nSpegeln hänger kvar. Och nu är det ni som bestämmer vad som ska hända med den.",
+              "till": "efter"
+            },
+            "forlust": "dimfru_forlust"
+          },
+          "bild": "spegelsal",
+          "fiender": [
+            {
+              "namn": "Grevinnan Dimma",
+              "liv": 10,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d8+3",
+              "bild": "dimfrun",
+              "flyr": "blir tunn som andedräkt en kall dag och sugs in i spegeln med ett långt, argt skrik.",
+              "typ": "dimfrun",
+              "max": 42,
+              "ute": false
+            },
+            {
+              "namn": "Dimväsen",
+              "liv": 0,
+              "rustning": 12,
+              "anfall": 4,
+              "skada": "1d6",
+              "bild": "dimvasen",
+              "flyr": "sjunker ihop till en liten vit pöl på golvet.",
+              "typ": "dimvasen",
+              "max": 9,
+              "ute": true
+            }
+          ],
+          "anvant": {
+            "tomas": {
+              "dubbelhugg": true
+            }
+          },
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "ville"
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "f": 1
+            }
+          ],
+          "logg": [],
+          "noter": [
+            "Hon slåss med en hand, för i den andra håller hon rosen.",
+            "Klockan ringer fortfarande svagt i öronen på allt som är gjort av dimma.",
+            "Glöd kommer nerför trappan som en eldkula, sätter sig på spegelramen och blåser. Salen blir varm för första gången på hundra år."
+          ],
+          "init": {
+            "h:ville": 8.1,
+            "h:tomas": 17.1,
+            "h:linda": 5.1,
+            "h:sally": 20.1,
+            "f:0": 15,
+            "f:1": 1
+          },
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
+        }
       }
     },
-    "tid": 1794672415387,
+    "tid": 1794672449901,
     "niva": {
       "ville": {
         "lvl": 5,
