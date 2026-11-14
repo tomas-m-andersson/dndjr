@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:45:30.752Z",
+  "uppdaterad": "2026-11-14T23:45:49.355Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699925517,
+    "tid": 1794699947455,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -494,10 +494,10 @@
           }
         ],
         "party": [
-          "ville",
+          "benjamin",
           "tomas",
           "svante",
-          "benjamin"
+          "ville"
         ],
         "guld": 675,
         "saker": [
