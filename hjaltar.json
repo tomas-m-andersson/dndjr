@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:47:50.948Z",
+  "uppdaterad": "2026-11-14T23:48:26.126Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700069009,
+    "tid": 1794700104164,
     "niva": {
       "ville": {
-        "lvl": 5,
-        "xp": 5828
+        "lvl": 6,
+        "xp": 6008
       },
       "svante": {
         "lvl": 5,
-        "xp": 3879
+        "xp": 4059
       },
       "tomas": {
         "lvl": 6,
-        "xp": 7293
+        "xp": 7473
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 5183
+        "xp": 5363
       },
       "linda": {
         "lvl": 2,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -375,7 +375,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "sovare",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "lerkrukssoldat",
             "sandvalnad",
@@ -386,14 +386,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Rum 4 · Vaktad skatt",
-            "k": "sep"
-          },
-          {
-            "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre Jätteskorpion.",
-            "k": "bad"
-          },
           {
             "t": "Striden är över. Alla får 90 XP.",
             "k": "crit"
@@ -545,6 +537,14 @@
           {
             "t": "Ni smyger fram och anfaller!",
             "k": "note"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 180 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Ville känner sig mäktigare. Nivå 6! +7 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -569,13 +569,13 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 2550,
+        "ara": 3150,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
-          "ville": 38,
+          "ville": 45,
           "tomas": 52,
           "svante": 33,
           "benjamin": 44
