@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:48:57.119Z",
+  "uppdaterad": "2026-11-14T23:49:29.768Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700135256,
+    "tid": 1794700167843,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -581,7 +581,7 @@
             "fiender": [
               {
                 "namn": "Sandkungen",
-                "liv": 99,
+                "liv": 62,
                 "rustning": 17,
                 "anfall": 8,
                 "skada": "1d10+2",
@@ -611,7 +611,7 @@
           "fiender": [
             {
               "namn": "Sandkungen",
-              "liv": 99,
+              "liv": 62,
               "rustning": 17,
               "anfall": 8,
               "skada": "1d10+2",
@@ -631,12 +631,39 @@
               "boss": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "valsignelse": true
+            },
+            "benjamin": {
+              "dubbelskott": true
+            },
+            "tomas": {
+              "dubbelhugg": true
+            }
+          },
           "pepp": {},
-          "skydd": {},
+          "skydd": {
+            "benjamin": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "svante": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "tomas": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "ville": {
+              "ac": 2,
+              "rundor": 3
+            }
+          },
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
             {
               "f": 0
@@ -663,7 +690,9 @@
             "h:ville": 12.1,
             "f:0": 24
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
