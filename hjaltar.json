@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:24:19.589Z",
+  "uppdaterad": "2026-11-14T19:24:36.726Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 1632,
+    "guld": 1652,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -213,7 +213,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "efter",
+        "scen": "slut_glod",
         "flaggor": [
           "vet_drake",
           "glod_fri",
@@ -221,8 +221,11 @@
           "krak_borta",
           "glod_eld"
         ],
-        "klar": false,
-        "v": 2
+        "klar": true,
+        "v": 2,
+        "slut": "slut_glod",
+        "nyttVapen": "Ni hittar Ormpiskan! Bard kan nu välja det under Ändra. Varje träff förgiftar fienden.",
+        "nyttVapenId": "ormpiska"
       },
       "k2": {
         "scen": "slut_bara",
@@ -278,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684257582,
+    "tid": 1794684274751,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -320,7 +323,8 @@
       "skuggkatana",
       "valsignad_hammare",
       "solklubba",
-      "livets_stav"
+      "livets_stav",
+      "ormpiska"
     ],
     "utr": {
       "ville": {
