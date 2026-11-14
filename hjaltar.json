@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:35:37.947Z",
+  "uppdaterad": "2026-11-14T23:37:55.293Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699336001,
+    "tid": 1794699471980,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni känner värme mot ansiktet.",
@@ -377,7 +377,22 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "skatt",
+          "klar": false,
+          "loot": [
+            {
+              "k": "guld",
+              "n": "266 guldmynt",
+              "v": 266
+            },
+            {
+              "k": "xp",
+              "n": "En gammal karta full med ledtrådar",
+              "v": 150
+            }
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -386,6 +401,14 @@
           {
             "t": "Ville, Tomas, Svante och Benjamin kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Ni hittar en liten pung som någon har tappat.",
+            "k": "heal"
           }
         ],
         "party": [
