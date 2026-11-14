@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:56:09.315Z",
+  "uppdaterad": "2026-11-14T15:56:11.291Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -258,10 +258,105 @@
           "varit_kok"
         ],
         "klar": false,
-        "v": 1
+        "v": 1,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              "vampyrfladdermus",
+              "vampyrfladdermus",
+              "vampyrfladdermus"
+            ],
+            "vinst": {
+              "text": "Den sista fladdermusen försvinner upp i skorstenen igen. I spisens aska hittar ni några mynt som någon tappat, svarta av sot men fortfarande guld.",
+              "guld": 10,
+              "till": "koket"
+            },
+            "forlust": "hus_forlust"
+          },
+          "bild": "kok",
+          "fiender": [
+            {
+              "namn": "Vampyrfladdermus 1",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            },
+            {
+              "namn": "Vampyrfladdermus 2",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            },
+            {
+              "namn": "Vampyrfladdermus 3",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "ville"
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "f": 2
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 0
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:ville": 12.1,
+            "h:tomas": 6.1,
+            "h:linda": 7.1,
+            "h:sally": 7.1,
+            "f:0": 2,
+            "f:1": 9,
+            "f:2": 7
+          },
+          "nu": null
+        }
       }
     },
-    "tid": 1794671769289,
+    "tid": 1794671769949,
     "niva": {
       "ville": {
         "lvl": 5,
