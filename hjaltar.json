@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:40:39.342Z",
+  "uppdaterad": "2026-11-14T23:40:45.970Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699638104,
+    "tid": 1794699644049,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4988
+        "xp": 5078
       },
       "svante": {
         "lvl": 4,
-        "xp": 3039
+        "xp": 3129
       },
       "tomas": {
         "lvl": 6,
-        "xp": 6453
+        "xp": 6543
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 4343
+        "xp": 4433
       },
       "linda": {
         "lvl": 2,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar svagt av rökelse och gamla kryddor.",
@@ -374,7 +374,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "skorpion",
             "skorpion",
@@ -486,6 +486,10 @@
           {
             "t": "En sten vält åt sidan, och ut kliver tre Jätteskorpion.",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 90 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -509,7 +513,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 750,
+        "ara": 1050,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
@@ -520,167 +524,7 @@
           "svante": 27,
           "benjamin": 36
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Jätteskorpion 1",
-                "liv": 0,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": true
-              },
-              {
-                "namn": "Jätteskorpion 2",
-                "liv": 7,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": false
-              },
-              {
-                "namn": "Jätteskorpion 3",
-                "liv": 0,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 14,
-                "ute": true
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|1|5|rum|strid",
-          "fiender": [
-            {
-              "namn": "Jätteskorpion 1",
-              "liv": 0,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": true
-            },
-            {
-              "namn": "Jätteskorpion 2",
-              "liv": 7,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": false
-            },
-            {
-              "namn": "Jätteskorpion 3",
-              "liv": 0,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 14,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "ville": {
-              "shuriken": true
-            },
-            "tomas": {
-              "virvelhugg": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "benjamin"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:ville": 15.1,
-            "h:tomas": 15.1,
-            "h:svante": 17.1,
-            "h:benjamin": 5.1,
-            "f:0": 7,
-            "f:1": 7,
-            "f:2": 10
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
     "aktivRun": "rmwh1nadcktev",
