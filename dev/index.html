@@ -1619,8 +1619,12 @@ function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if
  if(flip){g.save();g.translate(x+W,y);g.scale(-1,1);g.drawImage(c,0,0,W,H);g.restore()}else g.drawImage(c,x,y,W,H);g.globalAlpha=1}
 const sprSize=k=>{const s=sprDef(k);if(s&&s.hero){const c=sprCanvas(k);return{w:c.width,h:c.height-1}}return s?{w:(s.rows[0].length+2)*s.skala,h:(s.rows.length+2)*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+// Nya scener i kapitel 2 ritas som en gammal scen tills den egna bilden finns i mappen Bakgrunder och miljöer
+const SCENLIK={kallare:"gruva_inne",dimskog:"skog",gravkulle:"skog",grind:"by",hall:"sal",balsal:"sal",
+ kok:"sal",bibliotek:"sal",vintertradgard:"sal",klocktorn:"sal",barnkammare:"sal",dimkallare:"gruva_inne",spegelsal:"sal"};
 function scenePaint(g,bild){
  if(typeof bild==="string"&&bild.startsWith("run|")&&window.runScen)return window.runScen(g,bild); // grottkrypningens scener (scener.js)
+ if(SCENLIK[bild])bild=SCENLIK[bild];
  const R=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)},rnd=seedRnd(bild.length*97+7);
  const sky=(a,b,top=0,bot=40)=>{const n=8;for(let i=0;i<n;i++){const t=i/(n-1),mix=(c1,c2)=>{const p=h=>parseInt(h.slice(1),16),A=p(c1),B=p(c2),ch=sh=>Math.round(((A>>sh)&255)*(1-t)+((B>>sh)&255)*t);return"rgb("+ch(16)+","+ch(8)+","+ch(0)+")"};
    R(0,top+Math.floor(i*(bot-top)/n),TVW,Math.ceil((bot-top)/n)+1,mix(a,b))}};
@@ -1831,6 +1835,10 @@ function adventures(){
   let st=spel.kapitel[k.id];const num="Kapitel "+(i+1);
   if(st&&(st.v||1)!==(k.version||1))st=null; // kapitlet har skrivits om sedan sist
   if(k.kommer){list.append(el("div",{class:"chapter locked"},el("small",{},num),el("h3",{},k.titel),el("p",{},k.kort)));return}
+  // ett kapitel kan kräva att ett tidigare kapitel är klart
+  if(k.laskrav&&!(spel.kapitel[k.laskrav]||{}).klar){const fore=ADV().findIndex(x=>x.id===k.laskrav)+1;
+   list.append(el("div",{class:"chapter locked"},el("small",{},num+" · Låst"),el("h3",{},k.titel),el("p",{},k.kort),
+    el("p",{class:"hint"},"Spela klart kapitel "+fore+" först.")));return}
   const status=!st?"Inte påbörjat":st.klar?"Klart ✓":"Pågår";
   const btns=el("div",{class:"btnrow"});
   if(st&&!st.klar){btns.append(el("button",{class:"btn",onclick:()=>{kapId=k.id;visaScen()}},"Fortsätt"),el("button",{class:"btn ghost",onclick:()=>{
@@ -1842,10 +1850,14 @@ function adventures(){
  const kr=kronikaLista();if(kr)app.append(kr);
  app.append(packning(adventures));
 }
+// Flaggor som följer med från ett tidigare kapitel, t.ex. att ni räddade Glöd i kapitel 1
+function arvdaFlaggor(k){const a=k.arv;if(!a)return[];const st=spel.kapitel[a.fran];
+ if(!st||!Array.isArray(st.flaggor))return[];
+ return [].concat(a.flaggor||[]).filter(f=>st.flaggor.includes(f))}
 function startKapitel(id){
  kapId=id;const k=kapDef();
  partyHeroes().forEach(h=>setLiv(h,maxLiv(h)));
- spel.kapitel[id]={scen:k.start,flaggor:[],klar:false,v:k.version||1};
+ spel.kapitel[id]={scen:k.start,flaggor:arvdaFlaggor(k),klar:false,v:k.version||1};
  sparaSpel();visaScen();
 }
 
