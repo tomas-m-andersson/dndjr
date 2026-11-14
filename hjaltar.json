@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:53:48.032Z",
+  "uppdaterad": "2026-11-14T15:54:01.771Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -194,6 +194,7 @@
       "Läkedryck",
       "Fickljus",
       "Trähund",
+      "Trähund",
       "Trähund"
     ],
     "liv": {
@@ -252,7 +253,7 @@
         "v": 1
       }
     },
-    "tid": 1794671626144,
+    "tid": 1794671639751,
     "niva": {
       "ville": {
         "lvl": 5,
