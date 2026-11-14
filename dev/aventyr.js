@@ -352,7 +352,7 @@ window.AVENTYR = [
       },
 
       spindelboet: {
-        bild: "gruva_inne|spindel", figur: ["spindel", "spindel"],
+        bild: "gruva_inne|spindel", figur: ["spindel^tak", "spindel^tak"],
         text: "Gången är full av spindelnät. I näten hänger gamla saker: en hjälm, en ryggsäck, en sko. Och i taket rör sig något. Två spindlar, stora som hundar, sitter och väntar.",
         val: [
           { text: "Smyg förbi under näten", prov: {
@@ -444,13 +444,13 @@ window.AVENTYR = [
       },
 
       slut_glod: {
-        bild: "hem", figur: ["greta", "drake"],
+        bild: "torg|gryning", figur: ["greta", "drake"],
         text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå. Bo står där med armen i band och nickar mot er.\n\nGreta tar emot er en efter en. Hon ger er en påse med guldmynt som hela byn har samlat ihop.\n\nOch Glöd? Han lägger sig på Gretas tak, där lyktans sken når honom. – Jag stannar ett tag, säger han. Ifall skuggorna kommer tillbaka.\n\nFör någonstans djupt under berget finns det fler.",
         slut: true, slutrad: "Lyktan lyser igen, och ni har fått en drake som vän."
       },
 
       slut: {
-        bild: "hem", figur: "greta",
+        bild: "torg|gryning", figur: "greta",
         text: "När ni kommer in i Mossby i gryningen står hela byn på torget. Lyktan sätts tillbaka på sin stolpe och lyser upp varenda vrå.\n\nGreta tar emot er och ger er en påse med guldmynt som hela byn har samlat ihop.\n\nMen när ni går hem tänker ni på den lilla draken i buren vid gruvan. Vättarna kommer tillbaka. Och någonstans djupt under berget finns det fler skuggor.",
         slut: true, slutrad: "Lyktan lyser igen. Men inte alla blev räddade."
       }

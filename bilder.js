@@ -136,9 +136,12 @@ function ritaOm(){clearTimeout(omritning);omritning=setTimeout(()=>{
  document.querySelectorAll("canvas").forEach(c=>{if(!c.isConnected)return;if(c._rita)c._rita();else if(c._tv&&window.drawTV)drawTV(c,c._tv[0],c._tv[1])})},150)}
 
 // Rita en ruta: mitt på cx, fötterna på bot, storlek s (i TV:ns rutnät)
-window.ritaRuta=function(g,c,cx,bot,s,{flip=false,alpha=1}={}){
- const x=cx-s/2,y=bot-s;g.save();g.globalAlpha=alpha;g.imageSmoothingEnabled=false;
- if(flip){g.translate(x+s,y);g.scale(-1,1);g.drawImage(c,0,0,s,s)}else g.drawImage(c,x,y,s,s);g.restore();return{x,y,w:s,h:s,skala:s/c.width}};
+// vupp = upp och ner (till exempel spindlar som hänger i taket)
+window.ritaRuta=function(g,c,cx,bot,s,{flip=false,vupp=false,alpha=1}={}){
+ const x=cx-s/2,y=bot-s;g.save();g.globalAlpha=alpha;g.imageSmoothingEnabled=false;g.translate(x,y);
+ if(flip){g.translate(s,0);g.scale(-1,1)}
+ if(vupp){g.translate(0,s);g.scale(1,-1)}
+ g.drawImage(c,0,0,s,s);g.restore();return{x,y,w:s,h:s,skala:s/c.width}};
 
 // Tydlig märkning så att man aldrig blandar ihop dev-kopian med det riktiga spelet
 if(window.DEV){document.title="DEV – "+document.title;
