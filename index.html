@@ -1965,12 +1965,22 @@ function scenHuvud(){
 function kravHjalte(krav){if(!krav||!(krav.klass||krav.folk))return null;
  return vaken().find(h=>(!krav.klass||h.klass===krav.klass)&&(!krav.folk||h.folk===krav.folk))||null}
 // Är valet synligt? Krav på flagga, klass, folk och "en gång" döljer valet helt.
-function valSynligt(v,K){
+function valMojligt(v,K){
  if(v.krav&&v.krav.flagga&&!K.flaggor.includes(v.krav.flagga))return false;
  if(v.krav&&v.krav.inteFlagga&&K.flaggor.includes(v.krav.inteFlagga))return false;
  if(v.krav&&(v.krav.klass||v.krav.folk)&&!kravHjalte(v.krav))return false;
  if(v.engang&&K.flaggor.includes(v.engang))return false;
  return true;
+}
+function valSynligt(v,K){return valMojligt(v,K)&&!(v.rum&&rumKlart(v.rum,K))} // rummet är färdigt: dörren dit försvinner
+// Ett rum är färdigt när det inte finns något kvar att göra där: alla val är gjorda, och de som
+// är kvar går inte att välja (fel klass, saknat föremål). Vägen ut (utgang) räknas inte.
+// kvar: true betyder att valet håller rummet öppet även innan man kan göra det, för det kan bli möjligt senare.
+function rumKlart(namn,K){
+ const sc=scenDef(namn);if(!sc||!Array.isArray(sc.val))return false;
+ const gjort=v=>!!(v.engang&&K.flaggor.includes(v.engang));
+ const racker=v=>!(v.krav&&v.krav.sak&&!spel.saker.includes(v.krav.sak))&&!(v.krav&&v.krav.guld&&spel.guld<v.krav.guld);
+ return !sc.val.some(v=>!v.utgang&&((valMojligt(v,K)&&racker(v))||(v.kvar&&!gjort(v))));
 }
 // En scens text kan vara en lista med stycken där vissa bara visas om en flagga finns (om) eller saknas (inteOm).
 function scenText(sc,K){
