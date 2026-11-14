@@ -293,8 +293,8 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .chapter.done{border-color:var(--moss)}
 .chapter.locked{opacity:.55;border-style:dashed}
 .tvbig{border:3px solid #0c151c;border-radius:6px;overflow:hidden;box-shadow:0 0 0 2px var(--line)}
-/* i äventyren och striderna ligger TV:n kvar högst upp när man scrollar */
-#app>.tvbig:not(.lagertv){position:sticky;top:env(safe-area-inset-top,0px);z-index:15;box-shadow:0 0 0 2px var(--line),0 10px 18px -6px #000c}
+/* i äventyren och striderna ligger TV:n kvar högst upp när man scrollar, men inte i menyerna */
+#app>.tvbig:not(.lagertv):not(.berattelseruta){position:sticky;top:env(safe-area-inset-top,0px);z-index:15;box-shadow:0 0 0 2px var(--line),0 10px 18px -6px #000c}
 .tv.mini{width:40px;flex:none;border-radius:3px;overflow:hidden;border:2px solid #0c151c}
 .strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
