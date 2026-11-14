@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:38:13.903Z",
+  "uppdaterad": "2026-11-14T23:38:16.775Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699492013,
+    "tid": 1794699494810,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -357,42 +357,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni känner värme mot ansiktet.",
-            "typ": "lager",
+            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+            "typ": "strid",
             "kand": false
           },
           {
             "ledtrad": "Någon viskar.",
-            "typ": "resenar",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör många små fötter som springer.",
-            "typ": "skatt",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "266 guldmynt",
-              "v": 266
-            },
-            {
-              "k": "xp",
-              "n": "En gammal karta full med ledtrådar",
-              "v": 150
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -417,6 +397,10 @@
           {
             "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
             "k": "magic"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -452,7 +436,7 @@
           "svante": 27,
           "benjamin": 44
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
     "aktivRun": "rmwh1nadcktev",
