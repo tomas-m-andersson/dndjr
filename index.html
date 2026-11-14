@@ -2404,7 +2404,7 @@ const MONSTER={
  lerkrukssoldat:{namn:"Lerkrukssoldat",liv:18,rustning:15,anfall:5,skada:"1d8",xp:200,platser:["oknen"],flyr:"faller isär i skärvor och torr lera."},
  sandvalnad:{namn:"Sandvålnad",liv:16,rustning:13,anfall:5,skada:"1d6+2",xp:200,platser:["oknen"],flyr:"blåser bort som en virvel av sand.",egen:{drana:true}},
  sandorm:{namn:"Sandorm",liv:26,rustning:14,anfall:6,skada:"1d10",xp:450,platser:["oknen"],flyr:"dyker ner i sanden och är borta.",egen:{tva:true}},
- sandkungen:{namn:"Sandkungen",liv:46,rustning:16,anfall:7,skada:"1d10+2",xp:1100,platser:["oknen"],flyr:"faller ihop i en hög av linne och guldsmycken.",egen:{regen:3}},
+ sandkungen:{namn:"Sandkungen",liv:46,rustning:16,anfall:7,skada:"1d10+2",xp:1100,platser:["oknen"],baraBoss:true,flyr:"faller ihop i en hög av linne och guldsmycken.",egen:{regen:3}},
  fladdermus:{namn:"Jättefladdermus",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","slottet","skogen","herrgarden"],flyr:"fladdrar iväg ut i mörkret."},
  ratta:{namn:"Jätteråtta",liv:7,rustning:12,anfall:4,skada:"1d4+2",xp:25,platser:["grottorna","slottet"],flyr:"piper och försvinner ner i ett hål.",egen:{gift:"1d2"}},
  kobold:{namn:"Kobold",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","vulkanen"],flyr:"gnyr och kryper in i en spricka."},
@@ -2563,7 +2563,8 @@ function mote(boss,typ){
  let tier=boss?(dk==="latt"?1:dk==="svar"?3:2):dk==="latt"?(dp>=5&&r2<.3?1:0):dk==="svar"?(dp>=5&&r2<.4?2:1):(dp<=2||r2<.25?0:1);
  const budget=([.85,1,1.2][Math.min(3,n)-1]||1)*H.reduce((a,h)=>a+XPB[Math.min(10,vitals(h).lvl)][tier],0);
  let k=boss?1:n===1?(r<.75?1:2):n===2?(r<.35?1:r<.85?2:3):(r<.25?1:r<.6?2:3);
- const share=budget/GRUPP(k),bas=typ?[typ]:Object.keys(MONSTER).filter(m=>MONSTER[m].platser.includes(R.plats));
+ // baraBoss: monstret dyker bara upp som boss, aldrig i ett vanligt rum
+ const share=budget/GRUPP(k),bas=typ?[typ]:Object.keys(MONSTER).filter(m=>MONSTER[m].platser.includes(R.plats)&&!MONSTER[m].baraBoss);
  const plock=(max,fav)=>{let pool=bas.filter(m=>MONSTER[m].xp<=max&&MONSTER[m].xp>=max*.4);
   if(fav){const f=pool.filter(m=>fav.includes(m));if(f.length)pool=f}
   if(!pool.length)pool=bas.filter(m=>MONSTER[m].xp<=max);
