@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:48:26.126Z",
+  "uppdaterad": "2026-11-14T23:48:28.315Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700104164,
+    "tid": 1794700106412,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -358,38 +358,28 @@
       {
         "plats": "oknen",
         "kapitel": 2,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "sovare",
+            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
-            "typ": "sovare",
+            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Väggen bredvid dörren är full av målade bilder i guld.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": true,
-          "fiender": [
-            "lerkrukssoldat",
-            "sandvalnad",
-            "lerkrukssoldat"
-          ],
-          "stridOpt": {
-            "sover": true
-          }
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Striden är över. Alla får 90 XP.",
-            "k": "crit"
-          },
           {
             "t": "Nu är vägen fri till skatten.",
             "k": "heal"
@@ -545,6 +535,10 @@
           {
             "t": "★ Ville känner sig mäktigare. Nivå 6! +7 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -580,7 +574,7 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
+        "dorrText": "Ni tittar på varandra. Någon måste bestämma.",
         "bossFaktor": 1.3,
         "nyttVapen": null,
         "nyttVapenId": "stormluta"
