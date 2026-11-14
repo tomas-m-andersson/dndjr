@@ -117,7 +117,7 @@ window.VAPENRUTOR={
 window.HJALTEFLYTT={klocktorn:12};
 window.FOTLYFT={
  oknen_1_port:5,           // mörk kant längst ner
- oknen_2_d1:10, oknen_2_d2:12, oknen_2_d3:12, oknen_2_port:14,
+ oknen_2_rum:5, oknen_2_d1:14, oknen_2_d2:16, oknen_2_d3:16, oknen_2_port:18, oknen_2_boss:5,
 
  berattelse_bibliotek:10,  // golvet börjar en bit upp
  berattelse_dimkallare:8,
