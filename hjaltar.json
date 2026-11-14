@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:46:40.282Z",
+  "uppdaterad": "2026-11-14T23:46:47.176Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699998108,
+    "tid": 1794700005300,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör mynt som klirrar.",
@@ -373,16 +373,22 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "skatt",
+          "klar": false,
+          "loot": [
+            {
+              "k": "guld",
+              "n": "168 guldmynt",
+              "v": 168
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            }
+          ]
+        },
         "logg": [
-          {
-            "t": "Kapitel 1 · Den begravda staden",
-            "k": "sep"
-          },
-          {
-            "t": "Ville, Tomas, Svante och Benjamin kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
-            "k": ""
-          },
           {
             "t": "Rum 1 · Skatt",
             "k": "sep"
@@ -534,6 +540,14 @@
           {
             "t": "Alla har vilat och känner sig starka igen. Ni hittar en trappa av sandsten som försvinner ner under sanden.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Mitt på golvet står en kista. Ingen vaktar den. Konstigt.",
+            "k": "heal"
           }
         ],
         "party": [
