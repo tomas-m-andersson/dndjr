@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:46:54.223Z",
+  "uppdaterad": "2026-11-14T23:47:03.943Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700012228,
+    "tid": 1794700021896,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det finns färskt blod på marken.",
@@ -373,16 +373,18 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En skadad äventyrare sitter lutad mot väggen.",
+            "vem": "henne",
+            "ok": "Hon viskar vad som väntar vid nästa vägskäl.",
+            "nej": "Hon litar inte på {namn} och vänder bort huvudet.",
+            "dryck": "Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett."
+          }
+        },
         "logg": [
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
           {
             "t": "Rum 2 · Monster",
             "k": "sep"
@@ -533,6 +535,14 @@
           },
           {
             "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
+            "k": ""
+          },
+          {
+            "t": "Rum 2 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En skadad äventyrare sitter lutad mot väggen.",
             "k": ""
           }
         ],
