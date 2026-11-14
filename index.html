@@ -1768,7 +1768,8 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const tona=(b,r,col,a)=>{if(a)ritaTon(g,b,r.x,r.y,r.skala,false,col,a)};
  const OFF=k=>anim&&anim.off?anim.off(k):null,POS=(k,x,y,w,h)=>{if(anim&&anim.pos)anim.pos[k]={x,y,w,h}};
  // vissa bakgrunder har ett hål eller en möbel längst ner till vänster: då flyttas hjältarna åt höger
- const hflytt=(window.HJALTEFLYTT||{})[typeof bild==="string"?bild.split("|")[0]:""]||0;
+ const kant=window.bakgrundKant?bakgrundKant(bild):0;        // in från kanterna på vissa bakgrunder
+ const hflytt=((window.HJALTEFLYTT||{})[typeof bild==="string"?bild.split("|")[0]:""]||0)+kant;
  if(visaParty)partyHeroes().forEach((h,i)=>{const k="h:"+h.id,o=OFF(k),dx=(o?Math.round(o.dx):0)+hflytt,dy=o?Math.round(o.dy):0;
   const bi=window.egenHjalte&&egenHjalte(h,o&&o.dx?"anfall":"sta"); // egen bild: anfallsrutan när hjälten gör ett utfall
   if(bi){const L=anim&&liv(h)>0?livTid(anim.t,i):{upp:0},r=ritaRuta(g,bi,i*14+7+dx,TVH+L.upp+dy,h.folk==="katt"?CU*.75:CU,{alpha:liv(h)>0?1:.35}); // katten är mindre än människorna
@@ -1782,7 +1783,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const right=[];
  if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss,gift:!!f.gift&&!f.ute})}); // ett besegrat monster tonar bort
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1,boss:k==="skuggan"&&!String(bild).startsWith("run|")})); // Skuggan är boss i berättelsen, men ett vanligt monster i grottkrypningen
- let x=TVW-2;
+ let x=TVW-2-kant;
  // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
  const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
  right.forEach(f=>{if(f.boss&&SPR[f.k]){const z=sprSize(f.k);f.f=z.h*2<=TVH-4?2:z.h*1.5<=TVH-4?1.5:1;if(z.w*f.f>ledigt)f.f=Math.max(1,Math.floor(ledigt/z.w*2)/2)}});

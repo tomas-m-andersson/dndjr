@@ -118,6 +118,11 @@ window.ritaBakgrund=function(g,b,W,H){const bw=b.naturalWidth||b.width,bh=b.natu
 window.bakgrundLyft=function(bild){if(typeof bild!=="string")return 0;const L=window.FOTLYFT||{};
  if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return L[p[1]+"_"+kap+"_"+(p[4]||"rum")]||0}
  const p=bild.split("|");return L["berattelse_"+p[0]+(p[1]?"_"+p[1]:"")]||L["berattelse_"+p[0]]||0};
+// Hur många pixlar figurerna ska flyttas in från vänster- och högerkanten på en bakgrund
+// där väggarna går längre in. Står i figurval.js: KANTFLYTT.
+window.bakgrundKant=function(bild){if(typeof bild!=="string")return 0;const L=window.KANTFLYTT||{};
+ if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return L[p[1]+"_"+kap+"_"+(p[4]||"rum")]||0}
+ const p=bild.split("|");return L["berattelse_"+p[0]+(p[1]?"_"+p[1]:"")]||L["berattelse_"+p[0]]||0};
 // Vilken bakgrundsfil hör till en bild på TV:n?
 window.bakgrundBild=function(bild){
  if(typeof bild!=="string")return null;

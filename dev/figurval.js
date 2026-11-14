@@ -115,9 +115,11 @@ window.VAPENRUTOR={
 // Bakgrunder där golvet slutar en bit upp: figurerna flyttas upp så många pixlar (bakgrunden är 320×180)
 // Bakgrunder där hjältarna behöver stå längre åt höger (hål eller möbel längst ner till vänster)
 window.HJALTEFLYTT={klocktorn:12};
+// Bakgrunder där alla figurer ska flyttas in från båda kanterna (väggarna går längre in)
+window.KANTFLYTT={oknen_2_d1:5, oknen_2_boss:5};
 window.FOTLYFT={
  oknen_1_port:5,           // mörk kant längst ner
- oknen_2_rum:5, oknen_2_d1:14, oknen_2_d2:16, oknen_2_d3:16, oknen_2_port:18, oknen_2_boss:5,
+ oknen_2_rum:5, oknen_2_d1:19, oknen_2_d2:16, oknen_2_d3:16, oknen_2_port:18, oknen_2_boss:10,
 
  berattelse_bibliotek:10,  // golvet börjar en bit upp
  berattelse_dimkallare:8,
