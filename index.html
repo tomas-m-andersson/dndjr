@@ -1794,9 +1794,14 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  right.forEach(f=>{if(FAST[f.k]){f.w=FAST[f.k];return}const ofx=f.key?OFF(f.key):null;
   f.mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
   f.mm=f.mb?(((window.FIGURVAL||{})[f.k]||{}).storlek||(f.boss?4:RUMBILD[f.k]?(RUMSTORLEK[f.k]||1):Math.max(2,Math.min(3,Math.round(sprSize(f.k).h/6)/2)))):0; // storlek i figurval.js går före (2 = som en hjälte, 4 = boss) // monster minst lika stora som hjältarna
+  f.hh=f.mb?CU*f.mm/2:Math.round(sprSize(f.k).h*(f.f||1)); // höjden behövs för att lägga flygande monster ovanför de som går på marken
   f.w=f.mb?CU*f.mm/2*.75:Math.round(sprSize(f.k).w*(f.f||1))});
  const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
+ // högsta monstret som går på marken: flygande monster börjar ovanför det
+ const FLYG=window.FLYGER||{},FH=window.FLYGHOJD||[8,15,4],MARK=right.filter(f=>!FLYG[f.k]&&f.hh).reduce((a,f)=>Math.max(a,f.hh),0);
+ const flygLyft=(f,i)=>{const bas=MARK?MARK+1:0,rum=Math.max(0,TVH-1-(f.hh||0)-bas);
+  return bas+Math.round(FH[i%FH.length]/17*Math.min(rum,17))};
  let nr=10,flygNr=0;const npc=(h,xx,fil)=>{const bi=fil&&window.egenPerson&&[].concat(fil).map(n=>egenPerson(n)).find(Boolean); // fil kan vara en lista: första bilden som finns
   if(bi){const s=CU*bi.width/32;ritaRuta(g,bi,Math.min(xx+7,TVW-1-s/2),TVH+(anim?livTid(anim.t,nr++).upp:0),s);return true} // en bredare bild (64 pixlar) ritas bredare
   if(anim){const c=heroCanvas(h),L=livTid(anim.t,nr++);ritaLevande(g,c,heroOgon(h,c),xx,TVH-25,{flip:true,blink:L.blink,titt:L.titt});return}
@@ -1811,8 +1816,9 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
    g.fillStyle="#5a5e66";g.fillRect(x+1,TVH-14,3,2);g.fillRect(x+12,TVH-14,3,2);g.fillRect(x+3,TVH-2,10,1);return}
   if(f.k==="resenar"){x-=18;const rv=spel.run&&spel.run.rum&&spel.run.rum.res,rn=rv&&RESENAR_BILD[rv.vem],rb=window.egenPerson&&((rn&&egenPerson(rn))||egenPerson("resenar"));if(rb){ritaRuta(g,rb,x+9,TVH,CU);return}g.save();g.translate(x,TVH-1);g.rotate(-Math.PI/2);g.globalAlpha=.9;g.drawImage(heroSprite(RESENAR),0,0);g.restore();g.globalAlpha=1;g.fillStyle="#b02a2a";g.fillRect(x+8,TVH-8,2,2);return}
   if(f.k==="drake_bur"){x-=20;const db=window.egenPerson&&egenPerson("glod_bur");if(db){ritaRuta(g,db,x+10,TVH,CU);return}sprite(g,"drake",x+1,TVH-16,true);g.fillStyle="#9aa3ad";for(let i=0;i<20;i+=3)g.fillRect(x+i,TVH-19,1,18);g.fillRect(x,TVH-19,20,1);g.fillRect(x,TVH-2,20,1);return}
-  // flygande monster svävar ovanför marken; flera i samma strid hamnar på olika höjd (FLYGHOJD i figurval.js)
-  const fly=(window.FLYGER||{})[f.k]?(window.FLYGHOJD||[8,15,4])[flygNr++%(window.FLYGHOJD||[8,15,4]).length]:0;
+  // flygande monster svävar ovanför marken; flera i samma strid hamnar på olika höjd (FLYGHOJD i figurval.js).
+  // Finns det monster som går på marken lyfts alla flygande så högt att de aldrig skymmer dem.
+  const fly=FLYG[f.k]?flygLyft(f,flygNr++):0;
   // egen bild: storleken följer den gamla figuren (1–3 gånger rutan), bossen fyra gånger
   const mb=f.mb,mm=f.mm;
   const z0=mb?{w:CU*mm/2*.75,h:CU*mm/2}:sprSize(f.k),fs=mb?1:(f.f||1),w=mb?z0.w:Math.round(z0.w*fs),h=mb?z0.h:Math.round(z0.h*fs);x-=w-(forsta?0:Math.round(krymp));forsta=false;const vand=f.k==="drake"||f.k==="eldklo"||!!(SPR[f.k]&&SPR[f.k].hero);
