@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:24:16.670Z",
+  "uppdaterad": "2026-11-14T19:24:19.589Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -213,7 +213,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "skuggstrid",
+        "scen": "efter",
         "flaggor": [
           "vet_drake",
           "glod_fri",
@@ -278,7 +278,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684254741,
+    "tid": 1794684257582,
     "niva": {
       "ville": {
         "lvl": 5,
