@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:50:36.533Z",
+  "uppdaterad": "2026-11-14T15:50:40.799Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -237,13 +237,14 @@
           "bulle_tinad",
           "kikat",
           "sett_huset",
-          "last_stenar"
+          "last_stenar",
+          "vet_barnet"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794671434519,
+    "tid": 1794671438779,
     "niva": {
       "ville": {
         "lvl": 5,
