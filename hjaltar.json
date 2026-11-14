@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:55:02.908Z",
+  "uppdaterad": "2026-11-14T15:55:09.892Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -199,11 +199,11 @@
       "Trähund"
     ],
     "liv": {
-      "ville": 34,
+      "ville": 32,
       "svante": 27,
-      "sally": 28,
-      "tomas": 44,
-      "linda": 18,
+      "sally": 26,
+      "tomas": 42,
+      "linda": 16,
       "benjamin": 34
     },
     "kapitel": {
@@ -256,7 +256,7 @@
         "v": 1
       }
     },
-    "tid": 1794671700909,
+    "tid": 1794671707715,
     "niva": {
       "ville": {
         "lvl": 5,
