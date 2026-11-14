@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:44:23.545Z",
+  "uppdaterad": "2026-11-14T15:44:56.277Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -224,7 +224,7 @@
         "nyttVapenId": "solklubba"
       },
       "k2": {
-        "scen": "start",
+        "scen": "torget",
         "flaggor": [
           "glod_fri"
         ],
@@ -232,7 +232,7 @@
         "v": 1
       }
     },
-    "tid": 1794671061567,
+    "tid": 1794671094275,
     "niva": {
       "ville": {
         "lvl": 5,
