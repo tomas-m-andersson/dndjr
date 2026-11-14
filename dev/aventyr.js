@@ -980,7 +980,7 @@ window.AVENTYR = [
       },
 
       slut_krossa: {
-        bild: "hem", figur: "greta",
+        bild: "torg|gryning", figur: "greta",
         text: [
           "Ni lyfter ner spegeln från väggen, bär upp den på gården och ställer den i snön. Sedan slår ni sönder den, allihop samtidigt.\n\nDen går inte i skärvor. Den bara går sönder som is, och allt det vita rinner ut i snön och försvinner.\n\nDimman över kullen lyfter på en halv minut. Solen är så stark att det gör ont i ögonen.",
           { om: "byborna_burna", text: "Ute på gården sätter sig de tre Mossbyborna upp, mitt i snön, och undrar varför de har frost i håret mitt i augusti." },
@@ -992,7 +992,7 @@ window.AVENTYR = [
       },
 
       slut_bara: {
-        bild: "hem", figur: "greta",
+        bild: "torg|gryning", figur: "greta",
         text: [
           "Ni lyfter ner spegeln, lindar in den i filtar och bär den hela vägen hem. Den är tyngre för varje steg.\n\nI Mossby hänger ni upp den på torget, bredvid lyktstolpen, precis som på Gretas ritning.\n\nI samma stund de hänger bredvid varandra händer det. Lågan i lyktan växer och växer tills hela torget badar i ljus, och den vita ytan i spegeln blir klar och visar torget, husen och er.\n\nDet blir varmt. Snön på taken rinner bort på en kvart.",
           { om: "byborna_burna", text: "De tre som sov vaknar samma kväll, och den enda de minns är att någon bar dem." },
