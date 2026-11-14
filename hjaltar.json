@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:05:57.393Z",
+  "uppdaterad": "2026-11-14T16:06:14.157Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -234,7 +234,7 @@
         "nyttVapenId": "solklubba"
       },
       "k2": {
-        "scen": "rustning_strid",
+        "scen": "dimkallaren",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -274,13 +274,14 @@
           "har_nyckel",
           "plockat_ros",
           "har_ros",
-          "letat_krukor"
+          "letat_krukor",
+          "vackt"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794672355368,
+    "tid": 1794672372167,
     "niva": {
       "ville": {
         "lvl": 5,
