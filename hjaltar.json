@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:17:43.146Z",
+  "uppdaterad": "2026-11-14T19:17:49.902Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794683861228,
+    "tid": 1794683867965,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -369,7 +369,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": false,
@@ -394,6 +394,10 @@
           {
             "t": "Ett nät faller ner från taket!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas rullar undan!",
+            "k": "hit"
           }
         ],
         "party": [
