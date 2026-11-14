@@ -109,6 +109,11 @@ window.egenGosedjur=(k,roll)=>forsta([k],["sak","figur"],roll);
 // Rita en bakgrund på hela TV:n. Är den större än 320×180 (t.ex. 344×192) skärs kanterna bort lika mycket på alla sidor.
 window.ritaBakgrund=function(g,b,W,H){const bw=b.naturalWidth||b.width,bh=b.naturalHeight||b.height;
  if(bw>=W&&bh>=H)g.drawImage(b,Math.floor((bw-W)/2),Math.floor((bh-H)/2),W,H,0,0,W,H);else g.drawImage(b,0,0,W,H)};
+// Hur många pixlar (av 180) figurerna ska flyttas upp på en bakgrund där golvet slutar en bit ovanför nederkanten
+// (t.ex. en mörk kant eller ett trappsteg längst ner). Står i figurval.js: FOTLYFT.
+window.bakgrundLyft=function(bild){if(typeof bild!=="string")return 0;const L=window.FOTLYFT||{};
+ if(bild.startsWith("run|")){const p=bild.split("|"),kap=Math.min(2,Math.max(1,+p[2]||1));return L[p[1]+"_"+kap+"_"+(p[4]||"rum")]||0}
+ const p=bild.split("|");return L["berattelse_"+p[0]+(p[1]?"_"+p[1]:"")]||L["berattelse_"+p[0]]||0};
 // Vilken bakgrundsfil hör till en bild på TV:n?
 window.bakgrundBild=function(bild){
  if(typeof bild!=="string")return null;

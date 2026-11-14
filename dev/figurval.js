@@ -102,3 +102,9 @@ window.VAPENRUTOR={
  svante_bard:{varja:[1,2,3,8,9,10,48],piska:[16,17,24,51,56,57],forttrollad_luta:[32,33,34,35,40,42,58,60,61],silvervarja:[5,6,7,12,13,14,15,49,50],stormluta:[36,37,38,39,44,46,62,63],ormpiska:[20,21,22,26,27,29,30,52,53,54]},
  benjamin_bard:{varja:[0,1,2,4,11,24,25,28,48,52,60],piska:[3,6,7,26,27,29,30,31,49,50,53],forttrollad_luta:[8,9,10,12,32,33,51,54,55],silvervarja:[5,34,36,37,38,39],stormluta:[16,17,18,20,21,40,41,44,45,58,61,62],ormpiska:[19,22,23,42,43,46,47,59,63]}
 };
+
+// Bakgrunder där golvet slutar en bit upp: figurerna flyttas upp så många pixlar (bakgrunden är 320×180)
+window.FOTLYFT={
+ slottet_2_rum:14,   // mörk kant längst ner
+ slottet_2_d1:22     // trappsteg längst ner
+};

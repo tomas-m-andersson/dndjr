@@ -1759,6 +1759,8 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  if(HI){if(BG)ritaBakgrund(g,BG,BTW,BTH);
   g.setTransform(BTW/TVW,0,0,BTH/TVH,0,0);if(!BG)g.drawImage(bakgrund(bild),0,0)} // resten ritas i TV:ns vanliga rutnät
  else g.drawImage(bakgrund(bild),0,0);
+ // golvet slutar en bit upp på vissa bakgrunder: flytta upp alla figurer
+ if(BG&&window.bakgrundLyft){const ly=bakgrundLyft(bild);if(ly)g.translate(0,-ly*TVH/180)}
  const tona=(b,r,col,a)=>{if(a)ritaTon(g,b,r.x,r.y,r.skala,false,col,a)};
  const OFF=k=>anim&&anim.off?anim.off(k):null,POS=(k,x,y,w,h)=>{if(anim&&anim.pos)anim.pos[k]={x,y,w,h}};
  if(visaParty)partyHeroes().forEach((h,i)=>{const k="h:"+h.id,o=OFF(k),dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;
