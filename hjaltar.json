@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:40:15.561Z",
+  "uppdaterad": "2026-11-14T23:40:39.342Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699613525,
+    "tid": 1794699638104,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -526,7 +526,7 @@
             "fiender": [
               {
                 "namn": "Jätteskorpion 1",
-                "liv": 14,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d6+1",
@@ -541,11 +541,11 @@
                 "typ": "skorpion",
                 "bild": "skorpion",
                 "max": 14,
-                "ute": false
+                "ute": true
               },
               {
                 "namn": "Jätteskorpion 2",
-                "liv": 14,
+                "liv": 7,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d6+1",
@@ -564,7 +564,7 @@
               },
               {
                 "namn": "Jätteskorpion 3",
-                "liv": 14,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d6+1",
@@ -579,7 +579,7 @@
                 "typ": "skorpion",
                 "bild": "skorpion",
                 "max": 14,
-                "ute": false
+                "ute": true
               }
             ],
             "run": true,
@@ -592,7 +592,7 @@
           "fiender": [
             {
               "namn": "Jätteskorpion 1",
-              "liv": 14,
+              "liv": 0,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d6+1",
@@ -607,11 +607,11 @@
               "typ": "skorpion",
               "bild": "skorpion",
               "max": 14,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Jätteskorpion 2",
-              "liv": 14,
+              "liv": 7,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d6+1",
@@ -630,7 +630,7 @@
             },
             {
               "namn": "Jätteskorpion 3",
-              "liv": 14,
+              "liv": 0,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d6+1",
@@ -645,34 +645,23 @@
               "typ": "skorpion",
               "bild": "skorpion",
               "max": 14,
-              "ute": false
+              "ute": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "shuriken": true
+            },
+            "tomas": {
+              "virvelhugg": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 2
-            },
-            {
-              "f": 0
-            },
-            {
-              "f": 1
-            },
             {
               "h": "benjamin"
             }
@@ -688,7 +677,9 @@
             "f:1": 7,
             "f:2": 10
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
