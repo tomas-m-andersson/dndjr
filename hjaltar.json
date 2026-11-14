@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:41:28.976Z",
+  "uppdaterad": "2026-11-14T23:41:56.048Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699686964,
+    "tid": 1794699714120,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -522,7 +522,7 @@
         "liv": {
           "ville": 38,
           "tomas": 37,
-          "svante": 27,
+          "svante": 9,
           "benjamin": 19
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
@@ -532,7 +532,7 @@
             "fiender": [
               {
                 "namn": "Obsidiangolemen",
-                "liv": 133,
+                "liv": 109,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -547,10 +547,7 @@
                 "max": 146,
                 "ute": false,
                 "boss": true,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "svag": null
               }
             ],
             "run": true,
@@ -563,7 +560,7 @@
           "fiender": [
             {
               "namn": "Obsidiangolemen",
-              "liv": 133,
+              "liv": 109,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -578,10 +575,7 @@
               "max": 146,
               "ute": false,
               "boss": true,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "svag": null
             }
           ],
           "anvant": {
@@ -590,17 +584,19 @@
               "dubbelskott": true
             },
             "tomas": {
-              "virvelhugg": true
+              "virvelhugg": true,
+              "dubbelhugg": true
             },
             "ville": {
-              "g_blackmoln": true
+              "g_blackmoln": true,
+              "smygattack": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
             {
               "f": 0
