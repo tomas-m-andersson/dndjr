@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:03:46.158Z",
+  "uppdaterad": "2026-11-14T16:03:57.020Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -198,7 +198,8 @@
       "Trähund",
       "Trähund",
       "Läkedryck",
-      "Läkedryck"
+      "Läkedryck",
+      "Sagobok"
     ],
     "liv": {
       "ville": 35,
@@ -264,13 +265,15 @@
           "last_dagbok",
           "vet_valet",
           "last_ritning",
-          "last_namnet"
+          "last_namnet",
+          "varmt_bok",
+          "har_sagobok"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794672224259,
+    "tid": 1794672235041,
     "niva": {
       "ville": {
         "lvl": 5,
