@@ -1775,7 +1775,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   g.globalAlpha=liv(h)>0?1:.4;g.drawImage(s,i*14+9+(o?Math.round(o.dx):0),TVH-s.height+hopp);g.globalAlpha=1}); // gosedjuret vid hjältens fötter
  const right=[];
  if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss,gift:!!f.gift&&!f.ute})}); // ett besegrat monster tonar bort
- else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1,boss:k==="skuggan"}));
+ else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1,boss:k==="skuggan"&&!String(bild).startsWith("run|")})); // Skuggan är boss i berättelsen, men ett vanligt monster i grottkrypningen
  let x=TVW-2;
  // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
  const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
