@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:39:03.192Z",
+  "uppdaterad": "2026-11-14T23:39:07.361Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699541292,
+    "tid": 1794699545278,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -357,27 +357,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon viskar.",
-            "typ": "resenar",
-            "kand": false
+            "ledtrad": "Något glimmar i mörkret.",
+            "typ": "vaktad",
+            "kand": true
+          },
+          {
+            "ledtrad": "Det glittrar i en spricka i dörren.",
+            "typ": "falla",
+            "kand": true
           }
         ],
-        "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
-            "vem": "tomten",
-            "ok": "Tomten viskar vad som gömmer sig bakom nästa dörrar.",
-            "nej": "Tomten fnyser och vägrar säga något.",
-            "dryck": "Tomten dricker, hoppar högt av glädje och berättar allt."
-          }
-        },
+        "lyssnat": true,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -438,6 +433,10 @@
           {
             "t": "Tomten dricker, hoppar högt av glädje och berättar allt. Alla får 150 XP.",
             "k": "heal"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -463,7 +462,7 @@
         "curse": {},
         "ara": 450,
         "start": 1794699336000,
-        "nastaKand": true,
+        "nastaKand": false,
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
@@ -472,7 +471,7 @@
           "svante": 27,
           "benjamin": 44
         },
-        "dorrText": "Ingen väg att välja. Bara framåt."
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
       }
     ],
     "aktivRun": "rmwh1nadcktev",
