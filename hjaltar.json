@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:38:47.086Z",
+  "uppdaterad": "2026-11-14T23:38:49.952Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699525165,
+    "tid": 1794699528019,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon viskar.",
@@ -367,7 +367,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
+            "vem": "tomten",
+            "ok": "Tomten viskar vad som gömmer sig bakom nästa dörrar.",
+            "nej": "Tomten fnyser och vägrar säga något.",
+            "dryck": "Tomten dricker, hoppar högt av glädje och berättar allt."
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -415,6 +425,14 @@
           },
           {
             "t": "Ni går vidare.",
+            "k": ""
+          },
+          {
+            "t": "Rum 3 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
             "k": ""
           }
         ],
