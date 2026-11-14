@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:39:07.361Z",
+  "uppdaterad": "2026-11-14T23:39:13.616Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699545278,
+    "tid": 1794699551742,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Något glimmar i mörkret.",
@@ -372,7 +372,17 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "skorpion",
+            "skorpion",
+            "skorpion"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -437,6 +447,14 @@
           {
             "t": "Ni går djupare in.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre Jätteskorpion.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -469,9 +487,178 @@
           "ville": 38,
           "tomas": 52,
           "svante": 27,
-          "benjamin": 44
+          "benjamin": 39
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Jätteskorpion 1",
+                "liv": 14,
+                "rustning": 14,
+                "anfall": 5,
+                "skada": "1d6+1",
+                "xp": 100,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "backar in under en sten med stjärten i luften.",
+                "egen": {
+                  "gift": "1d4"
+                },
+                "typ": "skorpion",
+                "bild": "skorpion",
+                "max": 14,
+                "ute": false
+              },
+              {
+                "namn": "Jätteskorpion 2",
+                "liv": 14,
+                "rustning": 14,
+                "anfall": 5,
+                "skada": "1d6+1",
+                "xp": 100,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "backar in under en sten med stjärten i luften.",
+                "egen": {
+                  "gift": "1d4"
+                },
+                "typ": "skorpion",
+                "bild": "skorpion",
+                "max": 14,
+                "ute": false
+              },
+              {
+                "namn": "Jätteskorpion 3",
+                "liv": 14,
+                "rustning": 14,
+                "anfall": 5,
+                "skada": "1d6+1",
+                "xp": 100,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "backar in under en sten med stjärten i luften.",
+                "egen": {
+                  "gift": "1d4"
+                },
+                "typ": "skorpion",
+                "bild": "skorpion",
+                "max": 14,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|oknen|1|4|rum|vaktad",
+          "fiender": [
+            {
+              "namn": "Jätteskorpion 1",
+              "liv": 14,
+              "rustning": 14,
+              "anfall": 5,
+              "skada": "1d6+1",
+              "xp": 100,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "backar in under en sten med stjärten i luften.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "skorpion",
+              "bild": "skorpion",
+              "max": 14,
+              "ute": false
+            },
+            {
+              "namn": "Jätteskorpion 2",
+              "liv": 14,
+              "rustning": 14,
+              "anfall": 5,
+              "skada": "1d6+1",
+              "xp": 100,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "backar in under en sten med stjärten i luften.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "skorpion",
+              "bild": "skorpion",
+              "max": 14,
+              "ute": false
+            },
+            {
+              "namn": "Jätteskorpion 3",
+              "liv": 14,
+              "rustning": 14,
+              "anfall": 5,
+              "skada": "1d6+1",
+              "xp": 100,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "backar in under en sten med stjärten i luften.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "skorpion",
+              "bild": "skorpion",
+              "max": 14,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "f": 2
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "ville"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:ville": 3.1,
+            "h:tomas": 10.1,
+            "h:svante": 11.1,
+            "h:benjamin": 8.1,
+            "f:0": 6,
+            "f:1": 17,
+            "f:2": 8
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwh1nadcktev",
