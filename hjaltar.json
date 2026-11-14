@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:52:24.219Z",
+  "uppdaterad": "2026-11-14T15:52:46.516Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -192,7 +192,8 @@
       "Läkedryck",
       "Läkedryck",
       "Läkedryck",
-      "Fickljus"
+      "Fickljus",
+      "Trähund"
     ],
     "liv": {
       "ville": 34,
@@ -242,13 +243,14 @@
           "gravt",
           "runt_huset",
           "vet_baksidan",
-          "varit_barnkammare"
+          "varit_barnkammare",
+          "barnet_hjalpte"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794671541720,
+    "tid": 1794671564621,
     "niva": {
       "ville": {
         "lvl": 5,
