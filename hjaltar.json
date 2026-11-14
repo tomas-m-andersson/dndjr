@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:37:55.293Z",
+  "uppdaterad": "2026-11-14T23:38:13.903Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699471980,
+    "tid": 1794699492013,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4313
+        "xp": 4463
       },
       "svante": {
         "lvl": 4,
-        "xp": 2364
+        "xp": 2514
       },
       "tomas": {
         "lvl": 5,
-        "xp": 5778
+        "xp": 5928
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 3668
+        "xp": 3818
       },
       "linda": {
         "lvl": 2,
@@ -379,7 +379,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -409,6 +409,14 @@
           {
             "t": "Ni hittar en liten pung som någon har tappat.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 266 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -417,7 +425,7 @@
           "svante",
           "benjamin"
         ],
-        "guld": 45,
+        "guld": 311,
         "saker": [
           "Läkedryck",
           "Läkedryck",
