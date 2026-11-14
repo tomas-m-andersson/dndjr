@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:41:56.048Z",
+  "uppdaterad": "2026-11-14T23:42:52.644Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699714120,
+    "tid": 1794699771154,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -521,9 +521,9 @@
         "startGuld": 45,
         "liv": {
           "ville": 38,
-          "tomas": 37,
-          "svante": 9,
-          "benjamin": 19
+          "tomas": 40,
+          "svante": 16,
+          "benjamin": 21
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
         "bossFaktor": 1.3,
@@ -532,7 +532,7 @@
             "fiender": [
               {
                 "namn": "Obsidiangolemen",
-                "liv": 109,
+                "liv": 95,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -547,7 +547,8 @@
                 "max": 146,
                 "ute": false,
                 "boss": true,
-                "svag": null
+                "svag": null,
+                "bedovad": 0
               }
             ],
             "run": true,
@@ -560,7 +561,7 @@
           "fiender": [
             {
               "namn": "Obsidiangolemen",
-              "liv": 109,
+              "liv": 95,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -575,32 +576,35 @@
               "max": 146,
               "ute": false,
               "boss": true,
-              "svag": null
+              "svag": null,
+              "bedovad": 0
             }
           ],
           "anvant": {
             "benjamin": {
               "sikta_noga": true,
-              "dubbelskott": true
+              "dubbelskott": true,
+              "pilregn": true
             },
             "tomas": {
               "virvelhugg": true,
-              "dubbelhugg": true
+              "dubbelhugg": true,
+              "skoldslag": true
             },
             "ville": {
               "g_blackmoln": true,
               "smygattack": true
+            },
+            "svante": {
+              "helande_vag": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 5,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "h": "tomas"
             },
