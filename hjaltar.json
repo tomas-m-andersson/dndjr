@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:08:04.706Z",
+  "uppdaterad": "2026-11-14T17:24:47.457Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -204,34 +204,19 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 31,
+      "ville": 38,
       "svante": 27,
-      "sally": 21,
-      "tomas": 24,
-      "linda": 11,
+      "sally": 28,
+      "tomas": 44,
+      "linda": 18,
       "benjamin": 34
     },
     "kapitel": {
       "k1": {
-        "scen": "slut_glod",
-        "flaggor": [
-          "sett_torget",
-          "spar",
-          "sett_bo",
-          "vet_lager",
-          "vet_skuggan",
-          "bo_omlagd",
-          "vet_drake",
-          "glod_fri",
-          "glod_anfall",
-          "krak_borta",
-          "vilat"
-        ],
-        "klar": true,
-        "v": 2,
-        "slut": "slut_glod",
-        "nyttVapen": "Ni hittar Solklubban! Helare kan nu välja det under Ändra. Lyser som solen: +1d6 strålande skada.",
-        "nyttVapenId": "solklubba"
+        "scen": "start",
+        "flaggor": [],
+        "klar": false,
+        "v": 2
       },
       "k2": {
         "scen": "slut_bara",
@@ -287,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794672484509,
+    "tid": 1794677085587,
     "niva": {
       "ville": {
         "lvl": 5,
