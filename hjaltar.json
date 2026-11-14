@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:20:03.690Z",
+  "uppdaterad": "2026-11-14T19:20:06.329Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684001452,
+    "tid": 1794684004384,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -343,216 +343,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "oknen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
-        "dorrar": [
-          {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "sovare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
-            "typ": "sovare",
-            "kand": false
-          }
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Ville (nivå 5)",
+          "Tomas (nivå 5)",
+          "Linda (nivå 2)",
+          "Sally (nivå 5)"
         ],
-        "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": false,
-          "fiender": [
-            "sandkungen"
-          ],
-          "stridOpt": {
-            "sover": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Den begravda staden",
-            "k": "sep"
-          },
-          {
-            "t": "Vinden sveper sanden över en gata som ingen har gått på de senaste tusen åren. Ville, Tomas, Linda och Sally går in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Ett nät faller ner från taket!",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas rullar undan!",
-            "k": "hit"
-          },
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Lerkrukssoldat och Sandvålnad snarkar högt i ett hörn.",
-            "k": "note"
-          },
-          {
-            "t": "Linda visar vägen i skuggorna. Monstret sover vidare. Alla får 60 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "Sanden rinner ur taket i tunna strilar när ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Sandkungen har somnat vid en slocknad eld. Ingen har märkt er. Än.",
-            "k": "note"
-          },
-          {
-            "t": "Ni kryper närmare. Nu!",
-            "k": "note"
-          }
-        ],
-        "party": [
-          "ville",
-          "tomas",
-          "linda",
-          "sally"
-        ],
-        "guld": 43,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 0,
-        "start": 1794683846154,
-        "nastaKand": false,
-        "id": "rmwgsfabuozxa",
-        "startGuld": 43,
-        "liv": {
-          "ville": 38,
-          "tomas": 44,
-          "linda": 18,
-          "sally": 28
-        },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Sandkungen",
-                "liv": 46,
-                "rustning": 16,
-                "anfall": 7,
-                "skada": "1d10+2",
-                "xp": 1100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "faller ihop i en hög av linne och guldsmycken.",
-                "egen": {
-                  "regen": 3
-                },
-                "typ": "sandkungen",
-                "bild": "sandkungen",
-                "max": 46,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": true,
-            "noter": [
-              "Ni smyger fram. Fienderna sover den första rundan."
-            ]
-          },
-          "bild": "run|oknen|1|3|rum|sovare",
-          "fiender": [
-            {
-              "namn": "Sandkungen",
-              "liv": 46,
-              "rustning": 16,
-              "anfall": 7,
-              "skada": "1d10+2",
-              "xp": 1100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "faller ihop i en hög av linne och guldsmycken.",
-              "egen": {
-                "regen": 3
-              },
-              "typ": "sandkungen",
-              "bild": "sandkungen",
-              "max": 46,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "sally"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "linda"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [
-            "Ni smyger fram. Fienderna sover den första rundan."
-          ],
-          "init": {
-            "h:ville": 15.1,
-            "h:tomas": 13.1,
-            "h:linda": 9.1,
-            "h:sally": 19.1,
-            "f:0": 5
-          },
-          "nu": null
-        }
-      }
-    ],
-    "aktivRun": "rmwgsfabuozxa",
-    "historik": [
+        "datum": "2026-11-14"
+      },
       {
         "plats": "herrgarden",
         "kapitel": 1,
@@ -818,20 +626,6 @@
         ],
         "ara": 400,
         "datum": "2026-10-28"
-      },
-      {
-        "plats": "grottorna",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 1)",
-          "Svante (nivå 1)",
-          "Tomas (nivå 1)",
-          "Sally (nivå 1)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-26"
       }
     ],
     "lager": {
