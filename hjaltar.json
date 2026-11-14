@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:48:36.509Z",
+  "uppdaterad": "2026-11-14T23:48:47.779Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700114645,
+    "tid": 1794700125817,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -380,14 +380,10 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "Ljusbärerskan"
         },
         "logg": [
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
-            "k": "magic"
-          },
           {
             "t": "Benjamin får ett magiskt vapen: +1 på träff och skada.",
             "k": "magic"
@@ -543,6 +539,10 @@
           {
             "t": "Ett altare med en staty av en kvinna som håller en lykta.",
             "k": "magic"
+          },
+          {
+            "t": "Guldet smälter och rinner ner i altaret. Ni känner er välsignade. Alla känner sig välsignade.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -551,7 +551,7 @@
           "tomas",
           "ville"
         ],
-        "guld": 1095,
+        "guld": 735,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -565,7 +565,12 @@
           "Stor läkedryck",
           "Läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "benjamin": 1,
+          "svante": 1,
+          "tomas": 1,
+          "ville": 1
+        },
         "curse": {},
         "ara": 3150,
         "start": 1794699336000,
