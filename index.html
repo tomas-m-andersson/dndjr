@@ -299,6 +299,10 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
 .chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
 .chip.out{opacity:.5}
+.chip{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.chip.lyft{border-color:var(--gold,#e8b84b);box-shadow:0 0 0 2px #e8b84b66,0 6px 14px #0008;transform:translateY(-3px) scale(1.03);z-index:2}
+.strip{align-items:stretch}
+.chip{transition:transform .12s ease,box-shadow .12s ease}
 /* förgiftad: grön livmätare och grön kant så länge giftet verkar */
 .chip.gift{border-color:#4fae3c;background:#1d3324;box-shadow:0 0 0 1px #4fae3c55,0 0 12px #5fd34a33}
 .foe.gift{border-color:#4fae3c;background:#1f3322;box-shadow:0 0 12px #5fd34a33}
@@ -1952,10 +1956,44 @@ function valjHjalte(fraga,lista,klar,avbryt,info){
 }
 
 /* --- scenen --- */
+// Håll in ett hjältekort för att lyfta det, tryck sedan på ett annat kort för att byta plats.
+// Ordningen i sällskapet är också ordningen hjältarna står i på TV:n.
+let lyftHjalte=null,nyssLyft=false;
+function sallskapsOrdning(){return lage==="run"&&spel.run?spel.run.party:party}
+function sattOrdning(ny){if(lage==="run"&&spel.run){spel.run.party=ny;sparaSpel()}else{party=ny;persist()}}
+function slappHjalte(){if(!lyftHjalte)return;lyftHjalte=null;
+ document.querySelectorAll(".chip.lyft").forEach(c=>c.classList.remove("lyft"))}
+function bytPlats(id){
+ const ord=[...sallskapsOrdning()],a=ord.indexOf(lyftHjalte),b=ord.indexOf(id);
+ if(a<0||b<0||a===b){slappHjalte();return}
+ ord[a]=id;ord[b]=lyftHjalte;sattOrdning(ord);slappHjalte();
+ const strip=document.querySelector(".strip");
+ if(strip){const nya=partyStrip();strip.replaceChildren(...nya.childNodes)}
+ if(window.ritaOm2)ritaOm2();else document.querySelectorAll("canvas").forEach(c=>{if(c._tv&&window.drawTV)drawTV(c,c._tv[0],c._tv[1]);else if(c._rita)c._rita()});
+}
+function kortFlytt(kort,h){
+ if(!window._lyftLyss){window._lyftLyss=true;   // trycker man någon annanstans läggs kortet ner igen
+  document.addEventListener("click",e=>{if(lyftHjalte&&!(e.target.closest&&e.target.closest(".chip")))slappHjalte()},true)}
+ let tid=null,start=null;
+ const avbryt=()=>{clearTimeout(tid);tid=null};
+ kort.addEventListener("pointerdown",e=>{start={x:e.clientX,y:e.clientY};avbryt();
+  tid=setTimeout(()=>{tid=null;if(lyftHjalte===h.id)return;
+   slappHjalte();lyftHjalte=h.id;nyssLyft=true;kort.classList.add("lyft");
+   if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}
+   flash("Tryck på en annan hjälte för att byta plats med "+h.namn+".")},450)});
+ kort.addEventListener("pointermove",e=>{if(tid&&start&&Math.hypot(e.clientX-start.x,e.clientY-start.y)>10)avbryt()});
+ ["pointerup","pointercancel","pointerleave"].forEach(n=>kort.addEventListener(n,avbryt));
+ kort.addEventListener("contextmenu",e=>e.preventDefault());
+ kort.addEventListener("click",()=>{
+  if(nyssLyft){nyssLyft=false;return}          // klicket som avslutade långtrycket
+  if(!lyftHjalte)return;
+  if(lyftHjalte===h.id)slappHjalte();else bytPlats(h.id)});
+}
 function partyStrip(){
  return el("div",{class:"strip"},partyHeroes().map(h=>{const l=liv(h),m=maxLiv(h);
-  return el("div",{class:"chip"+(l>0?"":" out")+(l>0&&forgiftad(h)?" gift":"")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
-   el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),l>0&&forgiftad(h)?el("em",{class:"giftlapp"},"Förgiftad"):null,el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")))}));
+  const kort=el("div",{class:"chip"+(l>0?"":" out")+(l>0&&forgiftad(h)?" gift":"")+(lyftHjalte===h.id?" lyft":"")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
+   el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),l>0&&forgiftad(h)?el("em",{class:"giftlapp"},"Förgiftad"):null,el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")));
+  kortFlytt(kort,h);return kort}));
 }
 function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
 function storyEl(txt){return el("div",{class:"story"},txt.split(/\n\n+/).map(p=>el("p",{},p)))}
