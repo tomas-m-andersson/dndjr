@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:04:54.062Z",
+  "uppdaterad": "2026-11-14T16:04:59.378Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -199,7 +199,8 @@
       "Trähund",
       "Läkedryck",
       "Läkedryck",
-      "Sagobok"
+      "Sagobok",
+      "Röd ros"
     ],
     "liv": {
       "ville": 35,
@@ -269,13 +270,15 @@
           "varmt_bok",
           "har_sagobok",
           "varit_glashus",
-          "har_nyckel"
+          "har_nyckel",
+          "plockat_ros",
+          "har_ros"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794672292120,
+    "tid": 1794672297355,
     "niva": {
       "ville": {
         "lvl": 5,
