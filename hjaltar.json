@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:51:35.097Z",
+  "uppdaterad": "2026-11-14T23:51:40.669Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700293234,
+    "tid": 1794700298792,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -376,14 +376,10 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "De tusen ljusens gud"
         },
         "logg": [
-          {
-            "t": "Det är över. Stadens väktare är besegrad!",
-            "k": "crit"
-          },
           {
             "t": "⚔ Ni hittar Stormlutan! Bard kan nu välja det under Ändra. Sångerna blir +4 starkare.",
             "k": "crit"
@@ -539,6 +535,10 @@
           {
             "t": "Ett altare med tusen små ljus som tänds av sig själva.",
             "k": "magic"
+          },
+          {
+            "t": "Ni lägger guldet på altaret. Det försvinner i ett sken. Alla känner sig välsignade.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -547,7 +547,7 @@
           "tomas",
           "ville"
         ],
-        "guld": 1133,
+        "guld": 773,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -563,7 +563,12 @@
           "Stor läkedryck",
           "Stor läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "benjamin": 1,
+          "svante": 1,
+          "tomas": 1,
+          "ville": 1
+        },
         "curse": {},
         "ara": 4275,
         "start": 1794699336000,
