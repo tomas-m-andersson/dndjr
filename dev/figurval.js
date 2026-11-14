@@ -40,19 +40,19 @@ window.FIGURVAL={
  // Gosedjuren
  blackis:{sta:0,anfall:61},tigris:{sta:0,anfall:19},
  // Monster och personer (sta, anfall)
- askskelett:{sta:0,anfall:5},bandit:{sta:0,anfall:12,flip:true},bjorn:{sta:0,anfall:5,flip:true},bo:{sta:0},dimvarg:{sta:0,anfall:4},dimvasen:{sta:0,anfall:1},
- eldimp:{sta:0,anfall:4,flip:true},eldprast:{sta:0,anfall:4,flip:true},eldsalamander:{sta:0,anfall:4},ent:{cell:32,sta:0,anfall:4},fladdermus:{sta:0,anfall:2},gargoyl:{sta:0,anfall:1,flip:true},
+ askskelett:{sta:0,anfall:5},bandit:{sta:0,anfall:12,flip:true},bjorn:{sta:0,anfall:5,flip:true},bo:{sta:0,flip:true},dimvarg:{sta:0,anfall:4},dimvasen:{sta:0,anfall:1},
+ eldimp:{sta:0,anfall:4,flip:true},eldprast:{sta:0,anfall:4,flip:true},eldsalamander:{sta:0,anfall:4},ent:{cell:32,sta:0,anfall:4,flip:true},fladdermus:{sta:0,anfall:2},gargoyl:{sta:0,anfall:1,flip:true},
  giftspindel:{sta:0,anfall:5},haxa:{sta:0,anfall:2,flip:true},irrbloss:{sta:0,anfall:9},kobold:{sta:0,anfall:7,flip:true},krak:{sta:0,anfall:1,flip:true},krakor:{sta:0,anfall:1},
  kultist:{sta:0,anfall:4,flip:true},lavahund:{sta:0,anfall:9},levande_rustning:{sta:0,anfall:1},magmaslem:{sta:0,anfall:6},nekromantiker:{sta:0,anfall:5,flip:true},orm:{sta:0,anfall:5,flip:true},
  ratta:{sta:0,anfall:1,flip:true},rovarhovding:{sta:0,anfall:5,flip:true},skelett:{sta:0,anfall:1,flip:true},skuggling:{sta:0,anfall:1},slem:{sta:0,anfall:4},spindel:{sta:0,anfall:5},
- spoke:{sta:0,anfall:10},spokriddare:{sta:0,anfall:1},svampman:{sta:0,anfall:1},troll:{sta:0,anfall:4},vampyrfladdermus:{sta:0,anfall:2},varg:{sta:0,anfall:10},
+ spoke:{sta:0,anfall:10},spokriddare:{sta:0,anfall:1},svampman:{sta:0,anfall:1,flip:true},troll:{sta:0,anfall:4},vampyrfladdermus:{sta:0,anfall:2},varg:{sta:0,anfall:10,flip:true},
  varulv:{sta:0,anfall:2,flip:true},vatte:{sta:0,anfall:1,flip:true},vattesjaman:{sta:0,anfall:3,flip:true},vildsvin:{sta:0,anfall:8},
- handlare:{sta:0,flip:true},
+ handlare:{sta:0},
  greta:{sta:0,flip:true},
- fange_1:{sta:0,flip:true},
+ fange_1:{sta:0},fange_3:{sta:0,flip:true},
  // Bossar: arken i mappen Bossar har 32×32-rutor (utom Eldklo som har 64×64)
  eldklo:{sta:0,anfall:1,flip:true},
- basilisk:{cell:32,sta:0,anfall:2},dimfrun:{cell:32,sta:0,anfall:2,flip:true},golem:{cell:32,sta:0,anfall:2},grottroll:{cell:32,sta:0,anfall:2},jattemask:{cell:32,sta:0,anfall:2},mork_riddare:{cell:32,sta:0,anfall:2},skuggan:{cell:32,sta:0,anfall:2},vampyr:{cell:32,sta:0,anfall:2},
+ basilisk:{cell:32,sta:0,anfall:2},dimfrun:{cell:32,sta:0,anfall:2,flip:true},golem:{cell:32,sta:0,anfall:2},grottroll:{cell:32,sta:0,anfall:2,flip:true},jattemask:{cell:32,sta:0,anfall:2},mork_riddare:{cell:32,sta:0,anfall:2},skuggan:{cell:32,sta:0,anfall:2},vampyr:{cell:32,sta:0,anfall:2,flip:true},
  // Trädväktaren finns både som vanlig figur och som boss. Bossarket (32×32) går före när han är boss.
  // Saker i gemensamma ark: vapen, föremål, saker i rummen och ikoner till knapparna
  svard:{ark:"vapen_krigare",sta:0},tvahandssvard:{ark:"vapen_krigare",sta:1},stridsyxa:{ark:"vapen_krigare",sta:3},flammsvard:{ark:"vapen_krigare",sta:4},askhammare:{ark:"vapen_krigare",sta:6},drakdrapare:{ark:"vapen_krigare",sta:7},
