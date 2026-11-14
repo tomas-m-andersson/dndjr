@@ -672,12 +672,12 @@ window.AVENTYR = [
           { inteOm: "vet_spegeln", text: "Spegeln kan hänga var som helst i det här huset. Ni måste leta." }
         ],
         val: [
-          { text: "Gå mot pianot, in i balsalen", engang: "varit_balsal", till: "balsalen" },
-          { text: "Gå in i köket", engang: "varit_kok", till: "koket" },
-          { text: "Gå in i biblioteket", engang: "varit_bibliotek", till: "biblioteket" },
-          { text: "Gå ut i glashuset", engang: "varit_glashus", till: "vintertradgarden" },
-          { text: "Gå upp i tornet", engang: "varit_torn", till: "klocktornet" },
-          { text: "Gå upp till barnkammaren", engang: "varit_barnkammare", till: "barnkammaren" },
+          { text: "Gå mot pianot, in i balsalen", till: "balsalen" },
+          { text: "Gå in i köket", till: "koket" },
+          { text: "Gå in i biblioteket", till: "biblioteket" },
+          { text: "Gå ut i glashuset", till: "vintertradgarden" },
+          { text: "Gå upp i tornet", till: "klocktornet" },
+          { text: "Gå upp till barnkammaren", till: "barnkammaren" },
           { text: "Gå ner för trappan bakom trappan", krav: { flagga: "vet_spegeln" }, till: "trappan" },
           { text: "Leta efter vägen neråt", krav: { inteFlagga: "vet_spegeln" }, info: "Ni vet inte var spegeln hänger än", utfall: {
               text: "Ni letar i hallen men hittar bara en skrubb full av paraplyer. Någon i det här huset måste ha skrivit ner var spegeln finns.", till: "hallen" } }
