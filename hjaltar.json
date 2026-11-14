@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:47:39.063Z",
+  "uppdaterad": "2026-11-14T23:47:45.057Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700057081,
+    "tid": 1794700063113,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -373,16 +373,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "lerkrukssoldat",
+            "sandvalnad",
+            "lerkrukssoldat"
+          ]
+        },
         "logg": [
-          {
-            "t": "En liten tomte har fastnat i en fälla. – Släpp mig, så berättar jag något!",
-            "k": ""
-          },
-          {
-            "t": "Tomten dricker, hoppar högt av glädje och berättar allt. Alla får 150 XP.",
-            "k": "heal"
-          },
           {
             "t": "Ni går djupare in.",
             "k": ""
@@ -534,6 +534,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni hör tunga andetag. två Lerkrukssoldat och Sandvålnad sover precis där ni måste gå förbi.",
+            "k": "note"
           }
         ],
         "party": [
