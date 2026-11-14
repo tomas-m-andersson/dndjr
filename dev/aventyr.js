@@ -883,7 +883,7 @@ window.AVENTYR = [
       },
 
       dimkallaren: {
-        bild: "dimkallare",
+        bild: [{ om: "byborna_burna", bild: "dimkallare|tomma_sangar" }, "dimkallare"],
         text: [
           "Trappan slutar i en lång källargång, och här nere är dimman så tät att ni ser varandras händer men inte varandras ansikten.\n\nLängs ena väggen ligger människor på britsar. Tolv stycken. De sover lugnt under ett lager frost, och det är ingen i huset som har lagt dem där i år. De är klädda i kläder från en annan tid.\n\nLängst ner ligger tre som har moderna kläder. Det är Mossbybor.",
           { om: "rosdoft", text: "Det luktar rosor här nere också. Mycket starkare." }
@@ -891,7 +891,7 @@ window.AVENTYR = [
         val: [
           { text: "Bär upp Mossbyborna först", engang: "burit_byborna", utfall: {
               text: "Ni bär upp dem en i taget, hela vägen upp för den smala trappan och ut i snön på gården. Det tar lång tid och ni blir trötta i armarna och ryggen.\n\nMen när den sista ligger i säkerhet på gården vet ni att vad som än händer därnere, så kommer de att vakna.",
-              flagga: "byborna_burna", skada: "1d4", till: "dimkallaren" } },
+              bild: "dimkallare|tomma_sangar", flagga: "byborna_burna", skada: "1d4", till: "dimkallaren" } },
           { text: "Väck dem försiktigt", krav: { inteFlagga: "byborna_burna" }, engang: "vackt", prov: {
               egenskap: "vis", svarighet: 13, fraga: "Vem försöker väcka dem?",
               lyckas: { text: "{namn} gnuggar deras händer och pratar med dem hela tiden, om byn, om torget, om vanliga saker.\n\nEn av dem rör på läpparna. – Hon sa att jag skulle få vila, viskar han. Hon sa att det var skönt.\n\nSedan somnar han igen. Men ni vet nu att de går att väcka, bara spegeln är borta.", flagga: "vet_att_de_vaknar", till: "dimkallaren" },

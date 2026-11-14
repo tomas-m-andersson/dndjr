@@ -1991,6 +1991,12 @@ function scenText(sc,K){
  return sc.text.filter(p=>typeof p==="string"||((!p.om||[].concat(p.om).every(har))&&(!p.inteOm||![].concat(p.inteOm).some(har))))
   .map(p=>typeof p==="string"?p:p.text).join("\n\n");
 }
+// Bakgrunden kan vara en lista med alternativ: första som stämmer används.
+// bild: [{om:"byborna_burna", bild:"dimkallare|tomma_sangar"}, "dimkallare"]
+function bildNu(sc){const K=kap()||{},f=K.flaggor||[];
+ if(!Array.isArray(sc.bild))return sc.bild;
+ const v=sc.bild.find(b=>typeof b==="string"||((!b.om||[].concat(b.om).every(x=>f.includes(x)))&&(!b.inteOm||![].concat(b.inteOm).some(x=>f.includes(x)))));
+ return v==null?null:(typeof v==="string"?v:v.bild)}
 // "spokflicka?barnet_hjalpte" betyder att figuren bara syns om flaggan är satt
 function figurNu(sc){const K=kap()||{},f=K.flaggor||[];
  const ut=[].concat(sc.figur||[]).filter(n=>{const d=String(n).split("?");return d.length<2||f.includes(d[1])}).map(n=>String(n).split("?")[0]);
@@ -2001,7 +2007,7 @@ function visaScen(){
  const sc=scenDef(K.scen);if(!sc){K.scen=kapDef().start;return visaScen()}
  if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
  app.replaceChildren();
- app.append(scenHuvud(),tvBox(sc.bild,{figur:figurNu(sc)}),partyStrip());
+ app.append(scenHuvud(),tvBox(bildNu(sc),{figur:figurNu(sc)}),partyStrip());
  const txt=scenText(sc,K),story=storyEl(txt);app.append(story);
  const akt=el("div",{class:"actions"});
  if(sc.slut){
@@ -2009,9 +2015,9 @@ function visaScen(){
   akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot wloot"},K.nyttVapenId&&vapenById(K.nyttVapenId)?ikonEl(vapenById(K.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen))):null,
    el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
  }else if(sc.strid){
-  akt.append(K.stridSpar?el("button",{class:"btn big",onclick:()=>fortsattStrid(K.stridSpar,sc.bild)},"Fortsätt striden"):el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,sc.bild)},"Till strid!"));
+  akt.append(K.stridSpar?el("button",{class:"btn big",onclick:()=>fortsattStrid(K.stridSpar,bildNu(sc))},"Fortsätt striden"):el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,bildNu(sc))},"Till strid!"));
  }else if(sc.prov){
-  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,sc.bild,figurNu(sc))},sc.prov.grupp?"Alla slår tärning":"Slå tärningen"));
+  akt.append(el("button",{class:"btn big",onclick:()=>provUI(sc.prov,bildNu(sc),figurNu(sc))},sc.prov.grupp?"Alla slår tärning":"Slå tärningen"));
  }else(sc.val||[]).forEach(v=>{
   if(!valSynligt(v,K))return;
   const vem=kravHjalte(v.krav),namn=vem?vem.namn:"";
@@ -2019,8 +2025,8 @@ function visaScen(){
   const saknarSak=v.krav&&v.krav.sak&&!spel.saker.includes(v.krav.sak);
   const b=el("button",{class:"choicebtn"+(vem?" special":""),disabled:saknar||saknarSak,onclick:()=>{
    if(v.engang){K.flaggor.push(v.engang);sparaSpel()}
-   if(v.prov)provUI(v.prov,sc.bild,figurNu(sc),vem);
-   else if(v.utfall)visaUtfall(v.utfall,namn,sc.bild,figurNu(sc));
+   if(v.prov)provUI(v.prov,bildNu(sc),figurNu(sc),vem);
+   else if(v.utfall)visaUtfall(v.utfall,namn,bildNu(sc),figurNu(sc));
    else gaTill(v.till)}},el("span",{},v.text.replace(/\{namn\}/g,namn)),
    v.prov?el("small",{},(v.prov.grupp?"Alla slår för ":vem?namn+" slår för ":"Slå för ")+STATNAMN[v.prov.egenskap]):
    saknar?el("small",{},"Ni har bara "+spel.guld+" guld"):saknarSak?el("small",{},"Ni har ingen "+v.krav.sak.toLowerCase()):
@@ -2058,7 +2064,7 @@ function visaUtfall(u,namn,bild,figur,extra,vem){
  // texten väljs före anvandUtfall, så att om/inteOm gäller läget innan belöningen delats ut
  tyst();const fore=Array.isArray(u.text)?scenText(u,kap()||{flaggor:[]}):(u.text||"");
  const rader=anvandUtfall(u,vem),txt=fore.replace(/\{namn\}/g,namn||"Ni");
- app.replaceChildren(scenHuvud(),tvBox(bild,{figur:u.figur!==undefined?u.figur:figur}),partyStrip());
+ app.replaceChildren(scenHuvud(),tvBox(u.bild!==undefined?u.bild:bild,{figur:u.figur!==undefined?u.figur:figur}),partyStrip());
  if(extra)app.append(extra);
  const story=storyEl(txt);app.append(story);
  if(rader.length)app.append(el("div",{class:"gains"},rader.map(r=>el("span",{},r))));

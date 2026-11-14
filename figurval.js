@@ -129,7 +129,7 @@ window.FOTLYFT={
  berattelse_torg_gryning:12, // snön framför byborna
  berattelse_gruva_inne:14, // golvet slutar en bit ovanför kanten
  berattelse_bibliotek:10,  // golvet börjar en bit upp
- berattelse_dimkallare:18,
+ berattelse_dimkallare:18, berattelse_dimkallare_tomma_sangar:26, // de tomma sängarna står längre fram
 
  slottet_2_rum:14,   // mörk kant längst ner
  slottet_2_d1:22,    // trappsteg längst ner
