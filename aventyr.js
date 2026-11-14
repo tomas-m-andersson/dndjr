@@ -816,11 +816,19 @@ window.AVENTYR = [
         val: [
           { text: "Sätt er ner och lek med henne", engang: "lekt_med_flickan", prov: {
               egenskap: "cha", svarighet: 10, fraga: "Vem sätter sig på golvet?",
-              lyckas: { text: "{namn} sätter sig på golvet och bygger vidare på tornet. De bygger det så högt att det rasar, och flickan skrattar så att fönstret imar igen.\n\nSedan blir hon allvarlig.\n\n– Hon därnere är mamma, säger hon. Hon sover inte, hon bara väntar. Hon tål inte när man säger hennes namn, och hon tål inte när man är glad. Om ni är rädda blir hon starkare.\n\nFlickan ger {namn} en trasig liten hund av trä. – Ta den. Jag kommer om ni håller i den.", sak: "Trähund", flagga: "barnet_hjalpte", till: "barnkammaren" },
+              lyckas: { text: [
+                "{namn} sätter sig på golvet och bygger vidare på tornet. De bygger det så högt att det rasar, och flickan skrattar så att fönstret imar igen.\n\nSedan blir hon allvarlig.\n\n– Hon därnere är mamma, säger hon. Hon sover inte, hon bara väntar. Hon tål inte när man säger hennes namn, och hon tål inte när man är glad. Om ni är rädda blir hon starkare.",
+                { inteOm: "barnet_hjalpte", text: "Flickan ger {namn} en trasig liten hund av trä. – Ta den. Jag kommer om ni håller i den." },
+                { om: "barnet_hjalpte", text: "– Och håll hårt i Pricken därnere, säger hon och nickar mot trähunden. Då hittar jag er." }
+              ], sak: "Trähund", flagga: "barnet_hjalpte", till: "barnkammaren" },
               misslyckas: { text: "{namn} sätter sig ner, men flickan vänder ryggen till och fortsätter bygga.\n\n– Ni är bara här för spegeln, säger hon. Alla är bara här för spegeln.", till: "barnkammaren" }
             } },
           { text: "Läs sagoboken för henne", krav: { sak: "Sagobok" }, engang: "last_saga", utfall: {
-              text: "Någon sätter sig på sängkanten och börjar läsa högt ur den frusna sagoboken.\n\nFlickan kryper närmare, och mitt i sagan säger hon tyst: – Den där har jag ritat. Hunden hette Pricken.\n\nNär sagan är slut är hon mycket gladare.\n\n– Mamma är därnere, säger hon. Hon tål inte sitt eget namn, och hon tål inte om man inte är rädd. Ta den här, så kommer jag om ni behöver mig.\n\nHon räcker fram en liten trähund.", sak: "Trähund", flagga: ["barnet_hjalpte", "vet_namnet"], till: "barnkammaren" } },
+              text: [
+                "Någon sätter sig på sängkanten och börjar läsa högt ur den frusna sagoboken.\n\nFlickan kryper närmare, och mitt i sagan säger hon tyst: – Den där har jag ritat. Hunden hette Pricken.\n\nNär sagan är slut är hon mycket gladare.\n\n– Mamma är därnere, säger hon. Hon tål inte sitt eget namn, och hon tål inte om man inte är rädd.",
+                { inteOm: "barnet_hjalpte", text: "– Ta den här, så kommer jag om ni behöver mig.\n\nHon räcker fram en liten trähund." },
+                { om: "barnet_hjalpte", text: "– Och du har ju redan Pricken, säger hon. Håll hårt i honom, så kommer jag." }
+              ], sak: "Trähund", flagga: ["barnet_hjalpte", "vet_namnet"], till: "barnkammaren" } },
           { text: "Fråga vad som hände den vintern", engang: "fragat_barnet", prov: {
               egenskap: "vis", svarighet: 12, fraga: "Vem frågar försiktigt?",
               lyckas: { text: "Flickan tittar ut genom fönstret länge innan hon svarar.\n\n– Det blev kallt, säger hon. Mamma hängde upp spegeln för att hon ville se sig själv i den hela tiden. Sedan blev det kallare. Och sedan somnade alla. Jag också.\n\nHon rycker på axlarna, som om det var länge sedan nu.", flagga: "vet_historien", till: "barnkammaren" },

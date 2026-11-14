@@ -1421,6 +1421,8 @@ function renderEdit(){
    ===================================================================== */
 const ADV=()=>window.AVENTYR||[], FIE=()=>window.FIENDER||{};
 const SAKER={"Läkedryck":{info:"Ger tillbaka 2d4+2 liv."}};
+// Saker man bara kan ha ett av: får man en till händer ingenting (läkedrycker får man däremot flera av)
+const UNIKA=new Set(["Varm kappa","Rep","Fickljus","Sagobok","Röd ros","Trähund"]);
 let kapId=null, strid=null, rullar=false;
 const partyHeroes=()=>(lage==="run"&&spel.run?spel.run.party:party).map(byId).filter(Boolean);
 const pack=()=>lage==="run"&&spel.run?spel.run:spel;
@@ -2042,7 +2044,8 @@ function gaTill(id){
 function anvandUtfall(u,vem){
  const K=kap(),rader=[];
  if(u.guld){const g=u.guld==="halva"?-Math.floor(spel.guld/2):u.guld;spel.guld=Math.max(0,spel.guld+g);if(g)rader.push((g>0?"+":"")+g+" guld")}
- if(u.sak){[].concat(u.sak).forEach(x=>{spel.saker.push(x);rader.push("Ni hittar: "+x)})}
+ // UNIKA: sådant man bara kan ha ett av, så att samma sak inte hamnar två gånger i packningen
+ if(u.sak){[].concat(u.sak).forEach(x=>{if(UNIKA.has(x)&&spel.saker.includes(x))return;spel.saker.push(x);rader.push("Ni hittar: "+x)})}
  if(u.tappa){if(u.tappa==="alla"){if(spel.saker.length)rader.push("Ni förlorar all packning");spel.saker=[]}
   else{const i=spel.saker.indexOf(u.tappa);if(i>=0){spel.saker.splice(i,1);rader.push("Ni förlorar: "+u.tappa)}}}
  if(u.skada){const n=typeof u.skada==="string"?slaa(u.skada).tot:u.skada;vaken().forEach(h=>setLiv(h,Math.max(1,liv(h)-n)));rader.push("Alla tappar "+n+" liv")}
@@ -2052,7 +2055,9 @@ function anvandUtfall(u,vem){
  sparaSpel();return rader;
 }
 function visaUtfall(u,namn,bild,figur,extra,vem){
- tyst();const rader=anvandUtfall(u,vem),txt=(u.text||"").replace(/\{namn\}/g,namn||"Ni");
+ // texten väljs före anvandUtfall, så att om/inteOm gäller läget innan belöningen delats ut
+ tyst();const fore=Array.isArray(u.text)?scenText(u,kap()||{flaggor:[]}):(u.text||"");
+ const rader=anvandUtfall(u,vem),txt=fore.replace(/\{namn\}/g,namn||"Ni");
  app.replaceChildren(scenHuvud(),tvBox(bild,{figur:u.figur!==undefined?u.figur:figur}),partyStrip());
  if(extra)app.append(extra);
  const story=storyEl(txt);app.append(story);
