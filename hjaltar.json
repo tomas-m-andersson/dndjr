@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:50:21.594Z",
+  "uppdaterad": "2026-11-14T23:50:44.611Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700219693,
+    "tid": 1794700242722,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -581,7 +581,7 @@
             "fiender": [
               {
                 "namn": "Sandkungen",
-                "liv": 36,
+                "liv": 17,
                 "rustning": 17,
                 "anfall": 8,
                 "skada": "1d10+2",
@@ -599,7 +599,8 @@
                 "max": 99,
                 "ute": false,
                 "boss": true,
-                "svag": null
+                "svag": null,
+                "hjalpKallad": true
               }
             ],
             "run": true,
@@ -612,7 +613,7 @@
           "fiender": [
             {
               "namn": "Sandkungen",
-              "liv": 36,
+              "liv": 17,
               "rustning": 17,
               "anfall": 8,
               "skada": "1d10+2",
@@ -630,7 +631,24 @@
               "max": 99,
               "ute": false,
               "boss": true,
-              "svag": null
+              "svag": null,
+              "hjalpKallad": true
+            },
+            {
+              "namn": "Skarabésvärm",
+              "liv": 9,
+              "rustning": 12,
+              "anfall": 4,
+              "skada": "1d6",
+              "xp": 25,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "kryper ner i sanden och försvinner.",
+              "typ": "skarabeer",
+              "bild": "skarabeer",
+              "max": 9,
+              "ute": false
             }
           ],
           "anvant": {
@@ -673,19 +691,7 @@
           "runda": 4,
           "ko": [
             {
-              "f": 0
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "ville"
+              "f": 1
             }
           ],
           "logg": [],
@@ -695,7 +701,8 @@
             "h:svante": 21.1,
             "h:tomas": 17.1,
             "h:ville": 12.1,
-            "f:0": 24
+            "f:0": 24,
+            "f:1": 10
           },
           "nu": null,
           "giftH": {},
