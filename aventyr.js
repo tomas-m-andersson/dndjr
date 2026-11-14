@@ -721,7 +721,7 @@ window.AVENTYR = [
         bild: "kok",
         text: "Köket är enormt, med en spis så lång som en vägg och kopparkastruller i rader. Allt är täckt av frost.\n\nPå ett bord mitt i rummet står en middag uppdukad för tolv personer. Maten är inte rutten. Den är frusen, mitt i ett ögonblick, som om alla just hade rest sig.\n\nUppe i skorstenen hörs ett prassel.",
         val: [
-          { text: "Leta i skafferiet", prov: {
+          { text: "Leta i skafferiet", engang: "letat_skafferiet", prov: {
               egenskap: "vis", svarighet: 11, fraga: "Vem letar i skafferiet?",
               lyckas: { text: "{namn} hittar en lucka längst in: torkat kött, hårt bröd och två flaskor med röd dryck som fortfarande är ljummen.\n\nI samma stund rasar det ner tre vampyrfladdermöss ur skorstenen.", sak: ["Läkedryck", "Läkedryck"], till: "fladdermus_strid" },
               misslyckas: { text: "{namn} välter en hylla med kopparkastruller. Oljudet hörs genom hela huset, och ur skorstenen kommer det ner något som inte tyckte om det.", till: "fladdermus_strid" }
