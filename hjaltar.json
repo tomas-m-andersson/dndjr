@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:48:28.315Z",
+  "uppdaterad": "2026-11-14T23:48:36.509Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700106412,
+    "tid": 1794700114645,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
@@ -378,16 +378,12 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "Ljusbärerskan"
+        },
         "logg": [
-          {
-            "t": "Nu är vägen fri till skatten.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 364 guldmynt.",
-            "k": "heal"
-          },
           {
             "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
             "k": "magic"
@@ -539,6 +535,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
           }
         ],
         "party": [
