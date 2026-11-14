@@ -42,6 +42,12 @@ window.TEXTER = {
       "Svavelrök sticker i näsan när {alla} går in i Drakvulkanen. Marken under fötterna är varm.",
       "Lavan lyser rött långt där nere. {alla} börjar gå nedför den smala stigen in i vulkanen.",
       "Ett mullrande hörs djupt inne i berget när {alla} kliver in i Drakvulkanen. Något stort sover därinne."
+    ],
+    oknen: [
+      "Solen står rakt ovanför när {alla} klättrar nerför dynen och kliver in i den begravda staden.",
+      "Sanden knastrar under fötterna. {alla} går in mellan två pelare som sticker upp ur dynen.",
+      "{alla} kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
+      "Vinden sveper sanden över en gata som ingen har gått på de senaste tusen åren. {alla} går in."
     ]
   },
 
@@ -106,7 +112,8 @@ window.TEXTER = {
     slottet: ["En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och {boss}."],
     grottorna: ["Grottan öppnar sig mot en enorm sal. Något stort andas därinne."],
     skogen: ["Träden står i en ring runt en glänta. Mitt i den väntar något."],
-    vulkanen: ["Hettan är nästan för mycket. Längst ner i kratern rör sig något stort."]
+    vulkanen: ["Hettan är nästan för mycket. Längst ner i kratern rör sig något stort."],
+    oknen: ["En port av sandsten med två stora stenlejon framför. Bakom den väntar {boss}."]
   },
   vidare: {
     alla: [
@@ -121,13 +128,15 @@ window.TEXTER = {
     slottet: ["Ni smyger vidare genom de dammiga salarna.", "En trappa knarrar under era fötter när ni går vidare."],
     grottorna: ["Ni kryper vidare genom en trång spricka.", "Vattnet plaskar runt era fötter när ni går vidare."],
     skogen: ["Ni följer stigen djupare in bland träden.", "Grenarna river i kläderna när ni går vidare."],
-    vulkanen: ["Ni hoppar över en spricka med lava och går vidare.", "Askan virvlar runt era fötter när ni går vidare."]
+    vulkanen: ["Ni hoppar över en spricka med lava och går vidare.", "Askan virvlar runt era fötter när ni går vidare."],
+    oknen: ["Ni vadar vidare genom sanden som ligger i drivor mot väggarna.", "Sanden rinner ur taket i tunna strilar när ni går vidare."]
   },
   djupare: {
     slottet: ["Alla har vilat och känner sig starka igen. Ni hittar en vindlande trappa som leder ner i fängelsehålorna."],
     grottorna: ["Alla har vilat och känner sig starka igen. Ni hittar en spricka som leder djupare in i berget."],
     skogen: ["Alla har vilat och känner sig starka igen. Ni hittar en igenvuxen stig som leder djupare in i skogen."],
-    vulkanen: ["Alla har vilat och känner sig starka igen. Ni hittar en bro av kedjor över lavan som leder djupare ner."]
+    vulkanen: ["Alla har vilat och känner sig starka igen. Ni hittar en bro av kedjor över lavan som leder djupare ner."],
+    oknen: ["Alla har vilat och känner sig starka igen. Ni hittar en trappa av sandsten som försvinner ner under sanden."]
   },
 
   /* ---------- ledtrådar vid dörrarna ---------- */
@@ -191,6 +200,14 @@ window.TEXTER = {
       { h: "Det glimmar av guld mellan de svarta stenarna.", o: { skatt: 4, vaktad: 4, falla: 2 } },
       { h: "En svag sval vind kommer från den vägen.", o: { brunn: 4, lager: 3, resenar: 3 } },
       { h: "Något stort slår med vingarna i mörkret.", o: { strid: 4, sovare: 4, vaktad: 2 } }
+    ],
+    oknen: [
+      { h: "Sanden rinner ut genom dörröppningen, som ur ett timglas.", o: { falla: 4, strid: 3, skatt: 3 } },
+      { h: "Ett torrt skrapande hörs, som klor mot sten.", o: { strid: 5, sovare: 3, vaktad: 2 } },
+      { h: "Väggen bredvid dörren är full av målade bilder i guld.", o: { skatt: 4, altare: 3, kista: 3 } },
+      { h: "Det luktar svagt av rökelse och gamla kryddor.", o: { handlare: 4, resenar: 3, lager: 3 } },
+      { h: "Två stenstatyer står på var sin sida om öppningen.", o: { vaktad: 5, falla: 3, strid: 2 } },
+      { h: "Det droppar vatten. Här inne finns det en källa.", o: { brunn: 5, lager: 3, altare: 2 } }
     ]
   },
 
@@ -209,7 +226,8 @@ window.TEXTER = {
     slottet: ["Dörren slår upp, och där står {m}!", "Ljusen fladdrar och slocknar. När de tänds igen står {m} mitt i salen."],
     grottorna: ["Stenar rasar från taket. Ur dammet kommer {m}!", "Ni kliver in i en grotta, och {m} tittar upp från sin måltid."],
     skogen: ["Buskarna prasslar, och ut springer {m}!", "Ni kommer ut på en glänta. {m} väntar i månskenet."],
-    vulkanen: ["Lavan fräser, och ur hettan kliver {m}!", "Röken skingras och visar {m}."]
+    vulkanen: ["Lavan fräser, och ur hettan kliver {m}!", "Röken skingras och visar {m}."],
+    oknen: ["Sanden på golvet höjer sig i en puckel. Ur den kommer {m}!", "En sten vält åt sidan, och ut kliver {m}."]
   },
   vaktad: [
     "Bakom en hög med ben står en kista. Men något vaktar den: {m}.",
@@ -327,6 +345,11 @@ window.TEXTER = {
       "Lavan exploderar uppåt. Ur elden reser sig {m}!",
       "Ett vrål får hela vulkanen att skaka. {m} har vaknat!",
       "Vingar slår i hettan. {m} landar framför er!"
+    ],
+    oknen: [
+      "Sanden på golvet börjar rinna åt ett håll. Ur den reser sig {m}!",
+      "Facklorna längs väggarna tänds en efter en, helt av sig själva. Längst in väntar {m}.",
+      "Ett torrt skrapande ljud fyller salen. Det är {m}!"
     ]
   },
   boss_besegrad: {

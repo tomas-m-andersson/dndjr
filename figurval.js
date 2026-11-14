@@ -47,6 +47,10 @@ window.FIGURVAL={
  ratta:{sta:0,anfall:1,flip:true},rovarhovding:{sta:0,anfall:5,flip:true},skelett:{sta:0,anfall:1,flip:true},skuggling:{sta:0,anfall:1},slem:{sta:0,anfall:4},spindel:{sta:0,anfall:5},
  spoke:{sta:0,anfall:10},spokriddare:{sta:0,anfall:1},svampman:{sta:0,anfall:1,flip:true},troll:{sta:0,anfall:4},vampyrfladdermus:{sta:0,anfall:2},varg:{sta:0,anfall:10,flip:true},
  varulv:{sta:0,anfall:2,flip:true},vatte:{sta:0,anfall:1,flip:true},vattesjaman:{sta:0,anfall:3,flip:true},vildsvin:{sta:0,anfall:8},
+ // öknens monster
+ skarabeer:{sta:0,anfall:1},gam:{sta:0,anfall:1},skorpion:{sta:0,anfall:1},
+ lerkrukssoldat:{sta:0,anfall:1},sandvalnad:{sta:0,anfall:1},sandorm:{sta:0,anfall:1},
+ sandkungen:{cell:32,sta:0,anfall:2},
  handlare:{sta:0},
  bo_staende:{sta:0},tradgardsmastare:{sta:0},spokflicka:{sta:0},
  greta:{sta:0,flip:true},

@@ -2386,7 +2386,9 @@ const PLATSER={
  vulkanen:{namn:"Drakvulkanen",bild:"vulkan",besk:"Lava, svavel och det farligaste av allt. Bäst för hjältar på högre nivå.",in:"tar ett djupt andetag och kliver in genom den heta porten",djupare:"en bro av kedjor över lavan som leder djupare ner",boss:"Vulkanens väktare",
   delning:["Marken spricker upp i flera brinnande stigar.","Röken driver över vägskälet. Alla vägar luktar svavel.","Kedjor skramlar längre fram. Vägen delar sig i hettan."]},
  herrgarden:{namn:"Hemsökta herrgården",kort:"Herrgården",bild:"herrgard",besk:"Spöken, skuggor och dimma i en gammal herrgård. Någonstans sitter fångar i kedjor som behöver räddas.",in:"knuffar upp de rostiga grindarna och går in i den hemsökta herrgården",djupare:"en knarrande trappa ner till den mörka vinkällaren",boss:"Herrgårdens fru",
-  delning:["Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.","Dimman ringlar längs golvet där gångarna möts.","En dörr slår igen långt bort. Vägen delar sig."]}};
+  delning:["Korridoren delar sig. Någonstans spelar ett piano helt av sig självt.","Dimman ringlar längs golvet där gångarna möts.","En dörr slår igen långt bort. Vägen delar sig."]},
+ oknen:{namn:"Den begravda staden",kort:"Öknen",bild:"oken",besk:"Sol, sand och en hel stad som ligger begravd under dynerna. Något vaktar den fortfarande.",in:"klättrar nerför dynen och kliver in i den begravda staden",djupare:"en trappa av sandsten som försvinner ner under sanden",boss:"Stadens väktare",
+  delning:["Två gator löper vidare under sanden. Båda är halvt igenfyllda.","Sanden rinner i strilar ner i två olika öppningar.","Vinden viner genom mer än en dörröppning i sandstensväggen."]}};
 const DELNING=["Vägen delar sig. Varje väg döljer något olika.","Ni stannar där vägen delar sig. Vilken känns rätt?","Ledtrådarna säger lite, men inte allt.","Ni kan lyssna först. Men gör det tyst."];
 
 /* --- monster: xp avgör hur farliga de är --- */
@@ -2395,6 +2397,13 @@ const DELNING=["Vägen delar sig. Varje väg döljer något olika.","Ni stannar 
    bedova (chans att bedöva vid träff), drana (helar sig på skadan den gör),
    helar (helar en skadad vän i stället för att anfalla), sprangs (exploderar när den besegras). */
 const MONSTER={
+ skarabeer:{namn:"Skarabésvärm",liv:8,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["oknen"],flyr:"kryper ner i sanden och försvinner."},
+ gam:{namn:"Ökengam",liv:9,rustning:13,anfall:4,skada:"1d6",xp:50,platser:["oknen"],flyr:"lyfter tungt och seglar bort över dynerna."},
+ skorpion:{namn:"Jätteskorpion",liv:14,rustning:14,anfall:5,skada:"1d6+1",xp:100,platser:["oknen"],flyr:"backar in under en sten med stjärten i luften.",egen:{gift:"1d4"}},
+ lerkrukssoldat:{namn:"Lerkrukssoldat",liv:18,rustning:15,anfall:5,skada:"1d8",xp:200,platser:["oknen"],flyr:"faller isär i skärvor och torr lera."},
+ sandvalnad:{namn:"Sandvålnad",liv:16,rustning:13,anfall:5,skada:"1d6+2",xp:200,platser:["oknen"],flyr:"blåser bort som en virvel av sand.",egen:{drana:true}},
+ sandorm:{namn:"Sandorm",liv:26,rustning:14,anfall:6,skada:"1d10",xp:450,platser:["oknen"],flyr:"dyker ner i sanden och är borta.",egen:{tva:true}},
+ sandkungen:{namn:"Sandkungen",liv:46,rustning:16,anfall:7,skada:"1d10+2",xp:1100,platser:["oknen"],flyr:"faller ihop i en hög av linne och guldsmycken.",egen:{regen:3}},
  fladdermus:{namn:"Jättefladdermus",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","slottet","skogen","herrgarden"],flyr:"fladdrar iväg ut i mörkret."},
  ratta:{namn:"Jätteråtta",liv:7,rustning:12,anfall:4,skada:"1d4+2",xp:25,platser:["grottorna","slottet"],flyr:"piper och försvinner ner i ett hål.",egen:{gift:"1d2"}},
  kobold:{namn:"Kobold",liv:6,rustning:12,anfall:4,skada:"1d6",xp:25,platser:["grottorna","vulkanen"],flyr:"gnyr och kryper in i en spricka."},
@@ -2432,13 +2441,13 @@ const MONSTER={
  eldprast:{namn:"Eldpräst",liv:38,rustning:15,anfall:6,skada:"2d6+2",xp:450,platser:["vulkanen"],flyr:"faller på knä och ber om nåd.",egen:{helar:"2d6+2"}},
  spokriddare:{namn:"Spökriddare",liv:40,rustning:16,anfall:6,skada:"1d10+3",xp:700,platser:["slottet","herrgarden"],flyr:"faller sönder i en hög med rostig rustning."},
  grottroll:{namn:"Grottroll",liv:58,rustning:13,anfall:7,skada:"2d8+3",xp:700,platser:["grottorna"],flyr:"rasar ihop och blir till sten.",egen:{regen:5}},
- basilisk:{namn:"Basilisk",liv:52,rustning:15,anfall:7,skada:"2d6+3",xp:700,platser:["grottorna"],flyr:"blundar och kryper ner i en spricka.",egen:{bedova:.3}},
+ basilisk:{namn:"Basilisk",liv:52,rustning:15,anfall:7,skada:"2d6+3",xp:700,platser:["grottorna","oknen"],flyr:"blundar och kryper ner i en spricka.",egen:{bedova:.3}},
  mork_riddare:{namn:"Mörk riddare",liv:55,rustning:17,anfall:7,skada:"2d6+3",xp:700,platser:["slottet"],flyr:"faller på knä. Hjälmen rullar iväg. Den är tom.",egen:{tva:true}},
  skuggan:{namn:"Skuggan",liv:50,rustning:13,anfall:6,skada:"2d6+2",xp:1100,platser:["slottet","vulkanen","herrgarden"],flyr:"skriker och löses upp i tusen svarta trådar.",egen:{drana:true}},
  vampyr:{namn:"Vampyrgreven",liv:70,rustning:15,anfall:7,skada:"2d8+3",xp:1100,platser:["slottet"],flyr:"förvandlas till en fladdermus och flyger ut genom fönstret.",egen:{drana:true,regen:3}},
  ent:{namn:"Trädväktaren",liv:85,rustning:15,anfall:7,skada:"2d8+4",xp:1100,platser:["skogen"],flyr:"sjunker ner i marken och slår rot.",egen:{regen:6}},
  jattemask:{namn:"Jättemasken",liv:80,rustning:13,anfall:7,skada:"2d8+4",xp:1100,platser:["grottorna"],flyr:"gräver ner sig så snabbt att hela grottan skakar.",egen:{bedova:.25}},
- golem:{namn:"Obsidiangolemen",liv:75,rustning:18,anfall:7,skada:"2d8+3",xp:1100,platser:["vulkanen"],flyr:"spricker i tusen svarta skärvor."},
+ golem:{namn:"Obsidiangolemen",liv:75,rustning:18,anfall:7,skada:"2d8+3",xp:1100,platser:["vulkanen","oknen"],flyr:"spricker i tusen svarta skärvor."},
  irrbloss:{namn:"Irrbloss",liv:5,rustning:13,anfall:4,skada:"1d4+1",xp:25,platser:["herrgarden"],flyr:"slocknar med ett litet pling."},
  dimvasen:{namn:"Dimväsen",liv:10,rustning:12,anfall:4,skada:"1d6+1",xp:50,platser:["herrgarden"],flyr:"löses upp i tunna dimslöjor.",egen:{bedova:.15}},
  dimfrun:{namn:"Grevinnan Dimma",liv:66,rustning:14,anfall:7,skada:"2d8+2",xp:1100,platser:["herrgarden"],flyr:"suckar djupt och försvinner genom väggen. Herrgården blir alldeles tyst.",egen:{drana:true,bedova:.2}},
@@ -2540,7 +2549,8 @@ const BOSSAR={slottet:["vampyr","skuggan","mork_riddare","spokriddare","nekroman
  grottorna:["jattemask","grottroll","basilisk","troll","bjorn","slem","krak","spindel"],
  skogen:["ent","varulv","haxa","troll","rovarhovding","bjorn","krak","spindel"],
  vulkanen:["eldklo","golem","skuggan","eldprast","lavahund","gargoyl","magmaslem"],
- herrgarden:["dimfrun","skuggan","spokriddare","nekromantiker","levande_rustning"]};
+ herrgarden:["dimfrun","skuggan","spokriddare","nekromantiker","levande_rustning"],
+ oknen:["sandkungen","sandorm","skorpion","lerkrukssoldat","sandvalnad","basilisk","golem"]};
 // XP-budget per hjälte och nivå: lätt, medel, svår, mycket svår (som i D&D)
 const XPB={1:[25,50,75,100],2:[50,100,150,200],3:[75,150,225,400],4:[125,250,375,500],5:[250,500,750,1100],6:[300,600,900,1400],7:[350,750,1100,1700],8:[450,900,1400,2100],9:[550,1100,1600,2400],10:[600,1200,1900,2800]};
 const GRUPP=k=>k<=1?1:k===2?1.5:2;
