@@ -2538,11 +2538,14 @@ const LEDTRADAR=[
  {h:"Ett lågt morrande. Sedan tystnad.",o:{strid:5,sovare:3,vaktad:2}},
  {h:"Ni känner värme mot ansiktet.",o:{lager:4,altare:2,falla:2,strid:2}}];
 const RUMNAMN={fange:"Fångar i kedjor",strid:"Monster",vaktad:"Vaktad skatt",skatt:"Skatt",falla:"Fälla",sovare:"Sovande monster",kista:"Låst kista",altare:"Altare",resenar:"Någon behöver hjälp",lager:"Lägerplats",brunn:"Brunn",handlare:"Handlare",boss:"Bossen"};
+const UTOMHUS=new Set(["skogen"]); // platser som är utomhus (där kan det finnas en brunn)
 function gorDorrar(){
  const R=spel.run;if(R.djup>=DJUP)return null;
  const r=Math.random(),n=r<.22?1:r<.75?2:3,ut=[],anv=new Set();
  const LT=(window.TEXTER&&window.TEXTER.ledtradar)?[...window.TEXTER.ledtradar.alla,...(window.TEXTER.ledtradar[R.plats]||[])]:LEDTRADAR;
- while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:wpick(L.o),kand:!!R.nastaKand})}
+ // brunnen finns bara utomhus: inomhus väljs ett annat rum bland ledtrådens alternativ
+ const rumFor=o=>{if(UTOMHUS.has(R.plats)||!o.brunn)return wpick(o);const u={...o};delete u.brunn;return Object.keys(u).length?wpick(u):"strid"};
+ while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:rumFor(L.o),kand:!!R.nastaKand})}
  // I herrgården finns alltid minst en fånge att rädda i varje kapitel
  if(R.plats==="herrgarden"&&R.fangeKap!==R.kapitel&&!ut.some(d=>d.typ==="fange")&&Math.random()<(R.djup>=3?1:.35)){
   const FL=LT.filter(L=>L.o.fange>=6);if(FL.length){const L=valj(FL);ut[Math.floor(Math.random()*ut.length)]={ledtrad:L.h,typ:"fange",kand:!!R.nastaKand}}}
