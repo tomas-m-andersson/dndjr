@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:51:29.978Z",
+  "uppdaterad": "2026-11-14T15:51:32.594Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -225,7 +225,7 @@
         "nyttVapenId": "solklubba"
       },
       "k2": {
-        "scen": "dimvarg_strid",
+        "scen": "grinden",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1794671488080,
+    "tid": 1794671490646,
     "niva": {
       "ville": {
         "lvl": 5,
