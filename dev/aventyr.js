@@ -478,7 +478,7 @@ window.AVENTYR = [
 
       torget: {
         bild: "torg_frost", figur: ["greta", "bo"],
-        text: "På torget står lyktstolpen. Lågan i lyktan är inte större än ett ljus längre, fast den brukar lysa upp hela torget.\n\nPå bänkarna ligger tre bybor under filtar. De sover djupt, och det ligger ett tunt lager frost på filtarna, fast ingen annan fryser.\n\nBo står bredvid. Armen är lagad, och han har yxan i bältet igen.",
+        text: "På torget står lyktstolpen. Lågan i lyktan är inte större än ett ljus längre, fast den brukar lysa upp hela torget.\n\nPå bänkarna ligger tre bybor under filtar. De sover djupt, och det ligger ett tunt lager frost på filtarna, fast ingen annan fryser.\n\nBo står bredvid. Armen är lagad, och han har spjutet i handen igen.",
         val: [
           { text: "Titta närmare på de som sover", engang: "tittat_sovande", prov: {
               egenskap: "vis", svarighet: 11, fraga: "Vem undersöker dem?",
