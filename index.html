@@ -1784,7 +1784,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const FAST={greta:15,bo:15,handlare:17,fange:17,resenar:18,drake_bur:20};
  right.forEach(f=>{if(FAST[f.k]){f.w=FAST[f.k];return}const ofx=f.key?OFF(f.key):null;
   f.mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
-  f.mm=f.mb?(f.boss?4:RUMBILD[f.k]?(RUMSTORLEK[f.k]||1):Math.max(2,Math.min(3,Math.round(sprSize(f.k).h/6)/2))):0; // monster minst lika stora som hjältarna
+  f.mm=f.mb?(((window.FIGURVAL||{})[f.k]||{}).storlek||(f.boss?4:RUMBILD[f.k]?(RUMSTORLEK[f.k]||1):Math.max(2,Math.min(3,Math.round(sprSize(f.k).h/6)/2)))):0; // storlek i figurval.js går före (2 = som en hjälte, 4 = boss) // monster minst lika stora som hjältarna
   f.w=f.mb?CU*f.mm/2*.75:Math.round(sprSize(f.k).w*(f.f||1))});
  const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
