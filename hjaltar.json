@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:46:32.642Z",
+  "uppdaterad": "2026-11-14T23:46:40.282Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699990752,
+    "tid": 1794699998108,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -357,21 +357,23 @@
     "runs": [
       {
         "plats": "oknen",
-        "kapitel": 1,
-        "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "golem"
-          ],
-          "stridOpt": {
-            "boss": true
+        "kapitel": 2,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ni hör mynt som klirrar.",
+            "typ": "skatt",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något snarkar, djupt och långsamt.",
+            "typ": "strid",
+            "kand": false
           }
-        },
+        ],
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -524,6 +526,14 @@
           {
             "t": "⚔ Ni hittar Stormlutan! Bard kan nu välja det under Ändra. Sångerna blir +4 starkare.",
             "k": "crit"
+          },
+          {
+            "t": "Kapitel 2 · Djupare ner",
+            "k": "sep"
+          },
+          {
+            "t": "Alla har vilat och känner sig starka igen. Ni hittar en trappa av sandsten som försvinner ner under sanden.",
+            "k": ""
           }
         ],
         "party": [
@@ -554,14 +564,14 @@
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
-          "ville": 26,
-          "tomas": 37,
-          "svante": 19,
-          "benjamin": 18
+          "ville": 38,
+          "tomas": 52,
+          "svante": 33,
+          "benjamin": 44
         },
-        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
+        "dorrText": "Ledtrådarna säger lite, men inte allt.",
         "bossFaktor": 1.3,
-        "nyttVapen": "Stormlutan",
+        "nyttVapen": null,
         "nyttVapenId": "stormluta"
       }
     ],
