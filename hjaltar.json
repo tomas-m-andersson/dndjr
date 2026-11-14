@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:43:45.134Z",
+  "uppdaterad": "2026-11-14T23:44:20.115Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699823264,
+    "tid": 1794699859511,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -532,7 +532,7 @@
             "fiender": [
               {
                 "namn": "Obsidiangolemen",
-                "liv": 62,
+                "liv": 28,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -548,7 +548,8 @@
                 "ute": false,
                 "boss": true,
                 "svag": null,
-                "bedovad": 0
+                "bedovad": 0,
+                "hjalpKallad": true
               }
             ],
             "run": true,
@@ -561,7 +562,7 @@
           "fiender": [
             {
               "namn": "Obsidiangolemen",
-              "liv": 62,
+              "liv": 28,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -577,7 +578,27 @@
               "ute": false,
               "boss": true,
               "svag": null,
-              "bedovad": 0
+              "bedovad": 0,
+              "hjalpKallad": true
+            },
+            {
+              "namn": "Eldimp",
+              "liv": 12,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d6+3",
+              "xp": 100,
+              "platser": [
+                "vulkanen"
+              ],
+              "flyr": "fräser och slocknar som en tändsticka.",
+              "egen": {
+                "sprangs": "1d6"
+              },
+              "typ": "eldimp",
+              "bild": "eldimp",
+              "max": 12,
+              "ute": false
             }
           ],
           "anvant": {
@@ -605,30 +626,30 @@
           "skydd": {
             "ville": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "tomas": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "svante": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "benjamin": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             }
           },
           "fokus": {},
           "locka": null,
-          "runda": 7,
+          "runda": 8,
           "ko": [
             {
-              "f": 0
+              "h": "tomas"
             },
             {
-              "h": "tomas"
+              "f": 1
             },
             {
               "h": "ville"
@@ -644,7 +665,8 @@
             "h:tomas": 12.1,
             "h:svante": 4.1,
             "h:benjamin": 21.1,
-            "f:0": 14
+            "f:0": 14,
+            "f:1": 12
           },
           "nu": null,
           "giftH": {},
