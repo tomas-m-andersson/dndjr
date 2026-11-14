@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:47:20.329Z",
+  "uppdaterad": "2026-11-14T23:47:36.785Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700038315,
+    "tid": 1794700054844,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 5738
+        "xp": 5828
       },
       "svante": {
         "lvl": 5,
-        "xp": 3789
+        "xp": 3879
       },
       "tomas": {
         "lvl": 6,
-        "xp": 7203
+        "xp": 7293
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 5093
+        "xp": 5183
       },
       "linda": {
         "lvl": 2,
@@ -359,7 +359,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Små fotspår leder ditåt.",
@@ -375,7 +375,7 @@
         "lyssnat": true,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "skorpion",
             "skorpion",
@@ -384,10 +384,6 @@
           "stridOpt": {}
         },
         "logg": [
-          {
-            "t": "Ni går vidare.",
-            "k": ""
-          },
           {
             "t": "Rum 3 · Någon behöver hjälp",
             "k": "sep"
@@ -543,6 +539,10 @@
           {
             "t": "Det är inte tomt här. tre Jätteskorpion vänder sig mot er!",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 90 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -567,7 +567,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 2250,
+        "ara": 2550,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
@@ -581,176 +581,7 @@
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "bossFaktor": 1.3,
         "nyttVapen": null,
-        "nyttVapenId": "stormluta",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Jätteskorpion 1",
-                "liv": 15,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 15,
-                "ute": false
-              },
-              {
-                "namn": "Jätteskorpion 2",
-                "liv": 15,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 15,
-                "ute": false
-              },
-              {
-                "namn": "Jätteskorpion 3",
-                "liv": 15,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d6+1",
-                "xp": 100,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "backar in under en sten med stjärten i luften.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "skorpion",
-                "bild": "skorpion",
-                "max": 15,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|2|3|rum|strid",
-          "fiender": [
-            {
-              "namn": "Jätteskorpion 1",
-              "liv": 15,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 15,
-              "ute": false
-            },
-            {
-              "namn": "Jätteskorpion 2",
-              "liv": 15,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 15,
-              "ute": false
-            },
-            {
-              "namn": "Jätteskorpion 3",
-              "liv": 15,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d6+1",
-              "xp": 100,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "backar in under en sten med stjärten i luften.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "skorpion",
-              "bild": "skorpion",
-              "max": 15,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "f": 0
-            },
-            {
-              "f": 2
-            },
-            {
-              "f": 1
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 19.1,
-            "h:svante": 14.1,
-            "h:tomas": 20.1,
-            "h:ville": 17.1,
-            "f:0": 12,
-            "f:1": 4,
-            "f:2": 11
-          },
-          "nu": null
-        }
+        "nyttVapenId": "stormluta"
       }
     ],
     "aktivRun": "rmwh1nadcktev",
