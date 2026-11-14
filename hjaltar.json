@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:24:11.885Z",
+  "uppdaterad": "2026-11-14T19:24:16.670Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -222,112 +222,7 @@
           "glod_eld"
         ],
         "klar": false,
-        "v": 2,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              "skuggan",
-              "skuggling"
-            ],
-            "justera": [
-              {
-                "flagga": "glod_eld",
-                "typ": "skuggan",
-                "liv": -10,
-                "rustning": -2,
-                "text": "Glöds eld i lyktan bränner Skuggan. Den är svagare och lättare att träffa."
-              },
-              {
-                "flagga": "lykta_tagen",
-                "typ": "skuggan",
-                "liv": -8,
-                "text": "Lyktans ljus har redan skadat Skuggan."
-              },
-              {
-                "flagga": "ljusbon",
-                "typ": "skuggan",
-                "rustning": -2,
-                "text": "Det varma skenet gör Skuggan lättare att träffa."
-              }
-            ],
-            "vinst": {
-              "text": "Det blir alldeles tyst. Sedan börjar lyktan lysa, starkare och starkare, tills hela salen är gul och varm.\n\nNi tar lyktan och går mot utgången. När ni kommer ut ur gruvan har himlen börjat bli ljus i öster. Ni hann.",
-              "till": "efter"
-            },
-            "forlust": "skugga_forlust"
-          },
-          "bild": "sal",
-          "fiender": [
-            {
-              "namn": "Skuggan",
-              "liv": 5,
-              "rustning": 11,
-              "anfall": 5,
-              "skada": "1d8+2",
-              "bild": "skuggan",
-              "flyr": "skriker, ett ljud som får väggarna att skaka, och löses upp i tusen svarta trådar som försvinner ner i marken.",
-              "typ": "skuggan",
-              "max": 32,
-              "ute": false,
-              "gift": {
-                "expr": "1d4",
-                "rundor": 2
-              }
-            },
-            {
-              "namn": "Skuggling",
-              "liv": 0,
-              "rustning": 12,
-              "anfall": 3,
-              "skada": "1d4+1",
-              "bild": "skuggling",
-              "flyr": "löses upp som rök.",
-              "typ": "skuggling",
-              "max": 6,
-              "ute": true,
-              "gift": {
-                "expr": "1d4",
-                "rundor": 3
-              }
-            }
-          ],
-          "anvant": {
-            "linda": {
-              "pilregn": true
-            },
-            "ville": {
-              "shuriken": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "sally"
-            }
-          ],
-          "logg": [],
-          "noter": [
-            "Glöds eld i lyktan bränner Skuggan. Den är svagare och lättare att träffa."
-          ],
-          "init": {
-            "h:ville": 17.1,
-            "h:tomas": 10.1,
-            "h:linda": 21.1,
-            "h:sally": 6.1,
-            "f:0": 11,
-            "f:1": 16
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "v": 2
       },
       "k2": {
         "scen": "slut_bara",
@@ -383,7 +278,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684250765,
+    "tid": 1794684254741,
     "niva": {
       "ville": {
         "lvl": 5,
