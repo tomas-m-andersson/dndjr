@@ -49,8 +49,8 @@ window.FIGURVAL={
  varulv:{sta:0,anfall:2,flip:true},vatte:{sta:0,anfall:1,flip:true},vattesjaman:{sta:0,anfall:3,flip:true},vildsvin:{sta:0,anfall:8},
  // öknens monster
  skarabeer:{sta:0,anfall:1},gam:{sta:0,anfall:1},skorpion:{sta:0,anfall:1},
- lerkrukssoldat:{sta:0,anfall:1},sandvalnad:{sta:0,anfall:1},sandorm:{sta:0,anfall:1},
- sandkungen:{cell:32,sta:0,anfall:2},
+ lerkrukssoldat:{sta:0,anfall:1},sandvalnad:{sta:0,anfall:1},sandorm:{sta:0,anfall:8},
+ sandkungen:{cell:32,sta:0,anfall:1,va:true}, // anfallsbilden pekar åt höger och vänds
  handlare:{sta:0},
  bo_staende:{sta:0},tradgardsmastare:{sta:0},spokflicka:{sta:0},
  greta:{sta:0,flip:true},
@@ -116,6 +116,9 @@ window.VAPENRUTOR={
 // Bakgrunder där hjältarna behöver stå längre åt höger (hål eller möbel längst ner till vänster)
 window.HJALTEFLYTT={klocktorn:12};
 window.FOTLYFT={
+ oknen_1_port:5,           // mörk kant längst ner
+ oknen_2_d1:10, oknen_2_d2:12, oknen_2_d3:12, oknen_2_port:14,
+
  berattelse_bibliotek:10,  // golvet börjar en bit upp
  berattelse_dimkallare:8,
 
