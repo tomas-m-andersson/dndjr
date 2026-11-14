@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:45:45.198Z",
+  "uppdaterad": "2026-11-14T15:45:51.523Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -228,13 +228,15 @@
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
-          "rosdoft"
+          "rosdoft",
+          "fragat_bo",
+          "vet_dimsater"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794671143241,
+    "tid": 1794671149512,
     "niva": {
       "ville": {
         "lvl": 5,
