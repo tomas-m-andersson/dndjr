@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:41:05.583Z",
+  "uppdaterad": "2026-11-14T23:41:28.976Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699664795,
+    "tid": 1794699686964,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -521,7 +521,7 @@
         "startGuld": 45,
         "liv": {
           "ville": 38,
-          "tomas": 52,
+          "tomas": 37,
           "svante": 27,
           "benjamin": 19
         },
@@ -532,7 +532,7 @@
             "fiender": [
               {
                 "namn": "Obsidiangolemen",
-                "liv": 138,
+                "liv": 133,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -546,7 +546,11 @@
                 "bild": "golem",
                 "max": 146,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "svag": {
+                  "n": 3,
+                  "rundor": 1
+                }
               }
             ],
             "run": true,
@@ -559,7 +563,7 @@
           "fiender": [
             {
               "namn": "Obsidiangolemen",
-              "liv": 138,
+              "liv": 133,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -573,20 +577,34 @@
               "bild": "golem",
               "max": 146,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "svag": {
+                "n": 3,
+                "rundor": 1
+              }
             }
           ],
           "anvant": {
             "benjamin": {
-              "sikta_noga": true
+              "sikta_noga": true,
+              "dubbelskott": true
+            },
+            "tomas": {
+              "virvelhugg": true
+            },
+            "ville": {
+              "g_blackmoln": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 0
+            },
             {
               "h": "tomas"
             },
