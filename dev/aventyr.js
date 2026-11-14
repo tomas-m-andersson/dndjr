@@ -521,7 +521,7 @@ window.AVENTYR = [
       },
 
       bron: {
-        bild: "bro", figur: "troll",
+        bild: "bro", figur: "troll_is",
         text: [
           "Bäcken är helt stilla. Det som var strömt vatten i våras ligger nu under en tjock isskorpa.\n\nMitt på bron står trollet Bulle. Han står alldeles stilla, och först tror ni att han bara är sur. Sedan ser ni att isen går ända upp till hans knän, och att det hänger istappar i hans ögonbryn.\n\n– Bulle, kan han säga. Bulle kan inte. Röra. Sig.",
           { om: "bulle_hjalpte", text: "Det var Bulle som drog upp er ur bäcken förra gången. Ni är skyldiga honom en tjänst." }
