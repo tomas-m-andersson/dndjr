@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:05:40.757Z",
+  "uppdaterad": "2026-11-14T16:05:57.393Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 1614,
+    "guld": 1632,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -200,7 +200,8 @@
       "Läkedryck",
       "Läkedryck",
       "Sagobok",
-      "Röd ros"
+      "Röd ros",
+      "Läkedryck"
     ],
     "liv": {
       "ville": 35,
@@ -279,7 +280,7 @@
         "v": 1
       }
     },
-    "tid": 1794672338699,
+    "tid": 1794672355368,
     "niva": {
       "ville": {
         "lvl": 5,
