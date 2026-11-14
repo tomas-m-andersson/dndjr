@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:35:33.981Z",
+  "uppdaterad": "2026-11-14T23:35:37.947Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684274751,
+    "tid": 1794699336001,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -353,8 +353,78 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "oknen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ni känner värme mot ansiktet.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "Någon viskar.",
+            "typ": "resenar",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör många små fötter som springer.",
+            "typ": "skatt",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Den begravda staden",
+            "k": "sep"
+          },
+          {
+            "t": "Ville, Tomas, Svante och Benjamin kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "ville",
+          "tomas",
+          "svante",
+          "benjamin"
+        ],
+        "guld": 45,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794699336000,
+        "nastaKand": false,
+        "id": "rmwh1nadcktev",
+        "startGuld": 45,
+        "liv": {
+          "ville": 38,
+          "tomas": 44,
+          "svante": 27,
+          "benjamin": 44
+        },
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+      }
+    ],
+    "aktivRun": "rmwh1nadcktev",
     "historik": [
       {
         "plats": "oknen",
