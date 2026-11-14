@@ -300,7 +300,11 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .chip{display:flex;gap:8px;align-items:center;background:var(--bg2);border:2px solid var(--line);border-radius:8px;padding:6px 8px;min-width:0}
 .chip.out{opacity:.5}
 /* förgiftad: grön livmätare och grön kant så länge giftet verkar */
-.chip.gift{border-color:#4fae3c}
+.chip.gift{border-color:#4fae3c;background:#1d3324;box-shadow:0 0 0 1px #4fae3c55,0 0 12px #5fd34a33}
+.foe.gift{border-color:#4fae3c;background:#1f3322;box-shadow:0 0 12px #5fd34a33}
+.foe.gift .hp i{background:#5fd34a!important}
+.foe.gift span{color:#8fe07a}
+.giftlapp{align-self:flex-start;font-style:normal;font-size:.68rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#10240f;background:#6fe05a;border-radius:999px;padding:1px 7px;line-height:1.4}
 .chip.gift .hp i{background:#5fd34a!important}
 .chip.gift .chipinfo span{color:#8fe07a}
 .chipinfo{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
@@ -1763,7 +1767,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   const bi=window.egenGosedjur&&egenGosedjur(gd);if(bi){ritaRuta(g,bi,i*14+13+(o?Math.round(o.dx):0),TVH+hopp,CU/2,{alpha:liv(h)>0?1:.4});return}
   g.globalAlpha=liv(h)>0?1:.4;g.drawImage(s,i*14+9+(o?Math.round(o.dx):0),TVH-s.height+hopp);g.globalAlpha=1}); // gosedjuret vid hjältens fötter
  const right=[];
- if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss})}); // ett besegrat monster tonar bort
+ if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss,gift:!!f.gift&&!f.ute})}); // ett besegrat monster tonar bort
  else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1,boss:k==="skuggan"}));
  let x=TVW-2;
  // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
@@ -1795,8 +1799,10 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   const sd=anim&&sprDef(f.k),sc=sd&&sprCanvas(f.k);
   const o=f.key?OFF(f.key):null,dx=o?Math.round(o.dx):0,dy=o?Math.round(o.dy):0;
   if(mb){const L=anim?livTid(anim.t,nr++):{upp:0},r=ritaRuta(g,mb,x+dx+w/2,TVH+(sover?0:L.upp)+dy,h,{alpha:(f.a??1)*(o?o.alpha:1)});
+   if(f.gift)tona(mb,r,"#6fe05a",.4*(o?o.alpha??1:1)); // förgiftad: lätt grön ton
    if(o&&o.tint)tona(mb,r,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h,w,h)}
   else if(sc){const L=livTid(anim.t,nr++),yy=TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp)+dy;ritaLevande(g,sc,monOgon(f.k),x+dx,yy,{skala:sd.skala*fs,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:(f.a??1)*(o?o.alpha:1)});
+   if(f.gift)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,"#6fe05a",.4);
    if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h,w,h)}
   else if(fs!==1&&sprCanvas(f.k))ritaLevande(g,sprCanvas(f.k),null,x,TVH-h,{skala:sprDef(f.k).skala*fs,flip:vand});
   else sprite(g,f.k,x,TVH-h,vand,f.a);
@@ -1910,7 +1916,7 @@ function valjHjalte(fraga,lista,klar,avbryt,info){
 function partyStrip(){
  return el("div",{class:"strip"},partyHeroes().map(h=>{const l=liv(h),m=maxLiv(h);
   return el("div",{class:"chip"+(l>0?"":" out")+(l>0&&forgiftad(h)?" gift":"")},el("div",{class:"tv mini"},portrait(h)),el("div",{class:"chipinfo"},el("b",{},h.namn),
-   el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.giftH&&strid.giftH[h.id]?" · förgiftad":"")+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")))}));
+   el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),l>0&&forgiftad(h)?el("em",{class:"giftlapp"},"Förgiftad"):null,el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")))}));
 }
 function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
 function storyEl(txt){return el("div",{class:"story"},txt.split(/\n\n+/).map(p=>el("p",{},p)))}
@@ -2099,8 +2105,8 @@ function nastaTur(){
  if(t.h)hjalteTur(byId(t.h));else fiendeTur(strid.fiender[t.f]);
 }
 const EGEN_ORD={gift:"giftig",tva:"två anfall",regen:"läker sig",bedova:"kan bedöva",drana:"stjäl liv",helar:"helar andra",sprangs:"exploderar"};
-function fiendeStatus(f){if(f.ute)return"Borta";const s=["Rustning "+f.rustning];
- if(f.bedovad)s.push("bedövad");if(f.svag)s.push("−"+f.svag.n+" anfall");if(f.gift)s.push("förgiftad");return s.join(" · ")}
+function fiendeStatus(f,utanGift){if(f.ute)return"Borta";const s=["Rustning "+f.rustning];
+ if(f.bedovad)s.push("bedövad");if(f.svag)s.push("−"+f.svag.n+" anfall");if(f.gift&&!utanGift)s.push("förgiftad");return s.join(" · ")}
 function stridTV(){const box=tvBox(strid.bild,{fiender:strid.fiender}),c=box.querySelector("canvas");
  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return box;
  const id=setInterval(()=>{if(!c.isConnected||!strid){clearInterval(id);return}const t=performance.now(),pos={};
@@ -2112,8 +2118,8 @@ function stridVy(rubrik){
  app.replaceChildren(
   el("div",{class:"topbar"},pausKnapp(pausaStrid),el("span",{class:"purse"},(strid.def.boss?"Bossen · ":"Strid · ")+"runda "+strid.runda)),
   stridTV(),
-  el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")},el("b",{},f.namn),
-   el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},fiendeStatus(f)),
+  el("div",{class:"foes"},strid.fiender.map(f=>el("div",{class:"foe"+(f.ute?" out":"")+(f.gift&&!f.ute?" gift":"")},el("b",{},f.namn),f.gift&&!f.ute?el("em",{class:"giftlapp"},"Förgiftad"):null,
+   el("div",{class:"hp foehp"},el("i",{style:"width:"+(f.liv/f.max*100)+"%"})),el("span",{},fiendeStatus(f,true)),
    f.egen&&!f.ute?el("small",{class:"traits"},Object.keys(f.egen).map(k=>EGEN_ORD[k]).filter(Boolean).join(" · ")):null))),
   partyStrip(),el("h2",{class:"turn"},rubrik),turordning()?el("p",{class:"turordning"},"Turordning: "+turordning()):null);
  window.scrollTo(0,0);
