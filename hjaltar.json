@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T17:25:07.013Z",
+  "uppdaterad": "2026-11-14T19:17:28.063Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,7 +272,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794677104955,
+    "tid": 1794683846155,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -343,8 +343,78 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "oknen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "altare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det luktar sött, som blommor.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "skatt",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Den begravda staden",
+            "k": "sep"
+          },
+          {
+            "t": "Vinden sveper sanden över en gata som ingen har gått på de senaste tusen åren. Ville, Tomas, Linda och Sally går in.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "ville",
+          "tomas",
+          "linda",
+          "sally"
+        ],
+        "guld": 43,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794683846154,
+        "nastaKand": false,
+        "id": "rmwgsfabuozxa",
+        "startGuld": 43,
+        "liv": {
+          "ville": 38,
+          "tomas": 44,
+          "linda": 18,
+          "sally": 28
+        },
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+      }
+    ],
+    "aktivRun": "rmwgsfabuozxa",
     "historik": [
       {
         "plats": "herrgarden",
