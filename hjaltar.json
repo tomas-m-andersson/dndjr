@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:38:16.775Z",
+  "uppdaterad": "2026-11-14T23:38:24.078Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699494810,
+    "tid": 1794699502233,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
@@ -372,7 +372,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "sandorm"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -401,6 +408,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni möter Sandorm!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -436,7 +451,92 @@
           "svante": 27,
           "benjamin": 44
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Sandorm",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|oknen|1|2|rum|strid",
+          "fiender": [
+            {
+              "namn": "Sandorm",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "f": 0
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:ville": 18.1,
+            "h:tomas": 20.1,
+            "h:svante": 17.1,
+            "h:benjamin": 14.1,
+            "f:0": 5
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwh1nadcktev",
