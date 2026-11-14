@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:17:58.294Z",
+  "uppdaterad": "2026-11-14T19:18:18.778Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -272,11 +272,11 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794683876365,
+    "tid": 1794683898645,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4253
+        "xp": 4313
       },
       "svante": {
         "lvl": 4,
@@ -284,11 +284,11 @@
       },
       "tomas": {
         "lvl": 5,
-        "xp": 5718
+        "xp": 5778
       },
       "sally": {
         "lvl": 5,
-        "xp": 3939
+        "xp": 3999
       },
       "benjamin": {
         "lvl": 5,
@@ -296,7 +296,7 @@
       },
       "linda": {
         "lvl": 2,
-        "xp": 330
+        "xp": 390
       }
     },
     "upplasta": [
@@ -347,24 +347,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "ledtrad": "Något snarkar, djupt och långsamt.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
             "typ": "sovare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": false,
-          "fiender": [
-            "lerkrukssoldat",
-            "sandvalnad"
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -397,6 +395,14 @@
           {
             "t": "Lerkrukssoldat och Sandvålnad snarkar högt i ett hörn.",
             "k": "note"
+          },
+          {
+            "t": "Linda visar vägen i skuggorna. Monstret sover vidare. Alla får 60 XP.",
+            "k": "hit"
+          },
+          {
+            "t": "Sanden rinner ur taket i tunna strilar när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -432,7 +438,7 @@
           "linda": 18,
           "sally": 28
         },
-        "dorrText": "Det finns bara en väg framåt."
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
       }
     ],
     "aktivRun": "rmwgsfabuozxa",
