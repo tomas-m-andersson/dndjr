@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:46:47.176Z",
+  "uppdaterad": "2026-11-14T23:46:51.075Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700005300,
+    "tid": 1794700009205,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -375,7 +375,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -389,14 +389,6 @@
           ]
         },
         "logg": [
-          {
-            "t": "Rum 1 · Skatt",
-            "k": "sep"
-          },
-          {
-            "t": "Ni hittar en liten pung som någon har tappat.",
-            "k": "heal"
-          },
           {
             "t": "Ni hittar 266 guldmynt.",
             "k": "heal"
@@ -548,6 +540,14 @@
           {
             "t": "Mitt på golvet står en kista. Ingen vaktar den. Konstigt.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 168 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en läkedryck.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -556,7 +556,7 @@
           "tomas",
           "ville"
         ],
-        "guld": 927,
+        "guld": 1095,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -568,7 +568,8 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Stor läkedryck"
+          "Stor läkedryck",
+          "Läkedryck"
         ],
         "bless": {},
         "curse": {},
