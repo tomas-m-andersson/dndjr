@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:50:49.742Z",
+  "uppdaterad": "2026-11-14T23:51:13.817Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700248950,
+    "tid": 1794700271909,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 6008
+        "xp": 6526
       },
       "svante": {
         "lvl": 5,
-        "xp": 4059
+        "xp": 4577
       },
       "tomas": {
         "lvl": 6,
-        "xp": 7473
+        "xp": 7991
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 5363
+        "xp": 5881
       },
       "linda": {
         "lvl": 2,
@@ -325,7 +325,8 @@
       "solklubba",
       "livets_stav",
       "ormpiska",
-      "stormluta"
+      "stormluta",
+      "silvervarja"
     ],
     "utr": {
       "ville": {
@@ -359,7 +360,7 @@
         "plats": "oknen",
         "kapitel": 2,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -373,34 +374,6 @@
           }
         },
         "logg": [
-          {
-            "t": "En sten vält åt sidan, och ut kliver tre Jätteskorpion.",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 90 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "En port av sandsten med två stora stenlejon framför. Bakom den väntar stadens väktare.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Stadens väktare",
-            "k": "sep"
-          },
-          {
-            "t": "Sanden på golvet börjar rinna åt ett håll. Ur den reser sig Obsidiangolemen!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 360 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Svante har blivit starkare och är nu nivå 5! +6 liv och bättre träffsäkerhet.",
-            "k": "crit"
-          },
           {
             "t": "Ni hittar 252 guldmynt.",
             "k": "heal"
@@ -532,6 +505,34 @@
           {
             "t": "Ett torrt skrapande ljud fyller salen. Det är Sandkungen!",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 338 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 398 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 180 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Stadens väktare är besegrad!",
+            "k": "crit"
+          },
+          {
+            "t": "⚔ Ni hittar Silvervärjan! Bard kan nu välja det under Ändra. 1d8 skada och +2 på slaget.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -540,7 +541,7 @@
           "tomas",
           "ville"
         ],
-        "guld": 735,
+        "guld": 1133,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -552,7 +553,9 @@
           "Läkedryck",
           "Läkedryck",
           "Stor läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {
           "benjamin": 1,
@@ -561,7 +564,7 @@
           "ville": 1
         },
         "curse": {},
-        "ara": 3150,
+        "ara": 4275,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
@@ -574,135 +577,8 @@
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar stadens väktare.",
         "bossFaktor": 1.3,
-        "nyttVapen": null,
-        "nyttVapenId": "stormluta",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Sandkungen",
-                "liv": 20,
-                "rustning": 17,
-                "anfall": 8,
-                "skada": "1d10+2",
-                "xp": 1100,
-                "platser": [
-                  "oknen"
-                ],
-                "baraBoss": true,
-                "flyr": "faller ihop i en hög av linne och guldsmycken.",
-                "egen": {
-                  "regen": 3
-                },
-                "typ": "sandkungen",
-                "bild": "sandkungen",
-                "max": 99,
-                "ute": false,
-                "boss": true,
-                "svag": null,
-                "hjalpKallad": true
-              }
-            ],
-            "run": true,
-            "boss": true,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|2|6|boss|boss",
-          "fiender": [
-            {
-              "namn": "Sandkungen",
-              "liv": 20,
-              "rustning": 17,
-              "anfall": 8,
-              "skada": "1d10+2",
-              "xp": 1100,
-              "platser": [
-                "oknen"
-              ],
-              "baraBoss": true,
-              "flyr": "faller ihop i en hög av linne och guldsmycken.",
-              "egen": {
-                "regen": 3
-              },
-              "typ": "sandkungen",
-              "bild": "sandkungen",
-              "max": 99,
-              "ute": false,
-              "boss": true,
-              "svag": null,
-              "hjalpKallad": true
-            },
-            {
-              "namn": "Skarabésvärm",
-              "liv": 9,
-              "rustning": 12,
-              "anfall": 4,
-              "skada": "1d6",
-              "xp": 25,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "kryper ner i sanden och försvinner.",
-              "typ": "skarabeer",
-              "bild": "skarabeer",
-              "max": 9,
-              "ute": false
-            }
-          ],
-          "anvant": {
-            "svante": {
-              "valsignelse": true
-            },
-            "benjamin": {
-              "dubbelskott": true,
-              "sikta_noga": true
-            },
-            "tomas": {
-              "dubbelhugg": true,
-              "virvelhugg": true
-            },
-            "ville": {
-              "g_blackmoln": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 5,
-          "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 1
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 17.1,
-            "h:svante": 21.1,
-            "h:tomas": 17.1,
-            "h:ville": 12.1,
-            "f:0": 24,
-            "f:1": 10
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "nyttVapen": "Silvervärjan",
+        "nyttVapenId": "silvervarja"
       }
     ],
     "aktivRun": "rmwh1nadcktev",
@@ -1007,7 +883,8 @@
         "nekromantiker": 1,
         "dimfrun": 1,
         "skuggan": 1,
-        "golem": 1
+        "golem": 1,
+        "sandkungen": 1
       }
     }
   }
