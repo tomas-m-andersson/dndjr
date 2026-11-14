@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:07:49.403Z",
+  "uppdaterad": "2026-11-14T16:08:04.706Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -234,7 +234,7 @@
         "nyttVapenId": "solklubba"
       },
       "k2": {
-        "scen": "efter",
+        "scen": "slut_bara",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -280,11 +280,14 @@
           "ros_given",
           "fragat_flickan"
         ],
-        "klar": false,
-        "v": 1
+        "klar": true,
+        "v": 1,
+        "slut": "slut_bara",
+        "nyttVapen": "Ni hittar Livets stav! Helare kan nu välja det under Ändra. Helning blir +4 starkare.",
+        "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794672467477,
+    "tid": 1794672484509,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -325,7 +328,8 @@
       "manklinga",
       "skuggkatana",
       "valsignad_hammare",
-      "solklubba"
+      "solklubba",
+      "livets_stav"
     ],
     "utr": {
       "ville": {
