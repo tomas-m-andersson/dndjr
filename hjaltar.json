@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:56:02.985Z",
+  "uppdaterad": "2026-11-14T15:56:09.315Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -196,7 +196,9 @@
       "Trähund",
       "Trähund",
       "Trähund",
-      "Trähund"
+      "Trähund",
+      "Läkedryck",
+      "Läkedryck"
     ],
     "liv": {
       "ville": 32,
@@ -229,7 +231,7 @@
         "nyttVapenId": "solklubba"
       },
       "k2": {
-        "scen": "koket",
+        "scen": "fladdermus_strid",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -259,7 +261,7 @@
         "v": 1
       }
     },
-    "tid": 1794671760929,
+    "tid": 1794671769289,
     "niva": {
       "ville": {
         "lvl": 5,
