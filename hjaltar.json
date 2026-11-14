@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:50:53.555Z",
+  "uppdaterad": "2026-11-14T15:50:57.581Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -195,7 +195,7 @@
       "Fickljus"
     ],
     "liv": {
-      "ville": 38,
+      "ville": 34,
       "svante": 27,
       "sally": 28,
       "tomas": 44,
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1794671451638,
+    "tid": 1794671455572,
     "niva": {
       "ville": {
         "lvl": 5,
