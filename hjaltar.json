@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:20:06.329Z",
+  "uppdaterad": "2026-11-14T19:20:12.287Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 1632,
+    "guld": 1622,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -213,8 +213,10 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "vadet",
-        "flaggor": [],
+        "scen": "lagret",
+        "flaggor": [
+          "vet_drake"
+        ],
         "klar": false,
         "v": 2
       },
@@ -272,7 +274,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684004384,
+    "tid": 1794684010199,
     "niva": {
       "ville": {
         "lvl": 5,
