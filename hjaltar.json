@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:20:55.236Z",
+  "uppdaterad": "2026-11-14T19:21:03.808Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -220,7 +220,96 @@
           "glod_anfall"
         ],
         "klar": false,
-        "v": 2
+        "v": 2,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              "krak",
+              "vatte"
+            ],
+            "justera": [
+              {
+                "flagga": "glod_anfall",
+                "typ": "krak",
+                "liv": -8,
+                "text": "Glöds eld har redan bränt Krak. Han börjar striden svagare."
+              }
+            ],
+            "vinst": {
+              "text": "Krak flyr ut i skogen. Vägen in i gruvan är fri.",
+              "guld": 10,
+              "flagga": "krak_borta",
+              "till": "gruva_inne"
+            },
+            "forlust": "fangad"
+          },
+          "bild": "gruva",
+          "fiender": [
+            {
+              "namn": "Krak",
+              "liv": 14,
+              "rustning": 15,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "bild": "krak",
+              "flyr": "tappar yxan, vrålar av ilska och flyr ut i natten.",
+              "typ": "krak",
+              "max": 22,
+              "ute": false
+            },
+            {
+              "namn": "Vätte",
+              "liv": 3,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d6+1",
+              "bild": "vatte",
+              "flyr": "faller ihop och blir liggande.",
+              "typ": "vatte",
+              "max": 7,
+              "ute": false
+            }
+          ],
+          "anvant": {
+            "ville": {
+              "shuriken": true
+            }
+          },
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "linda"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [
+            "Glöds eld har redan bränt Krak. Han börjar striden svagare."
+          ],
+          "init": {
+            "h:ville": 20.1,
+            "h:tomas": 1.1,
+            "h:linda": 16.1,
+            "h:sally": 16.1,
+            "f:0": 12,
+            "f:1": 18
+          },
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
+        }
       },
       "k2": {
         "scen": "slut_bara",
@@ -276,7 +365,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684053316,
+    "tid": 1794684062575,
     "niva": {
       "ville": {
         "lvl": 5,
