@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:07:45.514Z",
+  "uppdaterad": "2026-11-14T16:07:49.403Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -277,13 +277,14 @@
           "letat_krukor",
           "vackt",
           "byborna_burna",
-          "ros_given"
+          "ros_given",
+          "fragat_flickan"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794672463453,
+    "tid": 1794672467477,
     "niva": {
       "ville": {
         "lvl": 5,
