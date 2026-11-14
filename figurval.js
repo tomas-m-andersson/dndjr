@@ -42,7 +42,7 @@ window.FIGURVAL={
  // Monster och personer (sta, anfall)
  askskelett:{sta:0,anfall:5},bandit:{sta:0,anfall:12,flip:true},bjorn:{sta:0,anfall:5,flip:true},bo:{sta:0,flip:true},dimvarg:{sta:0,anfall:4},dimvasen:{sta:0,anfall:1},
  eldimp:{sta:0,anfall:4,flip:true},eldprast:{sta:0,anfall:4,flip:true},eldsalamander:{sta:0,anfall:4},ent:{cell:32,sta:0,anfall:4,flip:true},fladdermus:{sta:0,anfall:2},gargoyl:{sta:0,anfall:1,flip:true},
- giftspindel:{sta:0,anfall:5},haxa:{sta:0,anfall:2,flip:true},irrbloss:{sta:0,anfall:9},kobold:{sta:0,anfall:7,flip:true},krak:{sta:0,anfall:1,flip:true},krakor:{sta:0,anfall:1},
+ giftspindel:{sta:0,anfall:5},haxa:{sta:0,anfall:2,flip:true},irrbloss:{sta:0,anfall:9,storlek:1.2},kobold:{sta:0,anfall:7,flip:true},krak:{sta:0,anfall:1,flip:true},krakor:{sta:0,anfall:1},
  kultist:{sta:0,anfall:4,flip:true},lavahund:{sta:0,anfall:9},levande_rustning:{sta:0,anfall:1},magmaslem:{sta:0,anfall:6},nekromantiker:{sta:0,anfall:5,flip:true},orm:{sta:0,anfall:5,flip:true},
  ratta:{sta:0,anfall:1,flip:true},rovarhovding:{sta:0,anfall:5,flip:true},skelett:{sta:0,anfall:1,flip:true},skuggling:{sta:0,anfall:1},slem:{sta:0,anfall:4},spindel:{sta:0,anfall:5},
  spoke:{sta:0,anfall:10},spokriddare:{sta:0,anfall:1},svampman:{sta:0,anfall:1,flip:true},troll:{sta:0,anfall:4},vampyrfladdermus:{sta:0,anfall:2},varg:{sta:0,anfall:10,flip:true},
@@ -111,6 +111,9 @@ window.VAPENRUTOR={
 // Bakgrunder där hjältarna behöver stå längre åt höger (hål eller möbel längst ner till vänster)
 window.HJALTEFLYTT={klocktorn:12};
 window.FOTLYFT={
+ berattelse_bibliotek:10,  // golvet börjar en bit upp
+ berattelse_dimkallare:8,
+
  slottet_2_rum:14,   // mörk kant längst ner
  slottet_2_d1:22,    // trappsteg längst ner
  slottet_2_port:8    // golvet slutar en bit upp

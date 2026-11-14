@@ -477,7 +477,7 @@ window.AVENTYR = [
       },
 
       torget: {
-        bild: "torg", figur: ["greta", "bo"],
+        bild: "torg_frost", figur: ["greta", "bo"],
         text: "På torget står lyktstolpen. Lågan i lyktan är inte större än ett ljus längre, fast den brukar lysa upp hela torget.\n\nPå bänkarna ligger tre bybor under filtar. De sover djupt, och det ligger ett tunt lager frost på filtarna, fast ingen annan fryser.\n\nBo står bredvid. Armen är lagad, och han har yxan i bältet igen.",
         val: [
           { text: "Titta närmare på de som sover", engang: "tittat_sovande", prov: {
@@ -672,12 +672,12 @@ window.AVENTYR = [
           { inteOm: "vet_spegeln", text: "Spegeln kan hänga var som helst i det här huset. Ni måste leta." }
         ],
         val: [
-          { text: "Gå mot pianot, in i balsalen", engang: "varit_balsal", till: "balsalen" },
-          { text: "Gå in i köket", engang: "varit_kok", till: "koket" },
-          { text: "Gå in i biblioteket", engang: "varit_bibliotek", till: "biblioteket" },
-          { text: "Gå ut i glashuset", engang: "varit_glashus", till: "vintertradgarden" },
-          { text: "Gå upp i tornet", engang: "varit_torn", till: "klocktornet" },
-          { text: "Gå upp till barnkammaren", engang: "varit_barnkammare", till: "barnkammaren" },
+          { text: "Gå mot pianot, in i balsalen", till: "balsalen" },
+          { text: "Gå in i köket", till: "koket" },
+          { text: "Gå in i biblioteket", till: "biblioteket" },
+          { text: "Gå ut i glashuset", till: "vintertradgarden" },
+          { text: "Gå upp i tornet", till: "klocktornet" },
+          { text: "Gå upp till barnkammaren", till: "barnkammaren" },
           { text: "Gå ner för trappan bakom trappan", krav: { flagga: "vet_spegeln" }, till: "trappan" },
           { text: "Leta efter vägen neråt", krav: { inteFlagga: "vet_spegeln" }, info: "Ni vet inte var spegeln hänger än", utfall: {
               text: "Ni letar i hallen men hittar bara en skrubb full av paraplyer. Någon i det här huset måste ha skrivit ner var spegeln finns.", till: "hallen" } }
@@ -685,7 +685,7 @@ window.AVENTYR = [
       },
 
       balsalen: {
-        bild: "balsal",
+        bild: "balsal_spoken",
         text: "Balsalen är full av folk, och ändå är den tom.\n\nTjugo par dansar en långsam vals över golvet. Man ser rakt igenom dem. Vid pianot sitter en herre utan ansikte och spelar samma åtta takter om och om igen.\n\nNär ni kommer in vänder alla huvudena mot er samtidigt. Men de slutar inte dansa.",
         val: [
           { text: "Buga och dansa med dem", prov: {
@@ -771,7 +771,7 @@ window.AVENTYR = [
       },
 
       vintertradgarden: {
-        bild: "vintertradgard",
+        bild: "vintertradgard", figur: "tradgardsmastare",
         text: "Glashuset på baksidan är varmare än resten av huset, och det är det konstigaste hittills.\n\nHär växer rosor. Hundratals. De är helt röda och alldeles levande, mitt i ett hus där till och med maten har frusit. Doften är så stark att det svider i näsan.\n\nMitt bland rosorna står en gammal trädgårdsmästare och klipper med en sax. Han är genomskinlig, och han har inte märkt er.",
         val: [
           { text: "Hälsa försiktigt", prov: {
@@ -808,18 +808,18 @@ window.AVENTYR = [
       },
 
       barnkammaren: {
-        bild: "barnkammare",
+        bild: "barnkammare", figur: "spokflicka",
         text: [
           "Längst upp i huset ligger ett litet rum med en säng, en hylla med leksaker och ett fönster som vetter mot kullen.\n\nPå golvet sitter en flicka i nattlinne och bygger ett torn av klossar. Hon är genomskinlig som de andra, men hon är inte kall. Hon ser mest uttråkad ut.\n\n– Alla andra bara dansar, säger hon utan att titta upp. Ingen vill leka.",
           { om: "vet_barnet", text: "Det var hennes namn som stod på den minsta gravstenen." }
         ],
         val: [
-          { text: "Sätt er ner och lek med henne", prov: {
+          { text: "Sätt er ner och lek med henne", engang: "lekt_med_flickan", prov: {
               egenskap: "cha", svarighet: 10, fraga: "Vem sätter sig på golvet?",
               lyckas: { text: "{namn} sätter sig på golvet och bygger vidare på tornet. De bygger det så högt att det rasar, och flickan skrattar så att fönstret imar igen.\n\nSedan blir hon allvarlig.\n\n– Hon därnere är mamma, säger hon. Hon sover inte, hon bara väntar. Hon tål inte när man säger hennes namn, och hon tål inte när man är glad. Om ni är rädda blir hon starkare.\n\nFlickan ger {namn} en trasig liten hund av trä. – Ta den. Jag kommer om ni håller i den.", sak: "Trähund", flagga: "barnet_hjalpte", till: "barnkammaren" },
               misslyckas: { text: "{namn} sätter sig ner, men flickan vänder ryggen till och fortsätter bygga.\n\n– Ni är bara här för spegeln, säger hon. Alla är bara här för spegeln.", till: "barnkammaren" }
             } },
-          { text: "Läs sagoboken för henne", krav: { sak: "Sagobok" }, utfall: {
+          { text: "Läs sagoboken för henne", krav: { sak: "Sagobok" }, engang: "last_saga", utfall: {
               text: "Någon sätter sig på sängkanten och börjar läsa högt ur den frusna sagoboken.\n\nFlickan kryper närmare, och mitt i sagan säger hon tyst: – Den där har jag ritat. Hunden hette Pricken.\n\nNär sagan är slut är hon mycket gladare.\n\n– Mamma är därnere, säger hon. Hon tål inte sitt eget namn, och hon tål inte om man inte är rädd. Ta den här, så kommer jag om ni behöver mig.\n\nHon räcker fram en liten trähund.", sak: "Trähund", flagga: ["barnet_hjalpte", "vet_namnet"], till: "barnkammaren" } },
           { text: "Fråga vad som hände den vintern", engang: "fragat_barnet", prov: {
               egenskap: "vis", svarighet: 12, fraga: "Vem frågar försiktigt?",
@@ -881,7 +881,7 @@ window.AVENTYR = [
           { om: "rosdoft", text: "Det luktar rosor här nere också. Mycket starkare." }
         ],
         val: [
-          { text: "Bär upp Mossbyborna först", utfall: {
+          { text: "Bär upp Mossbyborna först", engang: "burit_byborna", utfall: {
               text: "Ni bär upp dem en i taget, hela vägen upp för den smala trappan och ut i snön på gården. Det tar lång tid och ni blir trötta i armarna och ryggen.\n\nMen när den sista ligger i säkerhet på gården vet ni att vad som än händer därnere, så kommer de att vakna.",
               flagga: "byborna_burna", skada: "1d4", till: "dimkallaren" } },
           { text: "Väck dem försiktigt", engang: "vackt", prov: {
@@ -955,7 +955,7 @@ window.AVENTYR = [
       },
 
       efter: {
-        bild: "spegelsal",
+        bild: "spegelsal", figur: "spokflicka?barnet_hjalpte",
         text: [
           "Ni står framför spegeln. Den är kall, men den gör ingenting längre, inte just nu.",
           { om: "vet_valet", text: "I dagboken stod det två sätt. Slå sönder spegeln: då tar vintern slut, men lyktan blir aldrig mer än ett ljus. Eller häng spegeln bredvid lyktan: då lyser båda starkt igen, men hon finns kvar därinne." },
