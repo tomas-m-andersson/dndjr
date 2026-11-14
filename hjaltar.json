@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:48:47.779Z",
+  "uppdaterad": "2026-11-14T23:48:49.823Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700125817,
+    "tid": 1794700127929,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -358,36 +358,12 @@
       {
         "plats": "oknen",
         "kapitel": 2,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
-            "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Väggen bredvid dörren är full av målade bilder i guld.",
-            "typ": "altare",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "Ljusbärerskan"
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Benjamin får ett magiskt vapen: +1 på träff och skada.",
-            "k": "magic"
-          },
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
@@ -543,6 +519,10 @@
           {
             "t": "Guldet smälter och rinner ner i altaret. Ni känner er välsignade. Alla känner sig välsignade.",
             "k": "magic"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar stadens väktare.",
+            "k": ""
           }
         ],
         "party": [
@@ -583,7 +563,7 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Ni tittar på varandra. Någon måste bestämma.",
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar stadens väktare.",
         "bossFaktor": 1.3,
         "nyttVapen": null,
         "nyttVapenId": "stormluta"
