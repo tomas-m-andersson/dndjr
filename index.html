@@ -52,7 +52,7 @@ canvas.px{image-rendering:pixelated;image-rendering:crisp-edges;display:block;wi
 .hero .titles{min-width:0;flex:1}
 .titelrad{display:flex;align-items:center;gap:12px} /* loggan står bredvid den gula rubriken */
 .titelrad svg{width:clamp(56px,13vw,88px);height:auto;flex:none}
-.loggabild{width:clamp(56px,13vw,88px);height:clamp(56px,13vw,88px);flex:none;image-rendering:pixelated;filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
+canvas.px.loggabild{width:clamp(56px,13vw,88px);height:clamp(56px,13vw,88px);flex:none;image-rendering:pixelated;filter:drop-shadow(0 0 10px #f2c14e55) drop-shadow(0 3px 0 #0008)}
 .loggaruta{display:flex;flex:none}
 .bildval{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;max-width:440px}
 .bildruta{padding:0;aspect-ratio:1;background:#16222c;border:2px solid var(--line);border-radius:6px;cursor:pointer;overflow:hidden}
@@ -1079,7 +1079,12 @@ function el(tag,attrs={},...kids){const e=document.createElement(tag);for(const[
  kids.flat().forEach(c=>c!=null&&e.append(c.nodeType?c:document.createTextNode(c)));return e}
 // Loggan: den egna guldtärningen om bilden finns, annars den ritade
 function logga(){const s=d20svg(),c=document.createElement("canvas");c.className="px loggabild";c.hidden=true;c.setAttribute("aria-hidden","true");
- c._rita=()=>{const b=window.egenSak&&egenSak("logga");if(!b)return;c.width=b.width;c.height=b.height;const g=c.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(b,0,0);c.hidden=false;c.style.display="block";s.style.display="none"};
+ c._rita=()=>{const b=window.egenSak&&egenSak("logga");if(!b)return;
+  // tärningen fyller bara en liten del av sin ruta: skär bort den tomma kanten så att den syns stor
+  let x0=0,y0=0,w=b.width,h=b.height;try{const d=b.getContext("2d").getImageData(0,0,w,h).data;let a=w,bb=h,cc=-1,dd=-1;
+   for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(d[(y*w+x)*4+3]>40){if(x<a)a=x;if(x>cc)cc=x;if(y<bb)bb=y;if(y>dd)dd=y}
+   if(cc>=a){const sida=Math.max(cc-a,dd-bb)+1;x0=Math.max(0,Math.round((a+cc+1-sida)/2));y0=Math.max(0,Math.round((bb+dd+1-sida)/2));w=h=sida}}catch(e){}
+  c.width=w;c.height=h;const g=c.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(b,x0,y0,w,h,0,0,w,h);c.hidden=false;c.style.display="block";s.style.display="none"};
  c._rita();return el("div",{class:"loggaruta"},s,c)}
 function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning med glans
  s.innerHTML=`<svg viewBox="0 0 100 100" aria-hidden="true" class="d20logo">
@@ -1759,7 +1764,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   g.globalAlpha=liv(h)>0?1:.4;g.drawImage(s,i*14+9+(o?Math.round(o.dx):0),TVH-s.height+hopp);g.globalAlpha=1}); // gosedjuret vid hjältens fötter
  const right=[];
  if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss})}); // ett besegrat monster tonar bort
- else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1}));
+ else if(figur)[].concat(figur).forEach(k=>right.push({k,a:1,boss:k==="skuggan"}));
  let x=TVW-2;
  // bossen ritas större: dubbelt så stor om den får plats, annars en och en halv gång
  const ledigt=TVW-4-(visaParty?partyHeroes().length*14+2:0);
@@ -1768,7 +1773,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  const FAST={greta:15,bo:15,handlare:17,fange:17,resenar:18,drake_bur:20};
  right.forEach(f=>{if(FAST[f.k]){f.w=FAST[f.k];return}const ofx=f.key?OFF(f.key):null;
   f.mb=window.egenMonster&&(RUMBILD[f.k]?egenPerson(RUMBILD[f.k]):egenMonster(f.k,f.boss,ofx&&ofx.dx?"anfall":"sta"));
-  f.mm=f.mb?(f.boss?4:Math.max(1,Math.min(3,Math.round(sprSize(f.k).h/6)/2))):0;
+  f.mm=f.mb?(f.boss?4:RUMBILD[f.k]?Math.max(1,Math.min(3,Math.round(sprSize(f.k).h/6)/2)):Math.max(2,Math.min(3,Math.round(sprSize(f.k).h/6)/2))):0; // monster minst lika stora som hjältarna
   f.w=f.mb?CU*f.mm/2*.75:Math.round(sprSize(f.k).w*(f.f||1))});
  const plats=TVW-2-(visaParty?partyHeroes().length*14+2:0),bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;let forsta=true;
