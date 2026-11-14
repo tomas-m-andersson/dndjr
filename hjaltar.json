@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:46:51.075Z",
+  "uppdaterad": "2026-11-14T23:46:54.223Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700009205,
+    "tid": 1794700012228,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -358,41 +358,23 @@
       {
         "plats": "oknen",
         "kapitel": 2,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör mynt som klirrar.",
-            "typ": "skatt",
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "resenar",
             "kand": false
           },
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "strid",
+            "typ": "lager",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "168 guldmynt",
-              "v": 168
-            },
-            {
-              "k": "sak",
-              "n": "Läkedryck"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Ni hittar 266 guldmynt.",
-            "k": "heal"
-          },
           {
             "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
             "k": "magic"
@@ -548,6 +530,10 @@
           {
             "t": "Ni hittar en läkedryck.",
             "k": "heal"
+          },
+          {
+            "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
+            "k": ""
           }
         ],
         "party": [
@@ -584,7 +570,7 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt.",
+        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "bossFaktor": 1.3,
         "nyttVapen": null,
         "nyttVapenId": "stormluta"
