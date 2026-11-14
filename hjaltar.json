@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:40:45.970Z",
+  "uppdaterad": "2026-11-14T23:40:48.735Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699644049,
+    "tid": 1794699646845,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -357,31 +357,11 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det luktar svagt av rökelse och gamla kryddor.",
-            "typ": "lager",
-            "kand": false
-          },
-          {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "strid",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "skorpion",
-            "skorpion",
-            "skorpion"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -490,6 +470,10 @@
           {
             "t": "Det sista monstret faller. Alla får 90 XP.",
             "k": "crit"
+          },
+          {
+            "t": "En port av sandsten med två stora stenlejon framför. Bakom den väntar stadens väktare.",
+            "k": ""
           }
         ],
         "party": [
@@ -524,7 +508,7 @@
           "svante": 27,
           "benjamin": 36
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
+        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare."
       }
     ],
     "aktivRun": "rmwh1nadcktev",
