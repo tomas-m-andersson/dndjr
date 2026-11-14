@@ -685,7 +685,7 @@ window.AVENTYR = [
       },
 
       balsalen: {
-        bild: "balsal_spoken",
+        bild: "balsal_spoken_tittar",
         text: "Balsalen är full av folk, och ändå är den tom.\n\nTjugo par dansar en långsam vals över golvet. Man ser rakt igenom dem. Vid pianot sitter en herre utan ansikte och spelar samma åtta takter om och om igen.\n\nNär ni kommer in vänder alla huvudena mot er samtidigt. Men de slutar inte dansa.",
         val: [
           { text: "Buga och dansa med dem", prov: {
@@ -708,7 +708,7 @@ window.AVENTYR = [
       },
 
       spokstrid: {
-        bild: "balsal",
+        bild: "balsal_spoken",
         text: "De bugar artigt, allihop. Sedan anfaller de.",
         strid: {
           fiender: ["spoke", "spoke", "dimvasen"],

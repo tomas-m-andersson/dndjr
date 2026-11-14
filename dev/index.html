@@ -1620,7 +1620,7 @@ function sprite(g,key,x,y,flip,alpha){const s=sprDef(key),c=s&&sprCanvas(key);if
 const sprSize=k=>{const s=sprDef(k);if(s&&s.hero){const c=sprCanvas(k);return{w:c.width,h:c.height-1}}return s?{w:(s.rows[0].length+2)*s.skala,h:(s.rows.length+2)*s.skala}:{w:12,h:16}};
 function seedRnd(seed){let s=seed;return()=>{s=(s*9301+49297)%233280;return s/233280}}
 // Nya scener i kapitel 2 ritas som en gammal scen tills den egna bilden finns i mappen Bakgrunder och miljöer
-const SCENLIK={kallare:"gruva_inne",dimskog:"skog",gravkulle:"skog",grind:"by",hall:"sal",balsal:"sal",torg_frost:"torg",balsal_spoken:"sal",
+const SCENLIK={kallare:"gruva_inne",dimskog:"skog",gravkulle:"skog",grind:"by",hall:"sal",balsal:"sal",torg_frost:"torg",balsal_spoken:"sal",balsal_spoken_tittar:"sal",
  kok:"sal",bibliotek:"sal",vintertradgard:"sal",klocktorn:"sal",barnkammare:"sal",dimkallare:"gruva_inne",spegelsal:"sal"};
 function scenePaint(g,bild){
  if(typeof bild==="string"&&bild.startsWith("run|")&&window.runScen)return window.runScen(g,bild); // grottkrypningens scener (scener.js)

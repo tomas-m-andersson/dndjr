@@ -48,6 +48,7 @@ window.FIGURVAL={
  spoke:{sta:0,anfall:10},spokriddare:{sta:0,anfall:1},svampman:{sta:0,anfall:1,flip:true},troll:{sta:0,anfall:4},vampyrfladdermus:{sta:0,anfall:2},varg:{sta:0,anfall:10,flip:true},
  varulv:{sta:0,anfall:2,flip:true},vatte:{sta:0,anfall:1,flip:true},vattesjaman:{sta:0,anfall:3,flip:true},vildsvin:{sta:0,anfall:8},
  handlare:{sta:0},
+ bo_staende:{sta:0},tradgardsmastare:{sta:0},spokflicka:{sta:0},
  greta:{sta:0,flip:true},
  fange_1:{sta:0},
  // personerna i rummen "någon behöver hjälp" och handlarna
