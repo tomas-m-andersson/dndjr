@@ -1150,7 +1150,7 @@ function start(){
  medKort(mtv,"kort_monster");
  const bibl=el("button",{class:"bigtile",onclick:()=>monsterBibliotek()},el("div",{class:"tvbig"},mtv),
   el("div",{class:"bigtile-txt"},el("h2",{},"Monsterbibliotek"),el("p",{},Object.keys(MONSTER).length+" monster"),el("small",{},"Bilder och fakta om alla monster ni kan möta, från fladdermöss till drakar.")));
- app.append(el("div",{class:"bigtiles"},hjaltar,lagerRuta(),aventyr,bibl));
+ app.append(el("div",{class:"bigtiles"},hjaltar,aventyr,lagerRuta(),bibl));
  // Extraval: originalspelet som det såg ut före den stora grafiska uppdateringen (har egna sparade framsteg)
  app.append(el("a",{class:"extraval",href:"https://tomas-m-andersson.github.io/dndjr/klassisk/"},
   el("div",{},el("small",{},"Extra"),el("h3",{},"Originalspelet"),el("p",{},"Spela den första versionen av Bland monster och tärningar, med de gamla pixelbilderna. Den har egna sparade framsteg och påverkar inte det här spelet.")),
