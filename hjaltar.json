@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:06:29.596Z",
+  "uppdaterad": "2026-11-14T16:06:34.143Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -204,11 +204,11 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 32,
+      "ville": 31,
       "svante": 27,
-      "sally": 22,
-      "tomas": 38,
-      "linda": 12,
+      "sally": 21,
+      "tomas": 37,
+      "linda": 11,
       "benjamin": 34
     },
     "kapitel": {
@@ -282,7 +282,7 @@
         "v": 1
       }
     },
-    "tid": 1794672387563,
+    "tid": 1794672393726,
     "niva": {
       "ville": {
         "lvl": 5,
