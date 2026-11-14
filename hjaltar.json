@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T16:06:17.614Z",
+  "uppdaterad": "2026-11-14T16:06:22.003Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -204,11 +204,11 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 35,
+      "ville": 32,
       "svante": 27,
-      "sally": 25,
-      "tomas": 41,
-      "linda": 15,
+      "sally": 22,
+      "tomas": 38,
+      "linda": 12,
       "benjamin": 34
     },
     "kapitel": {
@@ -275,13 +275,14 @@
           "plockat_ros",
           "har_ros",
           "letat_krukor",
-          "vackt"
+          "vackt",
+          "byborna_burna"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794672377598,
+    "tid": 1794672380026,
     "niva": {
       "ville": {
         "lvl": 5,
