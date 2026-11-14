@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:47:03.943Z",
+  "uppdaterad": "2026-11-14T23:47:11.255Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700021896,
+    "tid": 1794700029389,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 5588
+        "xp": 5738
       },
       "svante": {
         "lvl": 5,
-        "xp": 3639
+        "xp": 3789
       },
       "tomas": {
         "lvl": 6,
-        "xp": 7053
+        "xp": 7203
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 4943
+        "xp": 5093
       },
       "linda": {
         "lvl": 2,
@@ -375,7 +375,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En skadad äventyrare sitter lutad mot väggen.",
             "vem": "henne",
@@ -385,10 +385,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Rum 2 · Monster",
-            "k": "sep"
-          },
           {
             "t": "Ni möter Sandorm!",
             "k": "bad"
@@ -544,6 +540,10 @@
           {
             "t": "En skadad äventyrare sitter lutad mot väggen.",
             "k": ""
+          },
+          {
+            "t": "Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett. Alla får 150 XP.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -563,7 +563,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Stor läkedryck",
           "Läkedryck"
         ],
@@ -571,7 +570,7 @@
         "curse": {},
         "ara": 2250,
         "start": 1794699336000,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
