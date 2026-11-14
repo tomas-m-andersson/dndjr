@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:38:24.078Z",
+  "uppdaterad": "2026-11-14T23:38:42.159Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699502233,
+    "tid": 1794699520277,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4463
+        "xp": 4598
       },
       "svante": {
         "lvl": 4,
-        "xp": 2514
+        "xp": 2649
       },
       "tomas": {
-        "lvl": 5,
-        "xp": 5928
+        "lvl": 6,
+        "xp": 6063
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 3818
+        "xp": 3953
       },
       "linda": {
         "lvl": 2,
@@ -358,7 +358,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör skrapande ljud och tunga steg.",
@@ -374,7 +374,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "sandorm"
           ],
@@ -416,6 +416,14 @@
           {
             "t": "Ni möter Sandorm!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 135 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Tomas har blivit starkare och är nu nivå 6! +8 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -440,103 +448,18 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 450,
         "start": 1794699336000,
         "nastaKand": false,
         "id": "rmwh1nadcktev",
         "startGuld": 45,
         "liv": {
           "ville": 38,
-          "tomas": 44,
+          "tomas": 52,
           "svante": 27,
           "benjamin": 44
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Sandorm",
-                "liv": 26,
-                "rustning": 14,
-                "anfall": 6,
-                "skada": "1d10",
-                "xp": 450,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "dyker ner i sanden och är borta.",
-                "egen": {
-                  "tva": true
-                },
-                "typ": "sandorm",
-                "bild": "sandorm",
-                "max": 26,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|1|2|rum|strid",
-          "fiender": [
-            {
-              "namn": "Sandorm",
-              "liv": 26,
-              "rustning": 14,
-              "anfall": 6,
-              "skada": "1d10",
-              "xp": 450,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "dyker ner i sanden och är borta.",
-              "egen": {
-                "tva": true
-              },
-              "typ": "sandorm",
-              "bild": "sandorm",
-              "max": 26,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:ville": 18.1,
-            "h:tomas": 20.1,
-            "h:svante": 17.1,
-            "h:benjamin": 14.1,
-            "f:0": 5
-          },
-          "nu": null
-        }
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
     "aktivRun": "rmwh1nadcktev",
