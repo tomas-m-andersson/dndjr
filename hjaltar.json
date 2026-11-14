@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:20:39.538Z",
+  "uppdaterad": "2026-11-14T19:20:43.351Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -213,7 +213,7 @@
     },
     "kapitel": {
       "k1": {
-        "scen": "buren",
+        "scen": "gruvan",
         "flaggor": [
           "vet_drake",
           "glod_fri"
@@ -275,7 +275,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684037543,
+    "tid": 1794684041319,
     "niva": {
       "ville": {
         "lvl": 5,
