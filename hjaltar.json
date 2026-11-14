@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T19:22:50.103Z",
+  "uppdaterad": "2026-11-14T19:22:55.306Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -206,7 +206,7 @@
     "liv": {
       "ville": 38,
       "svante": 27,
-      "sally": 28,
+      "sally": 22,
       "tomas": 44,
       "linda": 18,
       "benjamin": 34
@@ -277,7 +277,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794684167966,
+    "tid": 1794684173275,
     "niva": {
       "ville": {
         "lvl": 5,
