@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:39:54.583Z",
+  "uppdaterad": "2026-11-14T23:40:01.954Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794699592306,
+    "tid": 1794699600035,
     "niva": {
       "ville": {
         "lvl": 5,
-        "xp": 4838
+        "xp": 4988
       },
       "svante": {
         "lvl": 4,
-        "xp": 2889
+        "xp": 3039
       },
       "tomas": {
         "lvl": 6,
-        "xp": 6303
+        "xp": 6453
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 5,
-        "xp": 4193
+        "xp": 4343
       },
       "linda": {
         "lvl": 2,
@@ -336,7 +336,7 @@
         "acb": 2
       },
       "benjamin": {
-        "wb": 0,
+        "wb": 1,
         "acb": 2
       },
       "tomas": {
@@ -357,42 +357,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "vaktad",
-            "kand": true
+            "ledtrad": "Det luktar svagt av rökelse och gamla kryddor.",
+            "typ": "lager",
+            "kand": false
           },
           {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "falla",
-            "kand": true
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "strid",
+            "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "skatt",
-          "klar": false,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "364 guldmynt",
-              "v": 364
-            },
-            {
-              "k": "xp",
-              "n": "En gammal karta full med ledtrådar",
-              "v": 150
-            },
-            {
-              "k": "wb",
-              "n": "Magiskt vapen",
-              "info": "+1 på träff och skada"
-            }
-          ]
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -473,6 +453,22 @@
           {
             "t": "Nu är vägen fri till skatten.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 364 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 150 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Benjamin får ett magiskt vapen: +1 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -481,7 +477,7 @@
           "svante",
           "benjamin"
         ],
-        "guld": 311,
+        "guld": 675,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -507,7 +503,7 @@
           "svante": 27,
           "benjamin": 36
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
     "aktivRun": "rmwh1nadcktev",
