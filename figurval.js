@@ -56,7 +56,7 @@ window.FIGURVAL={
  fange_3:{sta:0,flip:true},
  // Bossar: arken i mappen Bossar har 32×32-rutor (utom Eldklo som har 64×64)
  eldklo:{sta:0,anfall:1,flip:true},
- basilisk:{cell:32,sta:0,anfall:2},dimfrun:{cell:32,sta:0,anfall:2,flip:true},golem:{cell:32,sta:0,anfall:2},grottroll:{cell:32,sta:0,anfall:2,flip:true},jattemask:{cell:32,sta:0,anfall:2},mork_riddare:{cell:32,sta:0,anfall:2},skuggan:{cell:32,sta:0,anfall:2},vampyr:{cell:32,sta:0,anfall:2,flip:true,storlek:3},
+ basilisk:{cell:32,sta:0,anfall:2},dimfrun:{cell:32,sta:0,anfall:2},golem:{cell:32,sta:0,anfall:2},grottroll:{cell:32,sta:0,anfall:2,flip:true},jattemask:{cell:32,sta:0,anfall:2},mork_riddare:{cell:32,sta:0,anfall:2},skuggan:{cell:32,sta:0,anfall:2},vampyr:{cell:32,sta:0,anfall:2,flip:true,storlek:3},
  // Trädväktaren finns både som vanlig figur och som boss. Bossarket (32×32) går före när han är boss.
  // Saker i gemensamma ark: vapen, föremål, saker i rummen och ikoner till knapparna
  svard:{ark:"vapen_krigare",sta:0},tvahandssvard:{ark:"vapen_krigare",sta:1},stridsyxa:{ark:"vapen_krigare",sta:3},flammsvard:{ark:"vapen_krigare",sta:4},askhammare:{ark:"vapen_krigare",sta:6},drakdrapare:{ark:"vapen_krigare",sta:7},
@@ -108,6 +108,8 @@ window.VAPENRUTOR={
 };
 
 // Bakgrunder där golvet slutar en bit upp: figurerna flyttas upp så många pixlar (bakgrunden är 320×180)
+// Bakgrunder där hjältarna behöver stå längre åt höger (hål eller möbel längst ner till vänster)
+window.HJALTEFLYTT={klocktorn:12};
 window.FOTLYFT={
  slottet_2_rum:14,   // mörk kant längst ner
  slottet_2_d1:22,    // trappsteg längst ner
