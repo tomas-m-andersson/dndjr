@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T15:49:49.496Z",
+  "uppdaterad": "2026-11-14T15:49:55.060Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -237,98 +237,10 @@
           "bulle_tinad"
         ],
         "klar": false,
-        "v": 1,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              "irrbloss",
-              "irrbloss",
-              "irrbloss"
-            ],
-            "vinst": {
-              "text": "Det sista ljuset slocknar med ett pys. Och när de är borta lyfter dimman lite, precis tillräckligt för att ni ska se att marken lutar uppåt åt ett håll.",
-              "till": "gravkullen"
-            },
-            "forlust": "dimskog_forlust"
-          },
-          "bild": "dimskog",
-          "fiender": [
-            {
-              "namn": "Irrbloss 1",
-              "liv": 1,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": false
-            },
-            {
-              "namn": "Irrbloss 2",
-              "liv": 1,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": false
-            },
-            {
-              "namn": "Irrbloss 3",
-              "liv": 0,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "linda": {
-              "pilregn": true
-            },
-            "ville": {
-              "shuriken": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:ville": 8.1,
-            "h:tomas": 5.1,
-            "h:linda": 18.1,
-            "h:sally": 16.1,
-            "f:0": 1,
-            "f:1": 6,
-            "f:2": 10
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "v": 1
       }
     },
-    "tid": 1794671388150,
+    "tid": 1794671393022,
     "niva": {
       "ville": {
         "lvl": 5,
