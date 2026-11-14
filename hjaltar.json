@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:49:29.768Z",
+  "uppdaterad": "2026-11-14T23:49:57.931Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700167843,
+    "tid": 1794700197722,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -581,7 +581,7 @@
             "fiender": [
               {
                 "namn": "Sandkungen",
-                "liv": 62,
+                "liv": 49,
                 "rustning": 17,
                 "anfall": 8,
                 "skada": "1d10+2",
@@ -598,7 +598,11 @@
                 "bild": "sandkungen",
                 "max": 99,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "svag": {
+                  "n": 3,
+                  "rundor": 1
+                }
               }
             ],
             "run": true,
@@ -611,7 +615,7 @@
           "fiender": [
             {
               "namn": "Sandkungen",
-              "liv": 62,
+              "liv": 49,
               "rustning": 17,
               "anfall": 8,
               "skada": "1d10+2",
@@ -628,7 +632,11 @@
               "bild": "sandkungen",
               "max": 99,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "svag": {
+                "n": 3,
+                "rundor": 1
+              }
             }
           ],
           "anvant": {
@@ -636,38 +644,40 @@
               "valsignelse": true
             },
             "benjamin": {
-              "dubbelskott": true
+              "dubbelskott": true,
+              "sikta_noga": true
             },
             "tomas": {
-              "dubbelhugg": true
+              "dubbelhugg": true,
+              "virvelhugg": true
+            },
+            "ville": {
+              "g_blackmoln": true
             }
           },
           "pepp": {},
           "skydd": {
             "benjamin": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "svante": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "tomas": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             },
             "ville": {
               "ac": 2,
-              "rundor": 3
+              "rundor": 2
             }
           },
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "h": "svante"
             },
