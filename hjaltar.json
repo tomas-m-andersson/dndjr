@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:15:21.286Z",
+  "uppdaterad": "2026-11-15T20:15:29.032Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -214,7 +214,7 @@
       "sally": 21,
       "tomas": 52,
       "linda": 18,
-      "benjamin": 52
+      "benjamin": 47
     },
     "kapitel": {
       "k1": {
@@ -267,10 +267,105 @@
           "letat_skafferiet"
         ],
         "klar": false,
-        "v": 1
+        "v": 1,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              "vampyrfladdermus",
+              "vampyrfladdermus",
+              "vampyrfladdermus"
+            ],
+            "vinst": {
+              "text": "Den sista fladdermusen försvinner upp i skorstenen igen. I spisens aska hittar ni några mynt som någon tappat, svarta av sot men fortfarande guld.",
+              "guld": 10,
+              "till": "koket"
+            },
+            "forlust": "hus_forlust"
+          },
+          "bild": "kok",
+          "fiender": [
+            {
+              "namn": "Vampyrfladdermus 1",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            },
+            {
+              "namn": "Vampyrfladdermus 2",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            },
+            {
+              "namn": "Vampyrfladdermus 3",
+              "liv": 8,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d4+1",
+              "bild": "vampyrfladdermus",
+              "flyr": "piper argt och försvinner upp i skorstenen.",
+              "typ": "vampyrfladdermus",
+              "max": 8,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 2
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:benjamin": 12.1,
+            "h:ville": 10.1,
+            "h:tomas": 9.1,
+            "h:sally": 16.1,
+            "f:0": 19,
+            "f:1": 14,
+            "f:2": 17
+          },
+          "nu": null
+        }
       }
     },
-    "tid": 1794773719305,
+    "tid": 1794773726945,
     "niva": {
       "ville": {
         "lvl": 6,
