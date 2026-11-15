@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:54:45.278Z",
+  "uppdaterad": "2026-11-15T20:54:55.206Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,11 +284,11 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776083199,
+    "tid": 1794776093191,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 8394
+        "xp": 8484
       },
       "svante": {
         "lvl": 6,
@@ -296,15 +296,15 @@
       },
       "tomas": {
         "lvl": 6,
-        "xp": 9859
+        "xp": 9949
       },
       "sally": {
         "lvl": 5,
-        "xp": 3999
+        "xp": 4089
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 7749
+        "xp": 7839
       },
       "linda": {
         "lvl": 2,
@@ -384,7 +384,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "sovare",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "skorpion",
             "skorpion",
@@ -407,6 +407,10 @@
           {
             "t": "Mitt i rummet sover tre Jätteskorpion. Ett öga verkar nästan öppet.",
             "k": "note"
+          },
+          {
+            "t": "Sally leder er förbi utan ett ljud. Alla får 90 XP.",
+            "k": "hit"
           }
         ],
         "party": [
