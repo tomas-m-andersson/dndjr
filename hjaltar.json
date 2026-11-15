@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:57.992Z",
+  "uppdaterad": "2026-11-15T20:57:19.621Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776216628,
+    "tid": 1794776237630,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -496,7 +496,7 @@
             "fiender": [
               {
                 "namn": "Sandorm 1",
-                "liv": 15,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -511,7 +511,7 @@
                 "typ": "sandorm",
                 "bild": "sandorm",
                 "max": 26,
-                "ute": false
+                "ute": true
               },
               {
                 "namn": "Sandorm 2",
@@ -534,7 +534,7 @@
               },
               {
                 "namn": "Sandorm 3",
-                "liv": 16,
+                "liv": 1,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -566,7 +566,7 @@
           "fiender": [
             {
               "namn": "Sandorm 1",
-              "liv": 15,
+              "liv": 0,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -581,7 +581,7 @@
               "typ": "sandorm",
               "bild": "sandorm",
               "max": 26,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Sandorm 2",
@@ -604,7 +604,7 @@
             },
             {
               "namn": "Sandorm 3",
-              "liv": 16,
+              "liv": 1,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -628,10 +628,12 @@
           ],
           "anvant": {
             "benjamin": {
-              "pilregn": true
+              "pilregn": true,
+              "dubbelskott": true
             },
             "tomas": {
-              "virvelhugg": true
+              "virvelhugg": true,
+              "dubbelhugg": true
             },
             "sally": {
               "frasa": true
@@ -646,12 +648,6 @@
           "locka": null,
           "runda": 2,
           "ko": [
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "tomas"
-            },
             {
               "f": 1
             },
