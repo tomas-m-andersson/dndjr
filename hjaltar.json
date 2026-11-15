@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:12:33.389Z",
+  "uppdaterad": "2026-11-15T11:12:52.041Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741151482,
+    "tid": 1794741170149,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,7 +360,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon stönar svagt, som om den har ont.",
@@ -374,7 +374,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
+            "vem": "spelmannen",
+            "ok": "Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
+            "nej": "Spelmannen sjunger bara en sorglig visa.",
+            "dryck": "Spelmannen dricker, stämmer fiolen och spelar en visa om allt han sett."
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -382,6 +392,14 @@
           },
           {
             "t": "Svavelrök sticker i näsan när Ville, Tomas, Svante och Benjamin går in i Drakvulkanen. Marken under fötterna är varm.",
+            "k": ""
+          },
+          {
+            "t": "Rum 1 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
             "k": ""
           }
         ],
