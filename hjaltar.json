@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:55:49.548Z",
+  "uppdaterad": "2026-11-15T20:55:57.230Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,27 +284,27 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776147507,
+    "tid": 1794776155323,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 8484
+        "xp": 8574
       },
       "svante": {
         "lvl": 6,
         "xp": 6445
       },
       "tomas": {
-        "lvl": 6,
-        "xp": 9949
+        "lvl": 7,
+        "xp": 10039
       },
       "sally": {
         "lvl": 5,
-        "xp": 4089
+        "xp": 4179
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 7839
+        "xp": 7929
       },
       "linda": {
         "lvl": 2,
@@ -374,7 +374,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "sovare",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "sandorm",
             "sandorm"
@@ -412,6 +412,14 @@
           {
             "t": "Två Sandorm snarkar högt i ett hörn.",
             "k": "note"
+          },
+          {
+            "t": "Ett snarkande ljud, ett mumlande. Men ni kommer förbi. Alla får 90 XP.",
+            "k": "hit"
+          },
+          {
+            "t": "★ Tomas känner sig mäktigare. Nivå 7! +8 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -444,7 +452,7 @@
         "liv": {
           "benjamin": 52,
           "ville": 45,
-          "tomas": 52,
+          "tomas": 60,
           "sally": 28
         },
         "dorrText": "Stigen är smal och leder bara vidare in."
