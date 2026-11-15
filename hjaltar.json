@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:06:12.775Z",
+  "uppdaterad": "2026-11-15T11:06:43.556Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740770850,
+    "tid": 1794740801670,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 6706
+        "xp": 6766
       },
       "svante": {
         "lvl": 5,
-        "xp": 4757
+        "xp": 4817
       },
       "tomas": {
         "lvl": 6,
-        "xp": 8171
+        "xp": 8231
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 6061
+        "xp": 6121
       },
       "linda": {
         "lvl": 2,
@@ -359,34 +359,17 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "strid",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar mögel och något surt.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
-            "typ": "sovare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
+            "ledtrad": "Något snarkar, djupt och långsamt.",
             "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": false,
-          "fiender": [
-            "slem"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -451,6 +434,14 @@
           {
             "t": "Ni möter en slemkub!",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 60 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -475,7 +466,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 600,
+        "ara": 800,
         "start": 1794733558368,
         "nastaKand": false,
         "id": "rmwhm0sion07z",
@@ -486,86 +477,7 @@
           "svante": 33,
           "benjamin": 52
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Slemkub",
-                "liv": 30,
-                "rustning": 8,
-                "anfall": 4,
-                "skada": "3d6",
-                "xp": 200,
-                "platser": [
-                  "grottorna"
-                ],
-                "flyr": "rinner ut över golvet och blir en pöl.",
-                "typ": "slem",
-                "bild": "slem",
-                "max": 30,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|grottorna|1|4|rum|strid",
-          "fiender": [
-            {
-              "namn": "Slemkub",
-              "liv": 30,
-              "rustning": 8,
-              "anfall": 4,
-              "skada": "3d6",
-              "xp": 200,
-              "platser": [
-                "grottorna"
-              ],
-              "flyr": "rinner ut över golvet och blir en pöl.",
-              "typ": "slem",
-              "bild": "slem",
-              "max": 30,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 12.1,
-            "h:svante": 20.1,
-            "h:ville": 18.1,
-            "h:tomas": 13.1,
-            "f:0": 4
-          },
-          "nu": null
-        }
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
