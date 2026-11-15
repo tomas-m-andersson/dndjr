@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:04:40.938Z",
+  "uppdaterad": "2026-11-15T11:05:51.144Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740680140,
+    "tid": 1794740750109,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -458,7 +458,7 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 34,
+          "ville": 30,
           "tomas": 52,
           "svante": 33,
           "benjamin": 44
@@ -535,7 +535,7 @@
           "fiender": [
             {
               "namn": "Jätteorm 1",
-              "liv": 16,
+              "liv": 0,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -551,11 +551,11 @@
               "typ": "orm",
               "bild": "orm",
               "max": 24,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Vättehövding",
-              "liv": 13,
+              "liv": 0,
               "rustning": 15,
               "anfall": 5,
               "skada": "1d8+2",
@@ -568,11 +568,11 @@
               "typ": "krak",
               "bild": "krak",
               "max": 24,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Jätteorm 2",
-              "liv": 18,
+              "liv": 8,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -594,13 +594,19 @@
           "anvant": {
             "benjamin": {
               "pilregn": true
+            },
+            "ville": {
+              "shuriken": true
+            },
+            "tomas": {
+              "virvelhugg": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
             {
               "h": "ville"
@@ -630,7 +636,7 @@
           "giftH": {
             "ville": {
               "expr": "1d6",
-              "rundor": 3
+              "rundor": 2
             }
           },
           "bedovH": {}
