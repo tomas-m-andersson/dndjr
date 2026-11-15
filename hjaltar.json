@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:27.682Z",
+  "uppdaterad": "2026-11-15T20:56:42.717Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776185384,
+    "tid": 1794776202504,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -485,10 +485,10 @@
         "id": "rmwibbhvo6hol",
         "startGuld": 46,
         "liv": {
-          "benjamin": 52,
+          "benjamin": 49,
           "ville": 45,
           "tomas": 60,
-          "sally": 28
+          "sally": 20
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
         "stridSpar": {
@@ -496,7 +496,7 @@
             "fiender": [
               {
                 "namn": "Sandorm 1",
-                "liv": 26,
+                "liv": 18,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -515,7 +515,7 @@
               },
               {
                 "namn": "Sandorm 2",
-                "liv": 26,
+                "liv": 20,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -534,7 +534,7 @@
               },
               {
                 "namn": "Sandorm 3",
-                "liv": 26,
+                "liv": 20,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -562,7 +562,7 @@
           "fiender": [
             {
               "namn": "Sandorm 1",
-              "liv": 26,
+              "liv": 18,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -581,7 +581,7 @@
             },
             {
               "namn": "Sandorm 2",
-              "liv": 26,
+              "liv": 20,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -600,7 +600,7 @@
             },
             {
               "namn": "Sandorm 3",
-              "liv": 26,
+              "liv": 20,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -618,22 +618,20 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "benjamin": {
+              "pilregn": true
+            },
+            "tomas": {
+              "virvelhugg": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 1
-            },
             {
               "f": 2
             },
@@ -658,7 +656,9 @@
             "f:1": 7,
             "f:2": 6
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
