@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:09:18.480Z",
+  "uppdaterad": "2026-11-15T11:09:54.552Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740957504,
+    "tid": 1794740993118,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -499,7 +499,7 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 11,
+          "ville": 17,
           "tomas": 51,
           "svante": 33,
           "benjamin": 47
@@ -512,7 +512,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 136,
+                "liv": 103,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -531,7 +531,7 @@
                 "boss": true,
                 "svag": {
                   "n": 3,
-                  "rundor": 2
+                  "rundor": 1
                 }
               }
             ],
@@ -546,7 +546,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 136,
+              "liv": 103,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -565,7 +565,7 @@
               "boss": true,
               "svag": {
                 "n": 3,
-                "rundor": 2
+                "rundor": 1
               }
             }
           ],
@@ -574,14 +574,21 @@
               "g_blackmoln": true
             },
             "benjamin": {
-              "dubbelskott": true
+              "dubbelskott": true,
+              "sikta_noga": true
+            },
+            "tomas": {
+              "dubbelhugg": true
+            },
+            "svante": {
+              "lakande_ord": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
             {
               "h": "tomas"
