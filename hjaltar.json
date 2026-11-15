@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:17:43.757Z",
+  "uppdaterad": "2026-11-15T11:18:26.074Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741461830,
+    "tid": 1794741504967,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -507,7 +507,7 @@
         "id": "rmwhqjjegrk5v",
         "startGuld": 54,
         "liv": {
-          "ville": 18,
+          "ville": 8,
           "tomas": 51,
           "svante": 9,
           "benjamin": 7
@@ -520,7 +520,7 @@
               {
                 "namn": "Eldklo, den unga draken",
                 "baraBoss": true,
-                "liv": 86,
+                "liv": 62,
                 "rustning": 18,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -537,7 +537,8 @@
                 "max": 146,
                 "ute": false,
                 "boss": true,
-                "svag": null
+                "svag": null,
+                "bedovad": 0
               }
             ],
             "run": true,
@@ -551,7 +552,7 @@
             {
               "namn": "Eldklo, den unga draken",
               "baraBoss": true,
-              "liv": 86,
+              "liv": 62,
               "rustning": 18,
               "anfall": 8,
               "skada": "2d8+4",
@@ -568,16 +569,19 @@
               "max": 146,
               "ute": false,
               "boss": true,
-              "svag": null
+              "svag": null,
+              "bedovad": 0
             }
           ],
           "anvant": {
             "ville": {
               "g_blackmoln": true,
-              "smygattack": true
+              "smygattack": true,
+              "tryckpunkt": true
             },
             "benjamin": {
-              "dubbelskott": true
+              "dubbelskott": true,
+              "sikta_noga": true
             },
             "tomas": {
               "dubbelhugg": true,
@@ -592,11 +596,8 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 5,
+          "runda": 7,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "h": "svante"
             },
