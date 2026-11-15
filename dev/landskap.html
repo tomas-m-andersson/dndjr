@@ -62,10 +62,10 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .kort.ute{opacity:.45}
 .kort.gift{border-color:var(--moss)}
 .kort.gift .matare i{background:var(--moss)}
-/* fiendens livmätare: står lodrätt strax till höger om monstret och sjunker nedåt */
-.fmat{position:absolute;width:7px;border-radius:4px;background:#0b131bcc;
-  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;display:flex;align-items:flex-end}
-.fmat i{display:block;width:100%;background:var(--moss);border-radius:4px;transition:height .35s ease}
+/* fiendens livmätare: en kort, liggande stapel ovanför monstrets huvud */
+.fmat{position:absolute;height:6px;border-radius:4px;background:#0b131bcc;
+  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
+.fmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease}
 .fmat.skadad i{background:#e3c44f}
 .fmat.kritisk i{background:var(--red)}
 
@@ -240,6 +240,17 @@ function ritaTV(){
  if(window.ritaOm)ritaOm();
 }
 
+/* Var i rutan monstret faktiskt börjar, så att mätaren hamnar precis ovanför huvudet
+   och inte högt upp i den tomma delen av bildrutan. */
+const TOPP={};
+function toppRad(c,k){
+ if(TOPP[k]!=null)return TOPP[k];
+ try{const d=c.getContext("2d").getImageData(0,0,c.width,c.height).data;
+  for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++)
+   if(d[(y*c.width+x)*4+3]>20)return TOPP[k]=y/c.height;
+  return 0}catch(_){return 0}   // tom ruta = bilden är inte laddad än, spara inte svaret
+}
+
 /* ---------- HUD ---------- */
 function hud(){
  const L=LAGEN[lage];
@@ -259,12 +270,13 @@ function hud(){
   const pos=FIENDEPOS[i];if(!pos)return null;
   const del=f.liv/f.max, b=document.createElement("div");
   b.className="fmat";
-  const hojd=Math.max(22,Math.round(pos.hh*skala*.8));          // ungefär lika hög som monstret
-  const hoger=Math.min(pos.mitt+pos.w/2+2, TVW-3.2);            // klämmer in den om monstret står längst ut
-  b.style.left=Math.round(hoger*skala)+"px";
-  b.style.top=Math.round(pos.bot*skala-hojd)+"px";
-  b.style.height=hojd+"px";
-  b.innerHTML='<i style="height:'+(del*100)+'%"></i>';
+  const bredd=Math.max(18,Math.round(pos.w*skala*.45));          // knappt halva monstrets bredd
+  const mitt=Math.min(Math.max(pos.mitt*skala,bredd/2+2),ram.clientWidth-bredd/2-2);
+  b.style.left=Math.round(mitt)+"px";
+  b.style.width=bredd+"px";
+  const huvud=pos.bot-pos.hh*(1-toppRad(pos.mb,pos.k));                // där monstret faktiskt börjar
+  b.style.top=Math.max(2,Math.round(huvud*skala-9))+"px";              // strax ovanför huvudet
+  b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
   return b}).filter(Boolean)));
  const knappar=(L.knappar||[]).map(([t,kl])=>{
   const b=document.createElement("button");b.textContent=t;if(kl)b.className=kl;
