@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:13:08.995Z",
+  "uppdaterad": "2026-11-15T11:13:15.861Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741187071,
+    "tid": 1794741193888,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,7 +360,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni känner värme mot ansiktet.",
@@ -374,7 +374,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": true,
+            "varn": "En platta klickar. Flammor sprutar ur golvet!",
+            "ok": "kastar sig undan lågorna",
+            "traff": "bränns av lågorna"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -399,6 +409,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "En platta klickar. Flammor sprutar ur golvet!",
+            "k": "bad"
           }
         ],
         "party": [
