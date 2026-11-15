@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:59:40.634Z",
+  "uppdaterad": "2026-11-15T20:00:34.087Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -210,7 +210,7 @@
     "liv": {
       "ville": 45,
       "svante": 39,
-      "sally": 24,
+      "sally": 21,
       "tomas": 52,
       "linda": 18,
       "benjamin": 52
@@ -249,10 +249,98 @@
           "vet_barnet"
         ],
         "klar": false,
-        "v": 1
+        "v": 1,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              "dimvarg",
+              "dimvarg"
+            ],
+            "justera": [
+              {
+                "flagga": "bulle_tinad",
+                "typ": "dimvarg",
+                "liv": -4,
+                "text": "Bulle kommer ikapp uppför kullen och slänger en gravsten efter vargarna. De är skadade redan innan striden börjar."
+              }
+            ],
+            "vinst": {
+              "text": "Den sista vargen blåser bort i trasor. Där de stod ligger bara en kall, våt fläck i snön.\n\nOvanför er, genom dimman, ser ni äntligen huset.",
+              "till": "grinden"
+            },
+            "forlust": "kulle_forlust"
+          },
+          "bild": "gravkulle",
+          "fiender": [
+            {
+              "namn": "Dimvarg 1",
+              "liv": 4,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d6+2",
+              "bild": "dimvarg",
+              "flyr": "löses upp i vit dimma som blåser bort mellan träden.",
+              "typ": "dimvarg",
+              "max": 14,
+              "ute": false
+            },
+            {
+              "namn": "Dimvarg 2",
+              "liv": 10,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d6+2",
+              "bild": "dimvarg",
+              "flyr": "löses upp i vit dimma som blåser bort mellan träden.",
+              "typ": "dimvarg",
+              "max": 14,
+              "ute": false
+            }
+          ],
+          "anvant": {
+            "sally": {
+              "klosattack": true
+            }
+          },
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "f": 0
+            }
+          ],
+          "logg": [],
+          "noter": [
+            "Bulle kommer ikapp uppför kullen och slänger en gravsten efter vargarna. De är skadade redan innan striden börjar."
+          ],
+          "init": {
+            "h:benjamin": 7.1,
+            "h:ville": 12.1,
+            "h:tomas": 11.1,
+            "h:sally": 14.1,
+            "f:0": 7,
+            "f:1": 13
+          },
+          "nu": null
+        }
       }
     },
-    "tid": 1794772778502,
+    "tid": 1794772831853,
     "niva": {
       "ville": {
         "lvl": 6,
