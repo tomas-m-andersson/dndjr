@@ -415,6 +415,31 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 /* Knappen i tärningsrutan ligger alltid kvar längst ner på skärmen, även på små telefoner */
 .rollpanel>.btn.big{position:sticky;bottom:12px;z-index:5}
 
+/* Rutorna som fäller ut sig underifrån blir också kompakta i liggande läge */
+body.liggande .sheet{gap:9px;padding:12px 16px;max-height:96%;border-radius:12px}
+body.liggande .sheet h2{font-size:1.2rem}
+body.liggande .pickers{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+body.liggande .picker{padding:5px 8px;gap:9px}
+body.liggande .picker b{font-size:.95rem}
+body.liggande .picker span{font-size:.82rem}
+body.liggande .sheet .btn.ghost{padding:8px 14px}
+
+/* I liggande läge är spalten låg: tärningsrutan görs kompakt så att hela resultatet
+   och knappen får plats utan att man behöver scrolla. */
+body.liggande .rollpanel{gap:5px;padding:9px 10px}
+body.liggande .rollpanel h2{font-size:1.05rem;line-height:1.2}
+body.liggande .rollpanel p,body.liggande .rollpanel .event{font-size:.95rem}
+body.liggande .hint{font-size:.85rem}
+body.liggande .dicebox{min-height:0;gap:8px}
+body.liggande .d20{width:78px;height:78px}
+body.liggande .dicebox.many .d20{width:54px;height:54px}
+body.liggande .rollres{gap:2px}
+body.liggande .rollres .event{font-size:1.15rem}
+body.liggande .grows{gap:2px}
+body.liggande .grow{padding:2px 8px;font-size:.9rem}
+body.liggande .rollpanel>.btn.big{position:static;padding:9px 14px;font-size:1rem}
+body.liggande .rollpanel>.btn.big:not(:disabled){animation:none}
+
 /* ===== Liggande helskärmsläge =====
    Slås på i Inställningar. Då får TV:n hela vänstra delen och texten högra,
    och livmätarna ritas in i bilden ovanför varje figur i stället för som kort. */
@@ -2205,12 +2230,14 @@ function valMojligt(v,K){
 function valSynligt(v,K){return valMojligt(v,K)&&!(v.rum&&rumKlart(v.rum,K))} // rummet är färdigt: dörren dit försvinner
 // Ett rum är färdigt när det inte finns något kvar att göra där: alla val är gjorda, och de som
 // är kvar går inte att välja (fel klass, saknat föremål). Vägen ut (utgang) räknas inte.
-// kvar: true betyder att valet håller rummet öppet även innan man kan göra det, för det kan bli möjligt senare.
+// kvar: lista med flaggor som sätts när de val som skulle kunna göra det här valet möjligt har använts.
+// Så länge någon av dem saknas hålls rummet öppet, för valet kan fortfarande bli möjligt.
 function rumKlart(namn,K){
  const sc=scenDef(namn);if(!sc||!Array.isArray(sc.val))return false;
  const gjort=v=>!!(v.engang&&K.flaggor.includes(v.engang));
  const racker=v=>!(v.krav&&v.krav.sak&&!spel.saker.includes(v.krav.sak))&&!(v.krav&&v.krav.guld&&spel.guld<v.krav.guld);
- return !sc.val.some(v=>!v.utgang&&((valMojligt(v,K)&&racker(v))||(v.kvar&&!gjort(v))));
+ const kanKomma=v=>v.kvar&&!gjort(v)&&![].concat(v.kvar).every(f=>K.flaggor.includes(f));
+ return !sc.val.some(v=>!v.utgang&&((valMojligt(v,K)&&racker(v))||kanKomma(v)));
 }
 // En scens text kan vara en lista med stycken där vissa bara visas om en flagga finns (om) eller saknas (inteOm).
 function scenText(sc,K){

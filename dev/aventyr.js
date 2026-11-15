@@ -759,7 +759,7 @@ window.AVENTYR = [
               lyckas: { text: "{namn} hittar en rulle med ritningar över huset. Bakom trappan finns en dörr som inte syns, och bakom den en trappa ner till spegelsalen.\n\nPå ritningen står också en varning i marginalen: ”Rustningen i trappan är inte tom.”", flagga: ["vet_spegeln", "vet_rustningen"], till: "biblioteket" },
               misslyckas: { text: "{namn} drar ut rulle efter rulle, men det är bara gamla räkenskaper över hur mycket hö som gick åt varje vinter.", till: "biblioteket" }
             } },
-          { text: "Leta efter något om hennes namn", krav: { flagga: "vet_namnet" }, kvar: true, engang: "last_namnet", prov: {
+          { text: "Leta efter något om hennes namn", krav: { flagga: "vet_namnet" }, kvar: ["tant_spisen"], engang: "last_namnet", prov: {
               egenskap: "vis", svarighet: 13, fraga: "Vem letar?",
               lyckas: { text: "Längst in står en kyrkbok. {namn} bläddrar till rätt vinter och hittar raden.\n\nDär står hennes namn. Det är ett helt vanligt namn, ett sådant som en gammal dam i byn kan heta. Att läsa det gör henne plötsligt mycket mindre läskig.\n\n{namn} lär sig det utantill.", flagga: "kan_namnet", till: "biblioteket" },
               misslyckas: { text: "Sidorna har frusit ihop till ett enda block. {namn} får loss två sidor, och båda är tomma.", till: "biblioteket" }
