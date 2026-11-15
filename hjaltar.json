@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:19:10.718Z",
+  "uppdaterad": "2026-11-15T11:19:16.317Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741549455,
+    "tid": 1794741555610,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -506,7 +506,7 @@
         "liv": {
           "ville": 9,
           "tomas": 46,
-          "svante": 5,
+          "svante": 0,
           "benjamin": 2
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar vulkanens väktare.",
@@ -615,8 +615,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 9,
+          "runda": 10,
           "ko": [
+            {
+              "h": "ville"
+            },
+            {
+              "h": "benjamin"
+            },
             {
               "h": "tomas"
             },
