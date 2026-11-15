@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:51:01.054Z",
+  "uppdaterad": "2026-11-15T19:52:19.155Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -231,7 +231,7 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "bygrinden",
+        "scen": "bron",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1794772259075,
+    "tid": 1794772337014,
     "niva": {
       "ville": {
         "lvl": 6,
