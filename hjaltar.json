@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:19:37.213Z",
+  "uppdaterad": "2026-11-15T11:19:46.451Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 2848,
+    "guld": 3148,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741575289,
+    "tid": 1794741584499,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -355,200 +355,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "eldklo"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Drakvulkanen",
-            "k": "sep"
-          },
-          {
-            "t": "Svavelrök sticker i näsan när Ville, Tomas, Svante och Benjamin går in i Drakvulkanen. Marken under fötterna är varm.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Någon behöver hjälp",
-            "k": "sep"
-          },
-          {
-            "t": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
-            "k": ""
-          },
-          {
-            "t": "Spelmannen sjunger bara en sorglig visa.",
-            "k": "note"
-          },
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "En platta klickar. Flammor sprutar ur golvet!",
-            "k": "bad"
-          },
-          {
-            "t": "Ville bränns av lågorna: 11 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas bränns av lågorna: 7 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Svante bränns av lågorna: 8 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Benjamin bränns av lågorna: 11 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Ni hoppar över en spricka med lava och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Handlare",
-            "k": "sep"
-          },
-          {
-            "t": "En räv i väst och hatt bugar djupt. – Varor för modiga resenärer!",
-            "k": "heal"
-          },
-          {
-            "t": "Ni samlar ihop er och fortsätter.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Två gargoyler snarkar högt i ett hörn.",
-            "k": "note"
-          },
-          {
-            "t": "Ni smyger fram och anfaller!",
-            "k": "note"
-          },
-          {
-            "t": "Ni vann! Alla får 270 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Handlare",
-            "k": "sep"
-          },
-          {
-            "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
-            "k": "heal"
-          },
-          {
-            "t": "Det finns ingen väg runt. Bakom nästa dörr väntar vulkanens väktare.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Vulkanens väktare",
-            "k": "sep"
-          },
-          {
-            "t": "Lavan exploderar uppåt. Ur elden reser sig Eldklo, den unga draken!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 570 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Svante slår upp ögonen och mumlar: – Vad hände?",
-            "k": "heal"
-          },
-          {
-            "t": "★ Nivå upp! Svante är nu nivå 6! +6 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar 300 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 180 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Vulkanens väktare är besegrad!",
-            "k": "crit"
-          }
+        "utfall": "hem",
+        "raddade": 0,
+        "hjaltar": [
+          "Ville (nivå 6)",
+          "Tomas (nivå 6)",
+          "Svante (nivå 6)",
+          "Benjamin (nivå 6)"
         ],
-        "party": [
-          "ville",
-          "tomas",
-          "svante",
-          "benjamin"
-        ],
-        "guld": 354,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 2800,
-        "start": 1794741151480,
-        "nastaKand": false,
-        "id": "rmwhqjjegrk5v",
-        "startGuld": 54,
-        "liv": {
-          "ville": 9,
-          "tomas": 46,
-          "svante": 7,
-          "benjamin": 2
-        },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar vulkanens väktare.",
-        "bossFaktor": 1.3
-      }
-    ],
-    "aktivRun": "rmwhqjjegrk5v",
-    "historik": [
+        "datum": "2026-11-15"
+      },
       {
         "plats": "grottorna",
         "kapitel": 1,
@@ -806,20 +630,6 @@
       },
       {
         "plats": "vulkanen",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-29"
-      },
-      {
-        "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
         "utfall": "gav upp",
