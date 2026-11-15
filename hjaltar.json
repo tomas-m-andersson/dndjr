@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:13:04.941Z",
+  "uppdaterad": "2026-11-15T11:13:08.995Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741183029,
+    "tid": 1794741187071,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,32 +359,22 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon stönar svagt, som om den har ont.",
-            "typ": "resenar",
+            "ledtrad": "Ni känner värme mot ansiktet.",
+            "typ": "altare",
             "kand": false
           },
           {
-            "ledtrad": "Någon har ristat en varning här.",
+            "ledtrad": "Något glimmar i mörkret.",
             "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
-            "vem": "spelmannen",
-            "ok": "Spelmannen sjunger en visa om vägen framåt. Den är full av ledtrådar.",
-            "nej": "Spelmannen sjunger bara en sorglig visa.",
-            "dryck": "Spelmannen dricker, stämmer fiolen och spelar en visa om allt han sett."
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -405,6 +395,10 @@
           {
             "t": "Spelmannen sjunger bara en sorglig visa.",
             "k": "note"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -440,7 +434,7 @@
           "svante": 33,
           "benjamin": 52
         },
-        "dorrText": "Vägen delar sig. Varje väg döljer något olika."
+        "dorrText": "Lavan bubblar. Det finns mer än en väg, och alla är heta."
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
