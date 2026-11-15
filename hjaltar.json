@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:16:29.081Z",
+  "uppdaterad": "2026-11-15T20:16:39.730Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -264,13 +264,14 @@
           "har_ros",
           "letat_krukor",
           "smakat",
-          "letat_skafferiet"
+          "letat_skafferiet",
+          "tant_spisen"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794773787109,
+    "tid": 1794773797746,
     "niva": {
       "ville": {
         "lvl": 6,
