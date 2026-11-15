@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:48:17.595Z",
+  "uppdaterad": "2026-11-15T19:48:31.127Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -234,13 +234,14 @@
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
-          "kant_lyktan"
+          "kant_lyktan",
+          "lyktkall"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794772095555,
+    "tid": 1794772109177,
     "niva": {
       "ville": {
         "lvl": 6,
