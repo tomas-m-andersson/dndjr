@@ -420,18 +420,19 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
    och livmätarna ritas in i bilden ovanför varje figur i stället för som kort. */
 body.liggande{overflow:hidden;height:100dvh;padding:0}
 body.liggande #app{position:fixed;inset:0;max-width:none;margin:0;gap:10px;
-  padding:6px max(8px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom)) calc(var(--tvw,55%) + 16px);
+  padding:var(--tvtop,6px) var(--padr,8px) var(--padb,6px) calc(var(--tvleft,6px) + var(--tvw,55%) + 12px);
   overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
-body.liggande #app>.tvbig:not(.lagertv):not(.berattelseruta){position:fixed;left:max(6px,env(safe-area-inset-left));top:max(6px,env(safe-area-inset-top));
+body.liggande #app>.tvbig:not(.lagertv):not(.berattelseruta){position:fixed;left:var(--tvleft,6px);top:var(--tvtop,6px);
   width:var(--tvw);height:var(--tvh);margin:0;z-index:5;box-shadow:0 0 0 2px var(--line),0 10px 24px #0008}
 body.liggande .strip,body.liggande .foes{display:none}
-body.liggande .topbar{position:sticky;top:0;z-index:6;background:var(--bg);padding-block:2px}
+body.liggande .topbar{position:sticky;top:0;z-index:6;background:var(--bg);padding-block:2px;gap:8px}
+body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:14px}
 body.liggande .story{font-size:15px;line-height:1.45}
 body.liggande h2.turn{font-size:17px}
 body.liggande #party{display:none}
 /* knapparna under TV:n i strid, kompakta så de får plats */
-body.liggande.strid #app>.actions:not(.x){position:fixed;left:max(6px,env(safe-area-inset-left));
-  top:calc(var(--tvh) + max(6px,env(safe-area-inset-top)) + 6px);width:var(--tvw);margin:0;z-index:5;
+body.liggande.strid #app>.actions:not(.x){position:fixed;left:var(--tvleft,6px);
+  top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:var(--tvw);margin:0;z-index:5;
   display:flex;flex-wrap:wrap;gap:6px;max-height:var(--knapph,90px);overflow:auto;align-content:flex-start}
 body.liggande.strid #app>.actions>.choicebtn{flex:1 1 calc(50% - 3px);min-width:0;padding:7px 9px;gap:7px;
   border-left-width:3px;align-items:center}
@@ -1582,6 +1583,15 @@ function rotationLas(){
   else if(o.lock)o.lock("portrait").catch(()=>{});
  }catch(_){}
 }
+// Kamerahål och rundade hörn: mät hur mycket som är skymt i just det här läget
+function sakraKanter(){
+ const d=document.createElement("div");
+ d.style.cssText="position:fixed;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;"+
+  "padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)";
+ document.body.appendChild(d);const c=getComputedStyle(d);
+ const v={t:parseFloat(c.paddingTop)||0,r:parseFloat(c.paddingRight)||0,b:parseFloat(c.paddingBottom)||0,l:parseFloat(c.paddingLeft)||0};
+ d.remove();return v;
+}
 function uppdateraLiggande(){
  const spelvy=view==="scen"||view==="run";
  const pa=!!alt.liggande&&innerWidth>innerHeight&&spelvy;
@@ -1589,11 +1599,17 @@ function uppdateraLiggande(){
  document.body.classList.toggle("liggande",pa);
  document.body.classList.toggle("strid",pa&&!!strid);
  if(pa){
-  const sidbredd=Math.round(Math.min(400,Math.max(210,innerWidth*.33)));
-  const h0=innerHeight-12,w0=innerWidth-sidbredd-24;
-  let w=w0,h=Math.round(w*BTH/BTW);
-  const knapph=strid?96:10;
+  const k=sakraKanter(),vl=Math.max(6,k.l),hl=Math.max(8,k.r),ol=Math.max(6,k.t),nl=Math.max(6,k.b);
+  const tillg=innerWidth-vl-hl-12;                       // bredden som är kvar när kanterna räknats bort
+  const sidbredd=Math.round(Math.min(400,Math.max(205,tillg*.34)));
+  const h0=innerHeight-ol-nl;
+  let w=Math.max(120,tillg-sidbredd-12),h=Math.round(w*BTH/BTW);
+  const knapph=strid?96:8;
   if(h>h0-knapph){h=h0-knapph;w=Math.round(h*BTW/BTH)}
+  document.body.style.setProperty("--tvleft",vl+"px");
+  document.body.style.setProperty("--tvtop",ol+"px");
+  document.body.style.setProperty("--padr",hl+"px");
+  document.body.style.setProperty("--padb",nl+"px");
   document.body.style.setProperty("--tvw",w+"px");
   document.body.style.setProperty("--tvh",h+"px");
   document.body.style.setProperty("--knapph",Math.max(40,h0-h-10)+"px");
@@ -1601,7 +1617,7 @@ function uppdateraLiggande(){
   if(!document.fullscreenElement&&document.documentElement.requestFullscreen)
    document.documentElement.requestFullscreen().catch(()=>{});
  }else{
-  document.body.style.removeProperty("--tvw");document.body.style.removeProperty("--tvh");
+  ["--tvw","--tvh","--tvleft","--tvtop","--padr","--padb","--knapph"].forEach(n=>document.body.style.removeProperty(n));
   slappSkarmen();
   if(fore&&document.fullscreenElement)document.exitFullscreen().catch(()=>{});
  }
