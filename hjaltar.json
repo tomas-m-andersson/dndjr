@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:12:52.041Z",
+  "uppdaterad": "2026-11-15T11:13:04.941Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741170149,
+    "tid": 1794741183029,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -376,7 +376,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
             "vem": "spelmannen",
@@ -401,6 +401,10 @@
           {
             "t": "En kringvandrande spelman sitter med en trasig fiol. Han har stukat foten.",
             "k": ""
+          },
+          {
+            "t": "Spelmannen sjunger bara en sorglig visa.",
+            "k": "note"
           }
         ],
         "party": [
