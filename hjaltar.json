@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:55:57.230Z",
+  "uppdaterad": "2026-11-15T20:55:59.658Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776155323,
+    "tid": 1794776157755,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -362,24 +362,17 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
             "typ": "sovare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": true,
-          "fiender": [
-            "sandorm",
-            "sandorm"
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -420,6 +413,10 @@
           {
             "t": "★ Tomas känner sig mäktigare. Nivå 7! +8 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -455,7 +452,7 @@
           "tomas": 60,
           "sally": 28
         },
-        "dorrText": "Stigen är smal och leder bara vidare in."
+        "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
       }
     ],
     "aktivRun": "rmwibbhvo6hol",
