@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-14T23:52:03.588Z",
+  "uppdaterad": "2026-11-15T09:06:00.243Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794700321666,
+    "tid": 1794733558374,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -355,8 +355,73 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Någonstans porlar vatten.",
+            "typ": "altare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "skatt",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Ville, Tomas, Svante och Benjamin klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "ville",
+          "tomas",
+          "svante",
+          "benjamin"
+        ],
+        "guld": 44,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794733558368,
+        "nastaKand": false,
+        "id": "rmwhm0sion07z",
+        "startGuld": 44,
+        "liv": {
+          "ville": 45,
+          "tomas": 52,
+          "svante": 33,
+          "benjamin": 44
+        },
+        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+      }
+    ],
+    "aktivRun": "rmwhm0sion07z",
     "historik": [
       {
         "plats": "oknen",
