@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:55:59.658Z",
+  "uppdaterad": "2026-11-15T20:56:09.342Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776157755,
+    "tid": 1794776167319,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -363,7 +363,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
@@ -372,7 +372,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "sandorm",
+            "sandorm",
+            "sandvalnad"
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -417,6 +425,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Två Sandorm och Sandvålnad har somnat vid en slocknad eld. Ingen har märkt er. Än.",
+            "k": "note"
           }
         ],
         "party": [
