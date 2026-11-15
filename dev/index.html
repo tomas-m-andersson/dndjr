@@ -338,6 +338,14 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .choicebtn .wicon{background:radial-gradient(circle,#59412a 0%,#2a1b10 75%);border-color:#7d5c33}
 .choicebtn .wicon.special{background:radial-gradient(circle,#6b5020 0%,#2b200d 75%);border-color:#b9892a}
 .choicebtn:disabled .wicon{background:radial-gradient(circle,#4a4a46 0%,#22231f 75%);border-color:#6d6b64}
+/* de små järnskyltarna: Pausa, Tillbaka, Läs upp, Ge upp och de andra gråa knapparna */
+.btn.ghost{background:none;border:14px solid transparent;border-radius:0;box-shadow:none;
+ border-image:url("Ikoner%20till%20knappar/litenknapp.png") 14 fill stretch;
+ padding:1px 6px;image-rendering:pixelated;color:#e8e3d7;text-shadow:0 1px 0 #00000080}
+.btn.ghost:active:not(:disabled){border-image-source:url("Ikoner%20till%20knappar/litenknapp_ned.png");transform:translateY(2px)}
+.btn.ghost:disabled{border-image-source:url("Ikoner%20till%20knappar/litenknapp_av.png");opacity:1;color:#cfcac0}
+.btn.ghost.danger{border-image-source:url("Ikoner%20till%20knappar/litenknapp_fara.png");color:#f3d9d4}
+.topbar .btn.ghost{padding:1px 8px}
 /* den stora mässingsknappen: ramen är bilden, insidan är knappens egen guldfärg */
 .btn.big{background:none;border:24px solid transparent;border-radius:0;
  border-image:url("Ikoner%20till%20knappar/storknapp.png") 24 fill stretch;box-shadow:none;
