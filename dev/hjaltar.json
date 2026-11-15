@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T21:52:34.238Z",
+  "uppdaterad": "2026-11-15T21:52:49.000Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -192,7 +192,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794779552335,
+    "tid": 1794779568347,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -331,7 +331,7 @@
         "startGuld": 35,
         "liv": {
           "tomas": 44,
-          "ville": 38,
+          "ville": 26,
           "sally": 28,
           "benjamin": 44
         },
@@ -395,12 +395,6 @@
           "runda": 1,
           "ko": [
             {
-              "h": "tomas"
-            },
-            {
-              "f": 0
-            },
-            {
               "h": "sally"
             },
             {
@@ -419,7 +413,9 @@
             "h:benjamin": 11.1,
             "f:0": 15
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
