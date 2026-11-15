@@ -1,13 +1,13 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:57:43.869Z",
+  "uppdaterad": "2026-11-15T22:14:22.772Z",
   "egna": [],
   "sallskap": [
     "benjamin",
-    "ville",
     "tomas",
-    "sally"
+    "sally",
+    "ville"
   ],
   "grundandringar": {
     "ville": {
