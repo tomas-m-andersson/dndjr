@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:09.342Z",
+  "uppdaterad": "2026-11-15T20:56:22.851Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,11 +284,11 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776167319,
+    "tid": 1794776180940,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 8574
+        "xp": 8664
       },
       "svante": {
         "lvl": 6,
@@ -296,15 +296,15 @@
       },
       "tomas": {
         "lvl": 7,
-        "xp": 10039
+        "xp": 10129
       },
       "sally": {
         "lvl": 5,
-        "xp": 4179
+        "xp": 4269
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 7929
+        "xp": 8019
       },
       "linda": {
         "lvl": 2,
@@ -362,25 +362,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett torrt skrapande hörs, som klor mot sten.",
-            "typ": "sovare",
+            "ledtrad": "Golvet är alldeles för rent här.",
+            "typ": "skatt",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": false,
-          "fiender": [
-            "sandorm",
-            "sandorm",
-            "sandvalnad"
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -433,6 +430,14 @@
           {
             "t": "Två Sandorm och Sandvålnad har somnat vid en slocknad eld. Ingen har märkt er. Än.",
             "k": "note"
+          },
+          {
+            "t": "Sally visar vägen i skuggorna. Monstret sover vidare. Alla får 90 XP.",
+            "k": "hit"
+          },
+          {
+            "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
+            "k": ""
           }
         ],
         "party": [
@@ -468,7 +473,7 @@
           "tomas": 60,
           "sally": 28
         },
-        "dorrText": "En enda dörr. Vad som än väntar bakom den, så måste ni dit."
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
       }
     ],
     "aktivRun": "rmwibbhvo6hol",
