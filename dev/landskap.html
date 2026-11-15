@@ -30,14 +30,22 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 /* ---------- Liggande scen ---------- */
 #scen{position:fixed;inset:0;display:flex;gap:0;
   padding:max(6px,env(safe-area-inset-top))max(6px,env(safe-area-inset-right))max(6px,env(safe-area-inset-bottom))max(6px,env(safe-area-inset-left))}
-#tvdel{position:relative;flex:1 1 auto;min-width:0;display:grid;place-items:center}
+#tvdel{position:relative;flex:1 1 auto;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px}
 #tvram{position:relative;border:2px solid var(--line);border-radius:10px;overflow:hidden;background:#000;
   box-shadow:0 10px 30px #0007}
 #tv{display:block;image-rendering:pixelated;width:100%;height:100%}
 
 /* ---------- HUD ovanpå TV:n ---------- */
 .hud{position:absolute;display:flex;gap:5px;pointer-events:none}
-#hjaltar{left:6px;top:6px;flex-direction:row;align-items:flex-start;flex-wrap:nowrap}
+#hjaltar{display:flex;gap:6px;width:100%;justify-content:center;align-items:stretch}
+#hjaltar .kort{flex:1 1 0;max-width:190px;display:flex;align-items:center;gap:7px;background:#17242fcc;
+  border:1.5px solid var(--line);border-radius:9px;padding:5px 8px}
+#hjaltar .kort canvas{image-rendering:pixelated;width:30px;height:30px;flex:0 0 auto;
+  background:#0d1620;border-radius:6px}
+#hjaltar .kort .txt{min-width:0;flex:1 1 auto}
+#hjaltar .kort b{font-size:12px}
+#hjaltar .kort .matare{width:100%;height:7px}
+#hjaltar .kort small{font-size:10px}
 #fiender{inset:0;display:block}
 .kort{pointer-events:auto;background:#0d1620cc;border:1.5px solid #ffffff22;border-radius:7px;
   padding:3px 6px;min-width:0;backdrop-filter:blur(3px);line-height:1.15}
@@ -76,7 +84,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 #tarning .vad{margin-top:12px;font-weight:800;text-align:center;text-shadow:0 2px 6px #000}
 
 /* ---------- Textpanelen ---------- */
-#text{flex:0 0 clamp(230px,32%,400px);display:flex;flex-direction:column;min-height:0;padding-left:8px}
+#text{flex:0 0 clamp(230px,32%,400px);display:flex;flex-direction:column;min-height:0;overflow:hidden;padding-left:8px}
 #rubrik{display:flex;align-items:center;gap:8px;margin-bottom:5px}
 #rubrik h2{font-size:14px;margin:0;color:var(--gold);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .liten{background:#1d2e3c;border:1.5px solid var(--line);border-radius:7px;padding:4px 8px;font-size:12px;font-weight:700}
@@ -84,7 +92,9 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
   -webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 #berattelse p{margin:0 0 9px}
 #berattelse p:first-child::first-letter{font-size:24px;font-weight:900;color:var(--gold);line-height:1}
-#val{flex:0 1 auto;display:flex;flex-direction:column;gap:5px;margin-top:6px;overflow:auto;max-height:58%;overscroll-behavior:contain}
+#val{flex:0 1 auto;display:flex;flex-direction:column;gap:5px;margin-top:6px;overflow:auto;max-height:60%;overscroll-behavior:contain;padding-bottom:2px;
+  -webkit-mask-image:linear-gradient(#000 calc(100% - 14px),transparent);mask-image:linear-gradient(#000 calc(100% - 14px),transparent)}
+#val:only-child,#val.allt{-webkit-mask-image:none;mask-image:none}
 #panelknappar{flex:0 0 auto;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 #panelknappar:empty{display:none}
 #panelknappar button{flex:1 1 44%;background:#243e55;border:2px solid var(--line);border-radius:9px;
@@ -97,10 +107,9 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 #val button:active{background:#274054}
 
 /* lägesväljaren – bara för mockupen */
-#lagen{position:fixed;left:50%;transform:translateX(-50%);bottom:2px;display:flex;gap:4px;z-index:40;
-  background:#0d1620cc;border:1px solid #ffffff22;border-radius:999px;padding:3px}
-#lagen button{font-size:10px;padding:3px 9px;border-radius:999px;color:var(--muted)}
-#lagen button.pa{background:var(--gold);color:#2a1d05;font-weight:800}
+/* dev-märkningen från bilder.js döljs här, den stjäl plats i liggande läge */
+body>div[style*="DEV"],body>div:not([id]):not(.hud){display:none}
+#kapitel{cursor:pointer}
 </style>
 </head>
 <body>
@@ -117,11 +126,11 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
   <div id="tvdel">
     <div id="tvram">
       <canvas id="tv"></canvas>
-      <div class="hud" id="hjaltar"></div>
       <div class="hud" id="fiender"></div>
       <div id="handling"></div>
       <div id="tarning"><div><div class="kub" id="kub">?</div><div class="vad" id="tvad"></div></div></div>
     </div>
+    <div id="hjaltar"></div>
   </div>
   <div id="text">
     <div id="rubrik">
@@ -133,13 +142,6 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
     <div id="panelknappar"></div>
     <div id="val"></div>
   </div>
-</div>
-
-<div id="lagen">
-  <button data-lage="berattelse">Berättelse</button>
-  <button data-lage="prov">Tärning</button>
-  <button data-lage="strid">Strid</button>
-  <button id="knappval" title="Var ska attackknapparna ligga?">Knappar: i panelen</button>
 </div>
 
 <script src="figurval.js"></script>
@@ -239,9 +241,13 @@ function hud(){
  hj.replaceChildren(...PARTY.map((h,i)=>{
   const k=document.createElement("div");
   k.className="kort"+(h.liv<=0?" ute":"")+(h.gift?" gift":"")+(lage==="strid"&&i===2?" tur":"");
-  k.innerHTML='<b>'+h.namn+'</b><div class="matare"><i style="width:'+(h.liv/h.max*100)+'%"></i></div>'+
+  const c=document.createElement("canvas");c.width=c.height=32;
+  const bi=window.egenHjalte&&egenHjalte(h,"sta");
+  if(bi){const g=c.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(bi,0,0,32,32)}
+  const t=document.createElement("div");t.className="txt";
+  t.innerHTML='<b>'+h.namn+'</b><div class="matare"><i style="width:'+(h.liv/h.max*100)+'%"></i></div>'+
    '<small>'+(h.liv>0?h.liv+"/"+h.max+(h.gift?" · förgiftad":""):"Svimmad")+'</small>';
-  return k}));
+  k.append(c,t);return k}));
  // fienderna: ingen ruta och ingen text, bara en smal mätare precis under monstret
  const fi=document.getElementById("fiender"),ram=document.getElementById("tvram");
  const skala=ram.clientWidth/TVW;
@@ -294,15 +300,16 @@ function passaIn(){
  document.getElementById("scen").hidden=!liggande;
  if(!liggande)return;
  const del=document.getElementById("tvdel"),ram=document.getElementById("tvram");
- const W=del.clientWidth-4,H=del.clientHeight-4,mal=BTW/BTH;
- let w=W,h=w/mal; if(h>H){h=H;w=h*mal}
+ const W=del.clientWidth,H=del.clientHeight,mal=BTW/BTH,hudH=58;   // plats kvar under TV:n till hjältarna
+ let w=W,h=w/mal; if(h>H-hudH){h=H-hudH;w=h*mal}
  ram.style.width=Math.floor(w)+"px";ram.style.height=Math.floor(h)+"px";
 }
 
-function visa(){passaIn();ritaTV();hud();panel();
- document.querySelectorAll("#lagen button").forEach(b=>b.classList.toggle("pa",b.dataset.lage===lage));}
+function visa(){passaIn();ritaTV();hud();panel()}
 
-document.querySelectorAll("#lagen button").forEach(b=>b.onclick=()=>{lage=b.dataset.lage;visa()});
+// Mockup-knep: tryck på kapitelnamnet för att stega mellan berättelse, tärning och strid.
+const ORDNING=["berattelse","prov","strid"];
+document.getElementById("kapitel").onclick=()=>{lage=ORDNING[(ORDNING.indexOf(lage)+1)%ORDNING.length];visa()};
 document.getElementById("helskarm").onclick=()=>{
  const d=document.documentElement;
  if(document.fullscreenElement)document.exitFullscreen();
@@ -310,8 +317,7 @@ document.getElementById("helskarm").onclick=()=>{
  if(screen.orientation&&screen.orientation.lock)screen.orientation.lock("landscape").catch(()=>{});
 };
 document.getElementById("pausa").onclick=()=>alert("Här skulle paus-menyn ligga.");
-document.getElementById("knappval").onclick=e=>{knappPaTV=!knappPaTV;
- e.target.textContent="Knappar: "+(knappPaTV?"på TV:n":"i panelen");visa()};
+
 addEventListener("resize",visa);
 addEventListener("orientationchange",()=>setTimeout(visa,250));
 if(window.forladda)forladda(visa,6000); else visa();
