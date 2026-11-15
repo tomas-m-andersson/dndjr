@@ -478,6 +478,11 @@ body.liggande #app>.topbar{position:fixed;left:var(--tvleft,6px);
 body.liggande #app:has(>.backpack)>.topbar{left:calc(var(--tvleft,6px) + 60px);width:calc(var(--tvw) - 60px)}
 body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:14px}
 body.liggande .story{font-size:15px;line-height:1.45}
+/* textrutan växer och fyller hela spalten, så knapparna hamnar längst ner */
+body.liggande #app>.story,
+body.liggande #app>.runsec{flex:1 0 auto}
+/* krönikan är redan en rullande logg, så den får krympa när knapparna behöver plats */
+body.liggande #app>.chron{flex:1 1 auto;min-height:6em;max-height:none}
 body.liggande h2.turn{font-size:17px}
 body.liggande #party{display:none}
 /* attackknapparna ligger i högerspalten tillsammans med texten */
