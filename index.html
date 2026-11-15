@@ -475,15 +475,17 @@ body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:el
 body.liggande .story{font-size:15px;line-height:1.45}
 body.liggande h2.turn{font-size:17px}
 body.liggande #party{display:none}
-/* knapparna under TV:n i strid, kompakta så de får plats */
-body.liggande.strid #app>.actions:not(.x){position:fixed;left:var(--tvleft,6px);
-  top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:var(--tvw);margin:0;z-index:5;
-  display:flex;flex-wrap:wrap;gap:6px;max-height:var(--knapph,90px);overflow:auto;align-content:flex-start}
-body.liggande.strid #app>.actions>.choicebtn{flex:1 1 calc(50% - 3px);min-width:0;padding:7px 9px;gap:7px;
-  border-left-width:3px;align-items:center}
-body.liggande.strid #app>.actions>.choicebtn small{display:none}
-body.liggande.strid #app>.actions>.choicebtn span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-body.liggande.strid #app>.actions>.btn.big,body.liggande.strid #app>.actions>.hint{flex:1 1 100%}
+/* attackknapparna ligger i högerspalten tillsammans med texten */
+body.liggande.strid #app>.actions{gap:6px}
+body.liggande.strid #app>.actions>.choicebtn{padding:6px 9px;gap:8px;line-height:1.25}
+body.liggande.strid #app>.actions>.choicebtn canvas.pixikon.stor{width:32px;height:32px}
+body.liggande.strid #app>.actions>.choicebtn span{font-size:1rem}
+body.liggande.strid #app>.actions>.choicebtn small{font-size:.78rem;line-height:1.25}
+body.liggande.strid #app>h2.turn{font-size:1.15rem}
+body.liggande.strid #app>.turordning{font-size:.74rem;margin:-4px 0 0}
+/* när tärningen rullar syns allt som behövs i rutan, så turordningen får vila */
+body.liggande.strid #app:has(.rollpanel)>h2.turn,
+body.liggande.strid #app:has(.rollpanel)>.turordning{display:none}
 /* vrid-mobilen-skärmen behövs inte: stående läge fungerar som vanligt */
 .dicebox,.rollres{scroll-margin-top:12px;scroll-margin-bottom:96px}
 .sum{font-family:var(--body);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;letter-spacing:.01em}
@@ -1649,7 +1651,7 @@ function uppdateraLiggande(){
   const sidbredd=Math.round(Math.min(400,Math.max(205,tillg*.34)));
   const h0=innerHeight-ol-nl;
   let w=Math.max(120,tillg-sidbredd-12),h=Math.round(w*BTH/BTW);
-  const knapph=strid?96:56;   // plats under TV:n till knapparna eller ryggsäcken
+  const knapph=strid?8:56;   // i strid ligger inget under TV:n, då får bilden växa
   if(h>h0-knapph){h=h0-knapph;w=Math.round(h*BTW/BTH)}
   document.body.style.setProperty("--tvleft",vl+"px");
   document.body.style.setProperty("--tvtop",ol+"px");
