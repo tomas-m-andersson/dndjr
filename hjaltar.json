@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:08:48.343Z",
+  "uppdaterad": "2026-11-15T11:09:18.480Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740926458,
+    "tid": 1794740957504,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -512,7 +512,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 156,
+                "liv": 136,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -528,7 +528,11 @@
                 "bild": "jattemask",
                 "max": 156,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -542,7 +546,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 156,
+              "liv": 136,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -558,25 +562,27 @@
               "bild": "jattemask",
               "max": 156,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "g_blackmoln": true
+            },
+            "benjamin": {
+              "dubbelskott": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "f": 0
-            },
             {
               "h": "tomas"
             },
@@ -593,7 +599,9 @@
             "h:tomas": 4.1,
             "f:0": 9
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
