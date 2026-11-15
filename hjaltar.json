@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:47:47.043Z",
+  "uppdaterad": "2026-11-15T18:48:12.862Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -229,7 +229,7 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "koket",
+        "scen": "hallen",
         "flaggor": [
           "glod_fri",
           "fragat_bo",
@@ -252,13 +252,14 @@
           "vet_spegeln",
           "har_nyckel",
           "letat_skafferiet",
-          "tant_spisen"
+          "tant_spisen",
+          "smakat"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794768464760,
+    "tid": 1794768490167,
     "niva": {
       "ville": {
         "lvl": 6,
