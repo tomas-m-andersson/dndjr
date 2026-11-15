@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:14:27.341Z",
+  "uppdaterad": "2026-11-15T11:15:03.705Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741266589,
+    "tid": 1794741302821,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -507,7 +507,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 40,
+                "liv": 13,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -524,7 +524,7 @@
               },
               {
                 "namn": "Gargoyl 2",
-                "liv": 40,
+                "liv": 18,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -552,7 +552,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 40,
+              "liv": 13,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -569,7 +569,7 @@
             },
             {
               "namn": "Gargoyl 2",
-              "liv": 40,
+              "liv": 18,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -585,16 +585,23 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "benjamin": {
+              "pilregn": true
+            },
+            "ville": {
+              "shuriken": true
+            },
+            "tomas": {
+              "virvelhugg": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "f": 1
             },
@@ -623,7 +630,9 @@
             "f:0": 22,
             "f:1": 17
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
