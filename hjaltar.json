@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:19:03.112Z",
+  "uppdaterad": "2026-11-15T11:19:10.718Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741542656,
+    "tid": 1794741549455,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -494,7 +494,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -507,7 +506,7 @@
         "liv": {
           "ville": 9,
           "tomas": 46,
-          "svante": 0,
+          "svante": 5,
           "benjamin": 2
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar vulkanens väktare.",
@@ -518,7 +517,7 @@
               {
                 "namn": "Eldklo, den unga draken",
                 "baraBoss": true,
-                "liv": 28,
+                "liv": 20,
                 "rustning": 18,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -551,7 +550,7 @@
             {
               "namn": "Eldklo, den unga draken",
               "baraBoss": true,
-              "liv": 28,
+              "liv": 20,
               "rustning": 18,
               "anfall": 8,
               "skada": "2d8+4",
@@ -618,12 +617,6 @@
           "locka": null,
           "runda": 9,
           "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "h": "benjamin"
-            },
             {
               "h": "tomas"
             },
