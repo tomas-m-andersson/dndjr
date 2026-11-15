@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:48:50.033Z",
+  "uppdaterad": "2026-11-15T18:48:59.207Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -260,13 +260,16 @@
           "vet_rustningen",
           "varmt_bok",
           "har_sagobok",
-          "halsat_tradgardsmastaren"
+          "halsat_tradgardsmastaren",
+          "plockat_ros",
+          "har_ros",
+          "letat_krukor"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794768527826,
+    "tid": 1794768536766,
     "niva": {
       "ville": {
         "lvl": 6,
