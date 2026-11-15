@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:45:36.586Z",
+  "uppdaterad": "2026-11-15T18:45:44.288Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -272,7 +272,7 @@
           "fiender": [
             {
               "namn": "Dimvarg 1",
-              "liv": 10,
+              "liv": 7,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d6+2",
@@ -284,7 +284,7 @@
             },
             {
               "namn": "Dimvarg 2",
-              "liv": 10,
+              "liv": 6,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d6+2",
@@ -295,19 +295,17 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "shuriken": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "f": 0
-            },
             {
               "h": "svante"
             },
@@ -333,11 +331,13 @@
             "f:0": 17,
             "f:1": 7
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     },
-    "tid": 1794768336340,
+    "tid": 1794768342516,
     "niva": {
       "ville": {
         "lvl": 6,
