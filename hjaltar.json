@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:13:53.686Z",
+  "uppdaterad": "2026-11-15T11:14:12.900Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741231773,
+    "tid": 1794741250906,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,26 +359,27 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "handlare",
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "sovare",
             "kand": false
           },
           {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "kista",
+            "ledtrad": "Ni känner värme mot ansiktet.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni känner en svag doft av mat.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false,
-          "handlareBild": "rav"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -439,6 +440,10 @@
           {
             "t": "En räv i väst och hatt bugar djupt. – Varor för modiga resenärer!",
             "k": "heal"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -474,7 +479,7 @@
           "svante": 25,
           "benjamin": 41
         },
-        "dorrText": "Röken driver över vägskälet. Alla vägar luktar svavel."
+        "dorrText": "Marken spricker upp i flera brinnande stigar."
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
