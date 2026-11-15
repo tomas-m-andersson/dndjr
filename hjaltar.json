@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:25:10.173Z",
+  "uppdaterad": "2026-11-15T20:26:02.438Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -340,7 +340,7 @@
           "fiender": [
             {
               "namn": "Grevinnan Dimma",
-              "liv": 28,
+              "liv": 8,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d8+3",
@@ -352,7 +352,7 @@
             },
             {
               "namn": "Dimväsen",
-              "liv": 5,
+              "liv": 0,
               "rustning": 12,
               "anfall": 4,
               "skada": "1d6",
@@ -360,16 +360,32 @@
               "flyr": "sjunker ihop till en liten vit pöl på golvet.",
               "typ": "dimvasen",
               "max": 9,
-              "ute": false
+              "ute": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "sally": {
+              "klosattack": true
+            },
+            "ville": {
+              "smygattack": true
+            },
+            "benjamin": {
+              "dubbelskott": true
+            },
+            "tomas": {
+              "skoldslag": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 0
+            },
             {
               "f": 1
             },
@@ -406,7 +422,7 @@
         }
       }
     },
-    "tid": 1794774308209,
+    "tid": 1794774360264,
     "niva": {
       "ville": {
         "lvl": 6,
