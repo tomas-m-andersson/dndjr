@@ -40,7 +40,10 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 #hjaltar{inset:0;display:block}
 .hmat{position:absolute;height:6px;border-radius:4px;background:#0b131bcc;
   box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
-.hmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease}
+.hmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease,background .35s ease}
+/* 50 % och uppåt grön, 49–25 % gul, 24–1 % röd */
+.fmat.gul i,.hmat.gul i{background:#e8c23f}
+.fmat.rod i,.hmat.rod i{background:var(--red)}
 .hmat.tur{box-shadow:0 0 0 2px var(--gold),0 0 10px #f2c14e88}
 .hmat.ute i{background:#5a6a74}
 #undertv{display:flex;gap:8px;width:100%;align-items:center;justify-content:center}
@@ -70,7 +73,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 /* fiendens livmätare: en kort, liggande stapel ovanför monstrets huvud */
 .fmat{position:absolute;height:6px;border-radius:4px;background:#0b131bcc;
   box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
-.fmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease}
+.fmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease,background .35s ease}
 .fmat.skadad i{background:#e3c44f}
 .fmat.kritisk i{background:var(--red)}
 
@@ -166,8 +169,8 @@ const TVW=96,TVH=54,BTW=320,BTH=180,CU=64*TVW/BTW;
 const PARTY=[
  {id:"ville", klass:"krigare",  vapen:"svard",     namn:"Ville", liv:38,max:45},
  {id:"tomas", klass:"helare",   vapen:"klubba",    namn:"Tomas", liv:52,max:52},
- {id:"linda", klass:"bagskytt", vapen:"pilbage",   namn:"Linda", liv:31,max:39,gift:true},
- {id:"sally", klass:"katt",     vapen:"klor",      namn:"Sally", liv:23,max:33,folk:"katt"}
+ {id:"linda", klass:"bagskytt", vapen:"pilbage",   namn:"Linda", liv:15,max:39,gift:true},
+ {id:"sally", klass:"katt",     vapen:"klor",      namn:"Sally", liv:7, max:33,folk:"katt"}
 ];
 
 const LAGEN={
@@ -191,8 +194,8 @@ const LAGEN={
  strid:{
   bild:"kok",
   fiender:[{bild:"vampyrfladdermus",namn:"Vampyrfladdermus 1",liv:9,max:13},
-           {bild:"vampyrfladdermus",namn:"Vampyrfladdermus 2",liv:13,max:13},
-           {bild:"vampyrfladdermus",namn:"Vampyrfladdermus 3",liv:4,max:13,gift:true}],
+           {bild:"vampyrfladdermus",namn:"Vampyrfladdermus 2",liv:6,max:13},
+           {bild:"vampyrfladdermus",namn:"Vampyrfladdermus 3",liv:2,max:13,gift:true}],
   text:["<b>Runda 2 – Lindas tur.</b>",
         "Vampyrfladdermössen släpper taget om skorstenen och dyker ner mot er.",
         "Ville högg med Flammsvärdet och träffade för 7 i skada.",
@@ -298,6 +301,9 @@ function toppRad(c,k){
   return 0}catch(_){return 0}   // tom ruta = bilden är inte laddad än, spara inte svaret
 }
 
+// 50 % och uppåt grön, 49–25 % gul, 24–1 % röd
+const farg=del=>{const p=del*100;return p>=50?"":p>=25?" gul":" rod"};
+
 /* ---------- HUD ---------- */
 function hud(){
  const L=LAGEN[lage];
@@ -306,12 +312,12 @@ function hud(){
  const sk=ram0.clientWidth/TVW;
  hj.replaceChildren(...HJALTEPOS.map((pos,i)=>{
   const h=PARTY[i],del=Math.max(0,h.liv)/h.max,b=document.createElement("div");
-  b.className="hmat"+(h.liv<=0?" ute":"")+(lage.startsWith("strid")&&i===2?" tur":"");
+  b.className="hmat"+farg(del)+(h.liv<=0?" ute":"")+(lage.startsWith("strid")&&i===2?" tur":"");
   const bredd=Math.max(18,Math.round(pos.s*sk*.45));
   b.style.left=Math.round(Math.min(Math.max(pos.mitt*sk,bredd/2+2),ram0.clientWidth-bredd/2-2))+"px";
   b.style.width=bredd+"px";
   const huvud=pos.bot-pos.s*(1-toppRad(pos.bi,"h:"+h.id));
-  b.style.top=Math.max(2,Math.round(huvud*sk-9))+"px";
+  b.style.top=Math.max(2,Math.round(huvud*sk-14))+"px";
   b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
   return b}));
  // fienderna: ingen ruta och ingen text, bara en smal mätare precis under monstret
@@ -320,13 +326,13 @@ function hud(){
  fi.replaceChildren(...((L.fiender||[]).map((f,i)=>{
   const pos=FIENDEPOS[i];if(!pos)return null;
   const del=f.liv/f.max, b=document.createElement("div");
-  b.className="fmat";
+  b.className="fmat"+farg(del);
   const bredd=Math.max(18,Math.round(pos.w*skala*.45));          // knappt halva monstrets bredd
   const mitt=Math.min(Math.max(pos.mitt*skala,bredd/2+2),ram.clientWidth-bredd/2-2);
   b.style.left=Math.round(mitt)+"px";
   b.style.width=bredd+"px";
   const huvud=pos.bot-pos.hh*(1-toppRad(pos.mb,pos.k));                // där monstret faktiskt börjar
-  b.style.top=Math.max(2,Math.round(huvud*skala-9))+"px";              // strax ovanför huvudet
+  b.style.top=Math.max(2,Math.round(huvud*skala-14))+"px";             // med lite luft över huvudet
   b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
   return b}).filter(Boolean)));
  const knappar=(L.knappar||[]).map(([t,kl])=>{
