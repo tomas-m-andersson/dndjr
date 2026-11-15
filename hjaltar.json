@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:08:07.935Z",
+  "uppdaterad": "2026-11-15T11:08:26.630Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740886819,
+    "tid": 1794740905984,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -488,10 +488,10 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 5,
-          "tomas": 47,
+          "ville": 11,
+          "tomas": 51,
           "svante": 33,
-          "benjamin": 40
+          "benjamin": 47
         },
         "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
         "stridSpar": {
@@ -499,7 +499,7 @@
             "fiender": [
               {
                 "namn": "Bergstroll 1",
-                "liv": 6,
+                "liv": 0,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -515,11 +515,11 @@
                 "typ": "troll",
                 "bild": "troll",
                 "max": 45,
-                "ute": false
+                "ute": true
               },
               {
                 "namn": "Bergstroll 2",
-                "liv": 18,
+                "liv": 4,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -548,7 +548,7 @@
           "fiender": [
             {
               "namn": "Bergstroll 1",
-              "liv": 6,
+              "liv": 0,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -564,11 +564,11 @@
               "typ": "troll",
               "bild": "troll",
               "max": 45,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Bergstroll 2",
-              "liv": 18,
+              "liv": 4,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -600,13 +600,16 @@
             "tomas": {
               "virvelhugg": true,
               "dubbelhugg": true
+            },
+            "svante": {
+              "helande_vag": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 4,
           "ko": [
             {
               "h": "svante"
