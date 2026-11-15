@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:08:31.698Z",
+  "uppdaterad": "2026-11-15T11:08:34.356Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740909699,
+    "tid": 1794740912308,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,25 +359,11 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "strid",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "troll",
-            "troll"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -462,6 +448,10 @@
           {
             "t": "Det sista monstret faller. Alla får 270 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
+            "k": ""
           }
         ],
         "party": [
@@ -497,7 +487,7 @@
           "svante": 33,
           "benjamin": 47
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
