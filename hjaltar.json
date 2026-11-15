@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:45:55.817Z",
+  "uppdaterad": "2026-11-15T18:46:02.577Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -205,12 +205,12 @@
       "Varm kappa"
     ],
     "liv": {
-      "ville": 41,
-      "svante": 39,
+      "ville": 37,
+      "svante": 35,
       "sally": 22,
-      "tomas": 52,
+      "tomas": 48,
       "linda": 18,
-      "benjamin": 52
+      "benjamin": 48
     },
     "kapitel": {
       "k1": {
@@ -229,7 +229,7 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "grinden",
+        "scen": "framsidan",
         "flaggor": [
           "glod_fri",
           "fragat_bo",
@@ -250,7 +250,7 @@
         "v": 1
       }
     },
-    "tid": 1794768353219,
+    "tid": 1794768360225,
     "niva": {
       "ville": {
         "lvl": 6,
