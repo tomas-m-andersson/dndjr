@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:47:03.686Z",
+  "uppdaterad": "2026-11-15T18:47:06.047Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -250,13 +250,14 @@
           "dansat",
           "gick_over_golvet",
           "vet_spegeln",
-          "har_nyckel"
+          "har_nyckel",
+          "letat_skafferiet"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794768421565,
+    "tid": 1794768423717,
     "niva": {
       "ville": {
         "lvl": 6,
