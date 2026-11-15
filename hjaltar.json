@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:20:20.676Z",
+  "uppdaterad": "2026-11-15T20:21:32.121Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 3223,
+    "guld": 3241,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -205,6 +205,7 @@
       "Varm kappa",
       "Läkedryck",
       "Rep",
+      "Läkedryck",
       "Läkedryck",
       "Läkedryck"
     ],
@@ -277,7 +278,7 @@
         "v": 1
       }
     },
-    "tid": 1794774018522,
+    "tid": 1794774089807,
     "niva": {
       "ville": {
         "lvl": 6,
