@@ -437,11 +437,10 @@ body.liggande:not(.strid) #app>.backpack .px{width:36px;height:36px}
 .bp-yta{position:absolute;left:18.5%;right:18.5%;top:19%;bottom:16%;display:grid;
   grid-template-columns:repeat(auto-fit,minmax(78px,1fr));grid-auto-rows:minmax(60px,auto);gap:4px;align-content:start;
   overflow:auto;padding:2px;color:#3a2a19}
-.bp-ruta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
-  background:#f1e6cc;border:2px solid #b89b6d;border-radius:7px;padding:4px 3px;min-width:0}
-.bp-ruta .px{width:26px;height:26px}
-.bp-ruta b{font-size:11px;line-height:1.15;text-align:center;max-width:100%;overflow-wrap:anywhere;hyphens:auto}
-.bp-ruta .bp-antal{font-size:13px;font-weight:800;color:#7a5a24}
+.bp-ruta{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:1px;padding:2px;min-width:0}
+.bp-ruta .px{width:30px;height:30px}
+.bp-ruta b{font-size:12px;line-height:1.15;text-align:center;max-width:100%;overflow-wrap:anywhere;hyphens:auto}
+.bp-ruta .bp-antal{font-size:14px;font-weight:800;color:#7a5a24;line-height:1.1}
 .bp-ruta.utan{justify-content:center}
 .bp-yta .bp-tom{grid-column:1/-1;text-align:center;font-weight:700}
 body.liggande:not(.strid) #app>.backpack .bp-txt,
@@ -2043,6 +2042,15 @@ function startKapitel(id){
 
 /* --- packning och läkedrycker --- */
 const DRYCKER={"Läkedryck":"2d4+2","Stor läkedryck":"4d4+4"};
+// Vilken bildfil varje sak använder (bilderna ligger i arket foremal_2, se figurval.js)
+const SAKBILD={"Läkedryck":"dryck","Stor läkedryck":"stor_dryck","Rep":"rep","Varm kappa":"varm_kappa",
+ "Fickljus":"fickljus","Sagobok":"sagobok","Röd ros":"rod_ros","Trähund":"trahund"};
+function sakIkon(namn){
+ const k=SAKBILD[namn];if(!k)return null;
+ if(k==="dryck"||k==="stor_dryck")return pixIkon(k==="dryck"?"dryck":"storDryck");
+ const c=document.createElement("canvas");c.width=c.height=32;c.className="px pixikon";c.setAttribute("aria-hidden","true");
+ return window.medEgenBild?medEgenBild(c,()=>egenSak(k)):c;
+}
 const harDryck=()=>pack().saker.some(x=>DRYCKER[x]);
 /* --- Ryggsäcken: guld, drycker, saker och hjältarnas utrustning --- */
 // Små pixelbilder: ryggsäck, guldmynt och dryckesflaskor
@@ -2072,7 +2080,7 @@ function ryggsackTV(efter){
   el("b",{},namn),antal!=null?el("span",{class:"bp-antal"},antal):null);
  const rutor=[ruta(pixIkon("guld"),"Guld",P.guld)];
  Object.keys(DRYCKER).forEach(k=>{if(c[k])rutor.push(ruta(pixIkon(k==="Läkedryck"?"dryck":"storDryck"),k,c[k]))});
- Object.entries(c).filter(([k])=>!DRYCKER[k]).forEach(([k,n])=>rutor.push(ruta(null,k,n>1?n:null)));
+ Object.entries(c).filter(([k])=>!DRYCKER[k]).forEach(([k,n])=>rutor.push(ruta(sakIkon(k),k,n>1?n:null)));
  box.append(el("div",{class:"bp-yta"},rutor.length?rutor:[el("p",{class:"bp-tom"},"Ryggsäcken är tom.")]));
  const topp=el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:efter},"← Tillbaka"),
   el("span",{class:"purse"},R?PLATSER[R.plats].namn:"Ryggsäcken"));
