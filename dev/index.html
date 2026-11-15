@@ -414,6 +414,31 @@ canvas.pixikon.jatte{width:64px;height:auto;margin:0}
 .rollres{display:flex;flex-direction:column;gap:6px;align-items:center}
 /* Knappen i tärningsrutan ligger alltid kvar längst ner på skärmen, även på små telefoner */
 .rollpanel>.btn.big{position:sticky;bottom:12px;z-index:5}
+
+/* ===== Liggande helskärmsläge =====
+   Slås på i Inställningar. Då får TV:n hela vänstra delen och texten högra,
+   och livmätarna ritas in i bilden ovanför varje figur i stället för som kort. */
+body.liggande{overflow:hidden;height:100dvh;padding:0}
+body.liggande #app{position:fixed;inset:0;max-width:none;margin:0;gap:10px;
+  padding:6px max(8px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom)) calc(var(--tvw,55%) + 16px);
+  overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+body.liggande #app>.tvbig:not(.lagertv):not(.berattelseruta){position:fixed;left:max(6px,env(safe-area-inset-left));top:max(6px,env(safe-area-inset-top));
+  width:var(--tvw);height:var(--tvh);margin:0;z-index:5;box-shadow:0 0 0 2px var(--line),0 10px 24px #0008}
+body.liggande .strip,body.liggande .foes{display:none}
+body.liggande .topbar{position:sticky;top:0;z-index:6;background:var(--bg);padding-block:2px}
+body.liggande .story{font-size:15px;line-height:1.45}
+body.liggande h2.turn{font-size:17px}
+body.liggande #party{display:none}
+/* knapparna under TV:n i strid, kompakta så de får plats */
+body.liggande.strid #app>.actions:not(.x){position:fixed;left:max(6px,env(safe-area-inset-left));
+  top:calc(var(--tvh) + max(6px,env(safe-area-inset-top)) + 6px);width:var(--tvw);margin:0;z-index:5;
+  display:flex;flex-wrap:wrap;gap:6px;max-height:var(--knapph,90px);overflow:auto;align-content:flex-start}
+body.liggande.strid #app>.actions>.choicebtn{flex:1 1 calc(50% - 3px);min-width:0;padding:7px 9px;gap:7px;
+  border-left-width:3px;align-items:center}
+body.liggande.strid #app>.actions>.choicebtn small{display:none}
+body.liggande.strid #app>.actions>.choicebtn span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.liggande.strid #app>.actions>.btn.big,body.liggande.strid #app>.actions>.hint{flex:1 1 100%}
+/* vrid-mobilen-skärmen behövs inte: stående läge fungerar som vanligt */
 .dicebox,.rollres{scroll-margin-top:12px;scroll-margin-bottom:96px}
 .sum{font-family:var(--body);font-weight:800;font-size:1.35rem;font-variant-numeric:tabular-nums;letter-spacing:.01em}
 .sum small{display:block;font-size:.95rem;font-weight:700;color:var(--muted)}
@@ -1523,6 +1548,13 @@ function ljudGroup(){
  return el("section",{class:"setgroup"},el("h3",{},"Ljud och vibration"),el("p",{},"Tärningarna klapprar, en tjugo spelar en fanfar och telefonen vibrerar lite när tärningen landar."),
   el("label",{class:"check",for:"opt-ljud"},cb,el("span",{},"Ljud och vibration vid tärningsslag")));
 }
+function liggandeGroup(){
+ const cb=el("input",{id:"opt-liggande",type:"checkbox"});cb.checked=!!alt.liggande;
+ cb.addEventListener("change",()=>{alt.liggande=cb.checked;save(OKEY,alt);uppdateraLiggande()});
+ return el("section",{class:"setgroup"},el("h3",{},"Liggande helskärmsläge"),
+  el("p",{},"Vrider ni mobilen på sidan under ett äventyr fyller bilden hela skärmen, texten hamnar till höger och livmätarna ritas in i bilden ovanför varje figur. Skärmen hålls vaken så länge läget är på. Är rutan inte ikryssad händer ingenting när ni vrider mobilen."),
+  el("label",{class:"check",for:"opt-liggande"},cb,el("span",{},"Gå till helskärm när mobilen vrids på sidan")));
+}
 function upplasGroup(){
  const cb=el("input",{id:"opt-upplas",type:"checkbox"});cb.checked=alt.upplas;
  cb.addEventListener("change",()=>{alt.upplas=cb.checked;save(OKEY,alt);if(cb.checked)tala("Nu läser jag upp äventyret.");else tyst()});
@@ -1530,6 +1562,66 @@ function upplasGroup(){
   el("p",{},kanTala?"Appen kan läsa upp berättelsen med svensk röst. Annars läser en vuxen högt. Knappen Läs upp finns alltid i varje scen.":"Den här webbläsaren kan tyvärr inte läsa upp text."),
   kanTala?el("label",{class:"check",for:"opt-upplas"},cb,el("span",{},"Läs upp varje scen automatiskt")):null);
 }
+
+/* ===== Liggande helskärmsläge =====
+   På när inställningen är ikryssad, mobilen ligger på sidan och ett äventyr är igång.
+   TV:n låses till vänster, resten av sidan scrollar till höger, och livmätarna ritas i bilden. */
+window.LIGGANDE=false;
+let vakenLas=null;
+async function hallSkarmenVaken(){
+ if(!("wakeLock" in navigator)||vakenLas)return;
+ try{vakenLas=await navigator.wakeLock.request("screen");vakenLas.addEventListener("release",()=>{vakenLas=null})}catch(_){vakenLas=null}
+}
+function slappSkarmen(){if(!vakenLas)return;const v=vakenLas;vakenLas=null;v.release().catch(()=>{})}
+function uppdateraLiggande(){
+ const spelvy=view==="scen"||view==="run";
+ const pa=!!alt.liggande&&innerWidth>innerHeight&&spelvy;
+ const fore=window.LIGGANDE;window.LIGGANDE=pa;
+ document.body.classList.toggle("liggande",pa);
+ document.body.classList.toggle("strid",pa&&!!strid);
+ if(pa){
+  const sidbredd=Math.round(Math.min(400,Math.max(210,innerWidth*.33)));
+  const h0=innerHeight-12,w0=innerWidth-sidbredd-24;
+  let w=w0,h=Math.round(w*BTH/BTW);
+  const knapph=strid?96:10;
+  if(h>h0-knapph){h=h0-knapph;w=Math.round(h*BTW/BTH)}
+  document.body.style.setProperty("--tvw",w+"px");
+  document.body.style.setProperty("--tvh",h+"px");
+  document.body.style.setProperty("--knapph",Math.max(40,h0-h-10)+"px");
+  hallSkarmenVaken();
+  if(!document.fullscreenElement&&document.documentElement.requestFullscreen)
+   document.documentElement.requestFullscreen().catch(()=>{});
+ }else{
+  document.body.style.removeProperty("--tvw");document.body.style.removeProperty("--tvh");
+  slappSkarmen();
+  if(fore&&document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+ }
+ if(fore!==pa&&window.ritaOm)ritaOm();
+ return pa;
+}
+addEventListener("resize",()=>uppdateraLiggande());
+// helskärm kräver en knapptryckning: ta chansen vid första tryck efter att mobilen vridits
+addEventListener("pointerdown",()=>{if(window.LIGGANDE&&!document.fullscreenElement)uppdateraLiggande()},true);
+addEventListener("orientationchange",()=>setTimeout(uppdateraLiggande,250));
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&window.LIGGANDE)hallSkarmenVaken()});
+
+// Var i bildrutan figuren faktiskt börjar (0–1), så att mätaren hamnar strax ovanför huvudet
+// och inte högt upp i den tomma delen av rutan. Svaret sparas per bildruta.
+const TOPPRAD=new WeakMap();
+function toppRad(c){
+ if(!c)return 0;
+ if(TOPPRAD.has(c))return TOPPRAD.get(c);
+ let r=0;
+ try{const d=c.getContext("2d").getImageData(0,0,c.width,c.height).data;
+  let hittad=false;
+  for(let y=0;y<c.height&&!hittad;y++)for(let x=0;x<c.width;x++)
+   if(d[(y*c.width+x)*4+3]>20){r=y/c.height;hittad=true;break}
+  if(!hittad)return 0;            // tom ruta = bilden är inte laddad än, spara inte svaret
+ }catch(_){return 0}
+ TOPPRAD.set(c,r);return r;
+}
+// 50 % och uppåt grön, 49–25 % gul, 24–1 % röd
+const LIVFARG=del=>del>=.5?"#7cc47f":del>=.25?"#e8c23f":"#e35d4f";
 
 /* --- TV:n: pixelbilder för scenerna --- */
 const TVW=96,TVH=54;
@@ -1773,13 +1865,17 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
  let lyft=0;
  if(BG&&window.bakgrundLyft){const ly=bakgrundLyft(bild);if(ly){lyft=ly*TVH/180;g.translate(0,-lyft)}}
  const tona=(b,r,col,a)=>{if(a)ritaTon(g,b,r.x,r.y,r.skala,false,col,a)};
+ // livmätare i liggande läge: samlas in här och ritas sist, ovanpå allt
+ const staplar=[],visaLiv=!!window.LIGGANDE;
+ const samla=(bi,cx,bot,storlek,del,tur)=>{if(visaLiv&&del!=null)staplar.push({bi,cx,bot,storlek,del:Math.max(0,Math.min(1,del)),tur})};
  const OFF=k=>anim&&anim.off?anim.off(k):null,POS=(k,x,y,w,h)=>{if(anim&&anim.pos)anim.pos[k]={x,y,w,h}};
  // vissa bakgrunder har ett hål eller en möbel längst ner till vänster: då flyttas hjältarna åt höger
  const kant=window.bakgrundKant?bakgrundKant(bild):0;        // in från kanterna på vissa bakgrunder
  const hflytt=((window.HJALTEFLYTT||{})[typeof bild==="string"?bild.split("|")[0]:""]||0)+kant;
  if(visaParty)partyHeroes().forEach((h,i)=>{const k="h:"+h.id,o=OFF(k),dx=(o?Math.round(o.dx):0)+hflytt,dy=o?Math.round(o.dy):0;
   const bi=window.egenHjalte&&egenHjalte(h,o&&o.dx?"anfall":"sta"); // egen bild: anfallsrutan när hjälten gör ett utfall
-  if(bi){const L=anim&&liv(h)>0?livTid(anim.t,i):{upp:0},r=ritaRuta(g,bi,i*14+7+dx,TVH+L.upp+dy,h.folk==="katt"?CU*.75:CU,{alpha:liv(h)>0?1:.35}); // katten är mindre än människorna
+  if(bi){const L=anim&&liv(h)>0?livTid(anim.t,i):{upp:0},sz=h.folk==="katt"?CU*.75:CU,r=ritaRuta(g,bi,i*14+7+dx,TVH+L.upp+dy,sz,{alpha:liv(h)>0?1:.35}); // katten är mindre än människorna
+   samla(bi,i*14+7+dx,TVH+dy,sz,liv(h)/maxLiv(h),!!(typeof strid!=="undefined"&&strid&&strid.nu&&strid.nu.h===h.id));
    if(forgiftad(h))tona(bi,r,"#6fe05a",.35);if(o&&o.tint)tona(bi,r,o.tint,o.tintA);POS(k,i*14+2+hflytt,TVH-18,11,18);return}
   if(anim&&liv(h)>0){const c=forgiftad(h)?giftTon(heroCanvas(h)):heroCanvas(h),L=livTid(anim.t,i);ritaLevande(g,c,heroOgon(h,c),i*14+dx,TVH-25+L.upp+dy,{blink:L.blink,titt:L.titt});
    if(o&&o.tint)ritaTon(g,c,i*14+dx,TVH-25+L.upp+dy,1,false,o.tint,o.tintA);POS(k,i*14,TVH-25,c.width,c.height);return}
@@ -1788,7 +1884,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
   const bi=window.egenGosedjur&&egenGosedjur(gd);if(bi){ritaRuta(g,bi,i*14+13+(o?Math.round(o.dx):0),TVH+hopp,CU/2,{alpha:liv(h)>0?1:.4});return}
   g.globalAlpha=liv(h)>0?1:.4;g.drawImage(s,i*14+9+(o?Math.round(o.dx):0),TVH-s.height+hopp);g.globalAlpha=1}); // gosedjuret vid hjältens fötter
  const right=[];
- if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss,gift:!!f.gift&&!f.ute})}); // ett besegrat monster tonar bort
+ if(fiender)fiender.forEach((f,i)=>{const o=OFF("f:"+i);if(!f.ute||o&&o.syns)right.push({k:f.bild,a:1,key:"f:"+i,boss:!!f.boss,gift:!!f.gift&&!f.ute,liv:f.ute?0:f.liv,max:f.max})}); // ett besegrat monster tonar bort
  // "spindel^tak" = figuren hänger upp och ner i taket i stället för att stå på golvet
  else if(figur)[].concat(figur).forEach(n=>{const d=String(n).split("^"),k=d[0];right.push({k,a:1,tak:d[1]==="tak",boss:k==="skuggan"&&!String(bild).startsWith("run|")})}); // Skuggan är boss i berättelsen, men ett vanligt monster i grottkrypningen
  let x=TVW-2-kant;
@@ -1834,14 +1930,27 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
    // hänger i taket: ritas upp och ner längst upp i bilden i stället för på golvet
    if(f.tak){ritaRuta(g,mb,x+dx+w/2,lyft+h+1,h,{vupp:true,alpha:(f.a??1)*(o?o.alpha:1)});return}
    const r=ritaRuta(g,mb,x+dx+w/2,TVH+(sover||RUMBILD[f.k]?0:L.upp)+dy-fly,h,{alpha:(f.a??1)*(o?o.alpha:1)});
+   if(f.liv!=null&&f.max)samla(mb,x+dx+w/2,TVH+dy-fly,h,f.liv/f.max,false);
    if(f.gift)tona(mb,r,"#6fe05a",.4*(o?o.alpha??1:1)); // förgiftad: lätt grön ton
    if(o&&o.tint)tona(mb,r,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h-fly,w,h)}
   else if(sc){const L=livTid(anim.t,nr++),yy=TVH-h+(sover||OGA_BOKSTAV[f.k]==="-"?0:L.upp)+dy-fly;ritaLevande(g,sc,monOgon(f.k),x+dx,yy,{skala:sd.skala*fs,flip:vand,blink:sover||L.blink,titt:sover?0:L.titt,alpha:(f.a??1)*(o?o.alpha:1)});
    if(f.gift)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,"#6fe05a",.4);
-   if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h-fly,w,h)}
+   if(o&&o.tint)ritaTon(g,sc,x+dx,yy,sd.skala*fs,vand,o.tint,o.tintA*(o.alpha??1));if(f.key)POS(f.key,x,TVH-h-fly,w,h);
+   if(f.liv!=null&&f.max)samla(null,x+dx+w/2,TVH+dy-fly,h,f.liv/f.max,false)}
   else if(fs!==1&&sprCanvas(f.k))ritaLevande(g,sprCanvas(f.k),null,x,TVH-h-fly,{skala:sprDef(f.k).skala*fs,flip:vand});
   else sprite(g,f.k,x,TVH-h-fly,vand,f.a);
   if(sover){g.fillStyle="#cfe8ff";[[w-2,-6],[w,-9],[w+2,-12]].forEach(([dx,dy],i)=>{g.globalAlpha=1-i*.25;g.fillRect(x+dx,TVH-h-1+dy-fly,3,1);g.fillRect(x+dx+2,TVH-h+dy-fly,1,1);g.fillRect(x+dx,TVH-h+1+dy-fly,3,1)});g.globalAlpha=1}});
+ // livmätarna sist, så att de hamnar ovanpå alla figurer
+ staplar.forEach(st=>{
+  const bredd=Math.max(5,Math.round(st.storlek*.45)),hojd=1.6;
+  const huvud=st.bot-st.storlek*(1-toppRad(st.bi));
+  const y=Math.max(.5,huvud-3.2),x0=Math.min(Math.max(st.cx-bredd/2,.5),TVW-bredd-.5);
+  g.fillStyle="#0b131b";g.globalAlpha=.85;g.fillRect(x0-.5,y-.5,bredd+1,hojd+1);g.globalAlpha=1;
+  g.fillStyle=LIVFARG(st.del);g.fillRect(x0,y,Math.max(st.del>0?.6:0,bredd*st.del),hojd);
+  if(st.tur){ // gyllene pil som pekar ner på den vars tur det är
+   const px=x0+bredd/2,py=y-1.4;g.fillStyle="#f2c14e";
+   g.beginPath();g.moveTo(px-2,py-2.4);g.lineTo(px+2,py-2.4);g.lineTo(px,py);g.closePath();g.fill()}
+ });
 }
 
 /* --- kapitelvalet --- */
@@ -1995,7 +2104,9 @@ function partyStrip(){
    el("div",{class:"hp"},el("i",{style:"width:"+(l/m*100)+"%"})),l>0&&forgiftad(h)?el("em",{class:"giftlapp"},"Förgiftad"):null,el("span",{},l>0?l+"/"+m+" liv"+(typeof strid!=="undefined"&&strid&&strid.bedovH&&strid.bedovH[h.id]?" · omtöcknad":""):"Svimmad")));
   kortFlytt(kort,h);return kort}));
 }
-function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
+function tvBox(bild,o){const c=document.createElement("canvas");c.className="px";
+ if(window.uppdateraLiggande)uppdateraLiggande();   // rätt läge innan bilden ritas
+ drawTV(c,bild,o);return el("div",{class:"tvbig"},c)}
 function storyEl(txt){return el("div",{class:"story"},txt.split(/\n\n+/).map(p=>el("p",{},p)))}
 function scenHuvud(){
  const k=kapDef();
@@ -3154,6 +3265,7 @@ function settings(){
   el("section",{class:"setgroup"},el("h3",{},"Installera som app"),installPart),
   svarGroup(),
   ljudGroup(),
+  liggandeGroup(),
   upplasGroup(),
   devGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
