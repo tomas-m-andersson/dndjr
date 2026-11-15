@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:08:34.356Z",
+  "uppdaterad": "2026-11-15T11:08:48.343Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740912308,
+    "tid": 1794740926458,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,10 +360,19 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "jattemask"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -452,6 +461,14 @@
           {
             "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Grottans härskare",
+            "k": "sep"
+          },
+          {
+            "t": "Två stora ögon öppnas i mörkret. Det är Jättemasken!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -487,7 +504,97 @@
           "svante": 33,
           "benjamin": 47
         },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
+        "bossFaktor": 1.3,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Jättemasken",
+                "baraBoss": true,
+                "liv": 156,
+                "rustning": 14,
+                "anfall": 8,
+                "skada": "2d8+4",
+                "xp": 1100,
+                "platser": [
+                  "grottorna"
+                ],
+                "flyr": "gräver ner sig så snabbt att hela grottan skakar.",
+                "egen": {
+                  "bedova": 0.25
+                },
+                "typ": "jattemask",
+                "bild": "jattemask",
+                "max": 156,
+                "ute": false,
+                "boss": true
+              }
+            ],
+            "run": true,
+            "boss": true,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|6|boss|boss",
+          "fiender": [
+            {
+              "namn": "Jättemasken",
+              "baraBoss": true,
+              "liv": 156,
+              "rustning": 14,
+              "anfall": 8,
+              "skada": "2d8+4",
+              "xp": 1100,
+              "platser": [
+                "grottorna"
+              ],
+              "flyr": "gräver ner sig så snabbt att hela grottan skakar.",
+              "egen": {
+                "bedova": 0.25
+              },
+              "typ": "jattemask",
+              "bild": "jattemask",
+              "max": 156,
+              "ute": false,
+              "boss": true
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "ville"
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "svante"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:benjamin": 14.1,
+            "h:svante": 3.1,
+            "h:ville": 21.1,
+            "h:tomas": 4.1,
+            "f:0": 9
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwhm0sion07z",
