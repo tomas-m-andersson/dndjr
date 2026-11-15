@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:46:45.869Z",
+  "uppdaterad": "2026-11-15T18:46:58.568Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 3148,
+    "guld": 3163,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -229,7 +229,7 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "spokstrid",
+        "scen": "hallen",
         "flaggor": [
           "glod_fri",
           "fragat_bo",
@@ -248,111 +248,15 @@
           "runt_huset",
           "vet_baksidan",
           "dansat",
-          "gick_over_golvet"
+          "gick_over_golvet",
+          "vet_spegeln",
+          "har_nyckel"
         ],
         "klar": false,
-        "v": 1,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              "spoke",
-              "spoke",
-              "dimvasen"
-            ],
-            "vinst": {
-              "text": "När det sista spöket bleknar bort tystnar pianot. På pianolocket ligger en liten mässingsnyckel med en lapp: ”Spegelsalen”.\n\nOch under locket ligger en börs som någon gömde där för hundra år sedan.",
-              "guld": 15,
-              "flagga": [
-                "vet_spegeln",
-                "har_nyckel"
-              ],
-              "till": "hallen"
-            },
-            "forlust": "hus_forlust"
-          },
-          "bild": "balsal_spoken",
-          "fiender": [
-            {
-              "namn": "Spöke 1",
-              "liv": 12,
-              "rustning": 12,
-              "anfall": 4,
-              "skada": "1d6+1",
-              "bild": "spoke",
-              "flyr": "bugar djupt och bleknar bort rakt genom väggen.",
-              "typ": "spoke",
-              "max": 12,
-              "ute": false
-            },
-            {
-              "namn": "Spöke 2",
-              "liv": 12,
-              "rustning": 12,
-              "anfall": 4,
-              "skada": "1d6+1",
-              "bild": "spoke",
-              "flyr": "bugar djupt och bleknar bort rakt genom väggen.",
-              "typ": "spoke",
-              "max": 12,
-              "ute": false
-            },
-            {
-              "namn": "Dimväsen",
-              "liv": 9,
-              "rustning": 12,
-              "anfall": 4,
-              "skada": "1d6",
-              "bild": "dimvasen",
-              "flyr": "sjunker ihop till en liten vit pöl på golvet.",
-              "typ": "dimvasen",
-              "max": 9,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 1
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 15.1,
-            "h:svante": 5.1,
-            "h:ville": 15.1,
-            "h:tomas": 8.1,
-            "f:0": 3,
-            "f:1": 6,
-            "f:2": 20
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "v": 1
       }
     },
-    "tid": 1794768405344,
+    "tid": 1794768418303,
     "niva": {
       "ville": {
         "lvl": 6,
