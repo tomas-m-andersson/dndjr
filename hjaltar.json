@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:07:06.830Z",
+  "uppdaterad": "2026-11-15T11:07:37.143Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740825940,
+    "tid": 1794740856475,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -488,7 +488,7 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 30,
+          "ville": 15,
           "tomas": 47,
           "svante": 33,
           "benjamin": 52
@@ -499,7 +499,7 @@
             "fiender": [
               {
                 "namn": "Bergstroll 1",
-                "liv": 36,
+                "liv": 18,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -548,7 +548,7 @@
           "fiender": [
             {
               "namn": "Bergstroll 1",
-              "liv": 36,
+              "liv": 18,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -589,18 +589,26 @@
           ],
           "anvant": {
             "benjamin": {
-              "pilregn": true
+              "pilregn": true,
+              "dubbelskott": true
             },
             "ville": {
-              "shuriken": true
+              "shuriken": true,
+              "smygattack": true
+            },
+            "tomas": {
+              "virvelhugg": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 1
+            },
             {
               "h": "svante"
             },
