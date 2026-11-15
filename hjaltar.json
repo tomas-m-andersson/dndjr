@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:55:31.743Z",
+  "uppdaterad": "2026-11-15T20:55:49.548Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776129736,
+    "tid": 1794776147507,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -363,7 +363,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -372,7 +372,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "sandorm",
+            "sandorm"
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -397,6 +404,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Två Sandorm snarkar högt i ett hörn.",
+            "k": "note"
           }
         ],
         "party": [
