@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:44.388Z",
+  "uppdaterad": "2026-11-15T20:56:57.992Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776203032,
+    "tid": 1794776216628,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -488,7 +488,7 @@
           "benjamin": 49,
           "ville": 45,
           "tomas": 60,
-          "sally": 20
+          "sally": 16
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
         "stridSpar": {
@@ -496,7 +496,7 @@
             "fiender": [
               {
                 "namn": "Sandorm 1",
-                "liv": 18,
+                "liv": 15,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -515,7 +515,7 @@
               },
               {
                 "namn": "Sandorm 2",
-                "liv": 20,
+                "liv": 16,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -534,7 +534,7 @@
               },
               {
                 "namn": "Sandorm 3",
-                "liv": 20,
+                "liv": 16,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -549,7 +549,11 @@
                 "typ": "sandorm",
                 "bild": "sandorm",
                 "max": 26,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -562,7 +566,7 @@
           "fiender": [
             {
               "namn": "Sandorm 1",
-              "liv": 18,
+              "liv": 15,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -581,7 +585,7 @@
             },
             {
               "namn": "Sandorm 2",
-              "liv": 20,
+              "liv": 16,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -600,7 +604,7 @@
             },
             {
               "namn": "Sandorm 3",
-              "liv": 20,
+              "liv": 16,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -615,7 +619,11 @@
               "typ": "sandorm",
               "bild": "sandorm",
               "max": 26,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
           "anvant": {
@@ -624,14 +632,32 @@
             },
             "tomas": {
               "virvelhugg": true
+            },
+            "sally": {
+              "frasa": true
+            },
+            "ville": {
+              "shuriken": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 1
+            },
+            {
+              "f": 2
+            },
             {
               "h": "sally"
             },
