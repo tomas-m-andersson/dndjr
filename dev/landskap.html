@@ -37,17 +37,22 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 
 /* ---------- HUD ovanpå TV:n ---------- */
 .hud{position:absolute;display:flex;gap:5px;pointer-events:none}
-#hjaltar{display:flex;gap:6px;width:100%;justify-content:center;align-items:stretch}
-#hjaltar .kort{flex:1 1 0;max-width:190px;display:flex;align-items:center;gap:7px;background:#17242fcc;
-  border:1.5px solid var(--line);border-radius:9px;padding:5px 8px}
-#hjaltar .kort .txt{min-width:0;flex:1 1 auto}
-#hjaltar .kort b{font-size:12px}
-#hjaltar .kort .matare{width:100%;height:7px}
-#hjaltar .kort small{font-size:10px}
-#ryggsack{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
-  background:#17242fcc;border:1.5px solid var(--line);border-radius:9px;padding:4px 11px;position:relative}
-#ryggsack canvas{image-rendering:pixelated;width:28px;height:28px}
-#ryggsack span{font-size:9px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+#hjaltar{inset:0;display:block}
+.hmat{position:absolute;height:6px;border-radius:4px;background:#0b131bcc;
+  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
+.hmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease}
+.hmat.tur{box-shadow:0 0 0 2px var(--gold),0 0 10px #f2c14e88}
+.hmat.ute i{background:#5a6a74}
+#undertv{display:flex;gap:8px;width:100%;align-items:center;justify-content:center}
+#handlingar{display:flex;gap:7px;flex:1 1 auto;justify-content:center;flex-wrap:wrap}
+#handlingar button{background:#243e55;border:2px solid var(--line);border-radius:9px;padding:9px 16px;
+  font-weight:800;font-size:14px;box-shadow:0 4px 0 #0f1b24,0 6px 14px #0006}
+#handlingar button.gyllene{background:linear-gradient(#f2c14e,#d79f2b);border-color:#8d6a1b;color:#2a1d05}
+#handlingar button:active{transform:translateY(3px);box-shadow:0 1px 0 #0f1b24}
+#ryggsack{flex:0 0 auto;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:7px;
+  background:#17242fcc;border:1.5px solid var(--line);border-radius:9px;padding:7px 12px;position:relative}
+#ryggsack canvas{image-rendering:pixelated;width:26px;height:26px}
+#ryggsack span{font-size:12px;color:var(--fg);font-weight:800}
 #ryggsack b{position:absolute;top:-5px;right:-5px;background:var(--gold);color:#2a1d05;font-size:10px;
   min-width:17px;height:17px;border-radius:999px;display:grid;place-items:center;border:2px solid var(--bg)}
 #ryggsack:active{background:#22384a}
@@ -133,10 +138,11 @@ body>div[style*="DEV"],body>div:not([id]):not(.hud){display:none}
     <div id="tvram">
       <canvas id="tv"></canvas>
       <div class="hud" id="fiender"></div>
+      <div class="hud" id="hjaltar"></div>
       <div id="handling"></div>
       <div id="tarning"><div><div class="kub" id="kub">?</div><div class="vad" id="tvad"></div></div></div>
     </div>
-    <div id="hjaltar"></div>
+    <div id="undertv"><div id="handlingar"></div><div id="ryggsackplats"></div></div>
   </div>
   <div id="text">
     <div id="rubrik">
@@ -235,7 +241,7 @@ Object.assign(LAGEN,{
   [{bild:"eldklo",namn:"Eldklo",liv:46,max:120,boss:true}]),
 });
 
-let lage="berattelse", knappPaTV=false, FIENDEPOS=[];
+let lage="berattelse", FIENDEPOS=[], HJALTEPOS=[];
 
 /* ---------- rita TV:n ---------- */
 function ritaTV(){
@@ -253,8 +259,9 @@ function ritaTV(){
  const kant=window.bakgrundKant?bakgrundKant(L.bild):0;
 
  // hjältarna, längst till vänster
- PARTY.forEach((h,i)=>{const bi=window.egenHjalte&&egenHjalte(h,"sta");
-  if(bi)ritaRuta(g,bi,i*14+7+kant,TVH,h.folk==="katt"?CU*.75:CU,{alpha:h.liv>0?1:.35})});
+ HJALTEPOS=PARTY.map((h,i)=>{const bi=window.egenHjalte&&egenHjalte(h,"sta"),s=h.folk==="katt"?CU*.75:CU;
+  if(bi)ritaRuta(g,bi,i*14+7+kant,TVH,s,{alpha:h.liv>0?1:.35});
+  return{mitt:i*14+7+kant,bot:TVH-lyft,s,bi}});
 
  // fienderna, från höger kant och inåt
  const right=[];
@@ -283,6 +290,7 @@ function ritaTV(){
    och inte högt upp i den tomma delen av bildrutan. */
 const TOPP={};
 function toppRad(c,k){
+ if(!c)return 0;
  if(TOPP[k]!=null)return TOPP[k];
  try{const d=c.getContext("2d").getImageData(0,0,c.width,c.height).data;
   for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++)
@@ -293,15 +301,19 @@ function toppRad(c,k){
 /* ---------- HUD ---------- */
 function hud(){
  const L=LAGEN[lage];
- const hj=document.getElementById("hjaltar");
- hj.replaceChildren(...PARTY.map((h,i)=>{
-  const k=document.createElement("div");
-  k.className="kort"+(h.liv<=0?" ute":"")+(h.gift?" gift":"")+(lage==="strid"&&i===2?" tur":"");
-  const t=document.createElement("div");t.className="txt";
-  t.innerHTML='<b>'+h.namn+'</b><div class="matare"><i style="width:'+(h.liv/h.max*100)+'%"></i></div>'+
-   '<small>'+(h.liv>0?h.liv+"/"+h.max+(h.gift?" · förgiftad":""):"Svimmad")+'</small>';
-  k.append(t);return k}));
- hj.append(ryggsacksknapp());
+ // hjältarnas mätare ritas likadant som fiendernas: kort stapel ovanför huvudet
+ const hj=document.getElementById("hjaltar"),ram0=document.getElementById("tvram");
+ const sk=ram0.clientWidth/TVW;
+ hj.replaceChildren(...HJALTEPOS.map((pos,i)=>{
+  const h=PARTY[i],del=Math.max(0,h.liv)/h.max,b=document.createElement("div");
+  b.className="hmat"+(h.liv<=0?" ute":"")+(lage.startsWith("strid")&&i===2?" tur":"");
+  const bredd=Math.max(18,Math.round(pos.s*sk*.45));
+  b.style.left=Math.round(Math.min(Math.max(pos.mitt*sk,bredd/2+2),ram0.clientWidth-bredd/2-2))+"px";
+  b.style.width=bredd+"px";
+  const huvud=pos.bot-pos.s*(1-toppRad(pos.bi,"h:"+h.id));
+  b.style.top=Math.max(2,Math.round(huvud*sk-9))+"px";
+  b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
+  return b}));
  // fienderna: ingen ruta och ingen text, bara en smal mätare precis under monstret
  const fi=document.getElementById("fiender"),ram=document.getElementById("tvram");
  const skala=ram.clientWidth/TVW;
@@ -321,9 +333,8 @@ function hud(){
   const b=document.createElement("button");b.textContent=t;if(kl)b.className=kl;
   b.onclick=()=>{if(t==="Attack"||t==="Skjut pil")rullaTarning("Attack mot Vampyrfladdermus 3")};
   return b});
- const hn=document.getElementById("handling");
- hn.replaceChildren(...(knappPaTV?knappar:[]));
- document.getElementById("panelknappar").replaceChildren(...(knappPaTV?[]:knappar));
+ document.getElementById("handlingar").replaceChildren(...knappar);
+ document.getElementById("ryggsackplats").replaceChildren(ryggsacksknapp());
 }
 
 /* liten pixelryggsäck, samma som i spelet */
