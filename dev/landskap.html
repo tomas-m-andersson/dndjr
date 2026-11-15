@@ -62,9 +62,10 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .kort.ute{opacity:.45}
 .kort.gift{border-color:var(--moss)}
 .kort.gift .matare i{background:var(--moss)}
-.fmat{position:absolute;height:5px;border-radius:3px;background:#0b131bcc;
-  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
-.fmat i{display:block;height:100%;background:var(--moss);transition:width .35s ease}
+/* fiendens livmätare: står lodrätt strax till höger om monstret och sjunker nedåt */
+.fmat{position:absolute;width:7px;border-radius:4px;background:#0b131bcc;
+  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;display:flex;align-items:flex-end}
+.fmat i{display:block;width:100%;background:var(--moss);border-radius:4px;transition:height .35s ease}
 .fmat.skadad i{background:#e3c44f}
 .fmat.kritisk i{background:var(--red)}
 
@@ -258,10 +259,12 @@ function hud(){
   const pos=FIENDEPOS[i];if(!pos)return null;
   const del=f.liv/f.max, b=document.createElement("div");
   b.className="fmat";
-  b.style.left=(pos.mitt*skala)+"px";
-  b.style.top=((pos.bot+1.5)*skala)+"px";
-  b.style.width=Math.max(26,Math.round(pos.w*skala*.9))+"px";
-  b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
+  const hojd=Math.max(22,Math.round(pos.hh*skala*.8));          // ungefär lika hög som monstret
+  const hoger=Math.min(pos.mitt+pos.w/2+2, TVW-3.2);            // klämmer in den om monstret står längst ut
+  b.style.left=Math.round(hoger*skala)+"px";
+  b.style.top=Math.round(pos.bot*skala-hojd)+"px";
+  b.style.height=hojd+"px";
+  b.innerHTML='<i style="height:'+(del*100)+'%"></i>';
   return b}).filter(Boolean)));
  const knappar=(L.knappar||[]).map(([t,kl])=>{
   const b=document.createElement("button");b.textContent=t;if(kl)b.className=kl;
