@@ -116,7 +116,7 @@ window.VAPENRUTOR={
 // Bakgrunder där golvet slutar en bit upp: figurerna flyttas upp så många pixlar (bakgrunden är 320×180)
 // Monster som flyger eller svävar: de ritas ovanför marken i stället för att stå på den.
 // Flera flygande fiender i samma strid hamnar på olika höjd, i den här ordningen (pixlar över marken).
-window.FLYGER={fladdermus:1, vampyrfladdermus:1, krakor:1, gargoyl:1, irrbloss:1, spoke:1, dimvasen:1, eldklo:1};
+window.FLYGER={fladdermus:1, vampyrfladdermus:1, krakor:1, gargoyl:1, irrbloss:1, spoke:1, dimvasen:1};
 window.FLYGHOJD=[8,15,4,12,6,17];
 
 // Bakgrunder där hjältarna behöver stå längre åt höger (hål eller möbel längst ner till vänster)
