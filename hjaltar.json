@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:19:46.451Z",
+  "uppdaterad": "2026-11-15T18:44:01.298Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -204,12 +204,12 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 34,
-      "svante": 27,
+      "ville": 45,
+      "svante": 39,
       "sally": 22,
-      "tomas": 44,
+      "tomas": 52,
       "linda": 18,
-      "benjamin": 34
+      "benjamin": 52
     },
     "kapitel": {
       "k1": {
@@ -228,60 +228,15 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "slut_bara",
+        "scen": "torget",
         "flaggor": [
-          "glod_fri",
-          "tittat_sovande",
-          "rosdoft",
-          "fragat_bo",
-          "vet_dimsater",
-          "kant_lyktan",
-          "fickljus",
-          "bulle_tinad",
-          "kikat",
-          "sett_huset",
-          "last_stenar",
-          "vet_barnet",
-          "gravt",
-          "runt_huset",
-          "vet_baksidan",
-          "varit_barnkammare",
-          "barnet_hjalpte",
-          "fragat_barnet",
-          "varit_torn",
-          "klockan_ringd",
-          "utsikt",
-          "vet_spegeln",
-          "varit_kok",
-          "tant_spisen",
-          "vet_namnet",
-          "smakat",
-          "varit_balsal",
-          "varit_bibliotek",
-          "last_dagbok",
-          "vet_valet",
-          "last_ritning",
-          "last_namnet",
-          "varmt_bok",
-          "har_sagobok",
-          "varit_glashus",
-          "har_nyckel",
-          "plockat_ros",
-          "har_ros",
-          "letat_krukor",
-          "vackt",
-          "byborna_burna",
-          "ros_given",
-          "fragat_flickan"
+          "glod_fri"
         ],
-        "klar": true,
-        "v": 1,
-        "slut": "slut_bara",
-        "nyttVapen": "Ni hittar Livets stav! Helare kan nu välja det under Ändra. Helning blir +4 starkare.",
-        "nyttVapenId": "livets_stav"
+        "klar": false,
+        "v": 1
       }
     },
-    "tid": 1794741584499,
+    "tid": 1794768239899,
     "niva": {
       "ville": {
         "lvl": 6,
