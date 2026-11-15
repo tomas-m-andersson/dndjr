@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T09:56:57.179Z",
+  "uppdaterad": "2026-11-15T09:59:28.704Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794736615036,
+    "tid": 1794736766594,
     "niva": {
       "ville": {
         "lvl": 6,
