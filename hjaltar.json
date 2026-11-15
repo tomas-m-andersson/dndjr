@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:10:46.804Z",
+  "uppdaterad": "2026-11-15T11:10:50.227Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741044907,
+    "tid": 1794741049496,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -499,7 +499,7 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 22,
+          "ville": 10,
           "tomas": 52,
           "svante": 33,
           "benjamin": 34
@@ -609,12 +609,6 @@
           "runda": 4,
           "ko": [
             {
-              "f": 1
-            },
-            {
-              "f": 0
-            },
-            {
               "h": "tomas"
             },
             {
@@ -632,7 +626,12 @@
             "f:1": 17
           },
           "nu": null,
-          "giftH": {},
+          "giftH": {
+            "benjamin": {
+              "expr": "1d2",
+              "rundor": 3
+            }
+          },
           "bedovH": {}
         }
       }
