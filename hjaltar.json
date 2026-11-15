@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:22.851Z",
+  "uppdaterad": "2026-11-15T20:56:27.682Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776180940,
+    "tid": 1794776185384,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -363,7 +363,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Golvet är alldeles för rent här.",
@@ -377,7 +377,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "sandorm",
+            "sandorm",
+            "sandorm"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -438,6 +447,14 @@
           {
             "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Det är inte tomt här. tre Sandorm vänder sig mot er!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -473,7 +490,176 @@
           "tomas": 60,
           "sally": 28
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Sandorm 1",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              },
+              {
+                "namn": "Sandorm 2",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              },
+              {
+                "namn": "Sandorm 3",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|oknen|1|4|rum|strid",
+          "fiender": [
+            {
+              "namn": "Sandorm 1",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            },
+            {
+              "namn": "Sandorm 2",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            },
+            {
+              "namn": "Sandorm 3",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 1
+            },
+            {
+              "f": 2
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "f": 0
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:benjamin": 13.1,
+            "h:ville": 3.1,
+            "h:tomas": 7.1,
+            "h:sally": 4.1,
+            "f:0": 3,
+            "f:1": 7,
+            "f:2": 6
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwibbhvo6hol",
