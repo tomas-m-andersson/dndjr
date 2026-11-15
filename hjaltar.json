@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:34:31.722Z",
+  "uppdaterad": "2026-11-15T19:34:35.228Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -206,12 +206,12 @@
       "Läkedryck"
     ],
     "liv": {
-      "ville": 31,
-      "svante": 32,
+      "ville": 45,
+      "svante": 39,
       "sally": 22,
-      "tomas": 45,
+      "tomas": 52,
       "linda": 18,
-      "benjamin": 45
+      "benjamin": 52
     },
     "kapitel": {
       "k1": {
@@ -230,58 +230,15 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "hallen",
+        "scen": "start",
         "flaggor": [
-          "glod_fri",
-          "fragat_bo",
-          "vet_dimsater",
-          "tittat_sovande",
-          "rosdoft",
-          "kant_lyktan",
-          "kappa",
-          "bulle_tinad",
-          "kikat",
-          "sett_huset",
-          "last_stenar",
-          "vet_barnet",
-          "gravt",
-          "gravt",
-          "runt_huset",
-          "vet_baksidan",
-          "dansat",
-          "gick_over_golvet",
-          "vet_spegeln",
-          "har_nyckel",
-          "letat_skafferiet",
-          "tant_spisen",
-          "smakat",
-          "last_dagbok",
-          "vet_valet",
-          "last_ritning",
-          "vet_rustningen",
-          "varmt_bok",
-          "har_sagobok",
-          "halsat_tradgardsmastaren",
-          "plockat_ros",
-          "har_ros",
-          "letat_krukor",
-          "slagit_klockan",
-          "klockan_ringd",
-          "utsikt",
-          "lekt_med_flickan",
-          "barnet_hjalpte",
-          "last_saga",
-          "vet_namnet",
-          "fragat_barnet",
-          "vet_historien",
-          "last_namnet",
-          "last_namnet"
+          "glod_fri"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794771269402,
+    "tid": 1794771274841,
     "niva": {
       "ville": {
         "lvl": 6,
