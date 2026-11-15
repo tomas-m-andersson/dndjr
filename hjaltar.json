@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:07:39.467Z",
+  "uppdaterad": "2026-11-15T11:08:04.936Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740858428,
+    "tid": 1794740883030,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -491,7 +491,7 @@
           "ville": 15,
           "tomas": 47,
           "svante": 33,
-          "benjamin": 52
+          "benjamin": 40
         },
         "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
         "stridSpar": {
@@ -499,7 +499,7 @@
             "fiender": [
               {
                 "namn": "Bergstroll 1",
-                "liv": 18,
+                "liv": 3,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -519,7 +519,7 @@
               },
               {
                 "namn": "Bergstroll 2",
-                "liv": 37,
+                "liv": 15,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -548,7 +548,7 @@
           "fiender": [
             {
               "namn": "Bergstroll 1",
-              "liv": 18,
+              "liv": 3,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -568,7 +568,7 @@
             },
             {
               "namn": "Bergstroll 2",
-              "liv": 37,
+              "liv": 15,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -590,22 +590,30 @@
           "anvant": {
             "benjamin": {
               "pilregn": true,
-              "dubbelskott": true
+              "dubbelskott": true,
+              "sikta_noga": true
             },
             "ville": {
               "shuriken": true,
               "smygattack": true
             },
             "tomas": {
-              "virvelhugg": true
+              "virvelhugg": true,
+              "dubbelhugg": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
             {
               "h": "svante"
             },
