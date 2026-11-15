@@ -1,83 +1,25 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-10T19:54:09.247Z",
-  "egna": [
-    {
-      "id": "egen-1793256667251",
-      "namn": "Hans-Ola",
-      "attacker": [
-        "peppsang",
-        "hanfullt_skamt",
-        "vaggvisa"
-      ],
-      "vapen": "forttrollad_luta",
-      "folk": "manniska",
-      "alder": 70,
-      "skagg": false,
-      "klass": "bard",
-      "hud": 1,
-      "har": 8,
-      "stil": "kal",
-      "klader": 0,
-      "flackar": false,
-      "s": {
-        "sty": 11,
-        "smi": 12,
-        "tal": 7,
-        "klo": 13,
-        "vis": 14,
-        "cha": 14
-      },
-      "om": ""
-    },
-    {
-      "id": "egen-1793378426345",
-      "namn": "Benjamin",
-      "attacker": [
-        "sikta_noga",
-        "dubbelskott",
-        "pilregn"
-      ],
-      "vapen": "alvbage",
-      "folk": "manniska",
-      "alder": 20,
-      "skagg": false,
-      "klass": "bagskytt",
-      "hud": 2,
-      "har": 9,
-      "stil": "kort",
-      "klader": 5,
-      "flackar": false,
-      "s": {
-        "sty": 14,
-        "smi": 16,
-        "tal": 14,
-        "klo": 11,
-        "vis": 11,
-        "cha": 15
-      },
-      "om": "",
-      "gosedjur": ""
-    }
-  ],
+  "uppdaterad": "2026-11-15T21:52:15.258Z",
+  "egna": [],
   "sallskap": [
     "tomas",
     "ville",
     "sally",
-    "egen-1793378426345"
+    "benjamin"
   ],
   "grundandringar": {
     "ville": {
+      "folk": "manniska",
+      "alder": 7,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "skuggkatana",
-      "folk": "manniska",
-      "alder": 7,
-      "skagg": false,
       "klass": "ninja",
       "hud": 1,
       "har": 3,
@@ -186,6 +128,32 @@
         "vis": 15,
         "cha": 14
       }
+    },
+    "benjamin": {
+      "folk": "manniska",
+      "alder": 20,
+      "skagg": false,
+      "attacker": [
+        "sikta_noga",
+        "dubbelskott",
+        "pilregn"
+      ],
+      "vapen": "alvbage",
+      "klass": "bagskytt",
+      "hud": 2,
+      "har": 9,
+      "stil": "kort",
+      "klader": 5,
+      "flackar": false,
+      "s": {
+        "sty": 14,
+        "smi": 16,
+        "tal": 14,
+        "klo": 11,
+        "vis": 11,
+        "cha": 15
+      },
+      "gosedjur": ""
     }
   },
   "aventyr": {
@@ -200,7 +168,7 @@
       "sally": 17,
       "tomas": 35,
       "linda": 7,
-      "egen-1793378426345": 27
+      "benjamin": 27
     },
     "kapitel": {
       "k1": {
@@ -224,7 +192,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794340418156,
+    "tid": 1794779533385,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -242,7 +210,7 @@
         "lvl": 5,
         "xp": 3939
       },
-      "egen-1793378426345": {
+      "benjamin": {
         "lvl": 5,
         "xp": 3668
       },
@@ -274,7 +242,7 @@
         "wb": 1,
         "acb": 2
       },
-      "egen-1793378426345": {
+      "benjamin": {
         "wb": 0,
         "acb": 2
       },
@@ -292,8 +260,70 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Någon viskar.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "altare",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas, Ville, Sally och Benjamin klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "ville",
+          "sally",
+          "benjamin"
+        ],
+        "guld": 35,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794779533381,
+        "nastaKand": false,
+        "id": "rmwide72dtx9y",
+        "startGuld": 35,
+        "liv": {
+          "tomas": 44,
+          "ville": 38,
+          "sally": 28,
+          "benjamin": 44
+        },
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+      }
+    ],
+    "aktivRun": "rmwide72dtx9y",
     "historik": [
       {
         "plats": "herrgarden",
