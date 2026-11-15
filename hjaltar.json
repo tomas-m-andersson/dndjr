@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:27:52.063Z",
+  "uppdaterad": "2026-11-15T20:54:10.183Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794774469884,
+    "tid": 1794776048200,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -358,8 +358,78 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "oknen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Någon andas tungt. Det låter stort.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Små fotspår leder ditåt.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ett tungt lås skramlar i draget.",
+            "typ": "skatt",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Den begravda staden",
+            "k": "sep"
+          },
+          {
+            "t": "Benjamin, Ville, Tomas och Sally kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "benjamin",
+          "ville",
+          "tomas",
+          "sally"
+        ],
+        "guld": 46,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794776048196,
+        "nastaKand": false,
+        "id": "rmwibbhvo6hol",
+        "startGuld": 46,
+        "liv": {
+          "benjamin": 52,
+          "ville": 45,
+          "tomas": 52,
+          "sally": 28
+        },
+        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+      }
+    ],
+    "aktivRun": "rmwibbhvo6hol",
     "historik": [
       {
         "plats": "vulkanen",
