@@ -2922,8 +2922,13 @@ function gorDorrar(){
  const r=Math.random(),n=r<.22?1:r<.75?2:3,ut=[],anv=new Set();
  const LT=(window.TEXTER&&window.TEXTER.ledtradar)?[...window.TEXTER.ledtradar.alla,...(window.TEXTER.ledtradar[R.plats]||[])]:LEDTRADAR;
  // brunnen finns bara utomhus: inomhus väljs ett annat rum bland ledtrådens alternativ
- const rumFor=o=>{if(UTOMHUS.has(R.plats)||!o.brunn)return wpick(o);const u={...o};delete u.brunn;return Object.keys(u).length?wpick(u):"strid"};
- while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);ut.push({ledtrad:L.h,typ:rumFor(L.o),kand:!!R.nastaKand})}
+ // sovande monster ska kännas ovanligt: halv chans, högst ett rum per kapitel och aldrig två dörrar samtidigt
+ const rumFor=(o,redanSovare)=>{const u={...o};
+  if(!UTOMHUS.has(R.plats))delete u.brunn;
+  if(u.sovare){if(redanSovare||R.sovareKap===R.kapitel)delete u.sovare;else u.sovare=u.sovare/2}
+  return Object.keys(u).length?wpick(u):"strid"};
+ while(ut.length<n){const L=valj(LT);if(anv.has(L.h))continue;anv.add(L.h);
+  ut.push({ledtrad:L.h,typ:rumFor(L.o,ut.some(d=>d.typ==="sovare")),kand:!!R.nastaKand})}
  // I herrgården finns alltid minst en fånge att rädda i varje kapitel
  if(R.plats==="herrgarden"&&R.fangeKap!==R.kapitel&&!ut.some(d=>d.typ==="fange")&&Math.random()<(R.djup>=3?1:.35)){
   const FL=LT.filter(L=>L.o.fange>=6);if(FL.length){const L=valj(FL);ut[Math.floor(Math.random()*ut.length)]={ledtrad:L.h,typ:"fange",kand:!!R.nastaKand}}}
@@ -3061,7 +3066,7 @@ function gaIn(i){
  if(typ==="vaktad"){const f=mote(false);R.rum.sedanSkatt=true;rlog(T("vaktad",{m:monNamn(f)}),"bad");return runStrid(f,{})}
  if(typ==="skatt"){R.rum.loot=rollLoot(false);rlog(T("skatt"),"heal")}
  if(typ==="falla"){R.rum.falla=T("fallor")||valj(FALLOR);sparaSpel();return korFalla()}
- if(typ==="sovare"){R.rum.fiender=mote(false);rlog(T("sovare",{m:monNamn(R.rum.fiender)}),"note")}
+ if(typ==="sovare"){R.sovareKap=R.kapitel;R.rum.fiender=mote(false);rlog(T("sovare",{m:monNamn(R.rum.fiender)}),"note")}
  if(typ==="kista")rlog(T("kista"));
  if(typ==="altare"){const A=T("altare");R.rum.gud=A.gud;rlog(A.text,"magic")}
  if(typ==="resenar"){const A=T("resenar");R.rum.res=A;rlog(A.text)}
