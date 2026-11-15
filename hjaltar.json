@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T10:27:52.994Z",
+  "uppdaterad": "2026-11-15T10:28:03.505Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794738470873,
+    "tid": 1794738481499,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,7 +360,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "En underjordisk bäck rinner in i gången.",
@@ -374,7 +374,16 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "orm",
+            "krak",
+            "orm"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -411,6 +420,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Två jätteormar och en vättehövding har väntat på er.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -446,7 +463,176 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Facklans sken når mer än en öppning i berget."
+        "dorrText": "Facklans sken når mer än en öppning i berget.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Jätteorm 1",
+                "liv": 24,
+                "rustning": 13,
+                "anfall": 5,
+                "skada": "1d8+2",
+                "xp": 200,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "slingrar sig bort mellan stenarna.",
+                "egen": {
+                  "gift": "1d6"
+                },
+                "typ": "orm",
+                "bild": "orm",
+                "max": 24,
+                "ute": false
+              },
+              {
+                "namn": "Vättehövding",
+                "liv": 24,
+                "rustning": 15,
+                "anfall": 5,
+                "skada": "1d8+2",
+                "xp": 200,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "vrålar av ilska och flyr.",
+                "typ": "krak",
+                "bild": "krak",
+                "max": 24,
+                "ute": false
+              },
+              {
+                "namn": "Jätteorm 2",
+                "liv": 24,
+                "rustning": 13,
+                "anfall": 5,
+                "skada": "1d8+2",
+                "xp": 200,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "slingrar sig bort mellan stenarna.",
+                "egen": {
+                  "gift": "1d6"
+                },
+                "typ": "orm",
+                "bild": "orm",
+                "max": 24,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|3|rum|strid",
+          "fiender": [
+            {
+              "namn": "Jätteorm 1",
+              "liv": 24,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "xp": 200,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "slingrar sig bort mellan stenarna.",
+              "egen": {
+                "gift": "1d6"
+              },
+              "typ": "orm",
+              "bild": "orm",
+              "max": 24,
+              "ute": false
+            },
+            {
+              "namn": "Vättehövding",
+              "liv": 24,
+              "rustning": 15,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "xp": 200,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "vrålar av ilska och flyr.",
+              "typ": "krak",
+              "bild": "krak",
+              "max": 24,
+              "ute": false
+            },
+            {
+              "namn": "Jätteorm 2",
+              "liv": 24,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "xp": 200,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "slingrar sig bort mellan stenarna.",
+              "egen": {
+                "gift": "1d6"
+              },
+              "typ": "orm",
+              "bild": "orm",
+              "max": 24,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "benjamin"
+            },
+            {
+              "f": 2
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "f": 1
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:benjamin": 21.1,
+            "h:svante": 4.1,
+            "h:ville": 11.1,
+            "h:tomas": 6.1,
+            "f:0": 12,
+            "f:1": 4,
+            "f:2": 15
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwhm0sion07z",
