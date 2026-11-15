@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T10:27:47.292Z",
+  "uppdaterad": "2026-11-15T10:27:52.994Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794738465317,
+    "tid": 1794738470873,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,37 +359,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
-            "typ": "resenar",
-            "kand": false
+            "ledtrad": "En underjordisk bäck rinner in i gången.",
+            "typ": "falla",
+            "kand": true
           },
           {
-            "ledtrad": "En gammal sång nynnas, lite falskt.",
-            "typ": "handlare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
-            "typ": "kista",
-            "kand": false
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "strid",
+            "kand": true
           }
         ],
-        "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En skadad äventyrare sitter lutad mot väggen.",
-            "vem": "henne",
-            "ok": "Hon viskar vad som väntar vid nästa vägskäl.",
-            "nej": "Hon litar inte på {namn} och vänder bort huvudet.",
-            "dryck": "Hon dricker och färgen kommer tillbaka i ansiktet. Hon berättar om allt hon sett."
-          }
-        },
+        "lyssnat": true,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -422,6 +407,10 @@
           {
             "t": "Benjamin pratar lugnt med henne. Hon viskar vad som väntar vid nästa vägskäl.",
             "k": "hit"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -448,7 +437,7 @@
         "curse": {},
         "ara": 0,
         "start": 1794733558368,
-        "nastaKand": true,
+        "nastaKand": false,
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
@@ -457,7 +446,7 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
+        "dorrText": "Facklans sken når mer än en öppning i berget."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
