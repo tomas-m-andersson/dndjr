@@ -361,10 +361,10 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .pill.sel{border-image-source:url("Ikoner%20till%20knappar/pill_vald.png");background:none;border-color:transparent;color:#3a2605;text-shadow:none}
 .pill:active{border-image-source:url("Ikoner%20till%20knappar/pill_ned.png")}
 .pill:disabled{border-image-source:url("Ikoner%20till%20knappar/pill_av.png");color:#cfcac0}
-/* kugghjulsknappen: hela bilden skalas till knappen */
-.gear{width:60px;height:60px;border:0;border-radius:0;background:url("Ikoner%20till%20knappar/ikonknapp.png") center/100% 100% no-repeat;image-rendering:pixelated}
-.gear:active{background-image:url("Ikoner%20till%20knappar/ikonknapp_ned.png")}
-.gear svg{width:24px;height:24px}
+/* kugghjulsknappen: ingen platta omkring, bara själva kugghjulet */
+.gear{width:56px;height:56px;border:0;border-radius:0;background:none;box-shadow:none;image-rendering:pixelated}
+.gear:active{transform:translateY(2px)}
+.gear svg{width:38px;height:38px}
 /* de små knapparna på hjältekorten: järn, och mässing på den valda */
 .card .row button{background:none;border:12px solid transparent;border-radius:0;
  border-image:url("Ikoner%20till%20knappar/litenknapp.png") 14 fill stretch;
