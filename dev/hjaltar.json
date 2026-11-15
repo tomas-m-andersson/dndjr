@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T21:52:15.258Z",
+  "uppdaterad": "2026-11-15T21:52:34.238Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -192,7 +192,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794779533385,
+    "tid": 1794779552335,
     "niva": {
       "ville": {
         "lvl": 5,
@@ -265,7 +265,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någon viskar.",
@@ -279,7 +279,14 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "grottroll"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -288,6 +295,14 @@
           {
             "t": "Tomas, Ville, Sally och Benjamin klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Det är inte tomt här. ett grottroll vänder sig mot er!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -320,7 +335,92 @@
           "sally": 28,
           "benjamin": 44
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Grottroll",
+                "liv": 58,
+                "rustning": 13,
+                "anfall": 7,
+                "skada": "2d8+3",
+                "xp": 700,
+                "platser": [
+                  "grottorna"
+                ],
+                "flyr": "rasar ihop och blir till sten.",
+                "egen": {
+                  "regen": 5
+                },
+                "typ": "grottroll",
+                "bild": "grottroll",
+                "max": 58,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|1|rum|strid",
+          "fiender": [
+            {
+              "namn": "Grottroll",
+              "liv": 58,
+              "rustning": 13,
+              "anfall": 7,
+              "skada": "2d8+3",
+              "xp": 700,
+              "platser": [
+                "grottorna"
+              ],
+              "flyr": "rasar ihop och blir till sten.",
+              "egen": {
+                "regen": 5
+              },
+              "typ": "grottroll",
+              "bild": "grottroll",
+              "max": 58,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "ville"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 20.1,
+            "h:ville": 4.1,
+            "h:sally": 12.1,
+            "h:benjamin": 11.1,
+            "f:0": 15
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwide72dtx9y",
