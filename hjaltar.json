@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:47:16.255Z",
+  "uppdaterad": "2026-11-15T18:47:27.904Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -205,7 +205,7 @@
       "Varm kappa"
     ],
     "liv": {
-      "ville": 34,
+      "ville": 31,
       "svante": 32,
       "sally": 22,
       "tomas": 45,
@@ -273,7 +273,7 @@
           "fiender": [
             {
               "namn": "Vampyrfladdermus 1",
-              "liv": 8,
+              "liv": 0,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d4+1",
@@ -281,11 +281,11 @@
               "flyr": "piper argt och försvinner upp i skorstenen.",
               "typ": "vampyrfladdermus",
               "max": 8,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Vampyrfladdermus 2",
-              "liv": 8,
+              "liv": 2,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d4+1",
@@ -297,7 +297,7 @@
             },
             {
               "namn": "Vampyrfladdermus 3",
-              "liv": 8,
+              "liv": 2,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d4+1",
@@ -308,16 +308,17 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "benjamin": {
+              "pilregn": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "benjamin"
-            },
             {
               "f": 1
             },
@@ -351,7 +352,7 @@
         }
       }
     },
-    "tid": 1794768436128,
+    "tid": 1794768445239,
     "niva": {
       "ville": {
         "lvl": 6,
