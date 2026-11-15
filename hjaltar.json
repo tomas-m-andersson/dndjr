@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:49:21.488Z",
+  "uppdaterad": "2026-11-15T19:50:47.420Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -203,7 +203,8 @@
       "Röd ros",
       "Läkedryck",
       "Varm kappa",
-      "Läkedryck"
+      "Läkedryck",
+      "Rep"
     ],
     "liv": {
       "ville": 45,
@@ -237,13 +238,14 @@
           "kant_lyktan",
           "lyktkall",
           "fragat_bo",
-          "vet_dimsater"
+          "vet_dimsater",
+          "rep"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794772159456,
+    "tid": 1794772245196,
     "niva": {
       "ville": {
         "lvl": 6,
