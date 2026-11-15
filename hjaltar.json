@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T18:44:19.839Z",
+  "uppdaterad": "2026-11-15T18:44:23.413Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -201,7 +201,8 @@
       "Läkedryck",
       "Sagobok",
       "Röd ros",
-      "Läkedryck"
+      "Läkedryck",
+      "Varm kappa"
     ],
     "liv": {
       "ville": 45,
@@ -235,13 +236,14 @@
           "vet_dimsater",
           "tittat_sovande",
           "rosdoft",
-          "kant_lyktan"
+          "kant_lyktan",
+          "kappa"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794768258582,
+    "tid": 1794768260167,
     "niva": {
       "ville": {
         "lvl": 6,
