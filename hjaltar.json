@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T10:13:57.361Z",
+  "uppdaterad": "2026-11-15T10:26:45.279Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794737635416,
+    "tid": 1794738403276,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,26 +359,27 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
+            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
+            "typ": "resenar",
             "kand": false
           },
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "skatt",
+            "ledtrad": "En gammal sång nynnas, lite falskt.",
+            "typ": "handlare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "typ": "kista",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": false,
-          "gud": "De tusen ljusens gud"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -395,6 +396,10 @@
           {
             "t": "Ett altare med tusen små ljus som tänds av sig själva.",
             "k": "magic"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -430,7 +435,7 @@
           "svante": 33,
           "benjamin": 44
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+        "dorrText": "Fladdermöss flyger förbi och försvinner in i en av gångarna."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
