@@ -425,6 +425,17 @@ body.liggande #app{position:fixed;inset:0;max-width:none;margin:0;gap:10px;
 body.liggande #app>.tvbig:not(.lagertv):not(.berattelseruta){position:fixed;left:var(--tvleft,6px);top:var(--tvtop,6px);
   width:var(--tvw);height:var(--tvh);margin:0;z-index:5;box-shadow:0 0 0 2px var(--line),0 10px 24px #0008}
 body.liggande .strip,body.liggande .foes{display:none}
+/* #app är en flex-kolumn med fast höjd i liggande läge: utan det här pressas texten ihop */
+body.liggande #app>*{flex:0 0 auto}
+/* ryggsäcken under TV:n i stället för längst ner i textspalten */
+body.liggande:not(.strid) #app>.backpack{position:fixed;left:var(--tvleft,6px);
+  top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:var(--tvw);margin:0;z-index:5;
+  padding:7px 12px;gap:9px;box-shadow:0 3px 0 #0c151c}
+body.liggande:not(.strid) #app>.backpack .px{width:24px;height:24px}
+body.liggande:not(.strid) #app>.backpack .bp-txt{display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0;flex:1}
+body.liggande:not(.strid) #app>.backpack strong{font-size:14px}
+body.liggande:not(.strid) #app>.backpack .bp-rad{flex-wrap:nowrap;gap:10px;font-size:12px;overflow:hidden}
+body.liggande:not(.strid) #app>.backpack .bp-oppna{font-size:13px}
 body.liggande .topbar{position:sticky;top:0;z-index:6;background:var(--bg);padding-block:2px;gap:8px}
 body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:14px}
 body.liggande .story{font-size:15px;line-height:1.45}
@@ -1604,7 +1615,7 @@ function uppdateraLiggande(){
   const sidbredd=Math.round(Math.min(400,Math.max(205,tillg*.34)));
   const h0=innerHeight-ol-nl;
   let w=Math.max(120,tillg-sidbredd-12),h=Math.round(w*BTH/BTW);
-  const knapph=strid?96:8;
+  const knapph=strid?96:64;   // plats under TV:n till knapparna eller ryggsäcken
   if(h>h0-knapph){h=h0-knapph;w=Math.round(h*BTW/BTH)}
   document.body.style.setProperty("--tvleft",vl+"px");
   document.body.style.setProperty("--tvtop",ol+"px");
