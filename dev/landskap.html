@@ -310,12 +310,35 @@ function visa(){passaIn();ritaTV();hud();panel()}
 // Mockup-knep: tryck på kapitelnamnet för att stega mellan berättelse, tärning och strid.
 const ORDNING=["berattelse","prov","strid"];
 document.getElementById("kapitel").onclick=()=>{lage=ORDNING[(ORDNING.indexOf(lage)+1)%ORDNING.length];visa()};
-document.getElementById("helskarm").onclick=()=>{
+/* Helskärm + håll skärmen vaken så länge spelet är i helskärm.
+   Wake Lock släpps av webbläsaren så fort fliken göms, därför tas den om när man kommer tillbaka. */
+let vaken=null;
+async function hallVaken(){
+ if(!("wakeLock" in navigator)||vaken)return;
+ try{vaken=await navigator.wakeLock.request("screen");
+  vaken.addEventListener("release",()=>{vaken=null;knappText()})}catch(_){vaken=null}
+ knappText();
+}
+function slappVaken(){if(!vaken)return;const v=vaken;vaken=null;v.release().catch(()=>{});knappText()}
+function knappText(){
+ const b=document.getElementById("helskarm");
+ b.textContent=document.fullscreenElement?"Avsluta":"Helskärm";
+ b.title=document.fullscreenElement
+  ?(vaken?"Helskärm på. Skärmen hålls vaken.":"Helskärm på. Den här webbläsaren kan inte hålla skärmen vaken.")
+  :"Helskärm och skärmen hålls vaken";
+}
+document.getElementById("helskarm").onclick=async()=>{
  const d=document.documentElement;
- if(document.fullscreenElement)document.exitFullscreen();
- else if(d.requestFullscreen)d.requestFullscreen().catch(()=>{});
- if(screen.orientation&&screen.orientation.lock)screen.orientation.lock("landscape").catch(()=>{});
+ if(document.fullscreenElement){await document.exitFullscreen().catch(()=>{})}
+ else{if(d.requestFullscreen)await d.requestFullscreen().catch(()=>{});
+  if(screen.orientation&&screen.orientation.lock)screen.orientation.lock("landscape").catch(()=>{})}
 };
+document.addEventListener("fullscreenchange",()=>{
+ if(document.fullscreenElement)hallVaken();else slappVaken();
+ knappText();setTimeout(visa,120)});
+document.addEventListener("visibilitychange",()=>{
+ if(document.visibilityState==="visible"&&document.fullscreenElement)hallVaken()});
+knappText();
 document.getElementById("pausa").onclick=()=>alert("Här skulle paus-menyn ligga.");
 
 addEventListener("resize",visa);
