@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:27:09.655Z",
+  "uppdaterad": "2026-11-15T20:27:52.063Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -234,7 +234,7 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "efter",
+        "scen": "slut_krossa",
         "flaggor": [
           "glod_fri",
           "tittat_sovande",
@@ -277,11 +277,14 @@
           "vet_att_de_vaknar",
           "ros_given"
         ],
-        "klar": false,
-        "v": 1
+        "klar": true,
+        "v": 1,
+        "slut": "slut_krossa",
+        "nyttVapen": null,
+        "nyttVapenId": null
       }
     },
-    "tid": 1794774427644,
+    "tid": 1794774469884,
     "niva": {
       "ville": {
         "lvl": 6,
