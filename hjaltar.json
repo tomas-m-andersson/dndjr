@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:14:17.258Z",
+  "uppdaterad": "2026-11-15T11:14:27.341Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741255367,
+    "tid": 1794741266589,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,7 +360,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "rum",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -385,7 +385,10 @@
           "fiender": [
             "gargoyl",
             "gargoyl"
-          ]
+          ],
+          "stridOpt": {
+            "sover": true
+          }
         },
         "logg": [
           {
@@ -459,6 +462,10 @@
           {
             "t": "Två gargoyler snarkar högt i ett hörn.",
             "k": "note"
+          },
+          {
+            "t": "Ni smyger fram och anfaller!",
+            "k": "note"
           }
         ],
         "party": [
@@ -494,7 +501,130 @@
           "svante": 25,
           "benjamin": 41
         },
-        "dorrText": "Marken spricker upp i flera brinnande stigar."
+        "dorrText": "Marken spricker upp i flera brinnande stigar.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Gargoyl 1",
+                "liv": 40,
+                "rustning": 17,
+                "anfall": 6,
+                "skada": "1d10+3",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "vulkanen"
+                ],
+                "flyr": "stelnar och blir en vanlig staty igen.",
+                "typ": "gargoyl",
+                "bild": "gargoyl",
+                "max": 40,
+                "ute": false
+              },
+              {
+                "namn": "Gargoyl 2",
+                "liv": 40,
+                "rustning": 17,
+                "anfall": 6,
+                "skada": "1d10+3",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "vulkanen"
+                ],
+                "flyr": "stelnar och blir en vanlig staty igen.",
+                "typ": "gargoyl",
+                "bild": "gargoyl",
+                "max": 40,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": true,
+            "noter": [
+              "Ni smyger fram. Fienderna sover den första rundan."
+            ]
+          },
+          "bild": "run|vulkanen|1|4|rum|sovare",
+          "fiender": [
+            {
+              "namn": "Gargoyl 1",
+              "liv": 40,
+              "rustning": 17,
+              "anfall": 6,
+              "skada": "1d10+3",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "vulkanen"
+              ],
+              "flyr": "stelnar och blir en vanlig staty igen.",
+              "typ": "gargoyl",
+              "bild": "gargoyl",
+              "max": 40,
+              "ute": false
+            },
+            {
+              "namn": "Gargoyl 2",
+              "liv": 40,
+              "rustning": 17,
+              "anfall": 6,
+              "skada": "1d10+3",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "vulkanen"
+              ],
+              "flyr": "stelnar och blir en vanlig staty igen.",
+              "typ": "gargoyl",
+              "bild": "gargoyl",
+              "max": 40,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [
+            "Ni smyger fram. Fienderna sover den första rundan."
+          ],
+          "init": {
+            "h:ville": 3.1,
+            "h:tomas": 1.1,
+            "h:svante": 4.1,
+            "h:benjamin": 10.1,
+            "f:0": 22,
+            "f:1": 17
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
