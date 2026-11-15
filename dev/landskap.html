@@ -195,6 +195,45 @@ const LAGEN={
   knappar:[["Attack","gyllene"],["Skjut pil",""],["Läkedryck",""],["Fly",""]]
  }
 };
+// Fler strider att bläddra bland, så man ser hur olika monster och bossar tar sig ut
+const STRIDSKNAPPAR=[["Attack","gyllene"],["Skjut pil",""],["Läkedryck",""],["Fly",""]];
+function strid(bild,rubrik,rader,fiender){
+ return {bild,fiender,val:[],knappar:STRIDSKNAPPAR,text:["<b>"+rubrik+"</b>",...rader]};
+}
+Object.assign(LAGEN,{
+ strid2:strid("gruva_inne","Runda 1 – Villes tur.",
+  ["Tre gestalter reser sig ur gruset längre in i gången.",
+   "Vätten fräser och vinkar fram skeletten."],
+  [{bild:"vatte",namn:"Vätte",liv:4,max:10},
+   {bild:"skelett",namn:"Skelett 1",liv:9,max:12},
+   {bild:"skelett",namn:"Skelett 2",liv:12,max:12}]),
+ strid3:strid("skog","Runda 3 – Sallys tur.",
+  ["Vargarna sprider ut sig mellan träden.",
+   "Linda sköt en pil och träffade för 6 i skada."],
+  [{bild:"varg",namn:"Varg 1",liv:7,max:16},{bild:"varg",namn:"Varg 2",liv:15,max:16}]),
+ strid4:strid("gruva_inne","Runda 2 – Tomas tur.",
+  ["Spindlarna släpper sig ner från taket.",
+   "Trollet morrar och höjer klubban."],
+  [{bild:"spindel",namn:"Jättespindel",liv:5,max:14},
+   {bild:"troll",namn:"Bergstroll",liv:22,max:30}]),
+ boss1:strid("spegelsal","Bossen – Grevinnan Dimma.",
+  ["Dimman drar ihop sig framför spegeln och blir till en gestalt.",
+   "Ville högg med Flammsvärdet och träffade för 9 i skada."],
+  [{bild:"dimfrun",namn:"Grevinnan Dimma",liv:58,max:90,boss:true}]),
+ boss2:strid("run|oknen|2|0|boss","Bossen – Sandkungen.",
+  ["Sanden rinner undan och något reser sig ur golvet.",
+   "Sandkungen lyfter sin spira."],
+  [{bild:"sandkungen",namn:"Sandkungen",liv:71,max:110,boss:true}]),
+ boss3:strid("gruva_inne","Bossen kallar på hjälp!",
+  ["Skuggan sjunker ihop och ett skelett kliver fram ur väggen.",
+   "Skuggan är nere på en fjärdedel av sitt liv."],
+  [{bild:"skuggan",namn:"Skuggan",liv:14,max:60,boss:true},
+   {bild:"skelett",namn:"Skelett",liv:12,max:12}]),
+ boss4:strid("skog","Bossen – Eldklo.",
+  ["Den unga draken slår ut med vingarna över gläntan.",
+   "Sally fräste och klöste för 4 i skada."],
+  [{bild:"eldklo",namn:"Eldklo",liv:46,max:120,boss:true}]),
+});
 
 let lage="berattelse", knappPaTV=false, FIENDEPOS=[];
 
@@ -219,10 +258,10 @@ function ritaTV(){
 
  // fienderna, från höger kant och inåt
  const right=[];
- if(L.fiender)L.fiender.forEach((f,i)=>right.push({k:f.bild,key:"f:"+i}));
+ if(L.fiender)L.fiender.forEach((f,i)=>right.push({k:f.bild,key:"f:"+i,boss:!!f.boss}));
  else if(L.figur)[].concat(L.figur).forEach(k=>right.push({k}));
- right.forEach(f=>{f.mb=window.egenMonster&&egenMonster(f.k,false,"sta");
-  f.mm=f.mb?(((window.FIGURVAL||{})[f.k]||{}).storlek||2):0;
+ right.forEach(f=>{f.mb=window.egenMonster&&egenMonster(f.k,f.boss,"sta");
+  f.mm=f.mb?(((window.FIGURVAL||{})[f.k]||{}).storlek||(f.boss?4:2)):0;
   f.hh=f.mb?CU*f.mm/2:0; f.w=f.mb?CU*f.mm/2*.75:14});
  const plats=TVW-2-(PARTY.length*14+2), bredd=right.reduce((a,f)=>a+f.w,0);
  const krymp=right.length>1?Math.max(0,(bredd-plats)/(right.length-1)):0;
@@ -342,7 +381,7 @@ function passaIn(){
 function visa(){passaIn();ritaTV();hud();panel()}
 
 // Mockup-knep: tryck på kapitelnamnet för att stega mellan berättelse, tärning och strid.
-const ORDNING=["berattelse","prov","strid"];
+const ORDNING=["berattelse","prov","strid","strid2","strid3","strid4","boss1","boss2","boss3","boss4"];
 document.getElementById("kapitel").onclick=()=>{lage=ORDNING[(ORDNING.indexOf(lage)+1)%ORDNING.length];visa()};
 /* Helskärm + håll skärmen vaken så länge spelet är i helskärm.
    Wake Lock släpps av webbläsaren så fort fliken göms, därför tas den om när man kommer tillbaka. */
