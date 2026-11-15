@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:57:23.636Z",
+  "uppdaterad": "2026-11-15T20:57:39.906Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,11 +284,11 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776242129,
+    "tid": 1794776258036,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 8664
+        "xp": 9069
       },
       "svante": {
         "lvl": 6,
@@ -296,15 +296,15 @@
       },
       "tomas": {
         "lvl": 7,
-        "xp": 10129
+        "xp": 10534
       },
       "sally": {
         "lvl": 5,
-        "xp": 4269
+        "xp": 4674
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 8019
+        "xp": 8424
       },
       "linda": {
         "lvl": 2,
@@ -362,31 +362,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "strid",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Golvet är alldeles för rent här.",
-            "typ": "skatt",
+            "ledtrad": "Ett tungt lås skramlar i draget.",
+            "typ": "vaktad",
             "kand": false
           },
           {
-            "ledtrad": "Det finns färskt blod på marken.",
+            "ledtrad": "Ett lågt morrande. Sedan tystnad.",
             "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": false,
-          "fiender": [
-            "sandorm",
-            "sandorm",
-            "sandorm"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -455,6 +446,14 @@
           {
             "t": "Det är inte tomt här. tre Sandorm vänder sig mot er!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 405 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -479,7 +478,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 1350,
         "start": 1794776048196,
         "nastaKand": false,
         "id": "rmwibbhvo6hol",
@@ -490,189 +489,7 @@
           "tomas": 60,
           "sally": 16
         },
-        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Sandorm 1",
-                "liv": 0,
-                "rustning": 14,
-                "anfall": 6,
-                "skada": "1d10",
-                "xp": 450,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "dyker ner i sanden och är borta.",
-                "egen": {
-                  "tva": true
-                },
-                "typ": "sandorm",
-                "bild": "sandorm",
-                "max": 26,
-                "ute": true
-              },
-              {
-                "namn": "Sandorm 2",
-                "liv": 16,
-                "rustning": 14,
-                "anfall": 6,
-                "skada": "1d10",
-                "xp": 450,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "dyker ner i sanden och är borta.",
-                "egen": {
-                  "tva": true
-                },
-                "typ": "sandorm",
-                "bild": "sandorm",
-                "max": 26,
-                "ute": false
-              },
-              {
-                "namn": "Sandorm 3",
-                "liv": 1,
-                "rustning": 14,
-                "anfall": 6,
-                "skada": "1d10",
-                "xp": 450,
-                "platser": [
-                  "oknen"
-                ],
-                "flyr": "dyker ner i sanden och är borta.",
-                "egen": {
-                  "tva": true
-                },
-                "typ": "sandorm",
-                "bild": "sandorm",
-                "max": 26,
-                "ute": false,
-                "svag": {
-                  "n": 3,
-                  "rundor": 2
-                }
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|1|4|rum|strid",
-          "fiender": [
-            {
-              "namn": "Sandorm 1",
-              "liv": 0,
-              "rustning": 14,
-              "anfall": 6,
-              "skada": "1d10",
-              "xp": 450,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "dyker ner i sanden och är borta.",
-              "egen": {
-                "tva": true
-              },
-              "typ": "sandorm",
-              "bild": "sandorm",
-              "max": 26,
-              "ute": true
-            },
-            {
-              "namn": "Sandorm 2",
-              "liv": 16,
-              "rustning": 14,
-              "anfall": 6,
-              "skada": "1d10",
-              "xp": 450,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "dyker ner i sanden och är borta.",
-              "egen": {
-                "tva": true
-              },
-              "typ": "sandorm",
-              "bild": "sandorm",
-              "max": 26,
-              "ute": false
-            },
-            {
-              "namn": "Sandorm 3",
-              "liv": 1,
-              "rustning": 14,
-              "anfall": 6,
-              "skada": "1d10",
-              "xp": 450,
-              "platser": [
-                "oknen"
-              ],
-              "flyr": "dyker ner i sanden och är borta.",
-              "egen": {
-                "tva": true
-              },
-              "typ": "sandorm",
-              "bild": "sandorm",
-              "max": 26,
-              "ute": false,
-              "svag": {
-                "n": 3,
-                "rundor": 2
-              }
-            }
-          ],
-          "anvant": {
-            "benjamin": {
-              "pilregn": true,
-              "dubbelskott": true
-            },
-            "tomas": {
-              "virvelhugg": true,
-              "dubbelhugg": true
-            },
-            "sally": {
-              "frasa": true
-            },
-            "ville": {
-              "shuriken": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 2,
-          "ko": [
-            {
-              "h": "sally"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 13.1,
-            "h:ville": 3.1,
-            "h:tomas": 7.1,
-            "h:sally": 4.1,
-            "f:0": 3,
-            "f:1": 7,
-            "f:2": 6
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Ni tittar på varandra. Någon måste bestämma."
       }
     ],
     "aktivRun": "rmwibbhvo6hol",
