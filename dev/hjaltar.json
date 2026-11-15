@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T21:52:49.000Z",
+  "uppdaterad": "2026-11-15T21:52:53.140Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -192,7 +192,7 @@
         "nyttVapenId": "manklinga"
       }
     },
-    "tid": 1794779568347,
+    "tid": 1794779570935,
     "niva": {
       "ville": {
         "lvl": 5,
