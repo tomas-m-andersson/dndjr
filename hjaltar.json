@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:06:43.556Z",
+  "uppdaterad": "2026-11-15T11:06:46.662Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740801670,
+    "tid": 1794740804756,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -360,7 +360,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -369,7 +369,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "troll",
+            "troll"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -442,6 +450,14 @@
           {
             "t": "Ni samlar ihop er och fortsätter.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ur mörkret kliver två bergstroll!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -477,7 +493,138 @@
           "svante": 33,
           "benjamin": 52
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Bergstroll 1",
+                "liv": 45,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+3",
+                "xp": 450,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "faller omkull med ett brak som får marken att skaka.",
+                "egen": {
+                  "regen": 3
+                },
+                "typ": "troll",
+                "bild": "troll",
+                "max": 45,
+                "ute": false
+              },
+              {
+                "namn": "Bergstroll 2",
+                "liv": 45,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+3",
+                "xp": 450,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "faller omkull med ett brak som får marken att skaka.",
+                "egen": {
+                  "regen": 3
+                },
+                "typ": "troll",
+                "bild": "troll",
+                "max": 45,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|5|rum|strid",
+          "fiender": [
+            {
+              "namn": "Bergstroll 1",
+              "liv": 45,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+3",
+              "xp": 450,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "faller omkull med ett brak som får marken att skaka.",
+              "egen": {
+                "regen": 3
+              },
+              "typ": "troll",
+              "bild": "troll",
+              "max": 45,
+              "ute": false
+            },
+            {
+              "namn": "Bergstroll 2",
+              "liv": 45,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+3",
+              "xp": 450,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "faller omkull med ett brak som får marken att skaka.",
+              "egen": {
+                "regen": 3
+              },
+              "typ": "troll",
+              "bild": "troll",
+              "max": 45,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "benjamin"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:benjamin": 22.1,
+            "h:svante": 6.1,
+            "h:ville": 21.1,
+            "h:tomas": 4.1,
+            "f:0": 21,
+            "f:1": 19
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwhm0sion07z",
