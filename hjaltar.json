@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:11:36.012Z",
+  "uppdaterad": "2026-11-15T11:12:23.669Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 2380,
+    "guld": 2848,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741093988,
+    "tid": 1794741141545,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -355,192 +355,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "jattemask"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Kapitel 1 · Grottorna under Kråkberget",
-            "k": "sep"
-          },
-          {
-            "t": "Ville, Tomas, Svante och Benjamin klättrar ner för en hal stenkant och står plötsligt i ett mörker så tätt att facklorna knappt räcker.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Altare",
-            "k": "sep"
-          },
-          {
-            "t": "Ett altare med tusen små ljus som tänds av sig själva.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Någon behöver hjälp",
-            "k": "sep"
-          },
-          {
-            "t": "En skadad äventyrare sitter lutad mot väggen.",
-            "k": ""
-          },
-          {
-            "t": "Benjamin pratar lugnt med henne. Hon viskar vad som väntar vid nästa vägskäl.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Två jätteormar och en vättehövding har väntat på er.",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 180 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Benjamin har blivit starkare och är nu nivå 6! +8 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ni möter en slemkub!",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 60 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni samlar ihop er och fortsätter.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Ur mörkret kliver två bergstroll!",
-            "k": "bad"
-          },
-          {
-            "t": "Det sista monstret faller. Alla får 270 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Grottans härskare",
-            "k": "sep"
-          },
-          {
-            "t": "Två stora ögon öppnas i mörkret. Det är Jättemasken!",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 338 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ville hostar och sätter sig upp. 1 liv.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 468 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Det är över. Grottans härskare är besegrad!",
-            "k": "crit"
-          }
+        "utfall": "hem",
+        "raddade": 0,
+        "hjaltar": [
+          "Benjamin (nivå 6)",
+          "Svante (nivå 5)",
+          "Ville (nivå 6)",
+          "Tomas (nivå 6)"
         ],
-        "party": [
-          "benjamin",
-          "svante",
-          "ville",
-          "tomas"
-        ],
-        "guld": 512,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 2825,
-        "start": 1794733558368,
-        "nastaKand": false,
-        "id": "rmwhm0sion07z",
-        "startGuld": 44,
-        "liv": {
-          "ville": 1,
-          "tomas": 52,
-          "svante": 33,
-          "benjamin": 30
-        },
-        "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
-        "bossFaktor": 1.3
-      }
-    ],
-    "aktivRun": "rmwhm0sion07z",
-    "historik": [
+        "datum": "2026-11-15"
+      },
       {
         "plats": "oknen",
         "kapitel": 3,
@@ -808,20 +640,6 @@
         ],
         "ara": 0,
         "datum": "2026-10-29"
-      },
-      {
-        "plats": "grottorna",
-        "kapitel": 1,
-        "djup": 6,
-        "utfall": "hem",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 700,
-        "datum": "2026-10-28"
       }
     ],
     "lager": {
