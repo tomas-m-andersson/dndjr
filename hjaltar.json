@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:10:54.021Z",
+  "uppdaterad": "2026-11-15T20:11:30.823Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -256,13 +256,14 @@
           "har_sagobok",
           "ringt_klockan",
           "klockan_ringd",
-          "utsikt"
+          "utsikt",
+          "halsat_tradgardsmastaren"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794773451977,
+    "tid": 1794773488656,
     "niva": {
       "ville": {
         "lvl": 6,
