@@ -1573,6 +1573,15 @@ async function hallSkarmenVaken(){
  try{vakenLas=await navigator.wakeLock.request("screen");vakenLas.addEventListener("release",()=>{vakenLas=null})}catch(_){vakenLas=null}
 }
 function slappSkarmen(){if(!vakenLas)return;const v=vakenLas;vakenLas=null;v.release().catch(()=>{})}
+// Appen är installerad som app och låses normalt till stående läge. Är liggande läge påslaget
+// släpper vi låset, annars låser vi tillbaka till stående – då händer ingenting när mobilen vrids.
+function rotationLas(){
+ const o=screen&&screen.orientation;if(!o)return;
+ try{
+  if(alt.liggande){if(o.unlock)o.unlock()}
+  else if(o.lock)o.lock("portrait").catch(()=>{});
+ }catch(_){}
+}
 function uppdateraLiggande(){
  const spelvy=view==="scen"||view==="run";
  const pa=!!alt.liggande&&innerWidth>innerHeight&&spelvy;
@@ -3288,6 +3297,7 @@ if(window.forladda&&!window.KLASSISK){
  const t=el("p",{class:"laddar"},"Laddar bilder …");app.replaceChildren(el("div",{class:"laddarruta"},t));
  forladda(start,6000,(n,av)=>{t.textContent="Laddar bilder … "+Math.round(100*n/av)+" %"});
 }else start();
+rotationLas();
 ghLoad();
 </script>
 </body>
