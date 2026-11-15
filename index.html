@@ -1210,7 +1210,7 @@ function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning 
 
 /* ===== Startsidan: välj Hjältarna eller Äventyr ===== */
 function start(){
- view="start"; lage=null; tyst(); app.replaceChildren(); document.getElementById("party").hidden=true;
+ view="start"; lage=null; tyst(); uppdateraLiggande(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
  app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},logga(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
@@ -1248,7 +1248,7 @@ function start(){
 }
 /* ===== Hjältarna ===== */
 function home(){
- view="home"; lage=null; app.replaceChildren();
+ view="home"; lage=null; uppdateraLiggande(); app.replaceChildren();
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Hjältarna")));
  app.append(el("div",{class:"section-head"},el("h2",{},"Hjältarna"),el("span",{},"Välj vilka som ska med")));
  const grid=el("div",{class:"grid"});
@@ -1287,7 +1287,7 @@ let draft, step;
 const STEPS=["Klass","Strid","Utseende","Tärningar","Klar"];
 function creator(){
  draft={id:"egen-"+Date.now(),namn:"",folk:"manniska",alder:ALDER_STD,klass:null,attacker:[],hud:0,har:0,stil:"kort",klader:0,flackar:false,rolls:null,omslag:3,om:""};
- step=0; view="creator"; document.getElementById("party").hidden=true; renderCreator();
+ step=0; view="creator"; uppdateraLiggande(); document.getElementById("party").hidden=true; renderCreator();
 }
 function rolled(){const s={};STATS.forEach(st=>{s[st.k]=(draft.rolls?draft.rolls[st.k].tot:10)+((FOLK[draft.folk]||{bonus:{}}).bonus[st.k]||0)});return s}
 function draftHero(){return{...draft,folk:draft.folk||"manniska",klass:draft.klass||"krigare",s:rolled()}}
@@ -1445,7 +1445,7 @@ function stepDone(){
 /* ===== Ändra en hjälte ===== */
 function editHero(h){
  draft={...h,attacker:attackerAv(h),s0:{...h.s},f0:h.folk,flackar:!!h.flackar,om:h.om||""};
- view="edit"; document.getElementById("party").hidden=true; renderEdit(); window.scrollTo(0,0);
+ view="edit"; uppdateraLiggande(); document.getElementById("party").hidden=true; renderEdit(); window.scrollTo(0,0);
 }
 // Byter man folk flyttas folkbonusen: gamla bonusen dras av, nya läggs till.
 function editStats(){const s={},ob=FOLK[draft.f0].bonus,nb=FOLK[draft.folk].bonus;
@@ -2038,7 +2038,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
 
 /* --- kapitelvalet --- */
 function adventures(){
- tyst();lage=null;view="aventyr";document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
+ tyst();lage=null;view="aventyr";uppdateraLiggande();document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
  const ph=partyHeroes();
  if(!ph.length&&!spel.runs.length){home();flash("Välj minst en hjälte först.");return}
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},spel.guld+" guld")));
@@ -2824,7 +2824,7 @@ function monsterBild(k){const M=MONSTER[k],c=document.createElement("canvas");c.
  c._rita();return c}
 let bibPlats="alla";
 function monsterBibliotek(){
- view="bibliotek";lage=null;tyst();app.replaceChildren();document.getElementById("party").hidden=true;
+ view="bibliotek";lage=null;tyst();uppdateraLiggande();app.replaceChildren();document.getElementById("party").hidden=true;
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Monsterbibliotek")));
  app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i spelet, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
  const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.kort||P.namn.split(" ")[0]])];
