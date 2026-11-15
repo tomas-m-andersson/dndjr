@@ -38,7 +38,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 /* ---------- HUD ovanpå TV:n ---------- */
 .hud{position:absolute;display:flex;gap:5px;pointer-events:none}
 #hjaltar{left:6px;top:6px;flex-direction:row;align-items:flex-start;flex-wrap:nowrap}
-#fiender{right:6px;top:6px;flex-direction:column;align-items:flex-end}
+#fiender{inset:0;display:block}
 .kort{pointer-events:auto;background:#0d1620cc;border:1.5px solid #ffffff22;border-radius:7px;
   padding:3px 6px;min-width:0;backdrop-filter:blur(3px);line-height:1.15}
 .kort b{display:block;font-size:11px;white-space:nowrap;letter-spacing:.01em}
@@ -49,8 +49,11 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .kort.ute{opacity:.45}
 .kort.gift{border-color:var(--moss)}
 .kort.gift .matare i{background:var(--moss)}
-#fiender .kort .matare{width:88px}
-#fiender .kort b{text-align:right}
+.fmat{position:absolute;height:5px;border-radius:3px;background:#0b131bcc;
+  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
+.fmat i{display:block;height:100%;background:var(--moss);transition:width .35s ease}
+.fmat.skadad i{background:#e3c44f}
+.fmat.kritisk i{background:var(--red)}
 
 /* knapparna dyker bara upp när de behövs */
 #handling{position:absolute;left:6px;right:6px;bottom:7px;display:flex;gap:7px;justify-content:center;
@@ -136,7 +139,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
   <button data-lage="berattelse">Berättelse</button>
   <button data-lage="prov">Tärning</button>
   <button data-lage="strid">Strid</button>
-  <button id="knappval" title="Var ska attackknapparna ligga?">Knappar: på TV:n</button>
+  <button id="knappval" title="Var ska attackknapparna ligga?">Knappar: i panelen</button>
 </div>
 
 <script src="figurval.js"></script>
@@ -185,12 +188,12 @@ const LAGEN={
  }
 };
 
-let lage="berattelse", knappPaTV=true;
+let lage="berattelse", knappPaTV=false, FIENDEPOS=[];
 
 /* ---------- rita TV:n ---------- */
 function ritaTV(){
  const L=LAGEN[lage], cv=document.getElementById("tv");
- cv._rita=ritaTV;   // ritas om när en bildfil har laddats klart
+ cv._rita=()=>{ritaTV();hud()};   // ritas om när en bildfil har laddats klart, då flyttas mätarna med
  const HI=window.egnaBilderAntal&&egnaBilderAntal()>0;
  const BG=window.bakgrundBild?bakgrundBild(L.bild):null;
  if(HI){cv.width=BTW;cv.height=BTH}else{cv.width=TVW;cv.height=TVH}
@@ -224,7 +227,8 @@ function ritaTV(){
   const bas=MARK?MARK+1:0, rum=Math.max(0,TVH-1-(f.hh||0)-bas);
   const fly=FLYG[f.k]?bas+Math.round(FH[flygNr++%FH.length]/17*Math.min(rum,17)):0;
   ritaRuta(g,f.mb,x+f.w/2,TVH-fly,CU*f.mm/2);
-  f.x=x});
+  f.mitt=x+f.w/2; f.bot=TVH-fly-lyft});   // sparas så att livmätaren kan läggas precis under monstret
+ FIENDEPOS=right;
  if(window.ritaOm)ritaOm();
 }
 
@@ -238,12 +242,18 @@ function hud(){
   k.innerHTML='<b>'+h.namn+'</b><div class="matare"><i style="width:'+(h.liv/h.max*100)+'%"></i></div>'+
    '<small>'+(h.liv>0?h.liv+"/"+h.max+(h.gift?" · förgiftad":""):"Svimmad")+'</small>';
   return k}));
- const fi=document.getElementById("fiender");
- fi.replaceChildren(...((L.fiender||[]).map(f=>{
-  const k=document.createElement("div");
-  k.className="kort"+(f.gift?" gift":"");
-  k.innerHTML='<b>'+f.namn+'</b><div class="matare"><i style="width:'+(f.liv/f.max*100)+'%"></i></div>';
-  return k})));
+ // fienderna: ingen ruta och ingen text, bara en smal mätare precis under monstret
+ const fi=document.getElementById("fiender"),ram=document.getElementById("tvram");
+ const skala=ram.clientWidth/TVW;
+ fi.replaceChildren(...((L.fiender||[]).map((f,i)=>{
+  const pos=FIENDEPOS[i];if(!pos)return null;
+  const del=f.liv/f.max, b=document.createElement("div");
+  b.className="fmat";
+  b.style.left=(pos.mitt*skala)+"px";
+  b.style.top=((pos.bot+1.5)*skala)+"px";
+  b.style.width=Math.max(26,Math.round(pos.w*skala*.9))+"px";
+  b.innerHTML='<i style="width:'+(del*100)+'%"></i>';
+  return b}).filter(Boolean)));
  const knappar=(L.knappar||[]).map(([t,kl])=>{
   const b=document.createElement("button");b.textContent=t;if(kl)b.className=kl;
   b.onclick=()=>{if(t==="Attack"||t==="Skjut pil")rullaTarning("Attack mot Vampyrfladdermus 3")};
