@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:08:26.630Z",
+  "uppdaterad": "2026-11-15T11:08:31.698Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740905984,
+    "tid": 1794740909699,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 6766
+        "xp": 7036
       },
       "svante": {
         "lvl": 5,
-        "xp": 4817
+        "xp": 5087
       },
       "tomas": {
         "lvl": 6,
-        "xp": 8231
+        "xp": 8501
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 6121
+        "xp": 6391
       },
       "linda": {
         "lvl": 2,
@@ -360,7 +360,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något snarkar, djupt och långsamt.",
@@ -371,7 +371,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "troll",
             "troll"
@@ -458,6 +458,10 @@
           {
             "t": "Ur mörkret kliver två bergstroll!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 270 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -482,7 +486,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 800,
+        "ara": 1700,
         "start": 1794733558368,
         "nastaKand": false,
         "id": "rmwhm0sion07z",
@@ -493,145 +497,7 @@
           "svante": 33,
           "benjamin": 47
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Bergstroll 1",
-                "liv": 0,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+3",
-                "xp": 450,
-                "platser": [
-                  "skogen",
-                  "grottorna"
-                ],
-                "flyr": "faller omkull med ett brak som får marken att skaka.",
-                "egen": {
-                  "regen": 3
-                },
-                "typ": "troll",
-                "bild": "troll",
-                "max": 45,
-                "ute": true
-              },
-              {
-                "namn": "Bergstroll 2",
-                "liv": 4,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+3",
-                "xp": 450,
-                "platser": [
-                  "skogen",
-                  "grottorna"
-                ],
-                "flyr": "faller omkull med ett brak som får marken att skaka.",
-                "egen": {
-                  "regen": 3
-                },
-                "typ": "troll",
-                "bild": "troll",
-                "max": 45,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|grottorna|1|5|rum|strid",
-          "fiender": [
-            {
-              "namn": "Bergstroll 1",
-              "liv": 0,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+3",
-              "xp": 450,
-              "platser": [
-                "skogen",
-                "grottorna"
-              ],
-              "flyr": "faller omkull med ett brak som får marken att skaka.",
-              "egen": {
-                "regen": 3
-              },
-              "typ": "troll",
-              "bild": "troll",
-              "max": 45,
-              "ute": true
-            },
-            {
-              "namn": "Bergstroll 2",
-              "liv": 4,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+3",
-              "xp": 450,
-              "platser": [
-                "skogen",
-                "grottorna"
-              ],
-              "flyr": "faller omkull med ett brak som får marken att skaka.",
-              "egen": {
-                "regen": 3
-              },
-              "typ": "troll",
-              "bild": "troll",
-              "max": 45,
-              "ute": false
-            }
-          ],
-          "anvant": {
-            "benjamin": {
-              "pilregn": true,
-              "dubbelskott": true,
-              "sikta_noga": true
-            },
-            "ville": {
-              "shuriken": true,
-              "smygattack": true
-            },
-            "tomas": {
-              "virvelhugg": true,
-              "dubbelhugg": true
-            },
-            "svante": {
-              "helande_vag": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 4,
-          "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "tomas"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 22.1,
-            "h:svante": 6.1,
-            "h:ville": 21.1,
-            "h:tomas": 4.1,
-            "f:0": 21,
-            "f:1": 19
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
