@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:16:39.730Z",
+  "uppdaterad": "2026-11-15T20:16:46.441Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -211,10 +211,10 @@
     "liv": {
       "ville": 45,
       "svante": 39,
-      "sally": 21,
+      "sally": 28,
       "tomas": 52,
       "linda": 18,
-      "benjamin": 47
+      "benjamin": 52
     },
     "kapitel": {
       "k1": {
@@ -265,13 +265,14 @@
           "letat_krukor",
           "smakat",
           "letat_skafferiet",
-          "tant_spisen"
+          "tant_spisen",
+          "vet_namnet"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794773797746,
+    "tid": 1794773804353,
     "niva": {
       "ville": {
         "lvl": 6,
