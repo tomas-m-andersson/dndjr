@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:15:53.665Z",
+  "uppdaterad": "2026-11-15T11:16:04.914Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741351807,
+    "tid": 1794741362846,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,21 +359,11 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "En gammal sång nynnas, lite falskt.",
-            "typ": "handlare",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false,
-          "handlareBild": "dvarg"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -466,6 +456,10 @@
           {
             "t": "En dvärg har ställt upp ett litet bord. – Vapen slipas, ringar säljs. Bara guld, tack.",
             "k": "heal"
+          },
+          {
+            "t": "Det finns ingen väg runt. Bakom nästa dörr väntar vulkanens väktare.",
+            "k": ""
           }
         ],
         "party": [
@@ -501,7 +495,7 @@
           "svante": 19,
           "benjamin": 41
         },
-        "dorrText": "Ingen väg att välja. Bara framåt."
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar vulkanens väktare."
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
