@@ -2279,8 +2279,9 @@ function visaScen(){
  const akt=el("div",{class:"actions"});
  if(sc.slut){
   if(!K.klar){K.klar=true;K.slut=K.scen;const nytt=lasUppVapen();K.nyttVapen=nytt?nytt.text:null;K.nyttVapenId=nytt?nytt.vapen.id:null;sparaSpel()}
-  akt.append(el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot wloot"},K.nyttVapenId&&vapenById(K.nyttVapenId)?ikonEl(vapenById(K.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen))):null,
-   el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren"));
+  // filter(Boolean): utan den skriver append ut texten "null" när inget nytt vapen finns
+  akt.append(...[el("div",{class:"theend"},el("strong",{},"Slut på kapitlet!"),el("span",{},sc.slutrad||"Bra jobbat, hjältar.")),K.nyttVapen?el("div",{class:"theend loot wloot"},K.nyttVapenId&&vapenById(K.nyttVapenId)?ikonEl(vapenById(K.nyttVapenId),"big"):null,el("div",{},el("strong",{},"Nytt vapen!"),el("span",{},K.nyttVapen))):null,
+   el("button",{class:"btn",onclick:adventures},"Tillbaka till äventyren")].filter(Boolean));
  }else if(sc.strid){
   akt.append(K.stridSpar?el("button",{class:"btn big",onclick:()=>fortsattStrid(K.stridSpar,bildNu(sc))},"Fortsätt striden"):el("button",{class:"btn big",onclick:()=>startStrid(sc.strid,bildNu(sc))},"Till strid!"));
  }else if(sc.prov){
