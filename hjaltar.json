@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:13:15.861Z",
+  "uppdaterad": "2026-11-15T11:13:46.966Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741193888,
+    "tid": 1794741225029,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -376,7 +376,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": true,
@@ -417,6 +417,22 @@
           {
             "t": "En platta klickar. Flammor sprutar ur golvet!",
             "k": "bad"
+          },
+          {
+            "t": "Ville bränns av lågorna: 11 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Tomas bränns av lågorna: 7 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Svante bränns av lågorna: 8 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Benjamin bränns av lågorna: 11 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -447,10 +463,10 @@
         "id": "rmwhqjjegrk5v",
         "startGuld": 54,
         "liv": {
-          "ville": 45,
-          "tomas": 52,
-          "svante": 33,
-          "benjamin": 52
+          "ville": 34,
+          "tomas": 45,
+          "svante": 25,
+          "benjamin": 41
         },
         "dorrText": "Lavan bubblar. Det finns mer än en väg, och alla är heta."
       }
