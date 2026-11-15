@@ -39,12 +39,16 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .hud{position:absolute;display:flex;gap:5px;pointer-events:none}
 #hjaltar{inset:0;display:block}
 .hmat{position:absolute;height:6px;border-radius:4px;background:#0b131bcc;
-  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;overflow:hidden;transform:translateX(-50%)}
+  box-shadow:0 0 0 1px #0008, 0 1px 3px #0006;transform:translateX(-50%)}
 .hmat i{display:block;height:100%;background:var(--moss);border-radius:4px;transition:width .35s ease,background .35s ease}
 /* 50 % och uppåt grön, 49–25 % gul, 24–1 % röd */
 .fmat.gul i,.hmat.gul i{background:#e8c23f}
 .fmat.rod i,.hmat.rod i{background:var(--red)}
-.hmat.tur{box-shadow:0 0 0 2px var(--gold),0 0 10px #f2c14e88}
+/* den vars tur det är får en liten gyllene pil som pekar ner på hjälten */
+.hmat.tur::after{content:"";position:absolute;left:50%;top:-12px;width:0;height:0;
+  border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--gold);
+  filter:drop-shadow(0 1px 2px #000b);animation:pilhopp 1.1s ease-in-out infinite}
+@keyframes pilhopp{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-3px)}}
 .hmat.ute i{background:#5a6a74}
 #undertv{display:flex;gap:8px;width:100%;align-items:center;justify-content:center}
 #handlingar{display:flex;gap:7px;flex:1 1 auto;justify-content:center;flex-wrap:wrap}
