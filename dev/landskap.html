@@ -40,12 +40,17 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 #hjaltar{display:flex;gap:6px;width:100%;justify-content:center;align-items:stretch}
 #hjaltar .kort{flex:1 1 0;max-width:190px;display:flex;align-items:center;gap:7px;background:#17242fcc;
   border:1.5px solid var(--line);border-radius:9px;padding:5px 8px}
-#hjaltar .kort canvas{image-rendering:pixelated;width:30px;height:30px;flex:0 0 auto;
-  background:#0d1620;border-radius:6px}
 #hjaltar .kort .txt{min-width:0;flex:1 1 auto}
 #hjaltar .kort b{font-size:12px}
 #hjaltar .kort .matare{width:100%;height:7px}
 #hjaltar .kort small{font-size:10px}
+#ryggsack{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  background:#17242fcc;border:1.5px solid var(--line);border-radius:9px;padding:4px 11px;position:relative}
+#ryggsack canvas{image-rendering:pixelated;width:28px;height:28px}
+#ryggsack span{font-size:9px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+#ryggsack b{position:absolute;top:-5px;right:-5px;background:var(--gold);color:#2a1d05;font-size:10px;
+  min-width:17px;height:17px;border-radius:999px;display:grid;place-items:center;border:2px solid var(--bg)}
+#ryggsack:active{background:#22384a}
 #fiender{inset:0;display:block}
 .kort{pointer-events:auto;background:#0d1620cc;border:1.5px solid #ffffff22;border-radius:7px;
   padding:3px 6px;min-width:0;backdrop-filter:blur(3px);line-height:1.15}
@@ -241,13 +246,11 @@ function hud(){
  hj.replaceChildren(...PARTY.map((h,i)=>{
   const k=document.createElement("div");
   k.className="kort"+(h.liv<=0?" ute":"")+(h.gift?" gift":"")+(lage==="strid"&&i===2?" tur":"");
-  const c=document.createElement("canvas");c.width=c.height=32;
-  const bi=window.egenHjalte&&egenHjalte(h,"sta");
-  if(bi){const g=c.getContext("2d");g.imageSmoothingEnabled=false;g.drawImage(bi,0,0,32,32)}
   const t=document.createElement("div");t.className="txt";
   t.innerHTML='<b>'+h.namn+'</b><div class="matare"><i style="width:'+(h.liv/h.max*100)+'%"></i></div>'+
    '<small>'+(h.liv>0?h.liv+"/"+h.max+(h.gift?" · förgiftad":""):"Svimmad")+'</small>';
-  k.append(c,t);return k}));
+  k.append(t);return k}));
+ hj.append(ryggsacksknapp());
  // fienderna: ingen ruta och ingen text, bara en smal mätare precis under monstret
  const fi=document.getElementById("fiender"),ram=document.getElementById("tvram");
  const skala=ram.clientWidth/TVW;
@@ -267,6 +270,22 @@ function hud(){
  const hn=document.getElementById("handling");
  hn.replaceChildren(...(knappPaTV?knappar:[]));
  document.getElementById("panelknappar").replaceChildren(...(knappPaTV?[]:knappar));
+}
+
+/* liten pixelryggsäck, samma som i spelet */
+const RYGGSACK={rows:["....LLLL....","...L....L...","..BBBBBBBB..",".BBbbbbbbBB.",".BbBBBBBBbB.",".BbBGGGGBbB.",".BbBGYYGBbB.",".BbBBBBBBbB.",".BbbbbbbbbB.",".BBBBBBBBBB.","..BBBBBBBB.."],
+ pal:{L:"#6b4a2e",B:"#8a5a2b",b:"#6b4423",G:"#5a3a1e",Y:"#f2c14e"}};
+function ryggsacksknapp(){
+ const b=document.createElement("button");b.id="ryggsack";b.setAttribute("aria-label","Öppna ryggsäcken");
+ const c=document.createElement("canvas"),R=RYGGSACK;
+ c.width=R.rows[0].length;c.height=R.rows.length;
+ const g=c.getContext("2d");
+ R.rows.forEach((rad,y)=>[...rad].forEach((t,x)=>{if(R.pal[t]){g.fillStyle=R.pal[t];g.fillRect(x,y,1,1)}}));
+ const txt=document.createElement("span");txt.textContent="Ryggsäck";
+ const antal=document.createElement("b");antal.textContent="3";
+ b.append(c,txt,antal);
+ b.onclick=()=>alert("Här skulle ryggsäcken öppnas: läkedrycker, guld och föremål.");
+ return b;
 }
 
 /* ---------- text och val ---------- */
