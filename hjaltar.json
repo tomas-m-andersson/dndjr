@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:15:05.841Z",
+  "uppdaterad": "2026-11-15T11:15:36.971Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741303864,
+    "tid": 1794741335531,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -498,7 +498,7 @@
         "liv": {
           "ville": 34,
           "tomas": 45,
-          "svante": 25,
+          "svante": 19,
           "benjamin": 41
         },
         "dorrText": "Marken spricker upp i flera brinnande stigar.",
@@ -507,7 +507,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 13,
+                "liv": 0,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -520,11 +520,11 @@
                 "typ": "gargoyl",
                 "bild": "gargoyl",
                 "max": 40,
-                "ute": false
+                "ute": true
               },
               {
                 "namn": "Gargoyl 2",
-                "liv": 18,
+                "liv": 11,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -552,7 +552,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 13,
+              "liv": 0,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -565,11 +565,11 @@
               "typ": "gargoyl",
               "bild": "gargoyl",
               "max": 40,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Gargoyl 2",
-              "liv": 18,
+              "liv": 11,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -600,11 +600,8 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
-            {
-              "f": 1
-            },
             {
               "h": "benjamin"
             },
