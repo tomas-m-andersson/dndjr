@@ -472,10 +472,13 @@ body.liggande .strip,body.liggande .foes{display:none}
 body.liggande #app>*{flex:0 0 auto}
 /* ryggsäcken under TV:n i stället för längst ner i textspalten */
 /* bara ryggsäcken: tryck på den för att se vad ni bär på */
-body.liggande:not(.strid) #app>.backpack{position:fixed;left:var(--tvleft,6px);
-  top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:auto;margin:0;z-index:5;
-  padding:5px 8px;gap:0;box-shadow:0 3px 0 #0c151c}
-body.liggande:not(.strid) #app>.backpack .px{width:36px;height:36px}
+/* ryggsäcken längst till höger under TV:n, utan ruta omkring: bara bilden */
+body.liggande:not(.strid) #app>.backpack{position:fixed;
+  left:calc(var(--tvleft,6px) + var(--tvw));transform:translateX(-100%);
+  top:calc(var(--tvtop,6px) + var(--tvh) + 4px);width:auto;margin:0;z-index:6;
+  background:none;border:0;border-radius:0;padding:0;gap:0;box-shadow:none}
+body.liggande:not(.strid) #app>.backpack:active{transform:translateX(-100%) translateY(2px);box-shadow:none}
+body.liggande:not(.strid) #app>.backpack .px{width:46px;height:46px}
 /* den ljusa mitten av ryggsäcksbilden: allt innehåll hålls innanför den */
 .bp-yta{position:absolute;left:18.5%;right:18.5%;top:19%;bottom:16%;display:grid;
   grid-template-columns:repeat(auto-fill,76px);grid-auto-rows:minmax(58px,auto);gap:4px 6px;align-content:start;justify-content:start;
@@ -493,7 +496,11 @@ body.liggande #app>.topbar{position:fixed;left:var(--tvleft,6px);
   top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:var(--tvw);margin:0;z-index:6;
   background:none;padding:0;gap:8px;align-items:center}
 /* finns ryggsäcken under TV:n börjar raden strax till höger om den */
-body.liggande #app:has(>.backpack)>.topbar{left:calc(var(--tvleft,6px) + 60px);width:calc(var(--tvw) - 60px)}
+/* Pausa längst till vänster och kapitelrubriken direkt till höger om den */
+body.liggande #app>.topbar{justify-content:flex-start}
+body.liggande #app>.topbar .purse{flex:0 1 auto}
+/* finns ryggsäcken till höger slutar raden strax före den */
+body.liggande #app:has(>.backpack)>.topbar{width:calc(var(--tvw) - 56px)}
 body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:14px}
 body.liggande .story{font-size:15px;line-height:1.45}
 /* textrutan växer och fyller hela spalten, så knapparna hamnar längst ner */
