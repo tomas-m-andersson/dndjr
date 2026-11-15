@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:13:46.966Z",
+  "uppdaterad": "2026-11-15T11:13:50.060Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741225029,
+    "tid": 1794741228020,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,32 +359,22 @@
       {
         "plats": "vulkanen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni känner värme mot ansiktet.",
-            "typ": "altare",
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
             "kand": false
           },
           {
             "ledtrad": "Något glimmar i mörkret.",
-            "typ": "falla",
+            "typ": "kista",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": true,
-            "varn": "En platta klickar. Flammor sprutar ur golvet!",
-            "ok": "kastar sig undan lågorna",
-            "traff": "bränns av lågorna"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Drakvulkanen",
@@ -433,6 +423,10 @@
           {
             "t": "Benjamin bränns av lågorna: 11 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "Ni hoppar över en spricka med lava och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -468,7 +462,7 @@
           "svante": 25,
           "benjamin": 41
         },
-        "dorrText": "Lavan bubblar. Det finns mer än en väg, och alla är heta."
+        "dorrText": "Röken driver över vägskälet. Alla vägar luktar svavel."
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
