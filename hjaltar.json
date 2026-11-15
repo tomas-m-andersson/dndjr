@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:19:16.317Z",
+  "uppdaterad": "2026-11-15T11:19:37.213Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,19 +281,19 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741555610,
+    "tid": 1794741575289,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 7644
+        "xp": 8394
       },
       "svante": {
-        "lvl": 5,
-        "xp": 5695
+        "lvl": 6,
+        "xp": 6445
       },
       "tomas": {
         "lvl": 6,
-        "xp": 9109
+        "xp": 9859
       },
       "sally": {
         "lvl": 5,
@@ -301,7 +301,7 @@
       },
       "benjamin": {
         "lvl": 6,
-        "xp": 6999
+        "xp": 7749
       },
       "linda": {
         "lvl": 2,
@@ -360,7 +360,7 @@
         "plats": "vulkanen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -477,6 +477,38 @@
           {
             "t": "Lavan exploderar uppåt. Ur elden reser sig Eldklo, den unga draken!",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 570 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Svante slår upp ögonen och mumlar: – Vad hände?",
+            "k": "heal"
+          },
+          {
+            "t": "★ Nivå upp! Svante är nu nivå 6! +6 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 300 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 180 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Vulkanens väktare är besegrad!",
+            "k": "crit"
           }
         ],
         "party": [
@@ -485,7 +517,7 @@
           "svante",
           "benjamin"
         ],
-        "guld": 54,
+        "guld": 354,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -494,11 +526,13 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 900,
+        "ara": 2800,
         "start": 1794741151480,
         "nastaKand": false,
         "id": "rmwhqjjegrk5v",
@@ -506,144 +540,11 @@
         "liv": {
           "ville": 9,
           "tomas": 46,
-          "svante": 0,
+          "svante": 7,
           "benjamin": 2
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar vulkanens väktare.",
-        "bossFaktor": 1.3,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Eldklo, den unga draken",
-                "baraBoss": true,
-                "liv": 20,
-                "rustning": 18,
-                "anfall": 8,
-                "skada": "2d8+4",
-                "xp": 1800,
-                "platser": [
-                  "vulkanen"
-                ],
-                "flyr": "vrålar, slår med vingarna och flyger ut genom vulkanens topp.",
-                "egen": {
-                  "tva": true
-                },
-                "typ": "eldklo",
-                "bild": "eldklo",
-                "max": 146,
-                "ute": false,
-                "boss": true,
-                "svag": null,
-                "bedovad": 0,
-                "hjalpKallad": true
-              }
-            ],
-            "run": true,
-            "boss": true,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|vulkanen|1|6|boss|boss",
-          "fiender": [
-            {
-              "namn": "Eldklo, den unga draken",
-              "baraBoss": true,
-              "liv": 20,
-              "rustning": 18,
-              "anfall": 8,
-              "skada": "2d8+4",
-              "xp": 1800,
-              "platser": [
-                "vulkanen"
-              ],
-              "flyr": "vrålar, slår med vingarna och flyger ut genom vulkanens topp.",
-              "egen": {
-                "tva": true
-              },
-              "typ": "eldklo",
-              "bild": "eldklo",
-              "max": 146,
-              "ute": false,
-              "boss": true,
-              "svag": null,
-              "bedovad": 0,
-              "hjalpKallad": true
-            },
-            {
-              "namn": "Eldimp",
-              "liv": 0,
-              "rustning": 13,
-              "anfall": 5,
-              "skada": "1d6+3",
-              "xp": 100,
-              "platser": [
-                "vulkanen"
-              ],
-              "flyr": "fräser och slocknar som en tändsticka.",
-              "egen": {
-                "sprangs": "1d6"
-              },
-              "typ": "eldimp",
-              "bild": "eldimp",
-              "max": 12,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "ville": {
-              "g_blackmoln": true,
-              "smygattack": true,
-              "tryckpunkt": true
-            },
-            "benjamin": {
-              "dubbelskott": true,
-              "sikta_noga": true
-            },
-            "tomas": {
-              "dubbelhugg": true,
-              "skoldslag": true,
-              "virvelhugg": true
-            },
-            "svante": {
-              "lakande_ord": true,
-              "helande_vag": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 10,
-          "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 1
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:ville": 9.1,
-            "h:tomas": 5.1,
-            "h:svante": 11.1,
-            "h:benjamin": 7.1,
-            "f:0": 23,
-            "f:1": 3
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "bossFaktor": 1.3
       }
     ],
     "aktivRun": "rmwhqjjegrk5v",
@@ -952,7 +853,8 @@
         "skuggan": 1,
         "golem": 1,
         "sandkungen": 1,
-        "jattemask": 1
+        "jattemask": 1,
+        "eldklo": 1
       }
     }
   }
