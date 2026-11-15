@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:56:20.647Z",
+  "uppdaterad": "2026-11-15T19:56:37.651Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -243,102 +243,10 @@
           "bulle_tinad"
         ],
         "klar": false,
-        "v": 1,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              "irrbloss",
-              "irrbloss",
-              "irrbloss"
-            ],
-            "vinst": {
-              "text": "Det sista ljuset slocknar med ett pys. Och när de är borta lyfter dimman lite, precis tillräckligt för att ni ska se att marken lutar uppåt åt ett håll.",
-              "till": "gravkullen"
-            },
-            "forlust": "dimskog_forlust"
-          },
-          "bild": "dimskog",
-          "fiender": [
-            {
-              "namn": "Irrbloss 1",
-              "liv": 5,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": false
-            },
-            {
-              "namn": "Irrbloss 2",
-              "liv": 0,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": true
-            },
-            {
-              "namn": "Irrbloss 3",
-              "liv": 5,
-              "rustning": 13,
-              "anfall": 4,
-              "skada": "1d4",
-              "bild": "irrbloss",
-              "flyr": "slocknar med ett litet pys och luktar bränt.",
-              "typ": "irrbloss",
-              "max": 5,
-              "ute": false
-            }
-          ],
-          "anvant": {
-            "sally": {
-              "klosattack": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "f": 0
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 2
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:benjamin": 4.1,
-            "h:ville": 4.1,
-            "h:tomas": 12.1,
-            "h:sally": 20.1,
-            "f:0": 16,
-            "f:1": 19,
-            "f:2": 3
-          },
-          "nu": null
-        }
+        "v": 1
       }
     },
-    "tid": 1794772578425,
+    "tid": 1794772595519,
     "niva": {
       "ville": {
         "lvl": 6,
