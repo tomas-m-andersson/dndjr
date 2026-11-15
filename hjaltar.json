@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:55:26.024Z",
+  "uppdaterad": "2026-11-15T19:56:20.647Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -209,7 +209,7 @@
     "liv": {
       "ville": 45,
       "svante": 39,
-      "sally": 28,
+      "sally": 24,
       "tomas": 52,
       "linda": 18,
       "benjamin": 52
@@ -273,7 +273,7 @@
             },
             {
               "namn": "Irrbloss 2",
-              "liv": 5,
+              "liv": 0,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d4",
@@ -281,7 +281,7 @@
               "flyr": "slocknar med ett litet pys och luktar bränt.",
               "typ": "irrbloss",
               "max": 5,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Irrbloss 3",
@@ -296,19 +296,17 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "sally": {
+              "klosattack": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "sally"
-            },
-            {
-              "f": 1
-            },
             {
               "f": 0
             },
@@ -340,7 +338,7 @@
         }
       }
     },
-    "tid": 1794772523831,
+    "tid": 1794772578425,
     "niva": {
       "ville": {
         "lvl": 6,
