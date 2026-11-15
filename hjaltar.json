@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:03:44.036Z",
+  "uppdaterad": "2026-11-15T11:04:38.849Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740622166,
+    "tid": 1794740677997,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -535,7 +535,7 @@
           "fiender": [
             {
               "namn": "Jätteorm 1",
-              "liv": 24,
+              "liv": 16,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -555,7 +555,7 @@
             },
             {
               "namn": "Vättehövding",
-              "liv": 24,
+              "liv": 13,
               "rustning": 15,
               "anfall": 5,
               "skada": "1d8+2",
@@ -572,7 +572,7 @@
             },
             {
               "namn": "Jätteorm 2",
-              "liv": 24,
+              "liv": 18,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -591,19 +591,17 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "benjamin": {
+              "pilregn": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "benjamin"
-            },
-            {
-              "f": 2
-            },
             {
               "f": 0
             },
@@ -631,7 +629,9 @@
             "f:1": 4,
             "f:2": 15
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
