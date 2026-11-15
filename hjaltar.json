@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T19:55:08.875Z",
+  "uppdaterad": "2026-11-15T19:55:26.024Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -11,18 +11,15 @@
   ],
   "grundandringar": {
     "ville": {
-      "bildval": {
-        "ninja|skuggkatana": 20
-      },
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "skuggkatana",
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 2,
@@ -37,7 +34,10 @@
         "vis": 11,
         "cha": 12
       },
-      "gosedjur": "blackis"
+      "gosedjur": "blackis",
+      "bildval": {
+        "ninja|skuggkatana": 20
+      }
     },
     "svante": {
       "folk": "manniska",
@@ -340,7 +340,7 @@
         }
       }
     },
-    "tid": 1794772506711,
+    "tid": 1794772523831,
     "niva": {
       "ville": {
         "lvl": 6,
