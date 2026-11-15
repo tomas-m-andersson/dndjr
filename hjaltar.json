@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:22:39.417Z",
+  "uppdaterad": "2026-11-15T20:22:44.289Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -273,13 +273,14 @@
           "last_saga",
           "barnet_hjalpte",
           "lekt_med_flickan",
-          "vackt"
+          "vackt",
+          "vet_att_de_vaknar"
         ],
         "klar": false,
         "v": 1
       }
     },
-    "tid": 1794774157257,
+    "tid": 1794774162249,
     "niva": {
       "ville": {
         "lvl": 6,
