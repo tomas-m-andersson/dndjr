@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:10:50.227Z",
+  "uppdaterad": "2026-11-15T11:11:12.726Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794741049496,
+    "tid": 1794741072305,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -499,10 +499,10 @@
         "id": "rmwhm0sion07z",
         "startGuld": 44,
         "liv": {
-          "ville": 10,
+          "ville": 0,
           "tomas": 52,
           "svante": 33,
-          "benjamin": 34
+          "benjamin": 32
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
         "bossFaktor": 1.3,
@@ -512,7 +512,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 39,
+                "liv": 27,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -544,7 +544,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 39,
+              "liv": 27,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -566,7 +566,7 @@
             },
             {
               "namn": "Jätteråtta",
-              "liv": 7,
+              "liv": 0,
               "rustning": 12,
               "anfall": 4,
               "skada": "1d4+2",
@@ -582,31 +582,51 @@
               "typ": "ratta",
               "bild": "ratta",
               "max": 7,
-              "ute": false
+              "ute": true
             }
           ],
           "anvant": {
             "ville": {
               "g_blackmoln": true,
-              "smygattack": true
+              "smygattack": true,
+              "shuriken": true
             },
             "benjamin": {
               "dubbelskott": true,
               "sikta_noga": true
             },
             "tomas": {
-              "dubbelhugg": true
+              "dubbelhugg": true,
+              "virvelhugg": true
             },
             "svante": {
               "lakande_ord": true,
-              "helande_vag": true
+              "helande_vag": true,
+              "valsignelse": true
             }
           },
           "pepp": {},
-          "skydd": {},
+          "skydd": {
+            "benjamin": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "svante": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "ville": {
+              "ac": 2,
+              "rundor": 3
+            },
+            "tomas": {
+              "ac": 2,
+              "rundor": 3
+            }
+          },
           "fokus": {},
           "locka": null,
-          "runda": 4,
+          "runda": 5,
           "ko": [
             {
               "h": "tomas"
@@ -629,7 +649,7 @@
           "giftH": {
             "benjamin": {
               "expr": "1d2",
-              "rundor": 3
+              "rundor": 2
             }
           },
           "bedovH": {}
