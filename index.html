@@ -470,7 +470,12 @@ body.liggande:not(.strid) #app>.backpack .px{width:36px;height:36px}
 .bp-yta .bp-tom{grid-column:1/-1;text-align:center;font-weight:700}
 body.liggande:not(.strid) #app>.backpack .bp-txt,
 body.liggande:not(.strid) #app>.backpack .bp-oppna{display:none}
-body.liggande .topbar{position:sticky;top:0;z-index:6;background:var(--bg);padding-block:2px;gap:8px}
+/* raden med Pausa och rubriken ligger under TV:n, bredvid ryggsäcken */
+body.liggande #app>.topbar{position:fixed;left:var(--tvleft,6px);
+  top:calc(var(--tvtop,6px) + var(--tvh) + 6px);width:var(--tvw);margin:0;z-index:6;
+  background:none;padding:0;gap:8px;align-items:center}
+/* finns ryggsäcken under TV:n börjar raden strax till höger om den */
+body.liggande #app:has(>.backpack)>.topbar{left:calc(var(--tvleft,6px) + 60px);width:calc(var(--tvw) - 60px)}
 body.liggande .topbar .purse{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:14px}
 body.liggande .story{font-size:15px;line-height:1.45}
 body.liggande h2.turn{font-size:17px}
@@ -1651,7 +1656,7 @@ function uppdateraLiggande(){
   const sidbredd=Math.round(Math.min(400,Math.max(205,tillg*.34)));
   const h0=innerHeight-ol-nl;
   let w=Math.max(120,tillg-sidbredd-12),h=Math.round(w*BTH/BTW);
-  const knapph=strid?8:56;   // i strid ligger inget under TV:n, då får bilden växa
+  const knapph=56;   // plats under TV:n till Pausa-raden och ryggsäcken
   if(h>h0-knapph){h=h0-knapph;w=Math.round(h*BTW/BTH)}
   document.body.style.setProperty("--tvleft",vl+"px");
   document.body.style.setProperty("--tvtop",ol+"px");
