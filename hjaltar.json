@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:54:55.206Z",
+  "uppdaterad": "2026-11-15T20:55:31.743Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776093191,
+    "tid": 1794776129736,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -362,35 +362,17 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
+            "ledtrad": "Det droppar, långsamt och jämnt.",
             "typ": "sovare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Små fotspår leder ditåt.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett tungt lås skramlar i draget.",
-            "typ": "skatt",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "sovare",
-          "klar": true,
-          "fiender": [
-            "skorpion",
-            "skorpion",
-            "skorpion"
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -411,6 +393,10 @@
           {
             "t": "Sally leder er förbi utan ett ljud. Alla får 90 XP.",
             "k": "hit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -446,7 +432,7 @@
           "tomas": 52,
           "sally": 28
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+        "dorrText": "Stigen är smal och leder bara vidare in."
       }
     ],
     "aktivRun": "rmwibbhvo6hol",
