@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T20:56:42.717Z",
+  "uppdaterad": "2026-11-15T20:56:44.388Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776202504,
+    "tid": 1794776203032,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -632,9 +632,6 @@
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "f": 2
-            },
             {
               "h": "sally"
             },
