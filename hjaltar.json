@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:06:02.761Z",
+  "uppdaterad": "2026-11-15T11:06:06.311Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740760887,
+    "tid": 1794740764411,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -359,31 +359,27 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "En underjordisk bäck rinner in i gången.",
-            "typ": "falla",
-            "kand": true
+            "ledtrad": "Det luktar mögel och något surt.",
+            "typ": "strid",
+            "kand": false
           },
           {
-            "ledtrad": "Något skrattar tyst därinne.",
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
             "typ": "strid",
-            "kand": true
+            "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "orm",
-            "krak",
-            "orm"
-          ],
-          "stridOpt": {}
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -436,6 +432,10 @@
           {
             "t": "★ Benjamin har blivit starkare och är nu nivå 6! +8 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -471,7 +471,7 @@
           "svante": 33,
           "benjamin": 52
         },
-        "dorrText": "Facklans sken når mer än en öppning i berget."
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
     "aktivRun": "rmwhm0sion07z",
