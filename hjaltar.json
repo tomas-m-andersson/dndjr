@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:07:37.143Z",
+  "uppdaterad": "2026-11-15T11:07:39.467Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740856475,
+    "tid": 1794740858428,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -519,7 +519,7 @@
               },
               {
                 "namn": "Bergstroll 2",
-                "liv": 34,
+                "liv": 37,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -568,7 +568,7 @@
             },
             {
               "namn": "Bergstroll 2",
-              "liv": 34,
+              "liv": 37,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -606,9 +606,6 @@
           "locka": null,
           "runda": 2,
           "ko": [
-            {
-              "f": 1
-            },
             {
               "h": "svante"
             },
