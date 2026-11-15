@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T11:06:46.662Z",
+  "uppdaterad": "2026-11-15T11:07:04.459Z",
   "egna": [],
   "sallskap": [
     "ville",
@@ -281,7 +281,7 @@
         "nyttVapenId": "livets_stav"
       }
     },
-    "tid": 1794740804756,
+    "tid": 1794740823916,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -499,7 +499,7 @@
             "fiender": [
               {
                 "namn": "Bergstroll 1",
-                "liv": 45,
+                "liv": 36,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -519,7 +519,7 @@
               },
               {
                 "namn": "Bergstroll 2",
-                "liv": 45,
+                "liv": 31,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -548,7 +548,7 @@
           "fiender": [
             {
               "namn": "Bergstroll 1",
-              "liv": 45,
+              "liv": 36,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -568,7 +568,7 @@
             },
             {
               "namn": "Bergstroll 2",
-              "liv": 45,
+              "liv": 31,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -587,22 +587,20 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "benjamin": {
+              "pilregn": true
+            },
+            "ville": {
+              "shuriken": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "benjamin"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 0
-            },
             {
               "f": 1
             },
@@ -623,7 +621,9 @@
             "f:0": 21,
             "f:1": 19
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
