@@ -318,7 +318,6 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .hp:not(.vital) i{display:block;height:100%;background:var(--red);transition:width .3s}
 .story{display:flex;flex-direction:column;gap:12px;font-size:1.12rem;line-height:1.65;max-width:62ch}
 .story p{margin:0}
-.readrow{display:flex;justify-content:flex-end}
 .actions{display:flex;flex-direction:column;gap:10px}
 .choicebtn{text-align:left;background:var(--panel);border:2px solid var(--line);border-left:6px solid var(--gold);border-radius:8px;padding:14px 16px;font-weight:800;font-size:1.05rem;display:flex;flex-direction:column;gap:2px}
 .choicebtn small{font-weight:700;color:var(--muted);font-size:.85rem}
@@ -812,7 +811,7 @@ function normSpel(o){o=bytHjalteId(o&&typeof o==="object"?o:{});return medRun({g
 let lage=null; // "run" när grottkrypningen pågår på skärmen
 let spel=normSpel(load(SPKEY,null));
 const OKEY="tarningsriket-alternativ";
-let alt=Object.assign({upplas:false,svar:"normal",ljud:true},load(OKEY,{}));
+let alt=Object.assign({svar:"normal",ljud:true},load(OKEY,{}));
 function persist(){save(KEY,egna);save(PKEY,party);save(AKEY,andringar);save(DKEY,andrDirty);scheduleSync()}
 
 /* ===== GitHub-sparning (hjaltar.json i repot) ===== */
@@ -1230,7 +1229,7 @@ function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning 
 
 /* ===== Startsidan: välj Hjältarna eller Äventyr ===== */
 function start(){
- view="start"; lage=null; tyst(); uppdateraLiggande(); app.replaceChildren(); document.getElementById("party").hidden=true;
+ view="start"; lage=null; uppdateraLiggande(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
  gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
  app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},logga(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
@@ -1606,14 +1605,6 @@ function rullaD20(box,klar,antal=1){
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest(".dicebox");if(!b||rullar)return;
  const p=b.closest(".rollpanel");const knapp=p&&[...p.querySelectorAll("button.btn.big")].find(x=>/^Slå/.test(x.textContent)&&!x.disabled);if(knapp)knapp.click()});
 
-/* --- uppläsning --- */
-const kanTala="speechSynthesis" in window;
-function tala(txt){if(!kanTala)return;speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(txt.replace(/[–—]/g,",").replace(/\n+/g," "));u.lang="sv-SE";u.rate=.95;
- const v=speechSynthesis.getVoices().find(v=>/^sv/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u)}
-function tyst(){if(kanTala)speechSynthesis.cancel()}
-function talaKnapp(txt){if(!kanTala)return null;
- return el("button",{class:"btn ghost small",onclick:()=>{if(speechSynthesis.speaking){tyst()}else tala(txt)}},"Läs upp")}
 function svarGroup(){
  const box=el("section",{class:"setgroup"},el("h3",{},"Svårighetsgrad"),el("p",{},"Gäller grottkrypningen. Ändringen märks i nästa rum."));
  const rad=el("div",{class:"pills"}),info=el("p",{});
@@ -1632,13 +1623,6 @@ function liggandeGroup(){
  return el("section",{class:"setgroup"},el("h3",{},"Liggande helskärmsläge"),
   el("p",{},"Vrider ni mobilen på sidan under ett äventyr fyller bilden hela skärmen, texten hamnar till höger och livmätarna ritas in i bilden ovanför varje figur. Skärmen hålls vaken så länge läget är på. Är rutan inte ikryssad händer ingenting när ni vrider mobilen."),
   el("label",{class:"check",for:"opt-liggande"},cb,el("span",{},"Gå till helskärm när mobilen vrids på sidan")));
-}
-function upplasGroup(){
- const cb=el("input",{id:"opt-upplas",type:"checkbox"});cb.checked=alt.upplas;
- cb.addEventListener("change",()=>{alt.upplas=cb.checked;save(OKEY,alt);if(cb.checked)tala("Nu läser jag upp äventyret.");else tyst()});
- return el("section",{class:"setgroup"},el("h3",{},"Uppläsning"),
-  el("p",{},kanTala?"Appen kan läsa upp berättelsen med svensk röst. Annars läser en vuxen högt. Knappen Läs upp finns alltid i varje scen.":"Den här webbläsaren kan tyvärr inte läsa upp text."),
-  kanTala?el("label",{class:"check",for:"opt-upplas"},cb,el("span",{},"Läs upp varje scen automatiskt")):null);
 }
 
 /* ===== Liggande helskärmsläge =====
@@ -2058,7 +2042,7 @@ function drawTV(cv,bild,{figur=null,fiender=null,visaParty=true,sover=false,anim
 
 /* --- kapitelvalet --- */
 function adventures(){
- tyst();lage=null;view="aventyr";uppdateraLiggande();document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
+ lage=null;view="aventyr";uppdateraLiggande();document.getElementById("party").hidden=true;app.replaceChildren();window.scrollTo(0,0);
  const ph=partyHeroes();
  if(!ph.length&&!spel.runs.length){home();flash("Välj minst en hjälte först.");return}
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},spel.guld+" guld")));
@@ -2130,7 +2114,6 @@ function packning(efter){
 }
 // Ryggsäcken i liggande läge: TV:n blir ryggsäcken och sakerna ligger i den ljusa mitten.
 function ryggsackTV(efter){
- tyst();
  const P=pack(),c=raknaSaker(),ph=partyHeroes(),R=lage==="run"?spel.run:null;
  const box=tvBox("ryggsack",{tom:true});
  const ruta=(ikon,namn,antal)=>el("div",{class:"bp-ruta"+(ikon?"":" utan")},ikon,
@@ -2246,7 +2229,7 @@ function tvBox(bild,o){const c=document.createElement("canvas");c.className="px"
 function storyEl(txt){return el("div",{class:"story"},txt.split(/\n\n+/).map(p=>el("p",{},p)))}
 function scenHuvud(){
  const k=kapDef();
- return el("div",{class:"topbar"},pausKnapp(()=>{rullGen++;rullar=false;tyst();document.getElementById("modal").replaceChildren();sparaSpel();adventures();flash("Äventyret är pausat. Tryck på Fortsätt när ni vill spela vidare.")}),el("span",{class:"purse"},k.titel));
+ return el("div",{class:"topbar"},pausKnapp(()=>{rullGen++;rullar=false;document.getElementById("modal").replaceChildren();sparaSpel();adventures();flash("Äventyret är pausat. Tryck på Fortsätt när ni vill spela vidare.")}),el("span",{class:"purse"},k.titel));
 }
 // Vilken hjälte i sällskapet uppfyller ett krav på klass eller folk (vaken)?
 function kravHjalte(krav){if(!krav||!(krav.klass||krav.folk))return null;
@@ -2289,7 +2272,7 @@ function figurNu(sc){const K=kap()||{},f=K.flaggor||[];
  const ut=[].concat(sc.figur||[]).filter(n=>{const d=String(n).split("?");return d.length<2||f.includes(d[1])}).map(n=>String(n).split("?")[0]);
  return ut.length?ut:null}
 function visaScen(){
- tyst();strid=null;lage=null;view="scen";document.getElementById("party").hidden=true;
+ strid=null;lage=null;view="scen";document.getElementById("party").hidden=true;
  const K=kap();if(!K){adventures();return}
  const sc=scenDef(K.scen);if(!sc){K.scen=kapDef().start;return visaScen()}
  if(!vaken().length){partyHeroes().forEach(h=>setLiv(h,1))}
@@ -2322,10 +2305,8 @@ function visaScen(){
   akt.append(b);
  });
  app.append(akt);
- const tb=talaKnapp(txt);if(tb)story.prepend(el("div",{class:"readrow"},tb));
  app.append(packning(visaScen));
  window.scrollTo(0,0);
- if(alt.upplas)tala(txt);
 }
 function helaParty(hur){partyHeroes().forEach(h=>{const m=maxLiv(h);
  setLiv(h,hur==="allt"?m:hur==="halva"?Math.max(liv(h),liv(h)+Math.ceil(m/2)):liv(h)+hur)})}
@@ -2350,15 +2331,14 @@ function anvandUtfall(u,vem){
 }
 function visaUtfall(u,namn,bild,figur,extra,vem){
  // texten väljs före anvandUtfall, så att om/inteOm gäller läget innan belöningen delats ut
- tyst();const fore=Array.isArray(u.text)?scenText(u,kap()||{flaggor:[]}):(u.text||"");
+ const fore=Array.isArray(u.text)?scenText(u,kap()||{flaggor:[]}):(u.text||"");
  const rader=anvandUtfall(u,vem),txt=fore.replace(/\{namn\}/g,namn||"Ni");
  app.replaceChildren(scenHuvud(),tvBox(u.bild!==undefined?u.bild:bild,{figur:u.figur!==undefined?u.figur:figur}),partyStrip());
  if(extra)app.append(extra);
  const story=storyEl(txt);app.append(story);
  if(rader.length)app.append(el("div",{class:"gains"},rader.map(r=>el("span",{},r))));
  app.append(el("div",{class:"actions"},el("button",{class:"btn big",onclick:()=>gaTill(u.till)},"Fortsätt")));
- const tb=talaKnapp(txt);if(tb)story.prepend(el("div",{class:"readrow"},tb));
- window.scrollTo(0,0);if(alt.upplas)tala(txt);
+ window.scrollTo(0,0);
 }
 
 /* --- prov: slå d20 + bonus mot svårighet --- */
@@ -2409,7 +2389,7 @@ function gruppProv(pr,bild,figur){
 
 /* --- strid --- */
 function startStrid(def,bild){
- tyst();if(def.run&&spel.run)delete spel.run.stridSpar;
+ if(def.run&&spel.run)delete spel.run.stridSpar;
  const fiender=def.fiender.map((k,i)=>{if(typeof k==="object")return k;const f=FIE()[k];const namn=def.fiender.filter(x=>x===k).length>1?f.namn+" "+(def.fiender.slice(0,i+1).filter(x=>x===k).length):f.namn;
   return{...f,typ:k,namn,max:f.liv,liv:f.liv,ute:false}});
  const K=def.run?{flaggor:[]}:kap(),noter=def.noter||[];
@@ -2438,7 +2418,7 @@ function turordning(){if(!strid||!strid.init)return"";const alla=[...vaken().map
 const levande=()=>strid.fiender.filter(f=>!f.ute);
 // Pausa: spara striden precis som den är och gå till äventyrslistan.
 function pausaStrid(){
- if(!strid)return;rullGen++;rullar=false;tyst();
+ if(!strid)return;rullGen++;rullar=false;
  const S=JSON.parse(JSON.stringify({...strid,ko:strid.nu?[strid.nu,...strid.ko]:strid.ko,nu:null}));
  if(strid.def.run)spel.run.stridSpar=S;else{const K=kap();if(K)K.stridSpar=S}
  strid=null;sparaSpel();lage=null;adventures();flash("Striden är pausad. Tryck på Fortsätt när ni vill spela vidare.");
@@ -2844,7 +2824,7 @@ function monsterBild(k){const M=MONSTER[k],c=document.createElement("canvas");c.
  c._rita();return c}
 let bibPlats="alla";
 function monsterBibliotek(){
- view="bibliotek";lage=null;tyst();uppdateraLiggande();app.replaceChildren();document.getElementById("party").hidden=true;
+ view="bibliotek";lage=null;uppdateraLiggande();app.replaceChildren();document.getElementById("party").hidden=true;
  app.append(el("div",{class:"topbar"},el("button",{class:"btn ghost small",onclick:start},"← Start"),el("span",{class:"purse"},"Monsterbibliotek")));
  app.append(el("div",{class:"stephead"},el("small",{},"Bestiarium"),el("h2",{},"Monsterbibliotek"),el("p",{},"Alla monster i spelet, från de lättaste till de farligaste. Tryck på ett monster för att läsa mer.")));
  const val=[["alla","Alla"],...Object.entries(PLATSER).map(([k,P])=>[k,P.kort||P.namn.split(" ")[0]])];
@@ -3030,7 +3010,7 @@ function runTV(o={}){const bild=runBild(),box=tvBox(bild,o);
   const id=setInterval(()=>{if(!c.isConnected){clearInterval(id);return}drawTV(c,bild,{...o,anim:{t:performance.now()}})},110)}
  return box}
 function visaRun(){
- tyst();strid=null;lage="run";view="run";document.getElementById("party").hidden=true;
+ strid=null;lage="run";view="run";document.getElementById("party").hidden=true;
  const R=spel.run;if(!R){adventures();return}
  const rum=R.rum,t=rum&&rum.typ;
  const prop=R.fas==="rum"&&!rum.klar?({fange:"fange",skatt:"kista_oppen",kista:"kista",lager:"lagereld",brunn:"brunn",altare:"altare",handlare:"handlare",resenar:"resenar"})[t]:null;
@@ -3410,7 +3390,6 @@ function settings(){
   svarGroup(),
   ljudGroup(),
   liggandeGroup(),
-  upplasGroup(),
   devGroup(),
   el("section",{class:"setgroup"},el("h3",{},"Spara hjältarna i GitHub"),
    el("p",{},"Egna hjältar och sällskapet sparas i en JSON-fil i ditt GitHub-repo. Då finns de på alla enheter. Token sparas bara i den här webbläsaren och skickas bara till GitHub."),
