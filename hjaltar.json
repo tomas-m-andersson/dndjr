@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:14:22.984Z",
+  "uppdaterad": "2026-11-16T19:15:18.817Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -68,16 +68,20 @@
       "gosedjur": ""
     },
     "tomas": {
+      "bildval": {
+        "krigare|drakdrapare": 39,
+        "magiker|isstav": 61
+      },
+      "attacker": [
+        "magisk_pil",
+        "eldklot",
+        "frostblixt"
+      ],
+      "vapen": "isstav",
       "folk": "manniska",
       "alder": 43,
       "skagg": true,
-      "attacker": [
-        "dubbelhugg",
-        "virvelhugg",
-        "skoldslag"
-      ],
-      "vapen": "drakdrapare",
-      "klass": "krigare",
+      "klass": "magiker",
       "hud": 0,
       "har": 2,
       "stil": "kort",
@@ -91,10 +95,7 @@
         "vis": 16,
         "cha": 13
       },
-      "gosedjur": "",
-      "bildval": {
-        "krigare|drakdrapare": 39
-      }
+      "gosedjur": ""
     },
     "linda": {
       "folk": "manniska",
