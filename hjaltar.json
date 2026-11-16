@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:22:50.801Z",
+  "uppdaterad": "2026-11-16T19:23:18.862Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856968771,
+    "tid": 1794856996806,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -465,7 +465,7 @@
         "startGuld": 19,
         "liv": {
           "tomas": 12,
-          "svante": 46
+          "svante": 37
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "sovareKap": 1,
@@ -474,7 +474,7 @@
             "fiender": [
               {
                 "namn": "Sandorm 1",
-                "liv": 26,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -489,11 +489,11 @@
                 "typ": "sandorm",
                 "bild": "sandorm",
                 "max": 26,
-                "ute": false
+                "ute": true
               },
               {
                 "namn": "Sandorm 2",
-                "liv": 26,
+                "liv": 8,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -521,7 +521,7 @@
           "fiender": [
             {
               "namn": "Sandorm 1",
-              "liv": 26,
+              "liv": 0,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -536,11 +536,11 @@
               "typ": "sandorm",
               "bild": "sandorm",
               "max": 26,
-              "ute": false
+              "ute": true
             },
             {
               "namn": "Sandorm 2",
-              "liv": 26,
+              "liv": 8,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -558,12 +558,19 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "virvelhugg": true
+            },
+            "tomas": {
+              "eldklot": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
             {
               "f": 1
