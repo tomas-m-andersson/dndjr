@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:22:14.488Z",
+  "uppdaterad": "2026-11-16T19:22:20.698Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856932379,
+    "tid": 1794856938632,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -320,34 +320,22 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det är alldeles för tyst.",
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
             "typ": "falla",
-            "kand": true
+            "kand": false
           },
           {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "strid",
-            "kand": true
-          },
-          {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
-            "typ": "sovare",
-            "kand": true
+            "ledtrad": "Två stenstatyer står på var sin sida om öppningen.",
+            "typ": "vaktad",
+            "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "sovare",
-          "klar": true,
-          "fiender": [
-            "sandvalnad",
-            "sandvalnad"
-          ]
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -432,6 +420,10 @@
           {
             "t": "Svante leder er förbi utan ett ljud. Alla får 105 XP.",
             "k": "hit"
+          },
+          {
+            "t": "Ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -458,7 +450,7 @@
           "tomas": 24,
           "svante": 46
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
+        "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "sovareKap": 1
       }
     ],
