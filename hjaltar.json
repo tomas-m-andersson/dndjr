@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:24:37.504Z",
+  "uppdaterad": "2026-11-16T19:24:39.864Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857075417,
+    "tid": 1794857079527,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -250,11 +250,11 @@
       },
       "svante": {
         "lvl": 6,
-        "xp": 7570
+        "xp": 7780
       },
       "tomas": {
         "lvl": 7,
-        "xp": 11659
+        "xp": 11869
       },
       "sally": {
         "lvl": 5,
@@ -303,7 +303,7 @@
         "acb": 2
       },
       "tomas": {
-        "wb": 1,
+        "wb": 2,
         "acb": 2
       },
       "sally": {
@@ -337,7 +337,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -460,15 +460,26 @@
           {
             "t": "Nu är vägen fri till skatten.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 262 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Tomas får ett magiskt vapen: +2 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 210 XP.",
+            "k": "magic"
           }
         ],
         "party": [
           "tomas",
           "svante"
         ],
-        "guld": 212,
+        "guld": 474,
         "saker": [
-          "Läkedryck",
           "Läkedryck",
           "Läkedryck",
           "Läkedryck"
@@ -481,7 +492,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 18,
+          "tomas": 26,
           "svante": 42
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
