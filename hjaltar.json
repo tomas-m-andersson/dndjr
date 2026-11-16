@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:22:20.698Z",
+  "uppdaterad": "2026-11-16T19:22:44.404Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856938632,
+    "tid": 1794856962435,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -321,7 +321,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
@@ -335,7 +335,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "sandorm",
+            "sandorm"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -424,6 +433,14 @@
           {
             "t": "Ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Guld glimmar i hörnet. Men två Sandorm reser sig och spärrar vägen.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -447,11 +464,130 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 24,
+          "tomas": 21,
           "svante": 46
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
-        "sovareKap": 1
+        "sovareKap": 1,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Sandorm 1",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              },
+              {
+                "namn": "Sandorm 2",
+                "liv": 26,
+                "rustning": 14,
+                "anfall": 6,
+                "skada": "1d10",
+                "xp": 450,
+                "platser": [
+                  "oknen"
+                ],
+                "flyr": "dyker ner i sanden och är borta.",
+                "egen": {
+                  "tva": true
+                },
+                "typ": "sandorm",
+                "bild": "sandorm",
+                "max": 26,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|oknen|1|5|rum|vaktad",
+          "fiender": [
+            {
+              "namn": "Sandorm 1",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            },
+            {
+              "namn": "Sandorm 2",
+              "liv": 26,
+              "rustning": 14,
+              "anfall": 6,
+              "skada": "1d10",
+              "xp": 450,
+              "platser": [
+                "oknen"
+              ],
+              "flyr": "dyker ner i sanden och är borta.",
+              "egen": {
+                "tva": true
+              },
+              "typ": "sandorm",
+              "bild": "sandorm",
+              "max": 26,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 8.1,
+            "h:svante": 9.1,
+            "f:0": 21,
+            "f:1": 15
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwjna04zb7rf",
