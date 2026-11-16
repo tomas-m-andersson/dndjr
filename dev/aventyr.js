@@ -502,7 +502,7 @@ window.AVENTYR = [
         text: [
           "Greta lyfter på en lucka i golvet och går före ner. Källaren är full av syltburkar, och längst in står en kista som inte har öppnats på länge.\n\nHon tar fram en gammal ritning. På den finns två saker ritade bredvid varandra: en lykta och en spegel.\n\n– De göts samtidigt, av samma smed, säger Greta. Lyktan samlar ljus. Spegeln samlar kyla. Så länge de hänger var för sig drar spegeln i lyktan, och vinner till slut. Spegeln hänger i Dimsäter.",
           { om: "rosdoft", text: "– Rosor, säger Greta när ni berättar om lukten. Frun i Dimsäter hade ett helt rum med rosor. De blommade mitt i vintern." },
-          "I kistan ligger tre saker. Greta säger att ni får välja en var det är ont om plats i ryggsäcken."
+          "I kistan ligger tre saker. Greta säger att ni bara får välja en, för det är ont om plats i ryggsäcken."
         ],
         val: [
           { text: "Ta den varma kappan", utfall: { text: "Kappan är tung och luktar lavendel, men den är så varm att ni nästan svettas bara av att hålla i den.", sak: "Varm kappa", flagga: "kappa", till: "bygrinden" } },
@@ -825,7 +825,7 @@ window.AVENTYR = [
             } },
           { text: "Läs sagoboken för henne", krav: { sak: "Sagobok" }, engang: "last_saga", utfall: {
               text: [
-                "Någon sätter sig på sängkanten och börjar läsa högt ur den frusna sagoboken.\n\nFlickan kryper närmare, och mitt i sagan säger hon tyst: – Den där har jag ritat. Hunden hette Pricken.\n\nNär sagan är slut är hon mycket gladare.\n\n– Mamma är därnere, säger hon. Hon tål inte sitt eget namn, och hon tål inte om man inte är rädd.",
+                "Någon sätter sig på sängkanten och börjar läsa högt ur den frusna sagoboken.\n\nFlickan kryper närmare, och mitt i sagan säger hon tyst: – Den där har jag ritat. Hunden hette Pricken.\n\nNär sagan är slut är hon mycket gladare.\n\n– Mamma är därnere, säger hon. Hon tål inte sitt eget namn, och hon blir starkare om ni är rädda.",
                 { inteOm: "barnet_hjalpte", text: "– Ta den här, så kommer jag om ni behöver mig.\n\nHon räcker fram en liten trähund." },
                 { om: "barnet_hjalpte", text: "– Och du har ju redan Pricken, säger hon. Håll hårt i honom, så kommer jag." }
               ], sak: "Trähund", flagga: ["barnet_hjalpte", "vet_namnet"], till: "barnkammaren" } },
