@@ -470,28 +470,28 @@ window.AVENTYR = [
       start: {
         bild: "by", figur: "greta",
         text: [
-          "Det har gått två veckor sedan ni hämtade tillbaka lyktan. Det är mitt i augusti, men i natt frös vattnet i hinken på gården, och på morgonen låg rimfrost på alla tak.\n\nGreta står utanför er dörr igen. Den här gången är det ljust ute, men hon ser lika rädd ut som den natten.\n\n– Lyktan krymper, säger hon. Varje natt blir lågan mindre. Och tre i byn har somnat och går inte att väcka.",
-          { om: "glod_fri", text: "Glöd ligger på Gretas tak som han brukar. Han är vaken och tittar åt samma håll hela tiden: mot skogen i norr." }
+          "Det har gått fyra veckor sedan ni hämtade tillbaka lyktan. Det är mitt i augusti, men i natt frös vattnet i hinken på gården, och på morgonen låg rimfrost på alla tak.\n\nGreta står utanför er dörr igen. Den här gången är det ljust ute, men hon ser lika rädd ut som den natten.\n\n– Lyktan falnar, säger hon. Varje natt blir lågan mindre. Och tre i byn har somnat och går inte att väcka.",
+          { om: "glod_fri", text: "Glöd ligger på Gretas tak som han brukar. Han är vaken och tittar åt samma håll hela tiden: mot skogen i norr. Som om han känner något som drar i honom från det hållet." }
         ],
         val: [ { text: "Följ med Greta till torget", till: "torget" } ]
       },
 
       torget: {
         bild: "torg_frost", figur: ["greta", "bo"],
-        text: "På torget står lyktstolpen. Lågan i lyktan är inte större än ett ljus längre, fast den brukar lysa upp hela torget.\n\nPå bänkarna ligger tre bybor under filtar. De sover djupt, och det ligger ett tunt lager frost på filtarna, fast ingen annan fryser.\n\nBo står bredvid. Armen är lagad, och han har spjutet i handen igen.",
+        text: "På torget står lyktstolpen. Lågan i lyktan är inte större än ett ljus längre, fast den brukar lysa upp hela torget.\n\nPå bänkarna ligger tre bybor under filtar. De sover djupt, och det ligger ett tunt lager frost på filtarna.\n\nBo står bredvid. Armen är läkt, och han har spjutet i handen igen.",
         val: [
           { text: "Titta närmare på de som sover", engang: "tittat_sovande", prov: {
               egenskap: "vis", svarighet: 11, fraga: "Vem undersöker dem?",
-              lyckas: { text: "{namn} lutar sig fram. De andas, långsamt och lugnt, som om de drömmer något fint. Men andedräkten ryker som på vintern. Och det luktar något svagt om dem: gamla, torkade rosor.", flagga: "rosdoft", till: "torget" },
+              lyckas: { text: "{namn} lutar sig fram. De andas, långsamt och lugnt, som om de drömmer något fint. Men andedräkten ryker som på vintern. Och det luktar något svagt om dem: rosor?", flagga: "rosdoft", till: "torget" },
               misslyckas: { text: "{namn} skakar dem försiktigt i axeln och ropar i örat. Ingenting händer. De sover bara vidare.", till: "torget" }
             } },
           { text: "Fråga Bo om huset på kullen", engang: "fragat_bo", utfall: {
-              text: "Bo blir tyst en stund.\n\n– Dimsäter, säger han till slut. Det stora huset bortom skogen. Min farfar var dräng där när han var liten. Han sa att frun i huset aldrig gick ut i solen, och att hon hade en spegel som var kallare än snö. En vinter slutade röken komma ur skorstenen, och sedan dess har ingen gått dit.",
+              text: "Bo blir tyst en stund.\n\n– Det heter Dimsäter, säger han till slut. Det stora huset bortom skogen. Min farfar var dräng där när han var liten. Han sa att frun i huset aldrig gick ut i solen, och att hon hade en spegel som var kallare än snö. En vinter slutade röken komma ur skorstenen, och sedan dess har ingen vågat gå dit.",
               flagga: "vet_dimsater", till: "torget" } },
           { text: "Känn på lyktan", engang: "kant_lyktan", prov: {
               egenskap: "klo", svarighet: 12, fraga: "Vem känner på lyktan?",
-              lyckas: { text: "{namn} håller handen mot glaset. Det är iskallt, trots att lågan brinner inuti. Ljuset dras liksom inåt, som vatten i ett avlopp.\n\n– Något drar i den, säger {namn}. Någon annanstans ifrån.", flagga: "lyktkall", till: "torget" },
-              misslyckas: { text: "{namn} bränner sig nästan på glaset och drar undan handen. Eller var det kallt? Det gick inte att avgöra.", till: "torget" }
+              lyckas: { text: "{namn} håller handen mot glaset. Det är iskallt, trots att lågan brinner inuti. Ljuset dras liksom inåt, som vatten ner i ett avlopp.\n\n– Något drar i den, säger {namn}. Någon annanstans ifrån.", flagga: "lyktkall", till: "torget" },
+              misslyckas: { text: "{namn} bränner sig nästan på glaset och drar undan handen. Eller var det kallt? Det var svårt att säga.", till: "torget" }
             } },
           { text: "Följ med Greta ner i källaren", till: "kallaren" }
         ]
@@ -500,21 +500,21 @@ window.AVENTYR = [
       kallaren: {
         bild: "kallare", figur: "greta",
         text: [
-          "Greta lyfter på en lucka i golvet och går före ner. Källaren är full av syltburkar, och längst in står en kista som inte har öppnats på länge.\n\nHon tar fram en gammal ritning. På den finns två saker ritade bredvid varandra: en lykta och en spegel.\n\n– De göts samtidigt, av samma smed, säger Greta. Lyktan samlar ljus. Spegeln samlar kyla. Så länge de hänger var för sig drar spegeln i lyktan, och vinner till slut. Spegeln hänger i Dimsäter.",
-          { om: "rosdoft", text: "– Rosor, säger Greta när ni berättar om lukten. Frun i Dimsäter hade ett helt rum med rosor. De blommade mitt i vintern." },
-          "I kistan ligger tre saker. Greta säger att ni bara får välja en, för det är ont om plats i ryggsäcken."
+          "Greta lyfter på en lucka i golvet och går före ner. Källaren är full av syltburkar, och längst in står en kista som inte har öppnats på länge.\n\nHon tar fram en gammal ritning. På den finns två saker ritade bredvid varandra: en lykta och en spegel.\n\n– De tillverkades samtidigt, av samma smed, säger Greta. Lyktan samlar ljus. Spegeln samlar kyla. Så länge de hänger var för sig drar spegeln i lyktan, och vinner till slut. Spegeln hänger i Dimsäter.",
+          { om: "rosdoft", text: "– Rosor, säger Greta när ni berättar om doften. Frun i Dimsäter hade ett helt rum med rosor. De blommade mitt i vintern." },
+          "I kistan ligger tre saker. Greta säger att ni bara kan välja en, för det är ont om plats i er ryggsäck."
         ],
         val: [
           { text: "Ta den varma kappan", utfall: { text: "Kappan är tung och luktar lavendel, men den är så varm att ni nästan svettas bara av att hålla i den.", sak: "Varm kappa", flagga: "kappa", till: "bygrinden" } },
           { text: "Ta repet", utfall: { text: "Ett långt rep av hampa, hårt och strävt. Det går att klättra i, binda ihop sig med, eller hissa ner något tungt.", sak: "Rep", flagga: "rep", till: "bygrinden" } },
-          { text: "Ta fickljuset", utfall: { text: "En liten lykta av mässing, inte större än en näve. När Greta öppnar luckan tänds en gnista inuti av sig själv.\n\n– Den är gjord av samma smed, säger hon. Den är liten. Men den är envis.", sak: "Fickljus", flagga: "fickljus", till: "bygrinden" } }
+          { text: "Ta fickljuset", utfall: { text: "En liten lykta av mässing, inte större än en näve. När Greta öppnar luckan tänds en gnista inuti av sig själv.\n\n– Den är gjord av samma smed, säger hon. Den är liten. Men den lyser bra.", sak: "Fickljus", flagga: "fickljus", till: "bygrinden" } }
         ]
       },
 
       bygrinden: {
         bild: "by", figur: "bo",
         text: [
-          "Bo följer med er ut till grinden i norra änden av byn. Där tar han farväl.\n\n– Ta bron över bäcken, säger han. Och gå inte efter ljus som rör sig. Min farfar sa det, och han gick dit en gång.\n\n– Vad hände med honom?\n\n– Han kom tillbaka, säger Bo. Men han pratade aldrig om det.",
+          "Bo följer med er ut till grinden i norra änden av byn. Där tar han farväl.\n\n– Ta bron över bäcken, säger han. Och lita inte på ljusen som rör sig i skogen. Min farfar sa alltid det till mig.\n\n– Vad hände med honom?\n\n– Han kom tillbaka, säger Bo. Men han ville aldrig prata om det. Han verkade rädd.",
           { om: "glod_fri", text: "Glöd lyfter från taket och flyger före er, lågt över vägen. Han är ingen stor drake, men han är varm, och så länge han är nära känns kylan mindre." }
         ],
         val: [ { text: "Gå mot bron", till: "bron" } ]
@@ -523,22 +523,22 @@ window.AVENTYR = [
       bron: {
         bild: "bro", figur: "troll_is",
         text: [
-          "Bäcken är helt stilla. Det som var strömt vatten i våras ligger nu under en tjock isskorpa.\n\nMitt på bron står trollet Bulle. Han står alldeles stilla, och först tror ni att han bara är sur. Sedan ser ni att isen går ända upp till hans knän, och att det hänger istappar i hans ögonbryn.\n\n– Bulle, kan han säga. Bulle kan inte. Röra. Sig.",
+          "Bäcken är helt stilla. Det som var strömt vatten i våras ligger nu under en tjock isskorpa.\n\nMitt på bron står trollet Bulle. Han står alldeles stilla, och först tror ni att han bara är sur. Sedan ser ni att isen går ända upp till hans knän, och att det hänger istappar i hans ögonbryn och näsa.\n\n– Bulle, säger han. – Bulle. Sitter. Fast.",
           { om: "bulle_hjalpte", text: "Det var Bulle som drog upp er ur bäcken förra gången. Ni är skyldiga honom en tjänst." }
         ],
         val: [
           { text: "Glöd smälter isen", krav: { flagga: "glod_fri" }, utfall: {
-              text: "Glöd landar på räcket, drar in luft och blåser en lång, varm eldstråle längs bron. Isen smälter och rinner i strömmar ner i bäcken. Bulle lyfter på ena foten, sedan den andra, och stampar så att hela bron skakar.\n\n– BULLE KAN RÖRA SIG! vrålar han. Bulle följer med! Något i det där huset gjorde Bulles bro kall!",
+              text: "Glöd landar på räcket, drar in luft och blåser en lång, varm eldstråle längs bron. Isen smälter och rinner i strömmar ner i bäcken. Bulle lyfter på ena foten, sedan den andra, och stampar så att hela bron skakar.\n\n– BULLE ÄR FRI! vrålar han. Bulle följer med! Något i det där huset gjorde Bulles bro kall!",
               flagga: "bulle_tinad", till: "dimskogen" } },
           { text: "Hugg loss honom ur isen", prov: {
               egenskap: "sty", svarighet: 13, grupp: true, fraga: "Isen är hård som sten.",
-              lyckas: { text: "Ni hugger och bänder tills isen spricker i stora flak. Bulle kliver upp, skakar av sig och ser nästan generad ut.\n\n– Bulle följer med, säger han. Något i huset på kullen gjorde Bulles bro kall. Bulle vill prata med den.", flagga: "bulle_tinad", till: "dimskogen" },
-              misslyckas: { text: "Isen vill inte släppa, och det går hål på den bara där det inte spelar någon roll. Till slut säger Bulle att ni ska gå. – Bulle väntar. Bulle är bra på att vänta.\n\nNi får stå i kylan länge, och alla blir frusna och stela.", skada: "1d4", till: "dimskogen" }
+              lyckas: { text: "Ni hugger och bänder tills isen spricker i stora flak. Bulle kliver upp, skakar av sig och ser nästan generad ut.\n\n– Bulle följer med, säger han. Något i huset på kullen gjorde Bulles bro kall. Bulle vill prata med det.", flagga: "bulle_tinad", till: "dimskogen" },
+              misslyckas: { text: "Isen vill inte släppa, och ni lyckas bara hacka loss små bitar. Till slut säger Bulle att ni ska gå. – Bulle väntar. Bulle är bra på att vänta.\n\nNi får stå i kylan länge, och alla blir frusna och stela.", skada: "1d4", till: "dimskogen" }
             } },
           { text: "{namn} värmer isen med magi", krav: { klass: "magiker" }, prov: {
               egenskap: "klo", svarighet: 12,
-              lyckas: { text: "{namn} lägger händerna mot isen och viskar en formel. Isen blir först blank, sedan grå, och sedan rinner den bara bort. Bulle sträcker på sig med ett ljud som en dörr som öppnas.\n\n– Bulle följer med, säger han. Bulle är arg nu.", flagga: "bulle_tinad", till: "dimskogen" },
-              misslyckas: { text: "Formeln tar i fel ände. Isen blir ännu hårdare, och det smäller till som när man går på nyis. Bulle suckar. – Gå, säger han. Bulle väntar.", till: "dimskogen" }
+              lyckas: { text: "{namn} lägger händerna mot isen och viskar en formel. Isen blir först blank, sedan glansig, och sedan rinner den bara bort. Bulle sträcker på sig med ett knakande ljud, som en gammal dörr som öppnas.\n\n– Bulle följer med, säger han. Bulle är arg på isen.", flagga: "bulle_tinad", till: "dimskogen" },
+              misslyckas: { text: "Trollformeln går fel. Isen blir ännu hårdare, och det smäller till som när man går på nyis. Bulle suckar. – Gå, säger han. Bulle väntar.", till: "dimskogen" }
             } },
           { text: "Ni har inte tid, gå vidare", utfall: {
               text: "Ni klättrar förbi honom. Bulle säger ingenting, men ni känner hur han tittar efter er hela vägen över bron.", till: "dimskogen" } }
@@ -547,20 +547,20 @@ window.AVENTYR = [
 
       dimskogen: {
         bild: "dimskog",
-        text: "På andra sidan bron tar dimman emot er som en vägg. Den är vit och tjock och luktar gamla rosor.\n\nStigen delar sig i tre, och alla tre ser likadana ut. Mellan träden rör sig små bleka ljus, ungefär som facklor, men de stannar aldrig stilla.",
+        text: "På andra sidan bron tar dimman emot er som en vägg. Den är vit och tjock.\n\nStigen delar sig i tre, och alla tre ser likadana ut. Mellan träden rör sig små bleka ljus, som facklor som virvlar runt.",
         val: [
           { text: "Följ ljusen", utfall: {
-              text: "Ljusen glider framför er, alltid lika långt bort. Ni går och går, tills ni plötsligt står vid bron igen, fast ni aldrig vände om.\n\nSedan slocknar ljusen. Och tänds igen, mycket närmare, och nu kommer de rakt mot er.", till: "irrbloss_strid" } },
+              text: "Ljusen glider framför er, men ni verkar inte komma närmare. Ni går och går, tills ni plötsligt står vid Bulles bro igen, fast ni aldrig vände om.\n\nSedan slocknar ljusen. Och tänds igen, mycket närmare, och nu kommer de rakt mot er.", till: "irrbloss_strid" } },
           { text: "Lyssna efter bäcken", prov: {
               egenskap: "vis", svarighet: 13, fraga: "Vem lyssnar?",
-              lyckas: { text: "{namn} blundar och lyssnar bort dimman. Någonstans till höger porlar vatten under isen. Bäcken rinner mot norr, och norrut ligger kullen.\n\nNi följer ljudet, stig efter stig, tills marken börjar luta uppåt.", till: "gravkullen" },
+              lyckas: { text: "{namn} blundar och lyssnar, och kopplar bort dimman. Någonstans till höger porlar vatten under isen. Bäcken rinner mot norr, och norrut ligger kullen.\n\nNi följer ljudet, stig efter stig, tills marken börjar luta uppåt.", till: "gravkullen" },
               misslyckas: { text: "{namn} lyssnar, men dimman slukar alla ljud. Och plötsligt är ljusen inte mellan träden längre. De är runt er.", till: "irrbloss_strid" }
             } },
           { text: "Bind ihop er med repet", krav: { sak: "Rep" }, utfall: {
-              text: "Ni knyter repet runt livet på varandra, en efter en, och går med tio steg emellan. När den främste vinklar av åt fel håll känner den bakerste det genast i repet.\n\nSå tar ni er rakt igenom dimman, utan att tappa bort varandra en enda gång.", flagga: "rep_anvant", till: "gravkullen" } },
+              text: "Ni knyter repet runt midjan på varandra, en efter en, och går med tio steg emellan. När den främste vinklar av åt fel håll känner den bakerste det genast i repet.\n\nSå tar ni er rakt igenom dimman, utan att tappa bort varandra en enda gång.", flagga: "rep_anvant", till: "gravkullen" } },
           { text: "{namn} letar efter spår i snön", krav: { klass: "bagskytt" }, prov: {
               egenskap: "vis", svarighet: 11,
-              lyckas: { text: "{namn} går långsamt med blicken i marken. Här har något gått: stora tassar, fyra tår, inga klor. De går alla åt samma håll, mot kullen. Ni följer dem baklänges.", flagga: "spar_sedda", till: "gravkullen" },
+              lyckas: { text: "{namn} går långsamt med blicken i marken. Här har något gått: stora tassar, fyra tår, inga klor. De går alla åt samma håll, mot kullen. Ni följer dem.", flagga: "spar_sedda", till: "gravkullen" },
               misslyckas: { text: "{namn} hittar spår, men de leder i en cirkel. Och mitt i cirkeln står ni själva, med ljusen tätt inpå.", till: "irrbloss_strid" }
             } }
         ]
@@ -568,10 +568,10 @@ window.AVENTYR = [
 
       irrbloss_strid: {
         bild: "dimskog",
-        text: "Ljusen är inga facklor. Det är små kalla lågor med ansikten i, och de vill inte att ni ska komma fram.",
+        text: "Ljusen är inga facklor. Det är små kalla lågor med arga ansikten i, och de vill inte att ni ska komma fram.",
         strid: {
           fiender: ["irrbloss", "irrbloss", "irrbloss"],
-          vinst: { text: "Det sista ljuset slocknar med ett pys. Och när de är borta lyfter dimman lite, precis tillräckligt för att ni ska se att marken lutar uppåt åt ett håll.", till: "gravkullen" },
+          vinst: { text: "Det sista ljuset slocknar med ett fräsande. Och när de är borta lyfter dimman lite, precis tillräckligt för att ni ska se att marken lutar uppåt åt ett håll.", till: "gravkullen" },
           forlust: "dimskog_forlust"
         }
       },
@@ -585,14 +585,14 @@ window.AVENTYR = [
 
       gravkullen: {
         bild: "gravkulle",
-        text: "Halvvägs uppför kullen ligger en gammal gravplats. Stenarna står snett, och på den största sitter ett utsiktsglas av järn, som en liten kikare, fastbultad i stenen och riktad mot toppen.\n\nFramför stenen ligger färska tassavtryck. Stora.",
+        text: "Halvvägs uppför kullen ligger en gammal gravplats. Stenarna står snett, och på den största sitter ett utsiktsglas av järn, som en liten kikare, fastbultad i stenen och riktad mot toppen.\n\nFramför stenen ligger färska stora tassavtryck.",
         val: [
           { text: "Titta i järnkikaren", engang: "kikat", utfall: {
               text: "Glaset är kallt mot ögat, men dimman syns inte i det. Genom kikaren ser ni huset på toppen helt tydligt: tre våningar, ett torn med en klocka, och ett glashus på baksidan där det växer något rött.\n\nOch i ett av fönstren på översta våningen står någon liten och vinkar.",
               flagga: "sett_huset", till: "gravkullen" } },
           { text: "Läs på stenarna", engang: "last_stenar", prov: {
               egenskap: "klo", svarighet: 11, fraga: "Vem läser?",
-              lyckas: { text: "{namn} skrapar bort mossan. Samma efternamn om och om igen, och samma år på nästan alla: samma vinter.\n\nPå den minsta stenen står bara ett förnamn och en mening: ”Hon sov in och vaknade inte.”", flagga: "vet_barnet", till: "gravkullen" },
+              lyckas: { text: "{namn} skrapar bort mossan. Samma efternamn om och om igen, och samma år på nästan alla: samma vinter.\n\nPå den minsta stenen står bara ett förnamn och en mening: ”Hon somnade in och vaknade inte mer.”", flagga: "vet_barnet", till: "gravkullen" },
               misslyckas: { text: "Bokstäverna är nästan helt bortnötta, och mossan sitter hårt. {namn} får bara fram ett årtal.", till: "gravkullen" } },
             },
           { text: "Gräv i den lösa jorden vid stenen", engang: "gravt", prov: {
@@ -607,7 +607,7 @@ window.AVENTYR = [
       dimvarg_strid: {
         bild: "gravkulle",
         text: [
-          "Ni har gått tio steg när dimman bakom er delar sig. Två vargar kliver fram, men de är inte gjorda av päls. De är gjorda av dimma, och man kan se gravstenarna rakt igenom dem.",
+          "Ni har gått tio steg när dimman bakom er delar sig. Två vargar kliver fram, men de är inte vanliga vargar. De är gjorda av dimma, och man kan se gravstenarna rakt igenom dem.",
           { om: "spar_sedda", text: "Det var de här spåren {namn} följde. Nu vet ni i alla fall vad som gjorde dem." }
         ],
         strid: {
@@ -615,14 +615,14 @@ window.AVENTYR = [
           justera: [
             { flagga: "bulle_tinad", typ: "dimvarg", liv: -4, text: "Bulle kommer ikapp uppför kullen och slänger en gravsten efter vargarna. De är skadade redan innan striden börjar." }
           ],
-          vinst: { text: "Den sista vargen blåser bort i trasor. Där de stod ligger bara en kall, våt fläck i snön.\n\nOvanför er, genom dimman, ser ni äntligen huset.", till: "grinden" },
+          vinst: { text: "Den sista vargen blåser bort i trasor. Där de stod ligger bara en kall, våt fläck i snön.\n\nOvanför er, genom dimman, ser ni det stora gamla huset.", till: "grinden" },
           forlust: "kulle_forlust"
         }
       },
 
       kulle_forlust: {
         bild: "gravkulle",
-        text: "Vargarna sliter omkull er, och sedan är de bara borta.\n\nNi vaknar med frost i håret bland gravstenarna. Ingen är allvarligt skadad. Vargarna ville inte döda er. De ville skrämma er hem.\n\nDet tänker ni inte gå med på.",
+        text: "Vargarna sliter omkull er, och sedan är de bara borta.\n\nNi vaknar med frost i håret bland gravstenarna. Ingen är allvarligt skadad. Vargarna ville inte döda er. De ville skrämma bort er.\n\nDet tänker ni inte gå med på.",
         hela: "halva",
         val: [ { text: "Res er och gå upp till huset", till: "grinden" } ]
       },
@@ -630,8 +630,8 @@ window.AVENTYR = [
       grinden: {
         bild: "grind",
         text: [
-          "På toppen av kullen står en hög järngrind mellan två stenstolpar. På stolparna sitter två stenlejon, och båda är helt täckta av is.\n\nBakom grinden ligger huset. Det är mycket större än det såg ut nerifrån. Inte ett enda fönster är trasigt, och det är det som är obehagligt.\n\nGrinden är låst med en kedja och ett hänglås, och både kedjan och låset är infrusna i ett block av is.",
-          { om: "sett_huset", text: "Högst upp, i fönstret där någon vinkade, är det mörkt nu." }
+          "På toppen av kullen står en hög järngrind mellan två stenstolpar. På stolparna sitter två stenlejon, och båda är helt täckta av is.\n\nBakom grinden ligger huset. Det är mycket större än det såg ut nerifrån. Alla fönster är hela, men det ser gammalt och väderslitet ut.\n\nGrinden är låst med en kedja och ett hänglås, och både kedjan och låset är infrusna i ett block av is.",
+          { om: "sett_huset", text: "Högst upp, i fönstret där ni såg någon vinka, är det mörkt och tomt nu." }
         ],
         val: [
           { text: "Glöd smälter låset", krav: { flagga: "glod_fri" }, utfall: {
@@ -644,7 +644,7 @@ window.AVENTYR = [
           { text: "Hissa er över med repet", krav: { sak: "Rep" }, utfall: {
               text: "Ni kastar repet över en av spetsarna och drar er upp, en i taget, och firar ner er på andra sidan. Det tar en stund, men ingen slår sig.", till: "framsidan" } },
           { text: "Bulle lyfter bort grinden", krav: { flagga: "bulle_tinad" }, utfall: {
-              text: "Bulle tar tag i grinden med båda händerna, sätter foten mot stolpen och drar. Järnet skriker. Sedan lossnar hela grinden med gångjärn och allt, och Bulle lägger ner den i snön som en matta.\n\n– Varsågod, säger han. Bulle väntar här. Bulle går inte in i hus.", till: "framsidan" } },
+              text: "Bulle tar tag i grinden med båda händerna, sätter foten mot stolpen och drar. Järnet skriker. Sedan lossnar hela grinden med gångjärn och allt, och Bulle lägger ner den i snön.\n\n– Varsågod, säger han. Bulle väntar här. Bulle går inte in i hus.", till: "framsidan" } },
           { text: "Slå sönder isen runt låset", prov: {
               egenskap: "sty", svarighet: 14, fraga: "Vem hugger loss låset?",
               lyckas: { text: "{namn} hugger tills isblocket spricker, och sedan går låset av med ett torrt knäpp. Kedjan rasslar ner i snön.", till: "framsidan" },
@@ -655,11 +655,11 @@ window.AVENTYR = [
 
       framsidan: {
         bild: "grind",
-        text: "Framför huset ligger en gård med en frusen fontän i mitten. I snön syns inga spår alls, varken av djur eller människor.\n\nYtterdörren står på glänt. Precis så mycket att en katt skulle komma in.\n\nOch inifrån hörs musik. Någon spelar piano, långsamt och lite falskt.",
+        text: "Framför huset ligger en gård med en frusen fontän i mitten. I snön syns inga spår alls, varken av djur eller människor.\n\nYtterdörren står lite på glänt och svajar lätt i vinden.\n\nOch inifrån hörs dov musik. Någon spelar piano.",
         val: [
           { text: "Gå in genom ytterdörren", till: "hallen" },
-          { text: "Gå runt huset först", engang: "runt_huset", utfall: {
-              text: "Ni går ett varv runt huset genom snön. På baksidan ligger ett glashus med frostiga rutor, och bredvid det en liten källardörr som står öppen och gapar svart.\n\nNi noterar var de ligger, och går tillbaka till framsidan.",
+          { text: "Gå runt huset först och titta", engang: "runt_huset", utfall: {
+              text: "Ni går ett varv runt huset genom snön. På baksidan ligger ett stort växthus i glas med frostiga rutor, och bredvid det ett litet igenfrostat källarfönster. Det går inte att se något igenom det.\n\nNi går ett helt varv och kommer tillbaka till framsidan igen.",
               flagga: "vet_baksidan", till: "framsidan" } }
         ]
       },
@@ -667,12 +667,12 @@ window.AVENTYR = [
       hallen: {
         bild: "hall",
         text: [
-          "Hallen är stor som ett stall. En trappa svänger upp till andra våningen, och i taket hänger en kristallkrona som är helt täckt av istappar.\n\nPianot hörs från ett rum till vänster. Det slutar inte spela, men ingen har hälsat på er.\n\nDet är kallare inne än ute.",
+          "Hallen är stor som ett stall. En trappa svänger upp till andra våningen, och i taket hänger en kristallkrona som är helt täckt av istappar.\n\nPianot hörs från ett rum till vänster. Det slutar inte spela. Ingen har kommit och hälsat er välkomna.\n\nDet är kallare här inne än vad det var ute.",
           { om: "vet_spegeln", text: "Nu vet ni vad ni letar efter: spegelsalen, längst ner, bakom trappan." },
           { inteOm: "vet_spegeln", text: "Spegeln kan hänga var som helst i det här huset. Ni måste leta." }
         ],
         val: [
-          { text: "Gå mot pianot, in i balsalen", rum: "balsalen", till: "balsalen" },
+          { text: "Gå mot pianomusiken, in i balsalen", rum: "balsalen", till: "balsalen" },
           { text: "Gå in i köket", rum: "koket", till: "koket" },
           { text: "Gå in i biblioteket", rum: "biblioteket", till: "biblioteket" },
           { text: "Gå ut i glashuset", rum: "vintertradgarden", till: "vintertradgarden" },
@@ -685,7 +685,7 @@ window.AVENTYR = [
 
       balsalen: {
         bild: "balsal_spoken_tittar",
-        text: "Balsalen är full av folk, och ändå är den tom.\n\nTjugo par dansar en långsam vals över golvet. Man ser rakt igenom dem. Vid pianot sitter en herre utan ansikte och spelar samma åtta takter om och om igen.\n\nNär ni kommer in vänder alla huvudena mot er samtidigt. Men de slutar inte dansa.",
+        text: "Balsalen är full av människor, och ändå är den tom.\n\nTio par svävar runt i en långsam vals över golvet. Man ser rakt igenom dem. Vid pianot sitter en genomskinlig herre och spelar samma åtta takter om och om igen.\n\nNär ni kommer in vänder alla huvudena mot er samtidigt. Men de slutar inte dansa.",
         val: [
           { text: "Buga och dansa med dem", engang: "dansat", prov: {
               egenskap: "cha", svarighet: 13, fraga: "Vem bugar och bjuder upp?",
@@ -699,8 +699,8 @@ window.AVENTYR = [
             } },
           { text: "Gå tvärs igenom salen utan att titta på dem", engang: "gick_over_golvet", prov: {
               egenskap: "vis", svarighet: 12, grupp: true, fraga: "Titta rakt fram. Vad som än händer.",
-              lyckas: { text: "Ni går rakt över dansgolvet med blicken fäst på dörren på andra sidan. Spökena dansar förbi så nära att det blåser kallt om er, men ingen rör er.\n\nPå andra sidan, i en glaskupa, står en mässingsnyckel med en liten lapp: ”Spegelsalen”.", flagga: ["vet_spegeln", "har_nyckel"], till: "hallen" },
-              misslyckas: { text: "Någon tittar. Det räcker.\n\nValsen tvärslutar, och tjugo kalla par sluter sig runt er.", till: "spokstrid" }
+              lyckas: { text: "Ni går rakt över dansgolvet med blicken fäst på dörren på andra sidan. Spökena dansar förbi så nära att det blåser kallt om er, men ingen rör er.\n\nPå andra sidan, i en glaskupa, ligger en mässingsnyckel med en liten lapp: ”Spegelsalen”.", flagga: ["vet_spegeln", "har_nyckel"], till: "hallen" },
+              misslyckas: { text: "Någon tittar. Det räcker.\n\nValsen tvärslutar, och tio kalla par sluter sig runt er.", till: "spokstrid" }
             } },
           { text: "Gå ut igen", utgang: true, till: "hallen" }
         ]
@@ -718,7 +718,7 @@ window.AVENTYR = [
 
       koket: {
         bild: "kok",
-        text: "Köket är enormt, med en spis så lång som en vägg och kopparkastruller i rader. Allt är täckt av frost.\n\nPå ett bord mitt i rummet står en middag uppdukad för tolv personer. Maten är inte rutten. Den är frusen, mitt i ett ögonblick, som om alla just hade rest sig.\n\nUppe i skorstenen hörs ett prassel.",
+        text: "Köket är enormt, med en stor järnspis och kopparkastruller hängande i rader. Allt är täckt av frost.\n\nPå ett bord mitt i rummet står en middag uppdukad för tolv personer. Maten är inte rutten. Den är frusen, mitt i ett ögonblick, som om alla just hade rest sig.\n\nUppe i skorstenen hörs ett prassel.",
         val: [
           { text: "Leta i skafferiet", engang: "letat_skafferiet", prov: {
               egenskap: "vis", svarighet: 11, fraga: "Vem letar i skafferiet?",
@@ -731,7 +731,7 @@ window.AVENTYR = [
               misslyckas: { text: "Veden är fuktig och vill inte ta sig. Efter en stund ger {namn} upp, med kalla fingrar och sot i ansiktet.", till: "koket" }
             } },
           { text: "Smaka på maten", engang: "smakat", utfall: {
-              text: "Någon tar en tugga av det frusna köttet. Det smakar ingenting alls. Inte dåligt, bara ingenting, som att tugga snö.\n\nDet var ingen bra idé, men det var i alla fall ingen farlig idé.", till: "koket" } },
+              text: "Någon tar en tugga av det frusna köttet. Det smakar ingenting alls. Inte dåligt, bara ingenting, som att tugga seg snö.\n\nDet var ingen bra idé, men det var i alla fall ingen farlig idé.", till: "koket" } },
           { text: "Gå ut igen", utgang: true, till: "hallen" }
         ]
       },
@@ -751,11 +751,11 @@ window.AVENTYR = [
         text: "Biblioteket går i två våningar, med en stege på räls längs väggarna. Böckerna är täckta av frost, och många av dem har frusit fast i hyllorna.\n\nPå ett bord mitt i rummet ligger en uppslagen dagbok. Bläcket är blått, och den sista raden är skriven med darrig hand.",
         val: [
           { text: "Läs dagboken", engang: "last_dagbok", utfall: {
-              text: "”Spegeln hänger i spegelsalen bakom trappan. Jag orkar inte gå dit mer.\n\nSmeden sa att de två aldrig får hänga var för sig. Lyktan ger, spegeln tar. Nu tar den allt: veden, röken, till och med röster.\n\nOm någon läser det här: det finns två sätt. Slå sönder spegeln, så blir det sommar igen, men lyktan blir aldrig mer än ett ljus. Eller häng dem tillsammans, så lyser båda. Men då finns hon kvar i huset.\n\nJag vågar inte välja. Jag lägger mig bara och vilar lite först.”",
+              text: "”Spegeln hänger i spegelsalen bakom trappan. Jag orkar inte gå dit mer.\n\nSmeden sa att de två aldrig får hänga var för sig. Lyktan ger, spegeln tar. Nu tar den allt: veden, röken, till och med röster.\n\nOm någon läser det här: det finns två sätt. Slå sönder spegeln, så blir det sommar igen, men lyktan får aldrig mer tillbaka sitt starka ljus. Eller häng dem tillsammans, så lyser båda. Men då finns hon kvar i huset.\n\nJag kan inte välja. Jag måste bara lägga mig och vila lite först.”",
               flagga: ["vet_spegeln", "vet_valet"], till: "biblioteket" } },
           { text: "Leta efter husets ritningar", engang: "last_ritning", prov: {
               egenskap: "klo", svarighet: 12, fraga: "Vem letar bland hyllorna?",
-              lyckas: { text: "{namn} hittar en rulle med ritningar över huset. Bakom trappan finns en dörr som inte syns, och bakom den en trappa ner till spegelsalen.\n\nPå ritningen står också en varning i marginalen: ”Rustningen i trappan är inte tom.”", flagga: ["vet_spegeln", "vet_rustningen"], till: "biblioteket" },
+              lyckas: { text: "{namn} hittar en rulle med ritningar över huset. Bakom trappan finns en hemlig dörr, och bakom den en trappa ner till spegelsalen.\n\nPå ritningen står också en varning i marginalen: ”Reta inte upp rustningen i trappan.”", flagga: ["vet_spegeln", "vet_rustningen"], till: "biblioteket" },
               misslyckas: { text: "{namn} drar ut rulle efter rulle, men det är bara gamla räkenskaper över hur mycket hö som gick åt varje vinter.", till: "biblioteket" }
             } },
           { text: "Leta efter något om hennes namn", krav: { flagga: "vet_namnet" }, kvar: ["tant_spisen"], engang: "last_namnet", prov: {
@@ -763,27 +763,27 @@ window.AVENTYR = [
               lyckas: { text: "Längst in står en kyrkbok. {namn} bläddrar till rätt vinter och hittar raden.\n\nDär står hennes namn. Det är ett helt vanligt namn, ett sådant som en gammal dam i byn kan heta. Att läsa det gör henne plötsligt mycket mindre läskig.\n\n{namn} lär sig det utantill.", flagga: "kan_namnet", till: "biblioteket" },
               misslyckas: { text: "Sidorna har frusit ihop till ett enda block. {namn} får loss två sidor, och båda är tomma.", till: "biblioteket" }
             } },
-          { text: "Värm en bok mot kinden och läs den", engang: "varmt_bok", utfall: {
-              text: "Någon tar ner en bok ur hyllan och håller den innanför jackan tills frosten släpper. Det är en sagobok för barn, med en liten teckning längst bak: ett barn och en stor hund, båda ritade med rödkrita.\n\nNi tar med er boken.", sak: "Sagobok", flagga: "har_sagobok", till: "biblioteket" } },
+          { text: "Tina upp en bok och läs den", engang: "varmt_bok", utfall: {
+              text: "Någon tar ner en bok ur hyllan och håller den innanför jackan tills frosten släpper. Det är en sagobok för barn, med en liten teckning längst bak: ett barn och en stor hund, båda ritade med röd krita.\n\nNi tar med er boken.", sak: "Sagobok", flagga: "har_sagobok", till: "biblioteket" } },
           { text: "Gå ut igen", utgang: true, till: "hallen" }
         ]
       },
 
       vintertradgarden: {
         bild: "vintertradgard", figur: "tradgardsmastare",
-        text: "Glashuset på baksidan är varmare än resten av huset, och det är det konstigaste hittills.\n\nHär växer rosor. Hundratals. De är helt röda och alldeles levande, mitt i ett hus där till och med maten har frusit. Doften är så stark att det svider i näsan.\n\nMitt bland rosorna står en gammal trädgårdsmästare och klipper med en sax. Han är genomskinlig, och han har inte märkt er.",
+        text: "Glashuset på baksidan är varmare än resten av huset.\n\nHär växer rosor. Hundratals. De är helt röda och alldeles levande, mitt i ett hus där till och med maten har frusit. Det doftar starkt men trevligt.\n\nMitt bland rosorna svävar en gammal trädgårdsmästare och klipper med en sax. Han är genomskinlig, och han har inte märkt er.",
         val: [
           { text: "Hälsa försiktigt", engang: "halsat_tradgardsmastaren", prov: {
               egenskap: "cha", svarighet: 12, fraga: "Vem hälsar?",
-              lyckas: { text: "{namn} harklar sig och säger god dag.\n\nTrädgårdsmästaren tittar upp, förvånad men glad, som om det var länge sedan någon sa något till honom.\n\n– Jaså, besök, säger han. Hon tycker om rosor, förstår ni. Så länge de blommar är hon nästan snäll. Ska ni ner i spegelsalen? Då behöver ni den här.\n\nHan räcker fram en liten mässingsnyckel, och fortsätter sedan klippa.", flagga: ["har_nyckel", "vet_spegeln"], till: "vintertradgarden" },
+              lyckas: { text: "{namn} harklar sig och hälsar.\n\nTrädgårdsmästaren tittar upp, förvånad men med ett leende, som om det var länge sedan någon sa något till honom.\n\n– Ah, besök, säger han. Hon tycker om rosor, förstår ni. Så länge de blommar är hon nästan snäll. Ska ni ner i spegelsalen? Då behöver ni den här.\n\nHan räcker fram en liten mässingsnyckel, och fortsätter sedan klippa bland blommorna.", flagga: ["har_nyckel", "vet_spegeln"], till: "vintertradgarden" },
               misslyckas: { text: "{namn} säger god dag, lite för högt. Trädgårdsmästaren fortsätter klippa som om ingenting hänt. Han är inte här riktigt, inte på det sättet.", till: "vintertradgarden" }
             } },
           { text: "Plocka en ros", engang: "plockat_ros", utfall: {
               text: "Någon bryter av en ros vid stjälken. Den är varm i handen, som en liten eld, och den vissnar inte.\n\nTrädgårdsmästaren tittar upp och nickar. – Ta med en till henne, säger han. Hon blir alltid mjukare av rosor.", sak: "Röd ros", flagga: "har_ros", till: "vintertradgarden" } },
           { text: "Leta bland krukorna", engang: "letat_krukor", prov: {
               egenskap: "vis", svarighet: 11, fraga: "Vem rotar bland krukorna?",
-              lyckas: { text: "Under en spräckt kruka hittar {namn} en liten påse med mynt och en läkedryck som trädgårdsmästaren måste ha gömt för sig själv.", guld: 14, sak: "Läkedryck", till: "vintertradgarden" },
-              misslyckas: { text: "{namn} välter en kruka så att jorden ryker, och trädgårdsmästaren ser riktigt sur ut en kort stund.", till: "vintertradgarden" }
+              lyckas: { text: "Under en spräckt kruka hittar {namn} en liten påse med mynt och en läkedryck som någon måste ha gömt för länge sedan.", guld: 14, sak: "Läkedryck", till: "vintertradgarden" },
+              misslyckas: { text: "{namn} välter en kruka så att jorden sprids ut över golvet, och trädgårdsmästaren ser surt på er en kort stund.", till: "vintertradgarden" }
             } },
           { text: "Gå in i huset igen", utgang: true, till: "hallen" }
         ]
@@ -794,14 +794,14 @@ window.AVENTYR = [
         text: "Trappan upp i tornet är smal och full av fågelbon. Högst upp hänger en klocka, stor som ett badkar, med repet avklippt.\n\nHärifrån ser ni ut över hela kullen. Dimman ligger som ett lock över skogen, ända bort till Mossby. Men precis runt tornet är luften klar.\n\nKlockan är full av is på insidan.",
         val: [
           { text: "Ring i klockan med repet", krav: { sak: "Rep" }, engang: "ringt_klockan", utfall: {
-              text: "Ni knyter fast ert rep i kläppen och drar allihop.\n\nKLONG.\n\nLjudet rullar ut över hela kullen. Isen inne i klockan spricker och regnar ner som glas, och nere på marken drar sig dimman undan från huset, en bra bit åt alla håll.\n\nHela huset tystnar. Något därnere blev väldigt stört.", flagga: "klockan_ringd", till: "klocktornet" } },
+              text: "Ni knyter fast ert rep i kläppen och drar allihop.\n\nKLONG.\n\nLjudet rullar ut över hela kullen. Isen inne i klockan spricker och regnar ner som glas, och nere på marken drar sig dimman undan från huset, en bra bit åt alla håll.\n\nHela huset tystnar. Något långt därnere tyckte inte om ljudet.", flagga: "klockan_ringd", till: "klocktornet" } },
           { text: "Slå på klockan med vapnen", engang: "slagit_klockan", prov: {
               egenskap: "sty", svarighet: 12, grupp: true, fraga: "Klockan är tjock. Alla måste hjälpas åt.",
-              lyckas: { text: "Ni slår allihop samtidigt, och klockan svarar med ett dovt KLONG som får hela tornet att darra.\n\nIsen inuti spricker och faller, och nere på marken viker dimman undan från huset. Något därnere blev mycket stört.", flagga: "klockan_ringd", till: "klocktornet" },
+              lyckas: { text: "Ni slår allihop samtidigt, och klockan svarar med ett dovt KLONG som får hela tornet att darra.\n\nIsen inuti spricker och faller, och nere på marken viker dimman undan från huset. Något långt därnere tyckte inte om ljudet.", flagga: "klockan_ringd", till: "klocktornet" },
               misslyckas: { text: "Ni slår och slår, men isen tar upp allt ljud. Till slut gör det bara ont i armarna, och er egen andedräkt fryser i luften.", skada: "1d4", till: "klocktornet" }
             } },
           { text: "Titta ut över kullen", engang: "utsikt", utfall: {
-              text: "Härifrån syns det tydligt: dimman kommer inte utifrån. Den rinner ut ur huset, nerför kullen och vidare mot Mossby, som rök från en skorsten, fast åt fel håll.\n\nOch den kommer från något hål längst ner i huset.", flagga: "vet_spegeln", till: "klocktornet" } },
+              text: "Härifrån syns det tydligt: dimman kommer inte utifrån. Den rinner ut från huset, nerför kullen och vidare mot Mossby, som rök.\n\nOch den kommer från något hål längst ner i huset.", flagga: "vet_spegeln", till: "klocktornet" } },
           { text: "Gå ner igen", utgang: true, till: "hallen" }
         ]
       },
@@ -809,18 +809,18 @@ window.AVENTYR = [
       barnkammaren: {
         bild: "barnkammare", figur: "spokflicka",
         text: [
-          "Längst upp i huset ligger ett litet rum med en säng, en hylla med leksaker och ett fönster som vetter mot kullen.\n\nPå golvet sitter en flicka i nattlinne och bygger ett torn av klossar. Hon är genomskinlig som de andra, men hon är inte kall. Hon ser mest uttråkad ut.\n\n– Alla andra bara dansar, säger hon utan att titta upp. Ingen vill leka.",
+          "Längst upp i huset ligger ett litet rum med en säng, en hylla med leksaker och ett fönster som vetter mot kullen och den gamla gravplatsen. Ni kan se den gamla järnkikaren härifrån.\n\nPå golvet sitter en liten flicka i nattlinne och bygger ett torn av klossar. Hon är genomskinlig som de andra, men hon är inte kall. Hon ser uttråkad ut.\n\n– Alla andra bara dansar hela tiden, säger hon utan att titta upp. Ingen vill leka med mig.",
           { om: "vet_barnet", text: "Det var hennes namn som stod på den minsta gravstenen." }
         ],
         val: [
           { text: "Sätt er ner och lek med henne", engang: "lekt_med_flickan", prov: {
               egenskap: "cha", svarighet: 10, fraga: "Vem sätter sig på golvet?",
               lyckas: { text: [
-                "{namn} sätter sig på golvet och bygger vidare på tornet. De bygger det så högt att det rasar, och flickan skrattar så att fönstret imar igen.\n\nSedan blir hon allvarlig.\n\n– Hon därnere är mamma, säger hon. Hon sover inte, hon bara väntar. Hon tål inte när man säger hennes namn, och hon tål inte när man är glad. Om ni är rädda blir hon starkare.",
-                { inteOm: "barnet_hjalpte", text: "Flickan ger {namn} en trasig liten hund av trä. – Ta den. Jag kommer om ni håller i den." },
+                "{namn} sätter sig på golvet och bygger vidare på tornet. De bygger det så högt att det rasar, och flickan skrattar så att fönstret immar igen.\n\nSedan blir hon allvarlig.\n\n– Hon därnere är min mamma, säger hon. Hon sover inte, hon bara väntar. Hon tål inte när man säger hennes namn, och hon tål inte när man är glad. Om ni är rädda blir hon starkare.",
+                { inteOm: "barnet_hjalpte", text: "Flickan ger {namn} en trasig liten hund av trä. – Ta den. Jag kommer om ni håller i den och klappar den." },
                 { om: "barnet_hjalpte", text: "– Och håll hårt i Pricken därnere, säger hon och nickar mot trähunden. Då hittar jag er." }
               ], sak: "Trähund", flagga: "barnet_hjalpte", till: "barnkammaren" },
-              misslyckas: { text: "{namn} sätter sig ner, men flickan vänder ryggen till och fortsätter bygga.\n\n– Ni är bara här för spegeln, säger hon. Alla är bara här för spegeln.", till: "barnkammaren" }
+              misslyckas: { text: "{namn} sätter sig ner, men flickan vänder ryggen till och fortsätter bygga.\n\n– Ni är bara här för spegeln, säger hon. Alla bryr sig bara om den dumma spegeln.", till: "barnkammaren" }
             } },
           { text: "Läs sagoboken för henne", krav: { sak: "Sagobok" }, engang: "last_saga", utfall: {
               text: [
@@ -830,7 +830,7 @@ window.AVENTYR = [
               ], sak: "Trähund", flagga: ["barnet_hjalpte", "vet_namnet"], till: "barnkammaren" } },
           { text: "Fråga vad som hände den vintern", engang: "fragat_barnet", prov: {
               egenskap: "vis", svarighet: 12, fraga: "Vem frågar försiktigt?",
-              lyckas: { text: "Flickan tittar ut genom fönstret länge innan hon svarar.\n\n– Det blev kallt, säger hon. Mamma hängde upp spegeln för att hon ville se sig själv i den hela tiden. Sedan blev det kallare. Och sedan somnade alla. Jag också.\n\nHon rycker på axlarna, som om det var länge sedan nu.", flagga: "vet_historien", till: "barnkammaren" },
+              lyckas: { text: "Flickan tittar ut genom fönstret länge innan hon svarar.\n\n– Det blev kallt, säger hon. Mamma hängde upp spegeln för att hon ville se sig själv i den hela tiden. Sedan blev det kallare. Och sedan somnade alla. Jag också.\n\nHon rycker på axlarna, som om det var så länge sedan att det är svårt att minnas.", flagga: "vet_historien", till: "barnkammaren" },
               misslyckas: { text: "Flickan säger ingenting alls. Hon bara bygger vidare, och efter en stund förstår ni att hon inte tänker svara.", till: "barnkammaren" }
             } },
           { text: "Gå ner igen", utgang: true, till: "hallen" }
@@ -840,8 +840,8 @@ window.AVENTYR = [
       trappan: {
         bild: "hall",
         text: [
-          "Bakom den stora trappan finns en dörr som är målad i samma färg som väggen. Den syns knappt.\n\nBakom den går en smal trappa rakt ner i mörkret. Kylan som kommer därifrån är inte som vanlig kyla. Den gör ont i tänderna.\n\nI trappan, halvvägs ner, står en rustning i full mundering.",
-          { om: "vet_rustningen", text: "Ritningen varnade för den här rustningen. Den är inte tom." }
+          "Bakom den stora trappan finns en dörr som är målad i samma färg som väggen. Den syns knappt.\n\nBakom den går en smal trappa rakt ner i mörkret. Kylan som kommer därifrån är inte som vanlig kyla. Den ilar i tänderna.\n\nI trappan, halvvägs ner, står en rustning i full mundering.",
+          { om: "vet_rustningen", text: "Ritningen varnade för den här rustningen. Den är inte tom, stod det." }
         ],
         val: [
           { text: "Lås upp dörren med mässingsnyckeln", krav: { flagga: "har_nyckel" }, utfall: {
@@ -854,7 +854,7 @@ window.AVENTYR = [
           { text: "Smyg förbi rustningen", prov: {
               egenskap: "smi", svarighet: 14, grupp: true, fraga: "Trapporna knarrar. Alla måste ner.",
               lyckas: { text: "Ni går ner på de yttersta kanterna av varje trappsteg, där de knarrar minst, och håller andan när ni passerar rustningen.\n\nDen rör sig inte. Men när den siste har passerat hör ni ett långsamt skrapande bakom er. Ni springer.", till: "dimkallaren" },
-              misslyckas: { text: "Ett trappsteg knarrar som ett skott. Rustningen drar sitt svärd.", till: "rustning_strid" }
+              misslyckas: { text: "Ett trappsteg knarrar till. Rustningen drar sitt svärd.", till: "rustning_strid" }
             } },
           { text: "Gå upp igen", till: "hallen" }
         ]
@@ -876,7 +876,7 @@ window.AVENTYR = [
 
       hus_forlust: {
         bild: "hall",
-        text: "Allt blir kallt och långsamt, och sedan vaknar ni i hallen igen, alla i en hög under kristallkronan.\n\nIngen är borta. Ingenting är stulet. Huset vill inte döda er. Huset vill att ni ska somna, precis som alla andra.\n\nDet är nästan värre.",
+        text: "Allt blir kallt och mörkt, och sedan vaknar ni i hallen igen, alla i en hög under kristallkronan.\n\nIngen är borta. Ingenting är stulet. Huset vill inte döda er. Huset vill att ni ska somna, precis som alla andra.\n\nDet är nästan värre.",
         hela: "halva",
         val: [ { text: "Res er", till: "hallen" } ]
       },
@@ -884,7 +884,7 @@ window.AVENTYR = [
       dimkallaren: {
         bild: [{ om: "byborna_burna", bild: "dimkallare|tomma_sangar" }, "dimkallare"],
         text: [
-          "Trappan slutar i en lång källargång, och här nere är dimman så tät att ni ser varandras händer men inte varandras ansikten.\n\nLängs ena väggen ligger människor på britsar. Tolv stycken. De sover lugnt under ett lager frost, och det är ingen i huset som har lagt dem där i år. De är klädda i kläder från en annan tid.\n\nLängst ner ligger tre som har moderna kläder. Det är Mossbybor.",
+          "Trappan slutar i en lång källargång, och här nere är dimman så tät att ni knappt kan se varandra.\n\nLängs ena väggen ligger människor på britsar. Tolv stycken. De sover lugnt under ett lager frost. De är klädda i kläder från en annan tid.\n\nLängst ner ligger tre som har moderna kläder. Det är Mossbybor.",
           { om: "rosdoft", text: "Det luktar rosor här nere också. Mycket starkare." }
         ],
         val: [
@@ -908,10 +908,10 @@ window.AVENTYR = [
         ],
         val: [
           { text: "Säg hennes namn högt", krav: { flagga: "kan_namnet" }, utfall: {
-              text: "{namn} tar ett steg fram och säger hennes namn, lugnt och tydligt, precis som det stod i kyrkboken.\n\nHon rycker till som om någon kastat vatten på henne. Ett ögonblick ser hon inte ut som en grevinna alls, bara som en gammal dam som frusit mycket länge.\n\n– Säg inte så, viskar hon. Men rösten är mycket mindre nu.",
+              text: "{namn} tar ett steg fram och säger hennes namn, lugnt och tydligt, precis som det stod i kyrkboken.\n\nHon rycker till som om någon kastat vatten på henne. Ett ögonblick ser hon inte ut som en grevinna alls, bara som en gammal dam som frusit mycket länge.\n\n– Säg inte så, viskar hon. Men rösten är svagare nu.",
               flagga: "namnet_sagt", till: "dimfru_strid" } },
           { text: "Ge henne rosen", krav: { sak: "Röd ros" }, utfall: {
-              text: "Någon går fram och räcker fram den röda rosen.\n\nHon tar den utan att tänka, och i ett ögonblick luktar hela salen sommar. Hon håller rosen mot kinden och blundar.\n\nSedan ser hon spegeln i ögonvrån, och ansiktet blir hårt igen. Men hon släpper inte rosen, och handen hon håller den i kan hon inte slåss med.",
+              text: "Någon går fram och räcker fram den röda rosen.\n\nHon tar den utan att tänka, och i ett ögonblick känns det som att kylan lättar lite i salen. Hon håller rosen mot kinden och blundar.\n\nSedan ser hon spegeln i ögonvrån, och ansiktet blir hårt igen. Men hon släpper inte rosen, och hon verkar lite svagare än innan.",
               flagga: "ros_given", till: "dimfru_strid" } },
           { text: "Håll fram trähunden", krav: { sak: "Trähund" }, utfall: {
               text: "{namn} håller upp den lilla trähunden.\n\nGrevinnan tystnar mitt i en mening. Uppe i trappan hörs små fötter, och en ljus röst ropar: – Mamma! De är snälla!\n\nGrevinnan vänder sig om mot ljudet, och hon glömmer bort er helt och hållet en lång stund.",
@@ -923,7 +923,7 @@ window.AVENTYR = [
             } },
           { text: "Spring fram och slå sönder spegeln direkt", prov: {
               egenskap: "sty", svarighet: 15, fraga: "Vem rusar fram mot spegeln?",
-              lyckas: { text: "{namn} rusar fram och slår med allt vad {namn} har. Spegeln spricker inte, men det går en lång reva tvärs över den vita ytan, och ur revan ryker det kallt.\n\nGrevinnan skriker till, för första gången med riktig rädsla i rösten.", flagga: "spegel_sprucken", till: "dimfru_strid" },
+              lyckas: { text: "{namn} rusar fram och slår med allt vad {namn} har. Spegeln spricker inte, men det går en lång reva tvärs över den vita ytan, och ur revan ryker det kall rök.\n\nGrevinnan skriker till, för första gången med riktig rädsla i rösten.", flagga: "spegel_sprucken", till: "dimfru_strid" },
               misslyckas: { text: "{namn} kommer halvvägs. Sedan slår kylan emot som en vägg, och {namn} kastas bakåt över golvet.", traffad: "1d8", till: "dimfru_strid" }
             } },
           { text: "Anfall!", till: "dimfru_strid" }
@@ -953,7 +953,7 @@ window.AVENTYR = [
         bild: "dimkallare",
         text: [
           "Kylan tar er, och allt blir vitt och mjukt och skönt.\n\nNi vaknar på britsarna i källargången, bredvid de andra sovande. Ni är iskalla, men ni är vakna. Något väckte er.",
-          { om: "barnet_hjalpte", text: "Vid fötterna på britsen sitter flickan i nattlinne och ser arg ut. – Ni får inte somna, säger hon. Jag har redan provat det." },
+          { om: "barnet_hjalpte", text: "Vid fötterna på britsen sitter flickan i nattlinne och ser arg ut. – Ni får inte somna, säger hon. Jag har redan provat det. Det är inte bra." },
           { inteOm: "barnet_hjalpte", text: "På golvet bredvid er ligger en av era egna läkedrycker, krossad. Någon här nere ville inte att ni skulle sova." },
           "Ni kryper upp. Spegelsalen är kvar där den var."
         ],
@@ -965,9 +965,9 @@ window.AVENTYR = [
         bild: "spegelsal", figur: "spokflicka?barnet_hjalpte",
         text: [
           "Ni står framför spegeln. Den är kall, men den gör ingenting längre, inte just nu.",
-          { om: "vet_valet", text: "I dagboken stod det två sätt. Slå sönder spegeln: då tar vintern slut, men lyktan blir aldrig mer än ett ljus. Eller häng spegeln bredvid lyktan: då lyser båda starkt igen, men hon finns kvar därinne." },
+          { om: "vet_valet", text: "I dagboken stod det om två sätt. Slå sönder spegeln: då tar vintern slut, men lyktan blir aldrig mer lika stark. Eller häng spegeln bredvid lyktan: då lyser båda starkt igen, men hon finns kvar därinne." },
           { inteOm: "vet_valet", text: "Ni vet inte riktigt vad som händer om ni slår sönder den. Men ni vet vad som händer om ni låter den hänga." },
-          { om: "barnet_hjalpte", text: "I trappan står flickan och tittar på er. Hon säger ingenting. Hon väntar bara, som om det var länge sedan någon frågade henne om någonting." }
+          { om: "barnet_hjalpte", text: "I trappan står flickan och tittar på er. Hon säger ingenting. Hon väntar bara tyst." }
         ],
         val: [
           { text: "Slå sönder spegeln", till: "slut_krossa" },
@@ -984,8 +984,8 @@ window.AVENTYR = [
           "Ni lyfter ner spegeln från väggen, bär upp den på gården och ställer den i snön. Sedan slår ni sönder den, allihop samtidigt.\n\nDen går inte i skärvor. Den bara går sönder som is, och allt det vita rinner ut i snön och försvinner.\n\nDimman över kullen lyfter på en halv minut. Solen är så stark att det gör ont i ögonen.",
           { om: "byborna_burna", text: "Ute på gården sätter sig de tre Mossbyborna upp, mitt i snön, och undrar varför de har frost i håret mitt i augusti." },
           { inteOm: "byborna_burna", text: "Ni springer ner i källaren och bär upp alla tolv, en i taget. De tre från Mossby vaknar redan på gården. De andra nio ler i sömnen, och sedan är de borta, som om de äntligen fick åka hem." },
-          { om: "barnet_hjalpte", text: "I ett fönster högst upp står en liten flicka och tittar på solen. Hon vinkar med hela armen innan hon bleknar bort." },
-          "På vägen hem genom skogen är marken redan bar. När ni kommer in i Mossby står hela byn på torget igen.\n\nLyktan på stolpen lyser lugnt och gult. Den blir aldrig starkare än ett stearinljus mer. Men den slocknar inte heller."
+          { om: "barnet_hjalpte", text: "I ett fönster högst upp står en liten flicka och tittar på solen. Hon vinkar innan hon bleknar bort med ett leende." },
+          "På vägen hem genom skogen är marken redan bar. När ni kommer in i Mossby står hela byn på torget igen.\n\nLyktan på stolpen lyser lugnt och gult. Den blir aldrig starkare än ett stearinljus mer. Men den lyser i alla fall."
         ],
         slut: true, slutrad: "Vintern är över. Lyktan lyser litet, men den lyser."
       },
@@ -993,10 +993,10 @@ window.AVENTYR = [
       slut_bara: {
         bild: "torg|sommar", figur: "greta",
         text: [
-          "Ni lyfter ner spegeln, lindar in den i filtar och bär den hela vägen hem. Den är tyngre för varje steg.\n\nI Mossby hänger ni upp den på torget, bredvid lyktstolpen, precis som på Gretas ritning.\n\nI samma stund de hänger bredvid varandra händer det. Lågan i lyktan växer och växer tills hela torget badar i ljus, och den vita ytan i spegeln blir klar och visar torget, husen och er.\n\nDet blir varmt. Snön på taken rinner bort på en kvart.",
+          "Ni lyfter ner spegeln, lindar in den i filtar och bär den hela vägen hem. Den är tung.\n\nI Mossby hänger ni upp den på torget, bredvid lyktstolpen, precis som på Gretas ritning.\n\nI samma stund de hänger bredvid varandra händer det. Lågan i lyktan växer och växer tills hela torget badar i ljus, och den vita ytan i spegeln blir klar och visar torget, husen och er i sin spegelbild.\n\nDet blir varmt. Snön på taken rinner bort.",
           { om: "byborna_burna", text: "De tre som sov vaknar samma kväll, och den enda de minns är att någon bar dem." },
           { inteOm: "byborna_burna", text: "Ni får gå tillbaka till kullen dagen efter och hämta de tre som sov. De vaknar så fort de kommer in i ljuset på torget." },
-          "Greta är tyst länge. Sedan säger hon det ingen annan vågar säga:\n\n– Hon är kvar därinne. Hon tittar på oss.\n\nOch sent på kvällen, när alla har gått hem, kan man se det: långt inne i spegeln står en kvinna i gammaldags klänning, mitt på ett torg som ser precis ut som Mossbys. Hon rör sig inte. Hon väntar bara.",
+          "Greta är tyst länge. Sedan säger hon det ingen annan vågar säga:\n\n– Hon är kvar därinne. Hon tittar ut på oss.\n\nOch sent på kvällen, när alla har gått hem, kan man se det: långt inne i spegeln står en kvinna i gammaldags klänning, mitt på ett torg som ser precis ut som Mossbys. Hon rör sig inte. Hon väntar bara.",
           { om: "barnet_hjalpte", text: "Bredvid henne, längst in i spegeln, syns en liten flicka i nattlinne. Hon håller sin mamma i handen. Hon ser inte ledsen ut." }
         ],
         slut: true, slutrad: "Lyktan lyser starkare än någonsin. Men någon tittar tillbaka ur spegeln."
