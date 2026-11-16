@@ -678,9 +678,8 @@ window.AVENTYR = [
           { text: "Gå ut i glashuset", rum: "vintertradgarden", till: "vintertradgarden" },
           { text: "Gå upp i tornet", rum: "klocktornet", till: "klocktornet" },
           { text: "Gå upp till barnkammaren", rum: "barnkammaren", till: "barnkammaren" },
-          { text: "Gå ner för trappan bakom trappan", krav: { flagga: "vet_spegeln" }, till: "trappan" },
-          { text: "Leta efter vägen neråt", krav: { inteFlagga: "vet_spegeln" }, info: "Ni vet inte var spegeln hänger än", utfall: {
-              text: "Ni letar i hallen men hittar bara en skrubb full av paraplyer. Någon i det här huset måste ha skrivit ner var spegeln finns.", till: "hallen" } }
+          // syns först när något i rummen har avslöjat var spegeln hänger
+          { text: "Gå ner för trappan bakom trappan", krav: { flagga: "vet_spegeln" }, till: "trappan" }
         ]
       },
 
