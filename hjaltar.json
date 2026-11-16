@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:28:51.570Z",
+  "uppdaterad": "2026-11-16T19:28:55.971Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -185,7 +185,7 @@
     }
   },
   "aventyr": {
-    "guld": 3241,
+    "guld": 3468,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857329432,
+    "tid": 1794857333962,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -321,7 +321,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "fallen",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -462,6 +462,10 @@
           {
             "t": "Ett torrt skrapande ljud fyller salen. Det är Obsidiangolemen!",
             "k": "bad"
+          },
+          {
+            "t": "Sällskapet har fallit.",
+            "k": "sep"
           }
         ],
         "party": [
@@ -486,97 +490,24 @@
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
         "sovareKap": 1,
         "bossFaktor": 1.2727272727272727,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Obsidiangolemen",
-                "baraBoss": true,
-                "liv": 104,
-                "rustning": 19,
-                "anfall": 8,
-                "skada": "2d8+3",
-                "xp": 1100,
-                "platser": [
-                  "vulkanen",
-                  "oknen"
-                ],
-                "flyr": "spricker i tusen svarta skärvor.",
-                "typ": "golem",
-                "bild": "golem",
-                "max": 143,
-                "ute": false,
-                "boss": true
-              }
-            ],
-            "run": true,
-            "boss": true,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|oknen|1|6|boss|boss",
-          "fiender": [
-            {
-              "namn": "Obsidiangolemen",
-              "baraBoss": true,
-              "liv": 104,
-              "rustning": 19,
-              "anfall": 8,
-              "skada": "2d8+3",
-              "xp": 1100,
-              "platser": [
-                "vulkanen",
-                "oknen"
-              ],
-              "flyr": "spricker i tusen svarta skärvor.",
-              "typ": "golem",
-              "bild": "golem",
-              "max": 143,
-              "ute": false,
-              "boss": true
-            }
-          ],
-          "anvant": {
-            "tomas": {
-              "frostblixt": true,
-              "eldklot": true,
-              "magisk_pil": true
-            },
-            "svante": {
-              "kraftslag": true,
-              "dubbelhugg": true,
-              "virvelhugg": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 9,
-          "ko": [
-            {
-              "f": 0
-            },
-            {
-              "h": "svante"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 19.1,
-            "h:svante": 3.1,
-            "f:0": 9
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "hemGuld": 227
       }
     ],
     "aktivRun": "rmwjna04zb7rf",
     "historik": [
+      {
+        "plats": "oknen",
+        "kapitel": 1,
+        "djup": 6,
+        "utfall": "fallen",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 7)",
+          "Svante (nivå 6)"
+        ],
+        "ara": 1350,
+        "datum": "2026-11-16"
+      },
       {
         "plats": "oknen",
         "kapitel": 1,
@@ -847,20 +778,6 @@
         ],
         "ara": 1125,
         "datum": "2026-10-30"
-      },
-      {
-        "plats": "vulkanen",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-29"
       }
     ],
     "lager": {
