@@ -838,7 +838,7 @@ window.AVENTYR = [
       },
 
       trappan: {
-        bild: "hall",
+        bild: "lonntrappan", figur: "levande_rustning",
         text: [
           "Bakom den stora trappan finns en dörr som är målad i samma färg som väggen. Den syns knappt.\n\nBakom den går en smal trappa rakt ner i mörkret. Kylan som kommer därifrån är inte som vanlig kyla. Den ilar i tänderna.\n\nI trappan, halvvägs ner, står en rustning i full mundering.",
           { om: "vet_rustningen", text: "Ritningen varnade för den här rustningen. Den är inte tom, stod det." }
@@ -861,7 +861,7 @@ window.AVENTYR = [
       },
 
       rustning_strid: {
-        bild: "hall",
+        bild: "lonntrappan",
         text: "Rustningen är tom inuti. Det syns rakt igenom visiret, och det finns ingen där. Ändå lyfter den svärdet med båda händerna.",
         strid: {
           fiender: ["levande_rustning"],
