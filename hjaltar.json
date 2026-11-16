@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:20:36.522Z",
+  "uppdaterad": "2026-11-16T19:20:44.317Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856834570,
+    "tid": 1794856842239,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -320,32 +320,17 @@
       {
         "plats": "oknen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon viskar.",
+            "ledtrad": "Det finns färskt blod på marken.",
             "typ": "resenar",
-            "kand": false
-          },
-          {
-            "ledtrad": "Sanden rinner ut genom dörröppningen, som ur ett timglas.",
-            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En vilsen trollkarlselev sitter och gråter. Hans trollstav är bruten.",
-            "vem": "eleven",
-            "ok": "Eleven ritar en karta i dammet. Nu vet ni vad som väntar.",
-            "nej": "Eleven skakar på huvudet och snörvlar.",
-            "dryck": "Eleven dricker och slutar gråta. Han berättar allt han har sett."
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -398,6 +383,10 @@
           {
             "t": "Eleven skakar på huvudet och snörvlar.",
             "k": "note"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -425,7 +414,7 @@
           "tomas": 24,
           "svante": 46
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmwjna04zb7rf",
