@@ -362,9 +362,9 @@ ol.howto{margin:0;padding-left:20px;font-size:.92rem;display:flex;flex-direction
 .pill:active{border-image-source:url("Ikoner%20till%20knappar/pill_ned.png")}
 .pill:disabled{border-image-source:url("Ikoner%20till%20knappar/pill_av.png");color:#cfcac0}
 /* kugghjulsknappen: ingen platta omkring, bara själva kugghjulet */
-.gear{width:56px;height:56px;border:0;border-radius:0;background:none;box-shadow:none;image-rendering:pixelated}
+.gear{width:56px;height:56px;border:0;border-radius:0;box-shadow:none;image-rendering:pixelated;
+ background:url("Ikoner%20till%20knappar/kugghjul.png") center/100% 100% no-repeat}
 .gear:active{transform:translateY(2px)}
-.gear svg{width:38px;height:38px}
 /* de små knapparna på hjältekorten: järn, och mässing på den valda */
 .card .row button{background:none;border:12px solid transparent;border-radius:0;
  border-image:url("Ikoner%20till%20knappar/litenknapp.png") 14 fill stretch;
@@ -1267,7 +1267,6 @@ function d20svg(){const s=el("div"); // tärningsloggan: en slipad guldtärning 
 function start(){
  view="start"; lage=null; uppdateraLiggande(); app.replaceChildren(); document.getElementById("party").hidden=true;
  const gear=el("button",{class:"gear","aria-label":"Inställningar",onclick:settings});
- gear.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#f2c14e" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/><circle cx="12" cy="12" r="6.5"/></svg>';
  app.append(el("header",{class:"hero"},el("div",{class:"titles"},el("div",{class:"titelrad"},logga(),el("h1",{},"Bland monster och tärningar")),el("p",{},"Ett rollspelsäventyr för hela familjen.")),gear));
  const ph=partyHeroes(),A=alla();
  // Hjältarna: alla hjältar står på byns torg, lika stor bild som de andra rutorna
