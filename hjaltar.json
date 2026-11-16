@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:24:10.466Z",
+  "uppdaterad": "2026-11-16T19:24:33.057Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857048275,
+    "tid": 1794857070986,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -472,7 +472,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -484,7 +483,7 @@
         "startGuld": 19,
         "liv": {
           "tomas": 12,
-          "svante": 37
+          "svante": 42
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
         "sovareKap": 1
