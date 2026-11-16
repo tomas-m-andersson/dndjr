@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:21:40.629Z",
+  "uppdaterad": "2026-11-16T19:22:14.488Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856898693,
+    "tid": 1794856932379,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -250,11 +250,11 @@
       },
       "svante": {
         "lvl": 6,
-        "xp": 6925
+        "xp": 7030
       },
       "tomas": {
         "lvl": 7,
-        "xp": 11014
+        "xp": 11119
       },
       "sally": {
         "lvl": 5,
@@ -342,7 +342,7 @@
         "lyssnat": true,
         "rum": {
           "typ": "sovare",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "sandvalnad",
             "sandvalnad"
@@ -428,6 +428,10 @@
           {
             "t": "Ni hör tunga andetag. två Sandvålnad sover precis där ni måste gå förbi.",
             "k": "note"
+          },
+          {
+            "t": "Svante leder er förbi utan ett ljud. Alla får 105 XP.",
+            "k": "hit"
           }
         ],
         "party": [
