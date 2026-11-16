@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:25:03.965Z",
+  "uppdaterad": "2026-11-16T19:25:27.068Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857101975,
+    "tid": 1794857125089,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -482,7 +482,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 26,
+          "tomas": 15,
           "svante": 42
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
@@ -539,16 +539,17 @@
               "boss": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "tomas": {
+              "frostblixt": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "tomas"
-            },
             {
               "f": 0
             },
