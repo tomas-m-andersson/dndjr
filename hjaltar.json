@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:22:44.404Z",
+  "uppdaterad": "2026-11-16T19:22:50.801Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856962435,
+    "tid": 1794856968771,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -464,7 +464,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 21,
+          "tomas": 12,
           "svante": 46
         },
         "dorrText": "Varje väg luktar olika. Det säger något om vad som väntar.",
@@ -566,9 +566,6 @@
           "runda": 1,
           "ko": [
             {
-              "f": 0
-            },
-            {
               "f": 1
             },
             {
@@ -586,7 +583,9 @@
             "f:0": 21,
             "f:1": 15
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
