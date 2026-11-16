@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:18:05.745Z",
+  "uppdaterad": "2026-11-16T19:18:37.904Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856683597,
+    "tid": 1794856715753,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -384,7 +384,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 35,
+          "tomas": 11,
           "svante": 46
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?",
@@ -393,7 +393,7 @@
             "fiender": [
               {
                 "namn": "Sandorm",
-                "liv": 10,
+                "liv": 1,
                 "rustning": 14,
                 "anfall": 6,
                 "skada": "1d10",
@@ -421,7 +421,7 @@
           "fiender": [
             {
               "namn": "Sandorm",
-              "liv": 10,
+              "liv": 1,
               "rustning": 14,
               "anfall": 6,
               "skada": "1d10",
@@ -439,12 +439,16 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "tomas": {
+              "magisk_pil": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
             {
               "f": 0
