@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:20:14.063Z",
+  "uppdaterad": "2026-11-16T19:20:36.522Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856811550,
+    "tid": 1794856834570,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -337,7 +337,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En vilsen trollkarlselev sitter och gråter. Hans trollstav är bruten.",
             "vem": "eleven",
@@ -394,6 +394,10 @@
           {
             "t": "En vilsen trollkarlselev sitter och gråter. Hans trollstav är bruten.",
             "k": ""
+          },
+          {
+            "t": "Eleven skakar på huvudet och snörvlar.",
+            "k": "note"
           }
         ],
         "party": [
