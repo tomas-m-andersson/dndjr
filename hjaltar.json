@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-15T22:14:26.379Z",
+  "uppdaterad": "2026-11-16T19:13:57.192Z",
   "egna": [],
   "sallskap": [
     "benjamin",
@@ -40,16 +40,20 @@
       }
     },
     "svante": {
+      "bildval": {
+        "helare|valsignad_hammare": -24,
+        "krigare|flammsvard": 60
+      },
+      "attacker": [
+        "kraftslag",
+        "dubbelhugg",
+        "virvelhugg"
+      ],
+      "vapen": "flammsvard",
       "folk": "manniska",
       "alder": 6,
       "skagg": false,
-      "attacker": [
-        "lakande_ord",
-        "helande_vag",
-        "valsignelse"
-      ],
-      "vapen": "valsignad_hammare",
-      "klass": "helare",
+      "klass": "krigare",
       "hud": 0,
       "har": 0,
       "stil": "kort",
@@ -63,10 +67,7 @@
         "vis": 13,
         "cha": 11
       },
-      "gosedjur": "",
-      "bildval": {
-        "helare|valsignad_hammare": -24
-      }
+      "gosedjur": ""
     },
     "tomas": {
       "folk": "manniska",
