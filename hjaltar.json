@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:15:23.613Z",
+  "uppdaterad": "2026-11-16T19:15:37.151Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -211,9 +211,9 @@
     ],
     "liv": {
       "ville": 45,
-      "svante": 39,
+      "svante": 46,
       "sally": 28,
-      "tomas": 52,
+      "tomas": 44,
       "linda": 18,
       "benjamin": 52
     },
@@ -234,57 +234,15 @@
         "nyttVapenId": "ormpiska"
       },
       "k2": {
-        "scen": "slut_krossa",
+        "scen": "start",
         "flaggor": [
-          "glod_fri",
-          "tittat_sovande",
-          "kant_lyktan",
-          "lyktkall",
-          "fragat_bo",
-          "vet_dimsater",
-          "rep",
-          "bulle_tinad",
-          "kikat",
-          "sett_huset",
-          "gravt",
-          "last_stenar",
-          "vet_barnet",
-          "runt_huset",
-          "vet_baksidan",
-          "last_dagbok",
-          "vet_spegeln",
-          "vet_valet",
-          "varmt_bok",
-          "har_sagobok",
-          "ringt_klockan",
-          "klockan_ringd",
-          "utsikt",
-          "halsat_tradgardsmastaren",
-          "har_nyckel",
-          "plockat_ros",
-          "har_ros",
-          "letat_krukor",
-          "smakat",
-          "letat_skafferiet",
-          "tant_spisen",
-          "vet_namnet",
-          "fragat_barnet",
-          "vet_historien",
-          "last_saga",
-          "barnet_hjalpte",
-          "lekt_med_flickan",
-          "vackt",
-          "vet_att_de_vaknar",
-          "ros_given"
+          "glod_fri"
         ],
-        "klar": true,
-        "v": 1,
-        "slut": "slut_krossa",
-        "nyttVapen": null,
-        "nyttVapenId": null
+        "klar": false,
+        "v": 1
       }
     },
-    "tid": 1794856521572,
+    "tid": 1794856535028,
     "niva": {
       "ville": {
         "lvl": 6,
