@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:25:56.870Z",
+  "uppdaterad": "2026-11-16T19:26:17.853Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857154866,
+    "tid": 1794857177831,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -471,7 +471,6 @@
         "guld": 474,
         "saker": [
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -482,7 +481,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 2,
+          "tomas": 7,
           "svante": 42
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
@@ -543,13 +542,16 @@
             "tomas": {
               "frostblixt": true,
               "eldklot": true
+            },
+            "svante": {
+              "kraftslag": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
             {
               "f": 0
