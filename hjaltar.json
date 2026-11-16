@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:15:18.817Z",
+  "uppdaterad": "2026-11-16T19:15:23.613Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -284,7 +284,7 @@
         "nyttVapenId": null
       }
     },
-    "tid": 1794776261806,
+    "tid": 1794856521572,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -358,142 +358,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "oknen",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
-        "dorrar": [
-          {
-            "ledtrad": "Ett tungt lås skramlar i draget.",
-            "typ": "vaktad",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett lågt morrande. Sedan tystnad.",
-            "typ": "strid",
-            "kand": false
-          }
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Benjamin (nivå 6)",
+          "Ville (nivå 6)",
+          "Tomas (nivå 7)",
+          "Sally (nivå 5)"
         ],
-        "lyssnat": false,
-        "rum": null,
-        "logg": [
-          {
-            "t": "Kapitel 1 · Den begravda staden",
-            "k": "sep"
-          },
-          {
-            "t": "Benjamin, Ville, Tomas och Sally kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Mitt i rummet sover tre Jätteskorpion. Ett öga verkar nästan öppet.",
-            "k": "note"
-          },
-          {
-            "t": "Sally leder er förbi utan ett ljud. Alla får 90 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Två Sandorm snarkar högt i ett hörn.",
-            "k": "note"
-          },
-          {
-            "t": "Ett snarkande ljud, ett mumlande. Men ni kommer förbi. Alla får 90 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "★ Tomas känner sig mäktigare. Nivå 7! +8 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Sovande monster",
-            "k": "sep"
-          },
-          {
-            "t": "Två Sandorm och Sandvålnad har somnat vid en slocknad eld. Ingen har märkt er. Än.",
-            "k": "note"
-          },
-          {
-            "t": "Sally visar vägen i skuggorna. Monstret sover vidare. Alla får 90 XP.",
-            "k": "hit"
-          },
-          {
-            "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Det är inte tomt här. tre Sandorm vänder sig mot er!",
-            "k": "bad"
-          },
-          {
-            "t": "Striden är över. Alla får 405 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          }
-        ],
-        "party": [
-          "benjamin",
-          "ville",
-          "tomas",
-          "sally"
-        ],
-        "guld": 46,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 1350,
-        "start": 1794776048196,
-        "nastaKand": false,
-        "id": "rmwibbhvo6hol",
-        "startGuld": 46,
-        "liv": {
-          "benjamin": 49,
-          "ville": 45,
-          "tomas": 60,
-          "sally": 16
-        },
-        "dorrText": "Ni tittar på varandra. Någon måste bestämma."
-      }
-    ],
-    "aktivRun": "rmwibbhvo6hol",
-    "historik": [
+        "datum": "2026-11-16"
+      },
       {
         "plats": "vulkanen",
         "kapitel": 1,
@@ -749,20 +631,6 @@
         ],
         "ara": 1125,
         "datum": "2026-10-30"
-      },
-      {
-        "plats": "vulkanen",
-        "kapitel": 1,
-        "djup": 1,
-        "utfall": "gav upp",
-        "hjaltar": [
-          "Ville (nivå 2)",
-          "Svante (nivå 2)",
-          "Tomas (nivå 2)",
-          "Sally (nivå 2)"
-        ],
-        "ara": 0,
-        "datum": "2026-10-29"
       },
       {
         "plats": "vulkanen",
