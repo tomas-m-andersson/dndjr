@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:21:25.910Z",
+  "uppdaterad": "2026-11-16T19:21:40.629Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856883932,
+    "tid": 1794856898693,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -321,7 +321,7 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det är alldeles för tyst.",
@@ -340,7 +340,14 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "sovare",
+          "klar": false,
+          "fiender": [
+            "sandvalnad",
+            "sandvalnad"
+          ]
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -413,6 +420,14 @@
           {
             "t": "Ni vadar vidare genom sanden som ligger i drivor mot väggarna.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Sovande monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni hör tunga andetag. två Sandvålnad sover precis där ni måste gå förbi.",
+            "k": "note"
           }
         ],
         "party": [
@@ -439,7 +454,8 @@
           "tomas": 24,
           "svante": 46
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
+        "sovareKap": 1
       }
     ],
     "aktivRun": "rmwjna04zb7rf",
