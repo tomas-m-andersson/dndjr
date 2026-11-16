@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:24:43.207Z",
+  "uppdaterad": "2026-11-16T19:25:03.965Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857081271,
+    "tid": 1794857101975,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -321,10 +321,19 @@
         "plats": "oknen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "golem"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Den begravda staden",
@@ -445,6 +454,14 @@
           {
             "t": "En port av sandsten med två stora stenlejon framför. Bakom den väntar stadens väktare.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Stadens väktare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett torrt skrapande ljud fyller salen. Det är Obsidiangolemen!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -469,7 +486,85 @@
           "svante": 42
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
-        "sovareKap": 1
+        "sovareKap": 1,
+        "bossFaktor": 1.2727272727272727,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Obsidiangolemen",
+                "baraBoss": true,
+                "liv": 143,
+                "rustning": 19,
+                "anfall": 8,
+                "skada": "2d8+3",
+                "xp": 1100,
+                "platser": [
+                  "vulkanen",
+                  "oknen"
+                ],
+                "flyr": "spricker i tusen svarta skärvor.",
+                "typ": "golem",
+                "bild": "golem",
+                "max": 143,
+                "ute": false,
+                "boss": true
+              }
+            ],
+            "run": true,
+            "boss": true,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|oknen|1|6|boss|boss",
+          "fiender": [
+            {
+              "namn": "Obsidiangolemen",
+              "baraBoss": true,
+              "liv": 143,
+              "rustning": 19,
+              "anfall": 8,
+              "skada": "2d8+3",
+              "xp": 1100,
+              "platser": [
+                "vulkanen",
+                "oknen"
+              ],
+              "flyr": "spricker i tusen svarta skärvor.",
+              "typ": "golem",
+              "bild": "golem",
+              "max": 143,
+              "ute": false,
+              "boss": true
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "svante"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 19.1,
+            "h:svante": 3.1,
+            "f:0": 9
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwjna04zb7rf",
