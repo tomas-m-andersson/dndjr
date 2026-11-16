@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:16:37.008Z",
+  "uppdaterad": "2026-11-16T19:16:42.563Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856594825,
+    "tid": 1794856600119,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -316,8 +316,65 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "oknen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "vaktad",
+            "kand": false
+          },
+          {
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Den begravda staden",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas och Svante kryper in genom en halvt igenfylld port. Innanför är det svalt, mörkt och alldeles tyst.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante"
+        ],
+        "guld": 19,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1794856600115,
+        "nastaKand": false,
+        "id": "rmwjna04zb7rf",
+        "startGuld": 19,
+        "liv": {
+          "tomas": 44,
+          "svante": 46
+        },
+        "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
+      }
+    ],
+    "aktivRun": "rmwjna04zb7rf",
     "historik": [
       {
         "plats": "oknen",
