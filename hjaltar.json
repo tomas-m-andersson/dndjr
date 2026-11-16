@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:28:28.981Z",
+  "uppdaterad": "2026-11-16T19:28:51.570Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794857307034,
+    "tid": 1794857329432,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -481,7 +481,7 @@
         "startGuld": 19,
         "liv": {
           "tomas": 0,
-          "svante": 13
+          "svante": 0
         },
         "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar stadens väktare.",
         "sovareKap": 1,
@@ -492,7 +492,7 @@
               {
                 "namn": "Obsidiangolemen",
                 "baraBoss": true,
-                "liv": 124,
+                "liv": 104,
                 "rustning": 19,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -520,7 +520,7 @@
             {
               "namn": "Obsidiangolemen",
               "baraBoss": true,
-              "liv": 124,
+              "liv": 104,
               "rustning": 19,
               "anfall": 8,
               "skada": "2d8+3",
@@ -553,7 +553,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 8,
+          "runda": 9,
           "ko": [
             {
               "f": 0
