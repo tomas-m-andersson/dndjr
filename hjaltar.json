@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:19:25.884Z",
+  "uppdaterad": "2026-11-16T19:19:31.512Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -242,7 +242,7 @@
         "v": 1
       }
     },
-    "tid": 1794856763925,
+    "tid": 1794856769499,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -404,7 +404,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -415,7 +414,7 @@
         "id": "rmwjna04zb7rf",
         "startGuld": 19,
         "liv": {
-          "tomas": 15,
+          "tomas": 24,
           "svante": 46
         },
         "dorrText": "Det är tyst. Alldeles för tyst. Vart går ni?"
