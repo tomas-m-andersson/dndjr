@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:34:33.094Z",
+  "uppdaterad": "2026-11-18T19:34:42.007Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030471132,
+    "tid": 1795030479961,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -322,20 +322,11 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "En liten bäck porlar mellan stenarna.",
-            "typ": "brunn",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "brunn",
-          "klar": true
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -448,6 +439,10 @@
           {
             "t": "Svante dricker och känner sig som ny. +0 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar skogens mörker.",
+            "k": ""
           }
         ],
         "party": [
@@ -485,7 +480,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
