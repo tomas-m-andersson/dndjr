@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:30:30.960Z",
+  "uppdaterad": "2026-11-18T19:30:34.268Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030229646,
+    "tid": 1795030232262,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -631,9 +631,6 @@
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "f": 2
-            },
             {
               "f": 0
             },
