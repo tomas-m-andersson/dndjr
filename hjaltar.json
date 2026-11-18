@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:27:26.023Z",
+  "uppdaterad": "2026-11-18T19:27:45.527Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030044065,
+    "tid": 1795030063528,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -323,7 +323,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör många små fötter som springer.",
@@ -337,7 +337,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "tal",
+            "alla": true,
+            "varn": "Svampar sprutar ut gula sporer!",
+            "ok": "håller andan",
+            "traff": "nyser och får klåda"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -362,6 +372,14 @@
           {
             "t": "Ni går djupare in.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Svampar sprutar ut gula sporer!",
+            "k": "bad"
           }
         ],
         "party": [
