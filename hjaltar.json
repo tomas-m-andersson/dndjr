@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:26:39.303Z",
+  "uppdaterad": "2026-11-18T19:26:56.770Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795029997173,
+    "tid": 1795030014825,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -323,7 +323,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det finns färskt blod på marken.",
@@ -337,7 +337,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "brunn",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -345,6 +348,14 @@
           },
           {
             "t": "Månen försvinner bakom molnen när Tomas, Svante, Ville och Sally går in i Mörkskogen. Det enda som hörs är era steg.",
+            "k": ""
+          },
+          {
+            "t": "Rum 1 · Brunn",
+            "k": "sep"
+          },
+          {
+            "t": "En gammal brunn. Vattnet är mörkt och stilla.",
             "k": ""
           }
         ],
