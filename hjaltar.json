@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:33:24.400Z",
+  "uppdaterad": "2026-11-18T19:33:49.478Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030402208,
+    "tid": 1795030427455,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -339,7 +339,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -440,6 +440,18 @@
           {
             "t": "Kistan som de vaktade står öppen.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 367 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -448,7 +460,7 @@
           "ville",
           "svante"
         ],
-        "guld": 56,
+        "guld": 423,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -460,7 +472,9 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck"
+          "Läkedryck",
+          "Stor läkedryck",
+          "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
