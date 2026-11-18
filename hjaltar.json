@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:28:53.600Z",
+  "uppdaterad": "2026-11-18T19:29:42.686Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,23 +244,23 @@
         "v": 1
       }
     },
-    "tid": 1795030131488,
+    "tid": 1795030180546,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 9069
+        "xp": 9084
       },
       "svante": {
         "lvl": 6,
-        "xp": 7780
+        "xp": 7795
       },
       "tomas": {
         "lvl": 7,
-        "xp": 11869
+        "xp": 11884
       },
       "sally": {
         "lvl": 5,
-        "xp": 4674
+        "xp": 4689
       },
       "benjamin": {
         "lvl": 6,
@@ -323,7 +323,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Spindelväv täcker öppningen.",
@@ -344,7 +344,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "svampman"
           ],
@@ -410,6 +410,10 @@
           {
             "t": "Ni har knappt kommit in förrän en svampman anfaller!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 15 XP.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -434,7 +438,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 50,
         "start": 1795029964410,
         "nastaKand": false,
         "id": "rmwmihsvuvimg",
@@ -445,94 +449,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Svampar lyser svagt längs en av stigarna. De andra är helt mörka.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Svampman",
-                "liv": 12,
-                "rustning": 11,
-                "anfall": 4,
-                "skada": "1d6",
-                "xp": 50,
-                "platser": [
-                  "grottorna",
-                  "skogen"
-                ],
-                "flyr": "sjunker ihop i ett moln av sporer.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "svampman",
-                "bild": "svampman",
-                "max": 12,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|skogen|1|3|rum|strid",
-          "fiender": [
-            {
-              "namn": "Svampman",
-              "liv": 12,
-              "rustning": 11,
-              "anfall": 4,
-              "skada": "1d6",
-              "xp": 50,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "sjunker ihop i ett moln av sporer.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "svampman",
-              "bild": "svampman",
-              "max": 12,
-              "ute": false
-            }
-          ],
-          "anvant": {},
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "sally"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 15.1,
-            "h:sally": 23.1,
-            "h:ville": 4.1,
-            "h:svante": 9.1,
-            "f:0": 3
-          },
-          "nu": null
-        }
+        "dorrText": "Svampar lyser svagt längs en av stigarna. De andra är helt mörka."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
