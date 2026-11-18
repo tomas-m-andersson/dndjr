@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:25:48.060Z",
+  "uppdaterad": "2026-11-18T19:26:06.488Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1794857340315,
+    "tid": 1795029964411,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -318,8 +318,73 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "skogen",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Det finns färskt blod på marken.",
+            "typ": "resenar",
+            "kand": false
+          },
+          {
+            "ledtrad": "Lysande svampar växer i en ring.",
+            "typ": "brunn",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Mörkskogen",
+            "k": "sep"
+          },
+          {
+            "t": "Månen försvinner bakom molnen när Tomas, Svante, Ville och Sally går in i Mörkskogen. Det enda som hörs är era steg.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante",
+          "ville",
+          "sally"
+        ],
+        "guld": 56,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1795029964410,
+        "nastaKand": false,
+        "id": "rmwmihsvuvimg",
+        "startGuld": 56,
+        "liv": {
+          "tomas": 44,
+          "svante": 46,
+          "ville": 45,
+          "sally": 28
+        },
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+      }
+    ],
+    "aktivRun": "rmwmihsvuvimg",
     "historik": [
       {
         "plats": "oknen",
