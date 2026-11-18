@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:30:02.006Z",
+  "uppdaterad": "2026-11-18T19:30:30.960Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030199935,
+    "tid": 1795030229646,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -465,7 +465,7 @@
             "fiender": [
               {
                 "namn": "Jättespindel 1",
-                "liv": 20,
+                "liv": 12,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -481,11 +481,15 @@
                 "typ": "spindel",
                 "bild": "spindel",
                 "max": 20,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               },
               {
                 "namn": "Jättespindel 2",
-                "liv": 20,
+                "liv": 14,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -501,11 +505,15 @@
                 "typ": "spindel",
                 "bild": "spindel",
                 "max": 20,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               },
               {
                 "namn": "Jättespindel 3",
-                "liv": 20,
+                "liv": 5,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -521,7 +529,11 @@
                 "typ": "spindel",
                 "bild": "spindel",
                 "max": 20,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -534,7 +546,7 @@
           "fiender": [
             {
               "namn": "Jättespindel 1",
-              "liv": 20,
+              "liv": 12,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -550,11 +562,15 @@
               "typ": "spindel",
               "bild": "spindel",
               "max": 20,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             },
             {
               "namn": "Jättespindel 2",
-              "liv": 20,
+              "liv": 14,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -570,11 +586,15 @@
               "typ": "spindel",
               "bild": "spindel",
               "max": 20,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             },
             {
               "namn": "Jättespindel 3",
-              "liv": 20,
+              "liv": 5,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -590,25 +610,27 @@
               "typ": "spindel",
               "bild": "spindel",
               "max": 20,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "g_blackmoln": true
+            },
+            "tomas": {
+              "eldklot": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            },
-            {
-              "f": 1
-            },
             {
               "f": 2
             },
@@ -633,7 +655,9 @@
             "f:1": 14,
             "f:2": 14
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
