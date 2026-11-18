@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:28:16.980Z",
+  "uppdaterad": "2026-11-18T19:28:27.473Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030094861,
+    "tid": 1795030105543,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -322,32 +322,27 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör många små fötter som springer.",
-            "typ": "skatt",
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Lysande svampar växer i en ring.",
-            "typ": "falla",
+            "ledtrad": "Någon har ristat en varning här.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det är alldeles för tyst.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "tal",
-            "alla": true,
-            "varn": "Svampar sprutar ut gula sporer!",
-            "ok": "håller andan",
-            "traff": "nyser och får klåda"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -396,6 +391,10 @@
           {
             "t": "Svante håller andan!",
             "k": "hit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -431,7 +430,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
+        "dorrText": "Svampar lyser svagt längs en av stigarna. De andra är helt mörka."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
