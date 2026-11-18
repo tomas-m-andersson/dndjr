@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:26:06.488Z",
+  "uppdaterad": "2026-11-18T19:26:39.303Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795029964411,
+    "tid": 1795029997173,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -350,9 +350,9 @@
         ],
         "party": [
           "tomas",
-          "svante",
+          "sally",
           "ville",
-          "sally"
+          "svante"
         ],
         "guld": 56,
         "saker": [
