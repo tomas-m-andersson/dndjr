@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:27:45.527Z",
+  "uppdaterad": "2026-11-18T19:28:16.980Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030063528,
+    "tid": 1795030094861,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -339,7 +339,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "tal",
             "alla": true,
@@ -380,6 +380,22 @@
           {
             "t": "Svampar sprutar ut gula sporer!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas nyser och får klåda: 7 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Sally håller andan!",
+            "k": "hit"
+          },
+          {
+            "t": "Ville nyser och får klåda: 6 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Svante håller andan!",
+            "k": "hit"
           }
         ],
         "party": [
@@ -410,9 +426,9 @@
         "id": "rmwmihsvuvimg",
         "startGuld": 56,
         "liv": {
-          "tomas": 44,
+          "tomas": 37,
           "svante": 46,
-          "ville": 45,
+          "ville": 39,
           "sally": 28
         },
         "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
