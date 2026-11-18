@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:31:43.076Z",
+  "uppdaterad": "2026-11-18T19:32:39.822Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030301108,
+    "tid": 1795030357721,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -465,7 +465,7 @@
             "fiender": [
               {
                 "namn": "Jättespindel 1",
-                "liv": 8,
+                "liv": 5,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -482,14 +482,11 @@
                 "bild": "spindel",
                 "max": 20,
                 "ute": false,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "svag": null
               },
               {
                 "namn": "Jättespindel 2",
-                "liv": 10,
+                "liv": 1,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -508,12 +505,12 @@
                 "ute": false,
                 "svag": {
                   "n": 2,
-                  "rundor": 99
+                  "rundor": 98
                 }
               },
               {
                 "namn": "Jättespindel 3",
-                "liv": 5,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -529,11 +526,8 @@
                 "typ": "spindel",
                 "bild": "spindel",
                 "max": 20,
-                "ute": false,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "ute": true,
+                "svag": null
               }
             ],
             "run": true,
@@ -546,7 +540,7 @@
           "fiender": [
             {
               "namn": "Jättespindel 1",
-              "liv": 8,
+              "liv": 5,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -563,14 +557,11 @@
               "bild": "spindel",
               "max": 20,
               "ute": false,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "svag": null
             },
             {
               "namn": "Jättespindel 2",
-              "liv": 10,
+              "liv": 1,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -589,12 +580,12 @@
               "ute": false,
               "svag": {
                 "n": 2,
-                "rundor": 99
+                "rundor": 98
               }
             },
             {
               "namn": "Jättespindel 3",
-              "liv": 5,
+              "liv": 0,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -610,11 +601,8 @@
               "typ": "spindel",
               "bild": "spindel",
               "max": 20,
-              "ute": false,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "ute": true,
+              "svag": null
             }
           ],
           "anvant": {
@@ -623,7 +611,8 @@
             },
             "tomas": {
               "eldklot": true,
-              "frostblixt": true
+              "frostblixt": true,
+              "magisk_pil": true
             },
             "svante": {
               "kraftslag": true
@@ -636,8 +625,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "f": 2
+            },
             {
               "f": 0
             },
