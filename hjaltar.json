@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:29:42.686Z",
+  "uppdaterad": "2026-11-18T19:29:46.667Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030180546,
+    "tid": 1795030184651,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -322,34 +322,22 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "strid",
-            "kand": false
-          },
-          {
             "ledtrad": "Någon har ristat en varning här.",
-            "typ": "strid",
+            "typ": "vaktad",
             "kand": false
           },
           {
-            "ledtrad": "Det är alldeles för tyst.",
-            "typ": "altare",
+            "ledtrad": "Det luktar tall och brasa.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "svampman"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -414,6 +402,10 @@
           {
             "t": "Striden är över. Alla får 15 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -449,7 +441,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Svampar lyser svagt längs en av stigarna. De andra är helt mörka."
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
