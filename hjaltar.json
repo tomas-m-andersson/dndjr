@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:42:32.855Z",
+  "uppdaterad": "2026-11-18T19:42:57.502Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,23 +244,23 @@
         "v": 1
       }
     },
-    "tid": 1795030950598,
+    "tid": 1795030975481,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 9264
+        "xp": 9789
       },
       "svante": {
         "lvl": 6,
-        "xp": 7975
+        "xp": 8500
       },
       "tomas": {
         "lvl": 7,
-        "xp": 12064
+        "xp": 12589
       },
       "sally": {
         "lvl": 5,
-        "xp": 4869
+        "xp": 5394
       },
       "benjamin": {
         "lvl": 6,
@@ -309,7 +309,7 @@
         "acb": 2
       },
       "sally": {
-        "wb": 1,
+        "wb": 2,
         "acb": 2
       },
       "linda": {
@@ -323,7 +323,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "strid",
+        "fas": "vann",
         "dorrar": null,
         "lyssnat": false,
         "rum": {
@@ -460,6 +460,30 @@
           {
             "t": "Alla fåglar flyger iväg på en gång. Sedan kommer Trädväktaren.",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 345 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Ni hittar 333 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 180 XP.",
+            "k": "magic"
+          },
+          {
+            "t": "Sally får ett magiskt vapen: +2 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Ni hittar en stor läkedryck.",
+            "k": "heal"
+          },
+          {
+            "t": "Det är över. Skogens mörker är besegrad!",
+            "k": "crit"
           }
         ],
         "party": [
@@ -468,7 +492,7 @@
           "ville",
           "svante"
         ],
-        "guld": 423,
+        "guld": 756,
         "saker": [
           "Läkedryck",
           "Läkedryck",
@@ -481,11 +505,12 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
+          "Stor läkedryck",
           "Stor läkedryck"
         ],
         "bless": {},
         "curse": {},
-        "ara": 650,
+        "ara": 1800,
         "start": 1795029964410,
         "nastaKand": false,
         "id": "rmwmihsvuvimg",
@@ -494,164 +519,10 @@
           "tomas": 26,
           "svante": 46,
           "ville": 39,
-          "sally": 9
+          "sally": 7
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker.",
-        "bossFaktor": 1.3,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Trädväktaren",
-                "baraBoss": true,
-                "liv": 6,
-                "rustning": 16,
-                "anfall": 8,
-                "skada": "2d8+4",
-                "xp": 1100,
-                "platser": [
-                  "skogen"
-                ],
-                "flyr": "sjunker ner i marken och slår rot.",
-                "egen": {
-                  "regen": 6
-                },
-                "typ": "ent",
-                "bild": "ent",
-                "max": 166,
-                "ute": false,
-                "boss": true,
-                "svag": {
-                  "n": 2,
-                  "rundor": 94
-                },
-                "bedovad": 0,
-                "hjalpKallad": true
-              }
-            ],
-            "run": true,
-            "boss": true,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|skogen|1|6|boss|boss",
-          "fiender": [
-            {
-              "namn": "Trädväktaren",
-              "baraBoss": true,
-              "liv": 6,
-              "rustning": 16,
-              "anfall": 8,
-              "skada": "2d8+4",
-              "xp": 1100,
-              "platser": [
-                "skogen"
-              ],
-              "flyr": "sjunker ner i marken och slår rot.",
-              "egen": {
-                "regen": 6
-              },
-              "typ": "ent",
-              "bild": "ent",
-              "max": 166,
-              "ute": false,
-              "boss": true,
-              "svag": {
-                "n": 2,
-                "rundor": 94
-              },
-              "bedovad": 0,
-              "hjalpKallad": true
-            },
-            {
-              "namn": "Svampman",
-              "liv": 0,
-              "rustning": 11,
-              "anfall": 4,
-              "skada": "1d6",
-              "xp": 50,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "sjunker ihop i ett moln av sporer.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "svampman",
-              "bild": "svampman",
-              "max": 12,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "ville": {
-              "g_blackmoln": true,
-              "smygattack": true,
-              "tryckpunkt": true,
-              "shuriken": true
-            },
-            "sally": {
-              "hoppa_ansiktet": true,
-              "klosattack": true,
-              "frasa": true
-            },
-            "svante": {
-              "dubbelhugg": true,
-              "virvelhugg": true,
-              "kraftslag": true
-            },
-            "tomas": {
-              "eldklot": true,
-              "frostblixt": true,
-              "magisk_pil": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 10,
-          "ko": [
-            {
-              "f": 0
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 1
-            },
-            {
-              "h": "sally"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "tomas"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 6.1,
-            "h:sally": 10.1,
-            "h:ville": 18.1,
-            "h:svante": 8.1,
-            "f:0": 22,
-            "f:1": 18
-          },
-          "nu": null,
-          "giftH": {
-            "sally": {
-              "expr": "1d4",
-              "rundor": 1
-            }
-          },
-          "bedovH": {}
-        }
+        "bossFaktor": 1.3
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
@@ -962,7 +833,8 @@
         "golem": 1,
         "sandkungen": 1,
         "jattemask": 1,
-        "eldklo": 1
+        "eldklo": 1,
+        "ent": 1
       }
     }
   }
