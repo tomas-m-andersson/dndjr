@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:32:43.190Z",
+  "uppdaterad": "2026-11-18T19:33:24.400Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,23 +244,23 @@
         "v": 1
       }
     },
-    "tid": 1795030362564,
+    "tid": 1795030402208,
     "niva": {
       "ville": {
         "lvl": 6,
-        "xp": 9084
+        "xp": 9264
       },
       "svante": {
         "lvl": 6,
-        "xp": 7795
+        "xp": 7975
       },
       "tomas": {
         "lvl": 7,
-        "xp": 11884
+        "xp": 12064
       },
       "sally": {
         "lvl": 5,
-        "xp": 4689
+        "xp": 4869
       },
       "benjamin": {
         "lvl": 6,
@@ -323,7 +323,7 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon har ristat en varning här.",
@@ -338,15 +338,23 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "spindel",
-            "spindel",
-            "spindel"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "367 guldmynt",
+              "v": 367
+            },
+            {
+              "k": "sak",
+              "n": "Stor läkedryck"
+            },
+            {
+              "k": "sak",
+              "n": "Stor läkedryck"
+            }
+          ]
         },
         "logg": [
           {
@@ -424,6 +432,14 @@
           {
             "t": "Bakom en hög med ben står en kista. Men något vaktar den: tre jättespindlar.",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 180 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Kistan som de vaktade står öppen.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -448,7 +464,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 50,
+        "ara": 650,
         "start": 1795029964410,
         "nastaKand": false,
         "id": "rmwmihsvuvimg",
@@ -459,196 +475,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Jättespindel 1",
-                "liv": 5,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d8+3",
-                "xp": 200,
-                "platser": [
-                  "grottorna",
-                  "skogen"
-                ],
-                "flyr": "kryper ihop och slutar röra sig.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "spindel",
-                "bild": "spindel",
-                "max": 20,
-                "ute": false,
-                "svag": null
-              },
-              {
-                "namn": "Jättespindel 2",
-                "liv": 1,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d8+3",
-                "xp": 200,
-                "platser": [
-                  "grottorna",
-                  "skogen"
-                ],
-                "flyr": "kryper ihop och slutar röra sig.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "spindel",
-                "bild": "spindel",
-                "max": 20,
-                "ute": false,
-                "svag": {
-                  "n": 2,
-                  "rundor": 98
-                }
-              },
-              {
-                "namn": "Jättespindel 3",
-                "liv": 0,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d8+3",
-                "xp": 200,
-                "platser": [
-                  "grottorna",
-                  "skogen"
-                ],
-                "flyr": "kryper ihop och slutar röra sig.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "spindel",
-                "bild": "spindel",
-                "max": 20,
-                "ute": true,
-                "svag": null
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|skogen|1|4|rum|vaktad",
-          "fiender": [
-            {
-              "namn": "Jättespindel 1",
-              "liv": 5,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d8+3",
-              "xp": 200,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "spindel",
-              "bild": "spindel",
-              "max": 20,
-              "ute": false,
-              "svag": null
-            },
-            {
-              "namn": "Jättespindel 2",
-              "liv": 1,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d8+3",
-              "xp": 200,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "spindel",
-              "bild": "spindel",
-              "max": 20,
-              "ute": false,
-              "svag": {
-                "n": 2,
-                "rundor": 98
-              }
-            },
-            {
-              "namn": "Jättespindel 3",
-              "liv": 0,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d8+3",
-              "xp": 200,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "spindel",
-              "bild": "spindel",
-              "max": 20,
-              "ute": true,
-              "svag": null
-            }
-          ],
-          "anvant": {
-            "ville": {
-              "g_blackmoln": true
-            },
-            "tomas": {
-              "eldklot": true,
-              "frostblixt": true,
-              "magisk_pil": true
-            },
-            "svante": {
-              "kraftslag": true
-            },
-            "sally": {
-              "frasa": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 3,
-          "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "sally"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 17.1,
-            "h:sally": 5.1,
-            "h:ville": 21.1,
-            "h:svante": 7.1,
-            "f:0": 13,
-            "f:1": 14,
-            "f:2": 14
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
