@@ -1,11 +1,12 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-16T19:29:02.477Z",
+  "uppdaterad": "2026-11-18T19:25:33.353Z",
   "egna": [],
   "sallskap": [
     "tomas",
-    "svante"
+    "svante",
+    "ville"
   ],
   "grundandringar": {
     "ville": {
@@ -38,19 +39,15 @@
       }
     },
     "svante": {
-      "bildval": {
-        "helare|valsignad_hammare": -24,
-        "krigare|flammsvard": 60
-      },
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "attacker": [
         "kraftslag",
         "dubbelhugg",
         "virvelhugg"
       ],
       "vapen": "flammsvard",
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "klass": "krigare",
       "hud": 0,
       "har": 0,
@@ -65,22 +62,22 @@
         "vis": 13,
         "cha": 11
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "helare|valsignad_hammare": -24,
+        "krigare|flammsvard": 60
+      }
     },
     "tomas": {
-      "bildval": {
-        "krigare|drakdrapare": 39,
-        "magiker|isstav": 61
-      },
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "magisk_pil",
         "eldklot",
         "frostblixt"
       ],
       "vapen": "isstav",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "magiker",
       "hud": 0,
       "har": 2,
@@ -95,7 +92,11 @@
         "vis": 16,
         "cha": 13
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "krigare|drakdrapare": 39,
+        "magiker|isstav": 61
+      }
     },
     "linda": {
       "folk": "manniska",
