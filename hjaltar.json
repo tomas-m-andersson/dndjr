@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:41:59.816Z",
+  "uppdaterad": "2026-11-18T19:42:32.855Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030917704,
+    "tid": 1795030950598,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -494,7 +494,7 @@
           "tomas": 26,
           "svante": 46,
           "ville": 39,
-          "sally": 11
+          "sally": 9
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker.",
         "bossFaktor": 1.3,
@@ -504,7 +504,7 @@
               {
                 "namn": "Trädväktaren",
                 "baraBoss": true,
-                "liv": 14,
+                "liv": 6,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -523,7 +523,7 @@
                 "boss": true,
                 "svag": {
                   "n": 2,
-                  "rundor": 95
+                  "rundor": 94
                 },
                 "bedovad": 0,
                 "hjalpKallad": true
@@ -540,7 +540,7 @@
             {
               "namn": "Trädväktaren",
               "baraBoss": true,
-              "liv": 14,
+              "liv": 6,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+4",
@@ -559,7 +559,7 @@
               "boss": true,
               "svag": {
                 "n": 2,
-                "rundor": 95
+                "rundor": 94
               },
               "bedovad": 0,
               "hjalpKallad": true
@@ -612,7 +612,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 9,
+          "runda": 10,
           "ko": [
             {
               "f": 0
@@ -647,7 +647,7 @@
           "giftH": {
             "sally": {
               "expr": "1d4",
-              "rundor": 2
+              "rundor": 1
             }
           },
           "bedovH": {}
