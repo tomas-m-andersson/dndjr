@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:34:15.899Z",
+  "uppdaterad": "2026-11-18T19:34:33.094Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030453942,
+    "tid": 1795030471132,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -334,7 +334,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "brunn",
-          "klar": false
+          "klar": true
         },
         "logg": [
           {
@@ -444,6 +444,10 @@
           {
             "t": "En fontän med en stenfisk i mitten. Vattnet rinner ur dess mun.",
             "k": ""
+          },
+          {
+            "t": "Svante dricker och känner sig som ny. +0 liv.",
+            "k": "heal"
           }
         ],
         "party": [
