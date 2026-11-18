@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:41:15.959Z",
+  "uppdaterad": "2026-11-18T19:41:27.591Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030873916,
+    "tid": 1795030885602,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -504,7 +504,7 @@
               {
                 "namn": "Trädväktaren",
                 "baraBoss": true,
-                "liv": 41,
+                "liv": 35,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -540,7 +540,7 @@
             {
               "namn": "Trädväktaren",
               "baraBoss": true,
-              "liv": 41,
+              "liv": 35,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+4",
@@ -614,12 +614,6 @@
           "locka": null,
           "runda": 8,
           "ko": [
-            {
-              "f": 0
-            },
-            {
-              "h": "ville"
-            },
             {
               "f": 1
             },
