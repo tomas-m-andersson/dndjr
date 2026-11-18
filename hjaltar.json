@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:38:57.862Z",
+  "uppdaterad": "2026-11-18T19:39:37.649Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030735670,
+    "tid": 1795030775336,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -492,7 +492,7 @@
         "id": "rmwmihsvuvimg",
         "startGuld": 56,
         "liv": {
-          "tomas": 37,
+          "tomas": 26,
           "svante": 46,
           "ville": 39,
           "sally": 13
@@ -505,7 +505,7 @@
               {
                 "namn": "Trädväktaren",
                 "baraBoss": true,
-                "liv": 84,
+                "liv": 72,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -524,7 +524,7 @@
                 "boss": true,
                 "svag": {
                   "n": 2,
-                  "rundor": 96
+                  "rundor": 98
                 },
                 "bedovad": 0
               }
@@ -540,7 +540,7 @@
             {
               "namn": "Trädväktaren",
               "baraBoss": true,
-              "liv": 84,
+              "liv": 72,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+4",
@@ -559,7 +559,7 @@
               "boss": true,
               "svag": {
                 "n": 2,
-                "rundor": 96
+                "rundor": 98
               },
               "bedovad": 0
             }
@@ -573,7 +573,8 @@
             },
             "sally": {
               "hoppa_ansiktet": true,
-              "klosattack": true
+              "klosattack": true,
+              "frasa": true
             },
             "svante": {
               "dubbelhugg": true,
@@ -589,7 +590,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 5,
+          "runda": 6,
           "ko": [
             {
               "f": 0
