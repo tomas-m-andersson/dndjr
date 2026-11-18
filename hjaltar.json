@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:34:42.007Z",
+  "uppdaterad": "2026-11-18T19:34:57.301Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030479961,
+    "tid": 1795030495325,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -323,10 +323,19 @@
         "plats": "skogen",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "ent"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -443,6 +452,14 @@
           {
             "t": "Väggarna är täckta av klösmärken. Någonstans här inne väntar skogens mörker.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Skogens mörker",
+            "k": "sep"
+          },
+          {
+            "t": "Alla fåglar flyger iväg på en gång. Sedan kommer Trädväktaren.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -478,9 +495,99 @@
           "tomas": 37,
           "svante": 46,
           "ville": 39,
-          "sally": 28
+          "sally": 13
         },
-        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker."
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker.",
+        "bossFaktor": 1.3,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Trädväktaren",
+                "baraBoss": true,
+                "liv": 166,
+                "rustning": 16,
+                "anfall": 8,
+                "skada": "2d8+4",
+                "xp": 1100,
+                "platser": [
+                  "skogen"
+                ],
+                "flyr": "sjunker ner i marken och slår rot.",
+                "egen": {
+                  "regen": 6
+                },
+                "typ": "ent",
+                "bild": "ent",
+                "max": 166,
+                "ute": false,
+                "boss": true
+              }
+            ],
+            "run": true,
+            "boss": true,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|skogen|1|6|boss|boss",
+          "fiender": [
+            {
+              "namn": "Trädväktaren",
+              "baraBoss": true,
+              "liv": 166,
+              "rustning": 16,
+              "anfall": 8,
+              "skada": "2d8+4",
+              "xp": 1100,
+              "platser": [
+                "skogen"
+              ],
+              "flyr": "sjunker ner i marken och slår rot.",
+              "egen": {
+                "regen": 6
+              },
+              "typ": "ent",
+              "bild": "ent",
+              "max": 166,
+              "ute": false,
+              "boss": true
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 6.1,
+            "h:sally": 10.1,
+            "h:ville": 18.1,
+            "h:svante": 8.1,
+            "f:0": 22
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
