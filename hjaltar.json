@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:36:38.763Z",
+  "uppdaterad": "2026-11-18T19:38:57.862Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030596521,
+    "tid": 1795030735670,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -505,7 +505,7 @@
               {
                 "namn": "Trädväktaren",
                 "baraBoss": true,
-                "liv": 128,
+                "liv": 84,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -524,7 +524,7 @@
                 "boss": true,
                 "svag": {
                   "n": 2,
-                  "rundor": 98
+                  "rundor": 96
                 },
                 "bedovad": 0
               }
@@ -540,7 +540,7 @@
             {
               "namn": "Trädväktaren",
               "baraBoss": true,
-              "liv": 128,
+              "liv": 84,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+4",
@@ -559,7 +559,7 @@
               "boss": true,
               "svag": {
                 "n": 2,
-                "rundor": 98
+                "rundor": 96
               },
               "bedovad": 0
             }
@@ -567,14 +567,18 @@
           "anvant": {
             "ville": {
               "g_blackmoln": true,
-              "smygattack": true
+              "smygattack": true,
+              "tryckpunkt": true,
+              "shuriken": true
             },
             "sally": {
-              "hoppa_ansiktet": true
+              "hoppa_ansiktet": true,
+              "klosattack": true
             },
             "svante": {
               "dubbelhugg": true,
-              "virvelhugg": true
+              "virvelhugg": true,
+              "kraftslag": true
             },
             "tomas": {
               "eldklot": true,
@@ -585,7 +589,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 5,
           "ko": [
             {
               "f": 0
