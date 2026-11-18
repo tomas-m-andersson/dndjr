@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:27:16.906Z",
+  "uppdaterad": "2026-11-18T19:27:26.023Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030034900,
+    "tid": 1795030044065,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -322,25 +322,22 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det finns färskt blod på marken.",
-            "typ": "resenar",
+            "ledtrad": "Ni hör många små fötter som springer.",
+            "typ": "skatt",
             "kand": false
           },
           {
             "ledtrad": "Lysande svampar växer i en ring.",
-            "typ": "brunn",
+            "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "brunn",
-          "klar": true
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -361,6 +358,10 @@
           {
             "t": "Svante dricker. Vattnet är friskt och klart. +0 liv.",
             "k": "heal"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -396,7 +397,7 @@
           "ville": 45,
           "sally": 28
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Ni stannar där vägen delar sig. Vilken känns rätt?"
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
