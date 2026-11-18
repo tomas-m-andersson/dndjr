@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:40:57.829Z",
+  "uppdaterad": "2026-11-18T19:41:15.959Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030855648,
+    "tid": 1795030873916,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -523,7 +523,7 @@
                 "boss": true,
                 "svag": {
                   "n": 2,
-                  "rundor": 97
+                  "rundor": 96
                 },
                 "bedovad": 0,
                 "hjalpKallad": true
@@ -559,14 +559,14 @@
               "boss": true,
               "svag": {
                 "n": 2,
-                "rundor": 97
+                "rundor": 96
               },
               "bedovad": 0,
               "hjalpKallad": true
             },
             {
               "namn": "Svampman",
-              "liv": 12,
+              "liv": 4,
               "rustning": 11,
               "anfall": 4,
               "skada": "1d6",
@@ -612,10 +612,22 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 7,
+          "runda": 8,
           "ko": [
             {
+              "f": 0
+            },
+            {
+              "h": "ville"
+            },
+            {
               "f": 1
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "svante"
             },
             {
               "h": "tomas"
@@ -632,7 +644,12 @@
             "f:1": 18
           },
           "nu": null,
-          "giftH": {},
+          "giftH": {
+            "sally": {
+              "expr": "1d4",
+              "rundor": 3
+            }
+          },
           "bedovH": {}
         }
       }
