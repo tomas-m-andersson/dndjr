@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:33:49.478Z",
+  "uppdaterad": "2026-11-18T19:34:01.697Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030427455,
+    "tid": 1795030439774,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -322,40 +322,17 @@
       {
         "plats": "skogen",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon har ristat en varning här.",
-            "typ": "vaktad",
-            "kand": false
-          },
-          {
-            "ledtrad": "Det luktar tall och brasa.",
-            "typ": "handlare",
+            "ledtrad": "En liten bäck porlar mellan stenarna.",
+            "typ": "brunn",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "367 guldmynt",
-              "v": 367
-            },
-            {
-              "k": "sak",
-              "n": "Stor läkedryck"
-            },
-            {
-              "k": "sak",
-              "n": "Stor läkedryck"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Mörkskogen",
@@ -452,6 +429,10 @@
           {
             "t": "Ni hittar en stor läkedryck.",
             "k": "heal"
+          },
+          {
+            "t": "Ni samlar ihop er och fortsätter.",
+            "k": ""
           }
         ],
         "party": [
@@ -489,7 +470,7 @@
           "ville": 39,
           "sally": 28
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmwmihsvuvimg",
