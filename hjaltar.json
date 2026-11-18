@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-18T19:39:37.649Z",
+  "uppdaterad": "2026-11-18T19:40:07.881Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -244,7 +244,7 @@
         "v": 1
       }
     },
-    "tid": 1795030775336,
+    "tid": 1795030805884,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -495,7 +495,7 @@
           "tomas": 26,
           "svante": 46,
           "ville": 39,
-          "sally": 13
+          "sally": 0
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar skogens mörker.",
         "bossFaktor": 1.3,
@@ -505,7 +505,7 @@
               {
                 "namn": "Trädväktaren",
                 "baraBoss": true,
-                "liv": 72,
+                "liv": 53,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -524,7 +524,7 @@
                 "boss": true,
                 "svag": {
                   "n": 2,
-                  "rundor": 98
+                  "rundor": 97
                 },
                 "bedovad": 0
               }
@@ -540,7 +540,7 @@
             {
               "namn": "Trädväktaren",
               "baraBoss": true,
-              "liv": 72,
+              "liv": 53,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+4",
@@ -559,7 +559,7 @@
               "boss": true,
               "svag": {
                 "n": 2,
-                "rundor": 98
+                "rundor": 97
               },
               "bedovad": 0
             }
@@ -583,14 +583,15 @@
             },
             "tomas": {
               "eldklot": true,
-              "frostblixt": true
+              "frostblixt": true,
+              "magisk_pil": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 6,
+          "runda": 7,
           "ko": [
             {
               "f": 0
