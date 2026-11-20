@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:00:20.294Z",
+  "uppdaterad": "2026-11-20T20:00:42.521Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204818093,
+    "tid": 1795204840457,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -404,7 +404,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 40,
+                "liv": 36,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -447,7 +447,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 40,
+              "liv": 36,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -492,12 +492,6 @@
           "runda": 1,
           "ko": [
             {
-              "f": 1
-            },
-            {
-              "h": "ville"
-            },
-            {
               "f": 0
             }
           ],
@@ -511,7 +505,9 @@
             "f:0": 3,
             "f:1": 9
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
