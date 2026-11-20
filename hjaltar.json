@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:19:32.690Z",
+  "uppdaterad": "2026-11-20T20:19:39.320Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205970683,
+    "tid": 1795205977385,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -322,21 +322,18 @@
     "runs": [
       {
         "plats": "slottet",
-        "kapitel": 1,
-        "djup": 6,
-        "fas": "vann",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "vampyr"
-          ],
-          "stridOpt": {
-            "boss": true
+        "kapitel": 2,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Ni hör ett klick, som av en mekanism.",
+            "typ": "falla",
+            "kand": false
           }
-        },
+        ],
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -489,6 +486,14 @@
           {
             "t": "Det är över. Slottsherren är besegrad!",
             "k": "crit"
+          },
+          {
+            "t": "Kapitel 2 · Djupare ner",
+            "k": "sep"
+          },
+          {
+            "t": "Alla har vilat och känner sig starka igen. Ni hittar en vindlande trappa som leder ner i fängelsehålorna.",
+            "k": ""
           }
         ],
         "party": [
@@ -511,12 +516,7 @@
           "Läkedryck",
           "Stor läkedryck"
         ],
-        "bless": {
-          "tomas": 1,
-          "svante": 1,
-          "ville": 1,
-          "sally": 1
-        },
+        "bless": {},
         "curse": {},
         "ara": 4750,
         "start": 1795204732078,
@@ -524,13 +524,14 @@
         "id": "rmwpejohaos4l",
         "startGuld": 39,
         "liv": {
-          "tomas": 1,
+          "tomas": 60,
           "svante": 53,
-          "ville": 46,
-          "sally": 6
+          "ville": 52,
+          "sally": 33
         },
-        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar slottsherren.",
-        "bossFaktor": 1.3
+        "dorrText": "Stigen är smal och leder bara vidare in.",
+        "bossFaktor": 1.3,
+        "nyttVapen": null
       }
     ],
     "aktivRun": "rmwpejohaos4l",
