@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:04:52.985Z",
+  "uppdaterad": "2026-11-20T20:05:05.725Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205090925,
+    "tid": 1795205103693,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -338,7 +338,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "nekromantiker",
+            "nekromantiker",
+            "nekromantiker"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -383,6 +392,14 @@
           {
             "t": "Ni går djupare in.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ur mörkret kliver tre nekromantiker!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -423,7 +440,182 @@
           "ville": 52,
           "sally": 17
         },
-        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt."
+        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Nekromantiker 1",
+                "liv": 34,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+2",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "herrgarden"
+                ],
+                "flyr": "försvinner i en virvel av svart rök.",
+                "egen": {
+                  "helar": "3d6"
+                },
+                "typ": "nekromantiker",
+                "bild": "nekromantiker",
+                "max": 34,
+                "ute": false
+              },
+              {
+                "namn": "Nekromantiker 2",
+                "liv": 34,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+2",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "herrgarden"
+                ],
+                "flyr": "försvinner i en virvel av svart rök.",
+                "egen": {
+                  "helar": "3d6"
+                },
+                "typ": "nekromantiker",
+                "bild": "nekromantiker",
+                "max": 34,
+                "ute": false
+              },
+              {
+                "namn": "Nekromantiker 3",
+                "liv": 34,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+2",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "herrgarden"
+                ],
+                "flyr": "försvinner i en virvel av svart rök.",
+                "egen": {
+                  "helar": "3d6"
+                },
+                "typ": "nekromantiker",
+                "bild": "nekromantiker",
+                "max": 34,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|slottet|1|3|rum|strid",
+          "fiender": [
+            {
+              "namn": "Nekromantiker 1",
+              "liv": 34,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+2",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "herrgarden"
+              ],
+              "flyr": "försvinner i en virvel av svart rök.",
+              "egen": {
+                "helar": "3d6"
+              },
+              "typ": "nekromantiker",
+              "bild": "nekromantiker",
+              "max": 34,
+              "ute": false
+            },
+            {
+              "namn": "Nekromantiker 2",
+              "liv": 34,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+2",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "herrgarden"
+              ],
+              "flyr": "försvinner i en virvel av svart rök.",
+              "egen": {
+                "helar": "3d6"
+              },
+              "typ": "nekromantiker",
+              "bild": "nekromantiker",
+              "max": 34,
+              "ute": false
+            },
+            {
+              "namn": "Nekromantiker 3",
+              "liv": 34,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+2",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "herrgarden"
+              ],
+              "flyr": "försvinner i en virvel av svart rök.",
+              "egen": {
+                "helar": "3d6"
+              },
+              "typ": "nekromantiker",
+              "bild": "nekromantiker",
+              "max": 34,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 2
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "f": 1
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "svante"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 11.1,
+            "h:svante": 4.1,
+            "h:ville": 21.1,
+            "h:sally": 18.1,
+            "f:0": 13,
+            "f:1": 16,
+            "f:2": 22
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwpejohaos4l",
