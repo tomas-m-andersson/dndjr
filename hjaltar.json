@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:29.633Z",
+  "uppdaterad": "2026-11-20T20:20:46.350Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206027685,
+    "tid": 1795206044423,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 2,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det glittrar i en spricka i dörren.",
@@ -343,16 +343,18 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "vis",
+            "alla": false,
+            "varn": "En runa på golvet börjar glöda!",
+            "ok": "känner magin och kliver runt runan",
+            "traff": "får en magisk stöt från runan"
+          }
+        },
         "logg": [
-          {
-            "t": "★ Sally känner sig mäktigare. Nivå 6! +5 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni smyger vidare genom de dammiga salarna.",
-            "k": ""
-          },
           {
             "t": "Rum 4 · Vaktad skatt",
             "k": "sep"
@@ -504,6 +506,14 @@
           {
             "t": "Ni går djupare in.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "En runa på golvet börjar glöda!",
+            "k": "bad"
           }
         ],
         "party": [
