@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:21:10.388Z",
+  "uppdaterad": "2026-11-20T20:21:26.583Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206068471,
+    "tid": 1795206084606,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -528,7 +528,7 @@
         "startGuld": 39,
         "liv": {
           "tomas": 60,
-          "svante": 16,
+          "svante": 33,
           "ville": 15,
           "sally": 33
         },
@@ -592,16 +592,17 @@
               "boss": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "andra_andningen": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "h": "svante"
             },
@@ -624,7 +625,9 @@
             "h:sally": 12.1,
             "f:0": 23
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
