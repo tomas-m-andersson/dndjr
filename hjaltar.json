@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:11:59.792Z",
+  "uppdaterad": "2026-11-20T20:12:23.685Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205517748,
+    "tid": 1795205541764,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni känner värme mot ansiktet.",
@@ -343,7 +343,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "Ljusbärerskan"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -440,6 +444,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
           }
         ],
         "party": [
