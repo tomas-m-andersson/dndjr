@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:14:55.584Z",
+  "uppdaterad": "2026-11-20T20:15:16.794Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205693669,
+    "tid": 1795205714883,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -493,7 +493,7 @@
         "id": "rmwpejohaos4l",
         "startGuld": 39,
         "liv": {
-          "tomas": 24,
+          "tomas": 14,
           "svante": 46,
           "ville": 52,
           "sally": 10
@@ -506,7 +506,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 91,
+                "liv": 73,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -524,10 +524,7 @@
                 "max": 137,
                 "ute": false,
                 "boss": true,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "svag": null
               }
             ],
             "run": true,
@@ -541,7 +538,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 91,
+              "liv": 73,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -559,10 +556,7 @@
               "max": 137,
               "ute": false,
               "boss": true,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "svag": null
             }
           ],
           "anvant": {
@@ -574,15 +568,22 @@
               "frasa": true
             },
             "tomas": {
-              "brinnande_pil": true
+              "brinnande_pil": true,
+              "dubbelskott": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 4,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "svante"
+            },
             {
               "h": "sally"
             },
