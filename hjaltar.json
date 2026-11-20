@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:12:42.419Z",
+  "uppdaterad": "2026-11-20T20:12:47.571Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205560478,
+    "tid": 1795205565640,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,31 +323,11 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Ni känner värme mot ansiktet.",
-            "typ": "lager",
-            "kand": false
-          },
-          {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "skatt",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "Ljusbärerskan"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -456,6 +436,10 @@
           {
             "t": "En röst viskar Svantes namn. Ljusbärerskan är nöjd. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
+            "k": ""
           }
         ],
         "party": [
@@ -498,7 +482,7 @@
           "ville": 52,
           "sally": 22
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar slottsherren."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
