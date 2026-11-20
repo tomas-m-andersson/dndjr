@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:04.075Z",
+  "uppdaterad": "2026-11-20T20:20:09.969Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206002046,
+    "tid": 1795206009668,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,40 +323,22 @@
       {
         "plats": "slottet",
         "kapitel": 2,
-        "djup": 1,
+        "djup": 2,
         "fas": "rum",
         "dorrar": [
           {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
-            "typ": "falla",
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": true,
-            "varn": "En platta klickar. Flammor sprutar ur golvet!",
-            "ok": "kastar sig undan lågorna",
-            "traff": "bränns av lågorna"
-          }
+          "typ": "handlare",
+          "klar": false,
+          "handlareBild": null
         },
         "logg": [
-          {
-            "t": "Ni torkar svetten ur pannan och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Altare",
-            "k": "sep"
-          },
-          {
-            "t": "Ett altare med tusen små ljus som tänds av sig själva.",
-            "k": "magic"
-          },
           {
             "t": "Svante knäböjer. De tusen ljusens gud svarar med ett mjukt sken. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
@@ -504,6 +486,18 @@
           {
             "t": "Sally kastar sig undan lågorna!",
             "k": "hit"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
+          },
+          {
+            "t": "Rum 2 · Handlare",
+            "k": "sep"
+          },
+          {
+            "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
+            "k": "heal"
           }
         ],
         "party": [
@@ -539,7 +533,7 @@
           "ville": 39,
           "sally": 33
         },
-        "dorrText": "Stigen är smal och leder bara vidare in.",
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
         "bossFaktor": 1.3,
         "nyttVapen": null
       }
