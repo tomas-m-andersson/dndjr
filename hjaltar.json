@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:18:58.430Z",
+  "uppdaterad": "2026-11-20T20:19:19.750Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205936509,
+    "tid": 1795205957838,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -492,7 +492,7 @@
         "liv": {
           "tomas": 0,
           "svante": 46,
-          "ville": 52,
+          "ville": 46,
           "sally": 6
         },
         "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar slottsherren.",
@@ -503,7 +503,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 8,
+                "liv": 1,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -536,7 +536,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 8,
+              "liv": 1,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -601,7 +601,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 11,
+          "runda": 12,
           "ko": [
             {
               "f": 0
