@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:04:38.044Z",
+  "uppdaterad": "2026-11-20T20:04:52.985Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205075924,
+    "tid": 1795205090925,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,26 +323,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Små fotspår leder ditåt.",
-            "typ": "skatt",
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
+            "ledtrad": "Någon har ristat en varning här.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "De tusen ljusens gud"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -383,6 +379,10 @@
           {
             "t": "Svante knäböjer. De tusen ljusens gud svarar med ett mjukt sken. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
+          },
+          {
+            "t": "Ni går djupare in.",
+            "k": ""
           }
         ],
         "party": [
@@ -423,7 +423,7 @@
           "ville": 52,
           "sally": 17
         },
-        "dorrText": "Ledtrådarna säger lite, men inte allt."
+        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
