@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:07:09.486Z",
+  "uppdaterad": "2026-11-20T20:07:46.712Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,23 +245,23 @@
         "v": 1
       }
     },
-    "tid": 1795205229428,
+    "tid": 1795205264666,
     "niva": {
       "ville": {
         "lvl": 7,
-        "xp": 10059
+        "xp": 10464
       },
       "svante": {
         "lvl": 6,
-        "xp": 8770
+        "xp": 9175
       },
       "tomas": {
         "lvl": 7,
-        "xp": 12859
+        "xp": 13264
       },
       "sally": {
-        "lvl": 5,
-        "xp": 5664
+        "lvl": 6,
+        "xp": 6069
       },
       "benjamin": {
         "lvl": 6,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -340,7 +340,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "nekromantiker",
             "nekromantiker",
@@ -400,6 +400,14 @@
           {
             "t": "Ur mörkret kliver tre nekromantiker!",
             "k": "bad"
+          },
+          {
+            "t": "Striden är över. Alla får 405 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Sally känner sig mäktigare. Nivå 6! +5 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -429,7 +437,7 @@
           "sally": 1
         },
         "curse": {},
-        "ara": 900,
+        "ara": 2250,
         "start": 1795204732078,
         "nastaKand": false,
         "id": "rmwpejohaos4l",
@@ -438,187 +446,9 @@
           "tomas": 42,
           "svante": 46,
           "ville": 52,
-          "sally": 17
+          "sally": 22
         },
-        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Nekromantiker 1",
-                "liv": 23,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": false,
-                "bedovad": 0
-              },
-              {
-                "namn": "Nekromantiker 2",
-                "liv": 6,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": false
-              },
-              {
-                "namn": "Nekromantiker 3",
-                "liv": 0,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": true
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|slottet|1|3|rum|strid",
-          "fiender": [
-            {
-              "namn": "Nekromantiker 1",
-              "liv": 23,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": false,
-              "bedovad": 0
-            },
-            {
-              "namn": "Nekromantiker 2",
-              "liv": 6,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": false
-            },
-            {
-              "namn": "Nekromantiker 3",
-              "liv": 0,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "ville": {
-              "shuriken": true
-            },
-            "sally": {
-              "hoppa_ansiktet": true,
-              "klosattack": true
-            },
-            "tomas": {
-              "pilregn": true
-            },
-            "svante": {
-              "dubbelhugg": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 2,
-          "ko": [
-            {
-              "h": "tomas"
-            },
-            {
-              "h": "svante"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 11.1,
-            "h:svante": 4.1,
-            "h:ville": 21.1,
-            "h:sally": 18.1,
-            "f:0": 13,
-            "f:1": 16,
-            "f:2": 22
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
