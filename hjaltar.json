@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:10:11.224Z",
+  "uppdaterad": "2026-11-20T20:11:52.002Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,23 +245,23 @@
         "v": 1
       }
     },
-    "tid": 1795205409194,
+    "tid": 1795205509896,
     "niva": {
       "ville": {
         "lvl": 7,
-        "xp": 10464
+        "xp": 10869
       },
       "svante": {
         "lvl": 6,
-        "xp": 9175
+        "xp": 9580
       },
       "tomas": {
         "lvl": 7,
-        "xp": 13264
+        "xp": 13669
       },
       "sally": {
         "lvl": 6,
-        "xp": 6069
+        "xp": 6474
       },
       "benjamin": {
         "lvl": 6,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
@@ -344,15 +344,23 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "nekromantiker",
-            "nekromantiker",
-            "nekromantiker"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "445 guldmynt",
+              "v": 445
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            },
+            {
+              "k": "sak",
+              "n": "Läkedryck"
+            }
+          ]
         },
         "logg": [
           {
@@ -426,6 +434,14 @@
           {
             "t": "En kista står mitt i rummet. tre nekromantiker har bestämt att den är deras.",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 405 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "Kistan som de vaktade står öppen.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -455,7 +471,7 @@
           "sally": 1
         },
         "curse": {},
-        "ara": 2250,
+        "ara": 3600,
         "start": 1795204732078,
         "nastaKand": false,
         "id": "rmwpejohaos4l",
@@ -466,180 +482,7 @@
           "ville": 52,
           "sally": 22
         },
-        "dorrText": "Porträtt stirrar på er från väggarna där gången delar sig.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Nekromantiker 1",
-                "liv": 0,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": true
-              },
-              {
-                "namn": "Nekromantiker 2",
-                "liv": 0,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": true
-              },
-              {
-                "namn": "Nekromantiker 3",
-                "liv": 18,
-                "rustning": 12,
-                "anfall": 6,
-                "skada": "2d6+2",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "herrgarden"
-                ],
-                "flyr": "försvinner i en virvel av svart rök.",
-                "egen": {
-                  "helar": "3d6"
-                },
-                "typ": "nekromantiker",
-                "bild": "nekromantiker",
-                "max": 34,
-                "ute": false
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|slottet|1|4|rum|vaktad",
-          "fiender": [
-            {
-              "namn": "Nekromantiker 1",
-              "liv": 0,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": true
-            },
-            {
-              "namn": "Nekromantiker 2",
-              "liv": 0,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": true
-            },
-            {
-              "namn": "Nekromantiker 3",
-              "liv": 18,
-              "rustning": 12,
-              "anfall": 6,
-              "skada": "2d6+2",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "herrgarden"
-              ],
-              "flyr": "försvinner i en virvel av svart rök.",
-              "egen": {
-                "helar": "3d6"
-              },
-              "typ": "nekromantiker",
-              "bild": "nekromantiker",
-              "max": 34,
-              "ute": false
-            }
-          ],
-          "anvant": {
-            "tomas": {
-              "pilregn": true,
-              "dubbelskott": true
-            },
-            "ville": {
-              "smygattack": true
-            },
-            "sally": {
-              "klosattack": true
-            },
-            "svante": {
-              "kraftslag": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 2,
-          "ko": [
-            {
-              "f": 2
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 19.1,
-            "h:svante": 19.1,
-            "h:ville": 19.1,
-            "h:sally": 8.1,
-            "f:0": 17,
-            "f:1": 21,
-            "f:2": 3
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Porträtt stirrar på er från väggarna där gången delar sig."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
