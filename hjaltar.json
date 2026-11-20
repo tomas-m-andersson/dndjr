@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T19:58:54.115Z",
+  "uppdaterad": "2026-11-20T19:59:16.665Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204732080,
+    "tid": 1795204754698,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Någon har ristat en varning här.",
@@ -338,7 +338,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "gargoyl",
+            "gargoyl"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -347,6 +355,14 @@
           {
             "t": "Tomas, Svante, Ville och Sally smyger in genom ett trasigt fönster i Korpholms gamla kök. Någonstans uppe i slottet slår en klocka tolv.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Två gargoyler har väntat på er.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -382,7 +398,126 @@
           "ville": 45,
           "sally": 28
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+        "dorrText": "Ni kan lyssna först. Men gör det tyst.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Gargoyl 1",
+                "liv": 40,
+                "rustning": 17,
+                "anfall": 6,
+                "skada": "1d10+3",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "vulkanen"
+                ],
+                "flyr": "stelnar och blir en vanlig staty igen.",
+                "typ": "gargoyl",
+                "bild": "gargoyl",
+                "max": 40,
+                "ute": false
+              },
+              {
+                "namn": "Gargoyl 2",
+                "liv": 40,
+                "rustning": 17,
+                "anfall": 6,
+                "skada": "1d10+3",
+                "xp": 450,
+                "platser": [
+                  "slottet",
+                  "vulkanen"
+                ],
+                "flyr": "stelnar och blir en vanlig staty igen.",
+                "typ": "gargoyl",
+                "bild": "gargoyl",
+                "max": 40,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|slottet|1|1|rum|strid",
+          "fiender": [
+            {
+              "namn": "Gargoyl 1",
+              "liv": 40,
+              "rustning": 17,
+              "anfall": 6,
+              "skada": "1d10+3",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "vulkanen"
+              ],
+              "flyr": "stelnar och blir en vanlig staty igen.",
+              "typ": "gargoyl",
+              "bild": "gargoyl",
+              "max": 40,
+              "ute": false
+            },
+            {
+              "namn": "Gargoyl 2",
+              "liv": 40,
+              "rustning": 17,
+              "anfall": 6,
+              "skada": "1d10+3",
+              "xp": 450,
+              "platser": [
+                "slottet",
+                "vulkanen"
+              ],
+              "flyr": "stelnar och blir en vanlig staty igen.",
+              "typ": "gargoyl",
+              "bild": "gargoyl",
+              "max": 40,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "f": 0
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 15.1,
+            "h:svante": 15.1,
+            "h:ville": 8.1,
+            "h:sally": 14.1,
+            "f:0": 3,
+            "f:1": 9
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwpejohaos4l",
