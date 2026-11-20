@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:15.630Z",
+  "uppdaterad": "2026-11-20T20:20:18.205Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206013706,
+    "tid": 1795206016290,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 2,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt ljus fladdrar längre fram.",
@@ -333,16 +333,18 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Ett nät faller ner från taket!",
+            "ok": "rullar undan",
+            "traff": "trasslar in sig och slår sig"
+          }
+        },
         "logg": [
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Monster",
-            "k": "sep"
-          },
           {
             "t": "Ur mörkret kliver tre nekromantiker!",
             "k": "bad"
@@ -494,6 +496,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Ett nät faller ner från taket!",
+            "k": "bad"
           }
         ],
         "party": [
