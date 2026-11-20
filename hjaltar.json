@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T19:58:11.447Z",
+  "uppdaterad": "2026-11-20T19:58:54.115Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795030988299,
+    "tid": 1795204732080,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -319,8 +319,73 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [],
-    "aktivRun": null,
+    "runs": [
+      {
+        "plats": "slottet",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Någon har ristat en varning här.",
+            "typ": "strid",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det glittrar i en spricka i dörren.",
+            "typ": "vaktad",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Spökslottet Korpholm",
+            "k": "sep"
+          },
+          {
+            "t": "Tomas, Svante, Ville och Sally smyger in genom ett trasigt fönster i Korpholms gamla kök. Någonstans uppe i slottet slår en klocka tolv.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante",
+          "ville",
+          "sally"
+        ],
+        "guld": 39,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1795204732078,
+        "nastaKand": false,
+        "id": "rmwpejohaos4l",
+        "startGuld": 39,
+        "liv": {
+          "tomas": 60,
+          "svante": 46,
+          "ville": 45,
+          "sally": 28
+        },
+        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+      }
+    ],
+    "aktivRun": "rmwpejohaos4l",
     "historik": [
       {
         "plats": "skogen",
