@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:13:07.106Z",
+  "uppdaterad": "2026-11-20T20:13:58.554Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205585203,
+    "tid": 1795205636431,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -507,7 +507,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 137,
+                "liv": 113,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -524,7 +524,11 @@
                 "bild": "vampyr",
                 "max": 137,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -538,7 +542,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 137,
+              "liv": 113,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -555,15 +559,29 @@
               "bild": "vampyr",
               "max": 137,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "dubbelhugg": true
+            },
+            "sally": {
+              "frasa": true
+            },
+            "tomas": {
+              "brinnande_pil": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
             {
               "f": 0
@@ -590,7 +608,9 @@
             "h:sally": 10.1,
             "f:0": 22
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
