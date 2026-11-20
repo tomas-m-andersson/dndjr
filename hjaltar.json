@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:55.126Z",
+  "uppdaterad": "2026-11-20T20:21:01.640Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206053182,
+    "tid": 1795206059726,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,42 +323,23 @@
       {
         "plats": "slottet",
         "kapitel": 2,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "falla",
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "sovare",
             "kand": false
           },
           {
-            "ledtrad": "Ni hör ett klick, som av en mekanism.",
-            "typ": "falla",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett porträtt bredvid dörren har ögon som följer er.",
-            "typ": "strid",
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "lager",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "vis",
-            "alla": false,
-            "varn": "En runa på golvet börjar glöda!",
-            "ok": "känner magin och kliver runt runan",
-            "traff": "får en magisk stöt från runan"
-          }
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "En kista står mitt i rummet. tre nekromantiker har bestämt att den är deras.",
-            "k": "bad"
-          },
           {
             "t": "Ni vann! Alla får 405 XP.",
             "k": "crit"
@@ -514,6 +495,10 @@
           {
             "t": "Svante får en magisk stöt från runan: 37 i skada.",
             "k": "bad"
+          },
+          {
+            "t": "En trappa knarrar under era fötter när ni går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -549,7 +534,7 @@
           "ville": 15,
           "sally": 33
         },
-        "dorrText": "Fotspår leder åt alla håll. Någon har varit här före er.",
+        "dorrText": "Ni tittar på varandra. Någon måste bestämma.",
         "bossFaktor": 1.3,
         "nyttVapen": null
       }
