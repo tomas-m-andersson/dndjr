@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:17:20.263Z",
+  "uppdaterad": "2026-11-20T20:17:47.340Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205838246,
+    "tid": 1795205865438,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -492,7 +492,7 @@
         "id": "rmwpejohaos4l",
         "startGuld": 39,
         "liv": {
-          "tomas": 7,
+          "tomas": 0,
           "svante": 46,
           "ville": 52,
           "sally": 10
@@ -505,7 +505,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 25,
+                "liv": 10,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -538,7 +538,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 25,
+              "liv": 10,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -561,7 +561,7 @@
             },
             {
               "namn": "Vampyrfladdermus",
-              "liv": 9,
+              "liv": 0,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d6+1",
@@ -578,7 +578,7 @@
               "typ": "vampyrfladdermus",
               "bild": "vampyrfladdermus",
               "max": 9,
-              "ute": false
+              "ute": true
             }
           ],
           "anvant": {
@@ -603,8 +603,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 7,
+          "runda": 8,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "svante"
+            },
             {
               "f": 1
             },
