@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:19:43.036Z",
+  "uppdaterad": "2026-11-20T20:20:04.075Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205981095,
+    "tid": 1795206002046,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -335,7 +335,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": true,
@@ -345,22 +345,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Rum 1 · Monster",
-            "k": "sep"
-          },
-          {
-            "t": "Två gargoyler har väntat på er.",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 270 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "★ Nivå upp! Ville är nu nivå 7! +7 liv.",
-            "k": "crit"
-          },
           {
             "t": "Ni torkar svetten ur pannan och går vidare.",
             "k": ""
@@ -504,6 +488,22 @@
           {
             "t": "En platta klickar. Flammor sprutar ur golvet!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas kastar sig undan lågorna!",
+            "k": "hit"
+          },
+          {
+            "t": "Svante kastar sig undan lågorna!",
+            "k": "hit"
+          },
+          {
+            "t": "Ville bränns av lågorna: 13 i skada.",
+            "k": "bad"
+          },
+          {
+            "t": "Sally kastar sig undan lågorna!",
+            "k": "hit"
           }
         ],
         "party": [
@@ -536,7 +536,7 @@
         "liv": {
           "tomas": 60,
           "svante": 53,
-          "ville": 52,
+          "ville": 39,
           "sally": 33
         },
         "dorrText": "Stigen är smal och leder bara vidare in.",
