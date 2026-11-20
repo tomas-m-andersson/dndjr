@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:03:39.943Z",
+  "uppdaterad": "2026-11-20T20:03:52.875Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205017987,
+    "tid": 1795205030916,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Små fotspår leder ditåt.",
@@ -338,7 +338,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "De tusen ljusens gud"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -367,6 +371,14 @@
           {
             "t": "Ni torkar svetten ur pannan och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare med tusen små ljus som tänds av sig själva.",
+            "k": "magic"
           }
         ],
         "party": [
