@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:21:01.640Z",
+  "uppdaterad": "2026-11-20T20:21:05.678Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206059726,
+    "tid": 1795206063776,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 2,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -338,16 +338,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "lager",
+          "klar": false
+        },
         "logg": [
-          {
-            "t": "Ni vann! Alla får 405 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Kistan som de vaktade står öppen.",
-            "k": "heal"
-          },
           {
             "t": "Ni hittar 445 guldmynt.",
             "k": "heal"
@@ -499,6 +494,14 @@
           {
             "t": "En trappa knarrar under era fötter när ni går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Lägerplats",
+            "k": "sep"
+          },
+          {
+            "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
+            "k": "heal"
           }
         ],
         "party": [
