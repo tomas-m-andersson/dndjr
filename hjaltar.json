@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:00:42.521Z",
+  "uppdaterad": "2026-11-20T20:01:40.367Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204840457,
+    "tid": 1795204898212,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -404,7 +404,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 36,
+                "liv": 20,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -421,7 +421,7 @@
               },
               {
                 "namn": "Gargoyl 2",
-                "liv": 40,
+                "liv": 32,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -447,7 +447,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 36,
+              "liv": 20,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -464,7 +464,7 @@
             },
             {
               "namn": "Gargoyl 2",
-              "liv": 40,
+              "liv": 32,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -482,15 +482,28 @@
           ],
           "anvant": {
             "tomas": {
-              "brinnande_pil": true
+              "brinnande_pil": true,
+              "pilregn": true
+            },
+            "svante": {
+              "kraftslag": true
+            },
+            "sally": {
+              "klosattack": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "ville"
+            },
             {
               "f": 0
             }
