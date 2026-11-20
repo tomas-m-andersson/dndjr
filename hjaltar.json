@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:07:46.712Z",
+  "uppdaterad": "2026-11-20T20:07:49.594Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205264666,
+    "tid": 1795205267614,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,31 +323,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
             "typ": "falla",
             "kand": false
           },
           {
-            "ledtrad": "Någon har ristat en varning här.",
-            "typ": "strid",
+            "ledtrad": "Ni hör mynt som klirrar.",
+            "typ": "vaktad",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "vaktad",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "nekromantiker",
-            "nekromantiker",
-            "nekromantiker"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -408,6 +404,10 @@
           {
             "t": "★ Sally känner sig mäktigare. Nivå 6! +5 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni smyger vidare genom de dammiga salarna.",
+            "k": ""
           }
         ],
         "party": [
@@ -448,7 +448,7 @@
           "ville": 52,
           "sally": 22
         },
-        "dorrText": "En trappa leder upp, en annan ner, och en dörr står på glänt."
+        "dorrText": "Porträtt stirrar på er från väggarna där gången delar sig."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
