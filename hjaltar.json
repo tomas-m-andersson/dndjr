@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:01:40.367Z",
+  "uppdaterad": "2026-11-20T20:01:51.702Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204898212,
+    "tid": 1795204909719,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -417,7 +417,11 @@
                 "typ": "gargoyl",
                 "bild": "gargoyl",
                 "max": 40,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               },
               {
                 "namn": "Gargoyl 2",
@@ -434,7 +438,11 @@
                 "typ": "gargoyl",
                 "bild": "gargoyl",
                 "max": 40,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -460,7 +468,11 @@
               "typ": "gargoyl",
               "bild": "gargoyl",
               "max": 40,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             },
             {
               "namn": "Gargoyl 2",
@@ -477,7 +489,11 @@
               "typ": "gargoyl",
               "bild": "gargoyl",
               "max": 40,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
           "anvant": {
@@ -490,6 +506,9 @@
             },
             "sally": {
               "klosattack": true
+            },
+            "ville": {
+              "g_blackmoln": true
             }
           },
           "pepp": {},
@@ -498,12 +517,6 @@
           "locka": null,
           "runda": 2,
           "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "ville"
-            },
             {
               "f": 0
             }
