@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:02:44.164Z",
+  "uppdaterad": "2026-11-20T20:03:19.458Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204962058,
+    "tid": 1795204997477,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -393,7 +393,7 @@
         "id": "rmwpejohaos4l",
         "startGuld": 39,
         "liv": {
-          "tomas": 49,
+          "tomas": 42,
           "svante": 46,
           "ville": 45,
           "sally": 17
@@ -404,7 +404,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 3,
+                "liv": 0,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -417,15 +417,12 @@
                 "typ": "gargoyl",
                 "bild": "gargoyl",
                 "max": 40,
-                "ute": false,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "ute": true,
+                "svag": null
               },
               {
                 "namn": "Gargoyl 2",
-                "liv": 21,
+                "liv": 15,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -439,10 +436,7 @@
                 "bild": "gargoyl",
                 "max": 40,
                 "ute": false,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "svag": null
               }
             ],
             "run": true,
@@ -455,7 +449,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 3,
+              "liv": 0,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -468,15 +462,12 @@
               "typ": "gargoyl",
               "bild": "gargoyl",
               "max": 40,
-              "ute": false,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "ute": true,
+              "svag": null
             },
             {
               "namn": "Gargoyl 2",
-              "liv": 21,
+              "liv": 15,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -490,10 +481,7 @@
               "bild": "gargoyl",
               "max": 40,
               "ute": false,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "svag": null
             }
           ],
           "anvant": {
@@ -518,8 +506,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 4,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "ville"
+            },
             {
               "f": 0
             }
