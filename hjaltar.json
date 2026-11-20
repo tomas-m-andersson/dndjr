@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:11.911Z",
+  "uppdaterad": "2026-11-20T20:20:15.630Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206009668,
+    "tid": 1795206013706,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,26 +323,18 @@
       {
         "plats": "slottet",
         "kapitel": 2,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "handlare",
+            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
+            "typ": "falla",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "handlare",
-          "klar": false,
-          "handlareBild": null
-        },
+        "rum": null,
         "logg": [
-          {
-            "t": "Svante knäböjer. De tusen ljusens gud svarar med ett mjukt sken. Alla får +1 på anfall tills nästa vila.",
-            "k": "magic"
-          },
           {
             "t": "Ni går djupare in.",
             "k": ""
@@ -498,6 +490,10 @@
           {
             "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
             "k": "heal"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -533,7 +529,7 @@
           "ville": 39,
           "sally": 33
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
+        "dorrText": "Ingen väg att välja. Bara framåt.",
         "bossFaktor": 1.3,
         "nyttVapen": null
       }
