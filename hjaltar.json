@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:03:33.267Z",
+  "uppdaterad": "2026-11-20T20:03:39.943Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205011297,
+    "tid": 1795205017987,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,30 +323,22 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon har ristat en varning här.",
-            "typ": "strid",
+            "ledtrad": "Små fotspår leder ditåt.",
+            "typ": "skatt",
             "kand": false
           },
           {
-            "ledtrad": "Det glittrar i en spricka i dörren.",
-            "typ": "vaktad",
+            "ledtrad": "Någonstans porlar vatten.",
+            "typ": "altare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "gargoyl",
-            "gargoyl"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -371,6 +363,10 @@
           {
             "t": "★ Nivå upp! Ville är nu nivå 7! +7 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni torkar svetten ur pannan och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -406,7 +402,7 @@
           "ville": 52,
           "sally": 17
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst."
+        "dorrText": "Ledtrådarna säger lite, men inte allt."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
