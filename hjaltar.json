@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:08:07.842Z",
+  "uppdaterad": "2026-11-20T20:09:29.003Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205285756,
+    "tid": 1795205368592,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -472,7 +472,7 @@
             "fiender": [
               {
                 "namn": "Nekromantiker 1",
-                "liv": 34,
+                "liv": 25,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -492,7 +492,7 @@
               },
               {
                 "namn": "Nekromantiker 2",
-                "liv": 34,
+                "liv": 14,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -512,7 +512,7 @@
               },
               {
                 "namn": "Nekromantiker 3",
-                "liv": 34,
+                "liv": 24,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -541,7 +541,7 @@
           "fiender": [
             {
               "namn": "Nekromantiker 1",
-              "liv": 34,
+              "liv": 25,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -561,7 +561,7 @@
             },
             {
               "namn": "Nekromantiker 2",
-              "liv": 34,
+              "liv": 14,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -581,7 +581,7 @@
             },
             {
               "namn": "Nekromantiker 3",
-              "liv": 34,
+              "liv": 24,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -600,16 +600,23 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "tomas": {
+              "pilregn": true
+            },
+            "ville": {
+              "smygattack": true
+            },
+            "sally": {
+              "klosattack": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
-            {
-              "f": 1
-            },
             {
               "h": "tomas"
             },
@@ -640,7 +647,9 @@
             "f:1": 21,
             "f:2": 3
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
