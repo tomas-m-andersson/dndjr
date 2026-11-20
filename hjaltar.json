@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:03:52.875Z",
+  "uppdaterad": "2026-11-20T20:04:38.044Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205030916,
+    "tid": 1795205075924,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -340,7 +340,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "De tusen ljusens gud"
         },
         "logg": [
@@ -379,6 +379,10 @@
           {
             "t": "Ett altare med tusen små ljus som tänds av sig själva.",
             "k": "magic"
+          },
+          {
+            "t": "Svante knäböjer. De tusen ljusens gud svarar med ett mjukt sken. Alla får +1 på anfall tills nästa vila.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -401,7 +405,12 @@
           "Läkedryck",
           "Läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "tomas": 1,
+          "svante": 1,
+          "ville": 1,
+          "sally": 1
+        },
         "curse": {},
         "ara": 900,
         "start": 1795204732078,
