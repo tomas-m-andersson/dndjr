@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:01:51.702Z",
+  "uppdaterad": "2026-11-20T20:02:32.232Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795204909719,
+    "tid": 1795204950171,
     "niva": {
       "ville": {
         "lvl": 6,
@@ -396,7 +396,7 @@
           "tomas": 49,
           "svante": 46,
           "ville": 45,
-          "sally": 28
+          "sally": 17
         },
         "dorrText": "Ni kan lyssna först. Men gör det tyst.",
         "stridSpar": {
@@ -404,7 +404,7 @@
             "fiender": [
               {
                 "namn": "Gargoyl 1",
-                "liv": 20,
+                "liv": 3,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -420,12 +420,12 @@
                 "ute": false,
                 "svag": {
                   "n": 3,
-                  "rundor": 2
+                  "rundor": 1
                 }
               },
               {
                 "namn": "Gargoyl 2",
-                "liv": 32,
+                "liv": 21,
                 "rustning": 17,
                 "anfall": 6,
                 "skada": "1d10+3",
@@ -441,7 +441,7 @@
                 "ute": false,
                 "svag": {
                   "n": 3,
-                  "rundor": 2
+                  "rundor": 1
                 }
               }
             ],
@@ -455,7 +455,7 @@
           "fiender": [
             {
               "namn": "Gargoyl 1",
-              "liv": 20,
+              "liv": 3,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -471,12 +471,12 @@
               "ute": false,
               "svag": {
                 "n": 3,
-                "rundor": 2
+                "rundor": 1
               }
             },
             {
               "namn": "Gargoyl 2",
-              "liv": 32,
+              "liv": 21,
               "rustning": 17,
               "anfall": 6,
               "skada": "1d10+3",
@@ -492,17 +492,19 @@
               "ute": false,
               "svag": {
                 "n": 3,
-                "rundor": 2
+                "rundor": 1
               }
             }
           ],
           "anvant": {
             "tomas": {
               "brinnande_pil": true,
-              "pilregn": true
+              "pilregn": true,
+              "dubbelskott": true
             },
             "svante": {
-              "kraftslag": true
+              "kraftslag": true,
+              "dubbelhugg": true
             },
             "sally": {
               "klosattack": true
@@ -515,8 +517,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "ville"
+            },
             {
               "f": 0
             }
