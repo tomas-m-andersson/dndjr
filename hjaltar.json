@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:21:05.678Z",
+  "uppdaterad": "2026-11-20T20:21:10.388Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206063776,
+    "tid": 1795206068471,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -323,38 +323,21 @@
       {
         "plats": "slottet",
         "kapitel": 2,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
-            "typ": "sovare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett svagt ljus fladdrar längre fram.",
-            "typ": "lager",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "strid",
+        "dorrar": null,
         "lyssnat": false,
         "rum": {
-          "typ": "lager",
-          "klar": false
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "vampyr"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
         },
         "logg": [
-          {
-            "t": "Ni hittar 445 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
@@ -502,6 +485,18 @@
           {
             "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
             "k": "heal"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
+            "k": ""
+          },
+          {
+            "t": "Bossen · Slottsherren",
+            "k": "sep"
+          },
+          {
+            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är Vampyrgreven!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -537,9 +532,100 @@
           "ville": 15,
           "sally": 33
         },
-        "dorrText": "Ni tittar på varandra. Någon måste bestämma.",
+        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar slottsherren.",
         "bossFaktor": 1.3,
-        "nyttVapen": null
+        "nyttVapen": null,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Vampyrgreven",
+                "baraBoss": true,
+                "liv": 150,
+                "rustning": 16,
+                "anfall": 8,
+                "skada": "2d8+3",
+                "xp": 1100,
+                "platser": [
+                  "slottet"
+                ],
+                "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
+                "egen": {
+                  "drana": true,
+                  "regen": 3
+                },
+                "typ": "vampyr",
+                "bild": "vampyr",
+                "max": 150,
+                "ute": false,
+                "boss": true
+              }
+            ],
+            "run": true,
+            "boss": true,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|slottet|2|6|boss|boss",
+          "fiender": [
+            {
+              "namn": "Vampyrgreven",
+              "baraBoss": true,
+              "liv": 150,
+              "rustning": 16,
+              "anfall": 8,
+              "skada": "2d8+3",
+              "xp": 1100,
+              "platser": [
+                "slottet"
+              ],
+              "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
+              "egen": {
+                "drana": true,
+                "regen": 3
+              },
+              "typ": "vampyr",
+              "bild": "vampyr",
+              "max": 150,
+              "ute": false,
+              "boss": true
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 7.1,
+            "h:svante": 16.1,
+            "h:ville": 8.1,
+            "h:sally": 12.1,
+            "f:0": 23
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwpejohaos4l",
