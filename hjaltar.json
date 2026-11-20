@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:16:57.234Z",
+  "uppdaterad": "2026-11-20T20:17:20.263Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205815169,
+    "tid": 1795205838246,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -505,7 +505,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 35,
+                "liv": 25,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -523,7 +523,8 @@
                 "max": 137,
                 "ute": false,
                 "boss": true,
-                "svag": null
+                "svag": null,
+                "hjalpKallad": true
               }
             ],
             "run": true,
@@ -537,7 +538,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 35,
+              "liv": 25,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -555,7 +556,29 @@
               "max": 137,
               "ute": false,
               "boss": true,
-              "svag": null
+              "svag": null,
+              "hjalpKallad": true
+            },
+            {
+              "namn": "Vampyrfladdermus",
+              "liv": 9,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d6+1",
+              "xp": 50,
+              "platser": [
+                "slottet",
+                "grottorna",
+                "herrgarden"
+              ],
+              "flyr": "skriker gällt och flyger iväg.",
+              "egen": {
+                "drana": true
+              },
+              "typ": "vampyrfladdermus",
+              "bild": "vampyrfladdermus",
+              "max": 9,
+              "ute": false
             }
           ],
           "anvant": {
@@ -583,10 +606,7 @@
           "runda": 7,
           "ko": [
             {
-              "f": 0
-            },
-            {
-              "h": "svante"
+              "f": 1
             },
             {
               "h": "sally"
@@ -605,7 +625,8 @@
             "h:svante": 15.1,
             "h:ville": 5.1,
             "h:sally": 10.1,
-            "f:0": 22
+            "f:0": 22,
+            "f:1": 14
           },
           "nu": null,
           "giftH": {},
