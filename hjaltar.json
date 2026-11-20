@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:03:19.458Z",
+  "uppdaterad": "2026-11-20T20:03:33.267Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,23 +245,23 @@
         "v": 1
       }
     },
-    "tid": 1795204997477,
+    "tid": 1795205011297,
     "niva": {
       "ville": {
-        "lvl": 6,
-        "xp": 9789
+        "lvl": 7,
+        "xp": 10059
       },
       "svante": {
         "lvl": 6,
-        "xp": 8500
+        "xp": 8770
       },
       "tomas": {
         "lvl": 7,
-        "xp": 12589
+        "xp": 12859
       },
       "sally": {
         "lvl": 5,
-        "xp": 5394
+        "xp": 5664
       },
       "benjamin": {
         "lvl": 6,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon har ristat en varning här.",
@@ -340,7 +340,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "gargoyl",
             "gargoyl"
@@ -363,6 +363,14 @@
           {
             "t": "Två gargoyler har väntat på er.",
             "k": "bad"
+          },
+          {
+            "t": "Seger! Alla får 270 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Ville är nu nivå 7! +7 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -387,7 +395,7 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 900,
         "start": 1795204732078,
         "nastaKand": false,
         "id": "rmwpejohaos4l",
@@ -395,143 +403,10 @@
         "liv": {
           "tomas": 42,
           "svante": 46,
-          "ville": 45,
+          "ville": 52,
           "sally": 17
         },
-        "dorrText": "Ni kan lyssna först. Men gör det tyst.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Gargoyl 1",
-                "liv": 0,
-                "rustning": 17,
-                "anfall": 6,
-                "skada": "1d10+3",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "vulkanen"
-                ],
-                "flyr": "stelnar och blir en vanlig staty igen.",
-                "typ": "gargoyl",
-                "bild": "gargoyl",
-                "max": 40,
-                "ute": true,
-                "svag": null
-              },
-              {
-                "namn": "Gargoyl 2",
-                "liv": 15,
-                "rustning": 17,
-                "anfall": 6,
-                "skada": "1d10+3",
-                "xp": 450,
-                "platser": [
-                  "slottet",
-                  "vulkanen"
-                ],
-                "flyr": "stelnar och blir en vanlig staty igen.",
-                "typ": "gargoyl",
-                "bild": "gargoyl",
-                "max": 40,
-                "ute": false,
-                "svag": null
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|slottet|1|1|rum|strid",
-          "fiender": [
-            {
-              "namn": "Gargoyl 1",
-              "liv": 0,
-              "rustning": 17,
-              "anfall": 6,
-              "skada": "1d10+3",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "vulkanen"
-              ],
-              "flyr": "stelnar och blir en vanlig staty igen.",
-              "typ": "gargoyl",
-              "bild": "gargoyl",
-              "max": 40,
-              "ute": true,
-              "svag": null
-            },
-            {
-              "namn": "Gargoyl 2",
-              "liv": 15,
-              "rustning": 17,
-              "anfall": 6,
-              "skada": "1d10+3",
-              "xp": 450,
-              "platser": [
-                "slottet",
-                "vulkanen"
-              ],
-              "flyr": "stelnar och blir en vanlig staty igen.",
-              "typ": "gargoyl",
-              "bild": "gargoyl",
-              "max": 40,
-              "ute": false,
-              "svag": null
-            }
-          ],
-          "anvant": {
-            "tomas": {
-              "brinnande_pil": true,
-              "pilregn": true,
-              "dubbelskott": true
-            },
-            "svante": {
-              "kraftslag": true,
-              "dubbelhugg": true
-            },
-            "sally": {
-              "klosattack": true
-            },
-            "ville": {
-              "g_blackmoln": true,
-              "smygattack": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 4,
-          "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "f": 0
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 15.1,
-            "h:svante": 15.1,
-            "h:ville": 8.1,
-            "h:sally": 14.1,
-            "f:0": 3,
-            "f:1": 9
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Ni kan lyssna först. Men gör det tyst."
       }
     ],
     "aktivRun": "rmwpejohaos4l",
