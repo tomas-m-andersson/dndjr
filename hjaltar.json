@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:12:47.571Z",
+  "uppdaterad": "2026-11-20T20:13:07.106Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205565640,
+    "tid": 1795205585203,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,10 +324,19 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 6,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": null,
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "boss",
+          "klar": false,
+          "fiender": [
+            "vampyr"
+          ],
+          "stridOpt": {
+            "boss": true
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -440,6 +449,14 @@
           {
             "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
             "k": ""
+          },
+          {
+            "t": "Bossen · Slottsherren",
+            "k": "sep"
+          },
+          {
+            "t": "Tronen knakar. Slottsherren reser sig: Vampyrgreven!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -477,12 +494,104 @@
         "id": "rmwpejohaos4l",
         "startGuld": 39,
         "liv": {
-          "tomas": 33,
+          "tomas": 24,
           "svante": 46,
           "ville": 52,
           "sally": 22
         },
-        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar slottsherren."
+        "dorrText": "Det finns ingen väg runt. Bakom nästa dörr väntar slottsherren.",
+        "bossFaktor": 1.3,
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Vampyrgreven",
+                "baraBoss": true,
+                "liv": 137,
+                "rustning": 16,
+                "anfall": 8,
+                "skada": "2d8+3",
+                "xp": 1100,
+                "platser": [
+                  "slottet"
+                ],
+                "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
+                "egen": {
+                  "drana": true,
+                  "regen": 3
+                },
+                "typ": "vampyr",
+                "bild": "vampyr",
+                "max": 137,
+                "ute": false,
+                "boss": true
+              }
+            ],
+            "run": true,
+            "boss": true,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|slottet|1|6|boss|boss",
+          "fiender": [
+            {
+              "namn": "Vampyrgreven",
+              "baraBoss": true,
+              "liv": 137,
+              "rustning": 16,
+              "anfall": 8,
+              "skada": "2d8+3",
+              "xp": 1100,
+              "platser": [
+                "slottet"
+              ],
+              "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
+              "egen": {
+                "drana": true,
+                "regen": 3
+              },
+              "typ": "vampyr",
+              "bild": "vampyr",
+              "max": 137,
+              "ute": false,
+              "boss": true
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "h": "ville"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:tomas": 7.1,
+            "h:svante": 15.1,
+            "h:ville": 5.1,
+            "h:sally": 10.1,
+            "f:0": 22
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwpejohaos4l",
