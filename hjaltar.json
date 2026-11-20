@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:18.205Z",
+  "uppdaterad": "2026-11-20T20:20:25.129Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206016290,
+    "tid": 1795206023136,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -335,7 +335,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": false,
@@ -345,10 +345,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Ur mörkret kliver tre nekromantiker!",
-            "k": "bad"
-          },
           {
             "t": "Striden är över. Alla får 405 XP.",
             "k": "crit"
@@ -504,6 +500,10 @@
           {
             "t": "Ett nät faller ner från taket!",
             "k": "bad"
+          },
+          {
+            "t": "Ville trasslar in sig och slår sig: 24 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -536,7 +536,7 @@
         "liv": {
           "tomas": 60,
           "svante": 53,
-          "ville": 39,
+          "ville": 15,
           "sally": 33
         },
         "dorrText": "Ingen väg att välja. Bara framåt.",
