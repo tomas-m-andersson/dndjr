@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:12:23.685Z",
+  "uppdaterad": "2026-11-20T20:12:42.419Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205541764,
+    "tid": 1795205560478,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -345,7 +345,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "Ljusbärerskan"
         },
         "logg": [
@@ -451,6 +451,10 @@
           },
           {
             "t": "Ett altare med en staty av en kvinna som håller en lykta.",
+            "k": "magic"
+          },
+          {
+            "t": "En röst viskar Svantes namn. Ljusbärerskan är nöjd. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
           }
         ],
