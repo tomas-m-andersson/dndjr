@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:20:46.350Z",
+  "uppdaterad": "2026-11-20T20:20:55.126Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795206044423,
+    "tid": 1795206053182,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -345,7 +345,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "vis",
             "alla": false,
@@ -355,10 +355,6 @@
           }
         },
         "logg": [
-          {
-            "t": "Rum 4 · Vaktad skatt",
-            "k": "sep"
-          },
           {
             "t": "En kista står mitt i rummet. tre nekromantiker har bestämt att den är deras.",
             "k": "bad"
@@ -514,6 +510,10 @@
           {
             "t": "En runa på golvet börjar glöda!",
             "k": "bad"
+          },
+          {
+            "t": "Svante får en magisk stöt från runan: 37 i skada.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -545,7 +545,7 @@
         "startGuld": 39,
         "liv": {
           "tomas": 60,
-          "svante": 53,
+          "svante": 16,
           "ville": 15,
           "sally": 33
         },
