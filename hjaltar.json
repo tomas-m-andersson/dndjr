@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:16:22.653Z",
+  "uppdaterad": "2026-11-20T20:16:57.234Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205780726,
+    "tid": 1795205815169,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -505,7 +505,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 57,
+                "liv": 35,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -537,7 +537,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 57,
+              "liv": 35,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -565,7 +565,8 @@
               "andra_andningen": true
             },
             "sally": {
-              "frasa": true
+              "frasa": true,
+              "klosattack": true
             },
             "tomas": {
               "brinnande_pil": true,
@@ -579,7 +580,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 6,
+          "runda": 7,
           "ko": [
             {
               "f": 0
