@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:19:39.320Z",
+  "uppdaterad": "2026-11-20T20:19:43.036Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205977385,
+    "tid": 1795205981095,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,7 +324,7 @@
         "plats": "slottet",
         "kapitel": 2,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör ett klick, som av en mekanism.",
@@ -333,16 +333,18 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": true,
+            "varn": "En platta klickar. Flammor sprutar ur golvet!",
+            "ok": "kastar sig undan lågorna",
+            "traff": "bränns av lågorna"
+          }
+        },
         "logg": [
-          {
-            "t": "Kapitel 1 · Spökslottet Korpholm",
-            "k": "sep"
-          },
-          {
-            "t": "Tomas, Svante, Ville och Sally smyger in genom ett trasigt fönster i Korpholms gamla kök. Någonstans uppe i slottet slår en klocka tolv.",
-            "k": ""
-          },
           {
             "t": "Rum 1 · Monster",
             "k": "sep"
@@ -494,6 +496,14 @@
           {
             "t": "Alla har vilat och känner sig starka igen. Ni hittar en vindlande trappa som leder ner i fängelsehålorna.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "En platta klickar. Flammor sprutar ur golvet!",
+            "k": "bad"
           }
         ],
         "party": [
