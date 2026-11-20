@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:05:05.725Z",
+  "uppdaterad": "2026-11-20T20:07:09.486Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -245,7 +245,7 @@
         "v": 1
       }
     },
-    "tid": 1795205103693,
+    "tid": 1795205229428,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -446,7 +446,7 @@
             "fiender": [
               {
                 "namn": "Nekromantiker 1",
-                "liv": 34,
+                "liv": 23,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -462,11 +462,12 @@
                 "typ": "nekromantiker",
                 "bild": "nekromantiker",
                 "max": 34,
-                "ute": false
+                "ute": false,
+                "bedovad": 0
               },
               {
                 "namn": "Nekromantiker 2",
-                "liv": 34,
+                "liv": 6,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -486,7 +487,7 @@
               },
               {
                 "namn": "Nekromantiker 3",
-                "liv": 34,
+                "liv": 0,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+2",
@@ -502,7 +503,7 @@
                 "typ": "nekromantiker",
                 "bild": "nekromantiker",
                 "max": 34,
-                "ute": false
+                "ute": true
               }
             ],
             "run": true,
@@ -515,7 +516,7 @@
           "fiender": [
             {
               "namn": "Nekromantiker 1",
-              "liv": 34,
+              "liv": 23,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -531,11 +532,12 @@
               "typ": "nekromantiker",
               "bild": "nekromantiker",
               "max": 34,
-              "ute": false
+              "ute": false,
+              "bedovad": 0
             },
             {
               "namn": "Nekromantiker 2",
-              "liv": 34,
+              "liv": 6,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -555,7 +557,7 @@
             },
             {
               "namn": "Nekromantiker 3",
-              "liv": 34,
+              "liv": 0,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+2",
@@ -571,31 +573,30 @@
               "typ": "nekromantiker",
               "bild": "nekromantiker",
               "max": 34,
-              "ute": false
+              "ute": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "shuriken": true
+            },
+            "sally": {
+              "hoppa_ansiktet": true,
+              "klosattack": true
+            },
+            "tomas": {
+              "pilregn": true
+            },
+            "svante": {
+              "dubbelhugg": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
-            {
-              "f": 2
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "sally"
-            },
-            {
-              "f": 1
-            },
-            {
-              "f": 0
-            },
             {
               "h": "tomas"
             },
@@ -614,7 +615,9 @@
             "f:1": 16,
             "f:2": 22
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
