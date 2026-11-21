@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:16:38.421Z",
+  "uppdaterad": "2026-11-21T20:16:49.667Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292196311,
+    "tid": 1795292208805,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -758,7 +758,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {
@@ -777,7 +776,7 @@
           "tomas": 44,
           "svante": 53,
           "ville": 45,
-          "linda": 1
+          "linda": 6
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "stridSpar": {
@@ -806,7 +805,7 @@
               },
               {
                 "namn": "Basilisk 2",
-                "liv": 30,
+                "liv": 29,
                 "rustning": 15,
                 "anfall": 7,
                 "skada": "2d6+3",
@@ -826,7 +825,7 @@
                 "bedovad": 0,
                 "gift": {
                   "expr": "1d4",
-                  "rundor": 3
+                  "rundor": 2
                 }
               }
             ],
@@ -861,7 +860,7 @@
             },
             {
               "namn": "Basilisk 2",
-              "liv": 30,
+              "liv": 29,
               "rustning": 15,
               "anfall": 7,
               "skada": "2d6+3",
@@ -881,7 +880,7 @@
               "bedovad": 0,
               "gift": {
                 "expr": "1d4",
-                "rundor": 3
+                "rundor": 2
               }
             }
           ],
@@ -908,12 +907,6 @@
           "locka": null,
           "runda": 4,
           "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "linda"
-            },
             {
               "h": "ville"
             },
