@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:09:22.222Z",
+  "uppdaterad": "2026-11-21T20:09:34.824Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,19 +246,19 @@
         "v": 1
       }
     },
-    "tid": 1795291760313,
+    "tid": 1795291772756,
     "niva": {
       "ville": {
         "lvl": 7,
-        "xp": 11604
+        "xp": 11724
       },
       "svante": {
         "lvl": 7,
-        "xp": 10315
+        "xp": 10435
       },
       "tomas": {
         "lvl": 7,
-        "xp": 14404
+        "xp": 14524
       },
       "sally": {
         "lvl": 6,
@@ -269,8 +269,8 @@
         "xp": 8424
       },
       "linda": {
-        "lvl": 2,
-        "xp": 570
+        "lvl": 3,
+        "xp": 690
       }
     },
     "upplasta": [
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -651,7 +651,7 @@
         "lyssnat": true,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "orm",
             "spindel"
@@ -690,6 +690,14 @@
           {
             "t": "Ni möter en jätteorm och en jättespindel!",
             "k": "bad"
+          },
+          {
+            "t": "Ni vann! Alla får 120 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Nivå upp! Linda är nu nivå 3! +6 liv.",
+            "k": "crit"
           }
         ],
         "party": [
@@ -712,166 +720,18 @@
         ],
         "bless": {},
         "curse": {},
-        "ara": 0,
+        "ara": 400,
         "start": 1795291465896,
         "nastaKand": false,
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 54,
+          "tomas": 51,
           "svante": 53,
           "ville": 52,
-          "linda": 9
+          "linda": 15
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Jätteorm",
-                "liv": 2,
-                "rustning": 13,
-                "anfall": 5,
-                "skada": "1d8+2",
-                "xp": 200,
-                "platser": [
-                  "skogen",
-                  "grottorna"
-                ],
-                "flyr": "slingrar sig bort mellan stenarna.",
-                "egen": {
-                  "gift": "1d6"
-                },
-                "typ": "orm",
-                "bild": "orm",
-                "max": 24,
-                "ute": false,
-                "gift": {
-                  "expr": "1d4",
-                  "rundor": 2
-                }
-              },
-              {
-                "namn": "Jättespindel",
-                "liv": 0,
-                "rustning": 14,
-                "anfall": 5,
-                "skada": "1d8+3",
-                "xp": 200,
-                "platser": [
-                  "grottorna",
-                  "skogen"
-                ],
-                "flyr": "kryper ihop och slutar röra sig.",
-                "egen": {
-                  "gift": "1d4"
-                },
-                "typ": "spindel",
-                "bild": "spindel",
-                "max": 20,
-                "ute": true
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|grottorna|1|2|rum|strid",
-          "fiender": [
-            {
-              "namn": "Jätteorm",
-              "liv": 2,
-              "rustning": 13,
-              "anfall": 5,
-              "skada": "1d8+2",
-              "xp": 200,
-              "platser": [
-                "skogen",
-                "grottorna"
-              ],
-              "flyr": "slingrar sig bort mellan stenarna.",
-              "egen": {
-                "gift": "1d6"
-              },
-              "typ": "orm",
-              "bild": "orm",
-              "max": 24,
-              "ute": false,
-              "gift": {
-                "expr": "1d4",
-                "rundor": 2
-              }
-            },
-            {
-              "namn": "Jättespindel",
-              "liv": 0,
-              "rustning": 14,
-              "anfall": 5,
-              "skada": "1d8+3",
-              "xp": 200,
-              "platser": [
-                "grottorna",
-                "skogen"
-              ],
-              "flyr": "kryper ihop och slutar röra sig.",
-              "egen": {
-                "gift": "1d4"
-              },
-              "typ": "spindel",
-              "bild": "spindel",
-              "max": 20,
-              "ute": true
-            }
-          ],
-          "anvant": {
-            "svante": {
-              "dubbelhugg": true
-            },
-            "ville": {
-              "smygattack": true
-            },
-            "tomas": {
-              "brinnande_pil": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 2,
-          "ko": [
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:linda": 7.1,
-            "h:tomas": 6.1,
-            "h:ville": 7.1,
-            "h:svante": 16.1,
-            "f:0": 15,
-            "f:1": 12
-          },
-          "nu": null,
-          "giftH": {
-            "linda": {
-              "expr": "1d6",
-              "rundor": 2
-            },
-            "tomas": {
-              "expr": "1d4",
-              "rundor": 2
-            }
-          },
-          "bedovH": {}
-        }
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
