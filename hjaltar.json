@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:07:40.895Z",
+  "uppdaterad": "2026-11-21T20:09:00.984Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291658885,
+    "tid": 1795291738854,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -719,10 +719,10 @@
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 56,
+          "tomas": 54,
           "svante": 53,
           "ville": 52,
-          "linda": 6
+          "linda": 0
         },
         "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
         "stridSpar": {
@@ -730,7 +730,7 @@
             "fiender": [
               {
                 "namn": "Jätteorm",
-                "liv": 24,
+                "liv": 6,
                 "rustning": 13,
                 "anfall": 5,
                 "skada": "1d8+2",
@@ -746,11 +746,15 @@
                 "typ": "orm",
                 "bild": "orm",
                 "max": 24,
-                "ute": false
+                "ute": false,
+                "gift": {
+                  "expr": "1d4",
+                  "rundor": 3
+                }
               },
               {
                 "namn": "Jättespindel",
-                "liv": 12,
+                "liv": 0,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -766,7 +770,7 @@
                 "typ": "spindel",
                 "bild": "spindel",
                 "max": 20,
-                "ute": false
+                "ute": true
               }
             ],
             "run": true,
@@ -779,7 +783,7 @@
           "fiender": [
             {
               "namn": "Jätteorm",
-              "liv": 24,
+              "liv": 6,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -795,11 +799,15 @@
               "typ": "orm",
               "bild": "orm",
               "max": 24,
-              "ute": false
+              "ute": false,
+              "gift": {
+                "expr": "1d4",
+                "rundor": 3
+              }
             },
             {
               "namn": "Jättespindel",
-              "liv": 12,
+              "liv": 0,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -815,20 +823,29 @@
               "typ": "spindel",
               "bild": "spindel",
               "max": 20,
-              "ute": false
+              "ute": true
             }
           ],
           "anvant": {
             "svante": {
               "dubbelhugg": true
+            },
+            "ville": {
+              "smygattack": true
+            },
+            "tomas": {
+              "brinnande_pil": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 0
+            },
             {
               "f": 1
             },
@@ -856,7 +873,11 @@
           "giftH": {
             "linda": {
               "expr": "1d6",
-              "rundor": 3
+              "rundor": 2
+            },
+            "tomas": {
+              "expr": "1d4",
+              "rundor": 2
             }
           },
           "bedovH": {}
