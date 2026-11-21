@@ -1,13 +1,12 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-20T20:21:26.583Z",
+  "uppdaterad": "2026-11-21T20:01:26.934Z",
   "egna": [],
   "sallskap": [
     "tomas",
     "svante",
-    "ville",
-    "sally"
+    "ville"
   ],
   "grundandringar": {
     "ville": {
@@ -40,19 +39,15 @@
       }
     },
     "svante": {
-      "bildval": {
-        "helare|valsignad_hammare": -24,
-        "krigare|flammsvard": 60
-      },
+      "folk": "manniska",
+      "alder": 6,
+      "skagg": false,
       "attacker": [
         "kraftslag",
         "dubbelhugg",
         "andra_andningen"
       ],
       "vapen": "flammsvard",
-      "folk": "manniska",
-      "alder": 6,
-      "skagg": false,
       "klass": "krigare",
       "hud": 0,
       "har": 0,
@@ -67,23 +62,22 @@
         "vis": 13,
         "cha": 11
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "helare|valsignad_hammare": -24,
+        "krigare|flammsvard": 60
+      }
     },
     "tomas": {
-      "bildval": {
-        "krigare|drakdrapare": 39,
-        "magiker|isstav": 61,
-        "bagskytt|pilbage": 16
-      },
+      "folk": "manniska",
+      "alder": 43,
+      "skagg": true,
       "attacker": [
         "dubbelskott",
         "pilregn",
         "brinnande_pil"
       ],
       "vapen": "eldbage",
-      "folk": "manniska",
-      "alder": 43,
-      "skagg": true,
       "klass": "bagskytt",
       "hud": 0,
       "har": 2,
@@ -98,7 +92,12 @@
         "vis": 16,
         "cha": 13
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "krigare|drakdrapare": 39,
+        "magiker|isstav": 61,
+        "bagskytt|pilbage": 16
+      }
     },
     "linda": {
       "folk": "manniska",
