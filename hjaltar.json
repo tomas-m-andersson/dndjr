@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:21:55.973Z",
+  "uppdaterad": "2026-11-21T20:22:50.521Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292514039,
+    "tid": 1795292568540,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -796,7 +796,7 @@
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 42,
+          "tomas": 36,
           "svante": 40,
           "ville": 35,
           "linda": 10
@@ -809,7 +809,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 51,
+                "liv": 37,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -826,7 +826,11 @@
                 "max": 156,
                 "ute": false,
                 "boss": true,
-                "svag": null
+                "svag": {
+                  "n": 3,
+                  "rundor": 99
+                },
+                "hjalpKallad": true
               }
             ],
             "run": true,
@@ -840,7 +844,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 51,
+              "liv": 37,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -857,12 +861,37 @@
               "max": 156,
               "ute": false,
               "boss": true,
-              "svag": null
+              "svag": {
+                "n": 3,
+                "rundor": 99
+              },
+              "hjalpKallad": true
+            },
+            {
+              "namn": "Jätteråtta",
+              "liv": 7,
+              "rustning": 12,
+              "anfall": 4,
+              "skada": "1d4+2",
+              "xp": 25,
+              "platser": [
+                "grottorna",
+                "slottet"
+              ],
+              "flyr": "piper och försvinner ner i ett hål.",
+              "egen": {
+                "gift": "1d2"
+              },
+              "typ": "ratta",
+              "bild": "ratta",
+              "max": 7,
+              "ute": false
             }
           ],
           "anvant": {
             "linda": {
-              "vaggvisa": true
+              "vaggvisa": true,
+              "hanfullt_skamt": true
             },
             "ville": {
               "g_blackmoln": true,
@@ -881,8 +910,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 6,
+          "runda": 7,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "f": 0
+            },
             {
               "h": "ville"
             },
@@ -900,13 +935,12 @@
             "h:tomas": 3.1,
             "h:ville": 6.1,
             "h:svante": 2.1,
-            "f:0": 10
+            "f:0": 10,
+            "f:1": 15
           },
           "nu": null,
           "giftH": {},
-          "bedovH": {
-            "tomas": true
-          }
+          "bedovH": {}
         }
       }
     ],
