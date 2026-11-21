@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:10:53.165Z",
+  "uppdaterad": "2026-11-21T20:11:15.539Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291851271,
+    "tid": 1795291873454,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -770,7 +770,7 @@
             "fiender": [
               {
                 "namn": "Jätteorm",
-                "liv": 24,
+                "liv": 17,
                 "rustning": 13,
                 "anfall": 5,
                 "skada": "1d8+2",
@@ -794,7 +794,7 @@
               },
               {
                 "namn": "Bergstroll",
-                "liv": 45,
+                "liv": 33,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -827,7 +827,7 @@
           "fiender": [
             {
               "namn": "Jätteorm",
-              "liv": 24,
+              "liv": 17,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -851,7 +851,7 @@
             },
             {
               "namn": "Bergstroll",
-              "liv": 45,
+              "liv": 33,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -877,23 +877,23 @@
           "anvant": {
             "ville": {
               "g_blackmoln": true
+            },
+            "linda": {
+              "peppsang": true
+            },
+            "tomas": {
+              "pilregn": true
             }
           },
-          "pepp": {},
+          "pepp": {
+            "ville": true,
+            "svante": true
+          },
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "f": 0
-            },
-            {
-              "h": "linda"
-            },
-            {
-              "h": "tomas"
-            },
             {
               "f": 1
             },
@@ -911,7 +911,9 @@
             "f:0": 16,
             "f:1": 9
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
