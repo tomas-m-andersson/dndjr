@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:18:04.655Z",
+  "uppdaterad": "2026-11-21T20:18:11.393Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292282368,
+    "tid": 1795292289406,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -315,8 +315,8 @@
         "acb": 2
       },
       "linda": {
-        "wb": 0,
-        "acb": 1
+        "wb": 1,
+        "acb": 2
       }
     },
     "reset": 1793282091831,
@@ -651,7 +651,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "skatt",
-          "klar": false,
+          "klar": true,
           "loot": [
             {
               "k": "guld",
@@ -766,6 +766,18 @@
           {
             "t": "Nu är vägen fri till skatten.",
             "k": "heal"
+          },
+          {
+            "t": "Ni hittar 350 guldmynt.",
+            "k": "heal"
+          },
+          {
+            "t": "Linda får ett magiskt vapen: +1 på träff och skada.",
+            "k": "magic"
+          },
+          {
+            "t": "Linda får en skyddsring: +2 rustning.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -774,7 +786,7 @@
           "ville",
           "svante"
         ],
-        "guld": 48,
+        "guld": 398,
         "saker": [
           "Läkedryck",
           "Läkedryck",
