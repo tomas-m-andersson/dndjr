@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:21:18.329Z",
+  "uppdaterad": "2026-11-21T20:21:43.217Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292476425,
+    "tid": 1795292501317,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -797,7 +797,7 @@
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 52,
+          "tomas": 42,
           "svante": 40,
           "ville": 35,
           "linda": 0
@@ -810,7 +810,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 62,
+                "liv": 51,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -841,7 +841,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 62,
+              "liv": 51,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -882,7 +882,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 5,
+          "runda": 6,
           "ko": [
             {
               "f": 0
