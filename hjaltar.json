@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:09:53.384Z",
+  "uppdaterad": "2026-11-21T20:10:22.576Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291791461,
+    "tid": 1795291820641,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -651,7 +651,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "altare",
-          "klar": false,
+          "klar": true,
           "gud": "Vinterns herre"
         },
         "logg": [
@@ -706,6 +706,10 @@
           {
             "t": "Ett altare av is, trots att det inte är kallt här.",
             "k": "magic"
+          },
+          {
+            "t": "Ljusen flammar upp. Vinterns herre välsignar er. Alla får +1 på anfall tills nästa vila.",
+            "k": "magic"
           }
         ],
         "party": [
@@ -726,7 +730,12 @@
           "Läkedryck",
           "Läkedryck"
         ],
-        "bless": {},
+        "bless": {
+          "linda": 1,
+          "tomas": 1,
+          "ville": 1,
+          "svante": 1
+        },
         "curse": {},
         "ara": 400,
         "start": 1795291465896,
