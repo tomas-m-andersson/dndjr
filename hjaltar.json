@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:09:34.824Z",
+  "uppdaterad": "2026-11-21T20:09:41.312Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291772756,
+    "tid": 1795291779410,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -634,30 +634,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "ledtrad": "Någon andas tungt. Det låter stort.",
             "typ": "sovare",
-            "kand": true
+            "kand": false
           },
           {
-            "ledtrad": "Spindelväv täcker öppningen.",
-            "typ": "strid",
-            "kand": true
+            "ledtrad": "Ett svagt blått sken syns under dörren.",
+            "typ": "altare",
+            "kand": false
           }
         ],
-        "lyssnat": true,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "orm",
-            "spindel"
-          ],
-          "stridOpt": {}
-        },
+        "lyssnat": false,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -698,6 +690,10 @@
           {
             "t": "★ Nivå upp! Linda är nu nivå 3! +6 liv.",
             "k": "crit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -731,7 +727,7 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Facklans sken når mer än en öppning i berget."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
