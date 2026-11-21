@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:06:15.128Z",
+  "uppdaterad": "2026-11-21T20:06:23.370Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291573178,
+    "tid": 1795291581441,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -634,32 +634,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Något skrattar tyst därinne.",
-            "typ": "falla",
-            "kand": false
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "sovare",
+            "kand": true
           },
           {
-            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
-            "typ": "resenar",
-            "kand": false
+            "ledtrad": "Spindelväv täcker öppningen.",
+            "typ": "strid",
+            "kand": true
           }
         ],
-        "lyssnat": false,
-        "rum": {
-          "typ": "resenar",
-          "klar": true,
-          "res": {
-            "text": "En riddare i bucklig rustning ligger på golvet. – Vatten …",
-            "vem": "riddaren",
-            "ok": "Riddaren pekar och berättar vad som finns längre fram.",
-            "nej": "Riddaren är för trött för att prata.",
-            "dryck": "Riddaren reser sig och bugar. Han berättar om faror han har sett."
-          }
-        },
+        "lyssnat": true,
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -680,6 +670,10 @@
           {
             "t": "Riddaren reser sig och bugar. Han berättar om faror han har sett. Alla får 180 XP.",
             "k": "heal"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -705,7 +699,7 @@
         "curse": {},
         "ara": 0,
         "start": 1795291465896,
-        "nastaKand": true,
+        "nastaKand": false,
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
@@ -714,7 +708,7 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
