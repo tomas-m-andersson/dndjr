@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:13:52.630Z",
+  "uppdaterad": "2026-11-21T20:14:09.469Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292030490,
+    "tid": 1795292047581,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -760,7 +760,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {
@@ -779,7 +778,7 @@
           "tomas": 44,
           "svante": 53,
           "ville": 52,
-          "linda": 3
+          "linda": 13
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "stridSpar": {
@@ -882,12 +881,6 @@
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "linda"
-            },
             {
               "h": "ville"
             },
