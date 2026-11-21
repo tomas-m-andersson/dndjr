@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:10:27.705Z",
+  "uppdaterad": "2026-11-21T20:10:40.468Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291825742,
+    "tid": 1795291838600,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 4,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
@@ -649,7 +649,15 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "orm",
+            "troll"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -710,6 +718,14 @@
           {
             "t": "Ni tar en klunk vatten och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 4 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Det är inte tomt här. en jätteorm och ett bergstroll vänder sig mot er!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -748,7 +764,138 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Grottan delar sig runt en stor stenpelare. Båda sidorna är svarta."
+        "dorrText": "Grottan delar sig runt en stor stenpelare. Båda sidorna är svarta.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Jätteorm",
+                "liv": 24,
+                "rustning": 13,
+                "anfall": 5,
+                "skada": "1d8+2",
+                "xp": 200,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "slingrar sig bort mellan stenarna.",
+                "egen": {
+                  "gift": "1d6"
+                },
+                "typ": "orm",
+                "bild": "orm",
+                "max": 24,
+                "ute": false
+              },
+              {
+                "namn": "Bergstroll",
+                "liv": 45,
+                "rustning": 12,
+                "anfall": 6,
+                "skada": "2d6+3",
+                "xp": 450,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "faller omkull med ett brak som får marken att skaka.",
+                "egen": {
+                  "regen": 3
+                },
+                "typ": "troll",
+                "bild": "troll",
+                "max": 45,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|4|rum|strid",
+          "fiender": [
+            {
+              "namn": "Jätteorm",
+              "liv": 24,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "xp": 200,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "slingrar sig bort mellan stenarna.",
+              "egen": {
+                "gift": "1d6"
+              },
+              "typ": "orm",
+              "bild": "orm",
+              "max": 24,
+              "ute": false
+            },
+            {
+              "namn": "Bergstroll",
+              "liv": 45,
+              "rustning": 12,
+              "anfall": 6,
+              "skada": "2d6+3",
+              "xp": 450,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "faller omkull med ett brak som får marken att skaka.",
+              "egen": {
+                "regen": 3
+              },
+              "typ": "troll",
+              "bild": "troll",
+              "max": 45,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "ville"
+            },
+            {
+              "f": 0
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "tomas"
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "svante"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:linda": 15.1,
+            "h:tomas": 11.1,
+            "h:ville": 19.1,
+            "h:svante": 3.1,
+            "f:0": 16,
+            "f:1": 9
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
