@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:13:17.389Z",
+  "uppdaterad": "2026-11-21T20:13:19.882Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291995211,
+    "tid": 1795291997939,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -634,30 +634,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 4,
-        "fas": "rum",
+        "djup": 5,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
-            "typ": "strid",
+            "ledtrad": "Något glimmar i mörkret.",
+            "typ": "vaktad",
             "kand": false
           },
           {
-            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
-            "typ": "strid",
+            "ledtrad": "Små fotspår leder ditåt.",
+            "typ": "handlare",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "orm",
-            "troll"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -730,6 +722,10 @@
           {
             "t": "Seger! Alla får 195 XP.",
             "k": "crit"
+          },
+          {
+            "t": "Ni kryper vidare genom en trång spricka.",
+            "k": ""
           }
         ],
         "party": [
@@ -768,7 +764,7 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Grottan delar sig runt en stor stenpelare. Båda sidorna är svarta."
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
