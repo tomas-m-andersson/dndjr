@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:04:12.857Z",
+  "uppdaterad": "2026-11-21T20:04:27.826Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795206084606,
+    "tid": 1795291465898,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -630,9 +630,73 @@
           "giftH": {},
           "bedovH": {}
         }
+      },
+      {
+        "plats": "grottorna",
+        "kapitel": 1,
+        "djup": 1,
+        "fas": "dorrar",
+        "dorrar": [
+          {
+            "ledtrad": "Något skrattar tyst därinne.",
+            "typ": "falla",
+            "kand": false
+          },
+          {
+            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
+            "typ": "resenar",
+            "kand": false
+          }
+        ],
+        "lyssnat": false,
+        "rum": null,
+        "logg": [
+          {
+            "t": "Kapitel 1 · Grottorna under Kråkberget",
+            "k": "sep"
+          },
+          {
+            "t": "Grottöppningen ser ut som en gapande mun. Tomas, Svante, Ville och Linda tar ett djupt andetag och går in.",
+            "k": ""
+          }
+        ],
+        "party": [
+          "tomas",
+          "svante",
+          "ville",
+          "linda"
+        ],
+        "guld": 48,
+        "saker": [
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck",
+          "Läkedryck"
+        ],
+        "bless": {},
+        "curse": {},
+        "ara": 0,
+        "start": 1795291465896,
+        "nastaKand": false,
+        "id": "rmwqu6oq0mvno",
+        "startGuld": 48,
+        "liv": {
+          "tomas": 60,
+          "svante": 53,
+          "ville": 52,
+          "linda": 15
+        },
+        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut."
       }
     ],
-    "aktivRun": "rmwpejohaos4l",
+    "aktivRun": "rmwqu6oq0mvno",
     "historik": [
       {
         "plats": "skogen",
