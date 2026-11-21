@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:13:19.882Z",
+  "uppdaterad": "2026-11-21T20:13:39.152Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291997939,
+    "tid": 1795292017248,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Något glimmar i mörkret.",
@@ -649,7 +649,16 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "vaktad",
+          "klar": false,
+          "sedanSkatt": true,
+          "fiender": [
+            "basilisk",
+            "basilisk"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -726,6 +735,14 @@
           {
             "t": "Ni kryper vidare genom en trång spricka.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Vaktad skatt",
+            "k": "sep"
+          },
+          {
+            "t": "Ni ser en glittrande skatt. Framför den står två basilisker.",
+            "k": "bad"
           }
         ],
         "party": [
@@ -759,12 +776,143 @@
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 51,
+          "tomas": 44,
           "svante": 53,
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Basilisk 1",
+                "liv": 52,
+                "rustning": 15,
+                "anfall": 7,
+                "skada": "2d6+3",
+                "xp": 700,
+                "platser": [
+                  "grottorna",
+                  "oknen"
+                ],
+                "flyr": "blundar och kryper ner i en spricka.",
+                "egen": {
+                  "bedova": 0.3
+                },
+                "typ": "basilisk",
+                "bild": "basilisk",
+                "max": 52,
+                "ute": false
+              },
+              {
+                "namn": "Basilisk 2",
+                "liv": 52,
+                "rustning": 15,
+                "anfall": 7,
+                "skada": "2d6+3",
+                "xp": 700,
+                "platser": [
+                  "grottorna",
+                  "oknen"
+                ],
+                "flyr": "blundar och kryper ner i en spricka.",
+                "egen": {
+                  "bedova": 0.3
+                },
+                "typ": "basilisk",
+                "bild": "basilisk",
+                "max": 52,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|5|rum|vaktad",
+          "fiender": [
+            {
+              "namn": "Basilisk 1",
+              "liv": 52,
+              "rustning": 15,
+              "anfall": 7,
+              "skada": "2d6+3",
+              "xp": 700,
+              "platser": [
+                "grottorna",
+                "oknen"
+              ],
+              "flyr": "blundar och kryper ner i en spricka.",
+              "egen": {
+                "bedova": 0.3
+              },
+              "typ": "basilisk",
+              "bild": "basilisk",
+              "max": 52,
+              "ute": false
+            },
+            {
+              "namn": "Basilisk 2",
+              "liv": 52,
+              "rustning": 15,
+              "anfall": 7,
+              "skada": "2d6+3",
+              "xp": 700,
+              "platser": [
+                "grottorna",
+                "oknen"
+              ],
+              "flyr": "blundar och kryper ner i en spricka.",
+              "egen": {
+                "bedova": 0.3
+              },
+              "typ": "basilisk",
+              "bild": "basilisk",
+              "max": 52,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:linda": 16.1,
+            "h:tomas": 1.1,
+            "h:ville": 11.1,
+            "h:svante": 8.1,
+            "f:0": 23,
+            "f:1": 19
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
