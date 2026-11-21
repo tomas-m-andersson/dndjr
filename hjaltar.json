@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:11:15.539Z",
+  "uppdaterad": "2026-11-21T20:11:59.720Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291873454,
+    "tid": 1795291917685,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -789,12 +789,12 @@
                 "ute": false,
                 "svag": {
                   "n": 3,
-                  "rundor": 2
+                  "rundor": 1
                 }
               },
               {
                 "namn": "Bergstroll",
-                "liv": 33,
+                "liv": 8,
                 "rustning": 12,
                 "anfall": 6,
                 "skada": "2d6+3",
@@ -813,7 +813,7 @@
                 "ute": false,
                 "svag": {
                   "n": 3,
-                  "rundor": 2
+                  "rundor": 1
                 }
               }
             ],
@@ -846,12 +846,12 @@
               "ute": false,
               "svag": {
                 "n": 3,
-                "rundor": 2
+                "rundor": 1
               }
             },
             {
               "namn": "Bergstroll",
-              "liv": 33,
+              "liv": 8,
               "rustning": 12,
               "anfall": 6,
               "skada": "2d6+3",
@@ -870,30 +870,40 @@
               "ute": false,
               "svag": {
                 "n": 3,
-                "rundor": 2
+                "rundor": 1
               }
             }
           ],
           "anvant": {
             "ville": {
-              "g_blackmoln": true
+              "g_blackmoln": true,
+              "smygattack": true
             },
             "linda": {
               "peppsang": true
             },
             "tomas": {
               "pilregn": true
+            },
+            "svante": {
+              "dubbelhugg": true
             }
           },
-          "pepp": {
-            "ville": true,
-            "svante": true
-          },
+          "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "tomas"
+            },
             {
               "f": 1
             },
