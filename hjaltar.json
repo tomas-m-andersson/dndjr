@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:18:11.393Z",
+  "uppdaterad": "2026-11-21T20:18:21.835Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292289406,
+    "tid": 1795292299853,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -634,42 +634,11 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Något glimmar i mörkret.",
-            "typ": "vaktad",
-            "kand": false
-          },
-          {
-            "ledtrad": "Små fotspår leder ditåt.",
-            "typ": "handlare",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "skatt",
-          "klar": true,
-          "loot": [
-            {
-              "k": "guld",
-              "n": "350 guldmynt",
-              "v": 350
-            },
-            {
-              "k": "wb",
-              "n": "Magiskt vapen",
-              "info": "+1 på träff och skada"
-            },
-            {
-              "k": "acb",
-              "n": "Skyddsring",
-              "info": "+1 rustning"
-            }
-          ]
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -778,6 +747,10 @@
           {
             "t": "Linda får en skyddsring: +2 rustning.",
             "k": "magic"
+          },
+          {
+            "t": "Gången slutar vid en stor port. Längst in väntar grottans härskare.",
+            "k": ""
           }
         ],
         "party": [
@@ -813,7 +786,7 @@
           "ville": 45,
           "linda": 6
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
