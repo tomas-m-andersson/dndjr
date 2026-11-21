@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:10:40.468Z",
+  "uppdaterad": "2026-11-21T20:10:53.165Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291838600,
+    "tid": 1795291851271,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -786,7 +786,11 @@
                 "typ": "orm",
                 "bild": "orm",
                 "max": 24,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               },
               {
                 "namn": "Bergstroll",
@@ -806,7 +810,11 @@
                 "typ": "troll",
                 "bild": "troll",
                 "max": 45,
-                "ute": false
+                "ute": false,
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -835,7 +843,11 @@
               "typ": "orm",
               "bild": "orm",
               "max": 24,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             },
             {
               "namn": "Bergstroll",
@@ -855,19 +867,24 @@
               "typ": "troll",
               "bild": "troll",
               "max": 45,
-              "ute": false
+              "ute": false,
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "ville": {
+              "g_blackmoln": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "ville"
-            },
             {
               "f": 0
             },
