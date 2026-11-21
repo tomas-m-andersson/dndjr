@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:09:41.312Z",
+  "uppdaterad": "2026-11-21T20:09:53.384Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291779410,
+    "tid": 1795291791461,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 3,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Någon andas tungt. Det låter stort.",
@@ -649,7 +649,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "Vinterns herre"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -694,6 +698,14 @@
           {
             "t": "Ni lämnar rummet bakom er.",
             "k": ""
+          },
+          {
+            "t": "Rum 3 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett altare av is, trots att det inte är kallt här.",
+            "k": "magic"
           }
         ],
         "party": [
