@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:18:40.938Z",
+  "uppdaterad": "2026-11-21T20:18:56.718Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292320626,
+    "tid": 1795292334838,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -800,7 +800,7 @@
           "tomas": 52,
           "svante": 53,
           "ville": 45,
-          "linda": 15
+          "linda": 0
         },
         "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
         "bossFaktor": 1.3,
@@ -859,16 +859,17 @@
               "boss": true
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "linda": {
+              "vaggvisa": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "linda"
-            },
             {
               "f": 0
             },
