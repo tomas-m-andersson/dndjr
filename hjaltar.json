@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:14:52.873Z",
+  "uppdaterad": "2026-11-21T20:14:57.783Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292090830,
+    "tid": 1795292095887,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -778,7 +778,7 @@
           "tomas": 44,
           "svante": 53,
           "ville": 45,
-          "linda": 13
+          "linda": 1
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "stridSpar": {
@@ -889,9 +889,6 @@
           "runda": 2,
           "ko": [
             {
-              "f": 0
-            },
-            {
               "f": 1
             },
             {
@@ -919,7 +916,9 @@
           },
           "nu": null,
           "giftH": {},
-          "bedovH": {}
+          "bedovH": {
+            "ville": true
+          }
         }
       }
     ],
