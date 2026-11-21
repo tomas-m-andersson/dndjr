@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:06:37.895Z",
+  "uppdaterad": "2026-11-21T20:07:32.894Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291595993,
+    "tid": 1795291650798,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -722,7 +722,7 @@
           "tomas": 60,
           "svante": 53,
           "ville": 52,
-          "linda": 15
+          "linda": 6
         },
         "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
         "stridSpar": {
@@ -750,7 +750,7 @@
               },
               {
                 "namn": "Jättespindel",
-                "liv": 20,
+                "liv": 12,
                 "rustning": 14,
                 "anfall": 5,
                 "skada": "1d8+3",
@@ -799,7 +799,7 @@
             },
             {
               "namn": "Jättespindel",
-              "liv": 20,
+              "liv": 12,
               "rustning": 14,
               "anfall": 5,
               "skada": "1d8+3",
@@ -818,16 +818,17 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "dubbelhugg": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
           "runda": 1,
           "ko": [
-            {
-              "h": "svante"
-            },
             {
               "f": 0
             },
