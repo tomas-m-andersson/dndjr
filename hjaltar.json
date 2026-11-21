@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:20:20.905Z",
+  "uppdaterad": "2026-11-21T20:20:51.360Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292420604,
+    "tid": 1795292449428,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -799,7 +799,7 @@
         "liv": {
           "tomas": 52,
           "svante": 53,
-          "ville": 45,
+          "ville": 35,
           "linda": 0
         },
         "dorrText": "Grottan öppnar sig mot en enorm sal. Något stort andas därinne.",
@@ -810,7 +810,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 110,
+                "liv": 87,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -841,7 +841,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 110,
+              "liv": 87,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -874,15 +874,19 @@
               "brinnande_pil": true
             },
             "svante": {
-              "dubbelhugg": true
+              "dubbelhugg": true,
+              "kraftslag": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 3,
+          "runda": 4,
           "ko": [
+            {
+              "f": 0
+            },
             {
               "h": "ville"
             },
