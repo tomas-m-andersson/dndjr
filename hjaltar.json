@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:14:09.469Z",
+  "uppdaterad": "2026-11-21T20:14:52.873Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292047581,
+    "tid": 1795292090830,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -777,7 +777,7 @@
         "liv": {
           "tomas": 44,
           "svante": 53,
-          "ville": 52,
+          "ville": 45,
           "linda": 13
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
@@ -786,7 +786,7 @@
             "fiender": [
               {
                 "namn": "Basilisk 1",
-                "liv": 52,
+                "liv": 45,
                 "rustning": 15,
                 "anfall": 7,
                 "skada": "2d6+3",
@@ -835,7 +835,7 @@
           "fiender": [
             {
               "namn": "Basilisk 1",
-              "liv": 52,
+              "liv": 45,
               "rustning": 15,
               "anfall": 7,
               "skada": "2d6+3",
@@ -874,13 +874,29 @@
               "ute": false
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "svante": {
+              "dubbelhugg": true
+            },
+            "tomas": {
+              "pilregn": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
             {
               "h": "ville"
             },
