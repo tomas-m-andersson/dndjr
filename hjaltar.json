@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:14:57.783Z",
+  "uppdaterad": "2026-11-21T20:15:15.188Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292095887,
+    "tid": 1795292115145,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -759,7 +759,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {
@@ -778,7 +777,7 @@
           "tomas": 44,
           "svante": 53,
           "ville": 45,
-          "linda": 1
+          "linda": 7
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "stridSpar": {
@@ -802,7 +801,8 @@
                 "typ": "basilisk",
                 "bild": "basilisk",
                 "max": 52,
-                "ute": false
+                "ute": false,
+                "bedovad": 1
               },
               {
                 "namn": "Basilisk 2",
@@ -822,7 +822,8 @@
                 "typ": "basilisk",
                 "bild": "basilisk",
                 "max": 52,
-                "ute": false
+                "ute": false,
+                "bedovad": 1
               }
             ],
             "run": true,
@@ -851,7 +852,8 @@
               "typ": "basilisk",
               "bild": "basilisk",
               "max": 52,
-              "ute": false
+              "ute": false,
+              "bedovad": 1
             },
             {
               "namn": "Basilisk 2",
@@ -871,7 +873,8 @@
               "typ": "basilisk",
               "bild": "basilisk",
               "max": 52,
-              "ute": false
+              "ute": false,
+              "bedovad": 1
             }
           ],
           "anvant": {
@@ -880,6 +883,9 @@
             },
             "tomas": {
               "pilregn": true
+            },
+            "linda": {
+              "vaggvisa": true
             }
           },
           "pepp": {},
@@ -888,18 +894,6 @@
           "locka": null,
           "runda": 2,
           "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "linda"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "svante"
-            },
             {
               "h": "tomas"
             }
@@ -916,9 +910,7 @@
           },
           "nu": null,
           "giftH": {},
-          "bedovH": {
-            "ville": true
-          }
+          "bedovH": {}
         }
       }
     ],
