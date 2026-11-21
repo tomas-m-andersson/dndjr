@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:06:23.370Z",
+  "uppdaterad": "2026-11-21T20:06:37.895Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291581441,
+    "tid": 1795291595993,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "strid",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -649,7 +649,15 @@
           }
         ],
         "lyssnat": true,
-        "rum": null,
+        "rum": {
+          "typ": "strid",
+          "klar": false,
+          "fiender": [
+            "orm",
+            "spindel"
+          ],
+          "stridOpt": {}
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -674,6 +682,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Monster",
+            "k": "sep"
+          },
+          {
+            "t": "Ni möter en jätteorm och en jättespindel!",
+            "k": "bad"
           }
         ],
         "party": [
@@ -708,7 +724,138 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll."
+        "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
+        "stridSpar": {
+          "def": {
+            "fiender": [
+              {
+                "namn": "Jätteorm",
+                "liv": 24,
+                "rustning": 13,
+                "anfall": 5,
+                "skada": "1d8+2",
+                "xp": 200,
+                "platser": [
+                  "skogen",
+                  "grottorna"
+                ],
+                "flyr": "slingrar sig bort mellan stenarna.",
+                "egen": {
+                  "gift": "1d6"
+                },
+                "typ": "orm",
+                "bild": "orm",
+                "max": 24,
+                "ute": false
+              },
+              {
+                "namn": "Jättespindel",
+                "liv": 20,
+                "rustning": 14,
+                "anfall": 5,
+                "skada": "1d8+3",
+                "xp": 200,
+                "platser": [
+                  "grottorna",
+                  "skogen"
+                ],
+                "flyr": "kryper ihop och slutar röra sig.",
+                "egen": {
+                  "gift": "1d4"
+                },
+                "typ": "spindel",
+                "bild": "spindel",
+                "max": 20,
+                "ute": false
+              }
+            ],
+            "run": true,
+            "boss": false,
+            "fiendeForst": false,
+            "sover": false,
+            "noter": []
+          },
+          "bild": "run|grottorna|1|2|rum|strid",
+          "fiender": [
+            {
+              "namn": "Jätteorm",
+              "liv": 24,
+              "rustning": 13,
+              "anfall": 5,
+              "skada": "1d8+2",
+              "xp": 200,
+              "platser": [
+                "skogen",
+                "grottorna"
+              ],
+              "flyr": "slingrar sig bort mellan stenarna.",
+              "egen": {
+                "gift": "1d6"
+              },
+              "typ": "orm",
+              "bild": "orm",
+              "max": 24,
+              "ute": false
+            },
+            {
+              "namn": "Jättespindel",
+              "liv": 20,
+              "rustning": 14,
+              "anfall": 5,
+              "skada": "1d8+3",
+              "xp": 200,
+              "platser": [
+                "grottorna",
+                "skogen"
+              ],
+              "flyr": "kryper ihop och slutar röra sig.",
+              "egen": {
+                "gift": "1d4"
+              },
+              "typ": "spindel",
+              "bild": "spindel",
+              "max": 20,
+              "ute": false
+            }
+          ],
+          "anvant": {},
+          "pepp": {},
+          "skydd": {},
+          "fokus": {},
+          "locka": null,
+          "runda": 1,
+          "ko": [
+            {
+              "h": "svante"
+            },
+            {
+              "f": 0
+            },
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "tomas"
+            }
+          ],
+          "logg": [],
+          "noter": [],
+          "init": {
+            "h:linda": 7.1,
+            "h:tomas": 6.1,
+            "h:ville": 7.1,
+            "h:svante": 16.1,
+            "f:0": 15,
+            "f:1": 12
+          },
+          "nu": null
+        }
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
