@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:22:54.649Z",
+  "uppdaterad": "2026-11-21T20:23:54.272Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292572615,
+    "tid": 1795292632230,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -796,7 +796,7 @@
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 36,
+          "tomas": 34,
           "svante": 40,
           "ville": 21,
           "linda": 10
@@ -809,7 +809,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 37,
+                "liv": 21,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -828,9 +828,13 @@
                 "boss": true,
                 "svag": {
                   "n": 3,
-                  "rundor": 99
+                  "rundor": 98
                 },
-                "hjalpKallad": true
+                "hjalpKallad": true,
+                "gift": {
+                  "expr": "1d4",
+                  "rundor": 3
+                }
               }
             ],
             "run": true,
@@ -844,7 +848,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 37,
+              "liv": 21,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -863,13 +867,17 @@
               "boss": true,
               "svag": {
                 "n": 3,
-                "rundor": 99
+                "rundor": 98
               },
-              "hjalpKallad": true
+              "hjalpKallad": true,
+              "gift": {
+                "expr": "1d4",
+                "rundor": 3
+              }
             },
             {
               "namn": "Jätteråtta",
-              "liv": 7,
+              "liv": 2,
               "rustning": 12,
               "anfall": 4,
               "skada": "1d4+2",
@@ -895,11 +903,13 @@
             },
             "ville": {
               "g_blackmoln": true,
-              "shuriken": true
+              "shuriken": true,
+              "smygattack": true
             },
             "tomas": {
               "dubbelskott": true,
-              "brinnande_pil": true
+              "brinnande_pil": true,
+              "pilregn": true
             },
             "svante": {
               "dubbelhugg": true,
@@ -910,8 +920,11 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 7,
+          "runda": 8,
           "ko": [
+            {
+              "f": 1
+            },
             {
               "f": 0
             },
@@ -939,7 +952,7 @@
           "giftH": {
             "tomas": {
               "expr": "1d2",
-              "rundor": 3
+              "rundor": 2
             }
           },
           "bedovH": {}
