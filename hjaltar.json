@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:16:49.667Z",
+  "uppdaterad": "2026-11-21T20:17:28.300Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292208805,
+    "tid": 1795292246170,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -805,7 +805,7 @@
               },
               {
                 "namn": "Basilisk 2",
-                "liv": 29,
+                "liv": 16,
                 "rustning": 15,
                 "anfall": 7,
                 "skada": "2d6+3",
@@ -860,7 +860,7 @@
             },
             {
               "namn": "Basilisk 2",
-              "liv": 29,
+              "liv": 16,
               "rustning": 15,
               "anfall": 7,
               "skada": "2d6+3",
@@ -905,8 +905,14 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 4,
+          "runda": 5,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
             {
               "h": "ville"
             },
