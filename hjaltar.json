@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:18:56.718Z",
+  "uppdaterad": "2026-11-21T20:19:35.271Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292334838,
+    "tid": 1795292375175,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -810,7 +810,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 156,
+                "liv": 133,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -826,7 +826,11 @@
                 "bild": "jattemask",
                 "max": 156,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "svag": {
+                  "n": 3,
+                  "rundor": 1
+                }
               }
             ],
             "run": true,
@@ -840,7 +844,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 156,
+              "liv": 133,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -856,23 +860,30 @@
               "bild": "jattemask",
               "max": 156,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "svag": {
+                "n": 3,
+                "rundor": 1
+              }
             }
           ],
           "anvant": {
             "linda": {
               "vaggvisa": true
+            },
+            "ville": {
+              "g_blackmoln": true
+            },
+            "tomas": {
+              "dubbelskott": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 2,
           "ko": [
-            {
-              "f": 0
-            },
             {
               "h": "ville"
             },
@@ -892,7 +903,9 @@
             "h:svante": 2.1,
             "f:0": 10
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
