@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:09:00.984Z",
+  "uppdaterad": "2026-11-21T20:09:22.222Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291738854,
+    "tid": 1795291760313,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -708,7 +708,6 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
@@ -722,7 +721,7 @@
           "tomas": 54,
           "svante": 53,
           "ville": 52,
-          "linda": 0
+          "linda": 9
         },
         "dorrText": "Någon har ristat pilar på väggen här, men de pekar åt olika håll.",
         "stridSpar": {
@@ -730,7 +729,7 @@
             "fiender": [
               {
                 "namn": "Jätteorm",
-                "liv": 6,
+                "liv": 2,
                 "rustning": 13,
                 "anfall": 5,
                 "skada": "1d8+2",
@@ -749,7 +748,7 @@
                 "ute": false,
                 "gift": {
                   "expr": "1d4",
-                  "rundor": 3
+                  "rundor": 2
                 }
               },
               {
@@ -783,7 +782,7 @@
           "fiender": [
             {
               "namn": "Jätteorm",
-              "liv": 6,
+              "liv": 2,
               "rustning": 13,
               "anfall": 5,
               "skada": "1d8+2",
@@ -802,7 +801,7 @@
               "ute": false,
               "gift": {
                 "expr": "1d4",
-                "rundor": 3
+                "rundor": 2
               }
             },
             {
@@ -843,15 +842,6 @@
           "locka": null,
           "runda": 2,
           "ko": [
-            {
-              "f": 0
-            },
-            {
-              "f": 1
-            },
-            {
-              "h": "linda"
-            },
             {
               "h": "ville"
             },
