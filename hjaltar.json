@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:01:51.301Z",
+  "uppdaterad": "2026-11-21T20:04:06.593Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -101,16 +101,20 @@
       }
     },
     "linda": {
+      "bildval": {
+        "bagskytt|giftbage": 7,
+        "bard|ormpiska": 61
+      },
+      "attacker": [
+        "peppsang",
+        "hanfullt_skamt",
+        "vaggvisa"
+      ],
+      "vapen": "ormpiska",
       "folk": "manniska",
       "alder": 40,
       "skagg": false,
-      "attacker": [
-        "sikta_noga",
-        "dubbelskott",
-        "pilregn"
-      ],
-      "vapen": "giftbage",
-      "klass": "bagskytt",
+      "klass": "bard",
       "hud": 0,
       "har": 4,
       "stil": "kort",
@@ -124,10 +128,7 @@
         "vis": 15,
         "cha": 13
       },
-      "gosedjur": "",
-      "bildval": {
-        "bagskytt|giftbage": 7
-      }
+      "gosedjur": ""
     },
     "benjamin": {
       "folk": "manniska",
