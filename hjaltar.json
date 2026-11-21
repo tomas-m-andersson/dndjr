@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:05:49.745Z",
+  "uppdaterad": "2026-11-21T20:06:15.128Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,19 +246,19 @@
         "v": 1
       }
     },
-    "tid": 1795291547713,
+    "tid": 1795291573178,
     "niva": {
       "ville": {
         "lvl": 7,
-        "xp": 11424
+        "xp": 11604
       },
       "svante": {
         "lvl": 7,
-        "xp": 10135
+        "xp": 10315
       },
       "tomas": {
         "lvl": 7,
-        "xp": 14224
+        "xp": 14404
       },
       "sally": {
         "lvl": 6,
@@ -270,7 +270,7 @@
       },
       "linda": {
         "lvl": 2,
-        "xp": 390
+        "xp": 570
       }
     },
     "upplasta": [
@@ -651,7 +651,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "resenar",
-          "klar": false,
+          "klar": true,
           "res": {
             "text": "En riddare i bucklig rustning ligger på golvet. – Vatten …",
             "vem": "riddaren",
@@ -676,6 +676,10 @@
           {
             "t": "En riddare i bucklig rustning ligger på golvet. – Vatten …",
             "k": ""
+          },
+          {
+            "t": "Riddaren reser sig och bugar. Han berättar om faror han har sett. Alla får 180 XP.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -695,14 +699,13 @@
           "Läkedryck",
           "Läkedryck",
           "Läkedryck",
-          "Läkedryck",
           "Läkedryck"
         ],
         "bless": {},
         "curse": {},
         "ara": 0,
         "start": 1795291465896,
-        "nastaKand": false,
+        "nastaKand": true,
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
