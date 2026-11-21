@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:10:22.576Z",
+  "uppdaterad": "2026-11-21T20:10:27.705Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291820641,
+    "tid": 1795291825742,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -634,26 +634,22 @@
       {
         "plats": "grottorna",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Någon andas tungt. Det låter stort.",
-            "typ": "sovare",
+            "ledtrad": "Ni hör hackande, som av en hacka mot sten.",
+            "typ": "strid",
             "kand": false
           },
           {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "altare",
+            "ledtrad": "Ni hör skrapande ljud och tunga steg.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": true,
-          "gud": "Vinterns herre"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -710,6 +706,10 @@
           {
             "t": "Ljusen flammar upp. Vinterns herre välsignar er. Alla får +1 på anfall tills nästa vila.",
             "k": "magic"
+          },
+          {
+            "t": "Ni tar en klunk vatten och går vidare.",
+            "k": ""
           }
         ],
         "party": [
@@ -748,7 +748,7 @@
           "ville": 52,
           "linda": 15
         },
-        "dorrText": "Facklans sken når mer än en öppning i berget."
+        "dorrText": "Grottan delar sig runt en stor stenpelare. Båda sidorna är svarta."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
