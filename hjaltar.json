@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:05:09.326Z",
+  "uppdaterad": "2026-11-21T20:05:49.745Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795291507358,
+    "tid": 1795291547713,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något skrattar tyst därinne.",
@@ -649,7 +649,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "resenar",
+          "klar": false,
+          "res": {
+            "text": "En riddare i bucklig rustning ligger på golvet. – Vatten …",
+            "vem": "riddaren",
+            "ok": "Riddaren pekar och berättar vad som finns längre fram.",
+            "nej": "Riddaren är för trött för att prata.",
+            "dryck": "Riddaren reser sig och bugar. Han berättar om faror han har sett."
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Grottorna under Kråkberget",
@@ -657,6 +667,14 @@
           },
           {
             "t": "Grottöppningen ser ut som en gapande mun. Tomas, Svante, Ville och Linda tar ett djupt andetag och går in.",
+            "k": ""
+          },
+          {
+            "t": "Rum 1 · Någon behöver hjälp",
+            "k": "sep"
+          },
+          {
+            "t": "En riddare i bucklig rustning ligger på golvet. – Vatten …",
             "k": ""
           }
         ],
