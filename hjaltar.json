@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:17:28.300Z",
+  "uppdaterad": "2026-11-21T20:18:04.655Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,19 +246,19 @@
         "v": 1
       }
     },
-    "tid": 1795292246170,
+    "tid": 1795292282368,
     "niva": {
       "ville": {
         "lvl": 7,
-        "xp": 11919
+        "xp": 12339
       },
       "svante": {
         "lvl": 7,
-        "xp": 10630
+        "xp": 11050
       },
       "tomas": {
-        "lvl": 7,
-        "xp": 14719
+        "lvl": 8,
+        "xp": 15139
       },
       "sally": {
         "lvl": 6,
@@ -270,7 +270,7 @@
       },
       "linda": {
         "lvl": 3,
-        "xp": 885
+        "xp": 1305
       }
     },
     "upplasta": [
@@ -635,7 +635,7 @@
         "plats": "grottorna",
         "kapitel": 1,
         "djup": 5,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Något glimmar i mörkret.",
@@ -650,14 +650,25 @@
         ],
         "lyssnat": false,
         "rum": {
-          "typ": "vaktad",
+          "typ": "skatt",
           "klar": false,
-          "sedanSkatt": true,
-          "fiender": [
-            "basilisk",
-            "basilisk"
-          ],
-          "stridOpt": {}
+          "loot": [
+            {
+              "k": "guld",
+              "n": "350 guldmynt",
+              "v": 350
+            },
+            {
+              "k": "wb",
+              "n": "Magiskt vapen",
+              "info": "+1 på träff och skada"
+            },
+            {
+              "k": "acb",
+              "n": "Skyddsring",
+              "info": "+1 rustning"
+            }
+          ]
         },
         "logg": [
           {
@@ -743,6 +754,18 @@
           {
             "t": "Ni ser en glittrande skatt. Framför den står två basilisker.",
             "k": "bad"
+          },
+          {
+            "t": "Det sista monstret faller. Alla får 420 XP.",
+            "k": "crit"
+          },
+          {
+            "t": "★ Tomas har blivit starkare och är nu nivå 8! +8 liv.",
+            "k": "crit"
+          },
+          {
+            "t": "Nu är vägen fri till skatten.",
+            "k": "heal"
           }
         ],
         "party": [
@@ -767,176 +790,18 @@
           "svante": 1
         },
         "curse": {},
-        "ara": 1050,
+        "ara": 2450,
         "start": 1795291465896,
         "nastaKand": false,
         "id": "rmwqu6oq0mvno",
         "startGuld": 48,
         "liv": {
-          "tomas": 44,
+          "tomas": 52,
           "svante": 53,
           "ville": 45,
           "linda": 6
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Basilisk 1",
-                "liv": 0,
-                "rustning": 15,
-                "anfall": 7,
-                "skada": "2d6+3",
-                "xp": 700,
-                "platser": [
-                  "grottorna",
-                  "oknen"
-                ],
-                "flyr": "blundar och kryper ner i en spricka.",
-                "egen": {
-                  "bedova": 0.3
-                },
-                "typ": "basilisk",
-                "bild": "basilisk",
-                "max": 52,
-                "ute": true,
-                "bedovad": 0
-              },
-              {
-                "namn": "Basilisk 2",
-                "liv": 16,
-                "rustning": 15,
-                "anfall": 7,
-                "skada": "2d6+3",
-                "xp": 700,
-                "platser": [
-                  "grottorna",
-                  "oknen"
-                ],
-                "flyr": "blundar och kryper ner i en spricka.",
-                "egen": {
-                  "bedova": 0.3
-                },
-                "typ": "basilisk",
-                "bild": "basilisk",
-                "max": 52,
-                "ute": false,
-                "bedovad": 0,
-                "gift": {
-                  "expr": "1d4",
-                  "rundor": 2
-                }
-              }
-            ],
-            "run": true,
-            "boss": false,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|grottorna|1|5|rum|vaktad",
-          "fiender": [
-            {
-              "namn": "Basilisk 1",
-              "liv": 0,
-              "rustning": 15,
-              "anfall": 7,
-              "skada": "2d6+3",
-              "xp": 700,
-              "platser": [
-                "grottorna",
-                "oknen"
-              ],
-              "flyr": "blundar och kryper ner i en spricka.",
-              "egen": {
-                "bedova": 0.3
-              },
-              "typ": "basilisk",
-              "bild": "basilisk",
-              "max": 52,
-              "ute": true,
-              "bedovad": 0
-            },
-            {
-              "namn": "Basilisk 2",
-              "liv": 16,
-              "rustning": 15,
-              "anfall": 7,
-              "skada": "2d6+3",
-              "xp": 700,
-              "platser": [
-                "grottorna",
-                "oknen"
-              ],
-              "flyr": "blundar och kryper ner i en spricka.",
-              "egen": {
-                "bedova": 0.3
-              },
-              "typ": "basilisk",
-              "bild": "basilisk",
-              "max": 52,
-              "ute": false,
-              "bedovad": 0,
-              "gift": {
-                "expr": "1d4",
-                "rundor": 2
-              }
-            }
-          ],
-          "anvant": {
-            "svante": {
-              "dubbelhugg": true,
-              "kraftslag": true
-            },
-            "tomas": {
-              "pilregn": true,
-              "dubbelskott": true,
-              "brinnande_pil": true
-            },
-            "linda": {
-              "vaggvisa": true
-            },
-            "ville": {
-              "shuriken": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 5,
-          "ko": [
-            {
-              "f": 1
-            },
-            {
-              "h": "linda"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "tomas"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:linda": 16.1,
-            "h:tomas": 1.1,
-            "h:ville": 11.1,
-            "h:svante": 8.1,
-            "f:0": 23,
-            "f:1": 19
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
+        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
       }
     ],
     "aktivRun": "rmwqu6oq0mvno",
