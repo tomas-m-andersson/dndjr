@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:15:15.188Z",
+  "uppdaterad": "2026-11-21T20:16:38.421Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292115145,
+    "tid": 1795292196311,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -777,7 +777,7 @@
           "tomas": 44,
           "svante": 53,
           "ville": 45,
-          "linda": 7
+          "linda": 1
         },
         "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll.",
         "stridSpar": {
@@ -785,7 +785,7 @@
             "fiender": [
               {
                 "namn": "Basilisk 1",
-                "liv": 45,
+                "liv": 0,
                 "rustning": 15,
                 "anfall": 7,
                 "skada": "2d6+3",
@@ -801,12 +801,12 @@
                 "typ": "basilisk",
                 "bild": "basilisk",
                 "max": 52,
-                "ute": false,
-                "bedovad": 1
+                "ute": true,
+                "bedovad": 0
               },
               {
                 "namn": "Basilisk 2",
-                "liv": 52,
+                "liv": 30,
                 "rustning": 15,
                 "anfall": 7,
                 "skada": "2d6+3",
@@ -823,7 +823,11 @@
                 "bild": "basilisk",
                 "max": 52,
                 "ute": false,
-                "bedovad": 1
+                "bedovad": 0,
+                "gift": {
+                  "expr": "1d4",
+                  "rundor": 3
+                }
               }
             ],
             "run": true,
@@ -836,7 +840,7 @@
           "fiender": [
             {
               "namn": "Basilisk 1",
-              "liv": 45,
+              "liv": 0,
               "rustning": 15,
               "anfall": 7,
               "skada": "2d6+3",
@@ -852,12 +856,12 @@
               "typ": "basilisk",
               "bild": "basilisk",
               "max": 52,
-              "ute": false,
-              "bedovad": 1
+              "ute": true,
+              "bedovad": 0
             },
             {
               "namn": "Basilisk 2",
-              "liv": 52,
+              "liv": 30,
               "rustning": 15,
               "anfall": 7,
               "skada": "2d6+3",
@@ -874,26 +878,48 @@
               "bild": "basilisk",
               "max": 52,
               "ute": false,
-              "bedovad": 1
+              "bedovad": 0,
+              "gift": {
+                "expr": "1d4",
+                "rundor": 3
+              }
             }
           ],
           "anvant": {
             "svante": {
-              "dubbelhugg": true
+              "dubbelhugg": true,
+              "kraftslag": true
             },
             "tomas": {
-              "pilregn": true
+              "pilregn": true,
+              "dubbelskott": true,
+              "brinnande_pil": true
             },
             "linda": {
               "vaggvisa": true
+            },
+            "ville": {
+              "shuriken": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 4,
           "ko": [
+            {
+              "f": 1
+            },
+            {
+              "h": "linda"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "svante"
+            },
             {
               "h": "tomas"
             }
