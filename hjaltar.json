@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:19:35.271Z",
+  "uppdaterad": "2026-11-21T20:20:20.905Z",
   "egna": [],
   "sallskap": [
     "tomas",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292375175,
+    "tid": 1795292420604,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -810,7 +810,7 @@
               {
                 "namn": "Jättemasken",
                 "baraBoss": true,
-                "liv": 133,
+                "liv": 110,
                 "rustning": 14,
                 "anfall": 8,
                 "skada": "2d8+4",
@@ -827,10 +827,7 @@
                 "max": 156,
                 "ute": false,
                 "boss": true,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                }
+                "svag": null
               }
             ],
             "run": true,
@@ -844,7 +841,7 @@
             {
               "namn": "Jättemasken",
               "baraBoss": true,
-              "liv": 133,
+              "liv": 110,
               "rustning": 14,
               "anfall": 8,
               "skada": "2d8+4",
@@ -861,10 +858,7 @@
               "max": 156,
               "ute": false,
               "boss": true,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              }
+              "svag": null
             }
           ],
           "anvant": {
@@ -872,17 +866,22 @@
               "vaggvisa": true
             },
             "ville": {
-              "g_blackmoln": true
+              "g_blackmoln": true,
+              "shuriken": true
             },
             "tomas": {
-              "dubbelskott": true
+              "dubbelskott": true,
+              "brinnande_pil": true
+            },
+            "svante": {
+              "dubbelhugg": true
             }
           },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 2,
+          "runda": 3,
           "ko": [
             {
               "h": "ville"
