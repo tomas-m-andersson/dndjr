@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:53:38.425Z",
+  "uppdaterad": "2026-11-23T19:54:36.199Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463617402,
+    "tid": 1795463673995,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 44,
+                "liv": 29,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -491,7 +491,8 @@
                 "svag": {
                   "n": 3,
                   "rundor": 1
-                }
+                },
+                "hjalpKallad": true
               }
             ],
             "run": true,
@@ -505,7 +506,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 44,
+              "liv": 29,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -527,7 +528,29 @@
               "svag": {
                 "n": 3,
                 "rundor": 1
-              }
+              },
+              "hjalpKallad": true
+            },
+            {
+              "namn": "Vampyrfladdermus",
+              "liv": 9,
+              "rustning": 13,
+              "anfall": 4,
+              "skada": "1d6+1",
+              "xp": 50,
+              "platser": [
+                "slottet",
+                "grottorna",
+                "herrgarden"
+              ],
+              "flyr": "skriker gällt och flyger iväg.",
+              "egen": {
+                "drana": true
+              },
+              "typ": "vampyrfladdermus",
+              "bild": "vampyrfladdermus",
+              "max": 9,
+              "ute": false
             }
           ],
           "anvant": {
@@ -559,16 +582,7 @@
           "runda": 7,
           "ko": [
             {
-              "h": "sally"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "svante"
-            },
-            {
-              "h": "tomas"
+              "f": 1
             }
           ],
           "logg": [],
@@ -578,7 +592,8 @@
             "h:ville": 9.1,
             "h:sally": 16.1,
             "h:svante": 7.1,
-            "f:0": 20
+            "f:0": 20,
+            "f:1": 2
           },
           "nu": null,
           "giftH": {},
