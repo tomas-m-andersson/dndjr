@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:44:12.296Z",
+  "uppdaterad": "2026-11-23T19:44:41.905Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463050326,
+    "tid": 1795463079812,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -325,7 +325,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 1,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
@@ -339,7 +339,10 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "lager",
+          "klar": false
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -348,6 +351,14 @@
           {
             "t": "Korparna på tornet tystnar när Svante, Ville, Sally och Tomas går in i slottet. Det luktar damm och gammalt stearin.",
             "k": ""
+          },
+          {
+            "t": "Rum 1 · Lägerplats",
+            "k": "sep"
+          },
+          {
+            "t": "Ett skyddat hörn med en gammal eldstad. Här kan man vila.",
+            "k": "heal"
           }
         ],
         "party": [
