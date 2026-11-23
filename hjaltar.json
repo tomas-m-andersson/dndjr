@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:46:46.208Z",
+  "uppdaterad": "2026-11-23T19:46:57.471Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463204176,
+    "tid": 1795463215209,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -325,7 +325,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 4,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det droppar, långsamt och jämnt.",
@@ -346,7 +346,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "nekromantiker",
             "nekromantiker",
@@ -414,6 +414,10 @@
           {
             "t": "Plötsligt står tre nekromantiker framför er.",
             "k": "bad"
+          },
+          {
+            "t": "Sällskapet springer för livet och kommer undan!",
+            "k": "hit"
           }
         ],
         "party": [
