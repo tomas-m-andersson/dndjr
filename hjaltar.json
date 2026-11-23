@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:56:14.352Z",
+  "uppdaterad": "2026-11-23T19:56:43.215Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463772275,
+    "tid": 1795463801143,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -457,7 +457,7 @@
         "startGuld": 42,
         "liv": {
           "svante": 53,
-          "ville": 46,
+          "ville": 30,
           "sally": 33,
           "tomas": 57
         },
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 24,
+                "liv": 2,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -503,7 +503,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 24,
+              "liv": 2,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -573,7 +573,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 10,
+          "runda": 11,
           "ko": [
             {
               "f": 0
