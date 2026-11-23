@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:45:47.118Z",
+  "uppdaterad": "2026-11-23T19:46:15.138Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463145170,
+    "tid": 1795463173186,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -325,7 +325,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 3,
-        "fas": "strid",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Ni hör många små fötter som springer.",
@@ -336,7 +336,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "strid",
-          "klar": false,
+          "klar": true,
           "fiender": [
             "nekromantiker",
             "nekromantiker",
@@ -388,6 +388,10 @@
           {
             "t": "Det är inte tomt här. tre nekromantiker vänder sig mot er!",
             "k": "bad"
+          },
+          {
+            "t": "Ni slänger igen en dörr bakom er. Ni är säkra, för den här gången.",
+            "k": "hit"
           }
         ],
         "party": [
