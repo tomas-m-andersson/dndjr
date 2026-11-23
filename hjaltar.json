@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:54:36.199Z",
+  "uppdaterad": "2026-11-23T19:54:41.156Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463673995,
+    "tid": 1795463679070,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -459,7 +459,7 @@
           "svante": 53,
           "ville": 46,
           "sally": 33,
-          "tomas": 68
+          "tomas": 57
         },
         "dorrText": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
         "bossFaktor": 1.3,
@@ -488,10 +488,7 @@
                 "ute": false,
                 "boss": true,
                 "bedovad": 0,
-                "svag": {
-                  "n": 3,
-                  "rundor": 1
-                },
+                "svag": null,
                 "hjalpKallad": true
               }
             ],
@@ -525,10 +522,7 @@
               "ute": false,
               "boss": true,
               "bedovad": 0,
-              "svag": {
-                "n": 3,
-                "rundor": 1
-              },
+              "svag": null,
               "hjalpKallad": true
             },
             {
@@ -579,8 +573,23 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 7,
+          "runda": 8,
           "ko": [
+            {
+              "f": 0
+            },
+            {
+              "h": "sally"
+            },
+            {
+              "h": "ville"
+            },
+            {
+              "h": "svante"
+            },
+            {
+              "h": "tomas"
+            },
             {
               "f": 1
             }
