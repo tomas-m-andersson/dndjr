@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:46:15.138Z",
+  "uppdaterad": "2026-11-23T19:46:24.912Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463173186,
+    "tid": 1795463182803,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,26 +324,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 3,
-        "fas": "rum",
+        "djup": 4,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Ni hör många små fötter som springer.",
+            "ledtrad": "Det droppar, långsamt och jämnt.",
+            "typ": "sovare",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det luktar rökelse.",
+            "typ": "resenar",
+            "kand": false
+          },
+          {
+            "ledtrad": "Det finns färskt blod på marken.",
             "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "strid",
-          "klar": true,
-          "fiender": [
-            "nekromantiker",
-            "nekromantiker",
-            "nekromantiker"
-          ],
-          "stridOpt": {}
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -392,6 +393,10 @@
           {
             "t": "Ni slänger igen en dörr bakom er. Ni är säkra, för den här gången.",
             "k": "hit"
+          },
+          {
+            "t": "Ni lämnar rummet bakom er.",
+            "k": ""
           }
         ],
         "party": [
@@ -427,7 +432,7 @@
           "sally": 33,
           "tomas": 68
         },
-        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först.",
+        "dorrText": "Ni står vid ett vägskäl. Fackelljuset fladdrar, som om det också tvekar.",
         "stridSpar": {
           "def": {
             "fiender": [
