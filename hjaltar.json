@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:50:31.823Z",
+  "uppdaterad": "2026-11-23T19:52:04.133Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463429738,
+    "tid": 1795463522106,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -456,8 +456,8 @@
         "id": "rmwtobu6l6tx2",
         "startGuld": 42,
         "liv": {
-          "svante": 47,
-          "ville": 52,
+          "svante": 53,
+          "ville": 46,
           "sally": 33,
           "tomas": 68
         },
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 79,
+                "liv": 71,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -502,7 +502,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 79,
+              "liv": 71,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -532,11 +532,13 @@
             "ville": {
               "g_blackmoln": true,
               "shuriken": true,
-              "smygattack": true
+              "smygattack": true,
+              "tryckpunkt": true
             },
             "svante": {
               "dubbelhugg": true,
-              "kraftslag": true
+              "kraftslag": true,
+              "andra_andningen": true
             },
             "tomas": {
               "brinnande_pil": true,
@@ -547,7 +549,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 4,
+          "runda": 5,
           "ko": [
             {
               "f": 0
