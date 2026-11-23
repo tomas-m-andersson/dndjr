@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:43:26.440Z",
+  "uppdaterad": "2026-11-23T19:43:36.623Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -189,7 +189,7 @@
     }
   },
   "aventyr": {
-    "guld": 4924,
+    "guld": 5716,
     "saker": [
       "Läkedryck",
       "Läkedryck",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795292666944,
+    "tid": 1795463014724,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -320,320 +320,24 @@
       }
     },
     "reset": 1793282091831,
-    "runs": [
+    "runs": [],
+    "aktivRun": null,
+    "historik": [
       {
         "plats": "slottet",
         "kapitel": 2,
         "djup": 6,
-        "fas": "strid",
-        "dorrar": null,
-        "lyssnat": false,
-        "rum": {
-          "typ": "boss",
-          "klar": false,
-          "fiender": [
-            "vampyr"
-          ],
-          "stridOpt": {
-            "boss": true
-          }
-        },
-        "logg": [
-          {
-            "t": "Ni tar en klunk vatten och går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Altare",
-            "k": "sep"
-          },
-          {
-            "t": "Ett altare med en staty av en kvinna som håller en lykta.",
-            "k": "magic"
-          },
-          {
-            "t": "En röst viskar Svantes namn. Ljusbärerskan är nöjd. Alla får +1 på anfall tills nästa vila.",
-            "k": "magic"
-          },
-          {
-            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Slottsherren",
-            "k": "sep"
-          },
-          {
-            "t": "Tronen knakar. Slottsherren reser sig: Vampyrgreven!",
-            "k": "bad"
-          },
-          {
-            "t": "Seger! Alla får 345 XP.",
-            "k": "crit"
-          },
-          {
-            "t": "Tomas slår upp ögonen och mumlar: – Vad hände?",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar 347 guldmynt.",
-            "k": "heal"
-          },
-          {
-            "t": "★ Svante har blivit starkare och är nu nivå 7! +7 liv.",
-            "k": "crit"
-          },
-          {
-            "t": "Ni hittar en gammal karta full med ledtrådar. Alla får 210 XP.",
-            "k": "magic"
-          },
-          {
-            "t": "Ni hittar en läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Ni hittar en stor läkedryck.",
-            "k": "heal"
-          },
-          {
-            "t": "Det är över. Slottsherren är besegrad!",
-            "k": "crit"
-          },
-          {
-            "t": "Kapitel 2 · Djupare ner",
-            "k": "sep"
-          },
-          {
-            "t": "Alla har vilat och känner sig starka igen. Ni hittar en vindlande trappa som leder ner i fängelsehålorna.",
-            "k": ""
-          },
-          {
-            "t": "Rum 1 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "En platta klickar. Flammor sprutar ur golvet!",
-            "k": "bad"
-          },
-          {
-            "t": "Tomas kastar sig undan lågorna!",
-            "k": "hit"
-          },
-          {
-            "t": "Svante kastar sig undan lågorna!",
-            "k": "hit"
-          },
-          {
-            "t": "Ville bränns av lågorna: 13 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Sally kastar sig undan lågorna!",
-            "k": "hit"
-          },
-          {
-            "t": "Ingen säger något. Ni fortsätter bara.",
-            "k": ""
-          },
-          {
-            "t": "Rum 2 · Handlare",
-            "k": "sep"
-          },
-          {
-            "t": "En liten tomtegubbe med en jättestor ryggsäck. – Köpa något, hjältar?",
-            "k": "heal"
-          },
-          {
-            "t": "Ni lämnar rummet bakom er.",
-            "k": ""
-          },
-          {
-            "t": "Rum 3 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "Ett nät faller ner från taket!",
-            "k": "bad"
-          },
-          {
-            "t": "Ville trasslar in sig och slår sig: 24 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "Ni går djupare in.",
-            "k": ""
-          },
-          {
-            "t": "Rum 4 · Fälla",
-            "k": "sep"
-          },
-          {
-            "t": "En runa på golvet börjar glöda!",
-            "k": "bad"
-          },
-          {
-            "t": "Svante får en magisk stöt från runan: 37 i skada.",
-            "k": "bad"
-          },
-          {
-            "t": "En trappa knarrar under era fötter när ni går vidare.",
-            "k": ""
-          },
-          {
-            "t": "Rum 5 · Lägerplats",
-            "k": "sep"
-          },
-          {
-            "t": "En övergiven lägerplats. Glöden i elden är fortfarande varm.",
-            "k": "heal"
-          },
-          {
-            "t": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
-            "k": ""
-          },
-          {
-            "t": "Bossen · Slottsherren",
-            "k": "sep"
-          },
-          {
-            "t": "En kall röst säger: – Ni skulle aldrig ha kommit hit. Det är Vampyrgreven!",
-            "k": "bad"
-          }
+        "utfall": "gav upp",
+        "raddade": 0,
+        "hjaltar": [
+          "Tomas (nivå 8)",
+          "Svante (nivå 7)",
+          "Ville (nivå 7)",
+          "Sally (nivå 6)"
         ],
-        "party": [
-          "tomas",
-          "svante",
-          "ville",
-          "sally"
-        ],
-        "guld": 831,
-        "saker": [
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Läkedryck",
-          "Stor läkedryck"
-        ],
-        "bless": {},
-        "curse": {},
         "ara": 4750,
-        "start": 1795204732078,
-        "nastaKand": false,
-        "id": "rmwpejohaos4l",
-        "startGuld": 39,
-        "liv": {
-          "tomas": 60,
-          "svante": 33,
-          "ville": 15,
-          "sally": 33
-        },
-        "dorrText": "Väggarna är täckta av klösmärken. Någonstans här inne väntar slottsherren.",
-        "bossFaktor": 1.3,
-        "nyttVapen": null,
-        "stridSpar": {
-          "def": {
-            "fiender": [
-              {
-                "namn": "Vampyrgreven",
-                "baraBoss": true,
-                "liv": 150,
-                "rustning": 16,
-                "anfall": 8,
-                "skada": "2d8+3",
-                "xp": 1100,
-                "platser": [
-                  "slottet"
-                ],
-                "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
-                "egen": {
-                  "drana": true,
-                  "regen": 3
-                },
-                "typ": "vampyr",
-                "bild": "vampyr",
-                "max": 150,
-                "ute": false,
-                "boss": true
-              }
-            ],
-            "run": true,
-            "boss": true,
-            "fiendeForst": false,
-            "sover": false,
-            "noter": []
-          },
-          "bild": "run|slottet|2|6|boss|boss",
-          "fiender": [
-            {
-              "namn": "Vampyrgreven",
-              "baraBoss": true,
-              "liv": 150,
-              "rustning": 16,
-              "anfall": 8,
-              "skada": "2d8+3",
-              "xp": 1100,
-              "platser": [
-                "slottet"
-              ],
-              "flyr": "förvandlas till en fladdermus och flyger ut genom fönstret.",
-              "egen": {
-                "drana": true,
-                "regen": 3
-              },
-              "typ": "vampyr",
-              "bild": "vampyr",
-              "max": 150,
-              "ute": false,
-              "boss": true
-            }
-          ],
-          "anvant": {
-            "svante": {
-              "andra_andningen": true
-            }
-          },
-          "pepp": {},
-          "skydd": {},
-          "fokus": {},
-          "locka": null,
-          "runda": 1,
-          "ko": [
-            {
-              "h": "svante"
-            },
-            {
-              "h": "sally"
-            },
-            {
-              "h": "ville"
-            },
-            {
-              "h": "tomas"
-            }
-          ],
-          "logg": [],
-          "noter": [],
-          "init": {
-            "h:tomas": 7.1,
-            "h:svante": 16.1,
-            "h:ville": 8.1,
-            "h:sally": 12.1,
-            "f:0": 23
-          },
-          "nu": null,
-          "giftH": {},
-          "bedovH": {}
-        }
-      }
-    ],
-    "aktivRun": null,
-    "historik": [
+        "datum": "2026-11-23"
+      },
       {
         "plats": "grottorna",
         "kapitel": 1,
@@ -905,20 +609,6 @@
         ],
         "ara": 450,
         "datum": "2026-10-31"
-      },
-      {
-        "plats": "slottet",
-        "kapitel": 1,
-        "djup": 6,
-        "utfall": "hem",
-        "hjaltar": [
-          "Ville (nivå 3)",
-          "Benjamin (nivå 3)",
-          "Tomas (nivå 3)",
-          "Sally (nivå 3)"
-        ],
-        "ara": 500,
-        "datum": "2026-10-30"
       }
     ],
     "lager": {
