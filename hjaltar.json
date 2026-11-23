@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:54:41.156Z",
+  "uppdaterad": "2026-11-23T19:55:26.134Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463679070,
+    "tid": 1795463723954,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 29,
+                "liv": 38,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -503,7 +503,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 29,
+              "liv": 38,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -527,7 +527,7 @@
             },
             {
               "namn": "Vampyrfladdermus",
-              "liv": 9,
+              "liv": 0,
               "rustning": 13,
               "anfall": 4,
               "skada": "1d6+1",
@@ -544,7 +544,7 @@
               "typ": "vampyrfladdermus",
               "bild": "vampyrfladdermus",
               "max": 9,
-              "ute": false
+              "ute": true
             }
           ],
           "anvant": {
@@ -573,7 +573,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 8,
+          "runda": 9,
           "ko": [
             {
               "f": 0
