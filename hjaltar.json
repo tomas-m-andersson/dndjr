@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:47:49.888Z",
+  "uppdaterad": "2026-11-23T19:49:41.923Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463267827,
+    "tid": 1795463379875,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 137,
+                "liv": 99,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -486,7 +486,9 @@
                 "bild": "vampyr",
                 "max": 137,
                 "ute": false,
-                "boss": true
+                "boss": true,
+                "bedovad": 0,
+                "svag": null
               }
             ],
             "run": true,
@@ -500,7 +502,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 137,
+              "liv": 99,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -517,15 +519,33 @@
               "bild": "vampyr",
               "max": 137,
               "ute": false,
-              "boss": true
+              "boss": true,
+              "bedovad": 0,
+              "svag": null
             }
           ],
-          "anvant": {},
+          "anvant": {
+            "sally": {
+              "hoppa_ansiktet": true
+            },
+            "ville": {
+              "g_blackmoln": true,
+              "shuriken": true
+            },
+            "svante": {
+              "dubbelhugg": true,
+              "kraftslag": true
+            },
+            "tomas": {
+              "brinnande_pil": true,
+              "dubbelskott": true
+            }
+          },
           "pepp": {},
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 1,
+          "runda": 3,
           "ko": [
             {
               "f": 0
@@ -552,7 +572,9 @@
             "h:svante": 7.1,
             "f:0": 20
           },
-          "nu": null
+          "nu": null,
+          "giftH": {},
+          "bedovH": {}
         }
       }
     ],
