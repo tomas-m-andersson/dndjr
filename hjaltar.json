@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:45:11.494Z",
+  "uppdaterad": "2026-11-23T19:45:21.223Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463109484,
+    "tid": 1795463119231,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -346,7 +346,7 @@
         "lyssnat": false,
         "rum": {
           "typ": "falla",
-          "klar": false,
+          "klar": true,
           "falla": {
             "egen": "smi",
             "alla": false,
@@ -383,6 +383,10 @@
           {
             "t": "Ett nät faller ner från taket!",
             "k": "bad"
+          },
+          {
+            "t": "Tomas rullar undan!",
+            "k": "hit"
           }
         ],
         "party": [
