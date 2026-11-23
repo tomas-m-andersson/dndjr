@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:44:41.905Z",
+  "uppdaterad": "2026-11-23T19:44:54.087Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463079812,
+    "tid": 1795463091993,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,25 +324,27 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 1,
-        "fas": "rum",
+        "djup": 2,
+        "fas": "dorrar",
         "dorrar": [
+          {
+            "ledtrad": "Det luktar rök och stekt kött.",
+            "typ": "lager",
+            "kand": false
+          },
+          {
+            "ledtrad": "En gammal sång nynnas, lite falskt.",
+            "typ": "handlare",
+            "kand": false
+          },
           {
             "ledtrad": "Ett svagt blått sken syns under dörren.",
             "typ": "falla",
             "kand": false
-          },
-          {
-            "ledtrad": "Något snarkar, djupt och långsamt.",
-            "typ": "lager",
-            "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "lager",
-          "klar": false
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -359,6 +361,10 @@
           {
             "t": "Ett skyddat hörn med en gammal eldstad. Här kan man vila.",
             "k": "heal"
+          },
+          {
+            "t": "Ingen säger något. Ni fortsätter bara.",
+            "k": ""
           }
         ],
         "party": [
@@ -394,7 +400,7 @@
           "sally": 33,
           "tomas": 68
         },
-        "dorrText": "Ni har gått långt nu. Men vägen fortsätter, åt flera håll."
+        "dorrText": "Kall luft strömmar ut ur mer än en dörröppning."
       }
     ],
     "aktivRun": "rmwtobu6l6tx2",
