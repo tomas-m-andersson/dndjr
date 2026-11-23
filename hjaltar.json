@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:44:54.087Z",
+  "uppdaterad": "2026-11-23T19:45:11.494Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463091993,
+    "tid": 1795463109484,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -325,7 +325,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 2,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det luktar rök och stekt kött.",
@@ -344,7 +344,17 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "falla",
+          "klar": false,
+          "falla": {
+            "egen": "smi",
+            "alla": false,
+            "varn": "Ett nät faller ner från taket!",
+            "ok": "rullar undan",
+            "traff": "trasslar in sig och slår sig"
+          }
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -365,6 +375,14 @@
           {
             "t": "Ingen säger något. Ni fortsätter bara.",
             "k": ""
+          },
+          {
+            "t": "Rum 2 · Fälla",
+            "k": "sep"
+          },
+          {
+            "t": "Ett nät faller ner från taket!",
+            "k": "bad"
           }
         ],
         "party": [
