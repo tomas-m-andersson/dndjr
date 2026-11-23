@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:52:04.133Z",
+  "uppdaterad": "2026-11-23T19:52:41.134Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463522106,
+    "tid": 1795463559064,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -469,7 +469,7 @@
               {
                 "namn": "Vampyrgreven",
                 "baraBoss": true,
-                "liv": 71,
+                "liv": 58,
                 "rustning": 16,
                 "anfall": 8,
                 "skada": "2d8+3",
@@ -488,7 +488,10 @@
                 "ute": false,
                 "boss": true,
                 "bedovad": 0,
-                "svag": null
+                "svag": {
+                  "n": 3,
+                  "rundor": 2
+                }
               }
             ],
             "run": true,
@@ -502,7 +505,7 @@
             {
               "namn": "Vampyrgreven",
               "baraBoss": true,
-              "liv": 71,
+              "liv": 58,
               "rustning": 16,
               "anfall": 8,
               "skada": "2d8+3",
@@ -521,13 +524,17 @@
               "ute": false,
               "boss": true,
               "bedovad": 0,
-              "svag": null
+              "svag": {
+                "n": 3,
+                "rundor": 2
+              }
             }
           ],
           "anvant": {
             "sally": {
               "hoppa_ansiktet": true,
-              "klosattack": true
+              "klosattack": true,
+              "frasa": true
             },
             "ville": {
               "g_blackmoln": true,
@@ -549,7 +556,7 @@
           "skydd": {},
           "fokus": {},
           "locka": null,
-          "runda": 5,
+          "runda": 6,
           "ko": [
             {
               "f": 0
