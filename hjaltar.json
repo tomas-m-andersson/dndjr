@@ -1,28 +1,24 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-21T20:24:29.043Z",
+  "uppdaterad": "2026-11-23T19:43:09.296Z",
   "egna": [],
   "sallskap": [
-    "tomas",
     "svante",
     "ville",
     "linda"
   ],
   "grundandringar": {
     "ville": {
-      "bildval": {
-        "ninja|skuggkatana": 20
-      },
+      "folk": "manniska",
+      "alder": 8,
+      "skagg": false,
       "attacker": [
         "smygattack",
         "shuriken",
         "tryckpunkt"
       ],
       "vapen": "skuggkatana",
-      "folk": "manniska",
-      "alder": 8,
-      "skagg": false,
       "klass": "ninja",
       "hud": 0,
       "har": 2,
@@ -37,7 +33,10 @@
         "vis": 11,
         "cha": 12
       },
-      "gosedjur": "blackis"
+      "gosedjur": "blackis",
+      "bildval": {
+        "ninja|skuggkatana": 20
+      }
     },
     "svante": {
       "folk": "manniska",
@@ -101,19 +100,15 @@
       }
     },
     "linda": {
-      "bildval": {
-        "bagskytt|giftbage": 7,
-        "bard|ormpiska": 61
-      },
+      "folk": "manniska",
+      "alder": 40,
+      "skagg": false,
       "attacker": [
         "peppsang",
         "hanfullt_skamt",
         "vaggvisa"
       ],
       "vapen": "ormpiska",
-      "folk": "manniska",
-      "alder": 40,
-      "skagg": false,
       "klass": "bard",
       "hud": 0,
       "har": 4,
@@ -128,7 +123,11 @@
         "vis": 15,
         "cha": 13
       },
-      "gosedjur": ""
+      "gosedjur": "",
+      "bildval": {
+        "bagskytt|giftbage": 7,
+        "bard|ormpiska": 61
+      }
     },
     "benjamin": {
       "folk": "manniska",
