@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:47:01.368Z",
+  "uppdaterad": "2026-11-23T19:47:20.003Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463219355,
+    "tid": 1795463238032,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -325,7 +325,7 @@
         "plats": "slottet",
         "kapitel": 1,
         "djup": 5,
-        "fas": "dorrar",
+        "fas": "rum",
         "dorrar": [
           {
             "ledtrad": "Det finns färskt blod på marken.",
@@ -344,7 +344,11 @@
           }
         ],
         "lyssnat": false,
-        "rum": null,
+        "rum": {
+          "typ": "altare",
+          "klar": false,
+          "gud": "den bortglömda guden"
+        },
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -413,6 +417,14 @@
           {
             "t": "Ni torkar svetten ur pannan och går vidare.",
             "k": ""
+          },
+          {
+            "t": "Rum 5 · Altare",
+            "k": "sep"
+          },
+          {
+            "t": "Ett gammalt altare till en bortglömd gud.",
+            "k": "magic"
           }
         ],
         "party": [
