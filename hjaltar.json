@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:45:21.223Z",
+  "uppdaterad": "2026-11-23T19:45:37.511Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463119231,
+    "tid": 1795463135624,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,37 +324,17 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 2,
-        "fas": "rum",
+        "djup": 3,
+        "fas": "dorrar",
         "dorrar": [
           {
-            "ledtrad": "Det luktar rök och stekt kött.",
-            "typ": "lager",
-            "kand": false
-          },
-          {
-            "ledtrad": "En gammal sång nynnas, lite falskt.",
-            "typ": "handlare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Ett svagt blått sken syns under dörren.",
-            "typ": "falla",
+            "ledtrad": "Ni hör många små fötter som springer.",
+            "typ": "strid",
             "kand": false
           }
         ],
         "lyssnat": false,
-        "rum": {
-          "typ": "falla",
-          "klar": true,
-          "falla": {
-            "egen": "smi",
-            "alla": false,
-            "varn": "Ett nät faller ner från taket!",
-            "ok": "rullar undan",
-            "traff": "trasslar in sig och slår sig"
-          }
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -387,6 +367,10 @@
           {
             "t": "Tomas rullar undan!",
             "k": "hit"
+          },
+          {
+            "t": "Ni smyger vidare genom de dammiga salarna.",
+            "k": ""
           }
         ],
         "party": [
@@ -422,7 +406,7 @@
           "sally": 33,
           "tomas": 68
         },
-        "dorrText": "Kall luft strömmar ut ur mer än en dörröppning."
+        "dorrText": "Gången går bara åt ett håll. Ni kan i alla fall lyssna först."
       }
     ],
     "aktivRun": "rmwtobu6l6tx2",
