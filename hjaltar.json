@@ -1,7 +1,7 @@
 {
   "app": "Bland monster och tärningar",
   "version": 1,
-  "uppdaterad": "2026-11-23T19:47:20.003Z",
+  "uppdaterad": "2026-11-23T19:47:36.384Z",
   "egna": [],
   "sallskap": [
     "svante",
@@ -246,7 +246,7 @@
         "v": 1
       }
     },
-    "tid": 1795463238032,
+    "tid": 1795463254455,
     "niva": {
       "ville": {
         "lvl": 7,
@@ -324,31 +324,11 @@
       {
         "plats": "slottet",
         "kapitel": 1,
-        "djup": 5,
-        "fas": "rum",
-        "dorrar": [
-          {
-            "ledtrad": "Det finns färskt blod på marken.",
-            "typ": "resenar",
-            "kand": false
-          },
-          {
-            "ledtrad": "Någonstans porlar vatten.",
-            "typ": "altare",
-            "kand": false
-          },
-          {
-            "ledtrad": "Det luktar sött, som blommor.",
-            "typ": "skatt",
-            "kand": false
-          }
-        ],
+        "djup": 6,
+        "fas": "dorrar",
+        "dorrar": null,
         "lyssnat": false,
-        "rum": {
-          "typ": "altare",
-          "klar": false,
-          "gud": "den bortglömda guden"
-        },
+        "rum": null,
         "logg": [
           {
             "t": "Kapitel 1 · Spökslottet Korpholm",
@@ -425,6 +405,10 @@
           {
             "t": "Ett gammalt altare till en bortglömd gud.",
             "k": "magic"
+          },
+          {
+            "t": "En stor dubbeldörr med järnbeslag. Bakom den: tronsalen, och slottsherren.",
+            "k": ""
           }
         ],
         "party": [
@@ -460,7 +444,7 @@
           "sally": 33,
           "tomas": 68
         },
-        "dorrText": "Två vägar, kanske fler. Ingen av dem ser säker ut.",
+        "dorrText": "Gången slutar vid en stor port. Längst in väntar slottsherren.",
         "stridSpar": {
           "def": {
             "fiender": [
